@@ -65,12 +65,11 @@ int thread_start(SceSize args, void *argp) {
     //    sceKernelExitDeleteThread(0);
     //    return 0;
     //}
-    sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
-    previous = sctrlHENSetStartModuleHandler(module_start_handler);
-    sceKernelWaitSemaCB(sema, 1, NULL);
-    sceKernelDeleteSema(sema);
-
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
+        sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
+        previous = sctrlHENSetStartModuleHandler(module_start_handler);
+        sceKernelWaitSemaCB(sema, 1, NULL);
+        sceKernelDeleteSema(sema);
         SceUID user = -1;
         {
             char usermodule[256];
