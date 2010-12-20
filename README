@@ -1,0 +1,29 @@
+mhpatch: in-game prx patcher by codestation
+
+Usage:
+
+* Copy mhp3patch.prx and mhp3patch_user.prx to the ms0:/seplugins directory
+of the PSP and enable mhp3patch.prx in game.txt (the plugins can be in a
+separate directory inside seplugins, e.g. ms0:/seplugins/mhpatch to avoid
+cluttering the plugins directory).
+
+* Copy the patchfile to the root of the ms, (e.g.: ms0:/)
+
+Format of the patchfile:
+
+patch_count: 4 bytes -> number of patches
+
+patch_offset[0]: 4 bytes -> offset of the patch in memory
+patch_size[0]: 4 bytes -> size of the patch
+...
+patch_offset[patch_count-1]: 4 bytes -> offset of the patch in memory
+patch_size[patch_count-1]: 4 bytes -> size of the patch
+
+padding: the needed bytes to make the next section a multiple of 16
+
+patch_file[0]: patch_size[0] bytes -> 1st patch
+...
+patch_file[patch_count-1]: patch_size[patch_count-1] bytes -> last patch
+
+------------
+Special thanks to ColdBird for the aemu project
