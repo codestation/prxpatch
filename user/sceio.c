@@ -19,7 +19,6 @@
 
 #include <pspsdk.h>
 #include <pspiofilemgr.h>
-#include <psppower.h>
 #include <string.h>
 #include "sceio.h"
 #include "logger.h"
@@ -39,9 +38,6 @@ SceSize data_start = 0;
 
 SceUID datafd = -1;
 SceUID transfd = -1;
-
-SceUID cbid = -1;
-SceUID sema = -1;
 
 void fill_tables() {
     if(transfd < 0)
