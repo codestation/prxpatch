@@ -35,18 +35,24 @@ STMOD_HANDLER previous = NULL;
 
 char * sceKernelGetUMDData(void);
 
-void *functions[3] = {0, 0, 0};
+void *functions[4] = {0, 0, 0, 0};
 
-void registerfunctions(void * userfunctions[3]) {
+void registerfunctions(void * userfunctions[4]) {
     memcpy(functions, userfunctions, sizeof(functions));
     running = 1;
 }
 
 void patch_io(SceModule2 *module) {
     const char * base = "IoFileMgrForUser";
+    // sceIoOpen
     hook_import_bynid(module, base, 0x109F50BC, functions[0], 0);
+    // sceIoRead
     hook_import_bynid(module, base, 0x6A638D83, functions[1], 0);
+    // sceIoClose
     hook_import_bynid(module, base, 0x810C4BC3, functions[2], 0);
+    base = "ThreadManForUser";
+    // sceKernelCreateCallback
+    hook_import_bynid(module, base, 0xE81CAF8F, functions[3], 0);
 }
 
 int module_start_handler(SceModule2 * module) {

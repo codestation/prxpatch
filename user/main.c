@@ -26,10 +26,11 @@ PSP_MODULE_INFO("mhp3patch_user", PSP_MODULE_USER, 1, 0);
 PSP_HEAP_SIZE_KB(10);
 
 int module_start(SceSize args, void * argp) {
-    void *functions[3];
+    void *functions[4];
     functions[0] = open;
     functions[1] = read;
     functions[2] = close;
+    functions[3] = callback;
     registerfunctions(functions);
     return 0;
 }

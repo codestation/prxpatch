@@ -22,8 +22,10 @@
 
 #include <pspsdk.h>
 
+int callback(const char *name, SceKernelCallbackFunction func, void *arg);
 SceUID open(const char *file, int flags, SceMode mode);
 int read(SceUID fd, void *data, SceSize size);
 int close(SceUID fd);
+
 
 #endif /* SCEIO_H_ */
