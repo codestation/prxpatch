@@ -19,6 +19,7 @@
 
 #include <pspsdk.h>
 #include <pspiofilemgr.h>
+#include <psppower.h>
 #include <string.h>
 #include "sceio.h"
 #include "logger.h"
@@ -39,6 +40,9 @@ SceSize data_start = 0;
 SceUID datafd = -1;
 SceUID transfd = -1;
 
+SceUID cbid = -1;
+SceUID sema = -1;
+
 void fill_tables() {
     if(transfd < 0)
         return;
@@ -57,24 +61,26 @@ void fill_tables() {
 SceUID open(const char *file, int flags, SceMode mode) {
     SceUID fd = sceIoOpen(file, flags, mode);
     if(fd >= 0 && strcmp(file, DATABIN_PATH) == 0) {
-        if(datafd < 0) {
-            transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
-            fill_tables();
-        }
+        transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
+        fill_tables();
+        sceIoClose(transfd);
         datafd = fd;
     }
     return fd;
 }
 
 int read(SceUID fd, void *data, SceSize size) {
-    if(transfd >= 0 && fd == datafd) {
+    if(fd == datafd) {
         SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
         int i = 0;
         SceSize offset = data_start;
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
+                transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
-                return sceIoRead(transfd, data, size);
+                int res = sceIoRead(transfd, data, size);
+                sceIoClose(transfd);
+                return res;
             }
             offset += patch_size[i];
             ++i;
@@ -85,8 +91,6 @@ int read(SceUID fd, void *data, SceSize size) {
 
 int close(SceUID fd) {
     if(fd == datafd) {
-        if(transfd >= 0)
-            sceIoClose(transfd);
 		datafd = -1;
 	}
     return sceIoClose(fd);

@@ -23,7 +23,7 @@
 #include "logger.h"
 
 PSP_MODULE_INFO("mhp3patch_user", PSP_MODULE_USER, 1, 0);
-PSP_HEAP_SIZE_KB(10);
+PSP_HEAP_SIZE_KB(50);
 
 int module_start(SceSize args, void * argp) {
     void *functions[3];
