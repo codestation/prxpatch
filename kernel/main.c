@@ -18,7 +18,6 @@
  */
 
 #include <pspkernel.h>
-#include <pspdisplay.h>
 #include <string.h>
 //#include "systemctrl_se.h"
 #include "libs.h"
