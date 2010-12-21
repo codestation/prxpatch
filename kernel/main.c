@@ -18,6 +18,7 @@
  */
 
 #include <pspkernel.h>
+#include <pspdisplay.h>
 #include <string.h>
 //#include "systemctrl_se.h"
 #include "libs.h"
@@ -58,6 +59,8 @@ void patch_io(SceModule2 *module) {
 int module_start_handler(SceModule2 * module) {
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 && strcmp(module->modname, GAME_MODULE) == 0 && (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
+        sceKernelWaitSema(sema, 0, NULL);
+        sceKernelDeleteSema(sema);
     }
     return previous ? previous(module) : 0;
 }
@@ -74,8 +77,7 @@ int thread_start(SceSize args, void *argp) {
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
         sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);
-        sceKernelWaitSemaCB(sema, 1, NULL);
-        sceKernelDeleteSema(sema);
+        sceKernelWaitSema(sema, 1, NULL);
         SceUID user = -1;
         {
             char usermodule[256];
@@ -100,6 +102,7 @@ int thread_start(SceSize args, void *argp) {
             SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
             if(module) {
                 patch_io(module);
+                sceKernelSignalSema(sema, 0);
             }
         }
     }
