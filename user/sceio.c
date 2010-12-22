@@ -109,6 +109,7 @@ int read(SceUID fd, void *data, SceSize size) {
                 sceKernelWaitSema(sema, 1, NULL);
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
+                sceIoLseek32(fd, res, PSP_SEEK_CUR);
                 sceKernelSignalSema(sema, 1);
                 return res;
             }
