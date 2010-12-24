@@ -26,6 +26,7 @@ patch_file[0]: patch_size[0] bytes -> 1st patch
 patch_file[patch_count-1]: patch_size[patch_count-1] bytes -> last patch
 
 BMP_image: 391734 bytes -> BMP image used for a bootsplash (480x272) (24bits)
-
+------------
+Known issues: the bootsplash dont work with TV-out yet (investigating the issue)
 ------------
 Special thanks to ColdBird for the aemu project
