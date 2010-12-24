@@ -22,12 +22,14 @@
 //#include "systemctrl_se.h"
 #include "libs.h"
 #include "logger.h"
+#include "bootsplash.h"
 
 PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 0);
 PSP_HEAP_SIZE_KB(0);
 
 #define GAME_ID "ULJM05800"
 #define GAME_MODULE "MonsterHunterPortable3rd"
+#define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 
 int running = 0;
 SceUID sema = 0;
@@ -56,12 +58,41 @@ void patch_io(SceModule2 *module) {
 }
 
 int module_start_handler(SceModule2 * module) {
-    if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 && strcmp(module->modname, GAME_MODULE) == 0 && (module->text_addr & 0x80000000) != 0x80000000) {
+    if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 &&
+            strcmp(module->modname, GAME_MODULE) == 0 &&
+            (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
-        sceKernelWaitSema(sema, 0, NULL);
-        sceKernelDeleteSema(sema);
+        sceKernelWaitSemaCB(sema, 0, NULL);
+        draw_image(TRANSLATION_PATH);
+        sceKernelDelayThread(1000000*3); //make the image stay for 3 seconds
+        fadeout_display(32, 31250); // number of steps and delay between them
+        sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
+}
+
+int load_user_module(const char *module, void *argp) {
+    SceUID user = -1;
+    {
+        char usermodule[256];
+        strcpy(usermodule, "ms0:/seplugins/");
+        if(argp) {
+            strcpy(usermodule, (char*)argp);
+            strrchr(usermodule, '/')[1] = 0;
+        }
+        strcpy(usermodule + strlen(usermodule), module);
+        struct SceKernelLMOption opt; memset(&opt, 0, sizeof(opt));
+        opt.size = sizeof(opt); opt.position = 1;
+        user = sceKernelLoadModule(usermodule, 0, &opt);
+    }
+    int status = 0;
+    int start = sceKernelStartModule(user, 0, NULL, &status, NULL);
+    if(start >= 0) {
+        while(!running) {
+            sceKernelDelayThread(10000);
+        }
+    }
+    return running;
 }
 
 int thread_start(SceSize args, void *argp) {
@@ -76,32 +107,14 @@ int thread_start(SceSize args, void *argp) {
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
         sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);
-        sceKernelWaitSema(sema, 1, NULL);
-        SceUID user = -1;
-        {
-            char usermodule[256];
-            strcpy(usermodule, "ms0:/seplugins/");
-            if(argp) {
-                strcpy(usermodule, (char*)argp);
-                strrchr(usermodule, '/')[1] = 0;
-            }
-            strcpy(usermodule + strlen(usermodule), "mhp3patch_user.prx");
-            struct SceKernelLMOption opt; memset(&opt, 0, sizeof(opt));
-            opt.size = sizeof(opt); opt.position = 1;
-            user = sceKernelLoadModule(usermodule, 0, &opt);
-        }
-        int status = 0;
-        int start = sceKernelStartModule(user, 0, NULL, &status, NULL);
-        if(start >= 0) {
-            while(!running) {
-                sceKernelDelayThread(10000);
-            }
-        }
-        if(running) {
+        sceKernelWaitSemaCB(sema, 1, NULL);
+        if(load_user_module("mhp3patch_user.prx", argp)) {
             SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
             if(module) {
                 patch_io(module);
                 sceKernelSignalSema(sema, 0);
+                sceKernelWaitSemaCB(sema, 1, NULL);
+                sceKernelDeleteSema(sema);
             }
         }
     }

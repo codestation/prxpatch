@@ -20,8 +20,6 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-#include <string.h>
-
 #define LOGFILE "ms0:/mhp3patch_kernel.log"
 
 int logger(const char * string);

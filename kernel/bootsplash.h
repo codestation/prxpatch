@@ -1,5 +1,5 @@
 /*
- *  MHP3patch user module
+ *  MHP3patch kernel module
  *
  *  Copyright (C) 2010  Codestation
  *
@@ -17,10 +17,16 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef IMPORTS_H_
-#define IMPORTS_H_
+#ifndef BOOTSPLASH_H_
+#define BOOTSPLASH_H_
 
-//register with kernel patcher
-void registerfunctions(void * userfunctions[4]);
+#include <psptypes.h>
 
-#endif /* IMPORTS_H_ */
+void init_display();
+void clear_display(u32 color);
+void fadeout_display();
+int draw_image(const char *path);
+int write_bitmap(void *frame_addr, int format, const char *file);
+int read_8888_data(void *frame, void *pixel_data);
+
+#endif /* BOOTSPLASH_H_ */
