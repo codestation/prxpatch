@@ -42,7 +42,6 @@ SceUID datafd = -1;
 SceUID transfd = -1;
 
 SceUID sema = -1;
-SceSize suspend_pos = 0;
 int suspending = 0;
 
 SceKernelCallbackFunction power_cb;
@@ -63,21 +62,17 @@ void fill_tables() {
 }
 
 int power_callback(int unknown, int pwrflags, void *common) {
-    int ret = power_cb(unknown, pwrflags, common);
     if(pwrflags & PSP_POWER_CB_SUSPENDING || pwrflags & PSP_POWER_CB_POWER_SWITCH) {
         if(!suspending) {
             suspending = 1;
             sceKernelWaitSema(sema, 1, NULL);
-            suspend_pos = sceIoLseek32(transfd, 0, PSP_SEEK_CUR);
         }
     }
     if(pwrflags & PSP_POWER_CB_RESUME_COMPLETE) {
         suspending = 0;
-        transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
-        sceIoLseek32(transfd, suspend_pos, PSP_SEEK_SET);
         sceKernelSignalSema(sema, 1);
     }
-    return ret;
+    return power_cb(unknown, pwrflags, common);
 }
 
 int callback(const char *name, SceKernelCallbackFunction func, void *arg) {
@@ -93,6 +88,7 @@ SceUID open(const char *file, int flags, SceMode mode) {
     if(fd >= 0 && strcmp(file, DATABIN_PATH) == 0) {
         transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
         fill_tables();
+        sceIoClose(transfd);
         datafd = fd;
         sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
     }
@@ -107,9 +103,11 @@ int read(SceUID fd, void *data, SceSize size) {
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
                 sceKernelWaitSema(sema, 1, NULL);
+                transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
-                sceIoLseek32(fd, res, PSP_SEEK_CUR);
+                sceIoClose(transfd);
+                sceIoLseek32(fd, size, PSP_SEEK_CUR);
                 sceKernelSignalSema(sema, 1);
                 return res;
             }
