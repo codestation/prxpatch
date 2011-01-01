@@ -46,7 +46,7 @@ SceUID transfd = -1;
 // semaphore to avoid reading on a closed file
 SceUID sema = -1;
 
-// the PSP can send 2 suspend events, buy we need to attend only one
+// the PSP can send 2 suspend events, but we need to check only one
 int suspending = 0;
 
 SceKernelCallbackFunction power_cb;
