@@ -21,37 +21,58 @@
 #include <pspthreadman.h>
 #include <string.h>
 #include "data_install.h"
+#include "logger.h"
 
+#define MAX_INSTALL_FILES 6
 #define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
+#define BMP_SIZE 391734
 
-//TODO: move these tables to patchfile and make it dynamic
+int install_enabled = 0;
 
-// data install files: 0011, 0031, 0032, 0033
-unsigned int install_id[] = {0x31313030, 0x31333030, 0x32333030, 0x33333030};
+unsigned int install_count = 0;
+
+unsigned int install_id[MAX_INSTALL_FILES];
 
 //position where it starts a new offset group
-const unsigned int install_pos[] = {0, 1, 6, 16};
+unsigned int install_pos[MAX_INSTALL_FILES];
 
 // data install fd's
-SceUID install_fd[4] = {-1, -1, -1, -1};
+SceUID install_fd[MAX_INSTALL_FILES];
 
-// data install offsets in files, for now it needs
-// 0017 2813 2814 2816 2817 2818
-// 3973 3974 3975 3976 3977 3978 3979 3980 3984 3985 3986 3987
-// in the translation datafile to work, this gonna go away when
-// i'll move it to the .BIN file
-const SceSize install_offset[] = {0x00204000, 0x00280800, 0x00284800, 0x002AE000,
-                            0x002D1800, 0x00331000, 0x0033F800, 0x00341800,
-                            0x00346000, 0x0034B800, 0x00351000, 0x00356800,
-                            0x0035C000, 0x00361000, 0x00367000, 0x00369000,
-                            0x00000000, 0x00001000};
+SceSize install_offset[32];
+
+void fill_install_tables(SceUID fd) {
+    if(fd < 0)
+        return;
+    SceSize calculated_length = data_start;
+    unsigned int i;
+    for(i = 0; i < patch_count;i++) {
+        calculated_length += patch_size[i];
+    }
+    SceSize actual_length = sceIoLseek32(fd, 0, PSP_SEEK_END);
+    if((calculated_length + BMP_SIZE) < actual_length) {
+        install_enabled = 1;
+        sceIoLseek32(fd, calculated_length, PSP_SEEK_SET);
+        sceIoRead(fd, &install_count, 4);
+        for(i = 0; i < install_count; i++) {
+            sceIoRead(fd, &install_id[i], 4);
+            sceIoRead(fd, &install_pos[i], 4);
+            install_fd[i] = -1;
+        }
+        for(i = 0; i < patch_count; i++) {
+            sceIoRead(fd, &install_offset[i], 4);
+        }
+    }
+}
 
 void register_install(const char *file, SceUID fd) {
+    if(!install_enabled)
+        return;
     // ms0:\.\PSP\SAVEDATA\ULJM05800DAT\000000XX  | length: 41
     // if(strstr(file,"ULJM05800DAT")) {  //idk why strstr isn't working here :/
     if(strlen(file) == 41) {
         unsigned int i = 0;
-        while(i < sizeof(install_id) / 4) {
+        while(i < install_count) {
             const char *offset = file + strlen(file) - 4;
             if(!memcmp(offset, &install_id[i], 4)) {
                 install_fd[i] = fd;
@@ -63,8 +84,10 @@ void register_install(const char *file, SceUID fd) {
 }
 
 void unregister_install(SceUID fd) {
+    if(!install_enabled)
+        return;
     unsigned int i = 0;
-    while(i < sizeof(install_id) / 4) {
+    while(i < install_count) {
         if(install_fd[i] == fd) {
             install_fd[i] = -1;
             break;
@@ -74,20 +97,22 @@ void unregister_install(SceUID fd) {
 }
 
 int read_install(SceUID fd, void *data, SceSSize size) {
+    if(!install_enabled)
+        return -1;
     unsigned int i = 0;
-    while(i < sizeof(install_fd) / 4) {
+    while(i < install_count) {
         if(install_fd[i] == fd) {
             SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
             SceSize offset = data_start;
             unsigned int j = install_pos[i];
-            unsigned int l = i < ((sizeof(install_pos) / 4) - 1)? install_pos[i+1] : (sizeof(install_offset) / 4);
+            unsigned int l = i < (install_count - 1)? install_pos[i+1] : patch_count;
             while(j < l) {
-                if(pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
+                if(install_offset[j] != 0xFFFFFFFF && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
                     unsigned int k;
                     for(k = 0; k < j; k++)
                         offset += patch_size[k];
                     sceKernelWaitSema(sema, 1, NULL);
-                    transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
+                    SceUID transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
                     sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
                     int res = sceIoRead(transfd, data, size);
                     sceIoClose(transfd);

@@ -22,11 +22,12 @@
 
 extern SceUID sema;
 extern SceSize data_start;
+extern unsigned int patch_count;
 extern unsigned int patch_size[32];
-extern SceUID transfd;
 
 void register_install(const char *file, SceUID fd);
 void unregister_install(SceUID fd);
 int read_install(SceUID fd, void *data, SceSSize size);
+void fill_install_tables(SceUID fd);
 
 #endif /* DATA_INSTALL_H_ */

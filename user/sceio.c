@@ -51,15 +51,15 @@ int suspending = 0;
 
 SceKernelCallbackFunction power_cb;
 
-void fill_tables() {
-    if(transfd < 0)
+void fill_tables(SceUID fd) {
+    if(fd < 0)
         return;
-    sceIoLseek32(transfd, 0, PSP_SEEK_SET);
-    sceIoRead(transfd, &patch_count, 4);
+    sceIoLseek32(fd, 0, PSP_SEEK_SET);
+    sceIoRead(fd, &patch_count, 4);
     unsigned int i;
     for(i = 0; i < patch_count; i++) {
-        sceIoRead(transfd, &patch_offset[i], 4);
-        sceIoRead(transfd, &patch_size[i], 4);
+        sceIoRead(fd, &patch_offset[i], 4);
+        sceIoRead(fd, &patch_size[i], 4);
     }
     data_start = ((patch_count + 1) * 8);
     if(data_start % 16 > 0)
@@ -93,7 +93,8 @@ SceUID open(const char *file, int flags, SceMode mode) {
     if(fd >= 0) {
         if(strcmp(file, DATABIN_PATH) == 0) {
             transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
-            fill_tables();
+            fill_tables(transfd);
+            fill_install_tables(transfd);
             sceIoClose(transfd);
             datafd = fd;
             sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
