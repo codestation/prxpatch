@@ -36,7 +36,7 @@ const unsigned int install_pos[] = {0, 1, 6, 16};
 SceUID install_fd[4] = {-1, -1, -1, -1};
 
 // data install offsets in files, for now it needs
-// 0017 2813 2814 2816 2817 2818 0098
+// 0017 2813 2814 2816 2817 2818
 // 3973 3974 3975 3976 3977 3978 3979 3980 3984 3985 3986 3987
 // in the translation datafile to work, this gonna go away when
 // i'll move it to the .BIN file
