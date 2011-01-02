@@ -35,7 +35,11 @@ const unsigned int install_pos[] = {0, 1, 6, 16};
 // data install fd's
 SceUID install_fd[4] = {-1, -1, -1, -1};
 
-// data install offsets in files
+// data install offsets in files, for now it needs
+// 0017 2813 2814 2816 2817 2818 0098
+// 3973 3974 3975 3976 3977 3978 3979 3980 3984 3985 3986 3987
+// in the translation datafile to work, this gonna go away when
+// i'll move it to the .BIN file
 const SceSize install_offset[] = {0x00204000, 0x00280800, 0x00284800, 0x002AE000,
                             0x002D1800, 0x00331000, 0x0033F800, 0x00341800,
                             0x00346000, 0x0034B800, 0x00351000, 0x00356800,
