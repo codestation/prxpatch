@@ -125,9 +125,7 @@ int read(SceUID fd, void *data, SceSize size) {
             ++i;
         }
     } else {
-        int res = read_install(fd, data, size);
-        if(res >= 0)
-            return res;
+        return read_install(fd, data, size);
     }
     return sceIoRead(fd, data, size);
 }

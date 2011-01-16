@@ -107,7 +107,7 @@ int read_install(SceUID fd, void *data, SceSSize size) {
             unsigned int j = install_pos[i];
             unsigned int l = i < (install_count - 1)? install_pos[i+1] : patch_count;
             while(j < l) {
-                if(install_offset[j] != 0xFFFFFFFF && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
+                if(install_offset[j] != -1 && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
                     unsigned int k;
                     for(k = 0; k < j; k++)
                         offset += patch_size[k];
@@ -125,5 +125,5 @@ int read_install(SceUID fd, void *data, SceSSize size) {
         }
         i++;
     }
-    return -1;
+    return sceIoRead(fd, data, size);
 }
