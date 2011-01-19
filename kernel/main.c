@@ -63,9 +63,9 @@ int module_start_handler(SceModule2 * module) {
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
         sceKernelWaitSemaCB(sema, 0, NULL);
-        draw_image(TRANSLATION_PATH);
-        sceKernelDelayThread(1000000*3); //make the image stay for 3 seconds
-        fadeout_display(32, 31250); // number of steps and delay between them
+        //draw_image(TRANSLATION_PATH);
+        //sceKernelDelayThread(1000000*3); //make the image stay for 3 seconds
+        //fadeout_display(32, 31250); // number of steps and delay between them
         sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
