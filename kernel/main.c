@@ -19,7 +19,6 @@
 
 #include <pspkernel.h>
 #include <string.h>
-//#include "systemctrl_se.h"
 #include "libs.h"
 #include "logger.h"
 #include "bootsplash.h"
@@ -96,14 +95,6 @@ int load_user_module(const char *module, void *argp) {
 }
 
 int thread_start(SceSize args, void *argp) {
-    // basic UMD-only check, requires systemctrl_se.h as header and
-    // libpspsystemctrl_kernel.a from the M33 SDK
-    //
-    //char *iso = sctrlSEGetUmdFile();
-    //if(iso) {
-    //    sceKernelExitDeleteThread(0);
-    //    return 0;
-    //}
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
         sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);
