@@ -19,10 +19,8 @@
 
 #include <pspkernel.h>
 #include <string.h>
-//#include "systemctrl_se.h"
 #include "libs.h"
 #include "logger.h"
-#include "bootsplash.h"
 
 PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 0);
 PSP_HEAP_SIZE_KB(0);
@@ -63,9 +61,6 @@ int module_start_handler(SceModule2 * module) {
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
         sceKernelWaitSemaCB(sema, 0, NULL);
-        draw_image(TRANSLATION_PATH);
-        sceKernelDelayThread(1000000*3); //make the image stay for 3 seconds
-        fadeout_display(32, 31250); // number of steps and delay between them
         sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
@@ -96,14 +91,6 @@ int load_user_module(const char *module, void *argp) {
 }
 
 int thread_start(SceSize args, void *argp) {
-    // basic UMD-only check, requires systemctrl_se.h as header and
-    // libpspsystemctrl_kernel.a from the M33 SDK
-    //
-    //char *iso = sctrlSEGetUmdFile();
-    //if(iso) {
-    //    sceKernelExitDeleteThread(0);
-    //    return 0;
-    //}
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
         sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);

@@ -29,4 +29,4 @@ BMP_image: 391734 bytes -> BMP image used for a bootsplash (480x272) (24bits)
 ------------
 Known issues: the bootsplash dont work with TV-out yet (investigating the issue)
 ------------
-Special thanks to ColdBird for the aemu project
+Special thanks to Coldbird for the aemu project
