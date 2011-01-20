@@ -19,6 +19,7 @@
 
 #include <pspiofilemgr.h>
 #include <stdio.h>
+#include <string.h>
 #include "logger.h"
 
 int logger(const char * string) {

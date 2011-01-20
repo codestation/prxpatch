@@ -27,7 +27,6 @@ PSP_HEAP_SIZE_KB(0);
 
 #define GAME_ID "ULJM05800"
 #define GAME_MODULE "MonsterHunterPortable3rd"
-#define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 
 int running = 0;
 SceUID sema = 0;
