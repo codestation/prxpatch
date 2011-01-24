@@ -1,5 +1,5 @@
 TARGET  = mhp3patch_user
-OBJS    = main.o sceio.o mhp3kernel.o exports.o
+OBJS    = main.o sceio.o mhp3kernel.o exports.o data_install.o
 # logger.o
 LIBS    = 
 CFLAGS = -Os -G0 -Wall

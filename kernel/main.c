@@ -60,7 +60,7 @@ int module_start_handler(SceModule2 * module) {
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
         sceKernelWaitSemaCB(sema, 0, NULL);
-        sceKernelSignalSema(sema, 1);
+        //sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
 }
@@ -99,7 +99,8 @@ int thread_start(SceSize args, void *argp) {
             if(module) {
                 patch_io(module);
                 sceKernelSignalSema(sema, 0);
-                sceKernelWaitSemaCB(sema, 1, NULL);
+                sceKernelDelayThread(10000);
+                //sceKernelWaitSemaCB(sema, 1, NULL);
                 sceKernelDeleteSema(sema);
             }
         }
