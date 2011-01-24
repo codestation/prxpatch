@@ -23,7 +23,7 @@
 #include "data_install.h"
 #include "logger.h"
 
-#define MAX_INSTALL_FILES 6
+#define MAX_INSTALL_FILES 256
 #define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 #define BMP_SIZE 391734
 
@@ -54,6 +54,8 @@ void fill_install_tables(SceUID fd) {
         install_enabled = 1;
         sceIoLseek32(fd, calculated_length, PSP_SEEK_SET);
         sceIoRead(fd, &install_count, 4);
+        if(install_count > MAX_INSTALL_FILES)
+            install_count = MAX_INSTALL_FILES;
         for(i = 0; i < install_count; i++) {
             sceIoRead(fd, &install_id[i], 4);
             sceIoRead(fd, &install_pos[i], 4);

@@ -28,10 +28,11 @@
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
 #define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 #define SUSPEND_FUNCNAME "power"
+#define MAX_PATCHFILES 256
 
 // offset and size tables container
-SceSize patch_offset[32];
-unsigned int patch_size[32];
+SceSize patch_offset[MAX_PATCHFILES];
+unsigned int patch_size[MAX_PATCHFILES];
 
 // number of tables
 unsigned int patch_count;
@@ -56,6 +57,8 @@ void fill_tables(SceUID fd) {
         return;
     sceIoLseek32(fd, 0, PSP_SEEK_SET);
     sceIoRead(fd, &patch_count, 4);
+    if(patch_count > MAX_PATCHFILES)
+        patch_count = MAX_PATCHFILES;
     unsigned int i;
     for(i = 0; i < patch_count; i++) {
         sceIoRead(fd, &patch_offset[i], 4);

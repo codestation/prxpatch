@@ -23,7 +23,7 @@
 extern SceUID sema;
 extern SceSize data_start;
 extern unsigned int patch_count;
-extern unsigned int patch_size[32];
+extern unsigned int patch_size[256];
 
 void register_install(const char *file, SceUID fd);
 void unregister_install(SceUID fd);
