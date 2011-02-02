@@ -22,11 +22,11 @@
 #include <string.h>
 #include <psppower.h>
 #include "sceio.h"
+#include "misc.h"
 #include "logger.h"
 #include "data_install.h"
 
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
-#define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 #define SUSPEND_FUNCNAME "power"
 #define MAX_PATCHFILES 256
 
@@ -95,7 +95,7 @@ SceUID open(const char *file, int flags, SceMode mode) {
     SceUID fd = sceIoOpen(file, flags, mode);
     if(fd >= 0) {
         if(strcmp(file, DATABIN_PATH) == 0) {
-            transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
+            transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
             fill_tables(transfd);
             fill_install_tables(transfd);
             sceIoClose(transfd);
@@ -116,11 +116,11 @@ int read(SceUID fd, void *data, SceSize size) {
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
                 sceKernelWaitSema(sema, 1, NULL);
-                transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
+                transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
                 sceIoClose(transfd);
-                sceIoLseek32(fd, size, PSP_SEEK_CUR);
+                sceIoLseek32(fd, res, PSP_SEEK_CUR);
                 sceKernelSignalSema(sema, 1);
                 return res;
             }

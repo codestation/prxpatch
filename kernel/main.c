@@ -20,6 +20,7 @@
 #include <pspkernel.h>
 #include <string.h>
 #include "libs.h"
+#include "misc.h"
 #include "logger.h"
 
 PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 0);
@@ -30,15 +31,18 @@ PSP_HEAP_SIZE_KB(0);
 
 int running = 0;
 SceUID sema = 0;
+int model = -1;
 STMOD_HANDLER previous = NULL;
 
 char * sceKernelGetUMDData(void);
+int sceKernelGetModel();
 
 void *functions[4] = {0, 0, 0, 0};
 
-void registerfunctions(void * userfunctions[4]) {
+int registerfunctions(void * userfunctions[4]) {
     memcpy(functions, userfunctions, sizeof(functions));
     running = 1;
+    return model;
 }
 
 void patch_io(SceModule2 *module) {
@@ -69,7 +73,10 @@ int load_user_module(const char *module, void *argp) {
     SceUID user = -1;
     {
         char usermodule[256];
-        strcpy(usermodule, "ms0:/seplugins/");
+        if(model == MODEL_PSPGO)
+            strcpy(usermodule, PLUGIN_PATH_GO);
+        else
+            strcpy(usermodule, PLUGIN_PATH_MS);
         if(argp) {
             strcpy(usermodule, (char*)argp);
             strrchr(usermodule, '/')[1] = 0;
@@ -90,6 +97,7 @@ int load_user_module(const char *module, void *argp) {
 }
 
 int thread_start(SceSize args, void *argp) {
+    model = sceKernelGetModel();
     if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
         sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);

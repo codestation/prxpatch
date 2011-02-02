@@ -22,6 +22,9 @@
 #include "sceio.h"
 #include "logger.h"
 
+// PSP model
+int model;
+
 PSP_MODULE_INFO("mhp3patch_user", PSP_MODULE_USER, 1, 0);
 PSP_HEAP_SIZE_KB(0);
 
@@ -31,7 +34,7 @@ int module_start(SceSize args, void * argp) {
     functions[1] = read;
     functions[2] = close;
     functions[3] = callback;
-    registerfunctions(functions);
+    model = registerfunctions(functions);
     return 0;
 }
 

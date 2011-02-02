@@ -21,6 +21,7 @@
 #include <pspthreadman.h>
 #include <string.h>
 #include "data_install.h"
+#include "misc.h"
 #include "logger.h"
 
 #define MAX_INSTALL_FILES 256
@@ -107,18 +108,18 @@ int read_install(SceUID fd, void *data, SceSSize size) {
             SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
             SceSize offset = data_start;
             unsigned int j = install_pos[i];
-            unsigned int l = i < (install_count - 1)? install_pos[i+1] : patch_count;
+            unsigned int l = i < (install_count - 1) ? install_pos[i+1] : patch_count;
             while(j < l) {
                 if(install_offset[j] != -1 && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
                     unsigned int k;
                     for(k = 0; k < j; k++)
                         offset += patch_size[k];
                     sceKernelWaitSema(sema, 1, NULL);
-                    SceUID transfd = sceIoOpen(TRANSLATION_PATH, PSP_O_RDONLY, 0777);
+                    SceUID transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
                     sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
                     int res = sceIoRead(transfd, data, size);
                     sceIoClose(transfd);
-                    sceIoLseek32(fd, size, PSP_SEEK_CUR);
+                    sceIoLseek32(fd, res, PSP_SEEK_CUR);
                     sceKernelSignalSema(sema, 1);
                     return res;
                 }
