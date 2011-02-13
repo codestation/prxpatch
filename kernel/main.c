@@ -73,13 +73,11 @@ int load_user_module(const char *module, void *argp) {
     SceUID user = -1;
     {
         char usermodule[256];
-        if(model == MODEL_PSPGO)
-            strcpy(usermodule, PLUGIN_PATH_GO);
-        else
-            strcpy(usermodule, PLUGIN_PATH_MS);
         if(argp) {
             strcpy(usermodule, (char*)argp);
             strrchr(usermodule, '/')[1] = 0;
+        } else {
+            strcpy(usermodule, module);
         }
         strcpy(usermodule + strlen(usermodule), module);
         struct SceKernelLMOption opt; memset(&opt, 0, sizeof(opt));
