@@ -25,7 +25,6 @@
 #include "logger.h"
 
 #define MAX_INSTALL_FILES 256
-#define TRANSLATION_PATH "ms0:/MHP3RD_DATA.BIN"
 #define BMP_SIZE 391734
 
 int install_enabled = 0;
@@ -100,33 +99,38 @@ void unregister_install(SceUID fd) {
 }
 
 int read_install(SceUID fd, void *data, SceSSize size) {
-    if(!install_enabled)
-        return -1;
-    unsigned int i = 0;
-    while(i < install_count) {
-        if(install_fd[i] == fd) {
-            SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
-            SceSize offset = data_start;
-            unsigned int j = install_pos[i];
-            unsigned int l = i < (install_count - 1) ? install_pos[i+1] : patch_count;
-            while(j < l) {
-                if(install_offset[j] != -1 && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
-                    unsigned int k;
-                    for(k = 0; k < j; k++)
-                        offset += patch_size[k];
-                    sceKernelWaitSema(sema, 1, NULL);
-                    SceUID transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
-                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
-                    int res = sceIoRead(transfd, data, size);
-                    sceIoClose(transfd);
-                    sceIoLseek32(fd, res, PSP_SEEK_CUR);
-                    sceKernelSignalSema(sema, 1);
-                    return res;
-                }
-                j++;
-            }
-        }
-        i++;
-    }
+	int seeked = 0;
+	SceSize pos = 0;
+    if(install_enabled) {
+	    unsigned int i = 0;
+    	while(i < install_count) {
+        	if(install_fd[i] == fd) {
+				if(!seeked) {
+	            	pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
+					seeked = 1;
+				}
+    	        SceSize offset = data_start;
+        	    unsigned int j = install_pos[i];
+            	unsigned int l = i < (install_count - 1) ? install_pos[i+1] : patch_count;
+	            while(j < l) {
+    	            if(install_offset[j] != -1 && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
+        	            unsigned int k;
+            	        for(k = 0; k < j; k++)
+	                        offset += patch_size[k];
+    	                //log("Replacing %08X, slot %i with slot %i, real offset: %08X, trans offset: %08X (base %08X), size: %i\n", install_id[i], i, j, pos, offset + (pos - install_offset[j]), offset, size);
+        	            sceKernelWaitSema(sema, 1, NULL);
+        	            reopen_translation();
+	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
+    	                int res = sceIoRead(transfd, data, size);
+            	        sceIoLseek32(fd, res, PSP_SEEK_CUR);
+	                    sceKernelSignalSema(sema, 1);
+    	                return res;
+        	        }
+            	    j++;
+	            }
+    	    }
+        	i++;
+	    }
+	}
     return sceIoRead(fd, data, size);
 }

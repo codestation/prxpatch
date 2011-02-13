@@ -17,5 +17,9 @@
 #define TRANSLATION_PATH_GO "ef0:/MHP3RD_DATA.BIN"
 
 extern int model;
+extern int reopen;
+extern SceUID transfd;
+
+void reopen_translation();
 
 #endif /* MISC_H_ */

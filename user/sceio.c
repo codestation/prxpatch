@@ -40,15 +40,17 @@ unsigned int patch_count;
 // starting offset of the data
 SceSize data_start = 0;
 
-// file descripttors of the data.bin and translation data
+// file descriptors of the data.bin and translation data
 SceUID datafd = -1;
-SceUID transfd = -1;
 
 // semaphore to avoid reading on a closed file
 SceUID sema = -1;
 
 // the PSP can send 2 suspend events, but we need to check only one
 int suspending = 0;
+
+// the translation data needs to be (re)opened
+int repoen = 1;
 
 SceKernelCallbackFunction power_cb;
 
@@ -78,6 +80,7 @@ int power_callback(int unknown, int pwrflags, void *common) {
     }
     if(pwrflags & PSP_POWER_CB_RESUME_COMPLETE) {
         suspending = 0;
+        reopen = 1;
         sceKernelSignalSema(sema, 1);
     }
     return power_cb(unknown, pwrflags, common);
@@ -95,10 +98,9 @@ SceUID open(const char *file, int flags, SceMode mode) {
     SceUID fd = sceIoOpen(file, flags, mode);
     if(fd >= 0) {
         if(strcmp(file, DATABIN_PATH) == 0) {
-            transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
+            reopen_translation();
             fill_tables(transfd);
             fill_install_tables(transfd);
-            sceIoClose(transfd);
             datafd = fd;
             sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
         } else {
@@ -116,10 +118,9 @@ int read(SceUID fd, void *data, SceSize size) {
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
                 sceKernelWaitSema(sema, 1, NULL);
-                transfd = sceIoOpen((model == MODEL_PSPGO) ? TRANSLATION_PATH_GO : TRANSLATION_PATH_MS, PSP_O_RDONLY, 0777);
+                reopen_translation();
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
-                sceIoClose(transfd);
                 sceIoLseek32(fd, res, PSP_SEEK_CUR);
                 sceKernelSignalSema(sema, 1);
                 return res;
