@@ -45,7 +45,7 @@ SceSize data_start = 0;
 SceUID datafd = -1;
 
 // semaphore to avoid reading on a closed file
-SceUID sema = -1;
+//SceUID sema = -1;
 
 // the PSP can send 2 suspend events, but we need to check only one
 int suspending = 0;
@@ -76,13 +76,13 @@ int power_callback(int unknown, int pwrflags, void *common) {
     if(pwrflags & PSP_POWER_CB_SUSPENDING || pwrflags & PSP_POWER_CB_POWER_SWITCH) {
         if(!suspending) {
             suspending = 1;
-            sceKernelWaitSema(sema, 1, NULL);
+            //sceKernelWaitSema(sema, 1, NULL);
         }
     }
     if(pwrflags & PSP_POWER_CB_RESUME_COMPLETE) {
         suspending = 0;
         reopen = 1;
-        sceKernelSignalSema(sema, 1);
+        //sceKernelSignalSema(sema, 1);
     }
     return power_cb(unknown, pwrflags, common);
 }
@@ -103,7 +103,7 @@ SceUID open(const char *file, int flags, SceMode mode) {
             fill_tables(transfd);
             fill_install_tables(transfd);
             datafd = fd;
-            sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
+            //sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
         } else {
             register_install(file, fd);
         }
@@ -118,12 +118,12 @@ int read(SceUID fd, void *data, SceSize size) {
         SceSize offset = data_start;
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
-                sceKernelWaitSema(sema, 1, NULL);
+                //sceKernelWaitSema(sema, 1, NULL);
                 reopen_translation();
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
                 sceIoLseek32(fd, res, PSP_SEEK_CUR);
-                sceKernelSignalSema(sema, 1);
+                //sceKernelSignalSema(sema, 1);
                 return res;
             }
             offset += patch_size[i];
@@ -138,7 +138,7 @@ int read(SceUID fd, void *data, SceSize size) {
 int close(SceUID fd) {
     if(fd == datafd) {
 		datafd = -1;
-		sceKernelDeleteSema(sema);
+		//sceKernelDeleteSema(sema);
 	} else {
 	    unregister_install(fd);
 	}

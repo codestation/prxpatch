@@ -118,12 +118,12 @@ int read_install(SceUID fd, void *data, SceSSize size) {
             	        for(k = 0; k < j; k++)
 	                        offset += patch_size[k];
     	                //log("Replacing %08X, slot %i with slot %i, real offset: %08X, trans offset: %08X (base %08X), size: %i\n", install_id[i], i, j, pos, offset + (pos - install_offset[j]), offset, size);
-        	            sceKernelWaitSema(sema, 1, NULL);
+        	            //sceKernelWaitSema(sema, 1, NULL);
         	            reopen_translation();
 	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
     	                int res = sceIoRead(transfd, data, size);
             	        sceIoLseek32(fd, res, PSP_SEEK_CUR);
-	                    sceKernelSignalSema(sema, 1);
+	                    //sceKernelSignalSema(sema, 1);
     	                return res;
         	        }
             	    j++;

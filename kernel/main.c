@@ -1,7 +1,7 @@
 /*
- *  MHP3patch kernel module
+ *  PJD2Patch kernel module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,132 +23,54 @@
 #include "misc.h"
 #include "logger.h"
 
-PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 0);
+PSP_MODULE_INFO("pjd2patch", PSP_MODULE_KERNEL, 1, 0);
 PSP_HEAP_SIZE_KB(0);
 
-#define GAME_ID "ULJM05800"
-#define GAME_MODULE "MonsterHunterPortable3rd"
+#define GAME_ID "ULJM05681"
+#define GAME_MODULE "xxxxxxxxxx"
 
-int running = 0;
 SceUID sema = 0;
-int model = -1;
 STMOD_HANDLER previous = NULL;
 
 char * sceKernelGetUMDData(void);
-int sceKernelGetModel();
 
-void *functions[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-
-int registerfunctions(void * userfunctions[8]) {
-    memcpy(functions, userfunctions, sizeof(functions));
-    running = 1;
-    return model;
+void patch_eboot(SceModule2 *module)  {
 }
-
-void patch_io(SceModule2 *module) {
-    const char * base = "IoFileMgrForUser";
-    // sceIoOpen
-    hook_import_bynid(module, base, 0x109F50BC, functions[0], 0);
-    // sceIoRead
-    hook_import_bynid(module, base, 0x6A638D83, functions[1], 0);
-    // sceIoClose
-    hook_import_bynid(module, base, 0x810C4BC3, functions[2], 0);
-    base = "ThreadManForUser";
-    // sceKernelCreateCallback
-    hook_import_bynid(module, base, 0xE81CAF8F, functions[3], 0);
-}
-
-void patch_dialog(SceModule2 *module) {
-    const char *base = "sceUtility";
-    // sceUtilityNetconfInitStart
-    hook_import_bynid(module, base, 0x4DB1E739, functions[4], 0);
-    // sceUtilityOskInitStart
-    hook_import_bynid(module, base, 0xF6269B82, functions[5], 0);
-    // sceUtilityMsgDialogInitStart
-    hook_import_bynid(module, base, 0x2AD8E239, functions[6], 0);
-    // sceUtilitySetSystemParamInt
-    hook_import_bynid(module, base, 0x45C18506, functions[7], 0);
-}
-/*
-int change_language(int lang) {
-    int language;
-    int buttonSwap;
-
-    if (sceUtilityGetSystemParamInt(PSP_SYSTEMPARAM_ID_INT_LANGUAGE, &language) < 0)
-        language = PSP_SYSTEMPARAM_LANGUAGE_SPANISH;
-    else
-        language = lang;
-    if (sceUtilityGetSystemParamInt(PSP_SYSTEMPARAM_ID_INT_UNKNOWN, &buttonSwap) < 0)
-        buttonSwap = 1; // X = Enter
-    return sceImposeSetLanguageMode(language, buttonSwap);
-}*/
 
 int module_start_handler(SceModule2 * module) {
-    //if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 &&
-    if(        strcmp(module->modname, GAME_MODULE) == 0 &&
+    if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 &&
+            strcmp(module->modname, GAME_MODULE) == 0 &&
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
         sceKernelWaitSemaCB(sema, 0, NULL);
-        //sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
 }
 
-int load_user_module(const char *module, void *argp) {
-    SceUID user = -1;
-    {
-        char usermodule[256];
-        if(argp) {
-            strcpy(usermodule, (char*)argp);
-            strrchr(usermodule, '/')[1] = 0;
-        } else {
-            strcpy(usermodule, module);
-        }
-        strcpy(usermodule + strlen(usermodule), module);
-        struct SceKernelLMOption opt; memset(&opt, 0, sizeof(opt));
-        opt.size = sizeof(opt); opt.position = 1;
-        user = sceKernelLoadModule(usermodule, 0, &opt);
-    }
-    int status = 0;
-    int start = sceKernelStartModule(user, 0, NULL, &status, NULL);
-    if(start >= 0) {
-        while(!running) {
-            sceKernelDelayThread(10000);
-        }
-    }
-    return running;
-}
-
 int thread_start(SceSize args, void *argp) {
-    model = sceKernelGetModel();
-    //if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
-        sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
+    if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
+        sema = sceKernelCreateSema("pjd2patch_wake", 0, 0, 1, NULL);
         previous = sctrlHENSetStartModuleHandler(module_start_handler);
         sceKernelWaitSemaCB(sema, 1, NULL);
-        if(load_user_module("mhp3patch_user.prx", argp)) {
-            SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
-            if(module) {
-                patch_io(module);
-                patch_dialog(module);
-                sceKernelSignalSema(sema, 0);
-                sceKernelDelayThread(10000);
-                //sceKernelWaitSemaCB(sema, 1, NULL);
-                sceKernelDeleteSema(sema);
-            }
+        SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
+        if(module) {
+            patch_eboot(module);
+            sceKernelSignalSema(sema, 0);
+            sceKernelDelayThread(10000);
+            sceKernelDeleteSema(sema);
         }
-    //}
+    }
     sceKernelExitDeleteThread(0);
     return 0;
 }
 
 int module_start(SceSize argc, void *argp) {
-	SceUID thid = sceKernelCreateThread("mhp3patch_main", thread_start, 0x22, 0x2000, 0, NULL);
+	SceUID thid = sceKernelCreateThread("pjd2patch_main", thread_start, 0x22, 0x2000, 0, NULL);
 	if(thid >= 0)
 		sceKernelStartThread(thid, argc, argp);
 	return 0;
 }
 
 int module_stop(SceSize args, void *argp) {
-	running = 0;
 	return 0;
 }
