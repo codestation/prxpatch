@@ -21,6 +21,6 @@
 #define IMPORTS_H_
 
 //register with kernel patcher and returns psp version
-int registerfunctions(void * userfunctions[4]);
+int registerfunctions(void * userfunctions[8]);
 
 #endif /* IMPORTS_H_ */

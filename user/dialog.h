@@ -1,7 +1,7 @@
 /*
  *  MHP3patch user module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,32 +17,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <pspsdk.h>
-#include "imports.h"
-#include "sceio.h"
-#include "dialog.h"
-#include "logger.h"
+#ifndef DIALOG_H_
+#define DIALOG_H_
 
-// PSP model
-int model;
+#include <psputility.h>
 
-PSP_MODULE_INFO("mhp3patch_user", PSP_MODULE_USER, 1, 0);
-PSP_HEAP_SIZE_KB(0);
+int netconf(pspUtilityNetconfData *data);
+int osk(SceUtilityOskParams* params);
+int msgdialog(pspUtilityMsgDialogParams *params);
+int setsystemparam(int id, int value);
+int setdeflanguage();
 
-int module_start(SceSize args, void * argp) {
-    void *functions[8];
-    functions[0] = open;
-    functions[1] = read;
-    functions[2] = close;
-    functions[3] = callback;
-    functions[4] = netconf;
-    functions[5] = osk;
-    functions[6] = msgdialog;
-    functions[7] = setsystemparam;
-    model = registerfunctions(functions);
-    return 0;
-}
-
-int module_stop(SceSize args, void * argp) {
-    return 0;
-}
+#endif /* DIALOG_H_ */

@@ -23,6 +23,7 @@
 #include <psppower.h>
 #include "sceio.h"
 #include "misc.h"
+#include "dialog.h"
 #include "logger.h"
 #include "data_install.h"
 
