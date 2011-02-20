@@ -34,7 +34,6 @@ SceUID sema = 0;
 int model = -1;
 STMOD_HANDLER previous = NULL;
 
-char * sceKernelGetUMDData(void);
 int sceKernelGetModel();
 
 void *functions[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -69,27 +68,12 @@ void patch_dialog(SceModule2 *module) {
     // sceUtilitySetSystemParamInt
     hook_import_bynid(module, base, 0x45C18506, functions[7], 0);
 }
-/*
-int change_language(int lang) {
-    int language;
-    int buttonSwap;
-
-    if (sceUtilityGetSystemParamInt(PSP_SYSTEMPARAM_ID_INT_LANGUAGE, &language) < 0)
-        language = PSP_SYSTEMPARAM_LANGUAGE_SPANISH;
-    else
-        language = lang;
-    if (sceUtilityGetSystemParamInt(PSP_SYSTEMPARAM_ID_INT_UNKNOWN, &buttonSwap) < 0)
-        buttonSwap = 1; // X = Enter
-    return sceImposeSetLanguageMode(language, buttonSwap);
-}*/
 
 int module_start_handler(SceModule2 * module) {
-    //if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0 &&
-    if(        strcmp(module->modname, GAME_MODULE) == 0 &&
+    if(strcmp(module->modname, GAME_MODULE) == 0 &&
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
         sceKernelWaitSemaCB(sema, 0, NULL);
-        //sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
 }
@@ -121,22 +105,19 @@ int load_user_module(const char *module, void *argp) {
 
 int thread_start(SceSize args, void *argp) {
     model = sceKernelGetModel();
-    //if(strcmp(sceKernelGetUMDData() + 0x44, GAME_ID) == 0) {
-        sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
-        previous = sctrlHENSetStartModuleHandler(module_start_handler);
-        sceKernelWaitSemaCB(sema, 1, NULL);
-        if(load_user_module("mhp3patch_user.prx", argp)) {
-            SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
-            if(module) {
-                patch_io(module);
-                patch_dialog(module);
-                sceKernelSignalSema(sema, 0);
-                sceKernelDelayThread(10000);
-                //sceKernelWaitSemaCB(sema, 1, NULL);
-                sceKernelDeleteSema(sema);
-            }
+    sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
+    previous = sctrlHENSetStartModuleHandler(module_start_handler);
+    sceKernelWaitSemaCB(sema, 1, NULL);
+    if(load_user_module("mhp3patch_user.prx", argp)) {
+        SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
+        if(module) {
+            patch_io(module);
+            patch_dialog(module);
+            sceKernelSignalSema(sema, 0);
+            sceKernelDelayThread(10000);
+            sceKernelDeleteSema(sema);
         }
-    //}
+    }
     sceKernelExitDeleteThread(0);
     return 0;
 }

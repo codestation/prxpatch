@@ -1,5 +1,5 @@
 TARGET = mhp3patch
-OBJS =  main.o libs.o imports.o exports.o
+OBJS =  main.o libs.o exports.o
 # logger.o
 LIBS = -lpspsystemctrl_kernel
 CFLAGS = -Os -G0 -Wall
