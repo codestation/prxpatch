@@ -122,7 +122,10 @@ int read_install(SceUID fd, void *data, SceSSize size) {
         	            reopen_translation();
 	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
     	                int res = sceIoRead(transfd, data, size);
-            	        sceIoLseek32(fd, res, PSP_SEEK_CUR);
+    	                if(res != size) {
+    	                    logger("Failed to read data install\n");
+    	                }
+            	        sceIoLseek32(fd, size, PSP_SEEK_CUR);
 	                    sceKernelSignalSema(sema, 1);
     	                return res;
         	        }

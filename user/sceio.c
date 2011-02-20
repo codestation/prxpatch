@@ -122,7 +122,10 @@ int read(SceUID fd, void *data, SceSize size) {
                 reopen_translation();
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 int res = sceIoRead(transfd, data, size);
-                sceIoLseek32(fd, res, PSP_SEEK_CUR);
+                if(res != size) {
+                    logger("failed to read translation data\n");
+                }
+                sceIoLseek32(fd, size, PSP_SEEK_CUR);
                 sceKernelSignalSema(sema, 1);
                 return res;
             }
