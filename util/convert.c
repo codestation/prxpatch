@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
 	    fwrite(buffer, count, 1, fdout);
 	    size -= count;
 	}
-	strcpy(buffer,"pjd2translation.bin");
+	strcpy(buffer,"pjd2_translation.bin");
 	fclose(fdout);
 	fclose(fdstr);
 	remove(fileout);

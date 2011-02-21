@@ -4,7 +4,7 @@ Usage:
 
 * Copy pjd2patch.prx to the ms0:/seplugins directory of the PSP and enable
   it in game.txt (the plugins can be in a separate directory inside seplugins,
-  e.g. ms0:/seplugins/pjd2 to avoid cluttering the plugins directory).
+  e.g. ms0:/seplugins/pjd2patch to avoid cluttering the plugins directory).
 
 * Copy the patchfile to the root of the ms, (e.g.: ms0:/)
 

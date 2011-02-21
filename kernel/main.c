@@ -29,16 +29,11 @@ PSP_HEAP_SIZE_KB(0);
 
 #define GAME_ID "ULJM05681"
 #define GAME_MODULE "PdvApp"
-#define TRANS_FILE_MS "pjd2_translation.bin"
-#define TRANS_FILE_GO "pjd2_translation.bin"
-#define MODEL_PSPGO 4
-
-int sceKernelGetModel();
+#define TRANS_FILE "pjd2_translation.bin"
 
 SceUID sema = 0;
 SceUID sema_start = 0;
 STMOD_HANDLER previous = NULL;
-int model = -1;
 
 SceUID block_id = -1;
 void *block_addr = NULL;
@@ -48,8 +43,12 @@ struct addr_data {
     int offset;
 }__attribute__((packed));
 
-void patch_eboot(SceModule2 *module)  {
-    SceUID fd = sceIoOpen(model == MODEL_PSPGO ? TRANS_FILE_GO : TRANS_FILE_MS, PSP_O_RDONLY, 0777);
+void patch_eboot(SceModule2 *module, const char *argp)  {
+    char filepath[64];
+    strcpy(filepath, (char*)argp);
+    strrchr(filepath, '/')[1] = 0;
+    strcat(filepath, TRANS_FILE);
+    SceUID fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
     if(fd < 0) {
         return;
     }
@@ -85,14 +84,12 @@ int module_start_handler(SceModule2 * module) {
 }
 
 int thread_start(SceSize args, void *argp) {
-    model = sceKernelGetModel();
     sema = sceKernelCreateSema("pjd2patch_wake", 0, 0, 1, NULL);
-    sema_start = sceKernelCreateSema("pjd2patch_start", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
     sceKernelWaitSema(sema, 1, NULL);
     SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
     if(module) {
-        patch_eboot(module);
+        patch_eboot(module, argp);
         sceKernelSignalSema(sema_start, 1);
         sceKernelDelayThread(10000);
         sceKernelDeleteSema(sema);
