@@ -33,6 +33,7 @@ PSP_HEAP_SIZE_KB(0);
 
 SceUID sema = 0;
 SceUID sema_start = 0;
+
 STMOD_HANDLER previous = NULL;
 
 SceUID block_id = -1;
@@ -85,6 +86,7 @@ int module_start_handler(SceModule2 * module) {
 
 int thread_start(SceSize args, void *argp) {
     sema = sceKernelCreateSema("pjd2patch_wake", 0, 0, 1, NULL);
+    sema_start = sceKernelCreateSema("pjd2patch_start", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
     sceKernelWaitSema(sema, 1, NULL);
     SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
@@ -95,7 +97,7 @@ int thread_start(SceSize args, void *argp) {
         sceKernelDeleteSema(sema);
         sceKernelDeleteSema(sema_start);
     }
-    sceKernelExitDeleteThread(0);
+    //sceKernelExitDeleteThread(0);
     return 0;
 }
 
