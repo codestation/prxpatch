@@ -38,42 +38,39 @@ int sceKernelGetModel();
 
 void *functions[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
+unsigned int nids[] = {
+        0x109F50BC, // sceIoOpen
+        0x6A638D83, // sceIoRead
+        0x810C4BC3, // sceIoClose
+        0xE81CAF8F, // sceKernelCreateCallback
+        0x4DB1E739, // sceUtilityNetconfInitStart
+        0xF6269B82, // sceUtilityOskInitStart
+        0x2AD8E239, // sceUtilityMsgDialogInitStart
+        0x45C18506  // sceUtilitySetSystemParamInt
+};
+
 int registerfunctions(void * userfunctions[8]) {
     memcpy(functions, userfunctions, sizeof(functions));
     running = 1;
     return model;
 }
 
-void patch_io(SceModule2 *module) {
+void patch_imports(SceModule2 *module) {
     const char * base = "IoFileMgrForUser";
-    // sceIoOpen
-    hook_import_bynid(module, base, 0x109F50BC, functions[0], 0);
-    // sceIoRead
-    hook_import_bynid(module, base, 0x6A638D83, functions[1], 0);
-    // sceIoClose
-    hook_import_bynid(module, base, 0x810C4BC3, functions[2], 0);
-    base = "ThreadManForUser";
-    // sceKernelCreateCallback
-    hook_import_bynid(module, base, 0xE81CAF8F, functions[3], 0);
-}
-
-void patch_dialog(SceModule2 *module) {
-    const char *base = "sceUtility";
-    // sceUtilityNetconfInitStart
-    hook_import_bynid(module, base, 0x4DB1E739, functions[4], 0);
-    // sceUtilityOskInitStart
-    hook_import_bynid(module, base, 0xF6269B82, functions[5], 0);
-    // sceUtilityMsgDialogInitStart
-    hook_import_bynid(module, base, 0x2AD8E239, functions[6], 0);
-    // sceUtilitySetSystemParamInt
-    hook_import_bynid(module, base, 0x45C18506, functions[7], 0);
+    for(int i = 0;i < 8; i++) {
+        if(i == 3)
+            base = "ThreadManForUser";
+        else if (i == 4) {
+            base = "sceUtility";
+        }
+        hook_import_bynid(module, base, nids[i], functions[i], 0);
+    }
 }
 
 int module_start_handler(SceModule2 * module) {
     if(strcmp(module->modname, GAME_MODULE) == 0 &&
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
-        sceKernelWaitSemaCB(sema, 0, NULL);
     }
     return previous ? previous(module) : 0;
 }
@@ -107,16 +104,13 @@ int thread_start(SceSize args, void *argp) {
     model = sceKernelGetModel();
     sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
-    sceKernelWaitSemaCB(sema, 1, NULL);
     if(load_user_module("mhp3patch_user.prx", argp)) {
+        sceKernelWaitSema(sema, 1, NULL);
         SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
         if(module) {
-            patch_io(module);
-            patch_dialog(module);
-            sceKernelSignalSema(sema, 0);
-            sceKernelDelayThread(10000);
-            sceKernelDeleteSema(sema);
+            patch_imports(module);
         }
+        sceKernelDeleteSema(sema);
     }
     sceKernelExitDeleteThread(0);
     return 0;

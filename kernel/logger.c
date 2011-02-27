@@ -22,6 +22,8 @@
 #include <string.h>
 #include "logger.h"
 
+char buffer_log[256];
+
 int logger(const char * string) {
     return appendLog(LOGFILE, (void*)string, strlen(string));
 }

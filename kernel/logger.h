@@ -22,6 +22,13 @@
 
 #define LOGFILE "ms0:/mhp3patch_kernel.log"
 
+extern char buffer_log[256];
+
+int sprintf(char *str, const char *format, ...);
+
+#define log(format, ...) sprintf(buffer_log, format, ## __VA_ARGS__); \
+                          logger(buffer_log)
+
 int logger(const char * string);
 int appendLog(const char * path, void * buffer, int buflen);
 

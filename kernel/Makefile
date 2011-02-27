@@ -2,7 +2,7 @@ TARGET = mhp3patch
 OBJS =  main.o libs.o exports.o
 # logger.o
 LIBS = -lpspsystemctrl_kernel
-CFLAGS = -Os -G0 -Wall
+CFLAGS = -Os -G0 -Wall -std=c99
 CXXFLAGS = $(CFLAGS)
 ASFLAGS = $(CFLAGS)
 LDFLAGS = -L.
