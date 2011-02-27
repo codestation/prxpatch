@@ -59,6 +59,10 @@ int main(int argc, char **argv) {
 		char *str = buffer + 11;
 		int len = strlen(str);
 		str[len-1] = 0;
+		if(buffer[0] == '!') {
+		    buffer[0] = '0';
+		    buffer[2] = 'F';
+		}
 		int addr = strtol(buffer, NULL, 16);
 		fwrite(&addr, 4, 1, fdout);
 		fwrite(&offset, 4 ,1, fdout);
