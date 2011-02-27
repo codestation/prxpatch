@@ -68,7 +68,33 @@ void patch_eboot(SceModule2 *module, const char *argp)  {
     for(int i = 0; i < count; i++) {
         struct addr_data data;
         sceIoRead(fd, &data, sizeof(data));
-        *data.addr = block_addr + data.offset;
+        void *final_addr = block_addr + data.offset;
+        if((int)data.addr & 0xF0000000) {
+            data.addr = (void **)(((int)data.addr) & ~0xF0000000);
+            data.addr = (void **)(((int)data.addr) | 0x40000000);
+            unsigned short *code_addr = (unsigned short *)data.addr;
+            unsigned short addr1 = (unsigned int)final_addr & 0xFFFF;
+            unsigned short addr2 = ((((unsigned int)final_addr) >> 16) & 0xFFFF);
+            if(addr1 & 0x8000) {
+                addr2++;
+            }
+            int j = 0;
+            while(j < 32) { //maximum backtrace to look for a lui instruction
+                if((*(code_addr - 3 - (j*2)) & 0x3C00) == 0x3C00) { // lui
+                    *code_addr = addr1;
+                    code_addr -= (4 + (j*2));
+                    *code_addr = addr2;
+                    break;
+                } else {
+                    j++;
+                }
+            }
+            if(j >= 32)
+                log("Backtrace failed, cannot find matching lui for %08X\n", (unsigned int)data.addr);
+        } else {
+            data.addr = (void **)(((int)data.addr) | 0x40000000);
+            *data.addr = final_addr;
+        }
     }
     sceIoLseek32(fd, index_size, PSP_SEEK_SET);
     sceIoRead(fd, block_addr, table_size);

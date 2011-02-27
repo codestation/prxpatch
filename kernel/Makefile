@@ -1,5 +1,5 @@
 TARGET = pjd2patch
-OBJS =  main.o exports.o
+OBJS =  main.o exports.o logger.o
 LIBS = -lpspsystemctrl_kernel
 CFLAGS = -Os -G0 -Wall -std=c99
 CXXFLAGS = $(CFLAGS)
