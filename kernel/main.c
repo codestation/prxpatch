@@ -57,9 +57,6 @@ void patch_imports(SceModule *module) {
     for(int i = 0;i < (sizeof(nids) / 4); i++) {
         if(i == 4)
             base = "ThreadManForUser";
-        else if (i == 5) {
-            base = "sceUtility";
-        }
         hook_import_bynid(module, base, nids[i], functions[i], 1);
     }
 }
