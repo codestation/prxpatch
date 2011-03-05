@@ -1,7 +1,7 @@
 /*
- *  MHP3patch user module
+ *  MHP3patch kernel module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
