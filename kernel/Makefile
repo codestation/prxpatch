@@ -1,7 +1,7 @@
 TARGET = mhp3patch
 OBJS =  main.o libs.o exports.o imports.o logger.o misc.o sceio.o data_install.o
 
-LIBS = -lpsputility
+LIBS =
 CFLAGS = -Os -G0 -Wall -std=c99
 ASFLAGS = $(CFLAGS)
 
