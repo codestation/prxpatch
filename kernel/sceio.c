@@ -22,10 +22,9 @@
 #include <string.h>
 #include <psppower.h>
 #include "sceio.h"
-#include "misc.h"
-#include "dialog.h"
-#include "logger.h"
 #include "data_install.h"
+#include "misc.h"
+#include "logger.h"
 
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
 #define SUSPEND_FUNCNAME "power"
@@ -45,7 +44,7 @@ SceSize data_start = 0;
 SceUID datafd = -1;
 
 // semaphore to avoid reading on a closed file
-SceUID sema = -1;
+SceUID io_sema = -1;
 
 // the PSP can send 2 suspend events, but we need to check only one
 int suspending = 0;
@@ -54,6 +53,8 @@ int suspending = 0;
 int repoen = 1;
 
 SceKernelCallbackFunction power_cb;
+
+int k1;
 
 void fill_tables(SceUID fd) {
     if(fd < 0)
@@ -76,18 +77,18 @@ int power_callback(int unknown, int pwrflags, void *common) {
     if(pwrflags & PSP_POWER_CB_SUSPENDING || pwrflags & PSP_POWER_CB_POWER_SWITCH) {
         if(!suspending) {
             suspending = 1;
-            sceKernelWaitSema(sema, 1, NULL);
+            sceKernelWaitSema(io_sema, 1, NULL);
         }
     }
     if(pwrflags & PSP_POWER_CB_RESUME_COMPLETE) {
         suspending = 0;
         reopen = 1;
-        sceKernelSignalSema(sema, 1);
+        sceKernelSignalSema(io_sema, 1);
     }
     return power_cb(unknown, pwrflags, common);
 }
 
-int callback(const char *name, SceKernelCallbackFunction func, void *arg) {
+int mhp3_callback(const char *name, SceKernelCallbackFunction func, void *arg) {
     if(strcmp(name, SUSPEND_FUNCNAME) == 0) {
         power_cb = func;
         func = power_callback;
@@ -95,7 +96,8 @@ int callback(const char *name, SceKernelCallbackFunction func, void *arg) {
     return sceKernelCreateCallback(name, func, arg);
 }
 
-SceUID open(const char *file, int flags, SceMode mode) {
+SceUID mhp3_open(const char *file, int flags, SceMode mode) {
+    k1 = pspSdkSetK1(0);
     SceUID fd = sceIoOpen(file, flags, mode);
     if(fd >= 0) {
         if(strcmp(file, DATABIN_PATH) == 0) {
@@ -103,47 +105,65 @@ SceUID open(const char *file, int flags, SceMode mode) {
             fill_tables(transfd);
             fill_install_tables(transfd);
             datafd = fd;
-            sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
+            io_sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
         } else {
             register_install(file, fd);
         }
     }
+    pspSdkSetK1(k1);
     return fd;
 }
 
-int read(SceUID fd, void *data, SceSize size) {
+int mhp3_read(SceUID fd, void *data, SceSize size) {
+    k1 = pspSdkSetK1(0);
+    int res;
     if(fd == datafd) {
         SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
         unsigned int i = 0;
         SceSize offset = data_start;
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
-                sceKernelWaitSema(sema, 1, NULL);
+                sceKernelWaitSema(io_sema, 1, NULL);
                 reopen_translation();
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
-                int res = sceIoRead(transfd, data, size);
+                res = sceIoRead(transfd, data, size);
                 if(res != size) {
                     logger("failed to read translation data\n");
                 }
                 sceIoLseek32(fd, size, PSP_SEEK_CUR);
-                sceKernelSignalSema(sema, 1);
+                sceKernelSignalSema(io_sema, 1);
+                pspSdkSetK1(k1);
                 return res;
             }
             offset += patch_size[i];
             ++i;
         }
     } else {
-        return read_install(fd, data, size);
+        res = read_install(fd, data, size);
+        pspSdkSetK1(k1);
+        return res;
     }
-    return sceIoRead(fd, data, size);
+    res = sceIoRead(fd, data, size);
+    pspSdkSetK1(k1);
+    return res;
 }
 
-int close(SceUID fd) {
+SceOff mhp3_seek(SceUID fd, SceOff offset, int whence) {
+    k1 = pspSdkSetK1(0);
+    SceOff res = sceIoLseek(fd, offset, whence);
+    pspSdkSetK1(k1);
+    return res;
+}
+
+int mhp3_close(SceUID fd) {
+    k1 = pspSdkSetK1(0);
     if(fd == datafd) {
 		datafd = -1;
-		sceKernelDeleteSema(sema);
+		sceKernelDeleteSema(io_sema);
 	} else {
 	    unregister_install(fd);
 	}
-    return sceIoClose(fd);
+    int res = sceIoClose(fd);
+    pspSdkSetK1(k1);
+    return res;
 }

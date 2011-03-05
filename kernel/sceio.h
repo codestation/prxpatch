@@ -17,32 +17,20 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef SCEIO_H_
+#define SCEIO_H_
+
 #include <pspsdk.h>
-#include "imports.h"
-#include "sceio.h"
-#include "dialog.h"
-#include "logger.h"
 
-// PSP model
-int model;
+extern SceUID io_sema;
+extern SceSize data_start;
+extern unsigned int patch_count;
+extern unsigned int patch_size[256];
 
-PSP_MODULE_INFO("mhp3patch_user", PSP_MODULE_USER, 1, 0);
-PSP_HEAP_SIZE_KB(0);
+int mhp3_callback(const char *name, SceKernelCallbackFunction func, void *arg);
+SceUID mhp3_open(const char *file, int flags, SceMode mode);
+int mhp3_read(SceUID fd, void *data, SceSize size);
+SceOff mhp3_seek(SceUID fd, SceOff offset, int whence);
+int mhp3_close(SceUID fd);
 
-int module_start(SceSize args, void * argp) {
-    void *functions[8];
-    functions[0] = open;
-    functions[1] = read;
-    functions[2] = close;
-    functions[3] = callback;
-    functions[4] = netconf;
-    functions[5] = osk;
-    functions[6] = msgdialog;
-    functions[7] = setsystemparam;
-    model = registerfunctions(functions);
-    return 0;
-}
-
-int module_stop(SceSize args, void * argp) {
-    return 0;
-}
+#endif /* SCEIO_H_ */

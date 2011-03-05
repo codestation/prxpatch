@@ -21,6 +21,7 @@
 
 #include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
+#include <psputils.h>
 #include <string.h>
 #include "libs.h"
 
@@ -38,7 +39,7 @@ typedef struct
   unsigned int * vars;
 }PspModuleImport;
 
-PspModuleImport * find_import_lib(SceModule2 * module, const char * library)
+PspModuleImport * find_import_lib(SceModule * module, const char * library)
 {
   //library import pointer
   PspModuleImport * result = NULL;
@@ -70,7 +71,7 @@ PspModuleImport * find_import_lib(SceModule2 * module, const char * library)
   return result;
 }
 
-unsigned int find_import_bynid(SceModule2 * module, const char * library, unsigned int nid)
+unsigned int find_import_bynid(SceModule * module, const char * library, unsigned int nid)
 {
   //stub address
   unsigned int result = 0;
@@ -134,7 +135,7 @@ void api_hook_import_syscall(unsigned int address, void * function)
   }
 }
 
-int hook_import_bynid(SceModule2 * module, const char * library, unsigned int nid, void * function, int syscall)
+int hook_import_bynid(SceModule * module, const char * library, unsigned int nid, void * function, int syscall)
 {
   //result
   int result = 0;

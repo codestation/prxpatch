@@ -22,12 +22,12 @@
 #ifndef _LIBS_H_
 #define _LIBS_H_
 
-#include "systemctrl.h"
+#include <psploadcore.h>
 
 //query syscall number
 unsigned int sceKernelQuerySystemCall(void * function);
 
 //hook function via import (can do jump & syscall hooks)
-int hook_import_bynid(SceModule2 * module, const char * library, unsigned int nid, void * function, int syscall);
+int hook_import_bynid(SceModule * module, const char * library, unsigned int nid, void * function, int syscall);
 
 #endif

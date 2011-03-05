@@ -1,7 +1,7 @@
 /*
- *  MHP3patch user module: data install patcher
+ *  MHP3patch kernel module: data install patcher
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@
 #include <pspthreadman.h>
 #include <string.h>
 #include "data_install.h"
+#include "sceio.h"
 #include "misc.h"
 #include "logger.h"
 
@@ -118,7 +119,7 @@ int read_install(SceUID fd, void *data, SceSSize size) {
             	        for(k = 0; k < j; k++)
 	                        offset += patch_size[k];
     	                //log("Replacing %08X, slot %i with slot %i, real offset: %08X, trans offset: %08X (base %08X), size: %i\n", install_id[i], i, j, pos, offset + (pos - install_offset[j]), offset, size);
-        	            sceKernelWaitSema(sema, 1, NULL);
+        	            sceKernelWaitSema(io_sema, 1, NULL);
         	            reopen_translation();
 	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
     	                int res = sceIoRead(transfd, data, size);
@@ -126,7 +127,7 @@ int read_install(SceUID fd, void *data, SceSSize size) {
     	                    logger("Failed to read data install\n");
     	                }
             	        sceIoLseek32(fd, size, PSP_SEEK_CUR);
-	                    sceKernelSignalSema(sema, 1);
+	                    sceKernelSignalSema(io_sema, 1);
     	                return res;
         	        }
             	    j++;

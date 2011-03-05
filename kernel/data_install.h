@@ -1,7 +1,7 @@
 /*
- *  MHP3patch user module
+ *  MHP3patch kernel module: data install patcher
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,10 +17,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef IMPORTS_H_
-#define IMPORTS_H_
+#ifndef DATA_INSTALL_H_
+#define DATA_INSTALL_H_
 
-//register with kernel patcher and returns psp version
-int registerfunctions(void * userfunctions[8]);
+void register_install(const char *file, SceUID fd);
+void unregister_install(SceUID fd);
+int read_install(SceUID fd, void *data, SceSSize size);
+void fill_install_tables(SceUID fd);
 
-#endif /* IMPORTS_H_ */
+#endif /* DATA_INSTALL_H_ */
