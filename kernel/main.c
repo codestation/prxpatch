@@ -90,7 +90,7 @@ void patch_eboot(SceModule2 *module, const char *argp)  {
                 }
             }
             if(j >= 32)
-                log("Backtrace failed, cannot find matching lui for %08X\n", (unsigned int)data.addr);
+                kprintf("Backtrace failed, cannot find matching lui for %08X\n", (unsigned int)data.addr);
         } else {
             data.addr = (void **)(((int)data.addr) | 0x40000000);
             *data.addr = final_addr;

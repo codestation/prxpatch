@@ -1,7 +1,7 @@
 TARGET = pjd2patch
 OBJS =  main.o exports.o logger.o
 LIBS = -lpspsystemctrl_kernel
-CFLAGS = -Os -G0 -Wall -std=c99
+CFLAGS = -Os -G0 -Wall -std=c99 -DKPRINTF_ENABLED
 CXXFLAGS = $(CFLAGS)
 ASFLAGS = $(CFLAGS)
 LDFLAGS = -L.

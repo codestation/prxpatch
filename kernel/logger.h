@@ -1,7 +1,7 @@
 /*
- *  MHP3patch kernel module
+ *  prxshot module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,16 +20,26 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-#define LOGFILE "ms0:/pjd2patch_kernel.log"
+#include <string.h>
+#include <stdio.h>
+
+#define LOGFILE "ms0:/pjd2patch.log"
+
+#ifndef KPRINTF_ENABLED
+
+#define kprintf(format, ...)
+
+#else
 
 extern char buffer_log[256];
 
-int sprintf(char *str, const char *format, ...);
+#define kprintf(format, ...) { \
+    sprintf(buffer_log, format, ## __VA_ARGS__); \
+    kwrite(LOGFILE, buffer_log, strlen(buffer_log)); \
+}
 
-#define log(format, ...) sprintf(buffer_log, format, ## __VA_ARGS__); \
-                          logger(buffer_log)
+int kwrite(const char *path, void *buffer, int buflen);
 
-int logger(const char * string);
-int appendLog(const char * path, void * buffer, int buflen);
+#endif
 
 #endif /* LOGGER_H_ */

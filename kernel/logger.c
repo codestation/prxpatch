@@ -1,7 +1,7 @@
 /*
- *  MHP3patch kernel module
+ *  prxshot module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,17 +18,13 @@
  */
 
 #include <pspiofilemgr.h>
-#include <stdio.h>
-#include <string.h>
 #include "logger.h"
+
+#ifdef KPRINTF_ENABLED
 
 char buffer_log[256];
 
-int logger(const char * string) {
-    return appendLog(LOGFILE, (void*)string, strlen(string));
-}
-
-int appendLog(const char * path, void * buffer, int buflen) {
+int kwrite(const char *path, void *buffer, int buflen) {
     int written = 0;
     SceUID file;
     file = sceIoOpen(path, PSP_O_APPEND | PSP_O_CREAT | PSP_O_WRONLY, 0777);
@@ -38,3 +34,5 @@ int appendLog(const char * path, void * buffer, int buflen) {
     }
     return written;
 }
+
+#endif
