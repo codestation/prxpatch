@@ -1,5 +1,5 @@
 /*
- *  prxshot module
+ *  PJD2Patch module
  *
  *  Copyright (C) 2011  Codestation
  *
