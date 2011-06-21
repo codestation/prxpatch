@@ -20,6 +20,9 @@
 #ifndef DATA_INSTALL_H_
 #define DATA_INSTALL_H_
 
+extern int (*sceIoRead_func)(SceUID fd, void *data, SceSize size);
+extern int (*sceIoLseek32_func)(SceUID fd, int offset, int whence);
+
 void register_install(const char *file, SceUID fd);
 void unregister_install(SceUID fd);
 int read_install(SceUID fd, void *data, SceSSize size);

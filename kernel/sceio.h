@@ -27,6 +27,8 @@ extern SceSize data_start;
 extern unsigned int patch_count;
 extern unsigned int patch_size[256];
 
+#define MAKE_SYSCALL( a, f ) _sw(SYSCALL_OPCODE | ( ( ( unsigned int )( f ) & 0x03ffffff ) << 6), a )
+
 int mhp3_callback(const char *name, SceKernelCallbackFunction func, void *arg);
 SceUID mhp3_open(const char *file, int flags, SceMode mode);
 int mhp3_read(SceUID fd, void *data, SceSize size);

@@ -30,6 +30,8 @@
 #define SUSPEND_FUNCNAME "power"
 #define MAX_PATCHFILES 256
 
+u32 sctrlHENFindFunction(char *modname, char *libname, u32 nid);
+
 // offset and size tables container
 SceSize patch_offset[MAX_PATCHFILES];
 unsigned int patch_size[MAX_PATCHFILES];
@@ -52,9 +54,19 @@ int suspending = 0;
 // the translation data needs to be (re)opened
 int repoen = 1;
 
-SceKernelCallbackFunction power_cb;
-
 int k1;
+
+SceUID (*sceIoOpen_func)(const char *file, int flags, SceMode mode) = NULL;
+int (*sceIoRead_func)(SceUID fd, void *data, SceSize size) = NULL;
+int (*sceIoLseek32_func)(SceUID fd, int offset, int whence) = NULL;
+int (*sceIoClose_func)(SceUID fd) = NULL;
+
+void set_calls() {
+    sceIoOpen_func =  (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x109F50BC);
+    sceIoRead_func =  (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x6A638D83);
+    sceIoLseek32_func = (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x68963324);
+    sceIoClose_func = (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x810C4BC3);
+}
 
 void fill_tables(SceUID fd) {
     if(fd < 0)
@@ -73,66 +85,42 @@ void fill_tables(SceUID fd) {
         data_start += 16 - (data_start % 16);
 }
 
-int power_callback(int unknown, int pwrflags, void *common) {
-    if(pwrflags & PSP_POWER_CB_SUSPENDING || pwrflags & PSP_POWER_CB_POWER_SWITCH) {
-        if(!suspending) {
-            suspending = 1;
-            sceKernelWaitSema(io_sema, 1, NULL);
-        }
-    }
-    if(pwrflags & PSP_POWER_CB_RESUME_COMPLETE) {
-        suspending = 0;
-        reopen = 1;
-        sceKernelSignalSema(io_sema, 1);
-    }
-    return power_cb(unknown, pwrflags, common);
-}
-
-int mhp3_callback(const char *name, SceKernelCallbackFunction func, void *arg) {
-    if(strcmp(name, SUSPEND_FUNCNAME) == 0) {
-        power_cb = func;
-        func = power_callback;
-    }
-    return sceKernelCreateCallback(name, func, arg);
-}
-
 SceUID mhp3_open(const char *file, int flags, SceMode mode) {
-    k1 = pspSdkSetK1(0);
-    SceUID fd = sceIoOpen(file, flags, mode);
+    if(!sceIoOpen_func)
+        set_calls();
+    SceUID fd = sceIoOpen_func(file, flags, mode);
     if(fd >= 0) {
+        k1 = pspSdkSetK1(0);
         if(strcmp(file, DATABIN_PATH) == 0) {
             reopen_translation();
             fill_tables(transfd);
             fill_install_tables(transfd);
             datafd = fd;
-            io_sema = sceKernelCreateSema("mhp3patch_suspend", 0, 1, 1, NULL);
         } else {
             register_install(file, fd);
         }
+        pspSdkSetK1(k1);
     }
-    pspSdkSetK1(k1);
     return fd;
 }
 
 int mhp3_read(SceUID fd, void *data, SceSize size) {
-    k1 = pspSdkSetK1(0);
     int res;
     if(fd == datafd) {
-        SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
+        SceSize pos = sceIoLseek32_func(fd, 0, PSP_SEEK_CUR);
         unsigned int i = 0;
         SceSize offset = data_start;
         while(i < patch_count) {
             if(pos < patch_offset[i] + patch_size[i] && pos + size > patch_offset[i]) {
-                sceKernelWaitSema(io_sema, 1, NULL);
+                k1 = pspSdkSetK1(0);
                 reopen_translation();
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 res = sceIoRead(transfd, data, size);
                 if(res != size) {
                     logger("failed to read translation data\n");
                 }
-                sceIoLseek32(fd, size, PSP_SEEK_CUR);
-                sceKernelSignalSema(io_sema, 1);
                 pspSdkSetK1(k1);
+                sceIoLseek32_func(fd, size, PSP_SEEK_CUR);
                 return res;
             }
             offset += patch_size[i];
@@ -140,30 +128,18 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
         }
     } else {
         res = read_install(fd, data, size);
-        pspSdkSetK1(k1);
         return res;
     }
-    res = sceIoRead(fd, data, size);
-    pspSdkSetK1(k1);
-    return res;
-}
-
-SceOff mhp3_seek(SceUID fd, SceOff offset, int whence) {
-    k1 = pspSdkSetK1(0);
-    SceOff res = sceIoLseek(fd, offset, whence);
-    pspSdkSetK1(k1);
+    res = sceIoRead_func(fd, data, size);
     return res;
 }
 
 int mhp3_close(SceUID fd) {
-    k1 = pspSdkSetK1(0);
     if(fd == datafd) {
 		datafd = -1;
-		sceKernelDeleteSema(io_sema);
 	} else {
 	    unregister_install(fd);
 	}
-    int res = sceIoClose(fd);
-    pspSdkSetK1(k1);
+    int res = sceIoClose_func(fd);
     return res;
 }

@@ -24,7 +24,7 @@
 #include "misc.h"
 #include "logger.h"
 
-PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 5);
+PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 6);
 
 #define GAME_MODULE "MonsterHunterPortable3rd"
 
@@ -39,24 +39,18 @@ SceUID sema = 0;
 void *functions[] = {
         mhp3_open,
         mhp3_read,
-        mhp3_seek,
         mhp3_close,
-        mhp3_callback,
 };
 
 unsigned int nids[] = {
         0x109F50BC, // sceIoOpen
         0x6A638D83, // sceIoRead
-        0x27EB27B8, // sceIoLseek
         0x810C4BC3, // sceIoClose
-        0xE81CAF8F, // sceKernelCreateCallback
 };
 
 void patch_imports(SceModule *module) {
     const char *base = "IoFileMgrForUser";
     for(int i = 0;i < (sizeof(nids) / 4); i++) {
-        if(i == 4)
-            base = "ThreadManForUser";
         hook_import_bynid(module, base, nids[i], functions[i], 1);
     }
 }

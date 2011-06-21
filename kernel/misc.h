@@ -31,6 +31,6 @@
 extern int model;
 extern volatile int reopen;
 extern volatile SceUID transfd;
-int reopen_translation();
+void reopen_translation();
 
 #endif /* MISC_H_ */
