@@ -1,13 +1,22 @@
 TARGET = pjd2patch
-OBJS =  main.o exports.o logger.o
-LIBS = -lpspsystemctrl_kernel
-CFLAGS = -Os -G0 -Wall -std=c99 -DKPRINTF_ENABLED
-CXXFLAGS = $(CFLAGS)
+OBJS =  main.o exports.o imports.o logger.o
+
+all:
+	psp-packer pjd2patch.prx
+
+LIBS =
+CFLAGS = -O2 -G0 -Wall -std=c99
+
+ifeq ($(DEBUG), 1)
+CFLAGS+=-DDEBUG
+endif
+
 ASFLAGS = $(CFLAGS)
-LDFLAGS = -L.
 
 USE_KERNEL_LIBC = 1
 USE_KERNEL_LIBS = 1
+
+PSP_FW_VERSION=500
 
 PSPSDK=$(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build_prx.mak

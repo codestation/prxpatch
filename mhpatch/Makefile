@@ -6,6 +6,11 @@ all:
 
 LIBS =
 CFLAGS = -O2 -G0 -Wall -std=c99
+
+ifeq ($(DEBUG), 1)
+CFLAGS+=-DDEBUG
+endif
+
 ASFLAGS = $(CFLAGS)
 
 USE_KERNEL_LIBC = 1

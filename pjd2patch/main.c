@@ -21,7 +21,6 @@
 #include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
 #include <string.h>
-#include "systemctrl.h"
 #include "logger.h"
 
 PSP_MODULE_INFO("pjd2patch", PSP_MODULE_KERNEL, 1, 0);
@@ -30,6 +29,10 @@ PSP_HEAP_SIZE_KB(0);
 #define GAME_ID "ULJM05681"
 #define GAME_MODULE "PdvApp"
 #define TRANS_FILE "pjd2_translation.bin"
+
+typedef int (* STMOD_HANDLER)(SceModule *);
+
+STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 SceUID sema = 0;
 SceUID sema_start = 0;
@@ -44,7 +47,7 @@ struct addr_data {
     int offset;
 }__attribute__((packed));
 
-void patch_eboot(SceModule2 *module, const char *argp)  {
+void patch_eboot(SceModule *module, const char *argp)  {
     char filepath[64];
     strcpy(filepath, (char*)argp);
     strrchr(filepath, '/')[1] = 0;
@@ -101,7 +104,7 @@ void patch_eboot(SceModule2 *module, const char *argp)  {
     sceIoClose(fd);
 }
 
-int module_start_handler(SceModule2 * module) {
+int module_start_handler(SceModule * module) {
     if(strcmp(module->modname, GAME_MODULE) == 0 &&
             (module->text_addr & 0x80000000) != 0x80000000) {
         sceKernelSignalSema(sema, 1);
@@ -115,7 +118,7 @@ int thread_start(SceSize args, void *argp) {
     sema_start = sceKernelCreateSema("pjd2patch_start", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
     sceKernelWaitSema(sema, 1, NULL);
-    SceModule2 *module = (SceModule2*)sceKernelFindModuleByName(GAME_MODULE);
+    SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
     if(module) {
         patch_eboot(module, argp);
         sceKernelSignalSema(sema_start, 1);

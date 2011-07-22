@@ -1,5 +1,5 @@
 /*
- *  PJD2Patch module
+ *  PJD2Patch kernel module
  *
  *  Copyright (C) 2011  Codestation
  *
@@ -17,21 +17,24 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <pspsdk.h>
 #include <pspiofilemgr.h>
 #include "logger.h"
 
-#ifdef KPRINTF_ENABLED
+#ifdef DEBUG
 
-char buffer_log[256];
+char _buffer_log[256];
 
 int kwrite(const char *path, void *buffer, int buflen) {
     int written = 0;
     SceUID file;
+    int k1 = pspSdkSetK1(0);
     file = sceIoOpen(path, PSP_O_APPEND | PSP_O_CREAT | PSP_O_WRONLY, 0777);
     if(file >= 0) {
         written = sceIoWrite(file, buffer, buflen);
         sceIoClose(file);
     }
+    pspSdkSetK1(k1);
     return written;
 }
 
