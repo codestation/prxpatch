@@ -1,0 +1,600 @@
+# Translation file for PJD2 (use shift-jis to edit the file)
+# 0x08xxxxxx: use this format to rewrite the pointed address
+#             to a newly allocated one for the translation
+# !x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction (use the lower
+#             address part of the instruction for the address)
+
+# Start message
+!x0884C2FC Please do not remove the
+!x0884C328 storage media or power off
+!x0884C354 the unit while saving.
+!x0884C3AC PJD2 patch 2011/02/26
+!x0884C3D8          -codestation
+
+#!x08863DD8 Please enter a nickname
+#!x08863DEC Enter the name of your favorite song
+#!x08863E00 Please enter a comment
+#!x08863E14 Enter a memo
+
+# DIVA room main menu
+0x08C2A948 Layout
+0x08C2A94C Give a Gift
+0x08C2A950 Music Box
+0x08C2A954 PV Gallery
+0x08C2A958 Image Gallery
+0x08C2A95C Sleep Timer
+0x08C2A960 Navigation Timer
+0x08C2A964 Wake-Up Timer
+
+# DIVA room item menu
+0x08C2ABB4 Room Themes
+0x08C2ABB8 Room Items
+0x08C2ABBC Extra Themes
+0x08C2ABC0 Extra Items
+0x08C2ABC4 Room Items
+0x08C2ABC8 Extra Items
+
+0x08C2AC38 Room Items (Floor)
+0x08C2AC3C Room Items (Shelf)
+0x08C2AC40 Room Items (Wall)
+
+0x08C2AC98 Extra Items (Floor)
+0x08C2AC9C Extra Items (Shelf)
+0x08C2ACA0 Extra Items (Wall)
+
+0x08C2B074 Playlist 1
+0x08C2B078 Playlist 2
+0x08C2B07C Playlist 3
+
+# Main game menu
+0x08C2E96C Rhythm Game
+0x08C2E970 Character Select
+0x08C2E974 DIVA Room
+0x08C2E978 Shop
+0x08C2E97C Play Records
+0x08C2E980 Edit Mode
+0x08C2E984 Ad-Hoc
+0x08C2E988 Options
+0x08C2E98C Save
+0x08C2E990 Back to Title
+
+0x08C2EAB0 Go to Miku's
+0x08C2EAB4 room.
+0x08C2EAC0 Go to Rin's
+0x08C2EAC4 room.
+0x08C2EAD0 Go to Len's
+0x08C2EAD4 room.
+0x08C2EAE0 Go to Luka's
+0x08C2EAE4 room.
+0x08C2EAF0 Go to Kaito's
+0x08C2EAF4 room.
+0x08C2EB00 Go to Meiko's
+0x08C2EB04 room.
+0x08C2EB10 Go to Neru's
+0x08C2EB14 room.
+0x08C2EC20 Go to Haku's
+0x08C2EC24 room.
+0x08C2EC30 Go to S.Meiko's
+0x08C2EC34 room.
+
+0x08C2ECC4 Go to Miku's room?
+0x08C2ECC8 Go to Rin's room?
+0x08C2ECCC Go to Len's room?
+0x08C2ECD0 Go to Luka's room?
+0x08C2ECD4 Go to Kaito's room?
+0x08C2ECD8 Go to Meiko's room?
+0x08C2ECDC Go to Neru's room?
+0x08C2ECE0 Go to Haku's room?
+0x08C2ECE4 Go to S.Meiko's room?
+
+#0x08B84C80
+#0x08B855F4
+#0x08B86088
+
+!x08B8BD38 Gameplay Info
+!x08B8BD5C Music Play Info
+!x08B8BD80 Extra Play Info
+!x08B8BDA4 Character Mood
+!x08B8BDC8 Profile Settings
+!x08B8BDEC Friends
+
+!x08B8DF4C Check Profile
+!x08B8DF70 Name
+!x08B8DF94 Sex
+!x08B8DFB8 Favorite Song
+!x08B8DFDC Comment
+!x08B8E000 Title
+!x08B8E024 Thumbnail
+
+!x08B8E250 [Name]
+!x08B8E308 [Sex]
+!x08B8E398 [Favorite Song]
+!x08B8E430 [Comment]
+!x08B8E56C [Title]
+!x08B8E5F4 [Thumbnail]
+
+!x08B9307C Play Time:  　　　　　　　　　　　　%03d:%02d:%02d
+!x08B93094 Total DIVA Points:  　　　　　　　　 %08d
+!x08B930AC Gifts Given:  　　　　　　　      　     %04d
+!x08B930C4 Rhythm Game Clear Rate: 　　　　　　　　%03d％
+!x08B930DC Item Get Rate:  　　　　　　　　　　　　%03d％
+!x08B930F4 Module Get Rate:  　　　　　　　　　　　%03d％
+!x08B9310C Image Gallery Get Rate:   　　　　　　　%03d％
+!x08B93124 Title Get Rate: 　　　　　　　      　  %03d％
+!x08B9313C Perfect Rate:     　　　　　　　　　　　%03d％
+!x08B931A4 %s：%3d％　%s：%3d％　%s：%3d％　%s：%3d％
+!x08B93818 Gifts Given:   %03d times
+
+# Song list
+0x08C1BFD8 World is Mine
+0x08C1BFE8 Melt
+0x08C1BFF8 Strobo Nights
+0x08C1C008 Packaged
+0x08C1C018 Marginal
+0x08C1C028 Miracle Paint
+0x08C1C038 Kouja to Mori to Mahou no Uta
+0x08C1C048 Inoichi no Uta
+0x08C1C058 Hato
+0x08C1C068 Moon
+0x08C1C078 Beware of Miku Miku Bacteria♪
+0x08C1C088 The secret garden
+0x08C1C098 Dear cocoa girls
+0x08C1C0A8 Velvet Arabesque
+0x08C1C0B8 Updating Your Love List?
+0x08C1C0C8 Miku Miku ni Shite Ageru♪
+0x08C1C0D8 When the First Love Ends
+0x08C1C0E8 Kocchi Muite Baby
+0x08C1C0F8 Finder (DSLR remix - re:edit)
+0x08C1C108 Yellow
+0x08C1C118 Colorful x Melody
+0x08C1C128 Hatsune Miku no Geki shou
+0x08C1C138 Romeo x Cinderella
+0x08C1C148 Magnet
+0x08C1C158 Dear
+0x08C1C168 From Y to Y
+0x08C1C178 Gemini
+0x08C1C188 Ai Kotoba
+0x08C1C198 PoPiPo
+0x08C1C1A8 Saihate
+0x08C1C1B8 VOiCE -DIVA MIX-
+0x08C1C1C8 Love-colored Ward
+0x08C1C1D8 Kyodai Shoujo
+0x08C1C1E8 Meltdown
+0x08C1C1F8 Kokoro
+0x08C1C208 Migikata no Chou
+0x08C1C218 Double Lariat
+0x08C1C228 Cantarella
+0x08C1C238 Change Me
+0x08C1C248 Sound
+0x08C1C258 Clover・Club
+0x08C1C268 Promise
+0x08C1C278 Honto wa Wakatteru
+0x08C1C288 Innocence
+0x08C1C298 Hajimete no Oto
+0x08C1C2A8 Just Be Friends
+0x08C1C2B8 Ievan Polkka
+0x08C1C2C8 Endless Nightmare
+0x08C1C2D8 Cardioid
+0x08C1C2E8 EXtend
+0x08C1C2F8 Hometown
+0x08C1C308 Why?
+0x08C1C318 Hallo World
+0x08C1C328 I'm Crazy For You
+0x08C1C338 Neko na Kimi
+0x08C1C348 Soft at times, Dark at times
+
+#!x08C1C35C Idling
+
+# Rhythm menu
+0x08C361A8 Tutorial
+0x08C361AC Free Play
+0x08C361B0 Extra
+
+# Module list
+0x08BCCB04 Miku Original
+0x08BCCB08 Meiko Style
+0x08BCCB0C Rin Style
+0x08BCCB10 Space Channel 5
+0x08BCCB14 Space Channel 39
+0x08BCCB18 Gallia Squad 7
+0x08BCCB1C P-Style RP
+0x08BCCB20 P-Style MG
+0x08BCCB24 P-Style LP
+0x08BCCB28 P-Style FB
+0x08BCCB2C P-Style IS
+0x08BCCB30 P-Style CW
+0x08BCCB34 P-Style PB
+0x08BCCB38 P-Style CG
+0x08BCCB3C Cheer
+0x08BCCB40 Plug-In
+0x08BCCB44 Gothic
+0x08BCCB48 Princess
+0x08BCCB4C Miko
+0x08BCCB50 Cat Girl
+0x08BCCB54 Sleepy
+0x08BCCB58 Heart Hunter
+0x08BCCB5C Vocal
+0x08BCCB60 Punk
+0x08BCCB64 Dancer
+0x08BCCB68 Star
+0x08BCCB6C Fairy
+0x08BCCB70 School
+0x08BCCB74 Snow
+0x08BCCB78 Arabian
+0x08BCCB7C Elegant
+0x08BCCB80 China
+0x08BCCB84 Magician
+0x08BCCB88 White Dress
+0x08BCCB8C Pirate
+0x08BCCB90 VN02
+0x08BCCB94 Galaxy
+0x08BCCB98 Hatsune Miku
+0x08BCCB9C Miku Swinwear S
+0x08BCCBA0 Miku Swimwear
+0x08BCCBA4 Aile D'Ange
+0x08BCCBA8 Spacy Nurse
+0x08BCCBAC Noble
+0x08BCCBB0 Jer★Sey
+0x08BCCBB4 Miku Hood
+0x08BCCBB8 White Dress
+0x08BCCBBC Vintage Dress
+0x08BCCBC0 Pink Pops
+0x08BCCBC4 Angel
+0x08BCCBC8 Natural
+0x08BCCBCC Spiritual
+0x08BCCBD0 Colorful Drop
+0x08BCCBD4 Yellow
+0x08BCCBD8 Stroll Style
+0x08BCCBDC Saihate Miku
+0x08BCCBE0 ∞
+0x08BCCBE4 Powder
+0x08BCCBE8 Miku Butterfly
+0x08BCCBEC Cute Miku
+0x08BCCBF0 Miku Swimwear B
+0x08BCCBF4 Pink Pops AS
+0x08BCCBF8 Rin Original
+0x08BCCBFC Rin Swimwear
+0x08BCCC00 Asymetry R
+0x08BCCC04 Cute Rin
+0x08BCCC08 Reactor
+0x08BCCC0C EoE Style
+0x08BCCC10 Cheerful Candy
+0x08BCCC14 Rin Swimwear T
+0x08BCCC18 Len Original
+0x08BCCC1C Len Swimwear
+0x08BCCC20 Asymetry L
+0x08BCCC24 Punkish
+0x08BCCC28 School Jersey
+0x08BCCC2C Len Swimwear WS
+0x08BCCC30 Luka Original
+0x08BCCC34 Luka Swimwear
+0x08BCCC38 Chiffon Dress
+0x08BCCC3C VF Suit
+0x08BCCC40 Fraulein
+0x08BCCC44 Luka Flower
+0x08BCCC48 Hard Rock
+0x08BCCC4C Luka Swimwear P
+0x08BCCC50 Kaito Original
+0x08BCCC54 Kaito Swimwear
+0x08BCCC58 Campus
+0x08BCCC5C Classic
+0x08BCCC60 Cyber Cat
+0x08BCCC64 Kaito Swimwear V
+0x08BCCC68 Kaito Swimwear V AS
+0x08BCCC6C Meiko Original
+0x08BCCC70 Meiko Swimwear
+0x08BCCC74 Fluffy Coat
+0x08BCCC78 Scarlet
+0x08BCCC7C Modern Girl
+0x08BCCC80 Meiko Swimwear B
+0x08BCCC84 Modern Girl AS
+0x08BCCC88 Akita Neru Original
+0x08BCCC8C Ethnic
+0x08BCCC98 Cyber Dive
+0x08BCCC90 Akita Neru Swimwear
+0x08BCCC94 Yowane Haku Original
+0x08BCCC9C Yowane Haku Swimwear
+0x08BCCCA0 Sakine Meiko Original
+0x08BCCCA4 Black Dress
+0x08BCCCA8 Sakine Meiko Swimwear
+
+# Character names
+0x08BCCD10 Hatsune Miku
+0x08BCCD14 Kagamine Rin
+0x08BCCD18 Kagamine Len
+0x08BCCD1C Megurine Luka
+0x08BCCD20 Kaito
+0x08BCCD24 Meiko
+0x08BCCD28 Akita Neru
+0x08BCCD2C Yowane Haku
+0x08BCCD30 Sakine Meiko
+
+# Character room names
+0x08BCCDB0 Miku's room
+0x08BCCDB4 Rin's room
+0x08BCCDB8 Len's room
+0x08BCCDBC Luka's room
+0x08BCCDC0 Kaito's room
+0x08BCCDC4 Meiko's room
+0x08BCCDC8 Neru's room
+0x08BCCDCC Haku's room
+0x08BCCDD0 Sakine Meiko's room
+
+# Room types
+0x08BCCE70 Cyber Spot
+0x08BCCE74 Cyber Spot
+0x08BCCE78 Cyber Spot
+0x08BCCE7C Cyber Spot
+0x08BCCE80 Cyber Spot
+0x08BCCE84 Cyber Spot
+0x08BCCE88 Cyber Spot
+0x08BCCE8C Cyber Spot
+0x08BCCE90 Cyber Spot
+0x08BCCE94 Imperial Coat
+0x08BCCE98 Candy House
+0x08BCCE9C Seaside House
+0x08BCCEA0 Mini Studio
+0x08BCCEA4 Japanese Castle
+0x08BCCEA8 School House
+0x08BCCEAC Cherry Blossom
+
+# Objects (floor)
+0x08BCCF90 Hearth Shaped Cushion
+0x08BCCF94 Leek Body Pillow
+0x08BCCF98 Chalk Board
+0x08BCCF9C Speaker with Stand
+0x08BCCFA0 Guitar Amplifier
+0x08BCCFA4 Synthesizer
+0x08BCCFA8 Electric Guitar
+0x08BCCFAC House Plant
+0x08BCCFB0 Mini Plant
+0x08BCCFB4 Cactus
+0x08BCCFB8 Ghost Tree
+0x08BCCFBC Christmas Tree
+0x08BCCFC0 Balance Ball
+0x08BCCFC4 Hatsune Miku POP
+
+# Objects (shelf)
+0x08BCD338 Tea Set
+0x08BCD33C Lantern
+0x08BCD340 Candle Stand
+0x08BCD344 Table Lamp
+0x08BCD348 Incense of Pig
+0x08BCD34C Television
+0x08BCD350 Microscope
+0x08BCD354 Telephone
+0x08BCD358 Aquarium
+0x08BCD35C Globe
+0x08BCD360 Jewelry Box
+0x08BCD364 Bear Carving
+0x08BCD368 Tako Urn
+0x08BCD36C Bird Cage
+0x08BCD370 Electric Billboard
+0x08BCD374 Blue Diamond
+0x08BCD378 Labware
+0x08BCD37C SLR camera
+0x08BCD380 Gramophone
+0x08BCD384 Decoration Drum
+0x08BCD388 Turntable
+0x08BCD38C Trump Tower
+0x08BCD390 Robot Block
+0x08BCD394 Flower Block
+0x08BCD398 Pico Pico Hammer
+0x08BCD39C Paper Fan
+0x08BCD3A0 Box of Fortune
+0x08BCD3A4 Wrapping Chocolate
+0x08BCD3A8 Wrapping Candy
+0x08BCD3AC Tulip Planter
+0x08BCD3B0 Sakura's Bonsai
+0x08BCD3B4 Mini Carp Streamer
+0x08BCD3B8 Rose Planter
+0x08BCD3BC Watermelon Figurine
+0x08BCD3C0 Sunflower Planter
+0x08BCD3C4 Autumn Bonsai
+0x08BCD3C8 Ghost Coffin
+0x08BCD3CC Pumpkin Light
+0x08BCD3D0 Red Boots
+0x08BCD3D4 Mini Christmas Tree
+0x08BCD3D8 Dodgeball
+0x08BCD3DC Beach Ball
+0x08BCD3E0 Hatsune Miku Nendoroid
+0x08BCD3E4 Kagamine Rin Nendoroid
+0x08BCD3E8 Kagamine Len Nendoroid
+0x08BCD3EC Megurine Luka Nendoroid
+0x08BCD3F0 Kaito Nendoroid
+0x08BCD3F4 Meiko Nendoroid
+0x08BCD3F8 Akita Neru Nendoroid
+0x08BCD3FC Yowane Haku Nendoroid
+0x08BCD400 Sakine Meiko Nendoroid
+
+# Objects (wall)
+0x08BCD73C Tapestry
+0x08BCD740 Route 39 Classic Board
+0x08BCD744 Pirate Flag
+0x08BCD748 Scroll (Low)
+0x08BCD74C Calligraphy (Song)
+0x08BCD750 Pendulum Clock
+0x08BCD754 World Map
+0x08BCD758 Tapestry of Starry Sky
+0x08BCD75C Candy Wall Decoration
+0x08BCD760 Ethnic Mask
+0x08BCD764 Hockey Mask
+0x08BCD768 Wall Speaker
+0x08BCD76C Wall Sword
+0x08BCD770 Leek Figure
+0x08BCD774 Basket Goal
+0x08BCD778 Ten-Gallon Hat
+0x08BCD77C Opera Curtain
+0x08BCD780 Stuffed Deer
+0x08BCD784 Wall Candle
+0x08BCD788 Record Disk
+0x08BCD78C Gold Disk
+0x08BCD790 Panel (Spring)
+0x08BCD794 Panel (Summer)
+0x08BCD798 Panel (Autumn)
+0x08BCD79C Panel (Winter)
+0x08BCD7A0 Hibiscus Wall Decoration
+0x08BCD7A4 Magic Mirror
+0x08BCD7A8 Pidgeon Clock
+0x08BCD7AC Wall Light
+0x08BCD7B0 Wall Monitor
+0x08BCD7B4 Eagle Featers
+0x08BCD7B8 Bat Wall Decoration
+0x08BCD7BC Wreath
+0x08BCD7C0 Santa Wall Decoration
+0x08BCD7C4 Flower Basket
+0x08BCD7C8 Memory Chip
+0x08BCD7CC Block Television
+0x08BCD7D0 Illustration Poster 1
+0x08BCD7D4 Illustration Poster 2
+0x08BCD7D8 Illustration Poster 3
+0x08BCD7DC Illustration Poster 4
+0x08BCD7E0 Illustration Poster 5
+0x08BCD7E4 Illustration Poster 6
+0x08BCD7E8 Illustration Poster 7
+0x08BCD7EC Illustration Poster 8
+0x08BCD7F0 Illustration Poster 9
+0x08BCD7F4 Illustration Poster 10
+0x08BCD7F8 Illustration Poster 11
+0x08BCD7FC Illustration Poster 12
+
+# Help items
+0x08BCD884 Assist System
+0x08BCD888 Combo Support System
+0x08BCD88C Combo Asistance System
+0x08BCD890 Combo Guard System
+0x08BCD894 Rescue System
+0x08BCD898 Recovery System
+
+0x08BCD8B0 Male
+0x08BCD8B4 Female
+0x08BCD8B8 ?
+
+# Titles
+0x08BCDF80 New Player
+0x08BCDF84 Beginner Player
+0x08BCDF88 Intermediate Player
+0x08BCDF8C Senior Player
+0x08BCDF90 Remarkable Player
+0x08BCDF94 Meister
+0x08BCDF98 Craftsman
+0x08BCDF9C Sound Artisan
+0x08BCDFA0 Perfect Pitch
+0x08BCDFA4 ★When the first love ends
+0x08BCDFA8 ★Kocchi Muite Baby
+0x08BCDFAC ★Yellow
+0x08BCDFB0 ★Finder
+0x08BCDFB4 ★Colorful x Melody
+0x08BCDFB8 ★Hatsune Miku no Geki shou
+0x08BCDFBC ★Romeo x Cinderella
+0x08BCDFC0 ★Magnet
+0x08BCDFC4 ★Dear
+0x08BCDFC8 ★From Y to Y
+0x08BCDFCC ★Gemini
+0x08BCDFD0 ★Ai Kotoba
+0x08BCDFD4 ★PoPiPo
+0x08BCDFD8 ★Saihate
+0x08BCDFDC ★VOiCE -DIVA MIX-
+0x08BCDFE0 ★Love-Colored Ward
+0x08BCDFE4 ★Kyoday Shoujo
+0x08BCDFE8 ★Meltdown
+0x08BCDFEC ★Kokoro
+0x08BCDFF0 ★Migikata no Chou
+0x08BCDFF4 ★Double Lariat
+0x08BCDFF8 ★Cantarella
+0x08BCDFFC ★Change me
+0x08BCE000 ★Just Be Friends
+0x08BCE004 ★Sound
+0x08BCE008 ★Clover・Club
+0x08BCE00C ★Promise
+0x08BCE010 ★Honto wa Wakatteru
+0x08BCE014 ★Innocence
+0x08BCE018 ★Hajimete no oto
+0x08BCE01C ★World is Mine
+0x08BCE020 ★Melt
+0x08BCE024 ★Strobo Nights
+0x08BCE028 ★Packaged
+0x08BCE02C ★Miracle Paint
+0x08BCE030 ★Marginal
+0x08BCE034 ★Kouja to Mori to Mahou no Uta
+0x08BCE038 ★Inoichi no Uta
+0x08BCE03C ★Hato
+0x08BCE040 ★Moon
+0x08BCE044 ★Beware of Miku Miku Bacteria♪
+0x08BCE048 ★The secret garden
+0x08BCE04C ★Dear cocoa girls
+0x08BCE050 ★Velvet Arabesque
+0x08BCE054 ★Updating your love list?
+0x08BCE058 ★Miku Miku ni Shite Ageru♪
+0x08BCE05C Novice Coordinator
+0x08BCE060 Coordinator
+0x08BCE064 Stylist
+0x08BCE068 Perfect Stylist
+0x08BCE06C Fledgling Collector
+0x08BCE070 Item Collector
+0x08BCE074 Interior Collector
+0x08BCE078 Perfect Collector
+0x08BCE07C Scorer
+0x08BCE080 Top Score
+0x08BCE084 Millionaire
+0x08BCE088 Bourgeois
+0x08BCE08C Overplayer
+0x08BCE090 Limit Breaker
+0x08BCE094 Trascendant Player
+0x08BCE098 Lover of Twin tails
+0x08BCE09C I love Miku!
+0x08BCE0A0 Purely cute
+0x08BCE0A4 I love Rin!
+0x08BCE0A8 Purely innocence
+0x08BCE0AC I love Len!
+0x08BCE0B0 Brains and Beauty
+0x08BCE0B4 I love Luka!
+0x08BCE0B8 Ice Cream
+0x08BCE0BC I love Kaito!
+0x08BCE0C0 Meiko Bodyguard
+0x08BCE0C4 I love Meiko!
+0x08BCE0C8 700yen per hour
+0x08BCE0CC I love Neru!
+0x08BCE0D0 Tsuman-me
+0x08BCE0D4 I love Haku!
+0x08BCE0D8 Legendary Idol
+0x08BCE0DC I love Sakine Meiko!
+0x08BCE0E0 Project Helper
+0x08BCE0E4 Casual Player
+0x08BCE0E8 Groupie
+0x08BCE0EC Love Hunter
+0x08BCE0F0 Family of Friends
+0x08BCE0F4 Compilation
+0x08BCE0F8 Jukebox
+0x08BCE0FC I have done the MikuMiku!
+0x08BCE100 1000 song cuts
+0x08BCE104 Edit Creator
+0x08BCE108 DIVA Room Manager
+0x08BCE10C Perfect Starter
+0x08BCE110 Perfect Constructor
+0x08BCE114 Perfect Magician
+0x08BCE118 Rhythm Master
+
+0x08BCE224 Smile
+0x08BCE228 （＞＜）
+0x08BCE22C Surprise
+0x08BCE230 Wink
+0x08BCE234 Anger
+0x08BCE238 Smile 2
+0x08BCE23C Worried
+0x08BCE240 Dazzling
+0x08BCE244 Overhead
+0x08BCE248 Strong
+0x08BCE24C Clarifyng
+0x08BCE250 Smile 3
+0x08BCE254 Leer
+0x08BCE258 Face Drool
+0x08BCE25C Smartly
+0x08BCE260 Empty
+0x08BCE264 Think
+0x08BCE268 Painful
+0x08BCE26C Energy
+0x08BCE270 Desided
+0x08BCE274 Normal
+0x08BCE278 Closed
