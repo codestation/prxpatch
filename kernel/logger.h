@@ -1,7 +1,7 @@
 /*
  *  MHP3patch kernel module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,16 +20,29 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-#define LOGFILE "ms0:/mhp3patch_kernel.log"
+#include <string.h>
+#include <stdio.h>
 
-extern char buffer_log[256];
+#ifdef DEBUG
 
-int sprintf(char *str, const char *format, ...);
+#define LOGFILE "ms0:/mhpatch.log"
 
-#define log(format, ...) sprintf(buffer_log, format, ## __VA_ARGS__); \
-                          logger(buffer_log)
+extern char _buffer_log[256];
 
-int logger(const char * string);
-int appendLog(const char * path, void * buffer, int buflen);
+int kwrite(const char *path, void *buffer, int buflen);
+
+#define kprintf(format, ...) do { \
+    sprintf(_buffer_log, "%s: "format, __func__, ## __VA_ARGS__); \
+    kwrite(LOGFILE, _buffer_log, sce_paf_private_strlen(_buffer_log)); \
+} while(0)
+
+int kwrite(const char *path, void *buffer, int buflen);
+
+#else
+
+#define kprintf(format, ...)
+#define kwrite(a, b, c)
+
+#endif
 
 #endif /* LOGGER_H_ */

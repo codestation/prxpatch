@@ -1,7 +1,7 @@
 /*
  *  MHP3patch kernel module
  *
- *  Copyright (C) 2010  Codestation
+ *  Copyright (C) 2011  Codestation
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,24 +17,25 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <pspsdk.h>
 #include <pspiofilemgr.h>
-#include <stdio.h>
-#include <string.h>
 #include "logger.h"
 
-char buffer_log[256];
+#ifdef DEBUG
 
-int logger(const char * string) {
-    return appendLog(LOGFILE, (void*)string, strlen(string));
-}
+char _buffer_log[256];
 
-int appendLog(const char * path, void * buffer, int buflen) {
+int kwrite(const char *path, void *buffer, int buflen) {
     int written = 0;
     SceUID file;
+    int k1 = pspSdkSetK1(0);
     file = sceIoOpen(path, PSP_O_APPEND | PSP_O_CREAT | PSP_O_WRONLY, 0777);
     if(file >= 0) {
         written = sceIoWrite(file, buffer, buflen);
         sceIoClose(file);
     }
+    pspSdkSetK1(k1);
     return written;
 }
+
+#endif

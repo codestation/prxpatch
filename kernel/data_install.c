@@ -107,7 +107,7 @@ int read_install(SceUID fd, void *data, SceSSize size) {
     	while(i < install_count) {
         	if(install_fd[i] == fd) {
 				if(!seeked) {
-	            	pos = sceIoLseek32_func(fd, 0, PSP_SEEK_CUR);
+	            	pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
 					seeked = 1;
 				}
     	        SceSize offset = data_start;
@@ -123,10 +123,10 @@ int read_install(SceUID fd, void *data, SceSSize size) {
 	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
     	                int res = sceIoRead(transfd, data, size);
     	                if(res != size) {
-    	                    logger("Failed to read data install\n");
+    	                    kprintf("Failed to read data install\n");
     	                }
     	                pspSdkSetK1(k1);
-            	        sceIoLseek32_func(fd, size, PSP_SEEK_CUR);
+            	        sceIoLseek32(fd, size, PSP_SEEK_CUR);
     	                return res;
         	        }
             	    j++;

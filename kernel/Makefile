@@ -1,8 +1,11 @@
 TARGET = mhp3patch
 OBJS =  main.o libs.o exports.o imports.o logger.o misc.o sceio.o data_install.o
 
+all:
+	psp-packer mhp3patch.prx
+
 LIBS =
-CFLAGS = -Os -G0 -Wall -std=c99
+CFLAGS = -O2 -G0 -Wall -std=c99
 ASFLAGS = $(CFLAGS)
 
 USE_KERNEL_LIBC = 1

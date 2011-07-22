@@ -24,7 +24,7 @@
 #include "misc.h"
 #include "logger.h"
 
-PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 6);
+PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 7);
 
 #define GAME_MODULE "MonsterHunterPortable3rd"
 
@@ -34,54 +34,36 @@ STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 STMOD_HANDLER previous = NULL;
 
-SceUID sema = 0;
-
 void *functions[] = {
         mhp3_open,
         mhp3_read,
         mhp3_close,
 };
 
-unsigned int nids[] = {
+u32 nids[] = {
         0x109F50BC, // sceIoOpen
         0x6A638D83, // sceIoRead
         0x810C4BC3, // sceIoClose
 };
 
 void patch_imports(SceModule *module) {
-    const char *base = "IoFileMgrForUser";
     for(int i = 0;i < (sizeof(nids) / 4); i++) {
-        hook_import_bynid(module, base, nids[i], functions[i], 1);
+        hook_import_bynid(module, "IoFileMgrForUser", nids[i], functions[i], 1);
     }
 }
 
 int module_start_handler(SceModule *module) {
     if((strcmp(module->modname, GAME_MODULE) == 0) && (module->text_addr & 0x80000000) != 0x80000000) {
-        sceKernelSignalSema(sema, 1);
+    	patch_imports(module);
     }
     return previous ? previous(module) : 0;
 }
 
-int thread_start(SceSize args, void *argp) {
-    sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
-    previous = sctrlHENSetStartModuleHandler(module_start_handler);
-    sceKernelWaitSema(sema, 1, NULL);
-    SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
-    if(module)
-        patch_imports(module);
-    sceKernelDeleteSema(sema);
-    return 0;
-}
-
-int module_start(SceSize argc, void *argp) {
-    SceUID thid = sceKernelCreateThread("mhp3patch_main", thread_start, 0x22, 0x2000, 0, NULL);
-    if(thid >= 0)
-        sceKernelStartThread(thid, argc, argp);
-    return 0;
+int module_start(SceSize args, void *argp) {
+	previous = sctrlHENSetStartModuleHandler(module_start_handler);
+	return 0;
 }
 
 int module_stop(SceSize args, void *argp) {
-    if(previous)
-        sctrlHENSetStartModuleHandler(previous);
 	return 0;
 }

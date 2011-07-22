@@ -27,10 +27,7 @@
 #include "logger.h"
 
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
-#define SUSPEND_FUNCNAME "power"
 #define MAX_PATCHFILES 256
-
-u32 sctrlHENFindFunction(char *modname, char *libname, u32 nid);
 
 // offset and size tables container
 SceSize patch_offset[MAX_PATCHFILES];
@@ -45,28 +42,10 @@ SceSize data_start = 0;
 // file descriptors of the data.bin and translation data
 SceUID datafd = -1;
 
-// semaphore to avoid reading on a closed file
-SceUID io_sema = -1;
-
-// the PSP can send 2 suspend events, but we need to check only one
-int suspending = 0;
-
 // the translation data needs to be (re)opened
 int repoen = 1;
 
 int k1;
-
-SceUID (*sceIoOpen_func)(const char *file, int flags, SceMode mode) = NULL;
-int (*sceIoRead_func)(SceUID fd, void *data, SceSize size) = NULL;
-int (*sceIoLseek32_func)(SceUID fd, int offset, int whence) = NULL;
-int (*sceIoClose_func)(SceUID fd) = NULL;
-
-void set_calls() {
-    sceIoOpen_func =  (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x109F50BC);
-    sceIoRead_func =  (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x6A638D83);
-    sceIoLseek32_func = (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x68963324);
-    sceIoClose_func = (void *)sctrlHENFindFunction("sceIOFileManager", "IoFileMgrForUser", 0x810C4BC3);
-}
 
 void fill_tables(SceUID fd) {
     if(fd < 0)
@@ -86,9 +65,7 @@ void fill_tables(SceUID fd) {
 }
 
 SceUID mhp3_open(const char *file, int flags, SceMode mode) {
-    if(!sceIoOpen_func)
-        set_calls();
-    SceUID fd = sceIoOpen_func(file, flags, mode);
+    SceUID fd = sceIoOpen(file, flags, mode);
     if(fd >= 0) {
         k1 = pspSdkSetK1(0);
         if(strcmp(file, DATABIN_PATH) == 0) {
@@ -107,7 +84,7 @@ SceUID mhp3_open(const char *file, int flags, SceMode mode) {
 int mhp3_read(SceUID fd, void *data, SceSize size) {
     int res;
     if(fd == datafd) {
-        SceSize pos = sceIoLseek32_func(fd, 0, PSP_SEEK_CUR);
+        SceSize pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
         unsigned int i = 0;
         SceSize offset = data_start;
         while(i < patch_count) {
@@ -117,10 +94,10 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
                 sceIoLseek32(transfd, offset + (pos - patch_offset[i]), PSP_SEEK_SET);
                 res = sceIoRead(transfd, data, size);
                 if(res != size) {
-                    logger("failed to read translation data\n");
+                    kprintf("failed to read translation data\n");
                 }
                 pspSdkSetK1(k1);
-                sceIoLseek32_func(fd, size, PSP_SEEK_CUR);
+                sceIoLseek32(fd, size, PSP_SEEK_CUR);
                 return res;
             }
             offset += patch_size[i];
@@ -130,7 +107,7 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
         res = read_install(fd, data, size);
         return res;
     }
-    res = sceIoRead_func(fd, data, size);
+    res = sceIoRead(fd, data, size);
     return res;
 }
 
@@ -140,6 +117,6 @@ int mhp3_close(SceUID fd) {
 	} else {
 	    unregister_install(fd);
 	}
-    int res = sceIoClose_func(fd);
+    int res = sceIoClose(fd);
     return res;
 }
