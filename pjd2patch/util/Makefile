@@ -3,18 +3,22 @@ TARGET := pjd2convert
 LIBS :=
 INCLUDES :=
 LIBPATH :=
-CFLAGS := -O2 -pipe -Wall -Wno-unused-result
+WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
+CFLAGS := -O2 -pipe -Wno-unused-result $(WARN_FLAGS)
 LDFLAGS := -Wl,-O1 -Wl,--sort-common -Wl,--as-needed
 RM = rm -f
 OBJS = convert.o
 
 all: $(OBJS)
-	$(CC) $(LDFLAGS) $(OBJS) $(LIBPATH) $(LIBS) -o $(TARGET)
+	@$(CC) $(LDFLAGS) $(OBJS) $(LIBPATH) $(LIBS) -o $(TARGET)
+	@echo LINK $(TARGET)
 
 .c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $*.c
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $*.c
+	@echo CC $*.c
 
 clean:
-	-$(RM) $(OBJS) $(TARGET)
+	@-$(RM) $(OBJS) $(TARGET)
+	@echo CLEAN $(TARGET)
 
 .PHONY: all clean

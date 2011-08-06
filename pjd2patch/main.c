@@ -23,19 +23,20 @@
 #include <string.h>
 #include "logger.h"
 
-PSP_MODULE_INFO("pjd2patch", PSP_MODULE_KERNEL, 1, 0);
+PSP_MODULE_INFO("pjd2patch", PSP_MODULE_KERNEL, 1, 1);
 PSP_HEAP_SIZE_KB(0);
 
 #define GAME_ID "ULJM05681"
 #define GAME_MODULE "PdvApp"
 #define TRANS_FILE "pjd2_translation.bin"
 
+#define UNUSED __attribute__((unused))
+
 typedef int (* STMOD_HANDLER)(SceModule *);
 
 STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
-SceUID sema = 0;
-SceUID sema_start = 0;
+char filepath[256];
 
 STMOD_HANDLER previous = NULL;
 
@@ -44,40 +45,42 @@ void *block_addr = NULL;
 
 struct addr_data {
     void **addr;
-    int offset;
+    u32 offset;
 }__attribute__((packed));
 
-void patch_eboot(SceModule *module, const char *argp)  {
-    char filepath[64];
-    strcpy(filepath, (char*)argp);
+void patch_eboot()  {
+    u32 count;
+    SceUID fd;
+    SceOff size;
+    SceSize index_size, table_size;
+
     strrchr(filepath, '/')[1] = 0;
     strcat(filepath, TRANS_FILE);
-    SceUID fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
+    fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
     if(fd < 0) {
         return;
     }
-    int count;
-    SceSize size = sceIoLseek32(fd, 0, PSP_SEEK_END);
-    sceIoLseek32(fd, 0, PSP_SEEK_SET);
+    size = sceIoLseek(fd, 0, PSP_SEEK_END);
+    sceIoLseek(fd, 0, PSP_SEEK_SET);
     sceIoRead(fd, &count, 4);
-    int index_size = (count * 8) + 4;
+    index_size = (count * 8) + 4;
     index_size += 16 - (index_size % 16);
-    int table_size = size - index_size;
+    table_size = (SceSize)size - index_size;
     block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_USER, "pjd2-trans", PSP_SMEM_High, table_size, NULL);
     if(block_id < 0) {
         return;
     }
     block_addr = sceKernelGetBlockHeadAddr(block_id);
-    for(int i = 0; i < count; i++) {
+    for(u32 i = 0; i < count; i++) {
         struct addr_data data;
         sceIoRead(fd, &data, sizeof(data));
-        void *final_addr = block_addr + data.offset;
-        if((int)data.addr & 0xF0000000) {
-            data.addr = (void **)(((int)data.addr) & ~0xF0000000);
-            data.addr = (void **)(((int)data.addr) | 0x40000000);
-            unsigned short *code_addr = (unsigned short *)data.addr;
-            unsigned short addr1 = (unsigned int)final_addr & 0xFFFF;
-            unsigned short addr2 = ((((unsigned int)final_addr) >> 16) & 0xFFFF);
+        void *final_addr = (void *)((u32)(block_addr) + data.offset);
+        if((u32)data.addr & 0xF0000000) {
+            data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
+            data.addr = (void **)(((u32)data.addr) | 0x40000000);
+            u16 *code_addr = (u16 *)data.addr;
+            u16 addr1 = (u32)final_addr & 0xFFFF;
+            u16 addr2 = (u16)((((u32)final_addr) >> 16) & 0xFFFF);
             if(addr1 & 0x8000) {
                 addr2++;
             }
@@ -92,52 +95,33 @@ void patch_eboot(SceModule *module, const char *argp)  {
                     j++;
                 }
             }
-            if(j >= 32)
-                kprintf("Backtrace failed, cannot find matching lui for %08X\n", (unsigned int)data.addr);
+            if(j >= 32) {
+                kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data.addr);
+            }
         } else {
-            data.addr = (void **)(((int)data.addr) | 0x40000000);
+            data.addr = (void **)(((u32)data.addr) | 0x40000000);
             *data.addr = final_addr;
         }
     }
-    sceIoLseek32(fd, index_size, PSP_SEEK_SET);
+    sceIoLseek(fd, index_size, PSP_SEEK_SET);
     sceIoRead(fd, block_addr, table_size);
     sceIoClose(fd);
 }
 
 int module_start_handler(SceModule * module) {
-    if(strcmp(module->modname, GAME_MODULE) == 0 &&
-            (module->text_addr & 0x80000000) != 0x80000000) {
-        sceKernelSignalSema(sema, 1);
-        sceKernelWaitSema(sema_start, 1, NULL);
+    if((module->text_addr & 0x80000000) != 0x80000000 && strcmp(module->modname, GAME_MODULE) == 0) {
+        patch_eboot();
     }
     return previous ? previous(module) : 0;
 }
 
-int thread_start(SceSize args, void *argp) {
-    sema = sceKernelCreateSema("pjd2patch_wake", 0, 0, 1, NULL);
-    sema_start = sceKernelCreateSema("pjd2patch_start", 0, 0, 1, NULL);
+int module_start(SceSize argc UNUSED, void *argp) {
+    strcpy(filepath, argp);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
-    sceKernelWaitSema(sema, 1, NULL);
-    SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
-    if(module) {
-        patch_eboot(module, argp);
-        sceKernelSignalSema(sema_start, 1);
-        sceKernelDelayThread(10000);
-        sceKernelDeleteSema(sema);
-        sceKernelDeleteSema(sema_start);
-    }
-    //sceKernelExitDeleteThread(0);
-    return 0;
-}
-
-int module_start(SceSize argc, void *argp) {
-	SceUID thid = sceKernelCreateThread("pjd2patch_main", thread_start, 0x22, 0x2000, 0, NULL);
-	if(thid >= 0)
-		sceKernelStartThread(thid, argc, argp);
 	return 0;
 }
 
-int module_stop(SceSize args, void *argp) {
+int module_stop(SceSize args UNUSED, void *argp UNUSED) {
     if(block_id >= 0) {
         sceKernelFreePartitionMemory(block_id);
     }

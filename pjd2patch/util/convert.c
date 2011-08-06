@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
 char buffer[256];
 
@@ -46,24 +47,24 @@ int main(int argc, char **argv) {
 		printf("Error while creating %s\n", fileout);
 		return 1;
 	}
-	int count = 0;
-	int table_size = 0;
-	int index_size = 4;
-	int offset = 0;
-	int padding = 0;
+	size_t count = 0;
+	size_t table_size = 0;
+	size_t index_size = 4;
+	size_t offset = 0;
+	size_t padding = 0;
 	fwrite(&count, 4, 1, fdout);
 	while(fgets(buffer, 256, fd)) {
 		if(buffer[0] == '#' || buffer[0] == '\n')
 			continue;
 		buffer[10] = 0;
 		char *str = buffer + 11;
-		int len = strlen(str);
+		size_t len = strlen(str);
 		str[len-1] = 0;
 		if(buffer[0] == '!') {
 		    buffer[0] = '0';
 		    buffer[2] = 'F';
 		}
-		int addr = strtol(buffer, NULL, 16);
+		long addr = strtol(buffer, NULL, 16);
 		fwrite(&addr, 4, 1, fdout);
 		fwrite(&offset, 4 ,1, fdout);
 		fwrite(str, len, 1, fdstr);
@@ -95,11 +96,11 @@ int main(int argc, char **argv) {
         fwrite(buffer, padding, 1, fdstr);
     }
 
-	long size = ftell(fdstr);
+	size_t size = (size_t)ftell(fdstr);
 	fseek(fdstr, 0, SEEK_SET);
 	count = sizeof(buffer);
 	while(size) {
-	    if(size < sizeof(buffer)) {
+	    if(size < (int)sizeof(buffer)) {
 	        count = size;
 	    }
 	    fread(buffer, count, 1, fdstr);

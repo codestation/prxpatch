@@ -5,7 +5,8 @@ all:
 	psp-packer pjd2patch.prx
 
 LIBS =
-CFLAGS = -O2 -G0 -Wall -std=c99
+WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
+CFLAGS = -O2 -G0 -std=c99 $(WARN_FLAGS)
 
 ifeq ($(DEBUG), 1)
 CFLAGS+=-DDEBUG

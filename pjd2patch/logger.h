@@ -1,5 +1,5 @@
 /*
- *  PJD2Patch kernel module
+ *  MHP3patch kernel module
  *
  *  Copyright (C) 2011  Codestation
  *
@@ -20,23 +20,24 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-#include <string.h>
-#include <stdio.h>
+//#include <string.h>
 
 #ifdef DEBUG
 
 #define LOGFILE "ms0:/pjd2patch.log"
 
+int sprintf(char *str, const char *format, ...);
+
 extern char _buffer_log[256];
 
-int kwrite(const char *path, void *buffer, int buflen);
+int kwrite(const char *path, void *buffer, SceSize buflen);
 
 #define kprintf(format, ...) do { \
     sprintf(_buffer_log, "%s: "format, __func__, ## __VA_ARGS__); \
-    kwrite(LOGFILE, _buffer_log, sce_paf_private_strlen(_buffer_log)); \
+    kwrite(LOGFILE, _buffer_log, strlen(_buffer_log)); \
 } while(0)
 
-int kwrite(const char *path, void *buffer, int buflen);
+int kwrite(const char *path, void *buffer, SceSize buflen);
 
 #else
 
