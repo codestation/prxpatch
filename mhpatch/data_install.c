@@ -40,7 +40,7 @@ unsigned int install_pos[MAX_INSTALL_FILES];
 // data install fd's
 SceUID install_fd[MAX_INSTALL_FILES];
 
-SceSize install_offset[32];
+SceSize *install_offset;
 
 void fill_install_tables(SceUID fd) {
     if(fd < 0)
@@ -62,6 +62,8 @@ void fill_install_tables(SceUID fd) {
             sceIoRead(fd, &install_pos[i], 4);
             install_fd[i] = -1;
         }
+        // initialize install_offset with our 3rd table address
+        install_offset = &patch_size[patch_count];
         for(i = 0; i < patch_count; i++) {
             sceIoRead(fd, &install_offset[i], 4);
         }

@@ -24,7 +24,7 @@
 #include "misc.h"
 #include "logger.h"
 
-PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 7);
+PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 8);
 
 #define GAME_MODULE "MonsterHunterPortable3rd"
 

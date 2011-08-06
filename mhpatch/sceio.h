@@ -25,7 +25,7 @@
 extern SceUID io_sema;
 extern SceSize data_start;
 extern unsigned int patch_count;
-extern unsigned int patch_size[256];
+extern unsigned int *patch_size;
 
 #define MAKE_SYSCALL( a, f ) _sw(SYSCALL_OPCODE | ( ( ( unsigned int )( f ) & 0x03ffffff ) << 6), a )
 

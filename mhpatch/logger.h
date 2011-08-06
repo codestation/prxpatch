@@ -33,7 +33,7 @@ int kwrite(const char *path, void *buffer, int buflen);
 
 #define kprintf(format, ...) do { \
     sprintf(_buffer_log, "%s: "format, __func__, ## __VA_ARGS__); \
-    kwrite(LOGFILE, _buffer_log, sce_paf_private_strlen(_buffer_log)); \
+    kwrite(LOGFILE, _buffer_log, strlen(_buffer_log)); \
 } while(0)
 
 int kwrite(const char *path, void *buffer, int buflen);
