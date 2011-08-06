@@ -20,9 +20,11 @@
 #ifndef DATA_INSTALL_H_
 #define DATA_INSTALL_H_
 
+#include <pspkerneltypes.h>
+
 void register_install(const char *file, SceUID fd);
 void unregister_install(SceUID fd);
-int read_install(SceUID fd, void *data, SceSSize size);
+int read_install(SceUID fd, void *data, SceSize size);
 void fill_install_tables(SceUID fd);
 
 #endif /* DATA_INSTALL_H_ */

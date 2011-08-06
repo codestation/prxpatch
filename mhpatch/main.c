@@ -17,53 +17,57 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <pspkernel.h>
-#include <string.h>
 #include "libs.h"
 #include "sceio.h"
 #include "misc.h"
 #include "logger.h"
 
+#include <pspkernel.h>
+#include <string.h>
+
 PSP_MODULE_INFO("mhp3patch", PSP_MODULE_KERNEL, 1, 8);
+
+#define ITEMSOF(arr) (sizeof(arr) / sizeof(0[arr]))
 
 #define GAME_MODULE "MonsterHunterPortable3rd"
 
-typedef int (* STMOD_HANDLER)(SceModule *);
+#define UNUSED __attribute__((unused))
+
+typedef int (*STMOD_HANDLER)(SceModule *);
+
+typedef struct {
+    u32 nid;
+    void *func;
+} stub;
 
 STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 STMOD_HANDLER previous = NULL;
 
-void *functions[] = {
-        mhp3_open,
-        mhp3_read,
-        mhp3_close,
+stub stubs[] = {
+        { 0x109F50BC, mhp3_open },  // sceIoOpen
+        { 0x6A638D83, mhp3_read },  // sceIoRead
+        { 0x810C4BC3, mhp3_close }, // sceIoClose
 };
 
-u32 nids[] = {
-        0x109F50BC, // sceIoOpen
-        0x6A638D83, // sceIoRead
-        0x810C4BC3, // sceIoClose
-};
-
-void patch_imports(SceModule *module) {
-    for(int i = 0;i < (sizeof(nids) / 4); i++) {
-        hook_import_bynid(module, "IoFileMgrForUser", nids[i], functions[i], 1);
+inline void patch_imports(SceModule *module) {
+    for (u32 i = 0; i < ITEMSOF(stubs); i++) {
+        hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1);
     }
 }
 
 int module_start_handler(SceModule *module) {
-    if((strcmp(module->modname, GAME_MODULE) == 0) && (module->text_addr & 0x80000000) != 0x80000000) {
-    	patch_imports(module);
+    if ((strcmp(module->modname, GAME_MODULE) == 0) && (module->text_addr & 0x80000000) != 0x80000000) {
+        patch_imports(module);
     }
     return previous ? previous(module) : 0;
 }
 
-int module_start(SceSize args, void *argp) {
-	previous = sctrlHENSetStartModuleHandler(module_start_handler);
-	return 0;
+int module_start(SceSize args UNUSED, void *argp UNUSED) {
+    previous = sctrlHENSetStartModuleHandler(module_start_handler);
+    return 0;
 }
 
-int module_stop(SceSize args, void *argp) {
-	return 0;
+int module_stop(SceSize args UNUSED, void *argp UNUSED) {
+    return 0;
 }

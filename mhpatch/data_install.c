@@ -17,13 +17,14 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <pspiofilemgr.h>
-#include <pspthreadman.h>
-#include <string.h>
 #include "data_install.h"
 #include "sceio.h"
 #include "misc.h"
 #include "logger.h"
+
+#include <pspiofilemgr.h>
+#include <pspthreadman.h>
+#include <string.h>
 
 #define MAX_INSTALL_FILES 256
 #define BMP_SIZE 391734
@@ -50,10 +51,10 @@ void fill_install_tables(SceUID fd) {
     for(i = 0; i < patch_count;i++) {
         calculated_length += patch_size[i];
     }
-    SceSize actual_length = sceIoLseek32(fd, 0, PSP_SEEK_END);
+    SceOff actual_length = sceIoLseek(fd, 0, PSP_SEEK_END);
     if((calculated_length + BMP_SIZE) < actual_length) {
         install_enabled = 1;
-        sceIoLseek32(fd, calculated_length, PSP_SEEK_SET);
+        sceIoLseek(fd, calculated_length, PSP_SEEK_SET);
         sceIoRead(fd, &install_count, 4);
         if(install_count > MAX_INSTALL_FILES)
             install_count = MAX_INSTALL_FILES;
@@ -101,34 +102,34 @@ void unregister_install(SceUID fd) {
     }
 }
 
-int read_install(SceUID fd, void *data, SceSSize size) {
+int read_install(SceUID fd, void *data, SceSize size) {
 	int seeked = 0;
-	SceSize pos = 0;
+	SceOff pos = 0;
     if(install_enabled) {
 	    unsigned int i = 0;
     	while(i < install_count) {
         	if(install_fd[i] == fd) {
 				if(!seeked) {
-	            	pos = sceIoLseek32(fd, 0, PSP_SEEK_CUR);
+	            	pos = sceIoLseek(fd, 0, PSP_SEEK_CUR);
 					seeked = 1;
 				}
     	        SceSize offset = data_start;
         	    unsigned int j = install_pos[i];
             	unsigned int l = i < (install_count - 1) ? install_pos[i+1] : patch_count;
 	            while(j < l) {
-    	            if(install_offset[j] != -1 && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
+    	            if(install_offset[j] != 0xFFFFFFFF && pos < install_offset[j] + patch_size[j] && pos + size > install_offset[j]) {
         	            unsigned int k;
             	        for(k = 0; k < j; k++)
 	                        offset += patch_size[k];
-            	        int k1 = pspSdkSetK1(0);
+            	        u32 k1 = pspSdkSetK1(0);
         	            reopen_translation();
-	                    sceIoLseek32(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
+	                    sceIoLseek(transfd, offset + (pos - install_offset[j]), PSP_SEEK_SET);
     	                int res = sceIoRead(transfd, data, size);
-    	                if(res != size) {
+    	                if(res != (int)size) {
     	                    kprintf("Failed to read data install\n");
     	                }
     	                pspSdkSetK1(k1);
-            	        sceIoLseek32(fd, size, PSP_SEEK_CUR);
+            	        sceIoLseek(fd, size, PSP_SEEK_CUR);
     	                return res;
         	        }
             	    j++;

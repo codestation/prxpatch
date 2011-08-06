@@ -27,7 +27,7 @@ int model = -1;
 int sceKernelGetModel();
 
 void reopen_translation() {
-    if(model < 0) {
+    if (model < 0) {
         model = sceKernelGetModel();
     }
     sceIoClose(transfd);
