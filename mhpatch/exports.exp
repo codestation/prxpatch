@@ -6,7 +6,7 @@ PSP_EXPORT_FUNC(module_stop)
 PSP_EXPORT_VAR(module_info)
 PSP_EXPORT_END
 
-PSP_EXPORT_START(mhp3kernel, 0x11, 0x4001)
+PSP_EXPORT_START(mhp3kernel, 0, 0x4001)
 PSP_EXPORT_FUNC(mhp3_open)
 PSP_EXPORT_FUNC(mhp3_read)
 PSP_EXPORT_FUNC(mhp3_close)

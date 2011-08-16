@@ -44,6 +44,8 @@ STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 STMOD_HANDLER previous = NULL;
 
+SceUID sema = 0;
+
 stub stubs[] = {
         { 0x109F50BC, mhp3_open },  // sceIoOpen
         { 0x6A638D83, mhp3_read },  // sceIoRead
@@ -52,19 +54,34 @@ stub stubs[] = {
 
 inline void patch_imports(SceModule *module) {
     for (u32 i = 0; i < ITEMSOF(stubs); i++) {
-        hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1);
+        if(hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1) < 0) {
+            kprintf("Failed to hook %08X\n", stubs[i].nid);
+        }
     }
 }
 
 int module_start_handler(SceModule *module) {
     if ((strcmp(module->modname, GAME_MODULE) == 0) && (module->text_addr & 0x80000000) != 0x80000000) {
-        patch_imports(module);
+        sceKernelSignalSema(sema, 1);
     }
     return previous ? previous(module) : 0;
 }
 
-int module_start(SceSize args UNUSED, void *argp UNUSED) {
+int thread_start(SceSize args UNUSED, void *argp UNUSED) {
+    sema = sceKernelCreateSema("mhp3patch_wake", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
+    sceKernelWaitSema(sema, 1, NULL);
+    SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+    if(module)
+        patch_imports(module);
+    sceKernelDeleteSema(sema);
+    return 0;
+}
+
+int module_start(SceSize args UNUSED, void *argp UNUSED) {
+    SceUID thid = sceKernelCreateThread("mhp3patch_main", thread_start, 0x22, 0x2000, 0, NULL);
+    if(thid >= 0)
+        sceKernelStartThread(thid, 0, NULL);
     return 0;
 }
 

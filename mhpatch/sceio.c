@@ -54,7 +54,8 @@ int fill_tables(SceUID fd) {
     // max permitted: 6KiB
     if (patch_count > 6144) {
         patch_count = 6144;
-    } kprintf("Allocating %i bytes\n", patch_count * 4 * 3);
+    }
+    kprintf("Allocating %i bytes\n", patch_count * 4 * 3);
     memid = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_KERNEL, "mhp3tbl", PSP_SMEM_High, patch_count * 4 * 3, NULL);
     if (memid < 0) {
         kprintf("Mamory alloc failed\n");
@@ -81,6 +82,7 @@ SceUID mhp3_open(const char *file, int flags, SceMode mode) {
     if (fd >= 0) {
         k1 = pspSdkSetK1(0);
         if (strcmp(file, DATABIN_PATH) == 0) {
+            kprintf("DATA.BIN opened\n");
             reopen_translation();
             if (fill_tables(transfd) >= 0) {
                 fill_install_tables(transfd);

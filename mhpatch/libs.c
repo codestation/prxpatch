@@ -24,6 +24,7 @@
 #include <psputils.h>
 #include <string.h>
 #include "libs.h"
+#include "logger.h"
 
 typedef struct
 {
