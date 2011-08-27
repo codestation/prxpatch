@@ -1,9 +1,6 @@
 TARGET = pjd2patch
 OBJS =  main.o exports.o imports.o logger.o
 
-all:
-	psp-packer pjd2patch.prx
-
 LIBS =
 WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
 CFLAGS = -O2 -G0 -std=c99 $(WARN_FLAGS)
