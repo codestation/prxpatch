@@ -9,13 +9,17 @@
 !x0884C2FC Please do not remove the
 !x0884C328 storage media or power off
 !x0884C354 the unit while saving.
-!x0884C3AC PJD2 patch 2011/02/26
+!x0884C3AC PJD2 patch 2011/09/12
 !x0884C3D8          -codestation
 
 #!x08863DD8 Please enter a nickname
 #!x08863DEC Enter the name of your favorite song
 #!x08863E00 Please enter a comment
 #!x08863E14 Enter a memo
+
+# Highscore tables
+!x08B8CAD8 High score      MAX Combo     Clear     Play Count
+!x08B8D53C High score      MAX Combo     Clear     Play Count
 
 # DIVA room main menu
 0x08C2A948 Layout
