@@ -20,9 +20,10 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-//#include <string.h>
-
 #ifdef DEBUG
+
+#include <pspiofilemgr.h>
+#include <string.h>
 
 #define LOGFILE "ms0:/mhpatch.log"
 

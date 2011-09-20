@@ -28,6 +28,7 @@
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
 
 static SceUID datafd = -1;
+static u32 k1;
 
 SceUID mhp3_open(const char *file, int flags, SceMode mode) {
     SceUID fd = sceIoOpen(file, flags, mode);
@@ -52,13 +53,22 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
         file_offset = (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR);
         file_index = find_mod_index(file_offset);
         if(file_index) {
+            kprintf("index found: %08X\n", *file_index);
             mod_number = get_mod_number(file_index);
-            modfd = load_mod_file(mod_number);
-            if(modfd >= 0) {
-                sceIoLseek(modfd, file_offset - *file_index, PSP_SEEK_SET);
-                res = sceIoRead(modfd, data, size);
-                sceIoClose(modfd);
-                return res;
+            kprintf("translated file number: %i\n", mod_number);
+            if(mod_number > 0) {
+                pspSdkSetK1(0);
+                modfd = load_mod_file(mod_number);
+                if(modfd >= 0) {
+                    sceIoLseek(modfd, file_offset - (*file_index << 11), PSP_SEEK_SET);
+                    res = sceIoRead(modfd, data, size);
+                    sceIoClose(modfd);
+                    kprintf("read returned %08X\n", res);
+                    sceIoLseek(fd, res, PSP_SEEK_CUR);
+                    pspSdkSetK1(k1);
+                    return res;
+                }
+                pspSdkSetK1(k1);
             }
         }
     }

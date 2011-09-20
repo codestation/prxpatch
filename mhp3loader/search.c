@@ -22,7 +22,6 @@
 u32 *search_vector(u32 value, u32 *vector, u32 lim) {
     u32 idx;
     u32 count = lim;
-
     if(vector) {
         while(lim) {
             idx = lim >> 1;
