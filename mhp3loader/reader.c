@@ -58,9 +58,11 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
             kprintf("translated file number: %i\n", mod_number);
             if(mod_number > 0) {
                 pspSdkSetK1(0);
+                quest_override(mod_number);
                 modfd = load_mod_file(mod_number);
                 if(modfd >= 0) {
                     sceIoLseek(modfd, file_offset - (*file_index << 11), PSP_SEEK_SET);
+                    kprintf("reading offset %08X, size: %08X\n", file_offset, size);
                     res = sceIoRead(modfd, data, size);
                     sceIoClose(modfd);
                     kprintf("read returned %08X\n", res);

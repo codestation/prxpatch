@@ -52,6 +52,6 @@ u32 *find_mod_index(u32 value);
 SceUID load_mod_file(u32 number);
 u32 get_mod_number(u32 *pos);
 void unload_mod_index();
-int need_redirection(u32 mod_number);
+void quest_override(u32 mod_number);
 
 #endif /* LOADER_H_ */

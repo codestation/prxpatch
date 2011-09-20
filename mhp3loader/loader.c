@@ -25,7 +25,8 @@
 #include "search.h"
 #include "logger.h"
 
-#define MOD_START_MARKER 101
+#define QUEST_START_MARKER 101
+#define MIB_ADDR 0x8a33e70
 
 int sceKernelGetModel(void);
 int sprintf(char *str, const char *format, ...);
@@ -34,7 +35,7 @@ static u32 *index_table;
 static u32 index_elems;
 static SceUID index_id;
 
-//static int mod_redirect = -1;
+static int quest_started = 0;
 static u32 loaded_mib;
 static int model_go;
 
@@ -120,24 +121,24 @@ void unload_mod_index() {
     }
 }
 
-//static int mod_check(u32 mod_number) {
-//    return mod_number == 3668 ? 1 : 0;
-//}
-//
-//int need_redirection(u32 mod_number) {
-//    if(mod_redirect <= 0) {
-//        if(mod_number == MOD_START_MARKER) {
-//            mod_redirect = 0;
-//        } else if(mod_redirect == 0) {
-//            // check for the loaded mib if any
-//            if(mod_number >= 2820 && mod_number <= 3972) {
-//                loaded_mib = mod_number;
-//            }
-//            if(mod_number > 5000) {
-//                mod_redirect = mod_check(mod_number);
-//            }
-//        }
-//    }
-//    return mod_redirect > 0 ? 1 : 0;
-//}
 
+void quest_override(u32 mod_number) {
+    if(mod_number == QUEST_START_MARKER) {
+        kprintf("quest started\n");
+        quest_started = 1;
+        loaded_mib = 0;
+    }
+    if(quest_started == 1) {
+        if(mod_number >= 2820 && mod_number <= 3972) {
+            kprintf("detected quest: %i\n", mod_number);
+            loaded_mib = mod_number;
+        }
+        if(mod_number > 5000) {
+            if(loaded_mib == 0) {
+                //TODO: detect quest number using mib data and
+                // assign resutl to loaded_mib
+            }
+            quest_started = 2;
+        }
+    }
+}
