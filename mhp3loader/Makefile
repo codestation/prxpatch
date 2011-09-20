@@ -1,4 +1,4 @@
-TARGET = mhp3patch
+TARGET = mhp3loader
 OBJS =  main.o hook.o imports.o exports.o logger.o reader.o search.o loader.o
 
 LIBS =

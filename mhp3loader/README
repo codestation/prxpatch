@@ -1,30 +1,20 @@
-mhpatch: in-game prx patcher by codestation
+mhp3loader: in-game prx patcher by codestation
 
 Usage:
 
-* Copy mhp3patch.prx and to the ms0:/seplugins directory of the PSP and 
-  enable mhp3patch.prx in game.txt (the plugins can be in a separate directory
-  inside seplugins, e.g. ms0:/seplugins/mhpatch to avoid cluttering the plugins
+* Copy mhp3loader.prx and to the ms0:/seplugins directory of the PSP and 
+  enable mhp3loader.prx in game.txt (the plugins can be in a separate directory
+  inside seplugins, e.g. ms0:/seplugins/mhp3loader to avoid cluttering the plugins
   directory).
 
-* Copy the patchfile to the root of the ms, (e.g.: ms0:/)
-
-Format of the patchfile:
-
-patch_count: 4 bytes -> number of patches
-
-patch_offset[0]: 4 bytes -> offset of the patch in memory
-patch_size[0]: 4 bytes -> size of the patch
-...
-patch_offset[patch_count-1]: 4 bytes -> offset of the patch in memory
-patch_size[patch_count-1]: 4 bytes -> size of the patch
-
-padding: the needed bytes to make the next section a multiple of 16
-
-patch_file[0]: patch_size[0] bytes -> 1st patch
-...
-patch_file[patch_count-1]: patch_size[patch_count-1] bytes -> last patch
-
-BMP_image: 391734 bytes -> BMP image used for a bootsplash (480x272) (24bits)
-------------
-Special thanks to Coldbird for the aemu project
+* Copy the base translation files to ms0:/mhp3rd/patch, the files must be using the
+  xxxx.bin name and be encrypted already.
+  
+* Copy all the modded files to ms0:/mhp3rd/extra, the files must be using the
+  xxxx.bin name and be encrypted already. These files override the ones in the patch
+  folder so you can use it for permanent mods.
+  
+ * Copy all the quest modded files to ms0:/mhp3rd/quest/<quest mib number>, the files
+  must be using the xxxx.bin name and be encrypted already. These files override the
+  ones in the extra and patch folder BUT they are only going to be loaded if the quest
+  being loaded matches the folder number (not implemented yet).
