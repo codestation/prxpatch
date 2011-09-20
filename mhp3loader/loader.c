@@ -42,7 +42,7 @@ static char filename[32];
 static u32 k1;
 
 const char *mod_path[] = {
-        "xxx:/mhp3rd/mods/%04d/%04d.bin",
+        "xxx:/mhp3rd/quest/%04d/%04d.bin",
         "xxx:/mhp3rd/extra/%04d.bin",
         "xxx:/mhp3rd/patch/%04d.bin",
 };
