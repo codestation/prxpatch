@@ -6,6 +6,9 @@ Usage:
   enable mhp3loader.prx in game.txt (the plugins can be in a separate directory
   inside seplugins, e.g. ms0:/seplugins/mhp3loader to avoid cluttering the plugins
   directory).
+  
+* Place the file called index.bin (use mhtools to get that from your data.bin) in the
+  ms0:/mhp3rd/ folder.
 
 * Copy the base translation files to ms0:/mhp3rd/patch, the files must be using the
   xxxx.bin name and be encrypted already.
@@ -17,4 +20,13 @@ Usage:
  * Copy all the quest modded files to ms0:/mhp3rd/quest/<quest mib number>, the files
   must be using the xxxx.bin name and be encrypted already. These files override the
   ones in the extra and patch folder BUT they are only going to be loaded if the quest
-  being loaded matches the folder number (not implemented yet).
+  being loaded matches the folder number.
+
+ * If you want the mods per quest to work in online mode (i.e. receiving a quest from 
+   another player) then you need to generate a mib_id.dat and place it in ms0:mhp3rd/quest/.
+   This file contains the hashes of the decrypted mib files so the plugin can recognize
+   them when they are loaded and do the redirection.
+   
+   To create the file just place all the decrypted mib that you want to use and run
+   "python gen_id.py *.mib", this will read all the decrypted mib files and generate the
+   mib_id.dat with the hashes on it.
