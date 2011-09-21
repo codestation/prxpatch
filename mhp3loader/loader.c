@@ -26,6 +26,7 @@
 #include "logger.h"
 
 #define QUEST_START_MARKER 101
+#define QUEST_END_MARKER 105
 #define MIB_ADDR 0x8a33e70
 #define MIB_ID_SIZE 220
 
@@ -196,6 +197,11 @@ void quest_override(u32 mod_number) {
                 }
             }
             quest_started = 2;
+        }
+        if(mod_number == QUEST_END_MARKER) {
+            kprintf("quest finished\n");
+            quest_started = 0;
+            loaded_mib = 0;
         }
     }
 }
