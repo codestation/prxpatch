@@ -166,7 +166,8 @@ void unload_mod_index() {
 u32 get_address_id(u8 *address, u32 size) {
     u32 digest[5];
     sceKernelUtilsSha1Digest(address, size, (u8 *)&digest);
-    return *address;
+    kprintf("current loaded mib id: %08X\n", *digest);
+    return *digest;
 }
 
 
@@ -185,9 +186,13 @@ void quest_override(u32 mod_number) {
         }
         if(mod_number > 5000) {
             if(loaded_mib == 0) {
+                kprintf("no quest has been loaded, starting mib analysis\n");
                 result = search_exact(get_address_id((u8 *)MIB_ADDR, MIB_ID_SIZE), mib_table, mib_elems);
                 if(result) {
                     loaded_mib = get_quest_number(result);
+                    kprintf("mib number found: %i\n", loaded_mib);
+                } else {
+                    kprintf("unknown mib file, skipping\n");
                 }
             }
             quest_started = 2;
