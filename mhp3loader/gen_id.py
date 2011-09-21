@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import os
 import sys
 import hashlib
 from struct import pack, unpack
@@ -23,10 +23,11 @@ def hashfile(filepath):
 if __name__ == '__main__':
     list = []
     for filename in sys.argv[1:]:
-        print(filename + ": " + hashfile(filename)[:8])
+        basename = os.path.basename(filename)
+        print(basename + ": " + hashfile(filename)[:8])
         val = pack('>I', int(hashfile(filename)[:8], 16))
         hash = unpack('I', val)[0]
-        list.append((hash, int(filename[:4])))
+        list.append((hash, int(basename[:4])))
     f = open('mib_id.dat', 'wb')
     list.sort()
 
