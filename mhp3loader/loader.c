@@ -198,10 +198,10 @@ void quest_override(u32 mod_number) {
             }
             quest_started = 2;
         }
-        if(mod_number == QUEST_END_MARKER) {
-            kprintf("quest finished\n");
-            quest_started = 0;
-            loaded_mib = 0;
-        }
+    }
+    if(mod_number == QUEST_END_MARKER) {
+        kprintf("quest finished\n");
+        quest_started = 0;
+        loaded_mib = 0;
     }
 }
