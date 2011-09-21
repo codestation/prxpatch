@@ -24,7 +24,9 @@ if __name__ == '__main__':
     list = []
     for filename in sys.argv[1:]:
         print(filename + ": " + hashfile(filename)[:8])
-        list.append((int(hashfile(filename)[:8], 16), int(filename[:4])))
+        val = pack('>I', int(hashfile(filename)[:8], 16))
+        hash = unpack('I', val)[0]
+        list.append((hash, int(filename[:4])))
     f = open('mib_id.dat', 'wb')
     list.sort()
 
