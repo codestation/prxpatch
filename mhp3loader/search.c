@@ -38,3 +38,22 @@ u32 *search_vector(u32 value, u32 *vector, u32 lim) {
     }
     return NULL;
 }
+
+u32 *search_exact(u32 value, u32 *vector, u32 lim) {
+    u32 idx;
+    if(vector) {
+        while(lim) {
+            idx = lim >> 1;
+            if(value >= vector[idx]) {
+                if(value > vector[idx]) {
+                    vector += idx + 1;
+                    lim--;
+                } else {
+                    return vector + idx;
+                }
+            }
+            lim >>= 1;
+        }
+    }
+    return NULL;
+}

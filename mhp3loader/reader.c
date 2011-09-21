@@ -24,11 +24,13 @@
 #include <pspsysmem.h>
 #include <pspiofilemgr.h>
 #include <string.h>
+#include <limits.h>
 
 #define DATABIN_PATH "disc0:/PSP_GAME/USRDIR/DATA.BIN"
 
 static SceUID datafd = -1;
 static u32 k1;
+static u32 last_failed = UINT_MAX;
 
 SceUID mhp3_open(const char *file, int flags, SceMode mode) {
     SceUID fd = sceIoOpen(file, flags, mode);
@@ -36,6 +38,7 @@ SceUID mhp3_open(const char *file, int flags, SceMode mode) {
         if (strcmp(file, DATABIN_PATH) == 0) {
             kprintf("DATA.BIN opened\n");
             load_mod_index();
+            load_quest_index();
             datafd = fd;
         }
     }
@@ -56,7 +59,7 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
             kprintf("index found: %08X\n", *file_index);
             mod_number = get_mod_number(file_index);
             kprintf("translated file number: %i\n", mod_number);
-            if(mod_number > 0) {
+            if(mod_number > 0 && mod_number != last_failed) {
                 pspSdkSetK1(0);
                 quest_override(mod_number);
                 modfd = load_mod_file(mod_number);
@@ -69,6 +72,9 @@ int mhp3_read(SceUID fd, void *data, SceSize size) {
                     sceIoLseek(fd, res, PSP_SEEK_CUR);
                     pspSdkSetK1(k1);
                     return res;
+                } else {
+                    // avoid the overhead of reading the same nonexistent file again
+                    last_failed = mod_number;
                 }
                 pspSdkSetK1(k1);
             }

@@ -23,5 +23,6 @@
 #include <psptypes.h>
 
 u32 *search_vector(u32 value, u32 *vector, u32 elems);
+u32 *search_exact(u32 value, u32 *vector, u32 elems);
 
 #endif /* SEARCH_H_ */

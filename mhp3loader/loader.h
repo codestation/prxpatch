@@ -48,6 +48,7 @@ enum Location {
 #define ITEMSOF(arr) (sizeof(arr) / sizeof(0[arr]))
 
 int load_mod_index();
+int load_quest_index();
 u32 *find_mod_index(u32 value);
 SceUID load_mod_file(u32 number);
 u32 get_mod_number(u32 *pos);
