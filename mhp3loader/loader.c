@@ -27,6 +27,7 @@
 
 #define QUEST_START_MARKER 101
 #define MIB_ADDR 0x8a33e70
+#define MIB_ID_SIZE 220
 
 int sceKernelGetModel(void);
 int sprintf(char *str, const char *format, ...);
@@ -42,6 +43,10 @@ static int model_go;
 static char filename[32];
 static u32 k1;
 
+static u32 *mib_table;
+static u32 *quest_number;
+static u32 mib_elems;
+
 const char *mod_path[] = {
         "xxx:/mhp3rd/quest/%04d/%04d.bin",
         "xxx:/mhp3rd/extra/%04d.bin",
@@ -53,6 +58,7 @@ int load_mod_index() {
     index_elems = 0;
     index_id = -1;
     loaded_mib = 0;
+
     k1 = pspSdkSetK1(0);
     model_go = sceKernelGetModel() == 4 ? 1 : 0;
     strcpy(filename, "xxx:/mhp3rd/index.bin");
@@ -71,6 +77,37 @@ int load_mod_index() {
         index_table = sceKernelGetBlockHeadAddr(index_id);
         sceIoRead(fd, index_table, size);
         index_elems = size / sizeof(u32);
+        kprintf("index size: %i bytes, entries: %i\n", size, index_elems);
+    } else {
+        kprintf("failed to allocate memory for table\n");
+    }
+    sceIoClose(fd);
+    pspSdkSetK1(k1);
+    return 0;
+}
+
+int load_quest_index() {
+    mib_table = NULL;
+    mib_elems = 0;
+    k1 = pspSdkSetK1(0);
+    model_go = sceKernelGetModel() == 4 ? 1 : 0;
+    strcpy(filename, "xxx:/mhp3rd/quest/mib_id.dat");
+    SET_DEVICENAME(filename, model_go);
+    kprintf("trying to open %s\n", filename);
+    SceUID fd = sceIoOpen(filename, PSP_O_RDONLY, 0777);
+    if(fd < 0) {
+        kprintf("Cannot find mib_id.dat\n");
+        pspSdkSetK1(k1);
+        return fd;
+    }
+    SceSize size = (SceSize)sceIoLseek(fd, 0, PSP_SEEK_END);
+    sceIoLseek(fd, 0, PSP_SEEK_SET);
+    index_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_KERNEL, "mhp3mib", PSP_SMEM_High, size, NULL);
+    if(index_id >= 0) {
+        mib_table = sceKernelGetBlockHeadAddr(index_id);
+        sceIoRead(fd, mib_table, size);
+        mib_elems = size / (sizeof(u32) * 2);
+        quest_number = mib_table + mib_elems;
         kprintf("index size: %i bytes, entries: %i\n", size, index_elems);
     } else {
         kprintf("failed to allocate memory for table\n");
@@ -115,14 +152,27 @@ u32 get_mod_number(u32 *pos) {
     return (u32)(pos - index_table) + 1;
 }
 
+u32 get_quest_number(u32 *pos) {
+    return quest_number[(u32)(pos - mib_table)];
+}
+
+
 void unload_mod_index() {
     if(index_table) {
         sceKernelFreePartitionMemory(index_id);
     }
 }
 
+u32 get_address_id(u8 *address, u32 size) {
+    u32 digest[5];
+    sceKernelUtilsSha1Digest(address, size, (u8 *)&digest);
+    return *address;
+}
+
 
 void quest_override(u32 mod_number) {
+    u32 *result;
+
     if(mod_number == QUEST_START_MARKER) {
         kprintf("quest started\n");
         quest_started = 1;
@@ -135,8 +185,10 @@ void quest_override(u32 mod_number) {
         }
         if(mod_number > 5000) {
             if(loaded_mib == 0) {
-                //TODO: detect quest number using mib data and
-                // assign resutl to loaded_mib
+                result = search_exact(get_address_id((u8 *)MIB_ADDR, MIB_ID_SIZE), mib_table, mib_elems);
+                if(result) {
+                    loaded_mib = get_quest_number(result);
+                }
             }
             quest_started = 2;
         }
