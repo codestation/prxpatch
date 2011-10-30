@@ -1,4 +1,4 @@
-# Translation file for PJD2 (use shift-jis to edit the file)
+# Translation file for Porject Diva 2nd (use shift-jis to edit the file)
 # 0x08xxxxxx: use this format to rewrite the pointed address
 #             to a newly allocated one for the translation
 # !x08xxxxxx: use this type of format if the address to modify
@@ -9,7 +9,7 @@
 !x0884C2FC Please do not remove the
 !x0884C328 storage media or power off
 !x0884C354 the unit while saving.
-!x0884C3AC PJD2 patch 2011/09/12
+!x0884C3AC PD 2nd patch 2011/09/12
 !x0884C3D8          -codestation
 
 #!x08863DD8 Please enter a nickname
@@ -118,16 +118,16 @@
 !x08B8E56C [Title]
 !x08B8E5F4 [Thumbnail]
 
-!x08B9307C Play Time:  @@@@@@@@@@@@%03d:%02d:%02d
-!x08B93094 Total DIVA Points:  @@@@@@@@ %08d
-!x08B930AC Gifts Given:  @@@@@@@      @     %04d
-!x08B930C4 Rhythm Game Clear Rate: @@@@@@@@%03d“
-!x08B930DC Item Get Rate:  @@@@@@@@@@@@%03d“
-!x08B930F4 Module Get Rate:  @@@@@@@@@@@%03d“
-!x08B9310C Image Gallery Get Rate:   @@@@@@@%03d“
-!x08B93124 Title Get Rate: @@@@@@@      @  %03d“
-!x08B9313C Perfect Rate:     @@@@@@@@@@@%03d“
-!x08B931A4 %sF%3d“@%sF%3d“@%sF%3d“@%sF%3d“
+!x08B9307C Play Time:  ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03d:%02d:%02d
+!x08B93094 Total DIVA Points:  ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ %08d
+!x08B930AC Gifts Given:  ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@      ï¿½@     %04d
+!x08B930C4 Rhythm Game Clear Rate: ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03dï¿½ï¿½
+!x08B930DC Item Get Rate:  ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03dï¿½ï¿½
+!x08B930F4 Module Get Rate:  ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03dï¿½ï¿½
+!x08B9310C Image Gallery Get Rate:   ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03dï¿½ï¿½
+!x08B93124 Title Get Rate: ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@      ï¿½@  %03dï¿½ï¿½
+!x08B9313C Perfect Rate:     ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@ï¿½@%03dï¿½ï¿½
+!x08B931A4 %sï¿½F%3dï¿½ï¿½ï¿½@%sï¿½F%3dï¿½ï¿½ï¿½@%sï¿½F%3dï¿½ï¿½ï¿½@%sï¿½F%3dï¿½ï¿½
 !x08B93818 Gifts Given:   %03d times
 
 # Song list
@@ -141,12 +141,12 @@
 0x08C1C048 Inoichi no Uta
 0x08C1C058 Hato
 0x08C1C068 Moon
-0x08C1C078 Beware of Miku Miku Bacteriaô
+0x08C1C078 Beware of Miku Miku Bacteriaï¿½ï¿½
 0x08C1C088 The secret garden
 0x08C1C098 Dear cocoa girls
 0x08C1C0A8 Velvet Arabesque
 0x08C1C0B8 Updating Your Love List?
-0x08C1C0C8 Miku Miku ni Shite Ageruô
+0x08C1C0C8 Miku Miku ni Shite Ageruï¿½ï¿½
 0x08C1C0D8 When the First Love Ends
 0x08C1C0E8 Kocchi Muite Baby
 0x08C1C0F8 Finder (DSLR remix - re:edit)
@@ -171,7 +171,7 @@
 0x08C1C228 Cantarella
 0x08C1C238 Change Me
 0x08C1C248 Sound
-0x08C1C258 CloverEClub
+0x08C1C258 Cloverï¿½EClub
 0x08C1C268 Promise
 0x08C1C278 Honto wa Wakatteru
 0x08C1C288 Innocence
@@ -239,7 +239,7 @@
 0x08BCCBA4 Aile D'Ange
 0x08BCCBA8 Spacy Nurse
 0x08BCCBAC Noble
-0x08BCCBB0 JeršSey
+0x08BCCBB0 Jerï¿½ï¿½Sey
 0x08BCCBB4 Miku Hood
 0x08BCCBB8 White Dress
 0x08BCCBBC Vintage Dress
@@ -251,7 +251,7 @@
 0x08BCCBD4 Yellow
 0x08BCCBD8 Stroll Style
 0x08BCCBDC Saihate Miku
-0x08BCCBE0 ‡
+0x08BCCBE0 ï¿½ï¿½
 0x08BCCBE4 Powder
 0x08BCCBE8 Miku Butterfly
 0x08BCCBEC Cute Miku
@@ -485,52 +485,52 @@
 0x08BCDF98 Craftsman
 0x08BCDF9C Sound Artisan
 0x08BCDFA0 Perfect Pitch
-0x08BCDFA4 šWhen the first love ends
-0x08BCDFA8 šKocchi Muite Baby
-0x08BCDFAC šYellow
-0x08BCDFB0 šFinder
-0x08BCDFB4 šColorful x Melody
-0x08BCDFB8 šHatsune Miku no Geki shou
-0x08BCDFBC šRomeo x Cinderella
-0x08BCDFC0 šMagnet
-0x08BCDFC4 šDear
-0x08BCDFC8 šFrom Y to Y
-0x08BCDFCC šGemini
-0x08BCDFD0 šAi Kotoba
-0x08BCDFD4 šPoPiPo
-0x08BCDFD8 šSaihate
-0x08BCDFDC šVOiCE -DIVA MIX-
-0x08BCDFE0 šLove-Colored Ward
-0x08BCDFE4 šKyoday Shoujo
-0x08BCDFE8 šMeltdown
-0x08BCDFEC šKokoro
-0x08BCDFF0 šMigikata no Chou
-0x08BCDFF4 šDouble Lariat
-0x08BCDFF8 šCantarella
-0x08BCDFFC šChange me
-0x08BCE000 šJust Be Friends
-0x08BCE004 šSound
-0x08BCE008 šCloverEClub
-0x08BCE00C šPromise
-0x08BCE010 šHonto wa Wakatteru
-0x08BCE014 šInnocence
-0x08BCE018 šHajimete no oto
-0x08BCE01C šWorld is Mine
-0x08BCE020 šMelt
-0x08BCE024 šStrobo Nights
-0x08BCE028 šPackaged
-0x08BCE02C šMiracle Paint
-0x08BCE030 šMarginal
-0x08BCE034 šKouja to Mori to Mahou no Uta
-0x08BCE038 šInoichi no Uta
-0x08BCE03C šHato
-0x08BCE040 šMoon
-0x08BCE044 šBeware of Miku Miku Bacteriaô
-0x08BCE048 šThe secret garden
-0x08BCE04C šDear cocoa girls
-0x08BCE050 šVelvet Arabesque
-0x08BCE054 šUpdating your love list?
-0x08BCE058 šMiku Miku ni Shite Ageruô
+0x08BCDFA4 ï¿½ï¿½When the first love ends
+0x08BCDFA8 ï¿½ï¿½Kocchi Muite Baby
+0x08BCDFAC ï¿½ï¿½Yellow
+0x08BCDFB0 ï¿½ï¿½Finder
+0x08BCDFB4 ï¿½ï¿½Colorful x Melody
+0x08BCDFB8 ï¿½ï¿½Hatsune Miku no Geki shou
+0x08BCDFBC ï¿½ï¿½Romeo x Cinderella
+0x08BCDFC0 ï¿½ï¿½Magnet
+0x08BCDFC4 ï¿½ï¿½Dear
+0x08BCDFC8 ï¿½ï¿½From Y to Y
+0x08BCDFCC ï¿½ï¿½Gemini
+0x08BCDFD0 ï¿½ï¿½Ai Kotoba
+0x08BCDFD4 ï¿½ï¿½PoPiPo
+0x08BCDFD8 ï¿½ï¿½Saihate
+0x08BCDFDC ï¿½ï¿½VOiCE -DIVA MIX-
+0x08BCDFE0 ï¿½ï¿½Love-Colored Ward
+0x08BCDFE4 ï¿½ï¿½Kyoday Shoujo
+0x08BCDFE8 ï¿½ï¿½Meltdown
+0x08BCDFEC ï¿½ï¿½Kokoro
+0x08BCDFF0 ï¿½ï¿½Migikata no Chou
+0x08BCDFF4 ï¿½ï¿½Double Lariat
+0x08BCDFF8 ï¿½ï¿½Cantarella
+0x08BCDFFC ï¿½ï¿½Change me
+0x08BCE000 ï¿½ï¿½Just Be Friends
+0x08BCE004 ï¿½ï¿½Sound
+0x08BCE008 ï¿½ï¿½Cloverï¿½EClub
+0x08BCE00C ï¿½ï¿½Promise
+0x08BCE010 ï¿½ï¿½Honto wa Wakatteru
+0x08BCE014 ï¿½ï¿½Innocence
+0x08BCE018 ï¿½ï¿½Hajimete no oto
+0x08BCE01C ï¿½ï¿½World is Mine
+0x08BCE020 ï¿½ï¿½Melt
+0x08BCE024 ï¿½ï¿½Strobo Nights
+0x08BCE028 ï¿½ï¿½Packaged
+0x08BCE02C ï¿½ï¿½Miracle Paint
+0x08BCE030 ï¿½ï¿½Marginal
+0x08BCE034 ï¿½ï¿½Kouja to Mori to Mahou no Uta
+0x08BCE038 ï¿½ï¿½Inoichi no Uta
+0x08BCE03C ï¿½ï¿½Hato
+0x08BCE040 ï¿½ï¿½Moon
+0x08BCE044 ï¿½ï¿½Beware of Miku Miku Bacteriaï¿½ï¿½
+0x08BCE048 ï¿½ï¿½The secret garden
+0x08BCE04C ï¿½ï¿½Dear cocoa girls
+0x08BCE050 ï¿½ï¿½Velvet Arabesque
+0x08BCE054 ï¿½ï¿½Updating your love list?
+0x08BCE058 ï¿½ï¿½Miku Miku ni Shite Ageruï¿½ï¿½
 0x08BCE05C Novice Coordinator
 0x08BCE060 Coordinator
 0x08BCE064 Stylist
@@ -581,7 +581,7 @@
 0x08BCE118 Rhythm Master
 
 0x08BCE224 Smile
-0x08BCE228 i„ƒj
+0x08BCE228 ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½j
 0x08BCE22C Surprise
 0x08BCE230 Wink
 0x08BCE234 Anger

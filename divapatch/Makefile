@@ -1,8 +1,8 @@
-TARGET = pjd2patch
+TARGET = divapatch
 OBJS =  main.o exports.o imports.o logger.o
 
 LIBS =
-WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
+WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -Wno-unused-parameter
 CFLAGS = -O2 -G0 -std=c99 $(WARN_FLAGS)
 
 ifeq ($(DEBUG), 1)

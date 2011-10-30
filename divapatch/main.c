@@ -23,30 +23,42 @@
 #include <string.h>
 #include "logger.h"
 
-PSP_MODULE_INFO("pjd2patch", PSP_MODULE_KERNEL, 1, 1);
+PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 1);
 PSP_HEAP_SIZE_KB(0);
 
-#define GAME_ID "ULJM05681"
 #define GAME_MODULE "PdvApp"
-#define TRANS_FILE "pjd2_translation.bin"
-
-#define UNUSED __attribute__((unused))
+#define GAMEID_DIR "disc0:/UMD_DATA.BIN"
 
 typedef int (* STMOD_HANDLER)(SceModule *);
 
 STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
-char filepath[256];
-
-STMOD_HANDLER previous = NULL;
-
-SceUID block_id = -1;
-void *block_addr = NULL;
-
 struct addr_data {
     void **addr;
     u32 offset;
 }__attribute__((packed));
+
+const char *diva_id[] = {
+        "ULJM05472", // Project Diva
+        "ULJM05681", // Project Diva 2nd
+        "NPJH90226", // Project Diva Extend TGS Demo 1
+        "NPJH90227", // Project Diva Extend Demo 2
+        "ULJMXXXXX", // Project Diva Extend
+};
+
+const char *trans_files[] = {
+        "diva1st_translation.bin",
+        "diva2nd_translation.bin",
+        "divaext_demo1.bin",
+        "divaext_demo2.bin",
+        "divaext_translation.bin",
+};
+
+static char filepath[256];
+static STMOD_HANDLER previous = NULL;
+static SceUID block_id = -1;
+static void *block_addr = NULL;
+static int patch_index = -1;
 
 void patch_eboot()  {
     u32 count;
@@ -55,7 +67,7 @@ void patch_eboot()  {
     SceSize index_size, table_size;
 
     strrchr(filepath, '/')[1] = 0;
-    strcat(filepath, TRANS_FILE);
+    strcat(filepath, trans_files[patch_index]);
     fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
     if(fd < 0) {
         return;
@@ -66,7 +78,7 @@ void patch_eboot()  {
     index_size = (count * 8) + 4;
     index_size += 16 - (index_size % 16);
     table_size = (SceSize)size - index_size;
-    block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_USER, "pjd2-trans", PSP_SMEM_High, table_size, NULL);
+    block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_USER, "divatrans", PSP_SMEM_High, table_size, NULL);
     if(block_id < 0) {
         return;
     }
@@ -108,20 +120,51 @@ void patch_eboot()  {
     sceIoClose(fd);
 }
 
+int get_gameid(char *gameid) {
+    SceUID fd = sceIoOpen(GAMEID_DIR, PSP_O_RDONLY, 0777);
+    if (fd >= 0) {
+        sceIoRead(fd, gameid, 10);
+        sceIoClose(fd);
+        if (gameid[4] == '-') {
+            memmove(gameid + 4, gameid + 5, 5);
+        }
+        gameid[9] = '\0';
+    }
+    return fd;
+}
+
 int module_start_handler(SceModule * module) {
     if((module->text_addr & 0x80000000) != 0x80000000 && strcmp(module->modname, GAME_MODULE) == 0) {
-        patch_eboot();
+        // game found, but since all versions use the same module name we need to find out the
+        // correct game.
+        kprintf("Project Diva found\n");
+        char gameid[16];
+        if(get_gameid(gameid) >= 0) {
+            kprintf("GAMEID: %s\n", gameid);
+            //FIXME: change the lower bound to zero if a patch for Project Diva 1st is made
+            //       change the upper bound to the array size once Project Diva Extend is available
+            for(int i = 1; i < 4; i++) {
+                if(strcmp(gameid, diva_id[i]) == 0) {
+                    kprintf("found match: %i\n", i);
+                    patch_index = i;
+                    break;
+                }
+            }
+            if(patch_index >= 0) {
+                patch_eboot();
+            }
+        }
     }
     return previous ? previous(module) : 0;
 }
 
-int module_start(SceSize argc UNUSED, void *argp) {
+int module_start(SceSize argc, void *argp) {
     strcpy(filepath, argp);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
 	return 0;
 }
 
-int module_stop(SceSize args UNUSED, void *argp UNUSED) {
+int module_stop(SceSize args, void *argp) {
     if(block_id >= 0) {
         sceKernelFreePartitionMemory(block_id);
     }

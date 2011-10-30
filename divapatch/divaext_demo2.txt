@@ -1,0 +1,13 @@
+# Translation file for Project Diva Extend (demo 2) (use shift-jis to edit the file)
+# 0x08xxxxxx: use this format to rewrite the pointed address
+#             to a newly allocated one for the translation
+# !x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction (use the lower
+#             address part of the instruction for the address)
+
+# Demo song names
+
+0x08AD4800 Palette
+0x08AD4880 Nekomimi Switch
+0x08AD4890 Sekiranun Graffiti
+0x08AD48A0 Rin Rin Signal -Append Mix-

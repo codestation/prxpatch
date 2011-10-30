@@ -1,5 +1,5 @@
 CC := gcc
-TARGET := pjd2convert
+TARGET := divaconvert
 LIBS :=
 INCLUDES :=
 LIBPATH :=

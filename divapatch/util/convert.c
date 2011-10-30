@@ -26,7 +26,7 @@ char buffer[256];
 
 int main(int argc, char **argv) {
     if(argc < 2) {
-        printf("Usage: pjd2convert <translation_file>.txt\n");
+        printf("Usage: divaconvert <translation_file>.txt\n");
     }
 	FILE *fd = fopen(argv[1], "r");
 	if(!fd) {
@@ -107,7 +107,9 @@ int main(int argc, char **argv) {
 	    fwrite(buffer, count, 1, fdout);
 	    size -= count;
 	}
-	strcpy(buffer,"pjd2_translation.bin");
+	strcpy(buffer, argv[1]);
+	char *dot = strrchr(buffer, '.');
+	strcpy(dot, ".bin");
 	fclose(fdout);
 	fclose(fdstr);
 	remove(fileout);

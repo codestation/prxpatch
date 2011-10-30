@@ -1,0 +1,15 @@
+divapatch: in-game prx patcher by codestation
+
+Usage:
+
+* Copy divapatch.prx to the ms0:/seplugins directory of the PSP and enable
+  it in game.txt (the plugins can be in a separate directory inside seplugins,
+  e.g. ms0:/seplugins/divapatch to avoid cluttering the plugins directory).
+
+* Copy the patchfile diva2nd_translation.bin in the same place as the plugin
+
+To create the patchfile run "divaconvert diva2nd_translation.txt"
+
+Note: the diva2nd_translation.txt file must be in shift-jis encoding.
+
+For Project Diva Extend use the filenames divaext_translation.[bin|txt]

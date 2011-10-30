@@ -24,7 +24,7 @@
 
 #ifdef DEBUG
 
-#define LOGFILE "ms0:/pjd2patch.log"
+#define LOGFILE "ms0:/divapatch.log"
 
 int sprintf(char *str, const char *format, ...);
 
