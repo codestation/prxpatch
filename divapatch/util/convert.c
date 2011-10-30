@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     if(argc < 2) {
         printf("Usage: divaconvert <translation_file>.txt\n");
     }
-	FILE *fd = fopen(argv[1], "r");
+	FILE *fd = fopen(argv[1], "rb");
 	if(!fd) {
 	    printf("Cannot open %s\n", argv[1]);
 		return 1;
@@ -36,13 +36,13 @@ int main(int argc, char **argv) {
 	char fileout[64];
 	strcpy(fileout, argv[1]);
 	strcat(fileout, ".bin");
-	FILE *fdout = fopen(fileout, "w");
+	FILE *fdout = fopen(fileout, "wb");
 	if(!fdout) {
 		printf("Error while creating %s\n", fileout);
 		return 1;
 	}
 	strcat(fileout, ".tmp");
-	FILE *fdstr = fopen(fileout, "w+");
+	FILE *fdstr = fopen(fileout, "wb+");
 	if(!fdout) {
 		printf("Error while creating %s\n", fileout);
 		return 1;
@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
 		    buffer[0] = '0';
 		    buffer[2] = 'F';
 		}
-		long addr = strtol(buffer, NULL, 16);
+		long long addr = strtoll(buffer, NULL, 16);
 		fwrite(&addr, 4, 1, fdout);
 		fwrite(&offset, 4 ,1, fdout);
 		fwrite(str, len, 1, fdstr);
