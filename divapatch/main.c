@@ -23,11 +23,13 @@
 #include <string.h>
 #include "logger.h"
 
-PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 1);
+PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 0);
 PSP_HEAP_SIZE_KB(0);
 
 #define GAME_MODULE "PdvApp"
 #define GAMEID_DIR "disc0:/UMD_DATA.BIN"
+
+#define ITEMSOF(arr) (int)(sizeof(arr) / sizeof(0[arr]))
 
 typedef int (* STMOD_HANDLER)(SceModule *);
 
@@ -142,8 +144,7 @@ int module_start_handler(SceModule * module) {
         if(get_gameid(gameid) >= 0) {
             kprintf("GAMEID: %s\n", gameid);
             //FIXME: change the lower bound to zero if a patch for Project Diva 1st is made
-            //       change the upper bound to the array size once Project Diva Extend is available
-            for(int i = 1; i < 4; i++) {
+            for(int i = 1; i < ITEMSOF(diva_id); i++) {
                 if(strcmp(gameid, diva_id[i]) == 0) {
                     kprintf("found match: %i\n", i);
                     patch_index = i;
