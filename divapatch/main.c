@@ -43,7 +43,7 @@ const char *diva_id[] = {
         "ULJM05681", // Project Diva 2nd
         "NPJH90226", // Project Diva Extend TGS Demo 1
         "NPJH90227", // Project Diva Extend Demo 2
-        "ULJMXXXXX", // Project Diva Extend
+        "ULJM05933", // Project Diva Extend
 };
 
 const char *trans_files[] = {
