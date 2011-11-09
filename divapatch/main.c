@@ -1,5 +1,5 @@
 /*
- *  PJD2Patch kernel module
+ *  divapatch kernel module
  *
  *  Copyright (C) 2011  Codestation
  *
@@ -21,6 +21,7 @@
 #include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
 #include <string.h>
+#include "pspdefs.h"
 #include "logger.h"
 
 PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 0);
@@ -30,10 +31,6 @@ PSP_HEAP_SIZE_KB(0);
 #define GAMEID_DIR "disc0:/UMD_DATA.BIN"
 
 #define ITEMSOF(arr) (int)(sizeof(arr) / sizeof(0[arr]))
-
-typedef int (* STMOD_HANDLER)(SceModule *);
-
-STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 struct addr_data {
     void **addr;
@@ -46,6 +43,7 @@ const char *diva_id[] = {
         "NPJH90226", // Project Diva Extend TGS Demo 1
         "NPJH90227", // Project Diva Extend Demo 2
         "ULJM05933", // Project Diva Extend
+		"NPJH50465", // Project Diva Extend
 };
 
 const char *trans_files[] = {
@@ -54,6 +52,7 @@ const char *trans_files[] = {
         "divaext_demo1.bin",
         "divaext_demo2.bin",
         "divaext_translation.bin",
+        "divaext_translation.bin",
 };
 
 static char filepath[256];
@@ -61,6 +60,29 @@ static STMOD_HANDLER previous = NULL;
 static SceUID block_id = -1;
 static void *block_addr = NULL;
 static int patch_index = -1;
+
+inline void DcacheWritebackAll(void) {
+    __asm__ volatile("\
+    .word 0x40088000; .word 0x24090800; .word 0x7D081180;\
+    .word 0x01094804; .word 0x00004021; .word 0xBD140000;\
+    .word 0xBD140000; .word 0x25080040; .word 0x1509FFFC;\
+    .word 0x00000000; .word 0x0000000F; .word 0x00000000;\
+    "::);
+}
+
+inline void IcacheClearAll(void) {
+    __asm__ volatile("\
+    .word 0x40088000; .word 0x24091000; .word 0x7D081240;\
+    .word 0x01094804; .word 0x4080E000; .word 0x4080E800;\
+    .word 0x00004021; .word 0xBD010000; .word 0xBD030000;\
+    .word 0x25080040; .word 0x1509FFFC; .word 0x00000000;\
+    "::);
+}
+
+void clear_caches(void) {
+    IcacheClearAll();
+    DcacheWritebackAll();
+}
 
 void patch_eboot()  {
     u32 count;
@@ -85,13 +107,17 @@ void patch_eboot()  {
         return;
     }
     block_addr = sceKernelGetBlockHeadAddr(block_id);
+    kprintf("allocated block at %08X\n", (u32)block_addr);
+    kprintf("found %i strings to pach\n", count);
     for(u32 i = 0; i < count; i++) {
         struct addr_data data;
         sceIoRead(fd, &data, sizeof(data));
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
+        kprintf("using %08X as string address\n", (u32)final_addr);
         if((u32)data.addr & 0xF0000000) {
             data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
+            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
             u16 *code_addr = (u16 *)data.addr;
             u16 addr1 = (u32)final_addr & 0xFFFF;
             u16 addr2 = (u16)((((u32)final_addr) >> 16) & 0xFFFF);
@@ -100,9 +126,12 @@ void patch_eboot()  {
             }
             int j = 0;
             while(j < 32) { //maximum backtrace to look for a lui instruction
-                if((*(code_addr - 3 - (j*2)) & 0x3C00) == 0x3C00) { // lui
+                kprintf("> checking %08X for lui: (%04X)\n", (u32)(code_addr - 1 - (j*2)), *(code_addr - 1 - (j*2)));
+                if((*(code_addr - 1 - (j*2)) & 0x3C00) == 0x3C00) { // lui
+                    kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
                     *code_addr = addr1;
-                    code_addr -= (4 + (j*2));
+                    code_addr -= (2 + (j*2));
+                    kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
                     *code_addr = addr2;
                     break;
                 } else {
@@ -114,6 +143,7 @@ void patch_eboot()  {
             }
         } else {
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
+            kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
             *data.addr = final_addr;
         }
     }
@@ -135,11 +165,11 @@ int get_gameid(char *gameid) {
     return fd;
 }
 
-int module_start_handler(SceModule * module) {
+int module_start_handler(SceModule2 * module) {
     if((module->text_addr & 0x80000000) != 0x80000000 && strcmp(module->modname, GAME_MODULE) == 0) {
         // game found, but since all versions use the same module name we need to find out the
         // correct game.
-        kprintf("Project Diva found\n");
+        kprintf("Project Diva found, loaded at %08X\n", module->text_addr);
         char gameid[16];
         if(get_gameid(gameid) >= 0) {
             kprintf("GAMEID: %s\n", gameid);
@@ -153,6 +183,7 @@ int module_start_handler(SceModule * module) {
             }
             if(patch_index >= 0) {
                 patch_eboot();
+                clear_caches();
             }
         }
     }

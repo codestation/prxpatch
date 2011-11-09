@@ -1,0 +1,92 @@
+# Translation file for Project Diva Extend (use shift-jis to edit the file)
+# 0x08xxxxxx: use this format to rewrite the pointed address
+#             to a newly allocated one for the translation
+# !x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction (use the lower
+#             address part of the instruction for the address)
+
+# Song list
+
+0x08C38A08 Kocchi Muite Baby
+0x08C38A18 Yellow
+0x08C38A28 Colorful x Melody
+0x08C38A38 Hatsune Miku no Gekishou
+0x08C38A48 Roshin Yuukai
+0x08C38A58 Just Be Friends
+0x08C38A68 Hatsune Miku no Shoushitsu
+0x08C38A78 StargazeR
+0x08C38A88 Kogane no Seiya Sousetsu ni Kuchite
+0x08C38A98 Migikata no Chou -39's Giving Day Edition-
+0x08C38AA8 Anata no Utahime
+0x08C38AB8 Stardust Utopia
+0x08C38AC8 Electric Angel
+0x08C38AD8 Time Limit
+0x08C38AE8 melody...
+0x08C38AF8 Iroha Uta
+0x08C38B08 Colorful x Sexy
+0x08C38B18 SPiCa -39's Giving Day Edition-
+0x08C38B28 Luka LukaÅöNight Fever
+0x08C38B38 Uta ni Katachi wa Nai Keredo
+0x08C38B48 Ura-Omote Lovers
+0x08C38B58 *Hello, Planet.(I.M.PLSE-EDIT)
+0x08C38B68 Nayuta no Kanata Made
+0x08C38B78 Kodoku no Hate
+0x08C38B88 Puzzle
+0x08C38B98 Palette
+0x08C38BA8 Sennen no Dokusouka (DIVA edit)
+0x08C38BB8 Boukyaku Shinjuu
+0x08C38BC8 Musunde Hiraite Rasetsu to Mukuro
+0x08C38BD8 Rolling Girl
+0x08C38BE8 Starduster
+0x08C38BF8 Paradichlorobenzene
+0x08C38C08 Tsugai Kogarashi
+0x08C38C18 Nekomimi Switch
+0x08C38C28 Sekiranun Graffiti
+0x08C38C38 Rin Rin Signal -Append Mix-
+0x08C38C48 Ievan Polkka
+0x08C38C58 Start of Rainbow Å`first stepÅ`
+0x08C38C68 Aiiro no Hi, Sora Kakeru Å`second flightÅ`
+0x08C38C78 Koi no Inori Å`extend your waveÅ`
+
+# Main menu
+
+!x088E3CB0 Rhythm Game
+!x088E3CBC Character Select
+!x088E3CC8 DIVA Room
+!x088E3CD4 Shop
+!x088E3CE0 Play Record
+!x088E3CEC Edit
+!x088E3CF8 Ad Hoc
+!x088E3D04 Options
+!x088E3D10 Save
+!x088E3D1C Back to Title
+
+# Main menu descriptions (max lenght: 24)
+
+#0x08C43EC8 Play the game.
+#0x08C43ECC  
+#0x08C43ED8 Change your character.
+#0x08C43EDC  
+#0x08C43EE8 Go to the character's
+#0x08C43EEC room.
+#0x08C43EF0  
+#0x08C43EF8 Purchase modules and
+#0x08C43EFC items.
+#0x08C43F08  
+#0x08C43F0C Edit your profile
+#0x08C43F14 and see your play
+#0x08C43F18 records.
+#0x08C43F1C Create original PV
+#0x08C43F20 and rhythm games.
+#0x08C43F28  
+#0x08C43F2C Exchange Edit data 
+#0x08C43F30 and player profiles
+#0x08C43F34 via Ad Hoc.
+#0x08C43F38  
+#0x08C43F3C Adjust volume of BGM/SE
+#0x08C43F40 and autosave settings.
+#0x08C43F44 Save, create and
+#0x08C43F48 delete savedatas.
+#0x08C43F4C  
+#0x08C43F58 Quit the game and go
+#0x08C43F5C back to the title.
