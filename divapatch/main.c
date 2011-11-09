@@ -125,9 +125,13 @@ void patch_eboot()  {
                 addr2++;
             }
             int j = 0;
+            u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
+            kprintf("using register number %i for lui search\n", mips_reg);
             while(j < 32) { //maximum backtrace to look for a lui instruction
-                kprintf("> checking %08X for lui: (%04X)\n", (u32)(code_addr - 1 - (j*2)), *(code_addr - 1 - (j*2)));
-                if((*(code_addr - 1 - (j*2)) & 0x3C00) == 0x3C00) { // lui
+                u16 lui = *(code_addr - 1 - (j*2));
+                kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+
+                if((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
                     kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
                     *code_addr = addr1;
                     code_addr -= (2 + (j*2));
