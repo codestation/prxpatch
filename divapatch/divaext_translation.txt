@@ -4,6 +4,9 @@
 # !x08xxxxxx: use this type of format if the address to modify
 #             is embedded inside a instruction (use the lower
 #             address part of the instruction for the address)
+#
+# EBOOT reversing and translation: codestation
+# translation helpers: HeroKing, naki-the-curious
 
 # Data import menu entries
 
@@ -13,26 +16,26 @@
 !x08815668 Room Items (floor)
 !x0881567C Room Items (shelf)
 !x08815690 Room Items (wall)
-!x088156A4 Song edit - Song data
-!x088156B8 Motion edit
-!x088156CC Background edit
-!x088156E0 Item edit
-!x088156F4 Effect edit
+!x088156A4 Edit music and music data
+!x088156B8 Edit motions
+!x088156CC Edit backgrounds
+!x088156E0 Edit items
+!x088156F4 Edit effects
 
 # Data import menu descriptions
 
-!x0881590C 選択したカテゴリの追加データを
-!x08815920 エクストラデータとしてインポートしますか？
+!x0881590C Would you like to import the additional data
+!x08815920 inside the selected category as Extra Data?
 
-!x08815B10 追加データのインポートが完了しました。
-!x08815B24 インポートしたデータの一覧を表示します。
+!x08815B10 Importing additional data completed.
+!x08815B24 Displaying the list of imported data.
 
-!x08815C68 インポートデータ一覧
-!x08815EB8 追加データが読み込めませんでした。
-!x08816044 追加データインポートを終了し、ホームへ戻りますか？
-!x088162F0 追加データをチェックするため
-!x08816304 記録メディアにアクセス中です。
-!x08816318 記録メディアを抜かないで下さい。
+!x08815C68 List of Imported Data
+!x08815EB8 Could not read the additional data.
+!x08816044 Finish importing data and return to the Home screen?
+!x088162F0 Accessing Memory Stick	1 to
+!x08816304 check for additional data.
+!x08816318 Do not remove the Memory Stick	1.
 
 # Vocaloids
 
@@ -79,7 +82,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/10          -codestation
+!x08845B8C PD extend patch 2011/11/11          -codestation
 
 # Rhythm Game menu
 
@@ -136,6 +139,10 @@
 !x088E88FC Auto Save
 !x088E89A0 Installation data
 
+# Module menu extras
+
+!x088EB2F4 Extras
+
 # Unlock messages
 
 !x088FBF78 New song have been added to Free Play.
@@ -150,36 +157,36 @@
 
 # DIVA room
 
-!x089214B4 メニュー
-!x08921574 ルームテーマ
-!x089275AC ルームテーマ
-!x08921728 ルームアイテム(床)
-!x08921734 ルームアイテム(棚)
-!x08921740 ルームアイテム(壁)
-!x08921A30 エクストラテーマ
-!x089275C4 エクストラテーマ
-!x08921C18 エクストラアイテム(床)
-!x08921C24 エクストラアイテム(棚)
-!x08921C34 エクストラアイテム(壁)
+!x089214B4 Menu
+!x08921574 Room themes
+!x089275AC Room themes
+!x08921728 Room items (floor)
+!x08921734 Room items (shelf)
+!x08921740 Room items (wall)
+!x08921A30 Extra themes
+!x089275C4 Extra themes
+!x08921C18 Extra items (floor)
+!x08921C24 Extra items (shelf)
+!x08921C34 Extra items (wall)
 
-!x08923CE0 レイアウト
-!x08925448 レイアウト
-!x08925550 レイアウト
-!x0892568C レイアウト
-!x08925790 レイアウト
-!x089258F0 レイアウト
-!x089259F4 レイアウト
-!x08928D94 レイアウト
-!x08928E04 レイアウト
-!x08929690 レイアウト
-!x08929740 レイアウト
-!x0892A380 レイアウト
+!x08923CE0 Layout
+!x08925448 Layout
+!x08925550 Layout
+!x0892568C Layout
+!x08925790 Layout
+!x089258F0 Layout
+!x089259F4 Layout
+!x08928D94 Layout
+!x08928E04 Layout
+!x08929690 Layout
+!x08929740 Layout
+!x0892A380 Layout
 
 !x08925000 アイテムの配置
-!x0892537C ここにアイテムを配置します。
+!x0892537C Place the item here.
 !x089253C8 このアイテムを撤去します。
 !x089254E8 配置済みのアイテムを全て撤去します。
-!x0892560C DIVAルームに戻ります。
+!x0892560C Return to the DIVA room.
 !x08925730 アイテムを一つ以上配置して下さい。
 !x08925818 すでに配置されているアイテムを撤去して、
 !x0892582C このアイテムを配置します。
@@ -190,60 +197,62 @@
 !x0892886C 記録メディアにアクセス中です。
 !x08928880 記録メディアを抜かないで下さい。
 
-!x0892597C 追加データを
-!x08925990 ロードできませんでした。
-!x08928960 ロードできませんでした。
-!x08926C44 アイテムの撤去(壁)
-!x08926C30 アイテムの撤去(棚)
-!x08926C1C アイテムの撤去(床)
-!x08926CB8 アイテムの再配置(壁)
-!x08926CA4 アイテムの再配置(棚)
-!x08926C90 アイテムの再配置(床)
+!x0892597C Adittional data
+!x08925990 could not be loaded.
+!x08928960 could not be loaded.
+!x08926C44 Remove item (wall)
+!x08926C30 Remove item (shelf)
+!x08926C1C Remove item (floor)
+!x08926CB8 Relocate item (wall)
+!x08926CA4 Relocate item (shelf)
+!x08926C90 Relocate item (floor)
 
-!x089275B8 ルームアイテム
-!x089275D0 エクストラアイテム
-!x08928948 インポートデータを
-!x08928974 オプション画面でインポートを
+!x089275B8 Room Items
+!x089275D0 Extra Items
+!x089275F4 Room Items
+!x08927600 Extra Items
+!x08928948 Import Data
+!x08928974 Import Options Screen
 !x08928988 行って下さい
 
 # DIVA room (cont.)
 
-!x0892AC04 ルームメニュー
-!x0892B1D8 レイアウト
-!x0892B1E4 プレゼント
-!x0892B1F0 ミュージックボックス
-!x0892B1FC PVギャラリー
-!x0892B208 ビジュアルライブラリ
-!x0892B214 スリープタイマー
-!x0892B220 ナビゲートタイマー
-!x0892B22C ウェイクアップタイマー
-!x0892BC2C ホームに戻ります。
-!x0892BC5C %sを使用します。
-!x0892BC70 %sを変更します。
-!x0892BC80 %sをします。
-!x0892BD08 DIVAルーム機能使用ボーナス。
-!x0892BD1C 1000POINT取得しました。
+!x0892AC04 Room Menu
+!x0892B1D8 Layout
+!x0892B1E4 Present
+!x0892B1F0 Music Box
+!x0892B1FC PV Gallery
+!x0892B208 Visual Library
+!x0892B214 Sleep Timer
+!x0892B220 Navigation Timer
+!x0892B22C Wakeup Timer
+!x0892BC2C Return to home.
+!x0892BC5C Use the %s.
+!x0892BC70 Change the %s.
+!x0892BC80 Give a %s.
+!x0892BD08 Bonus for using DIVA room features.
+!x0892BD1C Acquired 1000 POINT.
 !x0892BD9C 設定時間は%02d:%02dです。
 !x0892BDAC %sを解除します。
 
 # DIVA room (cont.)
 
-!x0892CB54 メニュー
-!x0892CB6C 楽曲・ＭＰ３再生
-!x0892CB80 プレイリスト編集・再生
-!x0892CD44 プレイリスト編集・再生
-!x0892CB94 プレイリスト作成
-!x0892CBA8 プレイリスト削除
-!x0892D3EC プレイリスト削除
-!x0892CBBC 戻る
-!x0892CC4C 楽曲再生
-!x0892D0A0 プレイリスト編集
-!x0892D678 プレイリスト編集
-!x0892F9D8 (%2d / %2d)
-!x0892FF48 (%2d / %2d)
-!x08931C48 %2d/%2d：%s
-!x08932574 DIVAルームに戻ります。
-!x089329A8 DIVAルームに戻ります。
+!x0892CB54 Menu
+!x0892CB6C MP3 song playback
+!x0892CB80 Playlist Edit/View
+!x0892CD44 Playlist Edit/View
+!x0892CB94 Create playlist
+!x0892CBA8 Delete playlist
+!x0892D3EC Delete playlist
+!x0892CBBC Go back
+!x0892CC4C Music playback
+!x0892D0A0 Edit playlist
+!x0892D678 Edit playlist
+#!x0892F9D8 (%2d / %2d)
+#!x0892FF48 (%2d / %2d)
+#!x08931C48 %2d/%2d：%s
+!x08932574 Return to the DIVA room.
+!x089329A8 Return to the DIVA room.
 
 # DIVA room (confirmation dialogs)
 
@@ -266,12 +275,59 @@
 !x08932A9C 追加データを
 !x08932AC8 ロードできませんでした。
 
+# DIVA room (PV menu)
+
+!x08937150 Menu
+!x08937168 Watch PV
+!x08937270 Watch PV
+!x0893717C Module change
+!x08937190 Playlist View/Edit
+!x0893748C Playlist View/Edit
+!x089371A4 Create Playlist
+!x089371B8 Delete Playlist
+!x089371CC Go back
+!x08937354 List of recorded PV
+!x08937C5C List of recorded PV
+!x08937720 Edit PLaylist
+!x08937B78 Edit PLaylist
+!x08937D7C モジュール選択
+!x0893C72C Module selection
+!x08937E98 Module A
+!x08937EEC Module B
+!x08937F44 Confirm
+!x0893C880 Default
+!x0893CD2C Extras
+!x0893D0E8 Return to the DIVA room.
+!x0893D504 Return to the DIVA room.
+!x0893D208 プレイリストの内容を更新し、
+!x0893D234 編集を終了しますか？
+!x0893D268 このまま終了してしまうと、
+!x0893D294 プレイリストが更新されませんが、
+!x0893D2C0 よろしいですか？
+!x0893D330 プレイリスト
+!x0893D384 を削除しますか？
+!x0893D3B8 PVが登録されていません。
+!x0893D3E4 現在の状態ではプレイリストが
+!x0893D410 削除されますが、よろしいですか？
+!x0893D444 プレイリストが作成されていません。
+!x0893D470 プレイリストを作成しますか？
+!x0893D4D0 現在プレイリストは登録されていません。
+!x0893D564 登録数が限界を超えています。
+!x0893D598 プレイリスト作成数の限界を
+!x0893D5C4 超えています。
+!x0893D600 追加データを
+!x0893D62C ロードできませんでした。
+!x0893D694 ロードできませんでした。
+!x0893D668 インポートデータを
+!x0893D6C0 オプション画面でインポートを
+!x0893D6EC 行って下さい。
+
 # Misc
 
 !x0893C880 Default
 !x0893CD2C Extras
-!x0893D0E8 DIVAルームに戻ります。
-!x0893D504 DIVAルームに戻ります。
+!x0893D0E8 Return to the DIVA room.
+!x0893D504 Return to the DIVA room.
 !x0893D208 プレイリストの内容を更新し、
 !x0893D234 編集を終了しますか？
 !x0893D268 このまま終了してしまうと、
@@ -304,6 +360,11 @@
 #!x08952350 『初音ミク -Project DIVA- extend』のシステムデータを作成する
 #!x08952370 記録メディアに、あらかじめ『初音ミク -Project DIVA- 2nd』の
 #!x08952390 システムデータをコピーしておいてください。
+
+# Music device selection
+
+!x0898E01C Song list
+!x0898E028 Storage media
 
 # Module list
 
@@ -528,129 +589,129 @@
 0x08C30D48 Luka Birthday Cake
 0x08C30D4C Kaito Birthday Cake
 0x08C30D50 Rocket Launcher
-0x08C30D54 シテヤンヨ スタチュー
+0x08C30D54 Shiteyanyo Statue
 0x08C30D58 Tako Luka Plush
-0x08C30D5C ピロリミク フィギュア
-0x08C30D60 ピロリン フィギュア
+0x08C30D5C Pylori Miku Figure
+0x08C30D60 Pylori Rin Figure
 0x08C30D64 Hatsune Miku POP 2nd
-0x08C30D68 みくミクッション
-0x08C30D6C サーキット・ロード
-0x08C30D70 まぐろ(オオマさん)
-0x08C30D74 ペーパークラフト 雪ミク
-0x08C30D78 DIVAトレイン
-0x08C30D7C Teddy Bear (Brown)
-0x08C30D80 Teddy Bear (White)
-0x08C30D84 Teddy Bear (Blue)
-0x08C30D88 Teddy Bear (Cherry)
-0x08C30D8C ネコバコ(三毛)
-0x08C30D90 ネコバコ(黒)
-0x08C30D94 ネコバコ(白)
-0x08C30D98 ネコバコ(ブチ)
+0x08C30D68 Miku Cushion
+0x08C30D6C Road Circuit
+0x08C30D70 Tuna (Mr. Ooma)
+0x08C30D74 Snow Miku Papercraft
+0x08C30D78 DIVA Train
+0x08C30D7C Teddy Bear (brown)
+0x08C30D80 Teddy Bear (white)
+0x08C30D84 Teddy Bear (blue)
+0x08C30D88 Teddy Bear (cherry)
+0x08C30D8C Neko Box (pattern)
+0x08C30D90 Neko Box (black)
+0x08C30D94 Neko Box (white)
+0x08C30D98 Neko Box (brown)
 0x08C30D9C Gardening Kit
-0x08C30DA0 飛び出す絵本
-0x08C30DA4 ザ・手裏剣
-0x08C30DA8 お茶セット
-0x08C30DAC カンテラ
-0x08C30DB0 キャンドルスタンド
-0x08C30DB4 テーブルランプ
-0x08C30DB8 ぶたの蚊取り線香
-0x08C30DBC ブラウン管テレビ
-0x08C30DC0 顕微鏡
-0x08C30DC4 黒電話
-0x08C30DC8 アクアリウム
-0x08C30DCC 地球儀
-0x08C30DD0 ジュエリーボックス
-0x08C30DD4 木彫りの熊
-0x08C30DD8 タコつぼ
-0x08C30DDC 鳥かご
-0x08C30DE0 電光掲示板
-0x08C30DE4 ブルーダイヤモンド
-0x08C30DE8 実験器具
-0x08C30DEC 一眼レフカメラ
-0x08C30DF0 蓄音器
-0x08C30DF4 飾り太鼓
-0x08C30DF8 ターンテーブル
-0x08C30DFC トランプタワー
-0x08C30E00 ブロックのロボット
-0x08C30E04 ブロックのフラワー
-0x08C30E08 ピコピコハンマー
-0x08C30E0C ハリセン
-0x08C30E10 おみくじの箱
-0x08C30E14 ラッピングチョコ
-0x08C30E18 ラッピングキャンディ
-0x08C30E1C チューリップのプランター
-0x08C30E20 桜の盆栽
-0x08C30E24 ミニ鯉のぼり
-0x08C30E28 バラのプランター
-0x08C30E2C スイカの置物
-0x08C30E30 ひまわりのプランター
-0x08C30E34 紅葉の盆栽
-0x08C30E38 ゴーストコフィン
-0x08C30E3C パンプキンライト
-0x08C30E40 赤い長靴
-0x08C30E44 ミニクリスマスツリー
-0x08C30E48 ドッジボール
-0x08C30E4C ビーチボール
-0x08C30E50 ねんどろいど 初音ミク
-0x08C30E54 ねんどろいど 鏡音リン
-0x08C30E58 ねんどろいど 鏡音レン
-0x08C30E5C ねんどろいど 巡音ルカ
-0x08C30E60 ねんどろいど カイト
-0x08C30E64 ねんどろいど メイコ
-0x08C30E68 ねんどろいど 亞北ネル
-0x08C30E6C ねんどろいど 弱音ハク
-0x08C30E70 ねんどろいど 咲音メイコ
-0x08C30E74 ミク フラワーバスケット
-0x08C30E78 i CUPドリンク
-0x08C30E7C リン・レンXmasヴィネット
-0x08C30E80 ルカ＆たこルカ
-0x08C30E84 カイト in カップアイス
-0x08C30E88 惑星探査機
-0x08C30E8C ねんどろいど 雪ミク
-0x08C30E90 してやにょ マスコット
-0x08C30E94 ねんどろいど はちゅね
-0x08C30E98 みくだま・るかだま
-0x08C30E9C りんだま・れんだま
-0x08C30EA0 かいとだま・めいこだま
-0x08C30EA4 ティーセット
-0x08C30EA8 スノードーム
-0x08C30EAC タペストリー
-0x08C30EB0 ルート39クラシックボード
-0x08C30EB4 海賊旗
-0x08C30EB8 掛軸(弱)
-0x08C30EBC 習字(歌)
-0x08C30EC0 振り子時計
-0x08C30EC4 世界地図
-0x08C30EC8 星空のタペストリー
-0x08C30ECC お菓子な壁飾り
-0x08C30ED0 エスニックマスク
-0x08C30ED4 ホッケーマスク
-0x08C30ED8 壁掛けスピーカー
-0x08C30EDC 壁掛け刀
-0x08C30EE0 ネギの置物
-0x08C30EE4 バスケットゴール
-0x08C30EE8 テンガロンハット
-0x08C30EEC オペラカーテン
-0x08C30EF0 鹿の剥製
-0x08C30EF4 壁掛けキャンドル
-0x08C30EF8 レコードディスク
-0x08C30EFC ゴールドディスク
-0x08C30F00 パネル(春)
-0x08C30F04 パネル(夏)
-0x08C30F08 パネル(秋)
-0x08C30F0C パネル(冬)
-0x08C30F10 ハイビスカスの壁飾り
-0x08C30F14 魔法の鏡
-0x08C30F18 ハト時計
-0x08C30F1C 壁掛け照明
-0x08C30F20 壁掛けモニター
-0x08C30F24 ワシの羽飾り
-0x08C30F28 コウモリの壁飾り
-0x08C30F2C リース
-0x08C30F30 サンタの壁飾り
-0x08C30F34 フラワーバスケット
-0x08C30F38 メモリチップ
-0x08C30F3C ブロック型テレビ
+0x08C30DA0 Pop-up Picture Book
+0x08C30DA4 Shuriken
+0x08C30DA8 Tea Set
+0x08C30DAC Lantern
+0x08C30DB0 Candle Stand
+0x08C30DB4 Table Lamp
+0x08C30DB8 Mosquito Repellant
+0x08C30DBC CRT Television
+0x08C30DC0 Microscope
+0x08C30DC4 Black Telephone
+0x08C30DC8 Aquarium
+0x08C30DCC Globe
+0x08C30DD0 Jewelry Box
+0x08C30DD4 Carved Wooden Bear
+0x08C30DD8 Octopus Pot
+0x08C30DDC Birdcage
+0x08C30DE0 Electronic Billboards
+0x08C30DE4 Blue Diamond
+0x08C30DE8 Labware
+0x08C30DEC SLR Camera
+0x08C30DF0 Gramophone
+0x08C30DF4 Decoration Drum
+0x08C30DF8 Turntable
+0x08C30DFC Tower of Cards
+0x08C30E00 Block Robot
+0x08C30E04 Block Flower
+0x08C30E08 Pico Pico Hammer
+0x08C30E0C Fan
+0x08C30E10 Fortune Box
+0x08C30E14 Wrapped Chocolates
+0x08C30E18 Wrapped Candy
+0x08C30E1C Tulip Planter
+0x08C30E20 Cherry Blossom Bonsai
+0x08C30E24 Mini Carp Steamer
+0x08C30E28 Rose Planter
+0x08C30E2C Watermelon
+0x08C30E30 Sunflower Planter
+0x08C30E34 Potted Autumn Leaves
+0x08C30E38 Ghost Coffin
+0x08C30E3C Pumpkin Light
+0x08C30E40 Red Boots
+0x08C30E44 Mini Christmas Tree
+0x08C30E48 Dodge Ball
+0x08C30E4C Beach Ball
+0x08C30E50 Nendoroid Hatsune Miku
+0x08C30E54 Nendoroid Kagamine Rin
+0x08C30E58 Nendoroid Kagamine Len
+0x08C30E5C Nendoroid Megurine Luka
+0x08C30E60 Nendoroid Kaito
+0x08C30E64 Nendoroid Meiko
+0x08C30E68 Nendoroid Akita Neru
+0x08C30E6C Nendoroid Yowane Haku
+0x08C30E70 Nendoroid Sakine Meiko
+0x08C30E74 Miku Flower Basket
+0x08C30E78 i CUP Drink
+0x08C30E7C Rin-Len Xmas Vignette
+0x08C30E80 Luka & Tako Luka
+0x08C30E84 Kaito in Ice Cream Cup
+0x08C30E88 Exploration Spacecraft
+0x08C30E8C Nendoroid Snow Miku
+0x08C30E90 Shiteyanyo Mascot
+0x08C30E94 Nendoroid Hachune Miku
+0x08C30E98 Miku-Luka だま
+0x08C30E9C Rin-Len だま
+0x08C30EA0 Kaito-Meiko だま
+0x08C30EA4 Tea Set
+0x08C30EA8 Snow Globe
+0x08C30EAC Tapestry
+0x08C30EB0 Route 39 Classic Board
+0x08C30EB4 Jolly Roger
+0x08C30EB8 Hanging scroll (Weakness)
+0x08C30EBC Penmanship (Song)
+0x08C30EC0 Pendulum Clock
+0x08C30EC4 Global Map
+0x08C30EC8 Starry tapestry
+0x08C30ECC Sweets Wall Decoration
+0x08C30ED0 Ethnic Mask
+0x08C30ED4 Hockey Mask
+0x08C30ED8 Wall Speaker
+0x08C30EDC Wall Sword
+0x08C30EE0 Negi Ornament
+0x08C30EE4 Basketball Goal
+0x08C30EE8 Ten-Gallon Hat
+0x08C30EEC Opera Curtain
+0x08C30EF0 Stuffed Deer
+0x08C30EF4 Wall Candle
+0x08C30EF8 Record Disc
+0x08C30EFC Gold Disc
+0x08C30F00 Panel (Spring)
+0x08C30F04 Panel (Summer)
+0x08C30F08 Panel (Autumn)
+0x08C30F0C Panel (Winter)
+0x08C30F10 Hibiscus Wall Decoration
+0x08C30F14 Magic Mirror
+0x08C30F18 Cuckoo Clock
+0x08C30F1C Wall Lighting
+0x08C30F20 Wall Monitor
+0x08C30F24 Eagle Feathers
+0x08C30F28 Bat Decoration
+0x08C30F2C Wreath
+0x08C30F30 Santa Decoration
+0x08C30F34 Flower Basket
+0x08C30F38 Memory Chip
+0x08C30F3C Block TV
 0x08C30F40 Illustration Poster 1
 0x08C30F44 Illustration Poster 2
 0x08C30F48 Illustration Poster 3
@@ -663,33 +724,39 @@
 0x08C30F64 Illustration Poster 10
 0x08C30F68 Illustration Poster 11
 0x08C30F6C Illustration Poster 12
-0x08C30F70 ミク バースデーポスター
-0x08C30F74 MEIKO親衛隊ハッピ
-0x08C30F78 リン・レン ポスター
-0x08C30F7C ルカ ポスター
-0x08C30F80 カイト ポスター
-0x08C30F84 インテリアシール A
-0x08C30F88 インテリアシール B
-0x08C30F8C フレンドピンナップ
-0x08C30F90 CDラック
-0x08C30F94 リザルト看板
-0x08C30F98 提灯(初音)
-0x08C30F9C 提灯(鏡音)
-0x08C30FA0 提灯(巡音)
-0x08C30FA4 提灯(かいと)
-0x08C30FA8 提灯(めいこ)
-0x08C30FAC 提灯(弱音)
-0x08C30FB0 提灯(亞北)
-0x08C30FB4 提灯(咲音)
-0x08C30FB8 掛け軸(仕事)
-0x08C30FBC 掛け軸(天使)
-0x08C30FC0 掛け軸(調声)
-0x08C30FC4 DIVA×太鼓の達人１
-0x08C30FC8 DIVA×太鼓の達人２
+0x08C30F70 Miku Birthday Poster
+0x08C30F74 MEIKO Bodyguard Happi Coat
+0x08C30F78 Rin-Len Poster
+0x08C30F7C Luka Poster
+0x08C30F80 Kaito Poster
+0x08C30F84 Interior Sticker A
+0x08C30F88 Interior Sticker B
+0x08C30F8C Friend Pinup
+0x08C30F90 CD Rack
+0x08C30F94 Result Signboard
+0x08C30F98 Paper Lantern (Hatsune)
+0x08C30F9C Paper Lantern (Kagamine)
+0x08C30FA0 Paper Lantern (Megurine)
+0x08C30FA4 Paper Lantern (Kaito)
+0x08C30FA8 Paper Lantern (Meiko)
+0x08C30FAC Paper Lantern (Yowane)
+0x08C30FB0 Paper Lantern (Akita)
+0x08C30FB4 Paper Lantern (Sakine)
+0x08C30FB8 Hanging Scroll (Work)
+0x08C30FBC Hanging Scroll (Angel)
+0x08C30FC0 Hanging Scroll (Singer)
+0x08C30FC4 DIVA×Drum Master 1
+0x08C30FC8 DIVA×Drum Master 2
 
 # Help item menu entry
 
 0x08C31FE0 Help items
+
+# Item quantity
+
+0x08C332D0 Initial room item
+0x08C33690 Initial room item
+0x08C33A50 Initial room item
 
 # Song list
 
@@ -784,6 +851,6 @@
 
 # DIVA room playlists
 
-0x08C66848 プレイリスト１
-0x08C6684C プレイリスト２
-0x08C66850 プレイリスト３
+0x08C66848 Playlist 1
+0x08C6684C Playlist 2
+0x08C66850 Playlist 3
