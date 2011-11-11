@@ -13,11 +13,11 @@
 !x08815668 Room Items (floor)
 !x0881567C Room Items (shelf)
 !x08815690 Room Items (wall)
-!x088156A4 エディット楽曲・ミュージックデータ
-!x088156B8 エディットモーション
-!x088156CC エディット背景
-!x088156E0 エディットアイテム
-!x088156F4 エディットエフェクト
+!x088156A4 Song edit - Song data
+!x088156B8 Motion edit
+!x088156CC Background edit
+!x088156E0 Item edit
+!x088156F4 Effect edit
 
 # Data import menu descriptions
 
@@ -102,15 +102,15 @@
 
 # Room entering messages
 
-!x088E5428 ミクルームを見に行きます。
-!x088E5434 リンルームを見に行きます。
-!x088E5440 レンルームを見に行きます。
-!x088E544C ルカルームを見に行きます。
-!x088E5458 カイトルームを見に行きます。
-!x088E5464 メイコルームを見に行きます。
-!x088E5470 ネルルームを見に行きます。
-!x088E5480 ハクルームを見に行きます。
-!x088E5490 咲音メイコルームを見に行きます。
+!x088E5428 Go to Miku's room.
+!x088E5434 Go to Rin's room.
+!x088E5440 Go to Len's room.
+!x088E544C Go to Luka's room.
+!x088E5458 Go to Kaito's room.
+!x088E5464 Go to Meiko's room.
+!x088E5470 Go to Neru's room.
+!x088E5480 Go to Haku's room.
+!x088E5490 Go to S. Meiko's room.
 
 # Edit mode menu
 
@@ -120,9 +120,9 @@
 
 # Edit mode menu confirm
 
-!x088E6060 エディットモードに移動します。
-!x088E6070 エディットプレイに移動します。
-!x088E6080 エディット鑑賞に移動します。
+!x088E6060 Go to Edit Mode.
+!x088E6070 Go to Play Edit.
+!x088E6080 Go to Watch Edit.
 
 # Options menu entries
 
@@ -147,6 +147,102 @@
 !x088FBF90 Room was added to the shop.
 !x088FBF94 Room theme has been added to the shop.
 !x088FBF98 Room item has been added to the shop.
+
+# DIVA room
+
+!x089214B4 メニュー
+!x08921574 ルームテーマ
+!x089275AC ルームテーマ
+!x08921728 ルームアイテム(床)
+!x08921734 ルームアイテム(棚)
+!x08921740 ルームアイテム(壁)
+!x08921A30 エクストラテーマ
+!x089275C4 エクストラテーマ
+!x08921C18 エクストラアイテム(床)
+!x08921C24 エクストラアイテム(棚)
+!x08921C34 エクストラアイテム(壁)
+# go to 3FCA34 in IDA, this has lots
+!x08923CE0 レイアウト
+
+!x08925000 アイテムの配置
+!x0892537C ここにアイテムを配置します。
+!x089253C8 このアイテムを撤去します。
+!x089254E8 配置済みのアイテムを全て撤去します。
+!x0892560C DIVAルームに戻ります。
+!x08925730 アイテムを一つ以上配置して下さい。
+!x08925818 すでに配置されているアイテムを撤去して、
+!x0892582C このアイテムを配置します。
+!x0892587C ルームアイテムを、
+!x08925890 これ以上置くことはできません。
+
+!x08928858 追加データをチェックするため
+!x0892886C 記録メディアにアクセス中です。
+!x08928880 記録メディアを抜かないで下さい。
+
+!x0892597C 追加データを
+!x08925990 ロードできませんでした。
+!x08928960 ロードできませんでした。
+!x08926C44 アイテムの撤去(壁)
+!x08926C30 アイテムの撤去(棚)
+!x08926C1C アイテムの撤去(床)
+!x08926CB8 アイテムの再配置(壁)
+!x08926CA4 アイテムの再配置(棚)
+!x08926C90 アイテムの再配置(床)
+
+!x089275B8 ルームアイテム
+!x089275D0 エクストラアイテム
+!x08928948 インポートデータを
+!x08928974 オプション画面でインポートを
+!x08928988 行って下さい
+
+# DIVA room (cont.)
+
+!x0892AC04 ルームメニュー
+!x0892B1D8 レイアウト
+!x0892B1E4 プレゼント
+!x0892B1F0 ミュージックボックス
+!x0892B1FC PVギャラリー
+!x0892B208 ビジュアルライブラリ
+!x0892B214 スリープタイマー
+!x0892B220 ナビゲートタイマー
+!x0892B22C ウェイクアップタイマー
+!x0892BC2C ホームに戻ります。
+!x0892BC5C %sを使用します。
+!x0892BC70 %sを変更します。
+!x0892BC80 %sをします。
+!x0892BD08 DIVAルーム機能使用ボーナス。
+!x0892BD1C 1000POINT取得しました。
+!x0892BD9C 設定時間は%02d:%02dです。
+!x0892BDAC %sを解除します。
+
+# Misc
+
+!x0893C880 Default
+!x0893CD2C Extras
+!x0893D0E8 DIVAルームに戻ります。
+!x0893D504 DIVAルームに戻ります。
+!x0893D208 プレイリストの内容を更新し、
+!x0893D234 編集を終了しますか？
+!x0893D268 このまま終了してしまうと、
+!x0893D294 プレイリストが更新されませんが、
+!x0893D2C0 よろしいですか？
+!x0893D330 プレイリスト
+!x0893D384 を削除しますか？
+!x0893D3B8 PVが登録されていません。
+!x0893D3E4 現在の状態ではプレイリストが
+!x0893D410 削除されますが、よろしいですか？
+!x0893D444 プレイリストが作成されていません。
+!x0893D470 プレイリストを作成しますか？
+!x0893D4D0 現在プレイリストは登録されていません。
+!x0893D564 登録数が限界を超えています。
+!x0893D598 プレイリスト作成数の限界を
+!x0893D5C4 超えています。
+!x0893D600 追加データを
+!x0893D62C ロードできませんでした。
+!x0893D694 ロードできませんでした。
+!x0893D668 インポートデータを
+!x0893D6C0 オプション画面でインポートを
+!x0893D6EC 行って下さい。
 
 # (PD2nd savedata detection)
 
@@ -249,7 +345,7 @@
 0x08C30B50 Cheerful Candy
 0x08C30B54 Rin Swimwear T
 0x08C30B58 Rin Christmas
-0x08C30B5C Ami・Mami Style
+0x08C30B5C Ami-Mami Style
 0x08C30B60 Rin School Wear
 0x08C30B64 Rin Append
 0x08C30B68 Nameless No.1
@@ -348,7 +444,7 @@
 0x08C30CD0 Cherry Blossom
 0x08C30CD4 Hatsune Miku Memorial
 0x08C30CD8 Meiko Booth Memorial
-0x08C30CDC Len・Rin Memorial
+0x08C30CDC Len-Rin Memorial
 0x08C30CE0 Megurine Luka Memorial
 0x08C30CE4 Kaito Memorial Ice
 0x08C30CE8 Space Ship
@@ -377,7 +473,7 @@
 0x08C30D38 Hatsune Miku POP
 0x08C30D3C Miku Birthday Cake
 0x08C30D40 Meiko Birthday Cake
-0x08C30D44 Rin・Len RR Cake
+0x08C30D44 Rin-Len RR Cake
 0x08C30D48 Luka Birthday Cake
 0x08C30D4C Kaito Birthday Cake
 0x08C30D50 Rocket Launcher
@@ -555,7 +651,7 @@
 0x08C38A68 Hatsune Miku no Shoushitsu
 0x08C38A78 StargazeR
 0x08C38A88 Kogane no Seiya Sousetsu ni Kuchite
-0x08C38A98 Migikata no Chou -39's Giving Day Edition-
+0x08C38A98 Migikata no Chou -39's Giving Day Ed.-
 0x08C38AA8 Anata no Utahime
 0x08C38AB8 Stardust Utopia
 0x08C38AC8 Electric Angel
