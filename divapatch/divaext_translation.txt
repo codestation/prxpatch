@@ -63,11 +63,11 @@
 
 # Helper items
 
-!x08823CB0 【HELP】Assisted Play
-!x08823CBC 【HELP】Combo Guard
-!x08823CC8 【HELP】Recovery
-!x08823CD4 【CHALLENGE】COOL&FINE
-!x08823CE0 【CHALLENGE】Survival
+!x08823CB0 [HELP] Assisted Play
+!x08823CBC [HELP] Combo Guard
+!x08823CC8 [HELP] Recovery
+!x08823CD4 [CHALLENGE] COOL&FINE
+!x08823CE0 [CHALLENGE] Survival
 
 # Shop menu
 
@@ -77,6 +77,10 @@
 !x08839334 Room items
 !x08839358 Help items
 
+# Yes / Cancel
+
+!x08839DD8 ○:Yes　×:No
+
 # Autosave message (credits)
 
 !x08845B50 This game supports auto-save feature.
@@ -84,11 +88,25 @@
 !x08845B78 unit while the Memory Stick	1 led is blinking.
 !x08845B8C PD extend patch 2011/11/11          -codestation
 
+!x088E0F4C Set the default character.
+!x088E0F58 This setting is automatically disabled
+!x088E0F64 when you play a rhythm game.
+
+# Free play confirm messages
+
+!x088E0FF8 Play song
+!x088E100C Watch PV
+
 # Rhythm Game menu
 
 !x088E1D38 Tutorial
 !x088E1D44 Free Play
 !x088E1D50 Extras
+
+# High score placeholder
+
+!x088E2FFC High score -------
+!x088E3018 High score %07d
 
 # Main menu
 
@@ -182,20 +200,16 @@
 !x08929740 Layout
 !x0892A380 Layout
 
-!x08925000 アイテムの配置
+!x08925000 Arrange items
 !x0892537C Place the item here.
-!x089253C8 このアイテムを撤去します。
-!x089254E8 配置済みのアイテムを全て撤去します。
+!x089253C8 Remove this item.
+!x089254E8 Remove all the deployed items
 !x0892560C Return to the DIVA room.
-!x08925730 アイテムを一つ以上配置して下さい。
-!x08925818 すでに配置されているアイテムを撤去して、
-!x0892582C このアイテムを配置します。
-!x0892587C ルームアイテムを、
-!x08925890 これ以上置くことはできません。
-
-!x08928858 追加データをチェックするため
-!x0892886C 記録メディアにアクセス中です。
-!x08928880 記録メディアを抜かないで下さい。
+!x08925730 Please place some items first.
+!x08925818 Remove the items that are already
+!x0892582C been placed and put this item.
+!x0892587C You cannot place more items
+!x08925890 on this room.
 
 !x0892597C Adittional data
 !x08925990 could not be loaded.
@@ -215,6 +229,10 @@
 !x08928974 Import Options Screen
 !x08928988 行って下さい
 
+!x08928858 Accessing Memory Stick	1 to
+!x0892886C check for additional data.
+!x08928880 Do not remove the Memory Stick	1.
+
 # DIVA room (cont.)
 
 !x0892AC04 Room Menu
@@ -230,10 +248,10 @@
 !x0892BC5C Use the %s.
 !x0892BC70 Change the %s.
 !x0892BC80 Give a %s.
-!x0892BD08 Bonus for using DIVA room features.
+!x0892BD08 Bonus for using DIVA room.
 !x0892BD1C Acquired 1000 POINT.
-!x0892BD9C 設定時間は%02d:%02dです。
-!x0892BDAC %sを解除します。
+!x0892BD9C Set time: %02d:%02d.
+!x0892BDAC Clear %s.
 
 # DIVA room (cont.)
 
@@ -254,7 +272,7 @@
 !x08932574 Return to the DIVA room.
 !x089329A8 Return to the DIVA room.
 
-# DIVA room (confirmation dialogs)
+# DIVA room (playlist dialogs)
 
 !x08932694 プレイリストの内容を更新し、
 !x089326C0 編集を終了しますか？
@@ -801,6 +819,23 @@
 0x08C38C68 Aiiro no Hi, Sora Kakeru ～second flight～
 0x08C38C78 Koi no Inori ～extend your wave～
 
+# Helper item descriptions
+
+0x08C43E24 使用するとSAD、WORSTが
+0x08C43E28 SAFEになりますが、リザル
+0x08C43E2C トがCHEAPになります。
+0x08C43E34 10回までSAFE、SADが
+0x08C43E38 FINEになります。
+0x08C43E44 ソングエナジーが0になっ
+0x08C43E48 た時、エナジーを全回復す
+0x08C43E4C る事ができます。
+0x08C43E54 COOL、FINE以外の判定を
+0x08C43E58 全てWORSTにしますが
+0x08C43E5C 獲得DPが2倍になります。
+0x08C43E64 ソングエナジーが回復せず
+0x08C43E68 減少量が増加しますが
+0x08C43E6C 獲得DPが4倍になります。
+
 # Main menu descriptions (max lenght: 24)
 
 # (Rhythm Game)
@@ -843,10 +878,10 @@
 
 # (Edit mode menu descriptions)
 0x08C44070 エディットデータの
-0x08C44090 エディットデータの
 0x08C44074 作成、編集をすることが
 0x08C44080 エディットデータを
 0x08C44084 プレイすることが
+0x08C44090 エディットデータの
 0x08C44094 PVを鑑賞することが
 
 # DIVA room playlists
