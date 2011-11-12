@@ -114,6 +114,14 @@ void patch_eboot()  {
         sceIoRead(fd, &data, sizeof(data));
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
         kprintf("using %08X as string address\n", (u32)final_addr);
+
+        // do an extra patch step for branch loads
+        u32 extra_patch = 0;
+        if(((u32)data.addr & 0xF0000000) == 0xE0000000) {
+            extra_patch = 1;
+            data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
+        }
+
         if((u32)data.addr & 0xF0000000) {
             data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
@@ -144,6 +152,36 @@ void patch_eboot()  {
             }
             if(j >= 32) {
                 kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data.addr);
+            }
+
+            if(extra_patch) {
+                extra_patch = 0;
+                kprintf("making extra patch\n");
+                j = 0;
+                while(j < 32) {
+                    u16 lui = *(code_addr - 1 - (j*2));
+                    kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+                    if ((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
+                        u16 *branch_addr =  code_addr - (3 + (j * 2));
+                        u16 branch = *branch_addr;
+                        kprintf("checking if %04X is a branch\n", branch);
+                        if(branch & 0x1400) {
+                            u16 addr3 = (u16)((int)*(branch_addr -1) << 2);
+                            kprintf("branch offset: %04X\n", addr3);
+                            u16 jump = (u32)data.addr - ((u32)(code_addr - 1 - (j*2)) - 2);
+                            kprintf("supposed jump: %04X\n", jump);
+                            if(jump == addr3) {
+                                kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
+                                *code_addr = addr1;
+                                code_addr -= (2 + (j * 2));
+                                kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
+                                *code_addr = addr2;
+                                break;
+                            }
+                        }
+                    }
+                    j++;
+                }
             }
         } else {
             data.addr = (void **)(((u32)data.addr) | 0x40000000);

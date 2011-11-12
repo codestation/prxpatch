@@ -288,12 +288,12 @@
 !x089371CC Go back
 !x08937354 List of recorded PV
 !x08937C5C List of recorded PV
-!x08937720 Edit PLaylist
-!x08937B78 Edit PLaylist
-!x08937D7C ÉÇÉWÉÖÅ[ÉãëIë
+!x08937720 Edit Playlist
+!x08937B78 Edit Playlist
+!x08937D7C Module selection
 !x0893C72C Module selection
 !x08937E98 Module A
-!x08937EEC Module B
+^x08937EEC Module B
 !x08937F44 Confirm
 !x0893C880 Default
 !x0893CD2C Extras

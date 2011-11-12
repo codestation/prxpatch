@@ -63,7 +63,11 @@ int main(int argc, char **argv) {
 		if(buffer[0] == '!') {
 		    buffer[0] = '0';
 		    buffer[2] = 'F';
-		}
+		} else if(buffer[0] == '^') {
+            buffer[0] = '0';
+            buffer[2] = 'E';
+        }
+
 		long long addr = strtoll(buffer, NULL, 16);
 		fwrite(&addr, 4, 1, fdout);
 		fwrite(&offset, 4 ,1, fdout);
