@@ -1480,16 +1480,17 @@
 
 # (Edit mode menu descriptions)
 
-0x08C44070 Edit and create new
-0x08C44074 Edit data files.
-0x08C44078  
+0x08C44070 エディットデータの
+0x08C44074 作成、編集をすることが
+0x08C44078 できます。
 
-0x08C44080 Play Edit data
-0x08C44084 files.
-0x08C44088  
+0x08C44080 エディットデータを
+0x08C44084 プレイすることが
+0x08C44088 できます。
 
-0x08C44090 Watch PV from
-0x08C44098 Edit data.
+0x08C44090 エディットデータの
+0x08C44094 PVを鑑賞することが
+0x08C44098 できます。
 
 # Options menu descriptions
 
