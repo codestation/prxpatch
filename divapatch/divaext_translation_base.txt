@@ -95,10 +95,6 @@
 !x08839334 ルームアイテム
 !x08839358 ヘルプアイテム
 
-# Yes / Cancel
-
-!x08839DD8 ○:はい　×:いいえ
-
 # Autosave message (credits)
 
 !x08845B50 本ゲームはオートセーブ機能に対応しています。
@@ -1239,6 +1235,8 @@
 0x08C33D50 弱音ハクでリズムゲームを
 0x08C33D5C 亞北ネルでリズムゲームを
 0x08C33D68 咲音メイコでリズムゲームを
+
+# Helper item descriptions [shop] (max lenght: 24)
 
 0x08C33E10 使用するとSAD、WORSTが
 0x08C33E14 SAFEになりますが、リザル
