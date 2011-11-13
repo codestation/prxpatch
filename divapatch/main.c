@@ -168,7 +168,7 @@ void patch_eboot()  {
                         if(branch & 0x1400) {
                             u16 addr3 = (u16)((int)*(branch_addr -1) << 2);
                             kprintf("branch offset: %04X\n", addr3);
-                            u16 jump = (u32)data.addr - ((u32)(code_addr - 1 - (j*2)) - 2);
+                            u16 jump = (u16)((u32)data.addr - ((u32)(code_addr - 1 - (j*2)) - 2));
                             kprintf("supposed jump: %04X\n", jump);
                             if(jump == addr3) {
                                 kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
