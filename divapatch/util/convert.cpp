@@ -22,6 +22,11 @@
 #include <stdlib.h>
 #include <inttypes.h>
 
+#include <map>
+#include <string>
+
+using namespace std;
+
 char buffer[256];
 
 int main(int argc, char **argv) {
@@ -47,6 +52,7 @@ int main(int argc, char **argv) {
 		printf("Error while creating %s\n", fileout);
 		return 1;
 	}
+	map<string, size_t> lst;
 	size_t count = 0;
 	size_t table_size = 0;
 	size_t index_size = 4;
@@ -68,18 +74,25 @@ int main(int argc, char **argv) {
             buffer[2] = 'E';
         }
 
-		long long addr = strtoll(buffer, NULL, 16);
-		fwrite(&addr, 4, 1, fdout);
-		fwrite(&offset, 4 ,1, fdout);
-		fwrite(str, len, 1, fdstr);
-		padding = 4 - (len % 4);
-		if(padding) {
-			memset(buffer, 0, 16);
-			fwrite(buffer, padding, 1, fdstr);
+        long long addr = strtoll(buffer, NULL, 16);
+        fwrite(&addr, 4, 1, fdout);
+
+		map<string,size_t>::const_iterator it = lst.find(str);
+		if(it == lst.end()) {
+		    lst[str] = offset;
+		    fwrite(&offset, 4 ,1, fdout);
+	        fwrite(str, len, 1, fdstr);
+	        padding = 4 - (len % 4);
+	        table_size += len + padding;
+	        offset += len + padding;
+	        if(padding) {
+	            memset(buffer, 0, 16);
+	            fwrite(buffer, padding, 1, fdstr);
+	        }
+		} else {
+		    fwrite(&lst[str], 4 ,1, fdout);
 		}
 		count++;
-		table_size += len + padding;
-		offset += len + padding;
 		index_size += 8;
 	}
 	fseek(fdout, 0, SEEK_SET);
