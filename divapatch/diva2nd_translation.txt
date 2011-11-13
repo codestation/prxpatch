@@ -133,38 +133,38 @@
 # Song list
 0x08C1BFD8 World is Mine
 0x08C1BFE8 Melt
-0x08C1BFF8 Strobo Nights
+0x08C1BFF8 Strobe Nights
 0x08C1C008 Packaged
 0x08C1C018 Marginal
 0x08C1C028 Miracle Paint
 0x08C1C038 Kouja to Mori to Mahou no Uta
 0x08C1C048 Inoichi no Uta
 0x08C1C058 Hato
-0x08C1C068 Moon
-0x08C1C078 Beware of Miku Miku Bacteriaô
+0x08C1C068 moon
+0x08C1C078 Mikumiku-kin ni Gochuuiô
 0x08C1C088 The secret garden
 0x08C1C098 Dear cocoa girls
 0x08C1C0A8 Velvet Arabesque
-0x08C1C0B8 Updating Your Love List?
+0x08C1C0B8 Rabu Risuto Koushinchuu?
 0x08C1C0C8 Miku Miku ni Shite Ageruô
-0x08C1C0D8 When the First Love Ends
+0x08C1C0D8 Hajimete no Koi ga Owaru Toki
 0x08C1C0E8 Kocchi Muite Baby
 0x08C1C0F8 Finder (DSLR remix - re:edit)
 0x08C1C108 Yellow
 0x08C1C118 Colorful x Melody
-0x08C1C128 Hatsune Miku no Geki shou
+0x08C1C128 Hatsune Miku no Gekishou
 0x08C1C138 Romeo x Cinderella
 0x08C1C148 Magnet
 0x08C1C158 Dear
-0x08C1C168 From Y to Y
+0x08C1C168 from Y to Y
 0x08C1C178 Gemini
 0x08C1C188 Ai Kotoba
 0x08C1C198 PoPiPo
 0x08C1C1A8 Saihate
 0x08C1C1B8 VOiCE -DIVA MIX-
-0x08C1C1C8 Love-colored Ward
+0x08C1C1C8 Koiiro Byouto
 0x08C1C1D8 Kyodai Shoujo
-0x08C1C1E8 Meltdown
+0x08C1C1E8 Roshin Yuukai
 0x08C1C1F8 Kokoro
 0x08C1C208 Migikata no Chou
 0x08C1C218 Double Lariat
@@ -182,11 +182,11 @@
 0x08C1C2D8 Cardioid
 0x08C1C2E8 EXtend
 0x08C1C2F8 Hometown
-0x08C1C308 Why?
+0x08C1C308 Nande?
 0x08C1C318 Hallo World
 0x08C1C328 I'm Crazy For You
 0x08C1C338 Neko na Kimi
-0x08C1C348 Soft at times, Dark at times
+0x08C1C348 Toki ni wa soft ni, Toki ni wa dark ni
 
 #!x08C1C35C Idling
 
@@ -485,12 +485,12 @@
 0x08BCDF98 Craftsman
 0x08BCDF9C Sound Artisan
 0x08BCDFA0 Perfect Pitch
-0x08BCDFA4 šWhen the first love ends
+0x08BCDFA4 šHajimete no Koi ga Owaru Toki
 0x08BCDFA8 šKocchi Muite Baby
 0x08BCDFAC šYellow
 0x08BCDFB0 šFinder
 0x08BCDFB4 šColorful x Melody
-0x08BCDFB8 šHatsune Miku no Geki shou
+0x08BCDFB8 šHatsune Miku no Gekishou
 0x08BCDFBC šRomeo x Cinderella
 0x08BCDFC0 šMagnet
 0x08BCDFC4 šDear
@@ -500,9 +500,9 @@
 0x08BCDFD4 šPoPiPo
 0x08BCDFD8 šSaihate
 0x08BCDFDC šVOiCE -DIVA MIX-
-0x08BCDFE0 šLove-Colored Ward
-0x08BCDFE4 šKyoday Shoujo
-0x08BCDFE8 šMeltdown
+0x08BCDFE0 šKoiiro Byouto
+0x08BCDFE4 šKyodai Shoujo
+0x08BCDFE8 šRoshin Yuukai
 0x08BCDFEC šKokoro
 0x08BCDFF0 šMigikata no Chou
 0x08BCDFF4 šDouble Lariat
@@ -517,7 +517,7 @@
 0x08BCE018 šHajimete no oto
 0x08BCE01C šWorld is Mine
 0x08BCE020 šMelt
-0x08BCE024 šStrobo Nights
+0x08BCE024 šStrobe Nights
 0x08BCE028 šPackaged
 0x08BCE02C šMiracle Paint
 0x08BCE030 šMarginal
@@ -525,11 +525,11 @@
 0x08BCE038 šInoichi no Uta
 0x08BCE03C šHato
 0x08BCE040 šMoon
-0x08BCE044 šBeware of Miku Miku Bacteriaô
+0x08BCE044 šMikumiku-kin ni Gochuuiô
 0x08BCE048 šThe secret garden
 0x08BCE04C šDear cocoa girls
 0x08BCE050 šVelvet Arabesque
-0x08BCE054 šUpdating your love list?
+0x08BCE054 šRabu Risuto Koushinchuu?
 0x08BCE058 šMiku Miku ni Shite Ageruô
 0x08BCE05C Novice Coordinator
 0x08BCE060 Coordinator

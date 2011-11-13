@@ -297,24 +297,31 @@
 
 # DIVA room (playlist dialogs)
 
-!x08932694 プレイリストの内容を更新し、
-!x089326C0 編集を終了しますか？
-!x089326F4 このまま終了してしまうと、
-!x08932720 プレイリストが更新されませんが、
-!x0893274C よろしいですか？
-!x089327D4 Playlist
-!x08932828 Are you sure to remove it?
-!x0893285C 楽曲が登録されていません。
-!x08932888 現在の状態ではプレイリストが
-!x089328B4 削除されますが、よろしいですか？
-!x089328E8 プレイリストが作成されていません。
-!x08932914 プレイリストを作成しますか？
-!x08932974 現在プレイリストは登録されていません。
-!x08932A08 登録数が限界を超えています。
-!x08932A3C プレイリスト作成数の限界を
-!x08932A68 超えています。
-!x08932A9C 追加データを
-!x08932AC8 ロードできませんでした。
+!x08932694 Update playlist contents
+!x089326C0 and quit editing?
+
+!x089326F4 Playlist will not be
+!x08932720 updated if you quit now.
+!x0893274C would you like to quit?
+
+!x089327D4 Delete this
+!x08932828 playlist?
+
+!x0893285C Music is not registered.
+
+!x08932888 The playlist will be deleted at its
+!x089328B4 current state. Continue?
+
+!x089328E8 Playlist hasn't been created.
+!x08932914 Would you like to create a playlist?
+!x08932974 There are no playlists registered at the moment.
+!x08932A08 The max number of registrations has been reached. 
+
+!x08932A3C The max number of playlists
+!x08932A68 has been exceeded.
+
+!x08932A9C Additional data 
+!x08932AC8 could not be loaded.
 
 # DIVA room (PV menu)
 
