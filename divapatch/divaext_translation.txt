@@ -69,7 +69,7 @@
 !x08823CD4 [CHALLENGE] COOL&FINE
 !x08823CE0 [CHALLENGE] Survival
 
-# ???
+# Shop messages
 
 !x08838D38 Exit the shop, return to home?
 !x088390AC New items
@@ -78,7 +78,7 @@
 !x088392EC Module
 !x08839310 Room
 !x08839334 Room item
-!x08839CAC DIVAポイントが足りません。
+!x08839CAC Not enough DIVA points.
 
 !x08839DD0 Do you want to buy?
 !x08839DD8 ○:Yes　×:No
@@ -100,7 +100,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/11          -codestation
+!x08845B8C PD extend patch 2011/11/13          -codestation
 
 !x088E0F4C Set the default character.
 !x088E0F58 This setting is automatically disabled
@@ -159,6 +159,10 @@
 !x088E6070 Go to Play Edit.
 !x088E6080 Go to Watch Edit.
 
+# ???
+
+!x088E6A04 前作データの引継ぎ
+
 # Options menu entries
 
 !x088E6620 Auto Save
@@ -171,6 +175,27 @@
 !x088E88FC Auto Save
 !x088E89A0 Installation data
 
+# Installation data messages
+
+!x088E6E88 Perform additional data import.
+!x088E6E98 前作データの引継ぎを行います。
+!x088E7284 オートセーブをONに設定しました。
+!x088E729C ※オートセーブ中には
+!x088E72A8 メモリースティック	1アクセスランプ
+!x088E72B4 が点滅しますので、
+!x088E72C8 その間は記録メディアを抜いたり、
+!x088E72D8 本体の電源を切ったりしないでください。
+!x088E73B8 システムデータがセーブされていません。
+!x088E73C4 オートセーブの設定をOFFに変更します。
+!x088E73D0 『ホーム』画面の『セーブ』で
+!x088E73E4 システムデータを作成してから
+!x088E73F4 オートセーブをONに設定して下さい。
+!x088E7830 記録メディアにインストールデータが入っていません。
+!x088E77BC インストールデータをロードできなかったため、
+!x088E77C0 "UMD"のみからロードを行います。
+!x088E77C8 インストールデータの設定をOFFにしました。
+^x088E78A4 記録メディアが入っていません。
+
 # Module menu extras
 
 !x088EB2F4 Extras
@@ -179,7 +204,7 @@
 
 !x088F18D8 The import data
 !x088F18A8 could not be loaded.
-!x088F18E8 オプション画面でインポートを
+!x088F18E8 Import Options Screen
 !x088F18F4 行って下さい。
 !x088F1964 Additional data
 !x088F1CA4 Acquired title.
@@ -250,7 +275,7 @@
 !x08927600 Extra Items
 !x08928948 Import Data
 !x08928974 Import Options Screen
-!x08928988 行って下さい
+!x08928988 行って下さい。
 
 !x08928858 Accessing Memory Stick	1 to
 !x0892886C check for additional data.
@@ -767,9 +792,23 @@
 0x08C30FC4 DIVA×Drum Master 1
 0x08C30FC8 DIVA×Drum Master 2
 
-# Help item menu entry
+# Shop menu headers
 
-0x08C31FE0 Help items
+0x08C31FD4 Room Items (floor)
+0x08C31FD8 Room Items (shelf)
+0x08C31FDC Room Items (wall)
+0x08C31FE0 Help Items
+0x08C31FE4 DIVA Room
+0x08C31FE8 Room theme
+0x08C31FEC Modules (Miku)
+0x08C31FF0 Modules (Rin)
+0x08C31FF4 Modules (Len)
+0x08C31FF8 Modules (Luka)
+0x08C31FFC Modules (Kaito)
+0x08C32000 Modules (Meiko)
+0x08C32004 Modules (Neru)
+0x08C32008 Modules (Haku)
+0x08C3200C Modules (Sakine)
 
 # Item quantity
 
@@ -1398,40 +1437,40 @@
 0x08C43FD8 You will lost all the unsaved data
 0x08C43FDC Are you sure to return to title?
 
-0x08C43FE0 You can go to
-0x08C43FE4 see the Miku's
-0x08C43FE8 room.
+0x08C43FE0 Go to see the
+0x08C43FE4 Miku's room.
+0x08C43FE8  
 
-0x08C43FF0 You can go to
-0x08C43FF4 see the Rin's
-0x08C43FF8 room.
+0x08C43FF0 Go to see the
+0x08C43FF4 Rin's room.
+0x08C43FF8  
 
-0x08C44000 You can go to
-0x08C44004 see the Len's
-0x08C44008 room.
+0x08C44000 Go to see the
+0x08C44004 Len's room.
+0x08C44008  
 
-0x08C44010 You can go to
-0x08C44014 see the Luka's
-0x08C44018 room.
+0x08C44010 Go to see the
+0x08C44014 Luka's room.
+0x08C44018  
 
-0x08C44020 You can go to
-0x08C44024 see the Kaito's
-0x08C44028 room.
+0x08C44020 Go to see the
+0x08C44024 Kaito's room.
+0x08C44028  
 
-0x08C44030 You can go to
-0x08C44034 see the Meiko's
-0x08C44038 room.
+0x08C44030 Go to see the
+0x08C44034 Meiko's room.
+0x08C44038  
 
-0x08C44040 You can go to
-0x08C44044 see the Neru's
-0x08C44048 room.
+0x08C44040 Go to see the
+0x08C44044 Neru's room.
+0x08C44048  
 
-0x08C44050 You can go to
-0x08C44054 see the Haku's
-0x08C44058 room.
+0x08C44050 Go to see the
+0x08C44054 Haku's room.
+0x08C44058  
 
-0x08C44060 You can go to
-0x08C44064 see the S. Meiko's
+0x08C44060 Go to see the
+0x08C44064 Sakine Meiko's
 0x08C44068 room.
 
 0x088E5228 インポートデータが読み込めないため
@@ -1440,12 +1479,44 @@
 0x088E525C ※追加データのインポートはオプション画面で行えます。
 
 # (Edit mode menu descriptions)
+
 0x08C44070 エディットデータの
 0x08C44074 作成、編集をすることが
+0x08C44078 できます。
+
 0x08C44080 エディットデータを
 0x08C44084 プレイすることが
+0x08C44088 できます。
+
 0x08C44090 エディットデータの
 0x08C44094 PVを鑑賞することが
+0x08C44098 できます。
+
+# Options menu descriptions
+
+0x08C440A0 Change the volume of the
+0x08C440A4 MP3 songs and PV BGM
+0x08C440A8 in the game.
+
+0x08C440B0 Change the volume of
+0x08C440B4 the system BGM.
+
+0x08C440C0 Change the volume of the
+0x08C440C4 SE in the game.
+
+0x08C440D0 Change the autosave
+0x08C440D4 settings.
+
+0x08C440E0 Enable the loading of
+0x08C440E4 the Installation
+0x08C440E8 data.
+
+0x08C440F0 Import additional data
+0x08C440F4 that you have selected
+0x08C440F8 as extra data.
+
+0x08C44100 前作データの引継ぎを
+0x08C44104 することができます。
 
 # DIVA room playlists
 
