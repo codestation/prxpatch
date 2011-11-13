@@ -83,9 +83,9 @@
 !x08839DD0 Do you want to buy?
 !x08839DD8 ○:Yes　×:No
 !x08839EEC Exceeded the maximun number.
-!x0883A1B8 Count 0 / 0
-!x0883A274 Count %d / %d
-!x0883A2A0 Count - / -
+!x0883A1B8 Quantity 0 / 0
+!x0883A274 Quantity %d / %d
+!x0883A2A0 Quantity - / -
 
 # Shop menu
 
@@ -174,6 +174,15 @@
 # Module menu extras
 
 !x088EB2F4 Extras
+
+# Main menu messages
+
+!x088F18D8 The import data
+!x088F18A8 could not be loaded.
+!x088F18E8 オプション画面でインポートを
+!x088F18F4 行って下さい。
+!x088F1964 Additional data
+!x088F1CA4 Acquired title.
 
 # Unlock messages
 
@@ -293,8 +302,8 @@
 !x089326F4 このまま終了してしまうと、
 !x08932720 プレイリストが更新されませんが、
 !x0893274C よろしいですか？
-!x089327D4 プレイリスト
-!x08932828 を削除しますか？
+!x089327D4 Playlist
+!x08932828 Are you sure to remove it?
 !x0893285C 楽曲が登録されていません。
 !x08932888 現在の状態ではプレイリストが
 !x089328B4 削除されますが、よろしいですか？
@@ -327,35 +336,6 @@
 !x08937E98 Module A
 ^x08937EEC Module B
 !x08937F44 Confirm
-!x0893C880 Default
-!x0893CD2C Extras
-!x0893D0E8 Return to the DIVA room.
-!x0893D504 Return to the DIVA room.
-!x0893D208 プレイリストの内容を更新し、
-!x0893D234 編集を終了しますか？
-!x0893D268 このまま終了してしまうと、
-!x0893D294 プレイリストが更新されませんが、
-!x0893D2C0 よろしいですか？
-!x0893D330 プレイリスト
-!x0893D384 を削除しますか？
-!x0893D3B8 PVが登録されていません。
-!x0893D3E4 現在の状態ではプレイリストが
-!x0893D410 削除されますが、よろしいですか？
-!x0893D444 プレイリストが作成されていません。
-!x0893D470 プレイリストを作成しますか？
-!x0893D4D0 現在プレイリストは登録されていません。
-!x0893D564 登録数が限界を超えています。
-!x0893D598 プレイリスト作成数の限界を
-!x0893D5C4 超えています。
-!x0893D600 追加データを
-!x0893D62C ロードできませんでした。
-!x0893D694 ロードできませんでした。
-!x0893D668 インポートデータを
-!x0893D6C0 オプション画面でインポートを
-!x0893D6EC 行って下さい。
-
-# Misc
-
 !x0893C880 Default
 !x0893CD2C Extras
 !x0893D0E8 Return to the DIVA room.
