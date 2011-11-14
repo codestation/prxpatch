@@ -399,13 +399,13 @@
 
 # DIVA room (date/clock and quantity texts)
 
-0x894B1C4 %04d/%02d/%02d   %02d:%02d:%02d
-0x894B790 Quantity Åá
-0x894B7B4 Quantity %d / %d
-0x894B7F8 Quantity - / -
-0x894E338 Sleep timer
-0x894E344 Navigation timer
-0x894E350 Wake-up timer
+!x894B1C4 %04d/%02d/%02d   %02d:%02d:%02d
+!x894B790 Quantity Åá
+!x894B7B4 Quantity %d / %d
+!x894B7F8 Quantity - / -
+!x894E338 Sleep timer
+!x894E344 Navigation timer
+!x894E350 Wake-up timer
 
 # (PD2nd savedata detection)
 
