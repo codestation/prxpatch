@@ -399,13 +399,13 @@
 
 # DIVA room (date/clock and quantity texts)
 
-!x894B1C4 %04d/%02d/%02d   %02d:%02d:%02d
-!x894B790 Quantity ∞
-!x894B7B4 Quantity %d / %d
-!x894B7F8 Quantity - / -
-!x894E338 Sleep timer
-!x894E344 Navigation timer
-!x894E350 Wake-up timer
+!x0894B1C4 %04d/%02d/%02d   %02d:%02d:%02d
+!x0894B790 Quantity ∞
+!x0894B7B4 Quantity %d / %d
+!x0894B7F8 Quantity - / -
+!x0894E338 Sleep timer
+!x0894E344 Navigation timer
+!x0894E350 Wake-up timer
 
 # (PD2nd savedata detection)
 
@@ -1320,8 +1320,8 @@
 0x08C33E44 not recover or increase.
 0x08C33E48 Multiplies gained DP x4.
 
-0x8C34998 楽曲不問 EXTREMEクリア
-0x8C349A0 初音ミクで100回プレイ
+0x08C34998 楽曲不問 EXTREMEクリア
+0x08C349A0 初音ミクで100回プレイ
 
 0x08C34A40 Specific song
 0x08C34A4C Specific song
