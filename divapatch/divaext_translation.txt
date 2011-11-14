@@ -190,10 +190,12 @@
 !x088E73D0 『ホーム』画面の『セーブ』で
 !x088E73E4 システムデータを作成してから
 !x088E73F4 オートセーブをONに設定して下さい。
-!x088E7830 記録メディアにインストールデータが入っていません。
-!x088E77BC インストールデータをロードできなかったため、
-!x088E77C0 "UMD"のみからロードを行います。
-!x088E77C8 インストールデータの設定をOFFにしました。
+
+!x088E7830 Data install not found in storage media.
+!x088E77BC Because the installation data wasn't found
+!x088E77C0 the game will only load from the "UMD".
+!x088E77C8 Installation data was set to OFF.
+
 ^x088E78A4 記録メディアが入っていません。
 
 # Module menu extras
@@ -288,10 +290,10 @@
 !x0892B1E4 Present
 !x0892B1F0 Music Box
 !x0892B1FC PV Gallery
-!x0892B208 Visual Library
-!x0892B214 Sleep Timer
-!x0892B220 Navigation Timer
-!x0892B22C Wakeup Timer
+!x0892B208 Visual library
+!x0892B214 Sleep timer
+!x0892B220 Navigation timer
+!x0892B22C Wake-up timer
 !x0892BC2C Return to home.
 !x0892BC5C Use the %s.
 !x0892BC70 Change the %s.
@@ -395,6 +397,16 @@
 !x0893D6C0 オプション画面でインポートを
 !x0893D6EC 行って下さい。
 
+# DIVA room (date/clock and quantity texts)
+
+0x894B1C4 %04d/%02d/%02d   %02d:%02d:%02d
+0x894B790 Quantity ∞
+0x894B7B4 Quantity %d / %d
+0x894B7F8 Quantity - / -
+0x894E338 Sleep timer
+0x894E344 Navigation timer
+0x894E350 Wake-up timer
+
 # (PD2nd savedata detection)
 
 #!x089522F0 『初音ミク -Project DIVA- 2nd』のシステムデータを
@@ -409,6 +421,31 @@
 
 !x0898E01C Song list
 !x0898E028 Storage media
+!x0898E3B0 The storage media is not inserted.
+!x0898E41C Song not found.
+!x0898E450 この楽曲は再生できません。
+!x0898E47C この楽曲はエディットモードで使用できません。
+!x0898E9C0 Help items
+!x0898FFEC Extras
+!x08990150 ロードできませんでした。
+!x08990164 インポートデータを
+!x08990188 オプション画面でインポートを
+!x0899019C 行って下さい。
+!x089901B8 Adittional data
+!x08990318 No
+
+# Ad Hoc menu
+
+!x089A78F4 Send Edit data
+!x089A7920 Receive Edit data
+!x089A794C Exchange profile (send)
+!x089A7978 Exchange profile (receive)
+!x089A79A4 Back to home.
+
+!x089A8830 Profile exchanged.
+!x089A8860 フレンド情報を保存するには
+!x089A888C システムデータの保存が必要です。
+!x089A88F0 Profile exchanged.
 
 # Module list
 
