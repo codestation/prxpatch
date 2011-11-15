@@ -22,6 +22,8 @@
 #include <psputilsforkernel.h>
 #include <string.h>
 #include "pspdefs.h"
+#include "hook.h"
+#include "reader.h"
 #include "logger.h"
 
 PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 0);
@@ -36,6 +38,11 @@ struct addr_data {
     void **addr;
     u32 offset;
 }__attribute__((packed));
+
+typedef struct {
+    u32 nid;
+    void *func;
+} stub;
 
 const char *diva_id[] = {
         "ULJM05472", // Project Diva
@@ -54,12 +61,18 @@ const char *trans_files[] = {
         "divaext_translation.bin",
         "divaext_translation.bin",
 };
+const stub stubs[] = {
+        { 0x109F50BC, diva_open  }, // sceIoOpen
+        { 0x6A638D83, diva_read  }, // sceIoRead
+        { 0x810C4BC3, diva_close }, // sceIoClose
+};
 
-static char filepath[256];
+char filepath[256];
 static STMOD_HANDLER previous = NULL;
 static SceUID block_id = -1;
 static void *block_addr = NULL;
 static int patch_index = -1;
+SceUID sema = 0;
 
 inline void DcacheWritebackAll(void) {
     __asm__ volatile("\
@@ -226,16 +239,42 @@ int module_start_handler(SceModule2 * module) {
             if(patch_index >= 0) {
                 patch_eboot();
                 clear_caches();
+                sceKernelSignalSema(sema, 1);
             }
         }
     }
     return previous ? previous(module) : 0;
 }
 
-int module_start(SceSize argc, void *argp) {
+inline void patch_imports(SceModule *module) {
+    for (u32 i = 0; i < ITEMSOF(stubs); i++) {
+        if(hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1) < 0) {
+            kprintf("Failed to hook %08X\n", stubs[i].nid);
+        }
+    }
+}
+
+int thread_start(SceSize args, void *argp) {
     strcpy(filepath, argp);
+    sema = sceKernelCreateSema("divapatch_wake", 0, 0, 1, NULL);
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
+    sceKernelWaitSema(sema, 1, NULL);
+    if(patch_index >= 4) {
+        SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+        if(module) {
+            patch_imports(module);
+        }
+    }
+    sceKernelDeleteSema(sema);
 	return 0;
+}
+
+int module_start(SceSize args, void *argp) {
+    SceUID thid = sceKernelCreateThread("divapatch_main", thread_start, 0x22, 0x2000, 0, NULL);
+    if(thid >= 0) {
+        sceKernelStartThread(thid, args, argp);
+    }
+    return 0;
 }
 
 int module_stop(SceSize args, void *argp) {

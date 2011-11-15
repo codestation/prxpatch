@@ -6,4 +6,10 @@ PSP_EXPORT_FUNC(module_stop)
 PSP_EXPORT_VAR(module_info)
 PSP_EXPORT_END
 
+PSP_EXPORT_START(divakernel, 0, 0x4001)
+PSP_EXPORT_FUNC(diva_open)
+PSP_EXPORT_FUNC(diva_read)
+PSP_EXPORT_FUNC(diva_close)
+PSP_EXPORT_END
+
 PSP_END_EXPORTS
