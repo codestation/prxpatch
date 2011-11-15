@@ -32,6 +32,7 @@ char buffer[256];
 int main(int argc, char **argv) {
     if(argc < 2) {
         printf("Usage: divaconvert <translation_file>.txt\n");
+        return 1;
     }
 	FILE *fd = fopen(argv[1], "rb");
 	if(!fd) {
