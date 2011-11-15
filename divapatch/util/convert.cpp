@@ -66,9 +66,11 @@ int main(int argc, char **argv) {
 		char *str = buffer + 11;
 		size_t len = strlen(str);
 		str[len-1] = 0;
+		// embedded offset in instruction
 		if(buffer[0] == '!') {
 		    buffer[0] = '0';
 		    buffer[2] = 'F';
+		    // only upper address
 		} else if(buffer[0] == '^') {
             buffer[0] = '0';
             buffer[2] = 'E';
