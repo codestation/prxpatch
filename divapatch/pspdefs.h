@@ -78,6 +78,7 @@ typedef int (* STMOD_HANDLER)(SceModule2 *);
 int sceKernelGetModel();
 char *sceKernelGetUMDData(void);
 unsigned int sceKernelQuerySystemCall(void * function);
+u32 sctrlHENFindFunction(const char *modname, const char *libname, u32 nid);
 STMOD_HANDLER sctrlHENSetStartModuleHandler(STMOD_HANDLER handler);
 
 #endif /* PSPDEFS_H_ */

@@ -26,7 +26,9 @@
 #include "reader.h"
 #include "logger.h"
 
-PSP_MODULE_INFO("divapatch", PSP_MODULE_KERNEL, 1, 0);
+#define PLUGIN_NAME "divapatch"
+
+PSP_MODULE_INFO(PLUGIN_NAME, PSP_MODULE_KERNEL, 1, 0);
 PSP_HEAP_SIZE_KB(0);
 
 #define GAME_MODULE "PdvApp"
@@ -203,6 +205,7 @@ int get_gameid(char *gameid) {
 }
 
 int module_start_handler(SceModule2 * module) {
+    int ret = previous ? previous(module) : 0;
     if((module->text_addr & 0x80000000) != 0x80000000 && strcmp(module->modname, GAME_MODULE) == 0) {
         // game found, but since all versions use the same module name we need to find out the
         // correct game.
@@ -225,7 +228,7 @@ int module_start_handler(SceModule2 * module) {
             }
         }
     }
-    return previous ? previous(module) : 0;
+    return ret;
 }
 
 void patch_imports(SceModule *module) {
@@ -246,6 +249,14 @@ int thread_start(SceSize args, void *argp) {
         SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
         if (module) {
             patch_imports(module);
+        }
+        u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
+        if(func) {
+            kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
+            module = sceKernelFindModuleByName(PLUGIN_NAME);
+            if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
+                kprintf("Failed to hook %08X\n", 0x109F50BC);
+            }
         }
     }
     sceKernelDeleteSema(sema);
