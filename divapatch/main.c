@@ -126,7 +126,7 @@ void patch_eboot()  {
         struct addr_data data;
         sceIoRead(fd, &data, sizeof(data));
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
-        kprintf("using %08X as string address\n", (u32)final_addr);
+        //kprintf("using %08X as string address\n", (u32)final_addr);
 
         // only patch the upper address
         u32 upper_only = 0;
@@ -150,25 +150,25 @@ void patch_eboot()  {
 
             if(upper_only) {
                 upper_only = 0;
-                kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
+                //kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
                 *code_addr = addr2;
                 continue;
             }
 
-            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+            //kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
 
             int j = 0;
             u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
-            kprintf("using register number %i for lui search\n", mips_reg);
+            //kprintf("using register number %i for lui search\n", mips_reg);
             while(j < 32) { //maximum backtrace to look for a lui instruction
                 u16 lui = *(code_addr - 1 - (j*2));
-                kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+                //kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
 
                 if((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
-                    kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
+                    //kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
                     *code_addr = addr1;
                     code_addr -= (2 + (j*2));
-                    kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
+                    //kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
                     *code_addr = addr2;
                     break;
                 } else {
@@ -180,7 +180,7 @@ void patch_eboot()  {
             }
         } else {
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
-            kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
+            //kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
             *data.addr = final_addr;
         }
     }
@@ -228,9 +228,9 @@ int module_start_handler(SceModule2 * module) {
     return previous ? previous(module) : 0;
 }
 
-inline void patch_imports(SceModule *module, const char *library, int syscall) {
+void patch_imports(SceModule *module) {
     for (u32 i = 0; i < ITEMSOF(stubs); i++) {
-        if(hook_import_bynid(module, library, stubs[i].nid, stubs[i].func, syscall) < 0) {
+        if(hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1) < 0) {
             kprintf("Failed to hook %08X\n", stubs[i].nid);
         }
     }
@@ -242,14 +242,10 @@ int thread_start(SceSize args, void *argp) {
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
     sceKernelWaitSema(sema, 1, NULL);
     if(patch_index >= 4) {
-        SceModule *module = sceKernelFindModuleByName("nploader");
-        if(module) {
-            patch_imports(module, "IoFileMgrForKernel", 0);
-        } else {
-            module = sceKernelFindModuleByName(GAME_MODULE);
-            if (module) {
-                patch_imports(module, "IoFileMgrForUser", 1);
-            }
+        kprintf("patching imports\n");
+        SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+        if (module) {
+            patch_imports(module);
         }
     }
     sceKernelDeleteSema(sema);
