@@ -1,9 +1,13 @@
 # Translation file for Project Diva Extend (use shift-jis to edit the file)
 # 0x08xxxxxx: use this format to rewrite the pointed address
-#             to a newly allocated one for the translation
+#             to a newly allocated one for the translation.
 # !x08xxxxxx: use this type of format if the address to modify
 #             is embedded inside a instruction (use the lower
-#             address part of the instruction for the address)
+#             address part of the instruction for the address).
+# ^x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the upper address (the lui is behind many
+#             branch instructions).
 #
 # EBOOT reversing and translation: codestation
 # translation helpers: HeroKing, naki-the-curious
@@ -100,7 +104,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/13          -codestation
+!x08845B8C PD extend patch 2011/11/15          -codestation
 
 !x088E0F4C Set the default character.
 !x088E0F58 This setting is automatically disabled
@@ -178,25 +182,26 @@
 # Installation data messages
 
 !x088E6E88 Perform additional data import.
-!x088E6E98 前作データの引継ぎを行います。
-!x088E7284 オートセーブをONに設定しました。
-!x088E729C ※オートセーブ中には
-!x088E72A8 メモリースティック	1アクセスランプ
-!x088E72B4 が点滅しますので、
-!x088E72C8 その間は記録メディアを抜いたり、
-!x088E72D8 本体の電源を切ったりしないでください。
-!x088E73B8 システムデータがセーブされていません。
-!x088E73C4 オートセーブの設定をOFFに変更します。
-!x088E73D0 『ホーム』画面の『セーブ』で
-!x088E73E4 システムデータを作成してから
-!x088E73F4 オートセーブをONに設定して下さい。
+!x088E6E98 Import save data from previous game.
+!x088E7284 Auto-save has been turned on.
+!x088E729C ※While Auto-saving, the
+!x088E72A8 Memory Stick	1 access
+!x088E72B4 indicator will flash.
+!x088E72C8 Please do not remove the Memory Stick	1
+!x088E72D8 or turn off the console.
+!x088E73B8 System Data has not been saved.
+!x088E73C4 Changed Auto-save setting to "off".
+!x088E73D0 Please create System Data by
+!x088E73E4 going to "Home" then "Save"
+!x088E73F4 before turning Auto-save on.
 
 !x088E7830 Data install not found in storage media.
 !x088E77BC Because the installation data wasn't found
 !x088E77C0 the game will only load from the "UMD".
 !x088E77C8 Installation data was set to OFF.
 
-^x088E78A4 記録メディアが入っていません。
+^x088E7824 記録メディアが入っていません。
+!x088E78A4 記録メディアが入っていません。
 
 # Module menu extras
 
@@ -222,6 +227,23 @@
 !x088FBF90 Room was added to the shop.
 !x088FBF94 Room theme has been added to the shop.
 !x088FBF98 Room item has been added to the shop.
+
+# DLC load error messages
+
+!x0891F714 The additional data
+!x0891F728 could not be loaded.
+
+!x0891F73C The current module has been
+!x0891F750 restored to the original one.
+
+!x0891F7FC The additional data
+!x0891F810 could not be loaded.
+
+!x0891F824 The default layout of
+!x0891F838 the room has been restored.
+
+!x0891F8A0 The additional data
+!x0891F8B4 could not be loaded.
 
 # DIVA room
 
@@ -341,8 +363,8 @@
 
 !x089328E8 Playlist hasn't been created.
 !x08932914 Would you like to create a playlist?
-!x08932974 There are no playlists registered at the moment.
-!x08932A08 The max number of registrations has been reached. 
+!x08932974 No playlists registered at the moment.
+!x08932A08 Max number of registrations has been reached. 
 
 !x08932A3C The max number of playlists
 !x08932A68 has been exceeded.
@@ -368,32 +390,36 @@
 !x08937D7C Module selection
 !x0893C72C Module selection
 !x08937E98 Module A
-^x08937EEC Module B
+^x08937E90 Module B
+!x08937EEC Module B
+^x08937ECC Confirm
+^x08937EE4 Confirm
+^x08937F20 Confirm
 !x08937F44 Confirm
 !x0893C880 Default
 !x0893CD2C Extras
 !x0893D0E8 Return to the DIVA room.
 !x0893D504 Return to the DIVA room.
-!x0893D208 プレイリストの内容を更新し、
-!x0893D234 編集を終了しますか？
-!x0893D268 このまま終了してしまうと、
-!x0893D294 プレイリストが更新されませんが、
-!x0893D2C0 よろしいですか？
-!x0893D330 プレイリスト
-!x0893D384 を削除しますか？
-!x0893D3B8 PVが登録されていません。
-!x0893D3E4 現在の状態ではプレイリストが
-!x0893D410 削除されますが、よろしいですか？
-!x0893D444 プレイリストが作成されていません。
-!x0893D470 プレイリストを作成しますか？
-!x0893D4D0 現在プレイリストは登録されていません。
-!x0893D564 登録数が限界を超えています。
-!x0893D598 プレイリスト作成数の限界を
-!x0893D5C4 超えています。
-!x0893D600 追加データを
-!x0893D62C ロードできませんでした。
-!x0893D694 ロードできませんでした。
-!x0893D668 インポートデータを
+!x0893D208 Update Playlist contents
+!x0893D234 and quit editing?
+!x0893D268 Playlist will not be
+!x0893D294 updated if you quit now.
+!x0893D2C0 would you like to quit?
+!x0893D330 Delete this
+!x0893D384 playlist?
+!x0893D3B8 PV is not registered.
+!x0893D3E4 The playlist will be deleted at its
+!x0893D410 current state. Continue?
+!x0893D444 Playlist hasn't been created.
+!x0893D470 Would you like to create a playlist?
+!x0893D4D0 No playlists registered at the moment.
+!x0893D564 Max number of registrations has been reached.
+!x0893D598 The max number of playlists
+!x0893D5C4 has been exceeded.
+!x0893D600 Additional Data 
+!x0893D62C could not be loaded.
+!x0893D668 Import Data
+!x0893D694 could not be loaded.
 !x0893D6C0 オプション画面でインポートを
 !x0893D6EC 行って下さい。
 

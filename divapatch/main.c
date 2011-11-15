@@ -128,23 +128,35 @@ void patch_eboot()  {
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
         kprintf("using %08X as string address\n", (u32)final_addr);
 
-        // do an extra patch step for branch loads
-        u32 extra_patch = 0;
+        // only patch the upper address
+        u32 upper_only = 0;
         if(((u32)data.addr & 0xF0000000) == 0xE0000000) {
-            extra_patch = 1;
+            upper_only = 1;
             data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
         }
 
         if((u32)data.addr & 0xF0000000) {
             data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
-            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+
+
             u16 *code_addr = (u16 *)data.addr;
             u16 addr1 = (u32)final_addr & 0xFFFF;
             u16 addr2 = (u16)((((u32)final_addr) >> 16) & 0xFFFF);
+
             if(addr1 & 0x8000) {
                 addr2++;
             }
+
+            if(upper_only) {
+                upper_only = 0;
+                kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
+                *code_addr = addr2;
+                continue;
+            }
+
+            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+
             int j = 0;
             u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
             kprintf("using register number %i for lui search\n", mips_reg);
@@ -165,36 +177,6 @@ void patch_eboot()  {
             }
             if(j >= 32) {
                 kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data.addr);
-            }
-
-            if(extra_patch) {
-                extra_patch = 0;
-                kprintf("making extra patch\n");
-                j = 0;
-                while(j < 32) {
-                    u16 lui = *(code_addr - 1 - (j*2));
-                    kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
-                    if ((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
-                        u16 *branch_addr =  code_addr - (3 + (j * 2));
-                        u16 branch = *branch_addr;
-                        kprintf("checking if %04X is a branch\n", branch);
-                        if(branch & 0x1400) {
-                            u16 addr3 = (u16)((int)*(branch_addr -1) << 2);
-                            kprintf("branch offset: %04X\n", addr3);
-                            u16 jump = (u16)((u32)data.addr - ((u32)(code_addr - 1 - (j*2)) - 2));
-                            kprintf("supposed jump: %04X\n", jump);
-                            if(jump == addr3) {
-                                kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
-                                *code_addr = addr1;
-                                code_addr -= (2 + (j * 2));
-                                kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
-                                *code_addr = addr2;
-                                break;
-                            }
-                        }
-                    }
-                    j++;
-                }
             }
         } else {
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
@@ -246,9 +228,9 @@ int module_start_handler(SceModule2 * module) {
     return previous ? previous(module) : 0;
 }
 
-inline void patch_imports(SceModule *module) {
+inline void patch_imports(SceModule *module, const char *library, int syscall) {
     for (u32 i = 0; i < ITEMSOF(stubs); i++) {
-        if(hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1) < 0) {
+        if(hook_import_bynid(module, library, stubs[i].nid, stubs[i].func, syscall) < 0) {
             kprintf("Failed to hook %08X\n", stubs[i].nid);
         }
     }
@@ -260,9 +242,14 @@ int thread_start(SceSize args, void *argp) {
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
     sceKernelWaitSema(sema, 1, NULL);
     if(patch_index >= 4) {
-        SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+        SceModule *module = sceKernelFindModuleByName("nploader");
         if(module) {
-            patch_imports(module);
+            patch_imports(module, "IoFileMgrForKernel", 0);
+        } else {
+            module = sceKernelFindModuleByName(GAME_MODULE);
+            if (module) {
+                patch_imports(module, "IoFileMgrForUser", 1);
+            }
         }
     }
     sceKernelDeleteSema(sema);

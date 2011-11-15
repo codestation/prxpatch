@@ -1,12 +1,16 @@
 # Translation file for Project Diva Extend (use shift-jis to edit the file)
 # 0x08xxxxxx: use this format to rewrite the pointed address
-#             to a newly allocated one for the translation
+#             to a newly allocated one for the translation.
 # !x08xxxxxx: use this type of format if the address to modify
 #             is embedded inside a instruction (use the lower
-#             address part of the instruction for the address)
+#             address part of the instruction for the address).
+# ^x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the upper address (the lui is behind many
+#             branch instructions).
 #
-# EBOOT reversing and translation: codestation
-# translation helpers: HeroKing, naki-the-curious
+# EBOOT reversing: codestation
+#
 
 # Data import menu entries
 
@@ -196,6 +200,7 @@
 !x088E77C0 "UMD"のみからロードを行います。
 !x088E77C8 インストールデータの設定をOFFにしました。
 
+^x088E7824 記録メディアが入っていません。
 ^x088E78A4 記録メディアが入っていません。
 
 # Module menu extras
@@ -222,6 +227,23 @@
 !x088FBF90 ルームがショップに追加されました。
 !x088FBF94 ルームテーマがショップに追加されました。
 !x088FBF98 ルームアイテムがショップに追加されました。
+
+# DLC load error messages
+
+!x0891F714 追加データを
+!x0891F728 ロードできませんでした。
+
+!x0891F73C モジュールをオリジナルに
+!x0891F750 変更しました。
+
+!x0891F7FC 追加データを
+!x0891F810 ロードできませんでした。
+
+!x0891F824 ルームのレイアウトを
+!x0891F838 初期設定の状態に戻します。
+
+!x0891F8A0 追加データを
+!x0891F8B4 ロードできませんでした。
 
 # DIVA room
 
@@ -368,7 +390,11 @@
 !x08937D7C モジュール選択
 !x0893C72C モジュール選択
 !x08937E98 モジュールＡ
-^x08937EEC モジュールＢ
+^x08937E90 モジュールＢ
+!x08937EEC モジュールＢ
+^x08937ECC 決定
+^x08937EE4 決定
+^x08937F20 決定
 !x08937F44 決定
 !x0893C880 デフォルト
 !x0893CD2C エクストラ
@@ -392,8 +418,8 @@
 !x0893D5C4 超えています。
 !x0893D600 追加データを
 !x0893D62C ロードできませんでした。
-!x0893D694 ロードできませんでした。
 !x0893D668 インポートデータを
+!x0893D694 ロードできませんでした。
 !x0893D6C0 オプション画面でインポートを
 !x0893D6EC 行って下さい。
 
