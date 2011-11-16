@@ -94,6 +94,9 @@ inline void IcacheClearAll(void) {
     "::);
 }
 
+/**
+ * clears the instruction cache
+ */
 void clear_caches(void) {
     IcacheClearAll();
     DcacheWritebackAll();
@@ -105,18 +108,29 @@ void patch_eboot()  {
     SceOff size;
     SceSize index_size, table_size;
 
+    // use the plugin directory to load the patchfile from there
     strrchr(filepath, '/')[1] = 0;
     strcat(filepath, trans_files[patch_index]);
+
     fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
     if(fd < 0) {
         return;
     }
+
+    // get the translation file size
     size = sceIoLseek(fd, 0, PSP_SEEK_END);
     sceIoLseek(fd, 0, PSP_SEEK_SET);
+
+    // get the number of entries in the translation file
     sceIoRead(fd, &count, 4);
+
+    // calculate the index table size
     index_size = (count * 8) + 4;
+    // and the padding (if any)
     index_size += 16 - (index_size % 16);
+    // calculate the required size to hold all the translated strings (without the index table)
     table_size = (SceSize)size - index_size;
+
     block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_USER, "divatrans", PSP_SMEM_High, table_size, NULL);
     if(block_id < 0) {
         return;
@@ -124,53 +138,82 @@ void patch_eboot()  {
     block_addr = sceKernelGetBlockHeadAddr(block_id);
     kprintf("allocated block at %08X\n", (u32)block_addr);
     kprintf("found %i strings to pach\n", count);
+
+    // lets process all the strings in the table
     for(u32 i = 0; i < count; i++) {
         struct addr_data data;
-        sceIoRead(fd, &data, sizeof(data));
-        void *final_addr = (void *)((u32)(block_addr) + data.offset);
-        //kprintf("using %08X as string address\n", (u32)final_addr);
 
-        // only patch the upper address
+        // read our set of address/string offset
+        sceIoRead(fd, &data, sizeof(data));
+
+        // and calculate the address that is gonna have our string in memory
+        void *final_addr = (void *)((u32)(block_addr) + data.offset);
+        kprintf("using %08X as string address\n", (u32)final_addr);
+
         u32 upper_only = 0;
+        // if the address was marked as "^x08XXXXXX" in the source file then lets
+        // only make a lui patch with the upper address
         if(((u32)data.addr & 0xF0000000) == 0xE0000000) {
             upper_only = 1;
+            // mark the last byte as "F" so it can pass the next "if" conditional
             data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
         }
 
+        // if the address was marked as "!x08000000" in the source file then lets
+        // patch the lower address in the current instruction and the upper address
+        // in the lui instruction above it
         if((u32)data.addr & 0xF0000000) {
+            // clear our "F" marker
             data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
+            // and use "4" instead (0x4XXXXXXX == uncached access, not sure if this is necessary)
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
 
-
             u16 *code_addr = (u16 *)data.addr;
+
+            // split or string address into lower/upper components
             u16 addr1 = (u32)final_addr & 0xFFFF;
             u16 addr2 = (u16)((((u32)final_addr) >> 16) & 0xFFFF);
 
+            // increase by one if the lower address part if more than 0x7FFF
+            // (this is required when changing the address of an instruction)
             if(addr1 & 0x8000) {
                 addr2++;
             }
 
+            // if the patch was an upper-address only then patch the lui instruction
+            // and continue
             if(upper_only) {
                 upper_only = 0;
-                //kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
+                kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
                 *code_addr = addr2;
                 continue;
             }
 
-            //kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+
+            // get the mips register number used in the instruction. That number is located at the
+            // bit 16-21. Don't forget the endianess so we have to advance 2 bytes to position our
+            // pointer corrently and do the extraction. We use this number in the backtracking phrase
+            // so we don't patch the incorrect lui instrcution.
+            u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
+            kprintf("using register number %i for lui search\n", mips_reg);
 
             int j = 0;
-            u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
-            //kprintf("using register number %i for lui search\n", mips_reg);
-            while(j < 32) { //maximum backtrace to look for a lui instruction
-                u16 lui = *(code_addr - 1 - (j*2));
-                //kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+            //maximum backtrace to look for a lui instruction, lets check the above 32 instructions
+            while(j < 32) {
 
+                // extract out supposed lui instruction
+                u16 lui = *(code_addr - 1 - (j*2));
+                kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+
+                // lets check if we have the lui instruction (0x3C) and it uses rhe same register number
+                // than the instruction used in the lower address calculation
                 if((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
-                    //kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
+                    kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
                     *code_addr = addr1;
+                    // advance the pointer to our matching lui and patch its upper address
                     code_addr -= (2 + (j*2));
-                    //kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
+                    kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
                     *code_addr = addr2;
                     break;
                 } else {
@@ -181,21 +224,29 @@ void patch_eboot()  {
                 kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data.addr);
             }
         } else {
+            // the address to patch is in clear view so we don't have to do all crap above and
+            // just overwrite the address
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
-            //kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
+            kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
             *data.addr = final_addr;
         }
     }
+    // load our translated strings
     sceIoLseek(fd, index_size, PSP_SEEK_SET);
     sceIoRead(fd, block_addr, table_size);
     sceIoClose(fd);
 }
 
+/**
+ * Gets our gameid from the UMD disk (there is a function who returns that but sadly
+ * not all CFW resolver that function NID).
+ */
 int get_gameid(char *gameid) {
     SceUID fd = sceIoOpen(GAMEID_DIR, PSP_O_RDONLY, 0777);
     if (fd >= 0) {
         sceIoRead(fd, gameid, 10);
         sceIoClose(fd);
+        // remove the "-" from the gameid
         if (gameid[4] == '-') {
             memmove(gameid + 4, gameid + 5, 5);
         }
@@ -205,15 +256,20 @@ int get_gameid(char *gameid) {
 }
 
 int module_start_handler(SceModule2 * module) {
+    // lets execute the previous start handlers first to give a chance
+    // to nploader to complete its hooking phrase.
     int ret = previous ? previous(module) : 0;
+
+    // tests if the module is usermode (skip all the kernel modules)
     if((module->text_addr & 0x80000000) != 0x80000000 && strcmp(module->modname, GAME_MODULE) == 0) {
-        // game found, but since all versions use the same module name we need to find out the
-        // correct game.
+        // game found, but since all versions use the same module name we need
+        // to find out the correct game.
         kprintf("Project Diva found, loaded at %08X\n", module->text_addr);
         char gameid[16];
+
         if(get_gameid(gameid) >= 0) {
             kprintf("GAMEID: %s\n", gameid);
-            //FIXME: change the lower bound to zero if a patch for Project Diva 1st is made
+            //FIXME: change the "for" lower bound to zero if a patch for Project Diva 1st is made
             for(int i = 1; i < ITEMSOF(diva_id); i++) {
                 if(strcmp(gameid, diva_id[i]) == 0) {
                     kprintf("found match: %i\n", i);
@@ -221,9 +277,11 @@ int module_start_handler(SceModule2 * module) {
                     break;
                 }
             }
+            // valid gameid
             if(patch_index >= 0) {
                 patch_eboot();
                 clear_caches();
+                // wake up our main thread so it can hook the file i/o funs of the game
                 sceKernelSignalSema(sema, 1);
             }
         }
@@ -231,6 +289,10 @@ int module_start_handler(SceModule2 * module) {
     return ret;
 }
 
+/**
+ * Patch the imports of the game eboot
+ * @param module: module structure to have it hooked
+ */
 void patch_imports(SceModule *module) {
     for (u32 i = 0; i < ITEMSOF(stubs); i++) {
         if(hook_import_bynid(module, "IoFileMgrForUser", stubs[i].nid, stubs[i].func, 1) < 0) {
@@ -240,20 +302,32 @@ void patch_imports(SceModule *module) {
 }
 
 int thread_start(SceSize args, void *argp) {
+    // save the plugin location
     strcpy(filepath, argp);
+
+    // create a semaphore to know when the eboot patch is done
     sema = sceKernelCreateSema("divapatch_wake", 0, 0, 1, NULL);
+
     previous = sctrlHENSetStartModuleHandler(module_start_handler);
+
+    // wait here until the patch is done
     sceKernelWaitSema(sema, 1, NULL);
+
+    // only load the images if the game is PD Extend, change this if other DIVA games
+    // are going to be supported
     if(patch_index >= 4) {
         kprintf("patching imports\n");
         SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
         if (module) {
+            // redirect the file open, read and close operations to our plugin
             patch_imports(module);
         }
+        // 0x333A34AE == nploader's np_open NID
         u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
         if(func) {
             kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
             module = sceKernelFindModuleByName(PLUGIN_NAME);
+            // 0x109F50BC == sceIoOpen NID
             if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
                 kprintf("Failed to hook %08X\n", 0x109F50BC);
             }

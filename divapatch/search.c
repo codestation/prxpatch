@@ -19,6 +19,13 @@
 
 #include "search.h"
 
+/**
+ * modified binary search function that only works on int arrays
+ * @param value  value to search in the array
+ * @param vector  array to make the search
+ * @param lim  number of elements in the array
+ * @returns the address of the found value in the array, else NULL
+ */
 u32 *search_exact(u32 value, u32 *vector, u32 lim) {
     u32 idx;
     if(vector) {
