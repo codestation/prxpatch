@@ -18,46 +18,33 @@
  */
 
 #include <pspsdk.h>
+#include <pspsysmem.h>
 #include <pspiofilemgr.h>
 #include <string.h>
 #include "search.h"
+#include "reader.h"
 #include "logger.h"
 
 #define ITEMSOF(arr) (int)(sizeof(arr) / sizeof(0[arr]))
 
 #define DIVACPK_PATH "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk"
 
-typedef struct {
-    u32 offset;
-    u32 size;
-    const char *filename;
-} node;
-
-// offsets in the cpk file where the images are found
-u32 cpk_offsets[] = { 0xDB800, 0xE0000, 0x7F4000 };
-
-// size of the images
-u32 cpkfile_sizes[] = { 15376, 14494,  4904 };
-
-// names of the images from the cpk container
-const char *cpk_filenames[] = { "menu_help_01.png", "menu_help_02.png", "menu_title_home.png" };
+const char *image_files[] = {
+        "diva1st_images.bin",
+        "diva2nd_images.bin",
+        "divaext_images_demo1.bin",
+        "divaext_images_demo2.bin",
+        "divaext_images.bin",
+        "divaext_images.bin",
+};
 
 SceUID datafd;
-
 extern char filepath[256];
 
-SceUID diva_open(const char *file, int flags, SceMode mode) {
-    SceUID fd = sceIoOpen(file, flags, mode);
-    if (fd >= 0) {
-        // if the opened file is our cpk then lets save the file descriptor so
-        // we can recognize it later
-        if (strcmp(file, DIVACPK_PATH) == 0) {
-            kprintf("diva2exdata.cpk opened\n");
-            datafd = fd;
-        }
-    }
-    return fd;
-}
+static SceUID block_id;
+u32 cpk_count = 0;
+cpknode *cpk_table;
+char *image_filenames;
 
 static SceUID open_file(const char *file) {
     int ret = -1;
@@ -73,10 +60,64 @@ static SceUID open_file(const char *file) {
     return ret;
 }
 
+/**
+ * load an image index table from the storage media
+ * @param file_index - the filename array index to be used
+ */
+int load_image_index(int file_index) {
+    u32 index_size;
+    void *block_addr;
+
+    kprintf("trying to open %s\n", image_files[file_index]);
+    SceUID fd = open_file(image_files[file_index]);
+    if(fd < 0) {
+        return 0;
+    }
+
+    SceSize size = (SceSize)sceIoLseek(fd, 0, PSP_SEEK_END);
+    sceIoLseek(fd, 0, PSP_SEEK_SET);
+
+    kprintf("image index size: %i bytes\n", size);
+    block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_KERNEL, "diva_img", PSP_SMEM_High, size, NULL);
+    if(block_id < 0) {
+        kprintf("cannot allocate memory block\n");
+        return 0;
+    }
+    block_addr = sceKernelGetBlockHeadAddr(block_id);
+    kprintf("allocated memory block: %08X\n", (u32)block_addr);
+
+    sceIoRead(fd, block_addr, size);
+    sceIoClose(fd);
+
+    cpk_count = *(u32 *)block_addr;
+    kprintf("image entries: %i\n", cpk_count);
+    cpk_table = (cpknode *)((u32)block_addr + 4);
+    kprintf("cpk table addr: %08X\n", (u32)cpk_table);
+
+    index_size = (cpk_count * 8) + 4;
+    index_size += 16 - (index_size % 16);
+    image_filenames = (char *)block_addr + index_size;
+    kprintf("image filenames start: %08X\n", (u32)image_filenames);
+
+    return 1;
+}
+
+SceUID diva_open(const char *file, int flags, SceMode mode) {
+    SceUID fd = sceIoOpen(file, flags, mode);
+    if (fd >= 0) {
+        // if the opened file is our cpk then lets save the file descriptor so
+        // we can recognize it later
+        if (strcmp(file, DIVACPK_PATH) == 0) {
+            kprintf("diva2exdata.cpk opened\n");
+            datafd = fd;
+        }
+    }
+    return fd;
+}
+
 int diva_read(SceUID fd, void *data, SceSize size) {
     u32 file_offset;
-    u32 *file_index;
-    u32 vector_pos;
+    cpknode *file_index;
     SceUID modfd;
     int res;
     u32 k1;
@@ -86,13 +127,11 @@ int diva_read(SceUID fd, void *data, SceSize size) {
         file_offset = (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR);
         // and find if the file part that the game is trying to read is in our list
         // of files to replace
-        file_index = search_exact(file_offset, cpk_offsets, ITEMSOF(cpk_offsets));
+        file_index = search_exact(file_offset, cpk_table, cpk_count);
         if(file_index != NULL) {
-            kprintf("index found: %08X\n", *file_index);
-            vector_pos = (u32)(file_index - cpk_offsets);
-            kprintf("translated vector pos: %i\n", vector_pos);
+            kprintf("index found: %08X\n", *(u32 *)file_index);
             k1 = pspSdkSetK1(0);
-            modfd = open_file(cpk_filenames[vector_pos]);
+            modfd = open_file(image_filenames + file_index->filename_offset);
             if(modfd >= 0) {
                 kprintf("reading offset %08X, size: %08X\n", file_offset, size);
                 // read our modified file instead, fooling the game

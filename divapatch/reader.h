@@ -22,10 +22,20 @@
 
 #include <pspsdk.h>
 
-int diva_callback(const char *name, SceKernelCallbackFunction func, void *arg);
+typedef struct {
+    u32 offset;
+    u32 size;
+    const char *filename;
+} node;
+
+typedef struct {
+    u32 cpk_offset;
+    u32 filename_offset;
+} cpknode;
+
+int load_image_index(int file_index);
 SceUID diva_open(const char *file, int flags, SceMode mode);
 int diva_read(SceUID fd, void *data, SceSize size);
-SceOff diva_seek(SceUID fd, SceOff offset, int whence);
 int diva_close(SceUID fd);
 
 #endif /* SCEIO_H_ */

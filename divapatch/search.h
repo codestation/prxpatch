@@ -21,7 +21,8 @@
 #define SEARCH_H_
 
 #include <psptypes.h>
+#include "reader.h"
 
-u32 *search_exact(u32 value, u32 *vector, u32 elems);
+cpknode *search_exact(u32 value, cpknode *vector, u32 elems);
 
 #endif /* SEARCH_H_ */

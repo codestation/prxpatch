@@ -63,6 +63,7 @@ const char *trans_files[] = {
         "divaext_translation.bin",
         "divaext_translation.bin",
 };
+
 const stub stubs[] = {
         { 0x109F50BC, diva_open  }, // sceIoOpen
         { 0x6A638D83, diva_read  }, // sceIoRead
@@ -148,7 +149,7 @@ void patch_eboot()  {
 
         // and calculate the address that is gonna have our string in memory
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
-        kprintf("using %08X as string address\n", (u32)final_addr);
+        //kprintf("using %08X as string address\n", (u32)final_addr);
 
         u32 upper_only = 0;
         // if the address was marked as "^x08XXXXXX" in the source file then lets
@@ -184,19 +185,19 @@ void patch_eboot()  {
             // and continue
             if(upper_only) {
                 upper_only = 0;
-                kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
+                //kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
                 *code_addr = addr2;
                 continue;
             }
 
-            kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
+            //kprintf("%02i) patching opcodes around addr: %08X\n", i, (u32)data.addr);
 
             // get the mips register number used in the instruction. That number is located at the
             // bit 16-21. Don't forget the endianess so we have to advance 2 bytes to position our
             // pointer corrently and do the extraction. We use this number in the backtracking phrase
             // so we don't patch the incorrect lui instrcution.
             u16 mips_reg = (*(code_addr + 1)  >> 5) & 0x1F;
-            kprintf("using register number %i for lui search\n", mips_reg);
+            //kprintf("using register number %i for lui search\n", mips_reg);
 
             int j = 0;
             //maximum backtrace to look for a lui instruction, lets check the above 32 instructions
@@ -204,16 +205,16 @@ void patch_eboot()  {
 
                 // extract out supposed lui instruction
                 u16 lui = *(code_addr - 1 - (j*2));
-                kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
+                //kprintf("> checking %08X for lui: (%04X), regnum: %i\n", (u32)(code_addr - 1 - (j*2)), lui, (lui & 0x1F));
 
                 // lets check if we have the lui instruction (0x3C) and it uses rhe same register number
                 // than the instruction used in the lower address calculation
                 if((lui & 0x3C00) == 0x3C00 && (lui & 0x1F) == mips_reg) { // lui
-                    kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
+                    //kprintf("> patching lower addr: %08X with %04X\n", (u32)code_addr, addr1);
                     *code_addr = addr1;
                     // advance the pointer to our matching lui and patch its upper address
                     code_addr -= (2 + (j*2));
-                    kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
+                    //kprintf("> patching upper addr: %08X with %04X\n", (u32)code_addr, addr2);
                     *code_addr = addr2;
                     break;
                 } else {
@@ -227,7 +228,7 @@ void patch_eboot()  {
             // the address to patch is in clear view so we don't have to do all crap above and
             // just overwrite the address
             data.addr = (void **)(((u32)data.addr) | 0x40000000);
-            kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
+            //kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
             *data.addr = final_addr;
         }
     }
@@ -313,9 +314,8 @@ int thread_start(SceSize args, void *argp) {
     // wait here until the patch is done
     sceKernelWaitSema(sema, 1, NULL);
 
-    // only load the images if the game is PD Extend, change this if other DIVA games
-    // are going to be supported
-    if(patch_index >= 4) {
+    // load the image index table
+    if(patch_index >= 0 && load_image_index(patch_index)) {
         kprintf("patching imports\n");
         SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
         if (module) {
@@ -332,6 +332,8 @@ int thread_start(SceSize args, void *argp) {
                 kprintf("Failed to hook %08X\n", 0x109F50BC);
             }
         }
+    } else {
+        kprintf("the image index wasn't found\n");
     }
     sceKernelDeleteSema(sema);
 	return 0;

@@ -26,13 +26,13 @@
  * @param lim  number of elements in the array
  * @returns the address of the found value in the array, else NULL
  */
-u32 *search_exact(u32 value, u32 *vector, u32 lim) {
+cpknode *search_exact(u32 value, cpknode *vector, u32 lim) {
     u32 idx;
     if(vector) {
         while(lim) {
             idx = lim >> 1;
-            if(value >= vector[idx]) {
-                if(value > vector[idx]) {
+            if(value >= vector[idx].cpk_offset) {
+                if(value > vector[idx].cpk_offset) {
                     vector += idx + 1;
                     lim--;
                 } else {

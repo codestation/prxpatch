@@ -1,0 +1,4 @@
+0x000DB800 menu_help_01.png
+0x000E0000 menu_help_02.png
+0x007F4000 menu_title_home.png
+0x18280000 pv_start_85.png
