@@ -27,7 +27,8 @@
 
 #define ITEMSOF(arr) (int)(sizeof(arr) / sizeof(0[arr]))
 
-#define DIVACPK_PATH "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk"
+#define DIVACPK_PATH  "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk"
+#define DIVA2CPK_PATH "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk"
 
 const char *image_files[] = {
         "diva1st_images.bin",
