@@ -15,7 +15,7 @@ all: $(OBJS)
 
 .cpp.o:
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $*.cpp
-	@echo CC $*.cpp
+	@echo CXX $*.cpp
 
 clean:
 	@-$(RM) $(OBJS) $(TARGET)

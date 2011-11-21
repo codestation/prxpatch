@@ -59,6 +59,7 @@ int main(int argc, char **argv) {
 	size_t index_size = 4;
 	size_t offset = 0;
 	size_t padding = 0;
+	int line_count = 0;
 	fwrite(&count, 4, 1, fdout);
 	while(fgets(buffer, 256, fd)) {
 		if(buffer[0] == '#' || buffer[0] == '\n')
@@ -75,10 +76,16 @@ int main(int argc, char **argv) {
 		} else if(buffer[0] == '^') {
             buffer[0] = '0';
             buffer[2] = 'E';
+            // olny lower address
+        } else if(buffer[0] == '$') {
+            buffer[0] = '0';
+            buffer[2] = 'D';
         }
 
         long long addr = strtoll(buffer, NULL, 16);
         fwrite(&addr, 4, 1, fdout);
+
+		line_count++;
 
 		map<string,size_t>::const_iterator it = lst.find(str);
 		if(it == lst.end()) {
@@ -119,6 +126,9 @@ int main(int argc, char **argv) {
 	size_t size = (size_t)ftell(fdstr);
 	fseek(fdstr, 0, SEEK_SET);
 	count = sizeof(buffer);
+
+	printf("Block size: %li bytes\n", size);
+
 	while(size) {
 	    if(size < (int)sizeof(buffer)) {
 	        count = size;
@@ -127,6 +137,10 @@ int main(int argc, char **argv) {
 	    fwrite(buffer, count, 1, fdout);
 	    size -= count;
 	}
+
+	printf("Total lines: %i\n", line_count);
+	printf("Unique lines: %i\n", (int)lst.size());
+
 	strcpy(buffer, argv[1]);
 	char *dot = strrchr(buffer, '.');
 	strcpy(dot, ".bin");

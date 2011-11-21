@@ -151,11 +151,17 @@ void patch_eboot()  {
         void *final_addr = (void *)((u32)(block_addr) + data.offset);
         //kprintf("using %08X as string address\n", (u32)final_addr);
 
-        u32 upper_only = 0;
+        int half_patch = 0;
         // if the address was marked as "^x08XXXXXX" in the source file then lets
         // only make a lui patch with the upper address
         if(((u32)data.addr & 0xF0000000) == 0xE0000000) {
-            upper_only = 1;
+            half_patch = 1;
+            // mark the last byte as "F" so it can pass the next "if" conditional
+            data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
+        // if the address was marked as "$x08XXXXXX" in the source file then lets
+        // only make patch with the lower address
+        } else if(((u32)data.addr & 0xF0000000) == 0xD0000000) {
+            half_patch = -1;
             // mark the last byte as "F" so it can pass the next "if" conditional
             data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
         }
@@ -183,10 +189,15 @@ void patch_eboot()  {
 
             // if the patch was an upper-address only then patch the lui instruction
             // and continue
-            if(upper_only) {
-                upper_only = 0;
+            if(half_patch > 0) {
+                half_patch = 0;
                 //kprintf("%02i) patching upper offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
                 *code_addr = addr2;
+                continue;
+            } else if(half_patch < 0) {
+                half_patch = 0;
+                //kprintf("%02i) patching lower offset at addr: %08X with %04X\n", i, (u32)data.addr, addr2);
+                *code_addr = addr1;
                 continue;
             }
 

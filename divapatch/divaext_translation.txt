@@ -8,6 +8,9 @@
 #             is embedded inside a instruction and you only need
 #             to patch the upper address (the lui is behind many
 #             branch instructions).
+# $x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the lower address
 #
 # EBOOT reversing and translation: codestation
 # translation helpers: HeroKing, naki-the-curious
@@ -178,23 +181,22 @@
 
 ### EDIT MODE (2nd block) ###
 
-!x0887E260 モード選択
-!x0887E2B4 最初から
-!x0887E2C8 続きから
-!x0887E2DC 2ndデータをコンバート
-!x0887E2F0 1stデータをコンバート
-!x0887E318 追加データ確認
+!x0887E260 Mode selection
+!x0887E2B4 Start from scratch
+!x0887E2C8 Continue edit
+!x0887E2DC Convert PD 2nd data
+!x0887E2F0 Convert PD 1st data
+!x0887E318 Additional data check
 !x088819F4 追加データ確認
-!x0887E32C ホームへ戻る
-!x0887E8D4 エディットを終了して
+!x0887E32C Back to home
 
-!x0887E900 ホームに移動します。
-!x088A06CC ホームに移動します。
-!x0887E92C よろしいですか？
+!x0887E8D4 Finish the Edit mode
+!x0887E900 and return to home.
+!x0887E92C Are you sure?
 # CHECK THIS ONE
 !x0889F798 よろしいですか？
 
-!x0887EB5C 『-Project DIVA- 2nd』のエディットデータをコンバートします。
+!x0887EB5C Convert Edit data from "Project Diva 2nd"
 !x0887EBC8 データコンバート
 !x0887F268 データコンバート
 !x0887FD38 データコンバート
@@ -217,7 +219,7 @@
 !x08880824 エディットデータのコンバートが終了しました。
 !x0887F710 エディットデータをセーブしますか？
 !x08880838 エディットデータをセーブしますか？
-!x0887FCC8 『-Project DIVA-』のエディットデータをコンバートします。
+!x0887FCC8 Convert Edit data from "Project Diva"
 !x0887FDC4 『初音ミク -Project DIVA-』の
 !x0887FE14 1stデータをコンバートしますか？
 
@@ -250,9 +252,10 @@
 !x08882FF0 MP3データを使用してエディットデータを鑑賞します。
 !x08882FFC 追加データの楽曲でエディットデータを鑑賞します。
 
-!x08883008 ゲーム内の楽曲でエディットデータを作成します。
-!x08883014 MP3データを使用してエディットデータを作成します。
-!x08883020 追加データの楽曲でエディットデータを作成します。
+^x08882FDC Create a Edit data with in-game music.
+$x08883008 Create a Edit data with in-game music.
+!x08883014 Create a Edit data with MP3 music.
+!x08883020 Create a Edit data with the additional data music.
 
 !x08887834 BPMを変更する
 !x08887AD4 BPMを変更する
@@ -306,11 +309,169 @@
 !x088A0394 全て削除されてしまいますが、よろしいですか？
 !x088A03BC ※簡易配置はエディットTOPへ戻るときに反映されます。
 !x088A0638 エディット終了確認
+!x088A06CC ホームに移動します。
 !x088A06F8 セーブされていないエディットの内容は
 !x088A0AB4 セーブされていないエディットの内容は
 !x088A0724 すべて消えてしまいますがよろしいですか？
 !x088A0AE0 すべて消えてしまいますがよろしいですか？
 !x088A0A88 モード選択に移動します。
+
+### EDIT MODE (3rd block)
+
+!x0886F670 システム
+!x08878CF0 システム
+!x0887A80C システム
+!x0887ABB0 システム
+!x0887B960 システム
+!x0887BE3C システム
+!x0887BF78 システム
+!x0887C09C システム
+!x0887C404 システム
+!x0887DF38 システム
+!x088A0624 システム
+!x088A09E0 システム
+0x08C36CD0 システム
+0x08C36CD8 システム
+0x08C36D14 システム
+0x08C36D38 システム
+0x08C36D74 システム
+0x08C36DA4 システム
+0x08C36DD4 システム
+0x08C36E04 システム
+0x08C36E34 システム
+0x08C36E3C システム
+
+!x0886F79C 基本設定の変更
+0x08C36CD4 基本設定の変更
+0x08C36CDC 基本設定の変更
+0x08C36CFC 基本設定の変更
+0x08C36D18 基本設定の変更
+0x08C36D3C 基本設定の変更
+0x08C36D44 基本設定の変更
+0x08C36D78 基本設定の変更
+0x08C36D80 基本設定の変更
+0x08C36DA8 基本設定の変更
+0x08C36DB0 基本設定の変更
+0x08C36DD8 基本設定の変更
+0x08C36DE0 基本設定の変更
+0x08C36E08 基本設定の変更
+0x08C36E10 基本設定の変更
+
+!x08866840 Song selection
+0x08C36CE0 Song selection
+0x08C36CE8 Song selection
+0x08C36CF0 Song selection
+0x08C36CF8 Song selection
+0x08C36D00 Song selection
+0x08C36D0C Song selection
+0x08C36D24 Song selection
+0x08C36D2C Song selection
+0x08C36D50 Song selection
+
+!x0887E24C Edit mode
+!x0887EBB4 Edit mode
+!x0887F254 Edit mode
+!x0887FD24 Edit mode
+!x0888057C Edit mode
+0x08C36CE4 Edit mode
+0x08C36D08 Edit mode
+0x08C36D20 Edit mode
+0x08C36E5C Edit mode
+0x08C36E64 Edit mode
+
+0x08C36CEC エディットプレイ
+0x08C36CF4 エディット鑑賞
+
+0x08C36D04 BPM・拍子設定
+0x08C36D10 BPM・拍子設定
+0x08C36D30 BPM・拍子設定
+0x08C36D5C BPM・拍子設定
+
+!x0887C0B8 モジュール選択
+0x08C36D1C モジュール選択
+0x08C36D28 モジュール選択
+0x08C36D34 モジュール選択
+0x08C36D54 モジュール選択
+0x08C36D60 モジュール選択
+0x08C36D68 モジュール選択
+0x08C36D8C モジュール選択
+
+!x0886687C モーション選択
+0x08C36D40 モーション選択
+0x08C36D48 モーション選択
+0x08C36D58 モーション選択
+0x08C36D64 モーション選択
+0x08C36D6C モーション選択
+0x08C36D90 モーション選択
+0x08C36D98 モーション選択
+0x08C36DBC モーション選択
+
+0x08C36D4C 素材変更
+0x08C36D70 素材変更
+0x08C36D88 素材変更
+0x08C36DA0 素材変更
+0x08C36DB8 素材変更
+0x08C36DD0 素材変更
+0x08C36DE8 素材変更
+0x08C36E00 素材変更
+0x08C36E18 素材変更
+0x08C36E30 素材変更
+
+!x08866890 アイテム選択
+0x08C36D7C アイテム選択
+0x08C36D84 アイテム選択
+0x08C36D94 アイテム選択
+0x08C36D9C アイテム選択
+0x08C36DC0 アイテム選択
+0x08C36DC8 アイテム選択
+0x08C36DEC アイテム選択
+
+!x088668A4 背景選択
+0x08C36DAC 背景選択
+0x08C36DB4 背景選択
+0x08C36DC4 背景選択
+0x08C36DCC 背景選択
+0x08C36DF0 背景選択
+0x08C36DF8 背景選択
+0x08C36E1C 背景選択
+
+!x088668B8 エフェクト選択
+0x08C36DDC エフェクト選択
+0x08C36DE4 エフェクト選択
+0x08C36DF4 エフェクト選択
+0x08C36DFC エフェクト選択
+0x08C36E20 エフェクト選択
+0x08C36E28 エフェクト選択
+
+!x088668CC ボタン音選択
+0x08C36E0C ボタン音選択
+0x08C36E14 ボタン音選択
+0x08C36E24 ボタン音選択
+0x08C36E2C ボタン音選択
+
+!x0886F7F0 ターゲット簡易配置
+0x08C36E38 ターゲット簡易配置
+
+0x08C36E40 楽曲再生時間設定
+
+!x08873054 エディットTOP
+!x08873F50 エディットTOP
+0x08C36E44 エディットTOP
+0x08C36E50 エディットTOP
+
+!x0887B9F0 ターゲット
+0x08C36E48 ターゲット
+
+0x08C36E4C リアルタイム入力
+0x08C36E58 リアルタイム入力
+
+0x08C36E54 リズム
+
+!x0887E304 Copy Edit data
+0x08C36E60 Copy Edit data
+0x08C36E68 Copy Edit data
+
+0x08C36E6C 複製の確認
 
 # Rhythm Game default message
 
@@ -340,7 +501,7 @@
 !x088E3CBC Character Select
 !x088E3CC8 DIVA Room
 !x088E3CD4 Shop
-!x088E3CE0 Play Record
+!x088E3CE0 Play Records
 !x088E3CEC Edit
 !x088E3CF8 Ad Hoc
 !x088E3D04 Options
@@ -361,7 +522,7 @@
 
 # Edit mode menu
 
-!x088E5A44 Edit Mode
+!x088E5A44 Edit mode
 !x088E5A50 Play Edit
 !x088E5A5C Watch Edit
 
@@ -1784,7 +1945,7 @@
 # Main menu entering confirmation messages
 
 0x08C43F8C Go to the Shop.
-0x08C43F98 Go to Play Record.
+0x08C43F98 Go to Play Records.
 0x08C43FB0 Go to Ad Hoc.
 0x08C43FD4 Return to the title screen.
 0x08C43FD8 You will lost all the unsaved data
