@@ -107,59 +107,59 @@
 
 ### EDIT MODE ###
 
-!x08847268 キャラ
-!x0884A8F0 キャラ
-!x0884B1C8 キャラ
-!x0884BDC8 キャラ
-!x0884C2F0 キャラ
-!x0884C8C0 キャラ
-!x0884CD04 キャラ
-!x0884D184 キャラ
-!x0884D5C8 キャラ
-!x0884D9C0 キャラ
-!x0884E1F8 キャラ
-!x0884ED90 キャラ
-!x0884F510 キャラ
-!x0884F628 キャラ
-!x0884FBB4 キャラ
-!x0884FD1C キャラ
-!x08852F70 キャラ
-!x08854900 キャラ
-!x08856E74 キャラ
-!x08859380 キャラ
-!x0885AA60 キャラ
-!x0885AF84 キャラ
-!x0885B650 キャラ
-!x0885C138 キャラ
-!x0885D0B8 キャラ
-!x0885D46C キャラ
-!x0885DD18 キャラ
-!x0885E9F8 キャラ
+!x08847268 Character
+!x0884A8F0 Character
+!x0884B1C8 Character
+!x0884BDC8 Character
+!x0884C2F0 Character
+!x0884C8C0 Character
+!x0884CD04 Character
+!x0884D184 Character
+!x0884D5C8 Character
+!x0884D9C0 Character
+!x0884E1F8 Character
+!x0884ED90 Character
+!x0884F510 Character
+!x0884F628 Character
+!x0884FBB4 Character
+!x0884FD1C Character
+!x08852F70 Character
+!x08854900 Character
+!x08856E74 Character
+!x08859380 Character
+!x0885AA60 Character
+!x0885AF84 Character
+!x0885B650 Character
+!x0885C138 Character
+!x0885D0B8 Character
+!x0885D46C Character
+!x0885DD18 Character
+!x0885E9F8 Character
 
 !x08847CE4 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：%0.1f)
 !x08847CFC %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数： %0.1f)
 !x08847D10 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：  %0.1f)
 !x08847D14 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
-!x08849080 横　　[%3.3f]
-!x088490A8 奥行き[%3.3f]
-!x088490E0 高さ　[%3.3f]
-!x088490F0 角度　[%3.3f]
-!x08849128 操作速度[%3d %%]
-!x0884A8DC エディットTOP
-!x0884B1B4 エディットTOP
-!x0884BDB4 エディットTOP
-!x0884C2DC エディットTOP
-!x0884C8AC エディットTOP
-!x0884CCF0 エディットTOP
-!x0884D170 エディットTOP
-!x0884D5B4 エディットTOP
-!x0884D9AC エディットTOP
-!x0884E1E4 エディットTOP
-!x0885AF70 エディットTOP
-!x0885D458 エディットTOP
+!x08849080 Side   [%3.3f]
+!x088490A8 Depth  [%3.3f]
+!x088490E0 Height [%3.3f]
+!x088490F0 Angle  [%3.3f]
+!x08849128 Speed  [%3d %%]
+!x0884A8DC Edit TOP
+!x0884B1B4 Edit TOP
+!x0884BDB4 Edit TOP
+!x0884C2DC Edit TOP
+!x0884C8AC Edit TOP
+!x0884CCF0 Edit TOP
+!x0884D170 Edit TOP
+!x0884D5B4 Edit TOP
+!x0884D9AC Edit TOP
+!x0884E1E4 Edit TOP
+!x0885AF70 Edit TOP
+!x0885D458 Edit TOP
 !x0884B364 編集モード
-!x0884BFA4 なし
-!x0886022C なし
+!x0884BFA4 No
+!x0886022C No
 !x0884CAB4 表示
 !x0884D778 表示
 !x0884DBB4 表示
@@ -197,18 +197,29 @@
 !x0889F798 よろしいですか？
 
 !x0887EB5C Convert Edit data from "Project Diva 2nd"
-!x0887EBC8 データコンバート
-!x0887F268 データコンバート
-!x0887FD38 データコンバート
-!x08880590 データコンバート
+!x0887EBC8 Data conversion
+!x0887F268 Data conversion
+!x0887FD38 Data conversion
+!x08880590 Data conversion
+
+# convert from PD 2nd
+
 !x0887EC54 『初音ミク -Project DIVA- 2nd』の
 !x0887EC68 エディットデータをコンバートすることで、
-!x0887FDD8 エディットデータをコンバートすることで、
 !x0887EC7C 『初音ミク -Project DIVA- extend』でも
-!x0887FDEC 『初音ミク -Project DIVA- extend』でも
 !x0887EC90 エディットデータを編集することができます。
-!x0887FE00  エディットデータを編集することができます。
 !x0887ECA4 2ndデータをコンバートしますか？
+
+# convert from PD 1st
+
+!x0887FDC4 『初音ミク -Project DIVA-』の
+!x0887FDD8 エディットデータをコンバートすることで、
+!x0887FDEC 『初音ミク -Project DIVA- extend』でも
+!x0887FE00 エディットデータを編集することができます。
+!x0887FE14 1stデータをコンバートしますか？
+
+# other
+
 !x0887F350 エディットデータをコンバート中です……
 !x08880678 エディットデータをコンバート中です……
 !x0887F514 エディットデータの読込容量がマイナスに
@@ -220,8 +231,6 @@
 !x0887F710 エディットデータをセーブしますか？
 !x08880838 エディットデータをセーブしますか？
 !x0887FCC8 Convert Edit data from "Project Diva"
-!x0887FDC4 『初音ミク -Project DIVA-』の
-!x0887FE14 1stデータをコンバートしますか？
 
 !x08881774 モジュール：%s
 !x08881808 モーション：%s
@@ -238,9 +247,13 @@
 !x088823B0 必要な追加データは揃っています。
 !x0888250C エディットデータの複製をします。
 !x08882520 エディットデータの複製確認。
+
+# copy edit data message
+
 !x08882638 『初音ミク -Project DIVA- extend』の
 !x0888264C エディットデータを複製することができます。
 !x08882660 エディットデータを複製しますか？
+
 !x08882BA8 エディットデータをロードしました。
 !x08882BBC 複製先を選んでください。
 
@@ -252,6 +265,7 @@
 !x08882FF0 MP3データを使用してエディットデータを鑑賞します。
 !x08882FFC 追加データの楽曲でエディットデータを鑑賞します。
 
+^x08882FA8 Create a Edit data with in-game music.
 ^x08882FDC Create a Edit data with in-game music.
 $x08883008 Create a Edit data with in-game music.
 !x08883014 Create a Edit data with MP3 music.
@@ -268,7 +282,7 @@ $x08883008 Create a Edit data with in-game music.
 !x088890B8 1小節目のBPM %3d
 !x088890DC 1拍 %1.3f秒
 
-!x0889378C BPMとは、曲のテンポを表す単位です。
+!x0889378C BPM is a unit that represents the song's tempo.
 !x088937A0 1分間の間に60回拍を刻むなら60BPM。
 !x088937B4 120回なら120BPMとなり、テンポが速くなります。
 !x088937C8 方向キーの左右でBPMの数値を変更することができます。
@@ -277,24 +291,28 @@ $x08883008 Create a Edit data with in-game music.
 !x08893804 また、『BPM計測』を使うことで楽曲に合わせて
 !x08893818 リズムを取り、 BPMを計測することもできます。
 
-!x08893DBC モジュールＡを選択します。
-!x08893E1C モジュールＢを選択します。
+!x08893DBC Select the module A.
+!x08893E1C Select the module B.
 
-!x08896A08 モーション素材を追加する
-!x08896C00 エディット内で使用するモーションを設定することができます。
-!x088976DC 追加するモーションを最大30個まで選択することができます。
-!x088977B4 追加するモーションを最大30個まで選択することができます。
-!x088995C0 アイテム素材を追加する
-!x0889978C エディット内で使用するアイテムを設定することができます。
-!x08899894 エディット内で使用するアイテムを設定することができます。
-!x0889BAE4 背景素材を追加する
-!x0889BC28 エディット内で使用する背景を設定することができます。
-!x0889BD28 エディット内で使用する背景を設定することができます。
-!x0889C42C 追加する背景を最大20個まで選択することができます。
-!x0889CF78 追加する背景を最大20個まで選択することができます。
-!x0889D8CC エフェクト素材を追加する
-!x0889D9F8 エディット内で使用するエフェクトを設定することができます。
-!x0889DAEC エディット内で使用するエフェクトを設定することができます。
+!x08896A08 Add motion
+!x08896C00 Set the motion to be used in the Edit.
+!x088976DC Choose up to 30 motions to use.
+!x088977B4 Choose up to 30 motions to use.
+
+!x088995C0 Add item
+!x0889978C Configure which items to use in the Edit.
+!x08899894 Configure which items to use in the Edit.
+
+!x0889BAE4 Add background
+!x0889BC28 Set the background to be used in the Edit.
+!x0889BD28 Set the background to be used in the Edit.
+!x0889C42C Choose up to 20 backgrounds to use.
+!x0889CF78 Choose up to 20 backgrounds to use.
+
+!x0889D8CC Add an effect
+!x0889D9F8 Set the effects to be used in the Edit.
+!x0889DAEC Set the effects to be used in the Edit.
+
 !x0889E84C 【プリセット%d】
 !x0889F414 小節
 !x0889F784 選択された項目を削除します。
@@ -307,7 +325,7 @@ $x08883008 Create a Edit data with in-game music.
 !x088A036C 自動でターゲットが配置されます。
 !x088A0380 簡易配置を行うと、既存のターゲットデータは
 !x088A0394 全て削除されてしまいますが、よろしいですか？
-!x088A03BC ※簡易配置はエディットTOPへ戻るときに反映されます。
+!x088A03BC ※簡易配置はEdit TOPへ戻るときに反映されます。
 !x088A0638 エディット終了確認
 !x088A06CC ホームに移動します。
 !x088A06F8 セーブされていないエディットの内容は
@@ -387,85 +405,85 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36D30 BPM・拍子設定
 0x08C36D5C BPM・拍子設定
 
-!x0887C0B8 モジュール選択
-0x08C36D1C モジュール選択
-0x08C36D28 モジュール選択
-0x08C36D34 モジュール選択
-0x08C36D54 モジュール選択
-0x08C36D60 モジュール選択
-0x08C36D68 モジュール選択
-0x08C36D8C モジュール選択
+!x0887C0B8 Module selection
+0x08C36D1C Module selection
+0x08C36D28 Module selection
+0x08C36D34 Module selection
+0x08C36D54 Module selection
+0x08C36D60 Module selection
+0x08C36D68 Module selection
+0x08C36D8C Module selection
 
-!x0886687C モーション選択
-0x08C36D40 モーション選択
-0x08C36D48 モーション選択
-0x08C36D58 モーション選択
-0x08C36D64 モーション選択
-0x08C36D6C モーション選択
-0x08C36D90 モーション選択
-0x08C36D98 モーション選択
-0x08C36DBC モーション選択
+!x0886687C Motion selection
+0x08C36D40 Motion selection
+0x08C36D48 Motion selection
+0x08C36D58 Motion selection
+0x08C36D64 Motion selection
+0x08C36D6C Motion selection
+0x08C36D90 Motion selection
+0x08C36D98 Motion selection
+0x08C36DBC Motion selection
 
-0x08C36D4C 素材変更
-0x08C36D70 素材変更
-0x08C36D88 素材変更
-0x08C36DA0 素材変更
-0x08C36DB8 素材変更
-0x08C36DD0 素材変更
-0x08C36DE8 素材変更
-0x08C36E00 素材変更
-0x08C36E18 素材変更
-0x08C36E30 素材変更
+0x08C36D4C Add/modify
+0x08C36D70 Add/modify
+0x08C36D88 Add/modify
+0x08C36DA0 Add/modify
+0x08C36DB8 Add/modify
+0x08C36DD0 Add/modify
+0x08C36DE8 Add/modify
+0x08C36E00 Add/modify
+0x08C36E18 Add/modify
+0x08C36E30 Add/modify
 
-!x08866890 アイテム選択
-0x08C36D7C アイテム選択
-0x08C36D84 アイテム選択
-0x08C36D94 アイテム選択
-0x08C36D9C アイテム選択
-0x08C36DC0 アイテム選択
-0x08C36DC8 アイテム選択
-0x08C36DEC アイテム選択
+!x08866890 Item selection
+0x08C36D7C Item selection
+0x08C36D84 Item selection
+0x08C36D94 Item selection
+0x08C36D9C Item selection
+0x08C36DC0 Item selection
+0x08C36DC8 Item selection
+0x08C36DEC Item selection
 
-!x088668A4 背景選択
-0x08C36DAC 背景選択
-0x08C36DB4 背景選択
-0x08C36DC4 背景選択
-0x08C36DCC 背景選択
-0x08C36DF0 背景選択
-0x08C36DF8 背景選択
-0x08C36E1C 背景選択
+!x088668A4 Background sel.
+0x08C36DAC Background sel.
+0x08C36DB4 Background sel.
+0x08C36DC4 Background sel.
+0x08C36DCC Background sel.
+0x08C36DF0 Background sel.
+0x08C36DF8 Background sel.
+0x08C36E1C Background sel.
 
-!x088668B8 エフェクト選択
-0x08C36DDC エフェクト選択
-0x08C36DE4 エフェクト選択
-0x08C36DF4 エフェクト選択
-0x08C36DFC エフェクト選択
-0x08C36E20 エフェクト選択
-0x08C36E28 エフェクト選択
+!x088668B8 Effects sel.
+0x08C36DDC Effects sel.
+0x08C36DE4 Effects sel.
+0x08C36DF4 Effects sel.
+0x08C36DFC Effects sel.
+0x08C36E20 Effects sel.
+0x08C36E28 Effects sel.
 
-!x088668CC ボタン音選択
-0x08C36E0C ボタン音選択
-0x08C36E14 ボタン音選択
-0x08C36E24 ボタン音選択
-0x08C36E2C ボタン音選択
+!x088668CC Button sound
+0x08C36E0C Button sound
+0x08C36E14 Button sound
+0x08C36E24 Button sound
+0x08C36E2C Button sound
 
 !x0886F7F0 ターゲット簡易配置
 0x08C36E38 ターゲット簡易配置
 
 0x08C36E40 楽曲再生時間設定
 
-!x08873054 エディットTOP
-!x08873F50 エディットTOP
-0x08C36E44 エディットTOP
-0x08C36E50 エディットTOP
+!x08873054 Edit TOP
+!x08873F50 Edit TOP
+0x08C36E44 Edit TOP
+0x08C36E50 Edit TOP
 
-!x0887B9F0 ターゲット
-0x08C36E48 ターゲット
+!x0887B9F0 Target
+0x08C36E48 Target
 
 0x08C36E4C リアルタイム入力
 0x08C36E58 リアルタイム入力
 
-0x08C36E54 リズム
+0x08C36E54 Rhythm
 
 !x0887E304 Copy Edit data
 0x08C36E60 Copy Edit data
