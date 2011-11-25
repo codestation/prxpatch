@@ -85,7 +85,7 @@
 
 !x08839DD0 Do you want to buy?
 !x08839DD8 ○:Yes　×:No
-!x08839EEC Exceeded the maximun number.
+!x08839EEC Exceeded the maximum number.
 !x0883A1B8 Quantity 0 / 0
 !x0883A274 Quantity %d / %d
 !x0883A2A0 Quantity - / -
@@ -103,7 +103,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/15          -codestation
+!x08845B8C PD extend patch 2011/11/25          -codestation
 
 ### EDIT MODE ###
 
@@ -278,7 +278,6 @@ $x08883008 Create a Edit data with in-game music.
 !x08887854 BPMの変更を行うかを選択してください
 !x088887BC 分
 !x088887D4 秒
-#%1d分 %02d秒 %003d
 !x088890B8 1小節目のBPM %3d
 !x088890DC 1拍 %1.3f秒
 
@@ -479,10 +478,21 @@ $x08883008 Create a Edit data with in-game music.
 
 !x0887B9F0 Target
 0x08C36E48 Target
+!x088CEEA8 Target
+!x088CF7B4 Target
+!x088CFE00 Target
+!x088D0870 Target
+!x088D1914 Target
+!x088D1DF8 Target
+!x088D6DCC Target
 
 0x08C36E4C リアルタイム入力
 0x08C36E58 リアルタイム入力
 
+!x088B67B4 Rhythm
+!x088B6EDC Rhythm
+!x088B77A4 Rhythm
+!x088B7B10 Rhythm
 0x08C36E54 Rhythm
 
 !x0887E304 Copy Edit data
@@ -493,11 +503,11 @@ $x08883008 Create a Edit data with in-game music.
 
 ### EDIT MODE (4th block) ###
 
-!x08863580 %2d分%d%d秒%d%d%d
-!x08864014 読込容量:%5d(%d)
-!x08864050 読込容量:%5d
-!x0886408C 配置容量:%5d(%d)
-!x088640C8 配置容量:%5d
+!x08863580 %2dm%d%ds%d%d%d
+!x08864014 R.space:%5d(%d)
+!x08864050 R.space:%5d
+!x0886408C P.space:%5d(%d)
+!x088640C8 P.space:%5d
 !x08864824 曲に合わせてターゲットを入力することができます。
 !x08865F70 曲に合わせてマーカーを入力することができます。
 !x08866854 モジュールＡ選択
@@ -535,42 +545,53 @@ $x08883008 Create a Edit data with in-game music.
 !x08868A5C 30秒間リズムを取ることでBPMの平均値が
 !x08868A70 表示されます。
 
-!x0886AACC エクストラ
-!x0886B690 エクストラ
-!x0886C04C エクストラ
-!x0886CD30 エクストラ
-!x08895B04 エクストラ
+!x0886AACC Extras
+!x0886B690 Extras
+!x0886C04C Extras
+!x0886CD30 Extras
+!x08895B04 Extras
 
-!x0886B1A8 デフォルト
-!x0886C51C デフォルト
-!x0889555C デフォルト
-!x088972D0 デフォルト
-!x0889C9D8 デフォルト
+!x0886B1A8 Default
+!x0886C51C Default
+!x0889555C Default
+!x088972D0 Default
+!x0889C9D8 Default
 
-!x0886B314 なし
-!x0886C670 なし
-!x08893F70 なし
-!x08894088 なし
-!x08895600 なし
-!x0889746C なし
-!x0889CB74 なし
+!x0886B314 None
+^x0886B27C None
+^x0886B294 None
+^x0886B2F0 None
+!x0886C670 None
+^x0886C5D8 None
+^x0886C5F0 None
+^x0886C64C None
+!x08893F70 None
+!x08894088 None
+!x08895600 None
+!x0889746C None
+^x08897434 None
+!x0889CB74 None
+^x0889CB38 None
 
-!x0886B5B0 追加するアイテムを最大10個まで選択することができます。
-!x0889A068 追加するアイテムを最大10個まで選択することができます。
-!x0889B11C 追加するアイテムを最大10個まで選択することができます。
-!x0886C904 追加するエフェクトを最大10個まで選択することができます。
-!x0889DFE8 追加するエフェクトを最大10個まで選択することができます。
-!x0886D320 ボタン音：なし
-!x0886D364 素材選択を確定する
-!x088941B8 素材選択を確定する
-!x08896AA8 素材選択を確定する
-!x08899644 素材選択を確定する
-!x0889BB58 素材選択を確定する
-!x0889D924 素材選択を確定する
-!x0886D3B8 リズムゲーム中に再生するボタン音を選択することができます。
-!x0886D46C リズムゲーム中に再生するボタン音を選択することができます。
-!x0886D89C リズムゲーム中に再生するボタン音を選択することができます。
-!x0886D940 リズムゲーム中に再生するボタン音を選択することができます。
+!x0886B5B0 Select up to 10 items to add.
+!x0889A068 Select up to 10 items to add.
+!x0889B11C Select up to 10 items to add.
+!x0886C904 Choose up to 10 effects to use.
+!x0889DFE8 Choose up to 10 effects to use.
+!x0886D320 Sound：None
+!x0886D364 Confirm selection
+^x0886D328 Confirm selection
+!x088941B8 Confirm selection
+!x08896AA8 Confirm selection
+^x08896A8C Confirm selection
+!x08899644 Confirm selection
+^x08899604 Confirm selection
+!x0889BB58 Confirm selection
+!x0889D924 Confirm selection
+!x0886D3B8 Select the button sound to use when playing.
+!x0886D46C Select the button sound to use when playing.
+!x0886D89C Select the button sound to use when playing.
+!x0886D940 Select the button sound to use when playing.
 !x0886F00C 追加データを
 !x0886F020 ロードできませんでした。
 !x0889FDA0 ロードできませんでした。
@@ -590,9 +611,9 @@ $x08883008 Create a Edit data with in-game music.
 !x0886FABC エディットのTOPへ戻ります。
 !x0886F734 現在のエディットを終了してモード選択へ戻ります。
 !x0886FAC8 現在のエディットを終了してモード選択へ戻ります。
-!x0886F740 エディットを終了してホームへ戻ります。
-!x0886FAD4 エディットを終了してホームへ戻ります。
-!x0887E1B0 エディットを終了してホームへ戻ります。
+!x0886F740 Exit the Edit mode and return to home. 
+!x0886FAD4 Exit the Edit mode and return to home.
+!x0887E1B0 Exit the Edit mode and return to home.
 !x0886F754 楽曲が流れ出すタイミングを設定することができます。
 !x0886FAE8 楽曲が流れ出すタイミングを設定することができます。
 !x0886F788 データ
@@ -617,20 +638,24 @@ $x08883008 Create a Edit data with in-game music.
 !x08872814 『エディットモード』はオートセーブ機能に対応していません。
 !x0887281C 『システム』画面の『データ』からセーブを行ってください。
 !x08873958 編集モード
-!x08873B90 ＢＰＭと拍数などの編集をすることができます。
-!x08873BCC ターゲットの入力や、表示位置などの編集をすることができます。
-!x08873C08 モーションや表情などキャラクター関連の編集をすることができます。
-!x08873C44 背景やカメラなどステージ関連の編集をすることができます。
-!x08873C80 楽曲の終了小節の位置を設定することができます。
+
+# edit TOP information messages
+
+!x08873B90 Edit beats and BPM.
+!x08873BCC Edit display position, input, target, etc.
+!x08873C08 Edit the motion and facial expression of the character.
+!x08873C44 Edit the stage-related cameras and background.
+!x08873C80 Set the poition of the bar and the song end.
+
 !x088741C4 選択された小節のデータを
 !x08874200 削除しますがよろしいですか？
 !x08874234 削除・初期化しますがよろしいですか？
 !x088745AC ターゲット：コピー中です。(TOPでは長押しをコピーできません)
 !x08874638 キャラ：コピー中です。(TOPでは配置・目線をコピーできません)
 !x088745FC ステージ：コピー中です。(TOPではカメラ・歌詞をコピーできません)
-!x08874674 小節や拍データのコピー、削除をすることができます。
+!x08874674 Delete and copy data of the bars and beats.
 !x08875278 プレビューを確認することができます。
-!x0887566C %3d小節
+!x0887566C %3d U
 !x08876144 楽曲の再生情報を設定しています。
 !x0887632C 楽曲の再生情報を設定しました。
 !x08876334 素材データのロードを開始します。
@@ -698,14 +723,14 @@ $x08883008 Create a Edit data with in-game music.
 !x0887AB40 両方のモジュールに対して口パクを設定します。
 !x0887AB68 配置を実行するかの最終確認です。
 !x0887AB78 配置を実行しています。
-!x0887AC14 モジュールＡ
-!x0887C120 モジュールＡ
-!x0887D2A0 モジュールＡ
-!x08893D58 モジュールＡ
-!x0887AC40 モジュールＢ
-!x0887C14C モジュールＢ
-!x0887D2E8 モジュールＢ
-!x08893D68 モジュールＢ
+!x0887AC14 Module A
+!x0887C120 Module A
+!x0887D2A0 Module A
+!x08893D58 Module A
+!x0887AC40 Module B
+!x0887C14C Module B
+!x0887D2E8 Module B
+!x08893D68 Module B
 !x0887AC6C 両方
 !x0887C0F4 両方
 !x0887AF2C 歌詞の入力された拍に、
@@ -753,9 +778,9 @@ $x08883008 Create a Edit data with in-game music.
 !x0887B9C4 全て
 !x0887C264 全て
 !x0887D34C 全て
-!x0887BA1C キャラ
-!x0887BA48 ステージ
-!x0887C218 ステージ
+!x0887BA1C Character
+!x0887BA48 Stage
+!x0887C218 Stage
 !x0887BA74 マーカー
 !x0887BE58 確認
 !x0887BF94 確認
@@ -773,10 +798,10 @@ $x08883008 Create a Edit data with in-game music.
 !x0887D268 コマンド選択
 !x0887D2B4 コマンド選択
 !x0887D2FC コマンド選択
-!x0887C290 カメラ
-!x0887C2BC 背景
-!x0887C2E8 エフェクト
-!x0887C314 歌詞
+!x0887C290 Camera
+!x0887C2BC Background
+!x0887C2E8 Effects
+!x0887C314 Lyrics
 !x0887C774 コマンドデータ削除中…
 !x0887D00C コマンドデータ削除が終了しました。
 !x0887D254 両方のモジュール
@@ -790,13 +815,13 @@ $x08883008 Create a Edit data with in-game music.
 !x0887D4AC 目パチ
 !x0887D4D8 モデル表示
 !x0887D504 影表示
-!x0887E168 新規エディットデータを作成します。
-!x0887E174 エディットデータの編集ができます。
-!x0887E180 『-Project DIVA- 2nd』のエディットデータをコンバートできます。
-!x0887E18C 『-Project DIVA-』のエディットデータをコンバートできます。
-!x0887E19C エディットデータの複製ができます。
-!x0887E1A4 コマンド選択エディットデータで足りない追加データを確認できます。
-!x08881A34 コマンド選択エディットデータで足りない追加データを確認できます。
+!x0887E168 Create a new Edit data.
+!x0887E174 Continue editing your Edit data.
+!x0887E180 Convert Edit data from "-Project DIVA- 2nd"
+!x0887E18C Convert Edit data from "-Project DIVA-"
+!x0887E198 Create copies of your Edit data.
+!x0887E1A4 Check for additional data missing in the Edit data.
+!x08881A34 Check for additional data missing in the Edit data.
 
 # Rhythm Game default message
 
@@ -1143,7 +1168,7 @@ $x08883008 Create a Edit data with in-game music.
 !x0898E028 Storage media
 !x0898E3B0 The storage media is not inserted.
 !x0898E41C Song not found.
-!x0898E450 この楽曲は再生できません。
+!x0898E450 This song cannot be played.
 !x0898E47C この楽曲はエディットモードで使用できません。
 !x0898E9C0 Help items
 !x0898FFEC Extras
