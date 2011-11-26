@@ -13,7 +13,7 @@
 #             to patch the lower address
 #
 # EBOOT reversing and translation: codestation
-# translation helpers: HeroKing, naki-the-curious
+# translation helpers: HeroKing, naki-the-curious, kienono
 
 # Data import menu entries
 
@@ -32,16 +32,16 @@
 # Data import menu descriptions
 
 !x0881590C Would you like to import the additional data
-!x08815920 inside the selected category as Extra Data?
+!x08815920 inside the selected category as Extra content?
 
-!x08815B10 Importing additional data completed.
+!x08815B10 Importing additional content completed.
 !x08815B24 Displaying the list of imported data.
 !x08815C68 List of Imported Data
-!x08815EB8 Could not read the additional data.
+!x08815EB8 Could not read the additional content.
 !x08816044 Finish importing data and return to the Home screen?
 
 !x088162F0 Accessing Memory Stick	1 to
-!x08816304 check for additional data.
+!x08816304 check for additional content.
 !x08816318 Do not remove the Memory Stick	1.
 
 # Vocaloids
@@ -103,7 +103,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/25          -codestation
+!x08845B8C PD extend patch 2011/11/26          -codestation
 
 ### EDIT MODE ###
 
@@ -136,10 +136,11 @@
 !x0885DD18 Character
 !x0885E9F8 Character
 
-!x08847CE4 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：%0.1f)
-!x08847CFC %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数： %0.1f)
-!x08847D10 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：  %0.1f)
-!x08847D14 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
+!x08847CE4 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
+!x08847CFC %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats： %0.1f)
+!x08847D10 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：  %0.1f)
+^x08847D04 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
+$x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x08849080 Side   [%3.3f]
 !x088490A8 Depth  [%3.3f]
 !x088490E0 Height [%3.3f]
@@ -157,20 +158,20 @@
 !x0884E1E4 Edit TOP
 !x0885AF70 Edit TOP
 !x0885D458 Edit TOP
-!x0884B364 編集モード
-!x0884BFA4 No
-!x0886022C No
-!x0884CAB4 表示
-!x0884D778 表示
-!x0884DBB4 表示
-!x0884CACC 非表示
-!x0884D790 非表示
-!x0884DBCC 非表示
+!x0884B364 Edit mode
+!x0884BFA4 None
+!x0886022C None
+!x0884CAB4 Show
+!x0884D778 Show
+!x0884DBB4 Show
+!x0884CACC Hide
+!x0884D790 Hide
+!x0884DBCC Hide
 !x0884D36C する
 !x0885D214 する
 !x0884D384 しない
 !x0885D22C しない
-!x0884D398 閉じる
+!x0884D398 Close
 !x08852B4C 水平移動
 !x088569C8 水平移動
 !x08858EF4 水平移動
@@ -186,7 +187,7 @@
 !x0887E2C8 Continue edit
 !x0887E2DC Convert PD 2nd data
 !x0887E2F0 Convert PD 1st data
-!x0887E318 Additional data check
+!x0887E318 Additional content check
 !x088819F4 追加データ確認
 !x0887E32C Back to home
 
@@ -204,91 +205,91 @@
 
 # convert from PD 2nd
 
-!x0887EC54 『初音ミク -Project DIVA- 2nd』の
-!x0887EC68 エディットデータをコンバートすることで、
-!x0887EC7C 『初音ミク -Project DIVA- extend』でも
-!x0887EC90 エディットデータを編集することができます。
-!x0887ECA4 2ndデータをコンバートしますか？
+!x0887EC54 By converting the Edit Data from
+!x0887EC68 "Hatsune Miku -Project Diva- 2nd",
+!x0887EC7C it will make it possible to edit the data
+!x0887EC90 in "Hatsune Miku -Project Diva- Extend".
+!x0887ECA4 Would you like to convert Data from "2nd"?
 
 # convert from PD 1st
 
-!x0887FDC4 『初音ミク -Project DIVA-』の
-!x0887FDD8 エディットデータをコンバートすることで、
-!x0887FDEC 『初音ミク -Project DIVA- extend』でも
-!x0887FE00 エディットデータを編集することができます。
-!x0887FE14 1stデータをコンバートしますか？
+!x0887FDC4 By converting the Edit Data from
+!x0887FDD8 "Hatsune Miku -Project Diva-",
+!x0887FDEC it will make it possible to edit the data
+!x0887FE00 in "Hatsune Miku -Project Diva- Extend".
+!x0887FE14 Would you like to convert Data from "1st"?
 
 # other
 
-!x0887F350 エディットデータをコンバート中です……
-!x08880678 エディットデータをコンバート中です……
-!x0887F514 エディットデータの読込容量がマイナスに
-!x0887F518 なっているため、データをコンバートできませんでした。
-!x0887F520 コンバート前のエディットデータの読込容量は
-!x0887F528 0以上になるようにしてください。
-!x0887F6FC エディットデータのコンバートが終了しました。
-!x08880824 エディットデータのコンバートが終了しました。
-!x0887F710 エディットデータをセーブしますか？
-!x08880838 エディットデータをセーブしますか？
+!x0887F350 Converting Edit data.....
+!x08880678 Converting Edit data.....
+!x0887F514 Data could not be converted because the
+!x0887F518 space left of the Edit data was negative.
+!x0887F520 Please make sure the space left of the
+!x0887F528 Data is larger than 0 before converting.
+!x0887F6FC Completed converting Edit data.
+!x08880824 Completed converting Edit data.
+!x0887F710 Would you like to save the Edit data?
+!x08880838 Would you like to save the Edit data?
 !x0887FCC8 Convert Edit data from "Project Diva"
 
-!x08881774 モジュール：%s
-!x08881808 モーション：%s
-!x08881884 アイテム　：%s
-!x08881900 背景　　　：%s
-!x0888197C エフェクト：%s
+!x08881774 Module：%s
+!x08881808 Motion：%s
+!x08881884 Item  ：%s
+!x08881900 Backgr：%s
+!x0888197C Effect：%s
 
-!x08881AC8 追加データをチェックするため
-!x08881ADC 記録メディアにアクセス中です。
-!x08881AF0 記録メディアを抜かないで下さい。
+!x08881AC8 Accessing Memory stick to
+!x08881ADC check for Additional data.
+!x08881AF0 Do not remove Memory Stick.
 
-!x08881ED4 不足データ一覧
-!x088823A8 このエディットデータを編集するために
-!x088823B0 必要な追加データは揃っています。
-!x0888250C エディットデータの複製をします。
-!x08882520 エディットデータの複製確認。
+!x08881ED4 List of missing data
+!x088823A8 The additional data needed to 
+!x088823B0 edit the Edit data is present.
+!x0888250C Copying Edit data.
+!x08882520 Edit data copy completed.
 
 # copy edit data message
 
-!x08882638 『初音ミク -Project DIVA- extend』の
-!x0888264C エディットデータを複製することができます。
-!x08882660 エディットデータを複製しますか？
+!x08882638 Edit data from "Hatsune Miku -Project
+!x0888264C DIVA- extend" can be duplicated.
+!x08882660 Do you want to duplicate edit data?
 
-!x08882BA8 エディットデータをロードしました。
-!x08882BBC 複製先を選んでください。
+!x08882BA8 The Edit data has been loaded.
+!x08882BBC Please select the destination.
 
-!x08882FB0 ゲーム内の楽曲でエディットデータをプレイします。
-!x08882FBC MP3データを使用してエディットデータをプレイします。
-!x08882FC8 追加データの楽曲でエディットデータをプレイします。
+!x08882FB0 Play edit data with songs from the game.
+!x08882FBC Play edit data with MP3 songs.
+!x08882FC8 Play edit data with songs from additional content.
 
-!x08882FE4 ゲーム内の楽曲でエディットデータを鑑賞します。
-!x08882FF0 MP3データを使用してエディットデータを鑑賞します。
-!x08882FFC 追加データの楽曲でエディットデータを鑑賞します。
+!x08882FE4 View edit data with songs from the game.
+!x08882FF0 View edit data with MP3 songs.
+!x08882FFC View edit data with songs from additional content.
 
 ^x08882FA8 Create a Edit data with in-game music.
 ^x08882FDC Create a Edit data with in-game music.
 $x08883008 Create a Edit data with in-game music.
 !x08883014 Create a Edit data with MP3 music.
-!x08883020 Create a Edit data with the additional data music.
+!x08883020 Create a Edit data with the additional content music.
 
 !x08887834 BPMを変更する
 !x08887AD4 BPMを変更する
 !x08887848 BPMを変更しない
 !x08887AE8 BPMを変更しない
 !x08887854 BPMの変更を行うかを選択してください
-!x088887BC 分
-!x088887D4 秒
+!x088887BC m
+!x088887D4 s
 !x088890B8 1小節目のBPM %3d
 !x088890DC 1拍 %1.3f秒
 
 !x0889378C BPM is a unit that represents the song's tempo.
-!x088937A0 1分間の間に60回拍を刻むなら60BPM。
-!x088937B4 120回なら120BPMとなり、テンポが速くなります。
-!x088937C8 方向キーの左右でBPMの数値を変更することができます。
-!x088937DC □ボタンで楽曲、△ボタンでメトロノームを鳴らし、
-!x088937F0 楽曲のリズムに合ったBPMに調整してください。
-!x08893804 また、『BPM計測』を使うことで楽曲に合わせて
-!x08893818 リズムを取り、 BPMを計測することもできます。
+!x088937A0 With 60 ticks within 1 minute, it's 60BPM.
+!x088937B4 With 120 ticks, it's 120BPM and it's faster.
+!x088937C8 Change the BPM with the d-pad (left and right).
+!x088937DC Start the song with □ and the metronome with △
+!x088937F0 and adjust the BPM to the song rhythm.
+!x08893804 Or by using "Measure BPM", the BPM can be
+!x08893818 measured by beating out the rythm.
 
 !x08893DBC Select the module A.
 !x08893E1C Select the module B.
@@ -319,19 +320,19 @@ $x08883008 Create a Edit data with in-game music.
 !x0889FDB4 オプション画面でインポートを
 !x0889FDC8 行って下さい。
 
-!x088A0344 楽曲の開始小節から終了小節まで、
-!x088A0358 2/4は1拍目と2拍目、3/4と4/4は1拍目と3拍目に
-!x088A036C 自動でターゲットが配置されます。
-!x088A0380 簡易配置を行うと、既存のターゲットデータは
-!x088A0394 全て削除されてしまいますが、よろしいですか？
-!x088A03BC ※簡易配置はEdit TOPへ戻るときに反映されます。
-!x088A0638 エディット終了確認
-!x088A06CC ホームに移動します。
-!x088A06F8 セーブされていないエディットの内容は
-!x088A0AB4 セーブされていないエディットの内容は
-!x088A0724 すべて消えてしまいますがよろしいですか？
-!x088A0AE0 すべて消えてしまいますがよろしいですか？
-!x088A0A88 モード選択に移動します。
+!x088A0344 Targets will be automatically set for the whole
+!x088A0358 song. With a 2/4 time signature, a target is set
+!x088A036C on the 1st and 2nd beats. With 3/4 and 4/4,
+!x088A0380 targets are set on the 1st and 3rd beats.
+!x088A0394 Existing targets will all be deleted. Proceed?
+!x088A03BC ※The result will appear once back to Edit TOP
+!x088A0638 Edit end validation
+!x088A06CC Move to home.
+!x088A06F8 Unsaved content will all be deleted.
+!x088A0AB4 Unsaved content will all be deleted.
+!x088A0724 Do you want to proceed?
+!x088A0AE0 Do you want to proceed?
+!x088A0A88 Move to mode selection.
 
 ### EDIT MODE (3rd block) ###
 
@@ -399,10 +400,10 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36CEC エディットプレイ
 0x08C36CF4 エディット鑑賞
 
-0x08C36D04 BPM・拍子設定
-0x08C36D10 BPM・拍子設定
-0x08C36D30 BPM・拍子設定
-0x08C36D5C BPM・拍子設定
+0x08C36D04 Config. BPM
+0x08C36D10 Config. BPM
+0x08C36D30 Config. BPM
+0x08C36D5C Config. BPM
 
 !x0887C0B8 Module selection
 0x08C36D1C Module selection
@@ -521,29 +522,29 @@ $x08883008 Create a Edit data with in-game music.
 !x08866910 エディットで使用する背景の変更をすることができます。
 !x0886691C エディットで使用するエフェクトの変更をすることができます。
 !x08866928 リズムゲーム中に再生するボタン音を変更することができます。
-!x088680D0 拍子 %12d/4
-!x08868650 拍子 %12d/4
-!x088939D4 拍子 %12d/4
-!x08868290 BPM計測
-!x08868404 BPM計測
-!x08868A10 BPM計測
-!x088845F8 BPM計測
-!x08893AA0 BPM計測
-!x088682B4 BPMについて
-!x088682C8 決定
+!x088680D0 Tempo %11d/4
+!x08868650 Tempo %11d/4
+!x088939D4 Tempo %11d/4
+!x08868290 Measure BPM
+!x08868404 Avg.BPM
+!x08868A10 Avg.BPM
+!x088845F8 Measure BPM
+!x08893AA0 Measure BPM
+!x088682B4 About BPM
+!x088682C8 Confirm
 
-!x088682F4 楽曲のテンポを設定することができます。
-!x08868414 楽曲のテンポを設定することができます。
-!x08868420 1小節の拍数を設定することができます。
-!x08868428 BPMを手動で計測することができます。
-!x08868438 BPMに関しての説明を表示することができます。
-!x08893A40 BPMに関しての説明を表示することができます。
-!x08868440 現在の設定で楽曲のテンポと拍数を決定します。
+!x088682F4 Set the tempo of the song.
+!x08868414 Set the tempo of the song.
+!x08868420 Set the number of beats in one Bar.
+!x0886842C Set the BPM measure manually.
+!x08868438 View a description about the BPM.
+!x08893A40 View a description about the BPM.
+!x08868444 Sets the current beat number and tempo in the song.
 
-!x08868A34 □ボタンで楽曲を再生することができます。
-!x08868A48 再生された楽曲に合わせて△ボタン押し、
-!x08868A5C 30秒間リズムを取ることでBPMの平均値が
-!x08868A70 表示されます。
+!x08868A34 Play the song with the □ button.
+!x08868A48 Press the △ button according to the
+!x08868A5C song played. The average BPM is
+!x08868A70 calculated using a 30 second time.
 
 !x0886AACC Extras
 !x0886B690 Extras
@@ -655,10 +656,10 @@ $x08883008 Create a Edit data with in-game music.
 !x088745FC ステージ：コピー中です。(TOPではカメラ・歌詞をコピーできません)
 !x08874674 Delete and copy data of the bars and beats.
 !x08875278 プレビューを確認することができます。
-!x0887566C %3d U
-!x08876144 楽曲の再生情報を設定しています。
-!x0887632C 楽曲の再生情報を設定しました。
-!x08876334 素材データのロードを開始します。
+!x0887566C  Unit %3d
+!x08876144 Setting the song playback info.
+!x0887632C The song playback info has been set.
+!x08876334 The load of material data has started.
 !x088766B0 楽曲をロードできませんでした。
 !x088766B8 楽曲の途中再生情報設定に失敗しました。
 !x08876A1C 楽曲の途中再生情報設定に失敗しました。
@@ -820,8 +821,8 @@ $x08883008 Create a Edit data with in-game music.
 !x0887E180 Convert Edit data from "-Project DIVA- 2nd"
 !x0887E18C Convert Edit data from "-Project DIVA-"
 !x0887E198 Create copies of your Edit data.
-!x0887E1A4 Check for additional data missing in the Edit data.
-!x08881A34 Check for additional data missing in the Edit data.
+!x0887E1A4 Check for additional content missing in the Edit data.
+!x08881A34 Check for additional content missing in the Edit data.
 
 # Rhythm Game default message
 
@@ -886,7 +887,7 @@ $x08883008 Create a Edit data with in-game music.
 
 !x088E6620 Auto Save
 !x088E6668 Installation data
-!x088E69F4 Import additional data
+!x088E69F4 Import additional content
 !x088E6A04 前作データの引継ぎ
 
 !x088E6E88 Perform additional data import.
@@ -949,19 +950,19 @@ $x08883008 Create a Edit data with in-game music.
 
 # DLC load error messages
 
-!x0891F714 The additional data
+!x0891F714 The additional content
 !x0891F728 could not be loaded.
 
 !x0891F73C The current module has been
 !x0891F750 restored to the original one.
 
-!x0891F7FC The additional data
+!x0891F7FC The additional content
 !x0891F810 could not be loaded.
 
 !x0891F824 The default layout of
 !x0891F838 the room has been restored.
 
-!x0891F8A0 The additional data
+!x0891F8A0 The additional content
 !x0891F8B4 could not be loaded.
 
 # DIVA room
@@ -1021,7 +1022,7 @@ $x08883008 Create a Edit data with in-game music.
 !x08928988 行って下さい。
 
 !x08928858 Accessing Memory Stick	1 to
-!x0892886C check for additional data.
+!x0892886C check for additional content.
 !x08928880 Do not remove the Memory Stick	1.
 
 # DIVA room (cont.)
@@ -1088,7 +1089,7 @@ $x08883008 Create a Edit data with in-game music.
 !x08932A3C The max number of playlists
 !x08932A68 has been exceeded.
 
-!x08932A9C Additional data 
+!x08932A9C Additional content 
 !x08932AC8 could not be loaded.
 
 # DIVA room (PV menu)
@@ -1135,7 +1136,7 @@ $x08883008 Create a Edit data with in-game music.
 !x0893D564 Max number of registrations has been reached.
 !x0893D598 The max number of playlists
 !x0893D5C4 has been exceeded.
-!x0893D600 Additional Data 
+!x0893D600 Additional content 
 !x0893D62C could not be loaded.
 !x0893D668 Import Data
 !x0893D694 could not be loaded.
@@ -2298,7 +2299,7 @@ $x08883008 Create a Edit data with in-game music.
 0x08C43F98 Go to Play Records.
 0x08C43FB0 Go to Ad Hoc.
 0x08C43FD4 Return to the title screen.
-0x08C43FD8 You will lost all the unsaved data
+0x08C43FD8 You will lose all the unsaved data
 0x08C43FDC Are you sure to return to title?
 
 0x08C43FE0 Go to see the
@@ -2377,7 +2378,7 @@ $x08883008 Create a Edit data with in-game music.
 
 0x08C440F0 Import additional data
 0x08C440F4 that you have selected
-0x08C440F8 as extra data.
+0x08C440F8 as extra content.
 
 0x08C44100 前作データの引継ぎを
 0x08C44104 することができます。
