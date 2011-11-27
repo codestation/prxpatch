@@ -64,6 +64,15 @@ const char *trans_files[] = {
         "divaext_translation.bin",
 };
 
+const char *embedded_files[] = {
+        "diva1st_embedded.bin",
+        "diva2nd_embedded.bin",
+        "divaext_demo1_emb.bin",
+        "divaext_demo2_emb.bin",
+        "divaext_embedded.bin",
+        "divaext_embedded.bin",
+};
+
 const stub stubs[] = {
         { 0x109F50BC, diva_open  }, // sceIoOpen
         { 0x6A638D83, diva_read  }, // sceIoRead
@@ -73,7 +82,9 @@ const stub stubs[] = {
 char filepath[256];
 static STMOD_HANDLER previous = NULL;
 static SceUID block_id = -1;
+static SceUID table_id = -1;
 static void *block_addr = NULL;
+static void *table_addr = NULL;
 static int patch_index = -1;
 SceUID sema = 0;
 
@@ -101,6 +112,69 @@ inline void IcacheClearAll(void) {
 void clear_caches(void) {
     IcacheClearAll();
     DcacheWritebackAll();
+}
+
+void patch_embedded() {
+    u32 count;
+    SceUID fd;
+    SceSize size;
+    SceSize index_size, table_size;
+    SceUID embedded_id;
+    void *embedded_addr;
+
+    // use the plugin directory to load the patchfile from there
+    strrchr(filepath, '/')[1] = 0;
+    strcat(filepath, embedded_files[patch_index]);
+
+    fd = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
+    if(fd < 0) {
+        return;
+    }
+
+    // get the translation file size
+    size = (SceSize)sceIoLseek(fd, 0, PSP_SEEK_END);
+    sceIoLseek(fd, 0, PSP_SEEK_SET);
+
+    embedded_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_KERNEL, "divatable", PSP_SMEM_Low, size, NULL);
+    if(embedded_id < 0) {
+        return;
+    }
+    embedded_addr = sceKernelGetBlockHeadAddr(embedded_id);
+    kprintf("allocated table block at %08X\n", (u32)embedded_addr);
+
+    // read the whole file
+    sceIoLseek(fd, 0, PSP_SEEK_SET);
+    sceIoRead(fd, embedded_addr, size);
+    sceIoClose(fd);
+
+    // get the number of entries in the translation file
+    count = *(u32 *)embedded_addr;
+
+    // calculate the index table size
+    index_size = (count * 8) + 4;
+    // and the padding (if any)
+    index_size += 16 - (index_size % 16);
+    // calculate the required size to hold all the translated strings (without the index table)
+    table_size = size - index_size;
+
+    kprintf("found %i strings to patch\n", count);
+
+    for(u32 i = 0; i < count; i++) {
+        struct addr_data *data;
+
+        // get the current table pointer
+        data = &((struct addr_data *)((char *)embedded_addr + 4))[i];
+
+        // and calculate the address that is gonna have our string in memory
+        void *final_addr = (void *)((u32)((char *)embedded_addr + index_size) + data->offset);
+        //kprintf("using %08X as string address\n", (u32)final_addr);
+
+        // skip null strings
+        if(strcmp(final_addr, "NULL") != 0) {
+            strcpy((char *)data->addr, final_addr);
+        }
+    }
+    sceKernelFreePartitionMemory(embedded_id);
 }
 
 void patch_eboot()  {
@@ -132,50 +206,72 @@ void patch_eboot()  {
     // calculate the required size to hold all the translated strings (without the index table)
     table_size = (SceSize)size - index_size;
 
+    // allocate the translated string block
     block_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_USER, "divatrans", PSP_SMEM_High, table_size, NULL);
     if(block_id < 0) {
         return;
     }
     block_addr = sceKernelGetBlockHeadAddr(block_id);
     kprintf("allocated block at %08X\n", (u32)block_addr);
-    kprintf("found %i strings to pach\n", count);
+
+    // read the translated strings
+    sceIoLseek(fd, index_size, PSP_SEEK_SET);
+    sceIoRead(fd, block_addr, table_size);
+
+    // allocate the index table
+    table_id = sceKernelAllocPartitionMemory(PSP_MEMORY_PARTITION_KERNEL, "divatable", PSP_SMEM_Low, count * 8, NULL);
+    if(table_id < 0) {
+        return;
+    }
+    table_addr = sceKernelGetBlockHeadAddr(table_id);
+    kprintf("allocated table block at %08X\n", (u32)table_addr);
+
+    // read the translated strings
+    sceIoLseek(fd, 4, PSP_SEEK_SET);
+    sceIoRead(fd, table_addr, count * 8);
+
+    sceIoClose(fd);
+
+    kprintf("found %i strings to patch\n", count);
 
     // lets process all the strings in the table
     for(u32 i = 0; i < count; i++) {
-        struct addr_data data;
+        struct addr_data *data;
 
-        // read our set of address/string offset
-        sceIoRead(fd, &data, sizeof(data));
+        // get the current table pointer
+        data = &((struct addr_data *)table_addr)[i];
 
         // and calculate the address that is gonna have our string in memory
-        void *final_addr = (void *)((u32)(block_addr) + data.offset);
+        void *final_addr = (void *)((u32)(block_addr) + data->offset);
         //kprintf("using %08X as string address\n", (u32)final_addr);
 
         int half_patch = 0;
+
         // if the address was marked as "^x08XXXXXX" in the source file then lets
         // only make a lui patch with the upper address
-        if(((u32)data.addr & 0xF0000000) == 0xE0000000) {
+        if(((u32)data->addr & 0xF0000000) == 0xE0000000) {
             half_patch = 1;
             // mark the last byte as "F" so it can pass the next "if" conditional
-            data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
+            data->addr = (void **)((u32)data->addr | (u32)0xF0000000);
+
         // if the address was marked as "$x08XXXXXX" in the source file then lets
         // only make patch with the lower address
-        } else if(((u32)data.addr & 0xF0000000) == 0xD0000000) {
+        } else if(((u32)data->addr & 0xF0000000) == 0xD0000000) {
             half_patch = -1;
             // mark the last byte as "F" so it can pass the next "if" conditional
-            data.addr = (void **)((u32)data.addr | (u32)0xF0000000);
+            data->addr = (void **)((u32)data->addr | (u32)0xF0000000);
         }
 
         // if the address was marked as "!x08000000" in the source file then lets
         // patch the lower address in the current instruction and the upper address
         // in the lui instruction above it
-        if((u32)data.addr & 0xF0000000) {
+        if((u32)data->addr & 0xF0000000) {
             // clear our "F" marker
-            data.addr = (void **)(((u32)data.addr) & ~0xF0000000);
+            data->addr = (void **)(((u32)data->addr) & ~0xF0000000);
             // and use "4" instead (0x4XXXXXXX == uncached access, not sure if this is necessary)
-            data.addr = (void **)(((u32)data.addr) | 0x40000000);
+            data->addr = (void **)(((u32)data->addr) | 0x40000000);
 
-            u16 *code_addr = (u16 *)data.addr;
+            u16 *code_addr = (u16 *)data->addr;
 
             // split or string address into lower/upper components
             u16 addr1 = (u32)final_addr & 0xFFFF;
@@ -238,15 +334,12 @@ void patch_eboot()  {
         } else {
             // the address to patch is in clear view so we don't have to do all crap above and
             // just overwrite the address
-            data.addr = (void **)(((u32)data.addr) | 0x40000000);
+            data->addr = (void **)(((u32)data->addr) | 0x40000000);
             //kprintf("%02i) patching pointer at addr: %08X\n", i, (u32)data.addr);
-            *data.addr = final_addr;
+            *data->addr = final_addr;
         }
     }
-    // load our translated strings
-    sceIoLseek(fd, index_size, PSP_SEEK_SET);
-    sceIoRead(fd, block_addr, table_size);
-    sceIoClose(fd);
+    sceKernelFreePartitionMemory(table_id);
 }
 
 /**
@@ -291,6 +384,7 @@ int module_start_handler(SceModule2 * module) {
             }
             // valid gameid
             if(patch_index >= 0) {
+                patch_embedded();
                 patch_eboot();
                 clear_caches();
                 // wake up our main thread so it can hook the file i/o funs of the game
