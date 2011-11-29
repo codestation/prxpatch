@@ -103,7 +103,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/26          -codestation
+!x08845B8C PD extend patch 2011/11/29          -codestation
 
 ### EDIT MODE ###
 
@@ -314,11 +314,13 @@ $x08883008 Create a Edit data with in-game music.
 !x0889DAEC Set the effects to be used in the Edit.
 
 !x0889E84C 【プリセット%d】
-!x0889F414 小節
+^x0889F3B4 Unit
+^x0889F3E8 Unit
+!x0889F414 Unit
 !x0889F784 選択された項目を削除します。
 !x0889FD8C インポートデータを
-!x0889FDB4 オプション画面でインポートを
-!x0889FDC8 行って下さい。
+!x0889FDB4 Please import from
+!x0889FDC8 the "Options" menu.
 
 !x088A0344 Targets will be automatically set for the whole
 !x088A0358 song. With a 2/4 time signature, a target is set
@@ -336,44 +338,44 @@ $x08883008 Create a Edit data with in-game music.
 
 ### EDIT MODE (3rd block) ###
 
-!x0886F670 システム
-!x08878CF0 システム
-!x0887A80C システム
-!x0887ABB0 システム
-!x0887B960 システム
-!x0887BE3C システム
-!x0887BF78 システム
-!x0887C09C システム
-!x0887C404 システム
-!x0887DF38 システム
-!x088A0624 システム
-!x088A09E0 システム
-0x08C36CD0 システム
-0x08C36CD8 システム
-0x08C36D14 システム
-0x08C36D38 システム
-0x08C36D74 システム
-0x08C36DA4 システム
-0x08C36DD4 システム
-0x08C36E04 システム
-0x08C36E34 システム
-0x08C36E3C システム
+!x0886F670 System
+!x08878CF0 System
+!x0887A80C System
+!x0887ABB0 System
+!x0887B960 System
+!x0887BE3C System
+!x0887BF78 System
+!x0887C09C System
+!x0887C404 System
+!x0887DF38 System
+!x088A0624 System
+!x088A09E0 System
+0x08C36CD0 System
+0x08C36CD8 System
+0x08C36D14 System
+0x08C36D38 System
+0x08C36D74 System
+0x08C36DA4 System
+0x08C36DD4 System
+0x08C36E04 System
+0x08C36E34 System
+0x08C36E3C System
 
-!x0886F79C 基本設定の変更
-0x08C36CD4 基本設定の変更
-0x08C36CDC 基本設定の変更
-0x08C36CFC 基本設定の変更
-0x08C36D18 基本設定の変更
-0x08C36D3C 基本設定の変更
-0x08C36D44 基本設定の変更
-0x08C36D78 基本設定の変更
-0x08C36D80 基本設定の変更
-0x08C36DA8 基本設定の変更
-0x08C36DB0 基本設定の変更
-0x08C36DD8 基本設定の変更
-0x08C36DE0 基本設定の変更
-0x08C36E08 基本設定の変更
-0x08C36E10 基本設定の変更
+!x0886F79C Change basic settings
+0x08C36CD4 Change basic settings
+0x08C36CDC Change basic settings
+0x08C36CFC Change basic settings
+0x08C36D18 Change basic settings
+0x08C36D3C Change basic settings
+0x08C36D44 Change basic settings
+0x08C36D78 Change basic settings
+0x08C36D80 Change basic settings
+0x08C36DA8 Change basic settings
+0x08C36DB0 Change basic settings
+0x08C36DD8 Change basic settings
+0x08C36DE0 Change basic settings
+0x08C36E08 Change basic settings
+0x08C36E10 Change basic settings
 
 !x08866840 Song selection
 0x08C36CE0 Song selection
@@ -467,10 +469,10 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36E24 Button sound
 0x08C36E2C Button sound
 
-!x0886F7F0 ターゲット簡易配置
-0x08C36E38 ターゲット簡易配置
+!x0886F7F0 Easy target placing
+0x08C36E38 Easy target placing
 
-0x08C36E40 楽曲再生時間設定
+0x08C36E40 Set music playback duration
 
 !x08873054 Edit TOP
 !x08873F50 Edit TOP
@@ -487,8 +489,8 @@ $x08883008 Create a Edit data with in-game music.
 !x088D1DF8 Target
 !x088D6DCC Target
 
-0x08C36E4C リアルタイム入力
-0x08C36E58 リアルタイム入力
+0x08C36E4C Real-time input
+0x08C36E58 Real-time input
 
 !x088B67B4 Rhythm
 !x088B6EDC Rhythm
@@ -500,7 +502,7 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36E60 Copy Edit data
 0x08C36E68 Copy Edit data
 
-0x08C36E6C 複製の確認
+0x08C36E6C Check duplicates
 
 ### EDIT MODE (4th block) ###
 
@@ -806,16 +808,16 @@ $x08883008 Create a Edit data with in-game music.
 !x0887C774 コマンドデータ削除中…
 !x0887D00C コマンドデータ削除が終了しました。
 !x0887D254 両方のモジュール
-!x0887D378 キャラ配置
-!x0887D3A4 モーション
-!x0887D3D0 アイテム
-!x0887D3FC 表情
-!x0887D428 頬染め
-!x0887D454 口パク
-!x0887D480 目線
-!x0887D4AC 目パチ
-!x0887D4D8 モデル表示
-!x0887D504 影表示
+!x0887D378 Character placement
+!x0887D3A4 Motion
+!x0887D3D0 Item
+!x0887D3FC Expression
+!x0887D428 Dyed cheeks
+!x0887D454 Lip synchronization
+!x0887D480 Looking at
+!x0887D4AC Eye blink
+!x0887D4D8 Model display
+!x0887D504 Shadow
 !x0887E168 Create a new Edit data.
 !x0887E174 Continue editing your Edit data.
 !x0887E180 Convert Edit data from "-Project DIVA- 2nd"
@@ -1155,13 +1157,13 @@ $x08883008 Create a Edit data with in-game music.
 
 # (PD2nd savedata detection)
 
-!x089522F0 『初音ミク -Project DIVA- 2nd』のシステムデータを
-!x08952310 『初音ミク -Project DIVA- extend』に引継ぐことができます。
+!x089522F0 you may import system data from
+!x08952310 "-Project Diva- 2nd" to "-Project Diva- Extend".
 
-!x08952330 前作のシステムデータを引継ぐ場合は、
-!x08952350 『初音ミク -Project DIVA- extend』のシステムデータを作成する
-!x08952370 記録メディアに、あらかじめ『初音ミク -Project DIVA- 2nd』の
-!x08952390 システムデータをコピーしておいてください。
+!x08952330 If you would like to import system data from the previous
+!x08952350 game, please copy the system data from "-Project Diva- 2nd"
+!x08952370 to the Removable media that you will create the
+!x08952390 system data for "-Project Diva- Extend".
 
 # Music device selection
 
@@ -1175,8 +1177,8 @@ $x08883008 Create a Edit data with in-game music.
 !x0898FFEC Extras
 !x08990150 ロードできませんでした。
 !x08990164 インポートデータを
-!x08990188 オプション画面でインポートを
-!x0899019C 行って下さい。
+!x08990188 Please import from
+!x0899019C the "Options" menu.
 !x089901B8 Adittional data
 !x08990318 No
 
@@ -2143,6 +2145,9 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36BC8 モーション選択
 0x08C36BD0 モーション補間
 0x08C36BD8 目線プリセット
+
+# character menu information
+
 0x08C36BF0 キャラクターの配置を設定することができます。
 0x08C36BF4 モーションの設定をすることができます。
 0x08C36BF8 アイテムの設定をすることができます。
@@ -2153,6 +2158,7 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36C0C 目パチの有無を設定することができます。
 0x08C36C10 モデルの表示・非表示を設定することができます。
 0x08C36C14 影の表示・非表示を設定することができます。
+
 0x08C36C20 キャラクターに持たせるアイテムを選択して下さい。
 0x08C36C24 キャラクターの表情を設定して下さい。
 0x08C36C28 頬染めの表示・非表示を設定して下さい。
