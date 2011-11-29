@@ -24,6 +24,8 @@
 
 #include <map>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -31,26 +33,30 @@ char buffer[256];
 
 int main(int argc, char **argv) {
     if(argc < 2) {
-        printf("Usage: divaconvert <translation_file>.txt\n");
+        cout << "Usage: divaconvert <translation_file>.txt" << endl;
         return 1;
     }
-	FILE *fd = fopen(argv[1], "rb");
-	if(!fd) {
-	    printf("Cannot open %s\n", argv[1]);
+	FILE *file_in = fopen(argv[1], "rb");
+	if(!file_in) {
+	    cout << "Cannot open " << argv[1] << endl;
 		return 1;
 	}
-	char fileout[64];
-	strcpy(fileout, argv[1]);
-	strcat(fileout, ".bin");
-	FILE *fdout = fopen(fileout, "wb");
-	if(!fdout) {
-		printf("Error while creating %s\n", fileout);
+
+	strcpy(buffer, argv[1]);
+	char *fileext = strrchr(buffer, '.');
+	strcpy(fileext, ".bin");
+	FILE *file_out = fopen(buffer, "wb");
+	if(!file_out) {
+		cout << "Error while creating " << buffer << endl;
 		return 1;
 	}
-	strcat(fileout, ".tmp");
-	FILE *fdstr = fopen(fileout, "wb+");
-	if(!fdout) {
-		printf("Error while creating %s\n", fileout);
+
+	strcpy(buffer, argv[1]);
+	fileext = strrchr(buffer, '.');
+	strcpy(fileext, ".tmp");
+	FILE *file_tmp = fopen(buffer, "wb+");
+	if(!file_tmp) {
+		cout << "Error while creating " << buffer << endl;
 		return 1;
 	}
 	map<string, size_t> lst;
@@ -60,8 +66,8 @@ int main(int argc, char **argv) {
 	size_t offset = 0;
 	size_t padding = 0;
 	int line_count = 0;
-	fwrite(&count, 4, 1, fdout);
-	while(fgets(buffer, 256, fd)) {
+	fwrite(&count, 4, 1, file_out);
+	while(fgets(buffer, 256, file_in)) {
 		if(buffer[0] == '#' || buffer[0] == '\n')
 			continue;
 		buffer[10] = 0;
@@ -83,36 +89,36 @@ int main(int argc, char **argv) {
         }
 
         long long addr = strtoll(buffer, NULL, 16);
-        fwrite(&addr, 4, 1, fdout);
+        fwrite(&addr, 4, 1, file_out);
 
 		line_count++;
 
 		map<string,size_t>::const_iterator it = lst.find(str);
 		if(it == lst.end()) {
 		    lst[str] = offset;
-		    fwrite(&offset, 4 ,1, fdout);
-	        fwrite(str, len, 1, fdstr);
+		    fwrite(&offset, 4 ,1, file_out);
+	        fwrite(str, len, 1, file_tmp);
 	        padding = 4 - (len % 4);
 	        table_size += len + padding;
 	        offset += len + padding;
 	        if(padding) {
 	            memset(buffer, 0, 16);
-	            fwrite(buffer, padding, 1, fdstr);
+	            fwrite(buffer, padding, 1, file_tmp);
 	        }
 		} else {
-		    fwrite(&lst[str], 4 ,1, fdout);
+		    fwrite(&lst[str], 4 ,1, file_out);
 		}
 		count++;
 		index_size += 8;
 	}
-	fseek(fdout, 0, SEEK_SET);
-	fwrite(&count, 4, 1, fdout);
-	fseek(fdout, 0, SEEK_END);
+	fseek(file_out, 0, SEEK_SET);
+	fwrite(&count, 4, 1, file_out);
+	fseek(file_out, 0, SEEK_END);
 	if(index_size % 16)
 		padding = 16 - (index_size % 16);
 	if(padding) {
         memset(buffer, 0, 16);
-        fwrite(buffer, padding, 1, fdout);
+        fwrite(buffer, padding, 1, file_out);
     }
 
 	padding = 0;
@@ -120,38 +126,41 @@ int main(int argc, char **argv) {
 		padding = 16 - (table_size % 16);
 	if(padding) {
         memset(buffer, 0, 16);
-        fwrite(buffer, padding, 1, fdstr);
+        fwrite(buffer, padding, 1, file_tmp);
     }
 
-	size_t size = (size_t)ftell(fdstr);
-	fseek(fdstr, 0, SEEK_SET);
+	size_t size = (size_t)ftell(file_tmp);
+	fseek(file_tmp, 0, SEEK_SET);
 	count = sizeof(buffer);
 
-	printf("Block size: %li bytes\n", size);
+	cout << "String block size: " << size << " bytes" << endl;
 
 	while(size) {
 	    if(size < (int)sizeof(buffer)) {
 	        count = size;
 	    }
-	    fread(buffer, count, 1, fdstr);
-	    fwrite(buffer, count, 1, fdout);
+	    fread(buffer, count, 1, file_tmp);
+	    fwrite(buffer, count, 1, file_out);
 	    size -= count;
 	}
 
-	printf("Total lines: %i\n", line_count);
-	printf("Unique lines: %i\n", (int)lst.size());
+	cout << "Total lines: " << line_count << endl;
+	cout << "Unique lines: " << (int)lst.size() << endl;
 
-	strcpy(buffer, argv[1]);
-	char *dot = strrchr(buffer, '.');
-	strcpy(dot, ".bin");
-	fclose(fdout);
-	fclose(fdstr);
-	remove(fileout);
-	fclose(fd);
-	strcpy(fileout, argv[1]);
-	strcat(fileout, ".bin");
+	// close all files
+	fclose(file_out);
+	fclose(file_tmp);
+    fclose(file_in);
+
+    // delete tmp file
+    strcpy(buffer, argv[1]);
+    fileext = strrchr(buffer, '.');
+    strcpy(fileext, ".tmp");
 	remove(buffer);
-	printf("Created %s\n", buffer);
-	rename(fileout,buffer);
+
+    strcpy(buffer, argv[1]);
+    fileext = strrchr(buffer, '.');
+    strcpy(fileext, ".bin");
+	printf("%s has been created succefully\n", buffer);
 	return 0;
 }
