@@ -79,21 +79,21 @@
 
 # Play Record
 
-!x0882A7D8 メニュー
-!x0882A810 総合プレイ情報
-!x0882AD34 総合プレイ情報
-!x0882A834 楽曲プレイ情報
-!x0882B200 楽曲プレイ情報
-!x0882A858 エクストラプレイ情報
-!x0882BD98 エクストラプレイ情報
-!x0882A87C キャラクター機嫌確認
-!x0882C9FC キャラクター機嫌確認
-!x0882A8A0 DIVAルームイベント
-!x0882E888 DIVAルームイベント
-!x0882A8C4 プロフィール設定
-!x0882ED1C プロフィール設定
-!x0882A8E8 フレンド
-!x08831D5C フレンド
+!x0882A7D8 Menu
+!x0882A810 Gameplay Info
+!x0882AD34 Gameplay Info
+!x0882A834 Music Play Info
+!x0882B200 Music Play Info
+!x0882A858 Extra Play Info
+!x0882BD98 Extra Play Info
+!x0882A87C Character Mood
+!x0882C9FC Character Mood
+!x0882A8A0 DIVA Room Events
+!x0882E888 DIVA Room Events
+!x0882A8C4 Profile Settings
+!x0882ED1C Profile Settings
+!x0882A8E8 Friends
+!x08831D5C Friends
 
 # Shop messages
 
