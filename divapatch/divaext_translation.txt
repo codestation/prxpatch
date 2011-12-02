@@ -13,6 +13,7 @@
 #             to patch the lower address
 #
 # EBOOT reversing and translation: codestation
+# EBOOT reversing helper: Sonic DX
 # translation helpers: HeroKing, naki-the-curious, kienono
 
 # Data import menu entries
@@ -75,6 +76,24 @@
 !x08823CC8 [HELP] Recovery
 !x08823CD4 [CHALLENGE] COOL&FINE
 !x08823CE0 [CHALLENGE] Survival
+
+# Play Record
+
+!x0882A7D8 メニュー
+!x0882A810 総合プレイ情報
+!x0882AD34 総合プレイ情報
+!x0882A834 楽曲プレイ情報
+!x0882B200 楽曲プレイ情報
+!x0882A858 エクストラプレイ情報
+!x0882BD98 エクストラプレイ情報
+!x0882A87C キャラクター機嫌確認
+!x0882C9FC キャラクター機嫌確認
+!x0882A8A0 DIVAルームイベント
+!x0882E888 DIVAルームイベント
+!x0882A8C4 プロフィール設定
+!x0882ED1C プロフィール設定
+!x0882A8E8 フレンド
+!x08831D5C フレンド
 
 # Shop messages
 
@@ -1577,6 +1596,119 @@ $x08883008 Create a Edit data with in-game music.
 0x08C30FC4 DIVA×Drum Master 1
 0x08C30FC8 DIVA×Drum Master 2
 
+# Titles
+
+0x08C31144 Novice Player
+0x08C31148 Apprentice Player
+0x08C3114C Full-Fledged Player
+0x08C31150 Charismatic Player
+0x08C31154 Superhuman Player
+0x08C31158 Singer
+0x08C3115C Songstress
+0x08C31160 Star
+0x08C31164 First Perfect
+0x08C31168 Perfect Getter
+0x08C3116C Perfect Controller
+0x08C31170 Perfect Magician
+0x08C31174 Perfect Maestro
+0x08C31178 Surpassed Challenge
+0x08C3117C 気分上々
+0x08C31180 Smooth Sailing
+0x08C31184 Voice of an Angel
+0x08C31188 Diva
+0x08C3118C First Miss x Take
+0x08C31190 Overachiever
+0x08C31194 Finish Runner
+0x08C31198 Thanks Finish
+0x08C3119C Pop and Cute
+0x08C311A0 I Love Miku!
+0x08C311A4 Charming
+0x08C311A8 I Love Rin!
+0x08C311AC Powerful
+0x08C311B0 I Love Len!
+0x08C311B4 Cool & Husky
+0x08C311B8 I Love Luka!
+0x08C311BC Lovable Scarf
+0x08C311C0 I Love Kaito!
+0x08C311C4 Meiko Guard
+0x08C311C8 I Love Meiko!
+0x08C311CC Boukaloid
+0x08C311D0 I Love Neru!
+0x08C311D4 Boyakiloid
+0x08C311D8 I Love Haku!
+0x08C311DC Legendary Idol
+0x08C311E0 I Love Sakine Meiko!
+0x08C311E4 I am DIVA
+0x08C311E8 We are DIVA
+0x08C311EC Heavy Rotation
+0x08C311F0 Rhythm Gamer
+0x08C311F4 Safety First
+0x08C311F8 Item Master
+0x08C311FC Home Theater
+0x08C31200 Producer
+0x08C31204 Dreaded 1%
+0x08C31208 残念ながらSAFEでした
+0x08C3120C Surround
+0x08C31210 Rhythm Wave
+0x08C31214 Like To Dress-Up
+0x08C31218 Love To Dress-Up!
+0x08C3121C Top Inner Child
+0x08C31220 Module Master
+0x08C31224 Miku's Stylist
+0x08C31228 Rin's Coordinator
+0x08C3122C Len's Designer
+0x08C31230 Luka's Fashionable Friend
+0x08C31234 Kaito's Scarf
+0x08C31238 Meiko's Dresser
+0x08C3123C Neru's Closet
+0x08C31240 Haku's Foil
+0x08C31244 Sakine Meiko's Assistant
+0x08C31248 Sega♪
+0x08C3124C Swimwear Lover
+0x08C31250 Life Stylist
+0x08C31254 Free Style
+0x08C31258 Room Conductor
+0x08C3125C Room Stylist
+0x08C31260 Room Designer
+0x08C31264 Room Coordinator
+0x08C31268 模様替え好き
+0x08C3126C 気分屋さん
+0x08C31270 こだわりのお部屋
+0x08C31274 愛しのお部屋
+0x08C31278 Storyteller
+0x08C3127C DIVA好き
+0x08C31280 DIVA大好き！
+0x08C31284 DIVAに夢中
+0x08C31288 Now Playing……
+0x08C3128C DIVAシンドローム
+0x08C31290 DIVAフリーク
+0x08C31294 神の絶対領域
+0x08C31298 ごきげんミクさん
+0x08C3129C るんるんリンちゃん
+0x08C312A0 うきうきレンくん
+0x08C312A4 ランランルカさん
+0x08C312A8 にこにこKAITOさん
+0x08C312AC わくわくMEIKOさん
+0x08C312B0 ノリノリネルさん
+0x08C312B4 ツマンネハクさん
+0x08C312B8 きゃぴきゃぴ咲音さん
+0x08C312BC ハッピーの魔法
+0x08C312C0 ドリーマー
+0x08C312C4 ロマンチック
+0x08C312C8 ハンドメイド
+0x08C312CC オリジナリティ
+0x08C312D0 エディット魂
+0x08C312D4 バリバリ
+0x08C312D8 メロメロ
+0x08C312DC デレデレ
+0x08C312E0 ミュージアム
+0x08C312E4 ガレリア
+0x08C312E8 サンクチュアリ
+0x08C312EC フレンドゲッター
+0x08C312F0 みっくみくにされました
+0x08C312F4 クリアおめでとう！
+0x08C312F8 称号マスター
+
 # Shop menu headers
 
 0x08C31FD4 Room Items (floor)
@@ -2116,35 +2248,39 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36B68 よろしいですか？
 0x08C36B74 よろしいですか？
 0x08C36B70 選択された項目を初期化します。
-0x08C36B7C キャラ配置
-0x08C36B80 モーション
-0x08C36B84 アイテム
-0x08C36B88 表情
-0x08C36B8C 頬染め
-0x08C36B90 口パク
-0x08C36B94 目線
-0x08C36B98 目パチ
-0x08C36B9C モデル表示
-0x08C36BA0 影表示
-0x08C36BA4 プリセット配置
-0x08C36BA8 手動設定
-0x08C36BAC 開始位置設定
-0x08C36BCC 開始位置設定
-0x08C36BB0 終了位置設定
-0x08C36BB4 移動時間設定
-0x08C36BDC 移動時間設定
-0x08C36BB8 プレビュー
-0x08C36BE0 プレビュー
-0x08C36BBC 決定
-0x08C36BD4 決定
-0x08C36BE4 決定
-0x08C36BC0 固定プリセット
-0x08C36BE8 固定プリセット
-0x08C36BC4 移動プリセット
-0x08C36BEC 移動プリセット
-0x08C36BC8 モーション選択
-0x08C36BD0 モーション補間
-0x08C36BD8 目線プリセット
+
+# edit mode (character submenu)
+
+0x08C36B7C Character placement
+0x08C36B80 Motion
+0x08C36B84 Item
+0x08C36B88 Expression
+0x08C36B8C Dyed cheeks
+0x08C36B90 Lip synchronization
+0x08C36B94 Looking at
+0x08C36B98 Eyelids
+0x08C36B9C Model display
+0x08C36BA0 Shadow
+
+0x08C36BA4 Preset placement
+0x08C36BA8 Manual setting
+0x08C36BAC Set the starting pos.
+0x08C36BCC Set the starting pos.
+0x08C36BB0 Set the ending pos.
+0x08C36BB4 Set travel time
+0x08C36BDC Set travel time
+0x08C36BB8 Preview
+0x08C36BE0 Preview
+0x08C36BBC Confirm
+0x08C36BD4 Confirm
+0x08C36BE4 Confirm
+0x08C36BC0 Fixed preset
+0x08C36BE8 Fixed preset
+0x08C36BC4 Movement preset
+0x08C36BEC Movement preset
+0x08C36BC8 Motion selection
+0x08C36BD0 Motion interpolation
+0x08C36BD8 Looking At preset
 
 # character menu information
 
@@ -2168,13 +2304,17 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36C3C 影の表示・非表示を設定して下さい。
 0x08C36C40 拍データのコピー、削除をすることができます。
 0x08C36C44 %s：コピー中です。○ボタンでペーストできます。
-0x08C36C48 キャラクターの配置をプリセットから選択することができます。
-0x08C36C4C キャラクターの配置を手動で設定することができます。
-0x08C36C50 キャラクターの移動開始位置を設定することができます。
-0x08C36C54 キャラクターの移動終了位置を設定することができます。
-0x08C36C58 キャラクターの移動時間を拍数単位で設定することができます。
-0x08C36C5C 設定したキャラクター移動をプレビューで確認することができます。
-0x08C36C60 現在のキャラクター移動設定を反映させることができます。
+
+# edit mode (character submenu information)
+
+0x08C36C48 Select a character placement preset.
+0x08C36C4C Configure the character placement manually.
+0x08C36C50 Set the starting pos. of the character movement.
+0x08C36C54 Set the ending pos. of the character movement.
+0x08C36C58 Set time in beat numbers to move the character.
+0x08C36C5C View a preview of the character movements.
+0x08C36C60 Confirm the configured character movements.
+
 0x08C36C6C ○ボタンを押してキャラクターの移動開始位置を設定して下さい。
 0x08C36C70 ○ボタンを押してキャラクターの移動終了位置を設定して下さい。
 0x08C36C74 方向キー左右で、キャラの移動時間を設定して下さい。
@@ -2182,10 +2322,12 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36CC0 固定位置のプリセットを選択します。
 0x08C36C84 移動するプリセットを選択します。
 0x08C36CCC 移動するプリセットを選択します。
+
 0x08C36C88 使用するモーションと、再生速度を設定をすることができます。
 0x08C36C8C 設定されたモーションの再生開始位置を変更することができます。
 0x08C36C90 モーション補間の設定をすることができます。
 0x08C36C94 現在のモーション設定を反映させることができます。
+
 0x08C36C98 モーションを選択して、方向キー左右で再生速度を調整して下さい。
 0x08C36C9C モーションの再生開始位置を方向キーの左右で設定して下さい。
 0x08C36CA0 モーションの切替時に自動で補間するかを設定して下さい。
