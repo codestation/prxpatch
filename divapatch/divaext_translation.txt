@@ -250,7 +250,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/11/29          -codestation
+!x08845B8C PD extend patch 2011/12/03          -codestation
 
 ### EDIT MODE ###
 
@@ -1302,6 +1302,43 @@ $x08883008 Create a Edit data with in-game music.
 !x0894E344 Navigation timer
 !x0894E350 Wake-up timer
 
+# DIVA room: timers
+
+!x08940624 Sleep timer
+!x08940D74 Sleep timer
+!x08940E80 Sleep timer
+
+!x08940844 Navigation timer
+!x0894195C Navigation timer
+
+!x08940954 "Sleep timer function"
+!x08940968 The sleep timer will automatically enter in
+!x0894097C sleep mode after the specified time (in minutes).
+!x08940990 Is necessary to save the system data.
+
+!x08940A10 "Navigation timer function"
+!x08940A24 An alarm function will sound after
+!x08940A38 the time specified (in minutes).
+
+^x089409D8 Return to the DIVA room.
+$x08940A5C Return to the DIVA room.
+
+^x089409E4 Return to the DIVA room.
+$x08940A80 Return to the DIVA room.
+
+!x0891A554 Wake-up timer
+!x0891B48C Wake-up timer
+!x0891B998 Wake-up timer
+
+!x0891B2F0 "Wake-up timer function"
+!x0891B304 The wake-up timer will play an MP3 file
+!x0891B318 at the specified time. You will need
+!x0891B32C to save the system data.
+
+!x0891B3A8 Return to the DIVA room.
+
+#!x0891C0D4 .mp3
+
 # (PD2nd savedata detection)
 
 !x089522F0 you may import system data from
@@ -1341,6 +1378,90 @@ $x08883008 Create a Edit data with in-game music.
 !x089A8860 フレンド情報を保存するには
 !x089A888C システムデータの保存が必要です。
 !x089A88F0 Profile exchanged.
+
+# DIVA room: Image gallery
+
+0x08C304FC OP demo movie
+0x08C30500 Bonus movie 1
+0x08C30504 Bonus movie 2
+0x08C30508 Staff credits
+0x08C3050C Loading screen
+0x08C30510 Loading screen
+0x08C30514 Loading screen
+0x08C30518 Loading screen
+0x08C3051C Loading screen
+0x08C30520 Loading screen
+0x08C30524 Loading screen
+0x08C30528 Loading screen
+0x08C3052C Loading screen
+0x08C30530 Loading screen
+0x08C30534 Loading screen
+0x08C30538 Loading screen
+0x08C3053C Loading screen
+0x08C30540 Loading screen
+0x08C30544 Loading screen
+0x08C30548 Loading screen
+0x08C3054C Loading screen
+0x08C30550 Loading screen
+0x08C30554 Loading screen
+0x08C30558 Loading screen
+0x08C3055C Loading screen
+0x08C30560 Loading screen
+0x08C30564 Loading screen
+0x08C30568 Loading screen
+0x08C3056C Loading screen
+0x08C30570 Loading screen
+0x08C30574 Loading screen
+0x08C30578 Loading screen
+0x08C3057C Loading screen
+0x08C30580 Loading screen
+0x08C30584 Loading screen
+0x08C30588 Loading screen
+0x08C3058C Room items
+0x08C30590 Room items
+0x08C305A4 riria009
+0x08C305A8 nezuki
+0x08C305AC さゆ吉
+0x08C305B0 宇木敦哉
+0x08C305B4 縣
+0x08C305B8 redjuice
+0x08C305BC 南方研究所
+0x08C305C0 refeia
+0x08C305C4 NEGI
+0x08C305C8 meola
+0x08C305CC 仕事してP
+0x08C305D0 田村ヒロ
+0x08C305D4 りょーの
+0x08C305D8 まくら
+0x08C305DC 憂
+0x08C305E0 あんこ
+0x08C305E4 ソニックチーム
+0x08C305E8 スミス・ヒオカ
+0x08C305EC CAFFEIN
+0x08C305F0 daigoman
+0x08C305F4 バンダイナムコゲームス
+0x08C305F8 カトキハジメ
+0x08C305FC 結んで開いて羅刹と骸
+0x08C30600 ＊ハロー、プラネット。
+0x08C30604 カラフル×セクシィ
+0x08C30608 Append set
+0x08C3060C Racing set
+0x08C30610 All character set
+0x08C30614 Swimwear module set
+0x08C30618 Christmas module set
+0x08C3061C KEI
+0x08C30620 KEI
+0x08C30624 KEI
+0x08C30628 KEI
+!x08817804 Go to staff credits
+!x0881873C Return to the DIVA room.
+
+# Profile default messages
+
+!x0881DD48 Please enter a nickname
+!x0881DD70 Enter the name of your favorite song
+!x0881DD98 Please enter a comment
+!x0881DDC0 Type a note
 
 # Module list
 
@@ -2664,3 +2785,7 @@ $x08883008 Create a Edit data with in-game music.
 0x08C66848 Playlist 1
 0x08C6684C Playlist 2
 0x08C66850 Playlist 3
+
+0x08C6686C Playlist 1
+0x08C66870 Playlist 2
+0x08C66874 Playlist 3
