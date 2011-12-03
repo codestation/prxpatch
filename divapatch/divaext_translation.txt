@@ -77,6 +77,16 @@
 !x08823CD4 [CHALLENGE] COOL&FINE
 !x08823CE0 [CHALLENGE] Survival
 
+# Character mood screen
+
+!x088291D8 Presents given  %03d
+!x088291DC Play count      %03d
+
+# Play records exit (confirm message)
+
+!x0882A4D4 Finish checking the records
+!x0882A4F8 and return to home?
+
 # Play Record
 
 !x0882A7D8 Menu
@@ -94,6 +104,124 @@
 !x0882ED1C Profile Settings
 !x0882A8E8 Friends
 !x08831D5C Friends
+
+# Music play info screen
+
+!x0882BA10 High score      MAX Combo     Clear    Play Count
+!x0882C654 High score      MAX Combo     Clear    Play Count
+#!x0882BA44 %-10s%07d      %04d              %04d
+#!x0882C67C %-10s%07d      %04d              %04d
+
+# Profile menu
+
+!x0882ED54 Check profile
+!x0882F7E0 Check profile
+!x0882ED78 Name
+!x0882ED9C Gender
+!x0882FF20 Gender
+!x0882EDC0 Favorite song
+!x08830224 Favorite song
+!x0882EDE4 Comment
+!x0882EE08 Title
+!x0882EE2C Thumbnail
+
+# Profile info message
+
+!x0882EFE0 Check your profile
+!x0882EFF4 settings so you can
+!x0882F008 send it via Ad-Hoc.
+
+# Profile menu right panel
+
+!x0882F058 [Name]
+!x0882F0E8 [Gender]
+!x0882F164 [Favorite song]
+!x08830420 [Favorite song]
+!x0882F1DC [Comment]
+!x0882F2E0 [Title]
+!x0882F394 [Thumbnail]
+
+# Profile: gender
+
+!x0882FF58 Male
+!x0882FF7C Female
+!x0882FFA0 ?
+
+# Profile: song selection
+
+!x0883025C Song selection
+!x08830684 Song selection
+!x08830280 Enter song name
+
+#!x08830464 ※No input
+
+# Profile: title selection
+
+!x08830E5C Title selection
+
+# Profile: thumbnail selection
+
+!x0883176C Thumbnail selection
+
+# Play records: Friends
+
+#!x08831DB0 %02d：%s
+#!x088324C0 ---/---
+#!x08832520  %02d/%02d
+#!x0883253C ---/%02d
+#!x088329E4 フレンドプロフィール
+#!x088334BC フレンド総合プレイ情報
+#!x088340B8 フレンド保護
+#!x08834134 保護設定を解除しますか？
+#!x08834158 保護設定を解除すると、
+#!x0883417C リストの規定人数を超えた場合に
+#!x088341A0 自動でリストから削除されます。
+#!x088341F0 フレンドは１０人までしか
+#!x08834214 保護設定できません。
+#!x08834238 既に設定されているフレンドの
+#!x0883425C 保護設定を解除して下さい。
+#!x0883429C 「%02d:%s」の
+#!x088342E0 プロフィール情報を保護設定しますか？
+#!x08834304 保護設定することで、リストの規定人数を
+#!x08834328 超えた場合でも自動削除されなくなります。
+#!x08834648 フレンド削除
+#!x088346BC 保護設定されているため
+#!x088346E0 削除することができません。
+#!x08834704 削除する場合は保護設定を
+#!x08834728 解除してください
+#!x08834788 「%02d:%s」を
+#!x088347CC Remove from Friends List?
+#!x088353E4 %02d/%02d
+#!x0883589C %02d/%02d
+
+# Gameplay info
+
+#!x08835440 %-36s%03d:%02d:%02d
+!x08835448 Play time
+#!x08835460 %-37s%08d
+!x08835468 Total DIVA points
+#!x08835480 %-41s%04d
+!x08835488 Gifts given
+#!x088354A8 %-40s---％
+#!x088354EC %-40s---％
+#!x08835538 %-40s---％
+#!x08835580 %-40s---％
+#!x088355C4 %-40s---％
+#!x0883560C %-40s---％
+!x08835364 Rhythm Game clear rate
+#!x088354C8 %-40s---％
+#!x08835510 %-40s---％
+#!x0883555C %-40s---％
+#!x088355A0 %-40s---％
+#!x088355E8 %-40s---％
+#!x08835630 %-40s---％
+!x08835368 Item acquisition rate
+!x0883536C Module acquisition rate
+!x08835370 Visual Library acquisition rate
+!x08835374 Title achievement rate
+!x08835378 Perfect achievement rate
+#!x08835674 %s：---％
+#!x08835678 %s：%03d％
 
 # Shop messages
 
@@ -2264,9 +2392,9 @@ $x08883008 Create a Edit data with in-game music.
 
 0x08C36BA4 Preset placement
 0x08C36BA8 Manual setting
-0x08C36BAC Set the starting pos.
-0x08C36BCC Set the starting pos.
-0x08C36BB0 Set the ending pos.
+0x08C36BAC Set starting pos.
+0x08C36BCC Set starting pos.
+0x08C36BB0 Set ending pos.
 0x08C36BB4 Set travel time
 0x08C36BDC Set travel time
 0x08C36BB8 Preview
