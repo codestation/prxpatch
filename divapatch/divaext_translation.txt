@@ -546,8 +546,8 @@ $x08883008 Create a Edit data with in-game music.
 0x08C36E5C Edit mode
 0x08C36E64 Edit mode
 
-0x08C36CEC エディットプレイ
-0x08C36CF4 エディット鑑賞
+0x08C36CEC Play Edit
+0x08C36CF4 Watch Edit
 
 0x08C36D04 Config. BPM
 0x08C36D10 Config. BPM
@@ -1861,7 +1861,7 @@ $x08940A80 Return to the DIVA room.
 0x08C31170 Perfect Magician
 0x08C31174 Perfect Maestro
 0x08C31178 Surpassed Challenge
-0x08C3117C 気分上々
+0x08C3117C On the Mood
 0x08C31180 Smooth Sailing
 0x08C31184 Voice of an Angel
 0x08C31188 Diva
@@ -1896,7 +1896,7 @@ $x08940A80 Return to the DIVA room.
 0x08C311FC Home Theater
 0x08C31200 Producer
 0x08C31204 Dreaded 1%
-0x08C31208 残念ながらSAFEでした
+0x08C31208 Unfortunate SAFE.
 0x08C3120C Surround
 0x08C31210 Rhythm Wave
 0x08C31214 Like To Dress-Up
@@ -1957,6 +1957,431 @@ $x08940A80 Return to the DIVA room.
 0x08C312F0 みっくみくにされました
 0x08C312F4 クリアおめでとう！
 0x08C312F8 称号マスター
+
+# Title conditions
+
+0x08C31604 Title given to players
+0x08C31608 just starting the game.
+
+0x08C31610 Title given to players
+0x08C31614 who have cleared all
+0x08C31618 songs on EASY.
+
+0x08C3161C Title given to players
+0x08C31620 who have cleared all
+0x08C31624 songs on NORMAL.
+
+0x08C31628 Title given to players
+0x08C3162C who have cleared all
+0x08C31630 songs on HARD.
+
+0x08C31634 Title given to players
+0x08C31638 who have cleared all
+0x08C3163C songs on EXTREME.
+
+0x08C31640 Title honoring players
+0x08C31644 who cleared all the EASY
+0x08C31648 songs with a PERFECT.
+
+0x08C3164C Title honoring players
+0x08C31650 who cleared all the NORMAL
+0x08C31654 songs with a PERFECT.
+
+0x08C31658 Title honoring players
+0x08C3165C who cleared all the HARD
+0x08C31660 songs with a PERFECT.
+
+0x08C31664 Title given when you
+0x08C31668 clear your first song
+0x08C3166C with a PERFECT.
+
+0x08C31670 Title given when you
+0x08C31674 clear your first EASY
+0x08C31678 song with a PERFECT.
+
+0x08C3167C Title given when you
+0x08C31680 clear your first NORMAL
+0x08C31684 song with a PERFECT.
+
+0x08C31688 Title given when you
+0x08C3168C clear your first HARD
+0x08C31690 song with a PERFECT.
+
+0x08C31694 Title given when you
+0x08C31698 clear your first EXTREME
+0x08C3169C song with a PERFECT.
+
+0x08C316A0 Title given to players who
+0x08C316A4 clears 3 different EXTREME
+0x08C316A8 songs with a PERFECT.
+
+0x08C316AC Title given to players who
+0x08C316B0 clears 5 different EXTREME
+0x08C316B4 songs with a PERFECT.
+
+0x08C316B8 Title given to players who
+0x08C316BC clears 10 different EXTREME
+0x08C316C0 songs with a PERFECT.
+
+0x08C316C4 Title given to players who
+0x08C316C8 clears 20 different EXTREME
+0x08C316CC songs with a PERFECT.
+
+0x08C316D0 Title honoring players who
+0x08C316D4 have cleared all the EXTREME
+0x08C316D8 songs with a PERFECT.
+
+0x08C316DC Obtain a MISSxTAKE ranking
+0x08C316E0 for the first time.
+0x08C316E4  
+
+0x08C316E8 Obtain a MISSxTAKE ranking
+0x08C316EC 50 times.
+0x08C316F0  
+
+0x08C316F4 Obtain a CHEAP ranking
+0x08C316F8 for the first time.
+0x08C316FC  
+
+0x08C31700 Obtain a CHEAP ranking
+0x08C31704 50 times.
+0x08C31708  
+
+0x08C3170C Title given to the players
+0x08C31710 who have cleared 50 songs
+0x08C31714 using Miku.
+
+0x08C31718 Title given to the players
+0x08C3171C who have cleared 100 songs
+0x08C31720 using Miku.
+
+0x08C31724 Title given to the players
+0x08C31728 who have cleared 50 songs
+0x08C3172C using Rin.
+
+0x08C31730 Title given to the players
+0x08C31734 who have cleared 100 songs
+0x08C31738 using Rin.
+
+0x08C3173C Title given to the players
+0x08C31740 who have cleared 50 songs
+0x08C31744 using Len.
+
+0x08C31748 Title given to the players
+0x08C3174C who have cleared 100 songs
+0x08C31750 using Len.
+
+0x08C31754 Title given to the players
+0x08C31758 who have cleared 50 songs
+0x08C3175C using Luka.
+
+0x08C31760 Title given to the players
+0x08C31764 who have cleared 100 songs
+0x08C31768 using Luka.
+
+0x08C3176C Title given to the players
+0x08C31770 who have cleared 50 songs
+0x08C31774 using Kaito.
+
+0x08C31778 Title given to the players
+0x08C3177C who have cleared 100 songs
+0x08C31780 using Kaito.
+
+0x08C31784 Title given to the players
+0x08C31788 who have cleared 50 songs
+0x08C3178C using Meiko.
+
+0x08C31790 Title given to the players
+0x08C31794 who have cleared 100 songs
+0x08C31798 using Meiko.
+
+0x08C3179C Title given to the players
+0x08C317A0 who have cleared 50 songs
+0x08C317A4 using Neru.
+
+0x08C317A8 Title given to the players
+0x08C317AC who have cleared 100 songs
+0x08C317B0 using Neru.
+
+0x08C317B4 Title given to the players
+0x08C317B8 who have cleared 50 songs
+0x08C317BC using Haku.
+
+0x08C317C0 Title given to the players
+0x08C317C4 who have cleared 100 songs
+0x08C317C8 using Haku.
+
+0x08C317CC Title given to the players
+0x08C317D0 who have cleared 50 songs
+0x08C317D4 using Sakine Meiko.
+
+0x08C317D8 Title given to the players
+0x08C317DC who have cleared 100 songs
+0x08C317E0 using Sakine Meiko.
+
+0x08C317E4 Title given to the player
+0x08C317E8 who used all the characters
+0x08C317EC at least once.
+
+0x08C317F0 Title given to the player
+0x08C317F4 who used all the characters
+0x08C317F8 at least 10 times.
+
+0x08C317FC Play one song 100 times.
+0x08C31800  
+
+0x08C31808 Title given to the players
+0x08C3180C who have played beyond
+0x08C31810 1000 songs.
+
+0x08C31814 Title given to the players
+0x08C31818 who have used more than 50
+0x08C3181C help items.
+
+0x08C31820 Title given to the players
+0x08C31824 who have used more than 100
+0x08C31828 help items.
+
+0x08C3182C Title given to the player
+0x08C31830 who have watched 50 PV.
+
+0x08C31838 Title given to the player
+0x08C3183C who watched every PV.
+
+0x08C31844 Title given when get a
+0x08C31848 CLEAR RATING of 99％ in
+0x08C3184C a rhythm game.
+
+0x08C31850 Title given when clearing
+0x08C31854 a game with only "1" SAFE
+0x08C31858 away from a PERFECT.
+
+0x08C3185C Title given to the player who
+0x08C31860 unlocks the 50％ of the songs.
+
+0x08C31868 Title given to the player who
+0x08C3186C unlocks the 100％ of the songs.
+
+0x08C31874 Title given to the players
+0x08C31878 who collects more than 20％
+0x08C3187C of the modules.
+
+0x08C31880 Title given to the players
+0x08C31884 who collects more than 50％
+0x08C31888 of the modules.
+
+0x08C3188C Title given to the players
+0x08C31890 who collects more than 80％
+0x08C31894 of the modules.
+
+0x08C31898 Title awarded to the player
+0x08C3189C who collects all the modules.
+
+0x08C318A4 Title awarded to the player
+0x08C318A8 who collected all the modules
+0x08C318AC of Hatsune Miku.
+
+0x08C318B0 Title awarded to the player
+0x08C318B4 who collected all the modules
+0x08C318B8 of Kagamine Rin.
+
+0x08C318BC Title awarded to the player
+0x08C318C0 who collected all the modules
+0x08C318C4 of Kagamine Len.
+
+0x08C318C8 Title awarded to the player
+0x08C318CC who collected all the modules
+0x08C318D0 of Megurine Luka
+
+0x08C318D4 Title awarded to the player
+0x08C318D8 who collected all the modules
+0x08C318DC of Kaito.
+
+0x08C318E0 Title awarded to the player
+0x08C318E4 who collected all the modules
+0x08C318E8 of Meiko.
+
+0x08C318EC Title awarded to the player
+0x08C318F0 who collected all the modules
+0x08C318F4 of Akita Neru.
+
+0x08C318F8 Title awarded to the player
+0x08C318FC who collected all the modules
+0x08C31900 of Yowane Haku.
+
+0x08C31904 Title awarded to the player
+0x08C31908 who collected all the modules
+0x08C3190C of Sakine Meiko.
+
+0x08C31910 Title awarded to the player
+0x08C31914 who collected all the Sega
+0x08C31918 collaboration modules.
+
+0x08C3191C Title awarded to the player
+0x08C31920 who collected all the
+0x08C31924 swimwear modules.
+
+0x08C31928 Title given to the players
+0x08C3192C who collects more than 50％
+0x08C31930 of the room themes.
+
+0x08C31934 Title given to the players
+0x08C31938 who collected all the 
+0x08C3193C room themes.
+
+0x08C31940 Title given to the players
+0x08C31944 who collects more than 20％
+0x08C31948 of the room items.
+
+0x08C3194C Title given to the players
+0x08C31950 who collects more than 50％
+0x08C31954 of the room items.
+
+0x08C31958 Title given to the players
+0x08C3195C who collects more than 80％
+0x08C31960 of the room items.
+
+0x08C31964 Title given to the players
+0x08C31968 who collected all the
+0x08C3196C room items.
+
+0x08C31970 ルームテーマを10回変更した
+0x08C31974 プレイヤーに与えられる称号。
+
+0x08C3197C ルームテーマを50回変更した
+0x08C31980 プレイヤーに与えられる称号。
+
+0x08C31988 ルームテーマを100回変更した
+0x08C3198C プレイヤーに与えられる称号。
+
+0x08C31994 DIVAルームに100回訪れた
+0x08C31998 プレイヤーに与えられる称号。
+
+0x08C319A0 DIVAルームのイベントを
+0x08C319A4 コンプリートしたプレイヤーに
+0x08C319A8 与えられる称号。
+
+0x08C319AC DIVAポイントの累計が
+0x08C319B0 100,000を突破した
+0x08C319B4 プレイヤーに与えられる称号。
+
+0x08C319B8 DIVAポイントの累計が
+0x08C319BC 500,000を突破した
+0x08C319C0 プレイヤーに与えられる称号。
+
+0x08C319C4 DIVAポイントの累計が
+0x08C319C8 1,000,000を突破した
+0x08C319CC プレイヤーに与えられる称号。
+
+0x08C319D0 DIVAポイントの累計が
+0x08C319D4 5,000,000を突破した
+0x08C319D8 プレイヤーに与えられる称号。
+
+0x08C319DC DIVAポイントの累計が
+0x08C319E0 10,000,000を突破した
+0x08C319E4 プレイヤーに与えられる称号。
+
+0x08C319E8 DIVAポイントの累計が
+0x08C319EC 50,000,000を突破した
+0x08C319F0 プレイヤーに与えられる称号。
+
+0x08C319F4 DIVAポイントの累計が
+0x08C319F8 99,999,999に到達した
+0x08C319FC プレイヤーに捧げられる称号。
+
+0x08C31A00 初音ミクの機嫌が
+0x08C31A04 HAPPYになったプレイヤーに
+0x08C31A08 贈られる称号。
+
+0x08C31A0C 鏡音リンの機嫌が
+0x08C31A10 HAPPYになったプレイヤーに
+0x08C31A14 贈られる称号。
+
+0x08C31A18 鏡音レンの機嫌が
+0x08C31A1C HAPPYになったプレイヤーに
+0x08C31A20 贈られる称号。
+
+0x08C31A24 巡音ルカの機嫌が
+0x08C31A28 HAPPYになったプレイヤーに
+0x08C31A2C 贈られる称号。
+
+0x08C31A30 カイトの機嫌が
+0x08C31A34 HAPPYになったプレイヤーに
+0x08C31A38 贈られる称号。
+
+0x08C31A3C メイコの機嫌が
+0x08C31A40 HAPPYになったプレイヤーに
+0x08C31A44 贈られる称号。
+
+0x08C31A48 亞北ネルの機嫌が
+0x08C31A4C HAPPYになったプレイヤーに
+0x08C31A50 贈られる称号。
+
+0x08C31A54 弱音ハクの機嫌が
+0x08C31A58 HAPPYになったプレイヤーに
+0x08C31A5C 贈られる称号。
+
+0x08C31A60 咲音メイコの機嫌が
+0x08C31A64 HAPPYになったプレイヤーに
+0x08C31A68 贈られる称号。
+
+0x08C31A6C 全キャラクターの機嫌が
+0x08C31A70 HAPPYになったプレイヤーに
+0x08C31A74 贈られる称号。
+
+0x08C31A78 キャラクターへのプレゼントの
+0x08C31A7C 回数が50回を超えると
+0x08C31A80 与えられる称号。
+
+0x08C31A84 キャラクターへのプレゼントの
+0x08C31A88 回数が100回を超えると
+0x08C31A8C 与えられる称号。
+
+0x08C31A90 エディットプレイを
+0x08C31A94 10回プレイしたプレイヤーに
+0x08C31A98 与えられる称号。
+
+0x08C31A9C エディットプレイを
+0x08C31AA0 50回プレイしたプレイヤーに
+0x08C31AA4 与えられる称号。
+
+0x08C31AA8 エディットモードに100時間を
+0x08C31AAC 費やしたプレイヤーに
+0x08C31AB0 与えられる称号。
+
+0x08C31AB4 プレイ時間が24時間を突破した
+0x08C31AB8 プレイヤーに与えられる称号。
+
+0x08C31AC0 プレイ時間が50時間を突破した
+0x08C31AC4 プレイヤーに与えられる称号。
+
+0x08C31ACC プレイ時間が100時間を突破した
+0x08C31AD0 プレイヤーに与えられる称号。
+
+0x08C31AD8 ロードイラストの
+0x08C31ADC 収集率が50％を超えた
+0x08C31AE0 プレイヤーに与えられる称号。
+
+0x08C31AE4 全てのロードイラストを
+0x08C31AE8 収集したプレイヤーに
+0x08C31AEC 捧げられる称号。
+
+0x08C31AF0 ビジュアルライブラリの
+0x08C31AF4 収集率が100％に到達した
+0x08C31AF8 プレイヤーに与えられる称号。
+
+0x08C31AFC フレンドの登録数が50人に
+0x08C31B00 到達したとき与えられる称号。
+
+0x08C31B08 「初音ミク -Project DIVA- 2nd」
+0x08C31B0C のプレイデータを引きついだ
+0x08C31B10 プレイヤーに贈られる称号。
+
+0x08C31B14 スタッフロールを見たプレイヤーに
+0x08C31B18 捧げられる称号。
+
+0x08C31B20 全ての称号を獲得したプレイヤーに
+0x08C31B24 捧げられる称号。
 
 # Shop menu headers
 
