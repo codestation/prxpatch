@@ -27,14 +27,16 @@
 
 #define ITEMSOF(arr) (int)(sizeof(arr) / sizeof(0[arr]))
 
-#define DIVACPK_PATH  "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk"
-#define DIVA2CPK_PATH "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk"
+const char *cpk_pack[] = {
+        "disc0:/PSP_GAME/USRDIR/media/afs/DivaDataList.afs",
+        "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk",
+        "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk",
+        "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk",
+};
 
 const char *image_files[] = {
         "diva1st_images.bin",
         "diva2nd_images.bin",
-        "divaext_images_demo1.bin",
-        "divaext_images_demo2.bin",
         "divaext_images.bin",
         "divaext_images.bin",
 };
@@ -46,6 +48,7 @@ static SceUID block_id;
 u32 cpk_count = 0;
 cpknode *cpk_table;
 char *image_filenames;
+const char *cpk_file;
 
 static SceUID open_file(const char *file) {
     int ret = -1;
@@ -100,6 +103,8 @@ int load_image_index(int file_index) {
     image_filenames = (char *)block_addr + index_size;
     kprintf("image filenames start: %08X\n", (u32)image_filenames);
 
+    // save the correct cpk container to use
+    cpk_file = cpk_pack[file_index];
     return 1;
 }
 
@@ -108,8 +113,8 @@ SceUID diva_open(const char *file, int flags, SceMode mode) {
     if (fd >= 0) {
         // if the opened file is our cpk then lets save the file descriptor so
         // we can recognize it later
-        if (strcmp(file, DIVACPK_PATH) == 0) {
-            kprintf("diva2exdata.cpk opened\n");
+        if (strcmp(file, cpk_file) == 0) {
+            kprintf("%s opened\n", cpk_file);
             datafd = fd;
         }
     }
@@ -157,6 +162,7 @@ int diva_close(SceUID fd) {
     if (fd == datafd) {
         // clear our file descriptor
         datafd = -1;
+        kprintf("%s closed\n", cpk_file);
     }
     return sceIoClose(fd);
 }

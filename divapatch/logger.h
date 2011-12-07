@@ -20,7 +20,7 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
-//#include <string.h>
+#include <string.h>
 
 #ifdef DEBUG
 

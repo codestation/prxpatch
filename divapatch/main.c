@@ -20,10 +20,12 @@
 #include <pspkernel.h>
 #include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
+#include <pspimpose_driver.h>
 #include <string.h>
 #include "pspdefs.h"
 #include "hook.h"
 #include "reader.h"
+#include "utility.h"
 #include "logger.h"
 
 #define PLUGIN_NAME "divapatch"
@@ -49,8 +51,6 @@ typedef struct {
 const char *diva_id[] = {
         "ULJM05472", // Project Diva
         "ULJM05681", // Project Diva 2nd
-        "NPJH90226", // Project Diva Extend TGS Demo 1
-        "NPJH90227", // Project Diva Extend Demo 2
         "ULJM05933", // Project Diva Extend
 		"NPJH50465", // Project Diva Extend
 };
@@ -58,8 +58,6 @@ const char *diva_id[] = {
 const char *trans_files[] = {
         "diva1st_translation.bin",
         "diva2nd_translation.bin",
-        "divaext_demo1.bin",
-        "divaext_demo2.bin",
         "divaext_translation.bin",
         "divaext_translation.bin",
 };
@@ -67,8 +65,6 @@ const char *trans_files[] = {
 const char *embedded_files[] = {
         "diva1st_embedded.bin",
         "diva2nd_embedded.bin",
-        "divaext_demo1_emb.bin",
-        "divaext_demo2_emb.bin",
         "divaext_embedded.bin",
         "divaext_embedded.bin",
 };
@@ -79,14 +75,24 @@ const stub stubs[] = {
         { 0x810C4BC3, diva_close }, // sceIoClose
 };
 
+const stub utility_stubs[] = {
+        { 0x50C4CD57, diva_save  }, // sceUtilitySavedataInitStart
+        { 0xF6269B82, diva_osk   }, // sceUtilityOskInitStart
+        { 0x4DB1E739, diva_net  }, // sceUtilityNetconfInitStart
+};
+
 char filepath[256];
-static STMOD_HANDLER previous = NULL;
+
 static SceUID block_id = -1;
 static SceUID table_id = -1;
+static int patch_index = -1;
+
 static void *block_addr = NULL;
 static void *table_addr = NULL;
-static int patch_index = -1;
-SceUID sema = 0;
+
+static STMOD_HANDLER previous = NULL;
+
+static SceUID sema = 0;
 
 inline void DcacheWritebackAll(void) {
     __asm__ volatile("\
@@ -329,7 +335,7 @@ void patch_eboot()  {
                 }
             }
             if(j >= 32) {
-                kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data.addr);
+                kprintf("Backtrace failed, cannot find matching lui for %08X\n", (u32)data->addr);
             }
         } else {
             // the address to patch is in clear view so we don't have to do all crap above and
@@ -344,7 +350,7 @@ void patch_eboot()  {
 
 /**
  * Gets our gameid from the UMD disk (there is a function who returns that but sadly
- * not all CFW resolver that function NID).
+ * not all CFW resolves that function NID).
  */
 int get_gameid(char *gameid) {
     SceUID fd = sceIoOpen(GAMEID_DIR, PSP_O_RDONLY, 0777);
@@ -407,6 +413,25 @@ void patch_imports(SceModule *module) {
     }
 }
 
+/**
+ * Patch the imports of the game eboot (osk/net/save dialogs)
+ * @param module: module structure to have it hooked
+ */
+void patch_utility(SceModule *module) {
+    for (u32 i = 0; i < ITEMSOF(stubs); i++) {
+        if(hook_import_bynid(module, "sceUtility", utility_stubs[i].nid, utility_stubs[i].func, 1) < 0) {
+            kprintf("Failed to hook %08X\n", utility_stubs[i].nid);
+        }
+    }
+}
+
+void change_lang(int lang) {
+    int button;
+
+    sceImposeGetLanguageMode((int[]){0}, &button);
+    sceImposeSetLanguageMode(lang, button);
+}
+
 int thread_start(SceSize args, void *argp) {
     // save the plugin location
     strcpy(filepath, argp);
@@ -420,22 +445,29 @@ int thread_start(SceSize args, void *argp) {
     sceKernelWaitSema(sema, 1, NULL);
 
     // load the image index table
-    if(patch_index >= 0 && load_image_index(patch_index)) {
-        kprintf("patching imports\n");
-        SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
-        if (module) {
-            // redirect the file open, read and close operations to our plugin
-            patch_imports(module);
-        }
-        // 0x333A34AE == nploader's np_open NID
-        u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
-        if(func) {
-            kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
-            module = sceKernelFindModuleByName(PLUGIN_NAME);
-            // 0x109F50BC == sceIoOpen NID
-            if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
-                kprintf("Failed to hook %08X\n", 0x109F50BC);
+    if(patch_index >= 0) {
+        // change the impose language
+        change_lang(PSP_SYSTEMPARAM_LANGUAGE_ENGLISH);
+        if(load_image_index(patch_index)) {
+            SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+            if (module) {
+                // redirect the file open, read and close operations to our plugin
+                kprintf("patching imports\n");
+                patch_imports(module);
+
+                kprintf("patching utility funcs\n");
+                patch_utility(module);
             }
+            // 0x333A34AE == nploader's np_open NID
+            u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
+            if(func) {
+                kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
+                module = sceKernelFindModuleByName(PLUGIN_NAME);
+                // 0x109F50BC == sceIoOpen NID
+                if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
+                    kprintf("Failed to hook %08X\n", 0x109F50BC);
+                }
+        }
         }
     } else {
         kprintf("the image index wasn't found\n");

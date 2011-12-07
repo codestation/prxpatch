@@ -1,5 +1,5 @@
 TARGET = divapatch
-OBJS =  main.o exports.o imports.o logger.o hook.o reader.o search.o
+OBJS =  main.o exports.o imports.o logger.o hook.o reader.o search.o utility.o
 
 LIBS =
 WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code -Wno-unused-parameter
