@@ -12,6 +12,7 @@
 0x007FC000 menu_title_room.png
 0x007FE000 menu_title_optn.png
 0x00800000 menu_title_edit.png
+0x0080B800 home_base_02.png
 0x0085E000 mtit_base_01.png
 0x00868800 mtit_base_02.png
 0x181FB800 pv_start_37.png
@@ -53,6 +54,7 @@
 0x182C2000 pv_start_97.png
 0x182C8000 pv_start_edit.png
 0x182CD000 pv_rank_01.png
+0x182D3000 menu_result.png
 0x1A4DD000 edit_base_04.png
 0x1A4E1000 plst_base_01.png
 0x1E8BE800 menu_title_plys.png
