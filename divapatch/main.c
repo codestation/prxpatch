@@ -380,8 +380,7 @@ int module_start_handler(SceModule2 * module) {
 
         if(get_gameid(gameid) >= 0) {
             kprintf("GAMEID: %s\n", gameid);
-            //FIXME: change the "for" lower bound to zero if a patch for Project Diva 1st is made
-            for(int i = 1; i < ITEMSOF(diva_id); i++) {
+             for(int i = 0; i < ITEMSOF(diva_id); i++) {
                 if(strcmp(gameid, diva_id[i]) == 0) {
                     kprintf("found match: %i\n", i);
                     patch_index = i;
@@ -393,7 +392,7 @@ int module_start_handler(SceModule2 * module) {
                 patch_embedded();
                 patch_eboot();
                 clear_caches();
-                // wake up our main thread so it can hook the file i/o funs of the game
+                // wake up our main thread so it can hook the file i/o funcs of the game
                 sceKernelSignalSema(sema, 1);
             }
         }

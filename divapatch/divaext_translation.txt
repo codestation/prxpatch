@@ -14,9 +14,9 @@
 #
 # EBOOT reversing and translation: codestation
 # EBOOT reversing helper: Sonic DX
-# translation helpers: HeroKing, naki-the-curious, kienono
+# translation helpers: HeroKing, naki-the-curious, kienono, Loserbait, nipah
 
-# Data import menu entries
+# Options: Data import
 
 !x0881562C Rhythm Game PV
 !x08815640 Modules
@@ -30,7 +30,7 @@
 !x088156E0 Edit items
 !x088156F4 Edit effects
 
-# Data import menu descriptions
+# Options: Data import menu descriptions
 
 !x0881590C Would you like to import the additional data
 !x08815920 inside the selected category as Extra content?
@@ -87,7 +87,7 @@
 !x0882A4D4 Finish checking the records
 !x0882A4F8 and return to home?
 
-# Play Record
+# Play Records
 
 !x0882A7D8 Menu
 !x0882A810 Gameplay Info
@@ -167,7 +167,7 @@
 
 !x0883176C Thumbnail selection
 
-# Play records: Friends
+# Play records: Friends (uncomment after translate)
 
 #!x08831DB0 %02d：%s
 #!x088324C0 ---/---
@@ -254,9 +254,9 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/12/07          -codestation
+!x08845B8C PD extend patch 2011/12/11          -codestation
 
-### EDIT MODE ###
+### EDIT MODE ### (max menu entry lenght: 25)
 
 !x08847268 Character
 !x0884A8F0 Character
@@ -339,7 +339,7 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x0887E2DC Convert PD 2nd data
 !x0887E2F0 Convert PD 1st data
 !x0887E318 Additional content check
-!x088819F4 追加データ確認
+!x088819F4 Additional content check
 !x0887E32C Back to home
 
 !x0887E8D4 Finish the Edit mode
@@ -464,7 +464,7 @@ $x08883008 Create a Edit data with in-game music.
 !x0889D9F8 Set the effects to be used in the Edit.
 !x0889DAEC Set the effects to be used in the Edit.
 
-!x0889E84C 【プリセット%d】
+!x0889E84C [Preset %d]
 ^x0889F3B4 Unit
 ^x0889F3E8 Unit
 !x0889F414 Unit
@@ -775,8 +775,8 @@ $x08883008 Create a Edit data with in-game music.
 !x0886F7C8 楽曲開始時間設定
 !x0886F7DC Scale settings
 !x0887A820 Scale settings
-!x0886F804 Automated lip synchronization
-!x0887ABC4 Automated lip synchronization
+!x0886F804 Automatic lip input
+!x0887ABC4 Automatic lip input
 !x0886F818 Delete command
 !x0886F82C Go to Edit TOP
 !x0886F840 Go to Mode selection
@@ -793,13 +793,13 @@ $x08883008 Create a Edit data with in-game music.
 !x0887281C 『システム』画面の『データ』からセーブを行ってください。
 !x08873958 Edit mode
 
-# edit TOP information messages
+# Edit mode: Edit TOP -> information messages
 
-!x08873B90 Edit beats and BPM.
-!x08873BCC Edit display position, input, target, etc.
-!x08873C08 Edit the motion and facial expression of the character.
+!x08873B90 Change the beat number and BPM.
+!x08873BCC Change the display position, input, target, etc.
+!x08873C08 Edit the motion and facial expressions of the character.
 !x08873C44 Edit the stage-related cameras and background.
-!x08873C80 Set the poition of the bar and the song end.
+!x08873C80 Set the poition of the bar and the song ending.
 
 !x088741C4 選択された小節のデータを
 !x08874200 削除しますがよろしいですか？
@@ -886,12 +886,16 @@ $x088791F8 ※エディット名は未入力です
 !x08893D68 Module B
 !x0887AC6C Both
 !x0887C0F4 Both
+
+# Edit mode: System -> automatic lip input message
+
 !x0887AF2C 歌詞の入力された拍に、
 !x0887AF58 口パクが自動で入力されます。
 !x0887AF84 入力済みの拍には自動入力されません。
 !x0887AFB0 配置容量が足りない場合は
 !x0887AFDC 途中で入力が止まります。
 !x0887B008 自動口パク入力を実行しますか？
+
 !x0887B254 自動口パクを入力しています。
 !x0887B3B0 自動口パク入力が完了しました。
 !x0887B81C 配置されているデータを全て削除します。
@@ -982,12 +986,12 @@ $x088791F8 ※エディット名は未入力です
 !x088B6EC8 Edit TOP
 !x088B7790 Edit TOP
 !x088B7AFC Edit TOP
-!x088B67B4 Tempo
-!x088B6EDC Tempo
-!x088B77A4 Tempo
-!x088B7B10 Tempo
-!x088B6808 Config. changes
-!x088B6EF0 Config. changes
+!x088B67B4 Rhythm
+!x088B6EDC Rhythm
+!x088B77A4 Rhythm
+!x088B7B10 Rhythm
+!x088B6808 Change settings
+!x088B6EF0 Change settings
 !x088B681C Marker entry
 !x088B7B24 Marker entry
 !x088B6830 Real-time input
@@ -998,8 +1002,8 @@ $x088791F8 ※エディット名は未入力です
 !x088B6970 Tempo %7d/4
 !x088B730C Tempo %7d/4
 !x088B9034 Tempo %7d/4
-!x088B6A04 BPM・拍子の設定を変更することができます。
-!x088B6B4C BPM・拍子の設定を変更することができます。
+!x088B6A04 Change the BPM time signature.
+!x088B6B4C Change the BPM time signature.
 !x088B6A10 ○ボタンで指定の位置に目印をつけることができます。
 !x088B6B58 ○ボタンで指定の位置に目印をつけることができます。
 !x088B6A1C 楽曲に合わせて、拍数に目印をつけていくことができます。
@@ -1009,8 +1013,8 @@ $x088791F8 ※エディット名は未入力です
 !x088B8A78 楽曲のテンポを変更することができます。
 !x088B75B8 BPMの設定を変更しています……
 !x088B7634 BPMの設定を変更しています……
-!x088B7754 最初から
-!x088B7768 途中から
+!x088B7754 From the start
+!x088B7768 From halfway
 !x088B77C4 2小節目からリアルタイムでマーカーを入力することができます。
 !x088B7884 2小節目からリアルタイムでマーカーを入力することができます。
 !x088B7890 現在の小節からリアルタイムでマーカーを入力することができます。 
@@ -1048,38 +1052,38 @@ $x088791F8 ※エディット名は未入力です
 0x08C31344 Painful
 0x08C31348 Healthy
 0x08C3134C Motivated
-0x08C31350 通常
-!x08823EE0 通常
+0x08C31350 Normal
+!x08823EE0 Normal
 0x08C31354 Closed eyes
 
 !x08823E80 あ
 !x08823E8C い
 
-# Edit mode: rhythm menu entries
+# Edit mode: stage submenu
 
 0x08C43D08 設定を反映しますか？
 0x08C43D14 選択された項目を削除します。
 0x08C43D18 よろしいですか？
 0x08C43D24 よろしいですか？
 0x08C43D20 選択された項目を初期化します。
-0x08C43D2C カメラ
-0x08C43D30 背景設定
-0x08C43D34 エフェクト
-0x08C43D38 歌詞
-0x08C43D3C プリセットカメラ
-0x08C43D40 手動設定
-0x08C43D44 開始位置設定
-0x08C43D48 終了位置設定
+0x08C43D2C Camera
+0x08C43D30 Background
+0x08C43D34 Effects
+0x08C43D38 Lyrics
+0x08C43D3C Camera presets
+0x08C43D40 Set manually
+0x08C43D44 Set starting pos.
+0x08C43D48 Set ending pos.
 0x08C43D4C 移動時間設定
 0x08C43D50 加速度設定
-0x08C43D54 プレビュー
-0x08C43D58 決定
-0x08C43D70 決定
-0x08C43D5C 固定プリセット
-0x08C43D60 移動プリセット
-0x08C43D64 歌詞入力
-0x08C43D68 文字色選択
-0x08C43D6C 表示時間
+0x08C43D54 Preview
+0x08C43D58 Confirm
+0x08C43D70 Confirm
+0x08C43D5C Fixed presets
+0x08C43D60 Moving presets
+0x08C43D64 Lyric input
+0x08C43D68 Choose font color
+0x08C43D6C Display time
 0x08C43D74 カメラの設定をすることができます。
 0x08C43D78 背景の設定をすることができます。
 0x08C43D7C エフェクトの設定をすることができます。
@@ -1108,39 +1112,39 @@ $x088791F8 ※エディット名は未入力です
 0x08C43DF0 現在の歌詞設定を反映させることができます。
 0x08C43DF8 歌詞の文字色を選択して下さい。
 0x08C43DFC 方向キー左右で、歌詞の表示時間を設定して下さい。
-!x088BC860 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：%0.1f)
-!x088BC878 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数： %0.1f)
-!x088BC88C %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：  %0.1f)
-^x088BC880 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
-$x088BC890 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
-!x088BF12C エディットTOP
-!x088BF7A4 エディットTOP
-!x088C027C エディットTOP
-!x088C087C エディットTOP
-!x088C19DC エディットTOP
-!x088CACEC エディットTOP
-!x088BF140 ステージ
-!x088BF7B8 ステージ
-!x088C0290 ステージ
-!x088C0890 ステージ
-!x088C19F0 ステージ
-!x088C20FC ステージ
-!x088C24DC ステージ
-!x088C26A4 ステージ
-!x088C2CF4 ステージ
-!x088C2E28 ステージ
-!x088C44B4 ステージ
-!x088C624C ステージ
-!x088C6FD8 ステージ
-!x088C7D54 ステージ
-!x088C9240 ステージ
-!x088CA640 ステージ
-!x088CAD00 ステージ
-!x088CB5AC ステージ
-!x088CBA4C ステージ
-!x088BF960 編集モード
-!x088C0C08 なし
-!x088CCDB4 なし
+!x088BC860 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
+!x088BC878 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats： %0.1f)
+!x088BC88C %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：  %0.1f)
+^x088BC880 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
+$x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
+!x088BF12C Edit TOP
+!x088BF7A4 Edit TOP
+!x088C027C Edit TOP
+!x088C087C Edit TOP
+!x088C19DC Edit TOP
+!x088CACEC Edit TOP
+!x088BF140 Stage
+!x088BF7B8 Stage
+!x088C0290 Stage
+!x088C0890 Stage
+!x088C19F0 Stage
+!x088C20FC Stage
+!x088C24DC Stage
+!x088C26A4 Stage
+!x088C2CF4 Stage
+!x088C2E28 Stage
+!x088C44B4 Stage
+!x088C624C Stage
+!x088C6FD8 Stage
+!x088C7D54 Stage
+!x088C9240 Stage
+!x088CA640 Stage
+!x088CAD00 Stage
+!x088CB5AC Stage
+!x088CBA4C Stage
+!x088BF960 Edit mode
+!x088C0C08 None
+!x088CCDB4 None
 !x088C10C0 SPEED      【%3d%%】
 !x088C4250 平行移動
 !x088C65F8 平行移動
@@ -1149,44 +1153,51 @@ $x088BC890 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
 !x088C6600 回転移動
 !x088C7388 回転移動
 !x088CA428 カメラ加速度【%4d%%】
-!x088CB6C4 白
-!x088CB6DC 黄色
-!x088CB6F0 赤
-!x088CB704 緑
-!x088CB718 青
-!x088CB72C オレンジ
-!x088CB740 ピンク
-!x088CB754 黒
-!x088CB958 歌詞サンプル
-!x088CCC1C カスタム
-!x088CD8E0 横　　[%3.3f]
-!x088CD8F0 奥行き[%3.3f]
-!x088CD918 高さ　[%3.3f]
-!x088CD694 角度　[%3.3f]
-!x088CD9AC 操作速度[%3d %%]
-!x088CEE94 エディットTOP
-!x088CF7A0 エディットTOP
-!x088CFDEC エディットTOP
-!x088D085C エディットTOP
-!x088D1900 エディットTOP
-!x088D1DE4 エディットTOP
-!x088D6DB8 エディットTOP
-!x088CEEA8 ターゲット
-!x088CF7B4 ターゲット
-!x088CFE00 ターゲット
-!x088D0870 ターゲット
-!x088D1914 ターゲット
-!x088D1DF8 ターゲット
-!x088D6DCC ターゲット
-!x088CEF0C ターゲット入力
-!x088D0884 ターゲット入力
-!x088CEF20 配置設定
-!x088CEF34 リアルタイム入力
-!x088D1928 リアルタイム入力
-!x088CEF48 ターゲットプリセット
-!x088CFE14 ターゲットプリセット
-!x088CEF60 チャンスタイム
-!x088D1E0C チャンスタイム
+
+# Edit mode -> lyrics -> colors
+
+!x088CB6C4 White
+!x088CB6DC Yellow
+!x088CB6F0 Red
+!x088CB704 Green
+!x088CB718 Blue
+!x088CB72C Orange
+!x088CB740 Pink
+!x088CB754 Black
+
+!x088CB958 Sample lyrics
+!x088CCC1C Custom
+!x088CD8E0 Side   [%3.3f]
+!x088CD8F0 Depth  [%3.3f]
+!x088CD918 Height [%3.3f]
+!x088CD694 Angle  [%3.3f]
+!x088CD9AC Speed  [%3d %%]
+
+# Edit mode: Target submenu
+
+!x088CEE94 Edit TOP
+!x088CF7A0 Edit TOP
+!x088CFDEC Edit TOP
+!x088D085C Edit TOP
+!x088D1900 Edit TOP
+!x088D1DE4 Edit TOP
+!x088D6DB8 Edit TOP
+!x088CEEA8 Target
+!x088CF7B4 Target
+!x088CFE00 Target
+!x088D0870 Target
+!x088D1914 Target
+!x088D1DF8 Target
+!x088D6DCC Target
+!x088CEF0C Target input
+!x088D0884 Target input
+!x088CEF20 Placement settings
+!x088CEF34 Real-time input
+!x088D1928 Real-time input
+!x088CEF48 Target presets
+!x088CFE14 Target presets
+!x088CEF60 Chance time
+!x088D1E0C Chance time
 !x088CEF68 ○・×・□・△ボタンを押すと、ターゲットアイコンを配置できます。
 !x088CF2AC ○・×・□・△ボタンを押すと、ターゲットアイコンを配置できます。
 !x088CEF74 入力したターゲットアイコンの座標や方向を設定することができます。
@@ -1199,42 +1210,50 @@ $x088BC890 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
 !x088CF2DC チャンスタイムを設定することができます。
 !x088CFBB8 選択された項目を削除します
 !x088CFBCC よろしいですか？
-!x088CFE5C なし
-!x088CFE70 プリセット %4d
+!x088CFE5C None
+!x088CFE70 Preset %4d
 !x088CFF54 この小節に配置するターゲットパターンを選択することができます。
 !x088D4654 この小節に配置するターゲットパターンを選択することができます。
-!x088D08D0 通常入力
-!x088D08E4 同時押し入力
-!x088D08F8 長押し入力
-!x088D090C キャンセル
-!x088D0920 決定
+
+# Edit mode: target submenu -> target input
+
+!x088D08D0 Normal input
+!x088D08E4 Button + D-pad
+!x088D08F8 Press and hold
+!x088D090C Cancel
+!x088D0920 Confirm
 ^x088D0A44 ターゲットアイコンを直接入力することができます。
 !x088D0AF4 ターゲットアイコンを直接入力することができます。
 !x088D4B2C ターゲットアイコンを直接入力することができます。
-!x088D0E4C %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：%0.1f)
-!x088D27C4 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：%0.1f)
-!x088D1970 最初から
-!x088D1984 途中から
+!x088D0E4C %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
+!x088D27C4 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
+!x088D1970 From the start
+!x088D1984 From halfway
 !x088D1A5C 2小節目からリアルタイムでターゲットを入力することができます。
 !x088D1B10 2小節目からリアルタイムでターゲットを入力することができます。
 !x088D1B1C 現在の小節からリアルタイムでターゲットを入力することができます。
 !x088D1F9C チャンスタイムの開始位置を設定することができます。
 !x088D9384 チャンスタイムの開始位置を設定することができます。
-!x088D433C 編集モード
+!x088D433C Edit mode
 !x088D4B38 同時押しアイコンを入力することができます。
 !x088D4B44 長押しアイコンを入力することができます。（1拍以上の空きが必要）
 !x088D4B50 この小節でのターゲット入力をキャンセルすることができます。
 !x088D4B64 この小節でのターゲット入力を反映させることができます。
-!x088D6DE0 ターゲット配置設定
-!x088D6E30 座標と方向設定
-!x088D6E48 方向設定
-!x088D6E60 配置プリセット
-!x088D7D00 【カスタム】
-!x088D7D14 【プリセット%d】
+
+# Edit mode: target submenu -> placement settings
+
+!x088D6DE0 Target placement
+!x088D6E30 Coords & direction
+!x088D6E48 Set direction
+!x088D6E60 Placement presets
+!x088D7D00 [Custom]
+!x088D7D14 [Preset %d]
+
 !x088D9094 入力を行う小節以降のターゲットを消去し、
 !x088D90A8 リアルタイム入力を開始します。
 !x088D90BC BPMが合っていないと、曲とターゲットが
 !x088D90D0 ずれて表示されることがあります。
+
 !x088D9390 チャンスタイムの終了位置を設定することができます。
 
 # Rhythm Game default message
@@ -1580,6 +1599,7 @@ $x088BC890 %3d 小節 %1.1f 拍 ～ %3d 小節 %1.1f 拍 (総拍数：   %0.1f)
 !x0894097C sleep mode after the specified time (in minutes).
 !x08940990 Is necessary to save the system data.
 
+^x08940930 "Navigation timer function"
 !x08940A10 "Navigation timer function"
 !x08940A24 An alarm function will sound after
 !x08940A38 the time specified (in minutes).
@@ -2131,9 +2151,9 @@ $x08940A80 Return to the DIVA room.
 0x08C30E8C Nendoroid Snow Miku
 0x08C30E90 Shiteyanyo Mascot
 0x08C30E94 Nendoroid Hachune Miku
-0x08C30E98 Miku-Luka だま
-0x08C30E9C Rin-Len だま
-0x08C30EA0 Kaito-Meiko だま
+0x08C30E98 Miku-Luka Voca-lumps
+0x08C30E9C Rin-Len Voca-lumps
+0x08C30EA0 Kaito-Meiko Voca-lumps
 0x08C30EA4 Tea Set
 0x08C30EA8 Snow Globe
 0x08C30EAC Tapestry
@@ -2186,7 +2206,7 @@ $x08940A80 Return to the DIVA room.
 0x08C30F68 Illustration Poster 11
 0x08C30F6C Illustration Poster 12
 0x08C30F70 Miku Birthday Poster
-0x08C30F74 MEIKO SS Happi Coat
+0x08C30F74 MEIKO Guard Happi Coat
 0x08C30F78 Rin-Len Poster
 0x08C30F7C Luka Poster
 0x08C30F80 Kaito Poster
@@ -2260,7 +2280,7 @@ $x08940A80 Return to the DIVA room.
 0x08C311FC Home Theater
 0x08C31200 Producer
 0x08C31204 Dreaded 1%
-0x08C31208 Unfortunate SAFE.
+0x08C31208 Unfortunate SAFE
 0x08C3120C Surround
 0x08C31210 Rhythm Wave
 0x08C31214 Like To Dress-Up
@@ -2320,7 +2340,7 @@ $x08940A80 Return to the DIVA room.
 0x08C312EC フレンドゲッター
 0x08C312F0 みっくみくにされました
 0x08C312F4 クリアおめでとう！
-0x08C312F8 称号マスター
+0x08C312F8 Title Master
 
 # Title conditions
 
@@ -2744,8 +2764,8 @@ $x08940A80 Return to the DIVA room.
 0x08C31B14 スタッフロールを見たプレイヤーに
 0x08C31B18 捧げられる称号。
 
-0x08C31B20 全ての称号を獲得したプレイヤーに
-0x08C31B24 捧げられる称号。
+0x08C31B20 Title given to the player who
+0x08C31B24 got all the previous titles.
 
 # Shop menu headers
 
@@ -3296,7 +3316,7 @@ $x08940A80 Return to the DIVA room.
 0x08C36B8C Dyed cheeks
 0x08C36B90 Lip synchronization
 0x08C36B94 Looking at
-0x08C36B98 Eye blinking.
+0x08C36B98 Eye blinking
 0x08C36B9C Model display
 0x08C36BA0 Shadow
 
@@ -3312,8 +3332,8 @@ $x08940A80 Return to the DIVA room.
 0x08C36BBC Confirm
 0x08C36BD4 Confirm
 0x08C36BE4 Confirm
-0x08C36BC0 Fixed preset
-0x08C36BE8 Fixed preset
+0x08C36BC0 Fixed presets
+0x08C36BE8 Fixed presets
 0x08C36BC4 Movement preset
 0x08C36BEC Movement preset
 0x08C36BC8 Motion selection
@@ -3347,8 +3367,8 @@ $x08940A80 Return to the DIVA room.
 
 0x08C36C48 Select a character placement preset.
 0x08C36C4C Configure the character placement manually.
-0x08C36C50 Set the starting pos. of the character movement.
-0x08C36C54 Set the ending pos. of the character movement.
+0x08C36C50 Set the starting position of the character movement.
+0x08C36C54 Set the ending position of the character movement.
 0x08C36C58 Set time in beat numbers to move the character.
 0x08C36C5C View a preview of the character movements.
 0x08C36C60 Confirm the configured character movements.
@@ -3464,7 +3484,7 @@ $x08940A80 Return to the DIVA room.
 0x08C3E19C YO！（レン）
 0x08C3E1A4 HEY！（レン）
 
-# Edit mode: other
+# Edit mode: Camera -> camera presets (fixed)
 
 0x08C40728 【近】正面
 0x08C40780 【近】横顔左
@@ -3496,6 +3516,9 @@ $x08940A80 Return to the DIVA room.
 0x08C41070 [Ｂ]【中】煽り右前
 0x08C410C8 [Ｂ]【中】煽り左後ろ
 0x08C41120 [Ｂ]【中】煽り右後ろ
+
+# Edit mode: Camera -> camera presets (moving)
+
 0x08C41178 【近】左回り正面→右
 0x08C411D0 【近】右回り正面→左
 0x08C41228 【近】左外→右外
@@ -3529,7 +3552,8 @@ $x08940A80 Return to the DIVA room.
 0x08C41BC8 [Ｂ]【遠】右空→左空
 0x08C41C20 [Ｂ]煽り左前→煽り右前
 0x08C41C78 [Ｂ]煽り右前→煽り左前
-0x08C43458 General
+
+0x08C43458 Normal
 0x08C43468 Looking at camera
 0x08C43478 上
 0x08C43488 下
