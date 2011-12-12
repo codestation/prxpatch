@@ -418,7 +418,7 @@ void patch_imports(SceModule *module) {
  * @param module: module structure to have it hooked
  */
 void patch_utility(SceModule *module) {
-    for (u32 i = 0; i < ITEMSOF(stubs); i++) {
+    for (u32 i = 0; i < ITEMSOF(utility_stubs); i++) {
         if(hook_import_bynid(module, "sceUtility", utility_stubs[i].nid, utility_stubs[i].func, 1) < 0) {
             kprintf("Failed to hook %08X\n", utility_stubs[i].nid);
         }
