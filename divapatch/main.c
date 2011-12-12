@@ -78,7 +78,8 @@ const stub stubs[] = {
 const stub utility_stubs[] = {
         { 0x50C4CD57, diva_save  }, // sceUtilitySavedataInitStart
         { 0xF6269B82, diva_osk   }, // sceUtilityOskInitStart
-        { 0x4DB1E739, diva_net  }, // sceUtilityNetconfInitStart
+        { 0x4DB1E739, diva_net   }, // sceUtilityNetconfInitStart
+        { 0x0251B134, diva_shot  }, // sceUtilityScreenshotInitStart
 };
 
 char filepath[256];

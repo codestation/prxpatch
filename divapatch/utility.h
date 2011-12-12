@@ -24,8 +24,14 @@
 #include <psputility_savedata.h>
 #include <psputility_osk.h>
 
+typedef struct SceUtilityScreenshotParam {
+    pspUtilityDialogCommon base;
+    char data[880];
+} SceUtilityScreenshotParam;
+
 int diva_save(SceUtilitySavedataParam * params);
 int diva_osk(SceUtilityOskParams* params);
 int diva_net(pspUtilityNetconfData *data);
+int diva_shot(SceUtilityScreenshotParam *params);
 
 #endif /* UTILITY_H_ */

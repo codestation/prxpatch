@@ -24,6 +24,7 @@
 int (*sceUtilitySavedataInitStart_func)(SceUtilitySavedataParam * params) = NULL;
 int (*sceUtilityOskInitStart_func)(SceUtilityOskParams* params) = NULL;
 int (*sceUtilityNetconfInitStart_func)(pspUtilityNetconfData *data) = NULL;
+int (*sceUtilityScreenshotInitStart_func)(SceUtilityScreenshotParam *params) = NULL;
 
 int diva_save(SceUtilitySavedataParam * params) {
     u32 k1;
@@ -61,4 +62,16 @@ int diva_net(pspUtilityNetconfData *data) {
     }
     data->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
     return sceUtilityNetconfInitStart_func(data);
+}
+
+int diva_shot(SceUtilityScreenshotParam *params) {
+    u32 k1;
+
+    if(sceUtilityScreenshotInitStart_func == NULL) {
+        k1 = pspSdkSetK1(0);
+        sceUtilityScreenshotInitStart_func = (void *)sctrlHENFindFunction("sceUtility_Driver", "sceUtility", 0x0251B134);
+        pspSdkSetK1(k1);
+    }
+    params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
+    return sceUtilityScreenshotInitStart_func(params);
 }

@@ -229,7 +229,7 @@
 
 # Shop messages
 
-!x08838D38 Exit the shop, return to home?
+!x08838D38 Exit the shop and return to home?
 !x088390AC New items
 !x088390D0 are available to purchase.
 !x08839CAC Not enough DIVA points.
@@ -1074,8 +1074,8 @@ $x088791F8 ※エディット名は未入力です
 0x08C43D40 Set manually
 0x08C43D44 Set starting pos.
 0x08C43D48 Set ending pos.
-0x08C43D4C 移動時間設定
-0x08C43D50 加速度設定
+0x08C43D4C Set travel time
+0x08C43D50 Acceleration settings
 0x08C43D54 Preview
 0x08C43D58 Confirm
 0x08C43D70 Confirm
@@ -1712,8 +1712,8 @@ $x08940A80 Return to the DIVA room.
 
 # Savedata SFO info
 
-!x089C0E94 Hatsune Miku -Project DIVA- extend
-!x089C1B14 Hatsune Miku -Project DIVA- extend
+!x089C0E94 初音ミク -Project DIVA- extend
+!x089C1B14 初音ミク -Project DIVA- extend
 !x089C0F80 Total Time: %3d:%2d:%02d
 0x08D26F50 楽曲の再生に失敗しました。
 0x08D26F5C 楽曲の再生に失敗しました。
@@ -1736,7 +1736,7 @@ $x08940A80 Return to the DIVA room.
 0x08D26F98 初音ミク -Project DIVA- extendの
 0x08D26F9C ゲームデータです。
 0x08D26FA0 ゲームデータのインストールは中断されました。
-!x089C27A4 Hatsune Miku -Project DIVA- extend
+!x089C27A4 初音ミク -Project DIVA- extend
 !x089C27E0 Installation Data
 0x08D26FAC System Data
 0x08D26FB0 Edit Data
@@ -1759,8 +1759,8 @@ $x08940A80 Return to the DIVA room.
 0x08D26FF8 KB以上必要です。
 0x08D26FFC セーブを中止しました。
 0x08D27004 オートセーブの設定をOFFにしました。
-!x089C2CF0 Hatsune Miku -Project DIVA- extend
-!x089C3008 Hatsune Miku -Project DIVA- extend
+!x089C2CF0 初音ミク -Project DIVA- extend
+!x089C3008 初音ミク -Project DIVA- extend
 !x089C2DB0 Total Time: %3d:%2d:%02d
 
 # DIVA room: Image gallery
@@ -3196,8 +3196,8 @@ $x08940A80 Return to the DIVA room.
 0x08C36764 HARD Clear
 0x08C36788 HARD Clear
 
-0x08C333F0 2ndデータを
-0x08C333F4 引継いだ特典
+0x08C333F0 Awarded for importing
+0x08C333F4 the save from PD 2nd.
 
 0x08C33420 *Hello, Planet.
 0x08C337A4 *Hello, Planet.
@@ -3258,8 +3258,8 @@ $x08940A80 Return to the DIVA room.
 0x08C33E44 not recover or increase.
 0x08C33E48 Multiplies gained DP x4.
 
-0x08C34998 楽曲不問 EXTREMEクリア
-0x08C349A0 初音ミクで100回プレイ
+0x08C34998 Clear random song in EXTREME
+0x08C349A0 play with Miku 100 times.
 
 0x08C34A40 Specific song
 0x08C34A4C Specific song
@@ -3813,3 +3813,11 @@ $x08940A80 Return to the DIVA room.
 0x08C6686C Playlist 1
 0x08C66870 Playlist 2
 0x08C66874 Playlist 3
+
+# Screenshot messages
+
+!x089C4D14 Failed to capture
+!x089C4EDC Retry
+!x089C4EF0 Delete data
+!x089C4F04 Screenshot end
+!x089C5638 Screenshot completed
