@@ -72,7 +72,6 @@ int load_image_index(int file_index) {
     u32 index_size;
     void *block_addr;
 
-    kprintf("trying to open %s\n", image_files[file_index]);
     SceUID fd = open_file(image_files[file_index]);
     if(fd < 0) {
         return 0;
@@ -116,6 +115,8 @@ SceUID diva_open(const char *file, int flags, SceMode mode) {
         if (strcmp(file, cpk_file) == 0) {
             kprintf("%s opened\n", cpk_file);
             datafd = fd;
+        } else {
+            kprintf("opened: %s, fd: %08X\n", file, fd);
         }
     }
     return fd;
@@ -155,6 +156,7 @@ int diva_read(SceUID fd, void *data, SceSize size) {
             pspSdkSetK1(k1);
         }
     }
+    kprintf("reading %i bytes from fd: %08X, offset: %08X\n", size, fd, (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR));
     return sceIoRead(fd, data, size);
 }
 
@@ -163,6 +165,8 @@ int diva_close(SceUID fd) {
         // clear our file descriptor
         datafd = -1;
         kprintf("%s closed\n", cpk_file);
+    } else {
+        kprintf("closed fd: %08X\n", fd);
     }
     return sceIoClose(fd);
 }

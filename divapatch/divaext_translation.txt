@@ -254,7 +254,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2011/12/11          -codestation
+!x08845B8C PD extend patch 2011/12/14          -codestation
 
 ### EDIT MODE ### (max menu entry lenght: 25)
 
@@ -423,15 +423,15 @@ $x08883008 Create a Edit data with in-game music.
 !x08883014 Create a Edit data with MP3 music.
 !x08883020 Create a Edit data with the additional content music.
 
-!x08887834 BPMを変更する
-!x08887AD4 BPMを変更する
-!x08887848 BPMを変更しない
-!x08887AE8 BPMを変更しない
-!x08887854 BPMの変更を行うかを選択してください
+!x08887834 Modify the BPM
+!x08887AD4 Modify the BPM
+!x08887848 Do not change the BPM
+!x08887AE8 Do not change the BPM
+!x08887854 Choose if you want to make changes to the BPM
 !x088887BC m
 !x088887D4 s
-!x088890B8 1小節目のBPM %3d
-!x088890DC 1拍 %1.3f秒
+!x088890B8 1st bar BPM: %3d
+!x088890DC 1 beat: %1.3f seconds
 
 !x0889378C BPM is a unit that represents the song's tempo.
 !x088937A0 With 60 ticks within 1 minute, it's 60BPM.
@@ -666,15 +666,15 @@ $x08883008 Create a Edit data with in-game music.
 !x08865F70 曲に合わせてマーカーを入力することができます。
 !x08866854 Select Module A
 !x08866868 Select Module B
-!x088668D4 使用楽曲の変更をすることができます。
-!x08866AE0 使用楽曲の変更をすることができます。
-!x088668E0 エディットで使用するモジュールＡの変更をすることができます。
-!x088668EC エディットで使用するモジュールＢの変更をすることができます。
-!x088668F8 エディットで使用するモーションの変更をすることができます。
-!x08866904 エディットで使用するアイテムの変更をすることができます。
-!x08866910 エディットで使用する背景の変更をすることができます。
-!x0886691C エディットで使用するエフェクトの変更をすることができます。
-!x08866928 リズムゲーム中に再生するボタン音を変更することができます。
+!x088668D4 Change the current song.
+!x08866AE0 Change the current song.
+!x088668E0 Change the module A to be used in the Edit.
+!x088668EC Change the module B to be used in the Edit.
+!x088668F8 Change the motions to be used in the Edit.
+!x08866904 Change the items to be used in the Edit.
+!x08866910 Change the background to be used in the Edit.
+!x0886691C Change the effects to be used in the Edit.
+!x08866928 Change the button sounds that are used when playing.
 !x088680D0 Tempo %11d/4
 !x08868650 Tempo %11d/4
 !x088939D4 Tempo %11d/4
@@ -749,30 +749,30 @@ $x08883008 Create a Edit data with in-game music.
 !x0886F00C Additional content
 !x0886F020 could not be loaded.
 !x0889FDA0 could not be loaded.
-!x0886F6DC エディットデータのセーブ・ロード・削除をすることができます。
-!x0886FA74 エディットデータのセーブ・ロード・削除をすることができます。
-!x0886F6E8 モジュールや背景など、読み込む素材を変更することができます。
-!x0886FA80 モジュールや背景など、読み込む素材を変更することができます。
-!x0886F6F4 各キャラクターの身長を設定することができます。
-!x0886FA8C 各キャラクターの身長を設定することができます。
-!x0886F700 ターゲットの簡易配置をすることができます。
-!x0886FA98 ターゲットの簡易配置をすることができます。
+!x0886F6DC Save, load and delete the Edit data.
+!x0886FA74 Save, load and delete the Edit data.
+!x0886F6E8 Add or change modules, items and backgrounds used in the Edit.
+!x0886FA80 Add or change modules, items and backgrounds used in the Edit.
+!x0886F6F4 Configure the height of the characters.
+!x0886FA8C Configure the height of the characters.
+!x0886F700 Configure an easy target arrangement.
+!x0886FA98 Configure an easy target arrangement.
 !x0886F70C 歌詞の入力されている拍に自動で口パクを設定することができます。
 !x0886FAA4 歌詞の入力されている拍に自動で口パクを設定することができます。
-!x0886F718 各種配置コマンドデータを削除できます。
-!x0886FAB0 各種配置コマンドデータを削除できます。
-!x0886F728 エディットのTOPへ戻ります。
-!x0886FABC エディットのTOPへ戻ります。
-!x0886F734 現在のエディットを終了してモード選択へ戻ります。
-!x0886FAC8 現在のエディットを終了してモード選択へ戻ります。
+!x0886F718 Use various commands to delete placed data.
+!x0886FAB0 Use various commands to delete placed data.
+!x0886F728 Return to the Edit TOP.
+!x0886FABC Return to the Edit TOP.
+!x0886F734 Exit the edit mode and return to mode selection.
+!x0886FAC8 Exit the edit mode and return to mode selection.
 !x0886F740 Exit the Edit mode and return to home. 
 !x0886FAD4 Exit the Edit mode and return to home.
 !x0887E1B0 Exit the Edit mode and return to home.
-!x0886F754 楽曲が流れ出すタイミングを設定することができます。
-!x0886FAE8 楽曲が流れ出すタイミングを設定することができます。
+!x0886F754 Configure the start time of the played song.
+!x0886FAE8 Configure the start time of the played song.
 !x0886F788 Data
 !x08878D04 Data
-!x0886F7C8 楽曲開始時間設定
+!x0886F7C8 Set the song start time
 !x0886F7DC Scale settings
 !x0887A820 Scale settings
 !x0886F804 Automatic lip input
@@ -781,25 +781,25 @@ $x08883008 Create a Edit data with in-game music.
 !x0886F82C Go to Edit TOP
 !x0886F840 Go to Mode selection
 !x0886F854 Exit Edit
-!x08871BA4 最初からテストプレイ
-!x08871BFC 最初からテストプレイ
-!x08871C9C 1小節前からテストプレイ
-!x08871BA8 最初から鑑賞
-!x08871C00 最初から鑑賞
-!x08871D00 1小節前から鑑賞
+!x08871BA4 Play from the start
+!x08871BFC Play from the start
+!x08871C9C Play from 1 bar ago
+!x08871BA8 View from the start
+!x08871C00 View from the start
+!x08871D00 View from 1 bar ago
 !x08871BB0 Cancel
 !x08871C04 Cancel
-!x08872814 『エディットモード』はオートセーブ機能に対応していません。
+!x08872814 "Edit Mode" is not compatible with auto-save feature.
 !x0887281C 『システム』画面の『データ』からセーブを行ってください。
 !x08873958 Edit mode
 
 # Edit mode: Edit TOP -> information messages
 
-!x08873B90 Change the beat number and BPM.
+!x08873B90 Change the BPM, beat count, etc
 !x08873BCC Change the display position, input, target, etc.
 !x08873C08 Edit the motion and facial expressions of the character.
 !x08873C44 Edit the stage-related cameras and background.
-!x08873C80 Set the poition of the bar and the song ending.
+!x08873C80 Change the position of the bar and set the song ending.
 
 !x088741C4 選択された小節のデータを
 !x08874200 削除しますがよろしいですか？
@@ -869,8 +869,8 @@ $x08883008 Create a Edit data with in-game music.
 !x088791A8 Edit name
 ^x088791C0 ※エディット名は未入力です
 $x088791F8 ※エディット名は未入力です
-!x0887A74C キャラ固有の大きさを反映します。
-!x0887A75C キャラ固有の大きさを反映しません。
+!x0887A74C Reflect the unique character size.
+!x0887A75C Do not reflect the unique character size.
 !x0887AB24 モジュールＡに対して口パクを設定します。
 !x0887AB30 モジュールＢに対して口パクを設定します。
 !x0887AB40 両方のモジュールに対して口パクを設定します。
@@ -1002,24 +1002,24 @@ $x088791F8 ※エディット名は未入力です
 !x088B6970 Tempo %7d/4
 !x088B730C Tempo %7d/4
 !x088B9034 Tempo %7d/4
-!x088B6A04 Change the BPM time signature.
-!x088B6B4C Change the BPM time signature.
-!x088B6A10 ○ボタンで指定の位置に目印をつけることができます。
-!x088B6B58 ○ボタンで指定の位置に目印をつけることができます。
-!x088B6A1C 楽曲に合わせて、拍数に目印をつけていくことができます。
-!x088B6B64 楽曲に合わせて、拍数に目印をつけていくことができます。
+!x088B6A04 Change the BPM and beat number.
+!x088B6B4C Change the BPM and beat number.
+!x088B6A10 Put landmarks in the specified position with the ○ button.
+!x088B6B58 Put landmarks in the specified position with the ○ button.
+!x088B6A1C Place landmarks according to the song and beat number.
+!x088B6B64 Place landmarks according to the song and beat number.
 !x088B6F58 Confirm
-!x088B70CC 楽曲のテンポを変更することができます。
-!x088B8A78 楽曲のテンポを変更することができます。
-!x088B75B8 BPMの設定を変更しています……
-!x088B7634 BPMの設定を変更しています……
+!x088B70CC Change the tempo of the song.
+!x088B8A78 Change the tempo of the song.
+!x088B75B8 BPM settings are being changed...
+!x088B7634 BPM settings are being changed...
 !x088B7754 From the start
 !x088B7768 From halfway
 !x088B77C4 2小節目からリアルタイムでマーカーを入力することができます。
 !x088B7884 2小節目からリアルタイムでマーカーを入力することができます。
 !x088B7890 現在の小節からリアルタイムでマーカーを入力することができます。 
 !x088B7B30 ○ボタンで拍数の色を変更し、目印をつけることができます。
-!x088B8A84 1小節の拍数を変更することができます。
+!x088B8A84 Set the number of beats in one bar.
 !x088B8A90 現在の小節以降に、設定したBPM・拍数を反映させることができます。
 !x088B970C BPMを変更すると、表示限界数を超えた分のターゲットが
 !x088B9720 削除される場合がありますが、よろしいですか？
@@ -1036,7 +1036,6 @@ $x088791F8 ※エディット名は未入力です
 0x08C31308 Surprised
 0x08C3130C Wink
 0x08C31310 Anger
-!x08823EB0 Anger
 0x08C31314 Sweet smile
 0x08C31318 Worried
 0x08C3131C Dazzling
@@ -1056,8 +1055,11 @@ $x088791F8 ※エディット名は未入力です
 !x08823EE0 Normal
 0x08C31354 Closed eyes
 
+# Edit mode -> lips
+
 !x08823E80 あ
 !x08823E8C い
+!x08823EB0 怒り
 
 # Edit mode: stage submenu
 
@@ -1082,14 +1084,14 @@ $x088791F8 ※エディット名は未入力です
 0x08C43D5C Fixed presets
 0x08C43D60 Moving presets
 0x08C43D64 Lyric input
-0x08C43D68 Choose font color
+0x08C43D68 Choose text color
 0x08C43D6C Display time
-0x08C43D74 カメラの設定をすることができます。
-0x08C43D78 背景の設定をすることができます。
-0x08C43D7C エフェクトの設定をすることができます。
-0x08C43D80 歌詞を最大600個まで設定することができます。
-0x08C43D88 使用する背景を選択して下さい。
-0x08C43D8C エフェクトを選択して、方向キー左右で再生速度を調整して下さい。
+0x08C43D74 Configure the camera.
+0x08C43D78 Configure the background.
+0x08C43D7C Configure the effects.
+0x08C43D80 Configure up to a maximum of 600 lyrics.
+0x08C43D88 Select the background to use.
+0x08C43D8C Select the effect and adjust the speed with the arrow keys.
 0x08C43D94 拍データのコピー、削除をすることができます。
 0x08C43D98 %s：コピー中です。○ボタンでペーストできます。
 0x08C43D9C カメラの設定をプリセットから選択することができます。
@@ -1106,8 +1108,8 @@ $x088791F8 ※エディット名は未入力です
 0x08C43DD0 方向キー左右で位置を確認し、上下で加速度を設定して下さい。
 0x08C43DDC 固定位置のプリセットを選択します。
 0x08C43DE0 移動するプリセットを選択します。
-0x08C43DE4 歌詞を入力することができます。
-0x08C43DE8 歌詞の文字色を設定することができます。
+0x08C43DE4 Type the lyrics.
+0x08C43DE8 Set the text color of the lyrics.
 0x08C43DEC 歌詞の表示時間を拍数単位で設定することができます。
 0x08C43DF0 現在の歌詞設定を反映させることができます。
 0x08C43DF8 歌詞の文字色を選択して下さい。
@@ -1145,7 +1147,7 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088BF960 Edit mode
 !x088C0C08 None
 !x088CCDB4 None
-!x088C10C0 SPEED      【%3d%%】
+!x088C10C0 SPEED      [%3d%%]
 !x088C4250 平行移動
 !x088C65F8 平行移動
 !x088C736C 平行移動
@@ -1198,22 +1200,22 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088CFE14 Target presets
 !x088CEF60 Chance time
 !x088D1E0C Chance time
-!x088CEF68 ○・×・□・△ボタンを押すと、ターゲットアイコンを配置できます。
-!x088CF2AC ○・×・□・△ボタンを押すと、ターゲットアイコンを配置できます。
-!x088CEF74 入力したターゲットアイコンの座標や方向を設定することができます。
-!x088CF2B8 入力したターゲットアイコンの座標や方向を設定することができます。
-!x088CEF80 楽曲に合わせてターゲットアイコンを入力することができます。
-!x088CF2C4 楽曲に合わせてターゲットアイコンを入力することができます。
-!x088CEF8C あらかじめ用意されたターゲットアイコンを入力することができます。
-!x088CF2D0 あらかじめ用意されたターゲットアイコンを入力することができます。
-!x088CEF98 チャンスタイムを設定することができます。
-!x088CF2DC チャンスタイムを設定することができます。
-!x088CFBB8 選択された項目を削除します
-!x088CFBCC よろしいですか？
+!x088CEF68 Press the ○・×・□・△ button to place a target icon.
+!x088CF2AC Press the ○・×・□・△ button to place a target icon.
+!x088CEF74 Configure the direction and coordinates of the target icon.
+!x088CF2B8 Configure the direction and coordinates of the target icon.
+!x088CEF80 Place target icons according the the song.
+!x088CF2C4 Place target icons according the the song.
+!x088CEF8C Set a predefined target icon.
+!x088CF2D0 Set a predefined target icon.
+!x088CEF98 Configure the Chance Time.
+!x088CF2DC Configure the Chance Time.
+!x088CFBB8 Remove the selected item
+!x088CFBCC Are you sure?
 !x088CFE5C None
 !x088CFE70 Preset %4d
-!x088CFF54 この小節に配置するターゲットパターンを選択することができます。
-!x088D4654 この小節に配置するターゲットパターンを選択することができます。
+!x088CFF54 Select the target pattern to place in this bar.
+!x088D4654 Select the target pattern to place in this bar.
 
 # Edit mode: target submenu -> target input
 
@@ -1222,9 +1224,9 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088D08F8 Press and hold
 !x088D090C Cancel
 !x088D0920 Confirm
-^x088D0A44 ターゲットアイコンを直接入力することができます。
-!x088D0AF4 ターゲットアイコンを直接入力することができます。
-!x088D4B2C ターゲットアイコンを直接入力することができます。
+^x088D0A44 Place the target icon directly.
+!x088D0AF4 Place the target icon directly.
+!x088D4B2C Place the target icon directly.
 !x088D0E4C %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088D27C4 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088D1970 From the start
@@ -1235,10 +1237,10 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088D1F9C チャンスタイムの開始位置を設定することができます。
 !x088D9384 チャンスタイムの開始位置を設定することができます。
 !x088D433C Edit mode
-!x088D4B38 同時押しアイコンを入力することができます。
-!x088D4B44 長押しアイコンを入力することができます。（1拍以上の空きが必要）
-!x088D4B50 この小節でのターゲット入力をキャンセルすることができます。
-!x088D4B64 この小節でのターゲット入力を反映させることができます。
+!x088D4B38 Place target icons need to be pressed together.
+!x088D4B44 Enter press-and-hold target icons (requires at least 1 beat free)
+!x088D4B50 Cancel the target input on this bar.
+!x088D4B64 Accept the targets entered in this subsection.
 
 # Edit mode: target submenu -> placement settings
 
@@ -2279,7 +2281,7 @@ $x08940A80 Return to the DIVA room.
 0x08C311F8 Item Master
 0x08C311FC Home Theater
 0x08C31200 Producer
-0x08C31204 Dreaded 1%
+0x08C31204 Dreaded 1％
 0x08C31208 Unfortunate SAFE
 0x08C3120C Surround
 0x08C31210 Rhythm Wave

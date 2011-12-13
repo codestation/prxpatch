@@ -27,13 +27,14 @@ char _buffer_log[256];
 
 int kwrite(const char *path, void *buffer, SceSize buflen) {
     int written = 0;
-    SceUID file;
+    //SceUID file;
     u32 k1 = pspSdkSetK1(0);
-    file = sceIoOpen(path, PSP_O_APPEND | PSP_O_CREAT | PSP_O_WRONLY, 0777);
-    if(file >= 0) {
-        written = sceIoWrite(file, buffer, buflen);
-        sceIoClose(file);
-    }
+    sceIoWrite(1, buffer, buflen);
+//    file = sceIoOpen(path, PSP_O_APPEND | PSP_O_CREAT | PSP_O_WRONLY, 0777);
+//    if(file >= 0) {
+//        written = sceIoWrite(file, buffer, buflen);
+//        sceIoClose(file);
+//    }
     pspSdkSetK1(k1);
     return written;
 }

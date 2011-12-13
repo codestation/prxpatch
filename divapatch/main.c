@@ -467,10 +467,10 @@ int thread_start(SceSize args, void *argp) {
                 if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
                     kprintf("Failed to hook %08X\n", 0x109F50BC);
                 }
+            }
+        } else {
+            kprintf("the image index wasn't found\n");
         }
-        }
-    } else {
-        kprintf("the image index wasn't found\n");
     }
     sceKernelDeleteSema(sema);
 	return 0;
