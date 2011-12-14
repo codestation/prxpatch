@@ -448,28 +448,30 @@ int thread_start(SceSize args, void *argp) {
     if(patch_index >= 0) {
         // change the impose language
         change_lang(PSP_SYSTEMPARAM_LANGUAGE_ENGLISH);
-        if(load_image_index(patch_index)) {
-            SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
-            if (module) {
+
+        SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
+        if(module) {
+            kprintf("patching utility funcs\n");
+            patch_utility(module);
+
+            if(load_image_index(patch_index)) {
                 // redirect the file open, read and close operations to our plugin
                 kprintf("patching imports\n");
                 patch_imports(module);
 
-                kprintf("patching utility funcs\n");
-                patch_utility(module);
-            }
-            // 0x333A34AE == nploader's np_open NID
-            u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
-            if(func) {
-                kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
-                module = sceKernelFindModuleByName(PLUGIN_NAME);
-                // 0x109F50BC == sceIoOpen NID
-                if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
-                    kprintf("Failed to hook %08X\n", 0x109F50BC);
+                // 0x333A34AE == nploader's np_open NID
+                u32 func = sctrlHENFindFunction("nploader", "nploader", 0x333A34AE);
+                if(func) {
+                    kprintf("nploader found, redirecting sceIoOpen to np_open: %08X\n", func);
+                    module = sceKernelFindModuleByName(PLUGIN_NAME);
+                    // 0x109F50BC == sceIoOpen NID
+                    if(hook_import_bynid(module, "IoFileMgrForKernel", 0x109F50BC, (void *)func, 0) < 0) {
+                        kprintf("Failed to hook %08X\n", 0x109F50BC);
+                    }
                 }
+            } else {
+                kprintf("the image index wasn't found\n");
             }
-        } else {
-            kprintf("the image index wasn't found\n");
         }
     }
     sceKernelDeleteSema(sema);
