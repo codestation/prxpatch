@@ -2403,42 +2403,42 @@ $x08940A80 Return to the DIVA room.
 0x08C3125C Room Stylist
 0x08C31260 Room Designer
 0x08C31264 Room Coordinator
-0x08C31268 模様替え好き
-0x08C3126C 気分屋さん
-0x08C31270 こだわりのお部屋
-0x08C31274 愛しのお部屋
+0x08C31268 Remodeling Lover
+0x08C3126C Moody's
+0x08C31270 Room Fixation
+0x08C31274 Beloved Room
 0x08C31278 Storyteller
-0x08C3127C DIVA好き
-0x08C31280 DIVA大好き！
-0x08C31284 DIVAに夢中
+0x08C3127C DIVA Lover
+0x08C31280 I Love DIVA!
+0x08C31284 DIVA Crazy
 0x08C31288 Now Playing……
-0x08C3128C DIVAシンドローム
-0x08C31290 DIVAフリーク
-0x08C31294 神の絶対領域
-0x08C31298 ごきげんミクさん
-0x08C3129C るんるんリンちゃん
-0x08C312A0 うきうきレンくん
+0x08C3128C DIVA Syndrome
+0x08C31290 DIVA Freak
+0x08C31294 God's Absolute Territory
+0x08C31298 Pleasant Miku
+0x08C3129C Euphoric Rin
+0x08C312A0 Cheerful Len
 0x08C312A4 ランランルカさん
-0x08C312A8 にこにこKAITOさん
-0x08C312AC わくわくMEIKOさん
-0x08C312B0 ノリノリネルさん
-0x08C312B4 ツマンネハクさん
-0x08C312B8 きゃぴきゃぴ咲音さん
-0x08C312BC ハッピーの魔法
-0x08C312C0 ドリーマー
-0x08C312C4 ロマンチック
-0x08C312C8 ハンドメイド
-0x08C312CC オリジナリティ
-0x08C312D0 エディット魂
-0x08C312D4 バリバリ
-0x08C312D8 メロメロ
-0x08C312DC デレデレ
-0x08C312E0 ミュージアム
-0x08C312E4 ガレリア
-0x08C312E8 サンクチュアリ
-0x08C312EC フレンドゲッター
+0x08C312A8 Smiling Kaito
+0x08C312AC Exciting Meiko
+0x08C312B0 Elated Neru
+0x08C312B4 Tsuman-ne Haku
+0x08C312B8 Youthful Sakine
+0x08C312BC Magic Happiness
+0x08C312C0 Dreamer
+0x08C312C4 Romantic
+0x08C312C8 Handmade
+0x08C312CC Originality
+0x08C312D0 Edit Soul
+0x08C312D4 Hard-worker
+0x08C312D8 Falling Down
+0x08C312DC Lovestruck
+0x08C312E0 Museum
+0x08C312E4 Galleria
+0x08C312E8 Sanctuary
+0x08C312EC Friend Getter
 0x08C312F0 みっくみくにされました
-0x08C312F4 クリアおめでとう！
+0x08C312F4 Clear congrats!
 0x08C312F8 Title Master
 
 # Title conditions
