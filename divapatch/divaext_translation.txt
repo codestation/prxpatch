@@ -2231,6 +2231,103 @@ $x08940A80 Return to the DIVA room.
 0x08C30FC4 DIVA×Drum Master 1
 0x08C30FC8 DIVA×Drum Master 2
 
+# DIVA room event titles
+
+0x08C30FCC 会スタート！
+0x08C30FD0 二人でダンスレッスン
+0x08C30FD4 探し物、見つからず…
+0x08C30FD8 探し物、見つかった！
+0x08C30FDC ブートキャンプ開始
+0x08C30FE0 起きてよ～
+0x08C30FE4 アイスをめぐる攻防！？1
+0x08C30FE8 アイスをめぐる攻防！？2
+0x08C30FEC 念願のコラボ
+0x08C30FF0 男の魅力を激写！
+0x08C30FF4 ミクとエアギター対決
+0x08C30FF8 4番、カイト！
+0x08C30FFC ピッチャー、カイト！
+0x08C31000 部屋の掃除をしよう
+0x08C31004 リンにダンスの指導中
+0x08C31008 女同士で飲みましょう
+0x08C3100C 美容の秘訣
+0x08C31010 歌道は一日にしてならず
+0x08C31014 頑張れ歌練習
+0x08C31018 美容と健康のために
+0x08C3101C メイコの掃除をお手伝い
+0x08C31020 カイトとセッション1
+0x08C31024 たまには飲みたい時もある
+0x08C31028 カイトとスティック振り
+0x08C3102C ミクの掃除をお手伝い
+0x08C31030 レンとあっち向いてホイ
+0x08C31034 リンとあっち向いてホイ
+0x08C31038 ルカとあっち向いてホイ
+0x08C3103C カイトとあっち向いてホイ
+0x08C31040 メイコとあっち向いてホイ
+0x08C31044 ネルとあっち向いてホイ
+0x08C31048 ハクとあっち向いてホイ
+0x08C3104C 咲音とあっち向いてホイ
+0x08C31050 Let's ロックンロール1
+0x08C31054 振り付けの練習1
+0x08C31058 ルカの美容体操を伝授1
+0x08C3105C ルカとお茶を楽しむ
+0x08C31060 メイコとお茶を楽しむ
+0x08C31064 リンとスティック振り
+0x08C31068 アイドルダンス伝授
+0x08C3106C エア野球、真剣勝負
+0x08C31070 ルカとエアギター対決
+0x08C31074 レンとエアギター対決
+0x08C31078 ネルとエアギター対決
+0x08C3107C ハクとエアギター対決
+0x08C31080 まったりおしゃべり
+0x08C31084 ゲームで対決
+0x08C31088 ミクの音楽教室1
+0x08C3108C お昼寝タイム
+0x08C31090 デュエット実現
+0x08C31094 カッコイイポーズを研究！
+0x08C31098 強烈目覚まし1
+0x08C3109C ルカの音楽講座
+0x08C310A0 ポーズ、決まってますか？
+0x08C310A4 リン、レン、エアギター対決
+0x08C310A8 男のエアギター対決！
+0x08C310AC ミクの音楽教室2
+0x08C310B0 ルカの美容体操を伝授2
+0x08C310B4 仲良くお昼寝
+0x08C310B8 セクシーポーズ研究中1
+0x08C310BC リンの掃除をお手伝い
+0x08C310C0 Let's ロックンロール2
+0x08C310C4 セクシーポーズ研究中2
+0x08C310C8 強烈目覚まし2
+0x08C310CC カイトとエアギター対決
+0x08C310D0 メイコとエアギター対決
+0x08C310D4 カイトとセッション2
+0x08C310D8 ポーズ…決め！
+0x08C310DC ポーズ…ダメ？
+0x08C310E0 ポーズ…うう～
+0x08C310E4 楽しくおしゃべり
+0x08C310E8 元気出して～
+0x08C310EC たまにはケンカも
+0x08C310F0 デュエット練習、いい感じ
+0x08C310F4 デュエット練習、何か違う
+0x08C310F8 メール着信、やったぁ！
+0x08C310FC メール着信、はぁ…
+0x08C31100 メール着信、ムキー！
+0x08C31104 合いの手講座1
+0x08C31108 合いの手講座2
+0x08C3110C 合いの手講座3
+0x08C31110 一気飲み対決！
+0x08C31114 一気飲み対決！？
+0x08C31118 一気飲み対決？
+0x08C3111C 正しい一気飲み講座1
+0x08C31120 正しい一気飲み講座2
+0x08C31124 楽しくメール
+0x08C31128 振り付けの練習2
+0x08C3112C 振り付けの練習3
+0x08C31130 振り付けの練習4
+0x08C31134 シンクロしてみよう1
+0x08C31138 シンクロしてみよう2
+0x08C3113C はい、チーズ！(リン)
+0x08C31140 はい、チーズ！(レン)
+
 # Titles
 
 0x08C31144 Novice Player
@@ -2631,143 +2728,334 @@ $x08940A80 Return to the DIVA room.
 0x08C31968 who collected all the
 0x08C3196C room items.
 
-0x08C31970 ルームテーマを10回変更した
-0x08C31974 プレイヤーに与えられる称号。
+0x08C31970 Title given to the players who
+0x08C31974 changed the room theme 10 times.
 
-0x08C3197C ルームテーマを50回変更した
-0x08C31980 プレイヤーに与えられる称号。
+0x08C3197C Title given to the players who
+0x08C31980 changed the room theme 50 times.
 
-0x08C31988 ルームテーマを100回変更した
-0x08C3198C プレイヤーに与えられる称号。
+0x08C31988 Title given to the players who
+0x08C3198C changed the room theme 100 times.
 
-0x08C31994 DIVAルームに100回訪れた
-0x08C31998 プレイヤーに与えられる称号。
+0x08C31994 Title given to the players who
+0x08C31998 visited the DIVA room 100 times.
 
-0x08C319A0 DIVAルームのイベントを
-0x08C319A4 コンプリートしたプレイヤーに
-0x08C319A8 与えられる称号。
+0x08C319A0 Title given to the players who
+0x08C319A4 have completed all the DIVA
+0x08C319A8 room events.
 
-0x08C319AC DIVAポイントの累計が
-0x08C319B0 100,000を突破した
-0x08C319B4 プレイヤーに与えられる称号。
+0x08C319AC Title given to the players
+0x08C319B0 who have surpassed the total
+0x08C319B4 of 100,000 DIVA points.
 
-0x08C319B8 DIVAポイントの累計が
-0x08C319BC 500,000を突破した
-0x08C319C0 プレイヤーに与えられる称号。
+0x08C319B8 Title given to the players
+0x08C319BC who have surpassed the total
+0x08C319C0 of 500,000 DIVA points.
 
-0x08C319C4 DIVAポイントの累計が
-0x08C319C8 1,000,000を突破した
-0x08C319CC プレイヤーに与えられる称号。
+0x08C319C4 Title given to the players
+0x08C319C8 who have surpassed the total
+0x08C319CC of 1,000,000 DIVA points.
 
-0x08C319D0 DIVAポイントの累計が
-0x08C319D4 5,000,000を突破した
-0x08C319D8 プレイヤーに与えられる称号。
+0x08C319D0 Title given to the players
+0x08C319D4 who have surpassed the total
+0x08C319D8 of 5,000,000 DIVA points.
 
-0x08C319DC DIVAポイントの累計が
-0x08C319E0 10,000,000を突破した
-0x08C319E4 プレイヤーに与えられる称号。
+0x08C319DC Title given to the players
+0x08C319E0 who have surpassed the total
+0x08C319E4 of 10,000,000 DIVA points.
 
-0x08C319E8 DIVAポイントの累計が
-0x08C319EC 50,000,000を突破した
-0x08C319F0 プレイヤーに与えられる称号。
+0x08C319E8 Title given to the players
+0x08C319EC who have surpassed the total
+0x08C319F0 of 50,000,000 DIVA points.
 
-0x08C319F4 DIVAポイントの累計が
-0x08C319F8 99,999,999に到達した
-0x08C319FC プレイヤーに捧げられる称号。
+0x08C319F4 Title given to the players
+0x08C319F8 who have reached the total
+0x08C319FC of 99,999,999 DIVA points.
 
-0x08C31A00 初音ミクの機嫌が
-0x08C31A04 HAPPYになったプレイヤーに
-0x08C31A08 贈られる称号。
+0x08C31A00 Title given to the player
+0x08C31A04 that changes the mood of
+0x08C31A08 Hatsune Miku to become HAPPY.
 
-0x08C31A0C 鏡音リンの機嫌が
-0x08C31A10 HAPPYになったプレイヤーに
-0x08C31A14 贈られる称号。
+0x08C31A0C Title given to the player
+0x08C31A10 that changes the mood of
+0x08C31A14 Kagamine Rin to become HAPPY.
 
-0x08C31A18 鏡音レンの機嫌が
-0x08C31A1C HAPPYになったプレイヤーに
-0x08C31A20 贈られる称号。
+0x08C31A18 Title given to the player
+0x08C31A1C that changes the mood of
+0x08C31A20 Kagamine Len to become HAPPY.
 
-0x08C31A24 巡音ルカの機嫌が
-0x08C31A28 HAPPYになったプレイヤーに
-0x08C31A2C 贈られる称号。
+0x08C31A24 Title given to the player
+0x08C31A28 that changes the mood of
+0x08C31A2C Megurine Luka to become HAPPY.
 
-0x08C31A30 カイトの機嫌が
-0x08C31A34 HAPPYになったプレイヤーに
-0x08C31A38 贈られる称号。
+0x08C31A30 Title given to the player
+0x08C31A34 that changes the mood of
+0x08C31A38 Kaito to become HAPPY.
 
-0x08C31A3C メイコの機嫌が
-0x08C31A40 HAPPYになったプレイヤーに
-0x08C31A44 贈られる称号。
+0x08C31A3C Title given to the player
+0x08C31A40 that changes the mood of
+0x08C31A44 Meiko to become HAPPY.
 
-0x08C31A48 亞北ネルの機嫌が
-0x08C31A4C HAPPYになったプレイヤーに
-0x08C31A50 贈られる称号。
+0x08C31A48 Title given to the player
+0x08C31A4C that changes the mood of
+0x08C31A50 Akita Neru to become HAPPY.
 
-0x08C31A54 弱音ハクの機嫌が
-0x08C31A58 HAPPYになったプレイヤーに
-0x08C31A5C 贈られる称号。
+0x08C31A54 Title given to the player
+0x08C31A58 that changes the mood of
+0x08C31A5C Yowane Haku to become HAPPY.
 
-0x08C31A60 咲音メイコの機嫌が
-0x08C31A64 HAPPYになったプレイヤーに
-0x08C31A68 贈られる称号。
+0x08C31A60 Title given to the player
+0x08C31A64 that changes the mood of
+0x08C31A68 Sakine Meiko to become HAPPY.
 
-0x08C31A6C 全キャラクターの機嫌が
-0x08C31A70 HAPPYになったプレイヤーに
-0x08C31A74 贈られる称号。
+0x08C31A6C Title given to the player
+0x08C31A70 that changes the mood of all
+0x08C31A74 the characters to become HAPPY.
 
-0x08C31A78 キャラクターへのプレゼントの
-0x08C31A7C 回数が50回を超えると
-0x08C31A80 与えられる称号。
+0x08C31A78 Title given to the player who
+0x08C31A7C gives at least 50 presents
+0x08C31A80 to a character.
 
-0x08C31A84 キャラクターへのプレゼントの
-0x08C31A88 回数が100回を超えると
-0x08C31A8C 与えられる称号。
+0x08C31A84 Title given to the player who
+0x08C31A88 gives at least 100 presents
+0x08C31A8C to a character.
 
-0x08C31A90 エディットプレイを
-0x08C31A94 10回プレイしたプレイヤーに
-0x08C31A98 与えられる称号。
+0x08C31A90 Title given to the player
+0x08C31A94 who have played 10 times
+0x08C31A98 the Play Edit.
 
-0x08C31A9C エディットプレイを
-0x08C31AA0 50回プレイしたプレイヤーに
-0x08C31AA4 与えられる称号。
+0x08C31A9C Title given to the player
+0x08C31AA0 who have played 50 times
+0x08C31AA4 the Play Edit.
 
-0x08C31AA8 エディットモードに100時間を
-0x08C31AAC 費やしたプレイヤーに
-0x08C31AB0 与えられる称号。
+0x08C31AA8 Title given to the player
+0x08C31AAC who have spent 100 hours
+0x08C31AB0 into Edit mode.
 
-0x08C31AB4 プレイ時間が24時間を突破した
-0x08C31AB8 プレイヤーに与えられる称号。
+0x08C31AB4 Obtain more than 24 hours
+0x08C31AB8 of Play Time.
 
-0x08C31AC0 プレイ時間が50時間を突破した
-0x08C31AC4 プレイヤーに与えられる称号。
+0x08C31AC0 Obtain more than 50 hours
+0x08C31AC4 of Play Time.
 
-0x08C31ACC プレイ時間が100時間を突破した
-0x08C31AD0 プレイヤーに与えられる称号。
+0x08C31ACC Obtain more than 100 hours
+0x08C31AD0 of Play Time.
 
-0x08C31AD8 ロードイラストの
-0x08C31ADC 収集率が50％を超えた
-0x08C31AE0 プレイヤーに与えられる称号。
+0x08C31AD8 Title given to the player who
+0x08C31ADC have collected more than 50％
+0x08C31AE0 of the Loading Illustrations.
 
-0x08C31AE4 全てのロードイラストを
-0x08C31AE8 収集したプレイヤーに
-0x08C31AEC 捧げられる称号。
+0x08C31AE4 Title given to the player who
+0x08C31AE8 have collected all of the
+0x08C31AEC Loading Illustrations.
 
-0x08C31AF0 ビジュアルライブラリの
-0x08C31AF4 収集率が100％に到達した
-0x08C31AF8 プレイヤーに与えられる称号。
+0x08C31AF0 Title given to the player who
+0x08C31AF4 have collected the 100% of the
+0x08C31AF8 Visual Library.
 
-0x08C31AFC フレンドの登録数が50人に
-0x08C31B00 到達したとき与えられる称号。
+0x08C31AFC Title given to the player who
+0x08C31B00 have 50 registered friends.
 
-0x08C31B08 「初音ミク -Project DIVA- 2nd」
-0x08C31B0C のプレイデータを引きついだ
-0x08C31B10 プレイヤーに贈られる称号。
+0x08C31B08 Title given the the player who
+0x08C31B0C has imported his savedata from
+0x08C31B10 "Hatsune Miku -Project DIVA- 2nd"
 
-0x08C31B14 スタッフロールを見たプレイヤーに
-0x08C31B18 捧げられる称号。
+0x08C31B14 Title given to the players
+0x08C31B18 who watched the staff roll.
 
 0x08C31B20 Title given to the player who
 0x08C31B24 got all the previous titles.
+
+# Play records: DIVA room events descriptions
+
+0x08C31B2C メインキャラクターがHAPPY
+0x08C31B38 メインキャラクターがHAPPY
+0x08C31E74 メインキャラクターがHAPPY
+0x08C31E98 メインキャラクターがHAPPY
+0x08C31EB0 メインキャラクターがHAPPY
+0x08C31EF8 メインキャラクターがHAPPY
+0x08C31F40 メインキャラクターがHAPPY
+0x08C31F4C メインキャラクターがHAPPY
+0x08C31B30 サブキャラクターがGOOD
+0x08C31B60 サブキャラクターがGOOD
+0x08C31B9C サブキャラクターがGOOD
+0x08C31BCC サブキャラクターがGOOD
+0x08C31DAC サブキャラクターがGOOD
+0x08C31E60 サブキャラクターがGOOD
+0x08C31E6C サブキャラクターがGOOD
+0x08C31E84 サブキャラクターがGOOD
+0x08C31EA8 サブキャラクターがGOOD
+0x08C31EC0 サブキャラクターがGOOD
+0x08C31ECC サブキャラクターがGOOD
+0x08C31ED8 サブキャラクターがGOOD
+0x08C31EE4 サブキャラクターがGOOD
+0x08C31EF0 サブキャラクターがGOOD
+0x08C31EFC サブキャラクターがGOOD
+0x08C31F08 サブキャラクターがGOOD
+0x08C31F2C サブキャラクターがGOOD
+0x08C31F38 サブキャラクターがGOOD
+0x08C31B3C サブキャラクターがHAPPY
+0x08C31E54 サブキャラクターがHAPPY
+0x08C31E78 サブキャラクターがHAPPY
+0x08C31E9C サブキャラクターがHAPPY
+0x08C31EB4 サブキャラクターがHAPPY
+0x08C31F14 サブキャラクターがHAPPY
+0x08C31F20 サブキャラクターがHAPPY
+0x08C31F44 サブキャラクターがHAPPY
+0x08C31F50 サブキャラクターがHAPPY
+0x08C31F80 サブキャラクターがHAPPY
+0x08C31F8C サブキャラクターがHAPPY
+0x08C31B44 メインキャラクターがBAD
+0x08C31B50 メインキャラクターがBAD
+0x08C31E80 メインキャラクターがBAD
+0x08C31E8C メインキャラクターがBAD
+0x08C31EBC メインキャラクターがBAD
+0x08C31EC8 メインキャラクターがBAD
+0x08C31F10 メインキャラクターがBAD
+0x08C31B48 サブキャラクターがBAD
+0x08C31B54 サブキャラクターがBAD
+0x08C31E90 サブキャラクターがBAD
+0x08C31B5C メインキャラクターがGOOD
+0x08C31E50 メインキャラクターがGOOD
+0x08C31E5C メインキャラクターがGOOD
+0x08C31E68 メインキャラクターがGOOD
+0x08C31EA4 メインキャラクターがGOOD
+0x08C31ED4 メインキャラクターがGOOD
+0x08C31EE0 メインキャラクターがGOOD
+0x08C31EEC メインキャラクターがGOOD
+0x08C31F04 メインキャラクターがGOOD
+0x08C31F1C メインキャラクターがGOOD
+0x08C31F28 メインキャラクターがGOOD
+0x08C31F34 メインキャラクターがGOOD
+0x08C31B68 弱音ハクがHAPPY
+0x08C31D40 弱音ハクがHAPPY
+0x08C31B6C 初音ミクがGOOD
+0x08C31CD0 初音ミクがGOOD
+0x08C31CF4 初音ミクがGOOD
+0x08C31D0C 初音ミクがGOOD
+0x08C31D18 初音ミクがGOOD
+0x08C31D24 初音ミクがGOOD
+0x08C31D30 初音ミクがGOOD
+0x08C31D3C 初音ミクがGOOD
+0x08C31B74 カイトがHAPPY
+0x08C31B80 カイトがHAPPY
+0x08C31B8C カイトがHAPPY
+0x08C31B98 カイトがHAPPY
+0x08C31BC8 カイトがHAPPY
+0x08C31C08 カイトがHAPPY
+0x08C31C20 カイトがHAPPY
+0x08C31C2C カイトがHAPPY
+0x08C31C38 カイトがHAPPY
+0x08C31C44 カイトがHAPPY
+0x08C31C50 カイトがHAPPY
+0x08C31D70 カイトがHAPPY
+0x08C31D88 カイトがHAPPY
+0x08C31DC4 カイトがHAPPY
+0x08C31E00 カイトがHAPPY
+0x08C31E30 カイトがHAPPY
+0x08C31E48 カイトがHAPPY
+0x08C31F58 カイトがHAPPY
+0x08C31B78 初音ミクがBAD
+0x08C31C4C 初音ミクがBAD
+0x08C31B84 巡音ルカがBAD
+0x08C31B90 鏡音レンがHAPPY
+0x08C31BB4 鏡音レンがHAPPY
+0x08C31BC0 鏡音レンがHAPPY
+0x08C31D28 鏡音レンがHAPPY
+0x08C31D6C 鏡音レンがHAPPY
+0x08C31D84 鏡音レンがHAPPY
+0x08C31D9C 鏡音レンがHAPPY
+0x08C31DA8 鏡音レンがHAPPY
+0x08C31DE8 鏡音レンがHAPPY
+0x08C31F5C 鏡音レンがHAPPY
+0x08C31F68 鏡音レンがHAPPY
+0x08C31F88 鏡音レンがHAPPY
+0x08C31BA4 カイトがGOOD
+0x08C31BB0 カイトがGOOD
+0x08C31BBC カイトがGOOD
+0x08C31C80 カイトがGOOD
+0x08C31BA8 初音ミクがHAPPY
+0x08C31C40 初音ミクがHAPPY
+0x08C31C58 初音ミクがHAPPY
+0x08C31C64 初音ミクがHAPPY
+0x08C31C70 初音ミクがHAPPY
+0x08C31C7C 初音ミクがHAPPY
+0x08C31C88 初音ミクがHAPPY
+0x08C31C94 初音ミクがHAPPY
+0x08C31CA0 初音ミクがHAPPY
+0x08C31CAC 初音ミクがHAPPY
+0x08C31CB8 初音ミクがHAPPY
+0x08C31CC4 初音ミクがHAPPY
+0x08C31CDC 初音ミクがHAPPY
+0x08C31CE8 初音ミクがHAPPY
+0x08C31D48 初音ミクがHAPPY
+0x08C31D64 初音ミクがHAPPY
+0x08C31DD0 初音ミクがHAPPY
+0x08C31BD4 巡音ルカがHAPPY
+0x08C31BE0 巡音ルカがHAPPY
+0x08C31BEC 巡音ルカがHAPPY
+0x08C31C04 巡音ルカがHAPPY
+0x08C31CC8 巡音ルカがHAPPY
+0x08C31CE0 巡音ルカがHAPPY
+0x08C31D1C 巡音ルカがHAPPY
+0x08C31DA0 巡音ルカがHAPPY
+0x08C31E18 巡音ルカがHAPPY
+0x08C31BD8 鏡音リンがGOOD
+0x08C31C68 鏡音リンがGOOD
+0x08C31CF8 鏡音リンがGOOD
+0x08C31D10 鏡音リンがGOOD
+0x08C31DCC 鏡音リンがGOOD
+0x08C31DD8 鏡音リンがGOOD
+0x08C31E20 鏡音リンがGOOD
+0x08C31E2C 鏡音リンがGOOD
+0x08C31E38 鏡音リンがGOOD
+0x08C31F64 鏡音リンがGOOD
+0x08C31F70 鏡音リンがGOOD
+0x08C31BE4 メイコがHAPPY
+0x08C31BF0 メイコがHAPPY
+0x08C31C28 メイコがHAPPY
+0x08C31C34 メイコがHAPPY
+0x08C31CEC メイコがHAPPY
+0x08C31D94 メイコがHAPPY
+0x08C31DF4 メイコがHAPPY
+0x08C31E0C メイコがHAPPY
+0x08C31E24 メイコがHAPPY
+0x08C31E3C メイコがHAPPY
+0x08C31BF8 巡音ルカがGOOD
+0x08C31C14 巡音ルカがGOOD
+0x08C31C74 巡音ルカがGOOD
+0x08C31CD4 巡音ルカがGOOD
+0x08C31DDC 巡音ルカがGOOD
+0x08C31BFC カイトがBAD
+0x08C31C10 メイコがGOOD
+0x08C31C8C メイコがGOOD
+0x08C31CBC メイコがGOOD
+0x08C31C1C メイコがBAD
+0x08C31C5C 鏡音レンがGOOD
+0x08C31D60 鏡音レンがGOOD
+0x08C31D78 鏡音レンがGOOD
+0x08C31D90 鏡音レンがGOOD
+0x08C31DB4 鏡音レンがGOOD
+0x08C31DC0 鏡音レンがGOOD
+0x08C31C98 亞北ネルがGOOD
+0x08C31CA4 弱音ハクがGOOD
+0x08C31CB0 咲音メイコがGOOD
+0x08C31D00 初音ミクがBAD or GOOD
+0x08C31D04 咲音メイコがHAPPY
+0x08C31E44 咲音メイコがHAPPY
+0x08C31D34 亞北ネルがHAPPY
+0x08C31D4C 鏡音リンがHAPPY
+0x08C31D7C 鏡音リンがHAPPY
+0x08C31DB8 鏡音リンがHAPPY
+0x08C31DE4 鏡音リンがHAPPY
+0x08C31DF0 鏡音リンがHAPPY
+0x08C31E08 鏡音リンがHAPPY
+0x08C31E14 鏡音リンがHAPPY
+0x08C31F7C 鏡音リンがHAPPY
+0x08C31D54 亞北ネルがBAD or GOOD
+0x08C31D58 初音ミクがGOOD or HAPPY
+0x08C31DFC 鏡音リンがBAD
+0x08C31F74 鏡音レンがBAD
 
 # Shop menu headers
 
