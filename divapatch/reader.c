@@ -32,6 +32,8 @@ const char *cpk_pack[] = {
         "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk",
         "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk",
         "disc0:/PSP_GAME/USRDIR/media/afs/Diva2ExData.cpk",
+        "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk",
+        "disc0:/PSP_GAME/USRDIR/media/afs/Diva2Data.cpk",
 };
 
 const char *image_files[] = {
@@ -39,6 +41,8 @@ const char *image_files[] = {
         "diva2nd_images.bin",
         "divaext_images.bin",
         "divaext_images.bin",
+        "diva2nd#_images.bin",
+        "diva2nd_images.bin",
 };
 
 SceUID datafd;

@@ -1,0 +1,14 @@
+# Translation file for Project Diva 2nd (v1.01) (use shift-jis to edit the file)
+# 0x08xxxxxx: use this format to rewrite the pointed address
+#             to a newly allocated one for the translation.
+# !x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction (use the lower
+#             address part of the instruction for the address).
+# ^x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the upper address (the lui is behind many
+#             branch instructions).
+# $x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the lower address
+

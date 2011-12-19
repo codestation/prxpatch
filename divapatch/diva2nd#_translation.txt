@@ -1,0 +1,30 @@
+# Translation file for Project Diva 2nd Okaidoku Ban (use shift-jis to edit the file)
+# 0x08xxxxxx: use this format to rewrite the pointed address
+#             to a newly allocated one for the translation.
+# !x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction (use the lower
+#             address part of the instruction for the address).
+# ^x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the upper address (the lui is behind many
+#             branch instructions).
+# $x08xxxxxx: use this type of format if the address to modify
+#             is embedded inside a instruction and you only need
+#             to patch the lower address
+
+0x08C133B8 šWhen The First Love Ends
+0x08C133BC šKocchi Muite Baby
+0x08C133C0 šYellow
+0x08C133C8 šColorful x Melody
+0x08C133CC šHatsune Miku no GekiShou
+0x08C133D0 šRomeo & Cinderella
+0x08C133D4 šMagnet
+0x08C133D8 šDear
+0x08C133DC šFrom Y to Y
+0x08C133E0 šGemini
+0x08C133E4 šAi Kotoba
+0x08C133E8 šPoPiPo
+0x08C133EC šSaihate
+0x08C133F0 šVOiCE -DIVA@MIX-
+0x08C133F4 šLove-Colored Ward
+0x08C133F8 šKyodai Shoujo
