@@ -464,7 +464,7 @@ $x08883008 Create a Edit data with in-game music.
 !x0889D9F8 Set the effects to be used in the Edit.
 !x0889DAEC Set the effects to be used in the Edit.
 
-!x0889E84C [Preset %d]
+!x0889E84C  [Preset %d]
 ^x0889F3B4 Unit
 ^x0889F3E8 Unit
 !x0889F414 Unit
@@ -1248,8 +1248,8 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088D6E30 Coords & direction
 !x088D6E48 Set direction
 !x088D6E60 Placement presets
-!x088D7D00 [Custom]
-!x088D7D14 [Preset %d]
+!x088D7D00  [Custom]
+!x088D7D14  [Preset %d]
 
 !x088D9094 入力を行う小節以降のターゲットを消去し、
 !x088D90A8 リアルタイム入力を開始します。
@@ -1351,7 +1351,7 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088E77C8 Installation data was set to OFF.
 
 ^x088E7824 記録メディアが入っていません。
-!x088E78A4 記録メディアが入っていません。
+$x088E78A4 記録メディアが入っていません。
 !x088E7B28 Auto Save
 !x088E7B68 Installation data
 !x088E88FC Auto Save
@@ -2418,7 +2418,7 @@ $x08940A80 Return to the DIVA room.
 0x08C31298 Pleasant Miku
 0x08C3129C Euphoric Rin
 0x08C312A0 Cheerful Len
-0x08C312A4 ランランルカさん
+0x08C312A4 Lan-Lan Luka
 0x08C312A8 Smiling Kaito
 0x08C312AC Exciting Meiko
 0x08C312B0 Elated Neru
