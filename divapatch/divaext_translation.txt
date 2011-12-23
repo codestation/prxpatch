@@ -14,7 +14,7 @@
 #
 # EBOOT reversing and translation: codestation
 # EBOOT reversing helper: Sonic DX
-# translation helpers: HeroKing, naki-the-curious, kienono, Loserbait, nipah
+# translation helpers: HeroKing, naki-the-curious, kienono, Loserbait, nipah, Nightsail
 
 # Options: Data import
 
@@ -1455,6 +1455,15 @@ $x088E78A4 記録メディアが入っていません。
 !x08928974 Import Options Screen
 !x08928988 行って下さい。
 
+# Present-giving messages
+
+!x08934978 Item: %s
+!x089349AC will be given.
+!x08934A50 Present received!
+!x08934B4C This gift was placed
+!x08934B60 in their room!
+!x08934BB8 Return to the DIVA room?
+
 !x08928858 Accessing Memory Stick	1 to
 !x0892886C check for additional content.
 !x08928880 Do not remove the Memory Stick	1.
@@ -2161,7 +2170,7 @@ $x08940A80 Return to the DIVA room.
 0x08C30EAC Tapestry
 0x08C30EB0 Route 39 Classic Board
 0x08C30EB4 Jolly Roger
-0x08C30EB8 Hanging scroll (Weakness)
+0x08C30EB8 Hanging scroll (Weak)
 0x08C30EBC Penmanship (Song)
 0x08C30EC0 Pendulum Clock
 0x08C30EC4 Global Map
@@ -2414,7 +2423,7 @@ $x08940A80 Return to the DIVA room.
 0x08C31288 Now Playing……
 0x08C3128C DIVA Syndrome
 0x08C31290 DIVA Freak
-0x08C31294 God's Absolute Territory
+0x08C31294 God's Zettai Ryouiki
 0x08C31298 Pleasant Miku
 0x08C3129C Euphoric Rin
 0x08C312A0 Cheerful Len
