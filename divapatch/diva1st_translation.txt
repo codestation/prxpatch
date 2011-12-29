@@ -13,6 +13,306 @@
 #             to patch the lower address
 #
 # Placeholder file.
-
+#offsets found by lordscales91
+#Start message (only appears one time, when you start a new game)
+#0x08B70524 Å° ATTENTION Å°
+#0x08B70528 This game has autosave feature.
+#0x08B7052C Don't un-plug the stick when playing
+#0x08B70530 çsÇ»ÇÌÇ»Ç¢Ç≈Ç≠ÇæÇ≥Ç¢
+#Main menu
 0x08B705E0 Free Play
 0x08B705E4 Module Convert
+0x08B705E8 Miku's room
+0x08B705EC Edit Mode
+0x08B705F0 Save
+0x08B705F4 Options
+0x08B705F8 Visual Gallery
+0x08B705FC Back to Title
+#Songs List
+0x08B673F8 Love is war
+0x08B677E0 World is mine
+0x08B67BC8 Sono Ichibyo Slow Motion
+0x08B67FB0 Hinekuremono
+0x08B68398 Melt
+0x08B68780 Far Away
+0x08B68B68 Strobo Nights
+0x08B68F50 Start Story
+0x08B69338 Last Night,Good Night
+0x08B69720 Packaged
+0x08B69B08 Ame Nochi Sweet*Drops
+0x08B69EF0 Marginal
+0x08B6A2D8 Fukigen Waltz
+0x08B6A6C0 Miracle Paint
+0x08B6AAA8 Dreaming Leaf -Yumemiru Kotonoha-
+0x08B6AE90 Koi Suru VOC@LOID
+0x08B6B278 Kouya to Mori Mahou no Uta
+0x08B6B660 Inochi no Uta
+0x08B6BA48 Hato
+0x08B6BE30 moon
+0x08B6C218 Miku Miku-kin ni GochuuiÅÙ
+0x08B6C600 The Secret Garden
+0x08B6C9E8 Dear Cocoa Girls
+0x08B6CDD0 Birodo Arabesque
+0x08B6D1B8 Love List Koushinchuu?
+0x08B6D5A0 Sakura no Ame -standard edit-
+0x08B6D988 Ievan Polkka
+0x08B6DD70 Miku Miku ni Shite AgeruÅÙ [Shite Yanyo]
+0x08B6E158 Kogane no Seiya Sousetsu ni Kuchite
+0x08B6E540 Electric Angel
+0x08B6E928 Anata no Utahime
+0x08B6ED10 Hatsune Miku no Shoushitsu
+0x08B6F0F8 Kouya to Mori to Mahou no Uta (Rin)
+0x08B6F4E0 Inochi no Uta (Rin)
+0x08B6F8C8 Kouya to Mori to Mahou no Uta (Len)
+0x08B6FCB0 Inochi no Uta (Len)
+#Module list
+0x08B25B68 Hatsune Miku
+0x08B25B6C Yowane Haku
+0x08B25B70 Akita Neru
+0x08B25B74 Meiko Style
+0x08B25B78 Rin Style
+0x08B25B7C Space CH 5
+0x08B25B80 Space CH 39
+0x08B25B84 Gallia Squad 7
+0x08B25B88 P-Sytle RP
+0x08B25B8C P-Style MG
+0x08B25B90 P-Style LP
+0x08B25B94 P-Style FB
+0x08B25B98 P-Style IS
+0x08B25B9C P-Style CW
+0x08B25BA0 P-Style PB
+0x08B25BA4 P-Style CG
+0x08B25BA8 Cheerleader
+0x08B25BAC Plug-In
+0x08B25BB0 Gothic
+0x08B25BB4 Princess
+0x08B25BB8 Miko
+0x08B25BBC Nekomimi
+0x08B25BC0 Pajama
+0x08B25BC4 Heart Hunter
+0x08B25BC8 Vocal
+0x08B25BCC Punk
+0x08B25BD0 Dancer
+0x08B25BD4 Star
+0x08B25BD8 Fairy
+0x08B25BDC School
+0x08B25BE0 Snow
+0x08B25BE4 Arabian
+0x08B25BE8 Miyabi
+0x08B25BEC China
+0x08B25BF0 Magician
+0x08B25BF4 White Dress
+0x08B25BF8 Pirate
+0x08B25BFC VN02
+0x08B25C00 Galaxy
+0x08B25C04 Hatsune Miku
+0x08B25C08 Kagamine Rin
+0x08B25C0C Kagamine Len
+0x08B25C10 Megurine Luka
+0x08B25C14 Sakine Meiko
+0x08B25C18 Meiko
+0x08B25C1C Kaito
+0x08B25C20 Hatsune Miku Swimwear S
+0x08B25C24 Hatsune Miku Swimwear
+0x08B25C28 Kagamine Rin Swimwear
+0x08B25C2C Kagamine Len Swimeear
+0x08B25C30 Megurine Luka Swimwear
+0x08B25C34 Meiko Swimwear
+0x08B25C38 Kaito Swimwear
+#DIVA ROOM
+0x08B25880 No BGM
+0x08B25884 Miku's room
+#Room Styles(All the styles are called * style.
+#Where * is the name, so I will remove the 'style'
+#to make the string fit the max lenght)
+0x08B24EDC Space
+0x08B24EE0 Blizzard
+0x08B24EE4 Normal
+0x08B24EE8 Viking
+0x08B24EEC Japan
+0x08B24EF0 Western
+0x08B24EF4 Classroom
+0x08B24EF8 Steam
+0x08B24EFC Amusemen
+0x08B24F00 Haloween
+#ITEMS LIST
+#Room Acc.
+0x08B252B0 Bear Plushie
+0x08B252B4 Bear Plushie(Red)
+0x08B252B8 Dog Plushie
+0x08B252BC Snowman
+0x08B252C0 Cat Plushie
+0x08B252C4 Kagami Mochi
+0x08B252C8 Mini Mini Sakura
+0x08B252CC Mini Kadomatsu
+0x08B252D0 Le Creusot
+0x08B252D4 Surprise Box
+0x08B252D8 Statue(Tree and Turtle)
+0x08B252DC Blue Planet
+0x08B252E0 Plate(SEGA)
+0x08B252E4 Mark \c
+0x08B252E8 Master System
+0x08B252EC Megadrive
+0x08B252F0 Game Gear
+0x08B252F4 Soda Ice
+0x08B252F8 Nendoroid Hatsune Miku
+0x08B252FC Diary
+0x08B25300 Ice Box
+0x08B25304 Tsuitate Screen
+0x08B25308 Flower Vase
+0x08B2530C Blackboar Eraser
+0x08B25310 Bonsai
+0x08B25314 Superstar: Negiyuki
+0x08B25318 Tsukimi dango
+0x08B2531C Haloween goods
+0x08B25320 Christmas Tree
+0x08B25324 Maracas
+0x08B25328 Harmonica
+0x08B2532C Small Drum
+0x08B25330 Giro
+0x08B25334 Ocarina
+0x08B25338 Nostalgic School Keepsake
+0x08B2533C Graduation album
+0x08B25340 Nurse Hat & Stethoscope
+0x08B25344 Ambulance
+0x08B25348 Plate(CRYPTON)
+0x08B2534C Nendoroid Kagamine Rin
+0x08B25350 Bunny Plushie
+0x08B25354 Sea Otter Plushie
+0x08B25358 Picture frame
+0x08B2535C Ice Style Picture frame
+0x08B25360 Snow Globe\a
+0x08B25364 Snow Globe\b
+0x08B25368 Light Stand\a
+0x08B2536C Light Stand\b
+0x08B25370 Light Stand\c
+0x08B25374 Light Stand\d
+0x08B25378 Watermelon Ornament
+0x08B2537C Pumpkinhead
+0x08B25380 Imperial Decoration
+0x08B25384 Desire Drawn in the Sky
+0x08B25388 With's Hat
+0x08B2538C Plate(PIAPRO)
+0x08B25390 Road Roller
+0x08B25394 Nendoroid Kagamine Len
+#Wall Accesory
+0x08B255C4 Stuffed Deer(Replica)
+0x08B255C8 Flower
+0x08B255CC Strange Mask
+0x08B255D0 Viking Clock
+0x08B255D4 Haloween Cross
+0x08B255D8 Western Badge
+0x08B255DC Cow Bone
+0x08B255E0 Western hat
+0x08B255E4 Western Replica
+0x08B255E8 Akita Neru Poster
+0x08B255EC Yowane Haku Poster
+0x08B255F0 Original Poster 01
+0x08B255F4 Original Poster 02
+0x08B255F8 Original Poster 03
+0x08B255FC Original Poster 04
+0x08B25600 Original Poster 05
+0x08B25604 Original Poster 06
+0x08B25608 Original Poster 07
+0x08B2560C Original Poster 08
+0x08B25610 Original Poster 09
+0x08B25614 Original Poster 10
+0x08B25618 Original Poster 11
+0x08B2561C Original Poster 12
+0x08B25620 Original Poster 13
+0x08B25624 Original Poster 14
+0x08B25628 Original Poster 15
+#Floor Acc.
+0x08B257FC Space Material
+0x08B25800 Balance Ball
+0x08B25804 Trash Box\a
+0x08B25808 Trash Box\b
+0x08B2580C Cardboard Box with Negi
+0x08B25810 Plant\a
+0x08B25814 Plant\b
+0x08B25818 Plant\c
+0x08B2581C Plant\d
+0x08B25820 Plant\e
+0x08B25824 Cactus
+0x08B25828 Cactus(Haloween)
+0x08B2582C Money Tree
+0x08B25830 Basket
+0x08B25834 Standing Light
+0x08B25838 Pole Hanger
+0x08B2583C Barrel
+0x08B25840 Orchestra Set
+0x08B25844 Brass Band Set
+0x08B25848 Electric Set
+0x08B2584C Folk Set
+0x08B25850 Jazz Set
+0x08B25854 Strange Set
+0x08B25858 Future Series
+0x08B2585C Future Seties (Shuttle)
+0x08B25860 Monolith
+0x08B25864 Black Box
+0x08B25868 Switch (Enigma)
+#Menu Titles (Miku Room)
+0x08B70EF4 Room Style
+0x08B70EF8 Room Acc.\a
+0x08B70EFC Room Acc.\b
+0x08B70F00 Room Acc.\c
+0x08B70F04 Wall Accesory
+0x08B70F08 Floor Acc.
+!x08AC2658 Change Layout
+!x08AC39CC Set BGM
+#Other Menu Titles
+!x08AB4240 Menu
+!x08AB5010 Menu
+!x08AB5214 Menu
+#Menu Descriptions (24-25 chars max.)
+#Free Play
+0x08B70290 Here you can play rhythm
+0x08B70294 games. More songs will
+0x08B70298 be unlocked, as you clear
+0x08B7029C the previous ones.
+#Module Convert
+0x08B702A0 Here you can change the
+0x08B702A4 module and custome.
+#Miku's room
+0x08B702B0 You can see what is doing
+0x08B702B4 Miku on her spare time
+#Edit mode
+0x08B702C0 Here you can create your
+0x08B702C4 own rhythm games and PVs
+#Save
+0x08B702D0 Here you can:
+0x08B702D4 saveÅEloadÅEdelete
+0x08B702D8 the game savedata
+#Options
+0x08B702E0 You can adjust BGM
+0x08B702E4 and SE volume here
+#Visual gallery
+0x08B702F0 Here is a collection of
+0x08B702F4 the in-game load screens
+#Back to title
+0x08B70300 If you want to return to
+0x08B70304 the title, do it here.
+#Item unlock requirements
+!x08AC2A34 Clear rhythm game
+!x08AC2AA4 Low Chance
+!x08AC2AC0 Medium Chance
+!x08AC2ADC High Chance
+#EDIT MODE
+#Main Menu (Edit Mode)
+0x08B56B10 Create New
+0x08B56B14 Continue
+0x08B56B18 Play an Edit
+0x08B56B1C View Edit PV
+0x08B56B20 Leave it to you
+#Songs list(Edit mode)
+0x08B5BE78 Love is war
+0x08B5BE88 World is mine
+0x08B5BE98 Sono ichibyo Slow Motion
+0x08B5BEA8 Hinekuremono
+0x08B5BEB8 Melt
+0x08B5BEC8 Far Away
+0x08B5BED8 Strobo Nights
+0x08B5BEE8 Star Story
+0x08B5BEF8 Last Night,Good Night
+#Unknown
+0x08B5F6CC None

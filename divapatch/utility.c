@@ -47,7 +47,7 @@ int diva_osk(SceUtilityOskParams* params) {
         pspSdkSetK1(k1);
     }
     params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
-    params->data->language = PSP_UTILITY_OSK_LANGUAGE_ENGLISH;
+    params->data->language = PSP_UTILITY_OSK_LANGUAGE_JAPANESE;
     params->data->inputtype = PSP_UTILITY_OSK_INPUTTYPE_ALL;
     return sceUtilityOskInitStart_func(params);
 }
