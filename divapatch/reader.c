@@ -53,17 +53,24 @@ u32 cpk_count = 0;
 cpknode *cpk_table;
 char *image_filenames;
 const char *cpk_file;
+SceUID wait_fd = -1;
+SceSize wait_size;
 
 static SceUID open_file(const char *file) {
     int ret = -1;
     SceIoStat stat;
+    char path[256];
 
-    strrchr(filepath, '/')[1] = 0;
-    strcat(filepath, file);
-    kprintf("trying to open %s\n", filepath);
+	strcpy(path, filepath);
+    strrchr(path, '/')[1] = 0;
+    strcat(path, file);
+    kprintf("trying to open %s\n", path);
     memset(&stat, 0, sizeof(stat));
-    if(sceIoGetstat(filepath, &stat) >= 0) {
-        ret = sceIoOpen(filepath, PSP_O_RDONLY, 0777);
+    if(sceIoGetstat(path, &stat) >= 0) {
+        ret = sceIoOpen(path, PSP_O_RDONLY, 0777);
+        kprintf("got fd: %08X\n", ret);
+    } else {
+        kprintf("File not found\n");
     }
     return ret;
 }
@@ -108,10 +115,12 @@ int load_image_index(int file_index) {
 
     // save the correct cpk container to use
     cpk_file = cpk_pack[file_index];
+    kprintf("Using %s as cpk file\n", cpk_file);
     return 1;
 }
 
 SceUID diva_open(const char *file, int flags, SceMode mode) {
+    kprintf("opening %s\n", file);
     SceUID fd = sceIoOpen(file, flags, mode);
     if (fd >= 0) {
         // if the opened file is our cpk then lets save the file descriptor so
@@ -126,7 +135,7 @@ SceUID diva_open(const char *file, int flags, SceMode mode) {
     return fd;
 }
 
-int diva_read(SceUID fd, void *data, SceSize size) {
+int _diva_read(SceUID fd, void *data, SceSize size, int async) {
     u32 file_offset;
     cpknode *file_index;
     SceUID modfd;
@@ -146,11 +155,16 @@ int diva_read(SceUID fd, void *data, SceSize size) {
             if(modfd >= 0) {
                 kprintf("reading offset %08X, size: %08X\n", file_offset, size);
                 // read our modified file instead, fooling the game
-                res = sceIoRead(modfd, data, size);
-                sceIoClose(modfd);
+                res = async ? sceIoReadAsync(modfd, data, size) : sceIoRead(modfd, data, size);
                 kprintf("read returned %08X\n", res);
                 // make sure to return the read bytes that the game is expecting
-                res = (int)size;
+                if(!async) {
+                    res = (int)size;
+                    sceIoClose(modfd);
+                } else {
+                    wait_size = size;
+                    wait_fd = modfd;
+                }
                 // and advance the file pointer so we fully simulated that the read from the
                 // cpk has been done
                 sceIoLseek(fd, size, PSP_SEEK_CUR);
@@ -160,8 +174,80 @@ int diva_read(SceUID fd, void *data, SceSize size) {
             pspSdkSetK1(k1);
         }
     }
-    kprintf("reading %i bytes from fd: %08X, offset: %08X\n", size, fd, (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR));
-    return sceIoRead(fd, data, size);
+    kprintf("reading %i bytes from fd: %08X, offset: %08X, async: %i\n", size, fd, (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR), async);
+    return async ? sceIoReadAsync(fd, data, size) : sceIoRead(fd, data, size);
+}
+
+int diva_read(SceUID fd, void *data, SceSize size) {
+    return _diva_read(fd, data, size, 0);
+}
+
+int diva_aread(SceUID fd, void *data, SceSize size) {
+    return _diva_read(fd, data, size, 1);
+}
+
+int diva_wait(SceUID fd, SceInt64 *res) {
+    int ret;
+    u32 k1;
+
+    if(wait_fd >= 0 && fd == datafd) {
+        kprintf("waiting for fd: %08X\n", wait_fd);
+        k1 = pspSdkSetK1(0);
+        ret = sceIoWaitAsync(wait_fd, res);
+        if(ret >= 0) {
+            kprintf("Async read completed: %i bytes\n", (u32)*res);
+            *res = wait_size;
+        }
+        sceIoClose(wait_fd);
+        pspSdkSetK1(k1);
+        wait_fd = -1;
+        return ret;
+    }
+    return sceIoWaitAsync(fd, res);
+}
+int diva_poll(SceUID fd, SceInt64 *res) {
+    int ret;
+    u32 k1;
+
+    if(wait_fd >= 0 && fd == datafd) {
+        kprintf("polling for fd: %08X\n", wait_fd);
+        k1 = pspSdkSetK1(0);
+        ret = sceIoPollAsync(wait_fd, res);
+        if(ret <= 0) {
+            if(ret == 0) {
+                kprintf("Async read completed: %i bytes\n", (u32)*res);
+                *res = wait_size;
+            } else {
+                kprintf("polling error: %08X\n", ret);
+            }
+            sceIoClose(wait_fd);
+            wait_fd = -1;
+        } else {
+            kprintf("poll result: %08X\n", ret);
+        }
+        pspSdkSetK1(k1);
+        return ret;
+    }
+    return sceIoPollAsync(fd, res);
+}
+int diva_waitc(SceUID fd, SceInt64 *res) {
+    int ret;
+    u32 k1;
+
+    if(wait_fd >= 0 && fd == datafd) {
+        kprintf("waiting (CB) for fd: %08X\n", wait_fd);
+        k1 = pspSdkSetK1(0);
+        ret = sceIoWaitAsyncCB(wait_fd, res);
+        if(ret >= 0) {
+            kprintf("Async read completed: %i bytes\n", (u32)*res);
+            *res = wait_size;
+        }
+        sceIoClose(wait_fd);
+        wait_fd = -1;
+        pspSdkSetK1(k1);
+        return ret;
+    }
+    return sceIoWaitAsyncCB(fd, res);
 }
 
 int diva_close(SceUID fd) {

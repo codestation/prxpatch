@@ -78,6 +78,10 @@ const char *embedded_files[] = {
 const stub stubs[] = {
         { 0x109F50BC, diva_open  }, // sceIoOpen
         { 0x6A638D83, diva_read  }, // sceIoRead
+        { 0xA0B5A7C2, diva_aread }, // sceIoReadAsync
+        { 0xE23EEC33, diva_wait  }, // sceIoWaitAsync
+        { 0x3251EA56, diva_poll  }, // sceIoPollAsync
+        { 0x35DBD746, diva_waitc }, // sceIoWaitAsyncCB
         { 0x810C4BC3, diva_close }, // sceIoClose
 };
 

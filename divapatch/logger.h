@@ -20,6 +20,7 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
+#include <pspsdk.h>
 #include <string.h>
 
 #ifdef DEBUG
@@ -29,12 +30,15 @@
 int sprintf(char *str, const char *format, ...);
 
 extern char _buffer_log[256];
+extern u32 __k1;
 
 int kwrite(const char *path, void *buffer, SceSize buflen);
 
 #define kprintf(format, ...) do { \
+    __k1 = pspSdkSetK1(0); \
     sprintf(_buffer_log, "%s: "format, __func__, ## __VA_ARGS__); \
     kwrite(LOGFILE, _buffer_log, strlen(_buffer_log)); \
+    pspSdkSetK1(__k1); \
 } while(0)
 
 int kwrite(const char *path, void *buffer, SceSize buflen);

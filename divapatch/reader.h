@@ -36,6 +36,10 @@ typedef struct {
 int load_image_index(int file_index);
 SceUID diva_open(const char *file, int flags, SceMode mode);
 int diva_read(SceUID fd, void *data, SceSize size);
+int diva_aread(SceUID fd, void *data, SceSize size);
+int diva_wait(SceUID fd, SceInt64 *res);
+int diva_poll(SceUID fd, SceInt64 *res);
+int diva_waitc(SceUID fd, SceInt64 *res);
 int diva_close(SceUID fd);
 
 #endif /* SCEIO_H_ */
