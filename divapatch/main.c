@@ -85,12 +85,16 @@ const stub stubs[] = {
         { 0x810C4BC3, diva_close }, // sceIoClose
 };
 
+#ifdef UTILITY_HOOK
+
 const stub utility_stubs[] = {
         { 0x50C4CD57, diva_save  }, // sceUtilitySavedataInitStart
         { 0xF6269B82, diva_osk   }, // sceUtilityOskInitStart
         { 0x4DB1E739, diva_net   }, // sceUtilityNetconfInitStart
         { 0x0251B134, diva_shot  }, // sceUtilityScreenshotInitStart
 };
+
+#endif
 
 char filepath[256];
 
@@ -437,6 +441,8 @@ void patch_imports(SceModule *module) {
     }
 }
 
+#ifdef UTILITY_HOOK
+
 /**
  * Patch the imports of the game eboot (osk/net/save dialogs)
  * @param module: module structure to have it hooked
@@ -456,6 +462,8 @@ void change_lang(int lang) {
     sceImposeSetLanguageMode(lang, button);
 }
 
+#endif
+
 int thread_start(SceSize args, void *argp) {
     // save the plugin location
     strcpy(filepath, argp);
@@ -470,14 +478,16 @@ int thread_start(SceSize args, void *argp) {
 
     // load the image index table
     if(patch_index >= 0) {
+#ifdef UTILITY_HOOK
         // change the impose language
         change_lang(PSP_SYSTEMPARAM_LANGUAGE_ENGLISH);
-
+#endif
         SceModule *module = sceKernelFindModuleByName(GAME_MODULE);
         if(module) {
+#ifdef UTILITY_HOOK
             kprintf("patching utility funcs\n");
             patch_utility(module);
-
+#endif
             if(load_image_index(patch_index)) {
                 // redirect the file open, read and close operations to our plugin
                 kprintf("patching imports\n");

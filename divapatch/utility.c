@@ -21,6 +21,8 @@
 #include "pspdefs.h"
 #include "utility.h"
 
+#ifdef UTILITY_HOOK
+
 int (*sceUtilitySavedataInitStart_func)(SceUtilitySavedataParam * params) = NULL;
 int (*sceUtilityOskInitStart_func)(SceUtilityOskParams* params) = NULL;
 int (*sceUtilityNetconfInitStart_func)(pspUtilityNetconfData *data) = NULL;
@@ -75,3 +77,24 @@ int diva_shot(SceUtilityScreenshotParam *params) {
     params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
     return sceUtilityScreenshotInitStart_func(params);
 }
+
+#else
+
+int diva_save(SceUtilitySavedataParam * params) {
+    return 0;
+}
+
+int diva_osk(SceUtilityOskParams* params) {
+    return 0;
+}
+
+int diva_net(pspUtilityNetconfData *data) {
+    return 0;
+}
+
+int diva_shot(SceUtilityScreenshotParam *params) {
+    return 0;
+}
+
+#endif
+

@@ -9,12 +9,16 @@ ifeq ($(DEBUG), 1)
 CFLAGS+=-DDEBUG
 endif
 
+ifneq ($(UTILITY_HOOK), 0)
+CFLAGS+=-DUTILITY_HOOK
+endif
+
 ASFLAGS = $(CFLAGS)
 
 USE_KERNEL_LIBC = 1
 USE_KERNEL_LIBS = 1
 
-PSP_FW_VERSION=500
+PSP_FW_VERSION=620
 
 PSPSDK=$(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build_prx.mak
