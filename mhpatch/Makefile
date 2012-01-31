@@ -1,9 +1,6 @@
 TARGET = mhp3patch
 OBJS =  main.o libs.o imports.o exports.o logger.o misc.o sceio.o data_install.o
 
-all:
-	psp-packer mhp3patch.prx
-
 LIBS =
 WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
 CFLAGS = -O2 -G0 -std=c99 $(WARN_FLAGS)
