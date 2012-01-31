@@ -1,4 +1,21 @@
 # Image index table file for Project Diva
 # Use the format <offset, filename> to override the files in DivaDataList.afs
 
+0x000B0000 diva1st/menu_basic.png
+0x000B8000 diva1st/menu_basic02_log.txt
+0x000B9000 diva1st/menu_basic02.png
 0x00886800 diva1st/menu_title_home.png
+0x00889800 diva1st/menu_title_myroom.png
+0x10A79000 diva1st/pv_start_01.png
+0x10A7C800 diva1st/pv_start_02.png
+0x10A80000 diva1st/pv_start_03.png
+0x10A84000 diva1st/pv_start_04.png
+0x10A87800 diva1st/pv_start_05.png
+0x10A8B000 diva1st/pv_start_06.png
+0x10A8E800 diva1st/pv_start_07.png
+0x10A92000 diva1st/pv_start_08.png
+0x10A95800 diva1st/pv_start_09.png
+0x10A99000 diva1st/pv_start_10.png
+0x10A9C800 diva1st/pv_start_11.png
+0x10AA0800 diva1st/pv_start_12.png
+0x10AA4000 diva1st/pv_start_13.png

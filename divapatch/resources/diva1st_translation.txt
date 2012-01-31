@@ -12,13 +12,13 @@
 #             is embedded inside a instruction and you only need
 #             to patch the lower address
 #
-# Placeholder file.
-#offsets found by lordscales91
+# EBOOT reversing and translation: lordscales91
+
 #Start message (only appears one time, when you start a new game)
 #0x08B70524 Å° ATTENTION Å°
-#0x08B70528 This game has autosave feature.
-#0x08B7052C Don't un-plug the stick when playing
-#0x08B70530 çsÇ»ÇÌÇ»Ç¢Ç≈Ç≠ÇæÇ≥Ç¢
+0x08B70528 This game saves data in the memorystick.
+0x08B7052C Don't un-plug the stick when saving
+0x08B70530 lordscales91   --thanks codestation
 #Main menu
 0x08B705E0 Free Play
 0x08B705E4 Module Convert
@@ -36,7 +36,7 @@
 0x08B68398 Melt
 0x08B68780 Far Away
 0x08B68B68 Strobo Nights
-0x08B68F50 Start Story
+0x08B68F50 Star Story
 0x08B69338 Last Night,Good Night
 0x08B69720 Packaged
 0x08B69B08 Ame Nochi Sweet*Drops
@@ -56,7 +56,7 @@
 0x08B6D1B8 Love List Koushinchuu?
 0x08B6D5A0 Sakura no Ame -standard edit-
 0x08B6D988 Ievan Polkka
-0x08B6DD70 Miku Miku ni Shite AgeruÅÙ [Shite Yanyo]
+0x08B6DD70 Miku Miku ni Shite AgeruÅÙ
 0x08B6E158 Kogane no Seiya Sousetsu ni Kuchite
 0x08B6E540 Electric Angel
 0x08B6E928 Anata no Utahime
@@ -264,6 +264,12 @@
 !x08AB4240 Menu
 !x08AB5010 Menu
 !x08AB5214 Menu
+#Music selection Box
+0x08B722E0 Music List
+0x08B722E4 Memory Stick
+!x08A807A8 Song Selection
+0x08B5A164 Song Selection
+0x08B5A558 Song Selection
 #Menu Descriptions (24-25 chars max.)
 #Free Play
 0x08B70290 Here you can play rhythm
@@ -292,11 +298,232 @@
 #Back to title
 0x08B70300 If you want to return to
 0x08B70304 the title, do it here.
-#Item unlock requirements
+#Options submenu descriptions
+0x08B706A8 Adjust BGM volume here.
+0x08B706AC Use left-right arrows
+0x08B706B8 Adjust SE volume here.
+0x08B706BC Use left-right arrows
+#Menu dialogs
+0x08B70458 Go to Miku Room?
+0x08B70464 Go to Edit Mode?
+0x08B70488 Go to Visual Gallery?
+0x08B70494 This takes you to the title.
+0x08B70498 All unsaved progress will be lost
+0x08B7049C Are you sure?
+!x08B09920 Back to Home?
+!x08B09B18 Back to Home?
+!x08A915B8 Back to Home?
+!x08AC01A8 High Score %07d
+0x08B70D38 Do you want to play it?
+0x08B70D3C Do you want to view it?
+!x08AC075C Enjoy
+!x08AF0518 Photographing done.
+#Unlock Requirements
 !x08AC2A34 Clear rhythm game
 !x08AC2AA4 Low Chance
 !x08AC2AC0 Medium Chance
 !x08AC2ADC High Chance
+!x08AC16AC Specific Module
+0x08B26134 GREAT or more
+0x08B26154 GREAT or more
+0x08B26174 GREAT or more
+0x08B26194 GREAT or more
+0x08B26474 GREAT or more
+0x08B265B4 GREAT or more
+0x08B26674 GREAT or more
+0x08B266F4 GREAT or more
+0x08B26734 GREAT or more
+0x08B26774 GREAT or more
+0x08B267F4 GREAT or more
+0x08B26874 GREAT or more
+0x08B26974 GREAT or more
+0x08B269B4 GREAT or more
+0x08B26AF4 GREAT or more
+0x08B26B14 GREAT or more
+0x08B26DA0 GREAT or more
+0x08B26DA8 GREAT or more
+0x08B26DB0 GREAT or more
+0x08B26DD0 GREAT or more
+0x08B26DD8 GREAT or more
+0x08B26DE8 GREAT or more
+0x08B26DF0 GREAT or more
+0x08B26E08 GREAT or more
+0x08B26E10 GREAT or more
+0x08B26E18 GREAT or more
+0x08B26E20 GREAT or more
+0x08B26E28 GREAT or more
+0x08B26E30 GREAT or more
+0x08B26E38 GREAT or more
+0x08B26E40 GREAT or more
+0x08B26E48 GREAT or more
+0x08B26E78 GREAT or more
+0x08B26E80 GREAT or more
+0x08B26E90 GREAT or more
+0x08B26E98 GREAT or more
+0x08B26EB8 GREAT or more
+0x08B26EC0 GREAT or more
+0x08B26EC8 GREAT or more
+0x08B26ED0 GREAT or more
+0x08B26ED8 GREAT or more
+0x08B26EE0 GREAT or more
+0x08B26EE8 GREAT or more
+0x08B26EF0 GREAT or more
+0x08B26F50 GREAT or more
+0x08B26F60 GREAT or more
+0x08B26F68 GREAT or more
+0x08B26F70 GREAT or more
+0x08B26F78 GREAT or more
+0x08B26F80 GREAT or more
+0x08B26FC0 GREAT or more
+0x08B26FC8 GREAT or more
+0x08B26FD0 GREAT or more
+0x08B26FD8 GREAT or more
+0x08B26FE0 GREAT or more
+0x08B26FE8 GREAT or more
+0x08B26FF0 GREAT or more
+0x08B26FF8 GREAT or more
+0x08B27000 GREAT or more
+0x08B27008 GREAT or more
+0x08B27010 GREAT or more
+0x08B27018 GREAT or more
+0x08B27020 GREAT or more
+0x08B27028 GREAT or more
+0x08B27030 GREAT or more
+0x08B27038 GREAT or more
+0x08B27040 GREAT or more
+0x08B27048 GREAT or more
+0x08B27050 GREAT or more
+0x08B27078 GREAT or more
+0x08B270A8 GREAT or more
+0x08B270B0 GREAT or more
+0x08B270B8 GREAT or more
+0x08B270D0 GREAT or more
+0x08B270D8 GREAT or more
+0x08B27100 GREAT or more
+0x08B27108 GREAT or more
+0x08B27110 GREAT or more
+0x08B27118 GREAT or more
+0x08B27120 GREAT or more
+0x08B27128 GREAT or more
+0x08B27130 GREAT or more
+0x08B26074 STANDARD or more
+0x08B260B4 STANDARD or more
+0x08B260F4 STANDARD or more
+0x08B261B4 STANDARD or more
+0x08B261F4 STANDARD or more
+0x08B26434 STANDARD or more
+0x08B264B4 STANDARD or more
+0x08B264F4 STANDARD or more
+0x08B26534 STANDARD or more
+0x08B26574 STANDARD or more
+0x08B265F4 STANDARD or more
+0x08B26634 STANDARD or more
+0x08B266B4 STANDARD or more
+0x08B267B4 STANDARD or more
+0x08B26834 STANDARD or more
+0x08B268B4 STANDARD or more
+0x08B268F4 STANDARD or more
+0x08B26934 STANDARD or more
+0x08B269F4 STANDARD or more
+0x08B26A34 STANDARD or more
+0x08B26A74 STANDARD or more
+0x08B26AB4 STANDARD or more
+0x08B26B34 STANDARD or more
+0x08B26B74 STANDARD or more
+0x08B26094 MAX combo 120 or more
+0x08B268D4 MAX combo 120 or more
+0x08B260D4 Score 230000 or more
+0x08B26114 Score 250000 or more
+0x08B26654 Score 250000 or more
+0x08B261D4 MAX combo 70 or more
+0x08B26214 Clear 5 or more
+0x08B26494 Clear 5 or more
+0x08B26514 Clear 5 or more
+0x08B26594 Clear 5 or more
+0x08B26614 Clear 5 or more
+0x08B26694 Clear 5 or more
+0x08B266D4 Clear 5 or more
+0x08B26714 Clear 5 or more
+0x08B26814 Clear 5 or more
+0x08B26994 Clear 5 or more
+0x08B26A14 Clear 5 or more
+0x08B26B54 Clear 5 or more
+0x08B26B94 Clear 5 or more
+0x08B2622C Clear All Pink tags
+0x08B2624C Clear All Pink tags
+0x08B26234 NORMAL / GREAT or more
+0x08B26254 NORMAL / GREAT or more
+0x08B26274 NORMAL / GREAT or more
+0x08B26294 NORMAL / GREAT or more
+0x08B262B4 NORMAL / GREAT or more
+0x08B262D4 NORMAL / GREAT or more
+0x08B262F4 NORMAL / GREAT or more
+0x08B26314 NORMAL / GREAT or more
+0x08B26334 NORMAL / GREAT or more
+0x08B26354 NORMAL / GREAT or more
+0x08B26374 NORMAL / GREAT or more
+0x08B26394 NORMAL / GREAT or more
+0x08B263B4 NORMAL / GREAT or more
+0x08B263D4 NORMAL / GREAT or more
+0x08B26BB4 NORMAL / GREAT or more
+0x08B26BD4 NORMAL / GREAT or more
+0x08B2626C Clear All Yellow tags
+0x08B2628C Clear All Yellow tags
+0x08B262AC Clear All Orange tags
+0x08B262CC Clear All Orange tags
+0x08B262EC Clear All Blue tags
+0x08B2630C Clear All Blue tags
+0x08B2632C Clear All songs
+0x08B2634C Clear All songs
+0x08B263EC Clear All songs
+0x08B2640C Clear All songs
+0x08B26BEC Clear All songs
+0x08B26C0C Clear All songs
+0x08B26C2C Clear All songs
+0x08B26C4C Clear All songs
+0x08B26C6C Clear All songs
+0x08B26C8C Clear All songs
+0x08B26CAC Clear All songs
+0x08B26CCC Clear All songs
+0x08B26CEC Clear All songs
+0x08B26D0C Clear All songs
+0x08B26D2C Clear All songs
+0x08B26D4C Clear All songs
+0x08B2636C Clear All Sky Blue tags
+0x08B2638C Clear All Sky Blue tags
+0x08B263AC Clear All White tags
+0x08B263CC Clear All White tags
+0x08B263F4 HARD / GREAT or more
+0x08B26414 HARD / GREAT or more
+0x08B26454 MAX combo 110 or more
+0x08B26754 MAX combo 110 or more
+0x08B26894 MAX combo 110 or more
+0x08B26954 MAX combo 110 or more
+0x08B264D4 MAX combo 100 or more
+0x08B26794 MAX combo 100 or more
+0x08B267D4 MAX combo 100 or more
+0x08B26A54 MAX combo 100 or more
+0x08B26A94 MAX combo 100 or more
+0x08B26AD4 MAX combo 100 or more
+0x08B26554 Score 150000 or more
+0x08B265D4 MAX combo 130 or more
+0x08B26854 Score 200000 or more
+0x08B26914 Score 300000 or more
+0x08B269D4 MAX combo 80 or more
+0x08B26BAC Specific Sky Blue songs
+0x08B26BCC Specific Sky Blue songs
+0x08B26BF4 Got to do (?)
+0x08B26C14 Got to do (?)
+0x08B26C34 Got to do (?)
+0x08B26C54 Got to do (?)
+0x08B26C74 Got to do (?)
+0x08B26C94 Got to do (?)
+0x08B26CB4 Got to do (?)
+0x08B26CD4 Got to do (?)
+0x08B26CF4 Got to do (?)
+0x08B26D14 Got to do (?)
+0x08B26D34 Got to do (?)
+0x08B26D54 Got to do (?)
 #EDIT MODE
 #Main Menu (Edit Mode)
 0x08B56B10 Create New
@@ -304,7 +531,7 @@
 0x08B56B18 Play an Edit
 0x08B56B1C View Edit PV
 0x08B56B20 Leave it to you
-#Songs list(Edit mode)
+#Songs list(Edit mode, and also is used for the song list on the Miku's set BGM)
 0x08B5BE78 Love is war
 0x08B5BE88 World is mine
 0x08B5BE98 Sono ichibyo Slow Motion
@@ -314,5 +541,72 @@
 0x08B5BED8 Strobo Nights
 0x08B5BEE8 Star Story
 0x08B5BEF8 Last Night,Good Night
-#Unknown
+0x08B5BF08 Packaged
+0x08B5BF18 Ame Nochi Sweet*Drops
+0x08B5BF28 Marginal
+0x08B5BF38 Fukigen Waltz
+0x08B5BF48 Miracle Paint
+0x08B5BF58 Dreaming Leaf -Yumemiru Kotonoha-
+0x08B5BF68 Koi Suru Voc@loid
+0x08B5BF78 Kouya to Mori to Mahou no Uta
+0x08B5BF88 Inochi no Uta
+0x08B5BF98 Hato
+0x08B5BFA8 moon
+0x08B5BFB8 Miku Miku-kin ni GochuuiÅÙ
+0x08B5BFC8 The Secret Garden
+0x08B5BFD8 Dear Cocoa Girls
+0x08B5BFE8 Birodo Arabesque
+0x08B5BFF8 Love List Koushinchuu?
+0x08B5C008 Sakura no Ame -standard edit-
+0x08B5C018 Ievan Polkka
+0x08B5C028 Miku Miku ni Shite AgeruÅÙ
+0x08B5C038 Kogane no Seiya Sousetsu ni Kuchite
+0x08B5C048 Electric Angel
+0x08B5C058 Anata no utahime
+0x08B5C068 Hatsune Miku no Shoushitsu
+0x08B5C078 Ike Lenka
+0x08B5C088 Rin Rin Rintte ShitekurinÅÙ
+0x08B5C098 Double Lariat
+0x08B5C0A8 Sennen no Dokusouka
+0x08B5C0B8 Soar
+0x08B5C0C8 Saihate
+0x08B5C0D8 Boukyaku Shinjuu
+0x08B5C0E8 SETSUNA
+0x08B5C0F8 Yuugure Nostalgic -remix-
+0x08B5C108 Love it -Radio Edit
+0x08B5C118 Kikoete Imasuka...
+0x08B5C128 Shooting Star Prologue
+0x08B5C138 Oshiete!! Mahou no Lyric
+0x08B5C148 starise
+#Unknown since the same string appears several times, but they are working sure.
 0x08B5F6CC None
+!x08A8D248 None
+!x08A8E208 None
+!x08AE7BB0 None
+!x08B049E8 None
+!x08A7DFEC Set
+!x08A7E018 Set
+!x08A7E168 Set
+!x08A7E200 Set
+!x08A7E25C Set
+!x08A7E2A0 Set
+!x08A7E2F4 Set
+!x08A7E330 Set
+!x08A7E35C Set
+!x08A9E8E0 Set
+!x08A9E920 Set
+!x08A9EF50 Set
+!x08A9EF7C Set
+!x08A9F1A0 Set
+!x08A9F1CC Set
+!x08AA6604 Set
+!x08AA6668 Set
+!x08AC1AD8 Set
+!x08AC2E70 Set
+!x08ADB728 Decide
+!x08ADBCB4 Decide
+!x08ADC0A4 Decide
+!x08AE0098 Decide
+!x08AE2870 Decide
+!x08AE28D4 Decide
+!x08AEC5C4 Å@Decide

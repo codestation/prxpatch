@@ -1,0 +1,113 @@
+#Unlock requirements
+0x08B70DD4 Condition1: ---
+0x08B70DE8 Condition2: ---
+
+#LYRICS (MAX CHARS PER LINE: 40, or the game will freeze)
+#Love is war
+0x08B27878 Mou Ikiba Ga Nai Wa Kono Koi no Netsuryo
+0x08B278A1 Haiiro no Kumo Monokuro no Kensou
+0x08B278CA Hizashi WaKageri YuugureWaIro WoKaeteIku
+0x08B278F3 Aa Sekai Ga Nijinde
+0x08B2791C Soredemo Suki De Irareru Ka Nante
+0x08B27945 Wakatteru Kedo Dou Sureba Ii No
+0x08B2796E Doushitara Dousureba
+0x08B27997 Baka Da na Watashi...
+0x08B279C0 Tatakau No Yo HATO Wo Ute
+0x08B279E9 Shudan Nante Eranderarenai
+0x08B27A12 SUKATO Hirari Mise Tsukeru No Yo
+0x08B27A3B Kimi No Shisen Ubatte Miseru No
+0x08B27A64 Geigeki YouiSenkyou Wa ImaDaFuriNanodesu
+0x08B27A8D KoiWaMomokuKimiNoKuchizukeDeMeGaSameruNo
+
+#World is mine
+0x08B27AB8 Sekai De Ichiban Ohimesama
+0x08B27AE1 Sou Iu Atsukai Kokoro Ete Yo Ne
+0x08B27B0A Sono Ichi
+0x08B27B33 Itsumo To ChigauKamigataNiKigaTsuku Koto
+0x08B27B5C Sono Ni
+0x08B27B85 Chanto Kutsu Made Miru Koto, Ii Ne?
+0x08B27BAE Sono San
+0x08B27BD7 WatashiNoHitokotoNiWaMittsuNoKotobaDeHen
+0x08B27C00 Wakattara Migite Ga Orusu Nano Wo
+0x08B27C29 Nantoka Shite!
+0x08B27C52 BetsuNi Wagamama Nante Itte Nai N Dakara
+0x08B27C7B Kimi Ni Kokoro Kara Omotte Hoshii No
+0x08B27CA4 Kawaii Tte
+0x08B27CCD Sekai De Ichiban Ohimesama
+0x08B27CF6 Ki Ga Tsuite Nee Nee
+0x08B27D1F Mataseru Nante Rongai Yo
+0x08B27D48 Watashi Wo Dare Da To Omotteru No?
+0x08B27D71 Mou Nandaka Amaimono Ga Tabetai!
+0x08B27D9A Ima Sugu Ni Yo
+0x08B27DC3 Ichigo No Notta SHOTOKEKII
+0x08B27DEC Kodawari Tamago No Torokeru Purin
+0x08B27E15 Minna, Minna Gaman Shimasu...
+0x08B27E3E Wagamama Na Ko Dato Omowanai De
+0x08B27E67 Watashi Datte Yareba Dekiru Mon
+0x08B27E90 Ato De Koukai Suru Wa Yo
+0x08B27EB9 Touzen Desu! Datte Watashi Wa
+0x08B27EE2 Sekai De Ichiban Ohimesama
+0x08B27F0B Chanto Mitete Yone
+0x08B27F34 Dokoka Ni Icchau Yo?
+0x08B27F5D Fui Ni Dakishimerareta
+0x08B27F86 Kyuu Ni Sonna! Eh?
+0x08B27FAF "Hikareru Abunai Yo"
+0x08B27FD8 Sou Itte Soppo Muku Kimi
+0x08B28001 ...Kocchi No Ga Abunai Wa Yo
+
+#Sono Ichibyo Slow Motion
+0x08B2802C Nagai Nagai Kudarizaka
+0x08B28055 Neguse Wo Tsuketa Watashi
+0x08B2807E Kakeashi De Korobanai You Ni
+0x08B280A7 Ma Ni Ae Itsumo No BASU
+0x08B280D0 Iki Wo Kirasete Hashiru
+0x08B280F9 Kinou No Ame Mizutatmari Wo Yokete
+0x08B28122 Oroshitate No Kutsu Wo Yogosanai You Ni
+0x08B2814B Ki Wo Tsukete Tonda
+0x08B28174 Agaru Mizu Shibuki, Nami Butsu Kumo
+0x08B2819D Butsukaru Furimuku Kimi
+0x08B281C6 SURO-MO-SHON
+0x08B281EF Shougeki Ga Kakenukete Iku
+0x08B28218 Hoppe Wo Tsuneru
+0x08B28241 Ochikiite...Maiagaranaide...
+0x08B2826A Tomaranai Doki Doki
+0x08B28293 SUPIDO Ageru Shinsou No Oto
+0x08B282BC Kimi Wa Aruku
+0x08B282E5 Omowazu Ushiro Kara SHATSU WoHippatteita
+0x08B2830E Hitosuji No Kaze Ki No Ha Wo Yurashite
+0x08B28337 Ametsuyu Ga Atama Ni Parari ToFurikakaru
+0x08B28360 Watashi Wa Miageru
+0x08B28389 Massugu Ni Kimi No Hitomi Wo Miru
+0x08B283B2 Kore Wa Koi Nan Desu Ka
+0x08B283DB Kono Kimochi Ni Ki Ga Tsukarenai You Ni
+0x08B28404 Awatete Atozusari Shinagara
+0x08B2842D "Nandemo Nai Desu!"
+0x08B28456 Mazui...Bareta...?
+0x08B2847F Onegai Ki Ga Tsukanaide
+0x08B284A8 SURO-MO-SHON
+0x08B284D1 Mimi Made Akaku Somaru Dou Shiyou
+0x08B284FA Okoranaide Haya Aruki De SakiNi Ikanaide
+0x08B28523 Ato O Oikakeru
+0x08B2854C Teiryuujo Kara BASU Ga Hashitte Iku
+0x08B28575"Ah ah, Chikoku..."
+0x08B2859E Tossa Ni"Hai!"Tte Genki Yoku Henji Shita
+0x08B285C7 Ureshii
+
+#Hinekuremono
+0x08B285F0 Itsumo Nakushite KaraKoukai Shite NakuNo
+0x08B28619 Naitara Wasurerareru Kara
+0x08B28642 Okiniiri No Mono Nante
+0x08B2866B Sou Taishita Mono Ja Nai
+0x08B28694 Senobi Shite Te Ni Ireta Kotae
+0x08B286BD Hontou Wa Wakaranakute
+0x08B286E6 Asa No Hikari Ga Terashidasu Koro
+0x08B2870F Hattoshite Me Ga Sameru No
+0x08B28738 Koko Ni Ite Hanarenaide
+0x08B28761 Kuchi Ni Dekinai Watashi Wa
+0x08B2878A Sokkenai Henji Wo Kurikaesu
+0x08B287B3 Doko Ni Mo Mou Ikanaide
+0x08B287DC Muashiku Kokoro De Sakebu
+0x08B28805 Tsutaetai No Ni
+0x08B2882E Nani Wo Nakushite
+0x08B28857 Nani Wo Etan Darou
+0x08B28880 Ima Ni Natte Yatto Wakatta
