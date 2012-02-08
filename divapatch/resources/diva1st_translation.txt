@@ -26,18 +26,18 @@
 0x08B705EC Edit Mode
 0x08B705F0 Save
 0x08B705F4 Options
-0x08B705F8 Visual Gallery
+0x08B705F8 Image Gallery
 0x08B705FC Back to Title
 #Songs List
-0x08B673F8 Love is war
-0x08B677E0 World is mine
+0x08B673F8 Love is War
+0x08B677E0 World is Mine
 0x08B67BC8 Sono Ichibyo Slow Motion
 0x08B67FB0 Hinekuremono
 0x08B68398 Melt
 0x08B68780 Far Away
 0x08B68B68 Strobo Nights
 0x08B68F50 Star Story
-0x08B69338 Last Night,Good Night
+0x08B69338 Last Night, Good Night
 0x08B69720 Packaged
 0x08B69B08 Ame Nochi Sweet*Drops
 0x08B69EF0 Marginal
@@ -71,8 +71,8 @@
 0x08B25B70 Akita Neru
 0x08B25B74 Meiko Style
 0x08B25B78 Rin Style
-0x08B25B7C Space CH 5
-0x08B25B80 Space CH 39
+0x08B25B7C Space Channel 5
+0x08B25B80 Space Channel 39
 0x08B25B84 Gallia Squad 7
 0x08B25B88 P-Sytle RP
 0x08B25B8C P-Style MG
@@ -115,7 +115,7 @@
 0x08B25C20 Hatsune Miku Swimwear S
 0x08B25C24 Hatsune Miku Swimwear
 0x08B25C28 Kagamine Rin Swimwear
-0x08B25C2C Kagamine Len Swimeear
+0x08B25C2C Kagamine Len Swimwear
 0x08B25C30 Megurine Luka Swimwear
 0x08B25C34 Meiko Swimwear
 0x08B25C38 Kaito Swimwear
@@ -133,8 +133,8 @@
 0x08B24EF0 Western
 0x08B24EF4 Classroom
 0x08B24EF8 Steam
-0x08B24EFC Amusemen
-0x08B24F00 Haloween
+0x08B24EFC Amusement
+0x08B24F00 Halloween
 #ITEMS LIST
 #Room Acc.
 0x08B252B0 Bear Plushie
@@ -147,9 +147,9 @@
 0x08B252CC Mini Kadomatsu
 0x08B252D0 Le Creusot
 0x08B252D4 Surprise Box
-0x08B252D8 Statue(Tree and Turtle)
+0x08B252D8 Statue (Tree and Turtle)
 0x08B252DC Blue Planet
-0x08B252E0 Plate(SEGA)
+0x08B252E0 Plate (SEGA)
 0x08B252E4 Mark \c
 0x08B252E8 Master System
 0x08B252EC Megadrive
@@ -163,8 +163,8 @@
 0x08B2530C Blackboar Eraser
 0x08B25310 Bonsai
 0x08B25314 Superstar: Negiyuki
-0x08B25318 Tsukimi dango
-0x08B2531C Haloween goods
+0x08B25318 Tsukimi Dango
+0x08B2531C Halloween goods
 0x08B25320 Christmas Tree
 0x08B25324 Maracas
 0x08B25328 Harmonica
@@ -179,7 +179,7 @@
 0x08B2534C Nendoroid Kagamine Rin
 0x08B25350 Bunny Plushie
 0x08B25354 Sea Otter Plushie
-0x08B25358 Picture frame
+0x08B25358 Picture Frame
 0x08B2535C Ice Style Picture frame
 0x08B25360 Snow Globe\a
 0x08B25364 Snow Globe\b
@@ -192,9 +192,9 @@
 0x08B25380 Imperial Decoration
 0x08B25384 Desire Drawn in the Sky
 0x08B25388 With's Hat
-0x08B2538C Plate(PIAPRO)
+0x08B2538C Plate (PIAPRO)
 0x08B25390 Road Roller
-0x08B25394 Nendoroid Kagamine Len
+0x08B25394 Kagamine Len Nendoroid
 #Wall Accesory
 0x08B255C4 Stuffed Deer(Replica)
 0x08B255C8 Flower
@@ -203,7 +203,7 @@
 0x08B255D4 Haloween Cross
 0x08B255D8 Western Badge
 0x08B255DC Cow Bone
-0x08B255E0 Western hat
+0x08B255E0 Western Hat
 0x08B255E4 Western Replica
 0x08B255E8 Akita Neru Poster
 0x08B255EC Yowane Haku Poster
@@ -234,7 +234,7 @@
 0x08B2581C Plant\d
 0x08B25820 Plant\e
 0x08B25824 Cactus
-0x08B25828 Cactus(Haloween)
+0x08B25828 Cactus (Halloween)
 0x08B2582C Money Tree
 0x08B25830 Basket
 0x08B25834 Standing Light
@@ -247,7 +247,7 @@
 0x08B25850 Jazz Set
 0x08B25854 Strange Set
 0x08B25858 Future Series
-0x08B2585C Future Seties (Shuttle)
+0x08B2585C Future Series (Shuttle)
 0x08B25860 Monolith
 0x08B25864 Black Box
 0x08B25868 Switch (Enigma)
@@ -272,32 +272,32 @@
 0x08B5A558 Song Selection
 #Menu Descriptions (24-25 chars max.)
 #Free Play
-0x08B70290 Here you can play rhythm
-0x08B70294 games. More songs will
-0x08B70298 be unlocked, as you clear
+0x08B70290 Here, you can play the
+0x08B70294 songs. More songs will
+0x08B70298 be unlocked as you clear
 0x08B7029C the previous ones.
 #Module Convert
-0x08B702A0 Here you can change the
+0x08B702A0 Here, you can change the
 0x08B702A4 module and custome.
 #Miku's room
-0x08B702B0 You can see what is doing
-0x08B702B4 Miku on her spare time
+0x08B702B0 You can see what Miku is
+0x08B702B4 doing on her spare time!
 #Edit mode
-0x08B702C0 Here you can create your
-0x08B702C4 own rhythm games and PVs
+0x08B702C0 Here, you can create and
+0x08B702C4 play levels and PVs.
 #Save
-0x08B702D0 Here you can:
-0x08B702D4 saveÅEloadÅEdelete
+0x08B702D0 Here, you can save,
+0x08B702D4 load or delete
 0x08B702D8 the game savedata
 #Options
 0x08B702E0 You can adjust BGM
-0x08B702E4 and SE volume here
-#Visual gallery
+0x08B702E4 and SE volume here.
+#Image gallery
 0x08B702F0 Here is a collection of
 0x08B702F4 the in-game load screens
 #Back to title
 0x08B70300 If you want to return to
-0x08B70304 the title, do it here.
+0x08B70304 the title, select this.
 #Options submenu descriptions
 0x08B706A8 Adjust BGM volume here.
 0x08B706AC Use left-right arrows
@@ -532,9 +532,9 @@
 0x08B56B1C View Edit PV
 0x08B56B20 Leave it to you
 #Songs list(Edit mode, and also is used for the song list on the Miku's set BGM)
-0x08B5BE78 Love is war
-0x08B5BE88 World is mine
-0x08B5BE98 Sono ichibyo Slow Motion
+0x08B5BE78 Love is War
+0x08B5BE88 World is Mine
+0x08B5BE98 Sono Ichibyo Slow Motion
 0x08B5BEA8 Hinekuremono
 0x08B5BEB8 Melt
 0x08B5BEC8 Far Away
