@@ -3874,7 +3874,7 @@ $x08940A80 Return to the DIVA room.
 0x08C41908 [‚a]y‹ßz¶‰ñ‚è³–Ê¨‰E
 0x08C41960 [‚a]y‹ßz‰E‰ñ‚è³–Ê¨¶
 0x08C419B8 [‚a]y‹ßz¶ŠO¨‰EŠO
-0x08C41910 [‚a]y‹ßz‰EŠO¨¶ŠO
+0x08C41A10 [‚a]y‹ßz‰EŠO¨¶ŠO
 0x08C41A68 [‚a]y’†z³–Ê‘«Œ³¨Šç
 0x08C41AC0 [‚a]y’†z³–Ê¶ã¨‰E‰º
 0x08C41B18 [‚a]y’†z³–Ê‰Eã¨¶‰º
