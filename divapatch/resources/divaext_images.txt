@@ -15,6 +15,7 @@
 0x0080B800 divaext/home_base_02.png
 0x0085E000 divaext/mtit_base_01.png
 0x00868800 divaext/mtit_base_02.png
+0x170D4000 divaext/pve_97.igb
 0x181FB800 divaext/pv_start_37.png
 0x18201000 divaext/pv_start_39.png
 0x18206800 divaext/pv_start_40.png

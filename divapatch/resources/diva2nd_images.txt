@@ -1,0 +1,4 @@
+# Image index table file for Project Diva
+# Use the format <offset, filename> to override the files in DivaDataList.afs
+
+0x000B0004 diva2nd/menu_basic.png
