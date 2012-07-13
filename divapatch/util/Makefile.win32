@@ -1,24 +1,36 @@
+CC := i686-pc-mingw32-gcc
 CXX := i686-pc-mingw32-g++
 TARGET := divaconvert.exe
+TARGET2 := divaextract.exe
 LIBS :=
 INCLUDES :=
 LIBPATH :=
 WARN_FLAGS=-Wall -Wextra -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wconversion -Wunreachable-code
+CFLAGS := -O2 -pipe -Wno-unused-result -std=c99 $(WARN_FLAGS)
 CXXFLAGS := -O2 -pipe -Wno-unused-result $(WARN_FLAGS)
 LDFLAGS := -Wl,-O1 -Wl,--sort-common -Wl,--as-needed -static-libstdc++ -static-libgcc
 RM = rm -f
 OBJS = convert.o
+OBJS2 = extract.o
 
-all: $(OBJS)
+all: $(OBJS) $(OBJS2)
 	@$(CXX) $(LDFLAGS) $(OBJS) $(LIBPATH) $(LIBS) -o $(TARGET)
+	@$(CC) $(LDFLAGS) $(OBJS2) $(LIBPATH) $(LIBS) -o $(TARGET2)
 	@echo LINK $(TARGET)
+	@echo LINK $(TARGET2)
 
 .cpp.o:
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $*.cpp
 	@echo CXX $*.cpp
 
+.c.o:
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $*.c
+	@echo CC $*.c
+
 clean:
 	@-$(RM) $(OBJS) $(TARGET)
+	@-$(RM) $(OBJS2) $(TARGET2)
 	@echo CLEAN $(TARGET)
+	@echo CLEAN $(TARGET2)
 
 .PHONY: all clean
