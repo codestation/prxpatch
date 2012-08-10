@@ -20,19 +20,20 @@
 #include "search.h"
 
 /**
- * modified binary search function that only works on int arrays
+ * modified binary search function that only works on node arrays
  * @param value  value to search in the array
  * @param vector  array to make the search
  * @param lim  number of elements in the array
  * @returns the address of the found value in the array, else NULL
  */
-cpknode *search_exact(u32 value, cpknode *vector, u32 lim) {
+cpknode *search_vector(u32 value, cpknode *vector, u32 lim) {
     u32 idx;
+    u32 count = lim;
     if(vector) {
         while(lim) {
             idx = lim >> 1;
             if(value >= vector[idx].cpk_offset) {
-                if(value > vector[idx].cpk_offset) {
+                if(value > vector[idx].cpk_offset && (idx+1 > count || vector[idx+1].cpk_offset <= value)) {
                     vector += idx + 1;
                     lim--;
                 } else {

@@ -147,12 +147,13 @@ int _diva_read(SceUID fd, void *data, SceSize size, int async) {
         file_offset = (u32)sceIoLseek(fd, 0, PSP_SEEK_CUR);
         // and find if the file part that the game is trying to read is in our list
         // of files to replace
-        file_index = search_exact(file_offset, cpk_table, cpk_count);
+        file_index = search_vector(file_offset, cpk_table, cpk_count);
         if(file_index != NULL) {
             kprintf("index found: %08X\n", *(u32 *)file_index);
             k1 = pspSdkSetK1(0);
             modfd = open_file(image_filenames + file_index->filename_offset);
             if(modfd >= 0) {
+                sceIoLseek(modfd, file_offset - file_index->cpk_offset, PSP_SEEK_SET);
                 kprintf("reading offset %08X, size: %08X\n", file_offset, size);
                 // read our modified file instead, fooling the game
                 res = async ? sceIoReadAsync(modfd, data, size) : sceIoRead(modfd, data, size);

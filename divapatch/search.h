@@ -23,6 +23,6 @@
 #include <psptypes.h>
 #include "reader.h"
 
-cpknode *search_exact(u32 value, cpknode *vector, u32 elems);
+cpknode *search_vector(u32 value, cpknode *vector, u32 lim);
 
 #endif /* SEARCH_H_ */
