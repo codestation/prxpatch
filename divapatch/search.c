@@ -33,7 +33,7 @@ cpknode *search_vector(u32 value, cpknode *vector, u32 lim) {
         while(lim) {
             idx = lim >> 1;
             if(value >= vector[idx].cpk_offset) {
-                if(value > vector[idx].cpk_offset && (idx+1 > count || vector[idx+1].cpk_offset <= value)) {
+                if(value > vector[idx].cpk_offset && (idx+1 > count || value >= vector[idx+1].cpk_offset)) {
                     vector += idx + 1;
                     lim--;
                 } else {
