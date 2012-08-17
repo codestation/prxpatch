@@ -1180,7 +1180,9 @@ $x088BC890 %3d Bar %1.1f Beat Å` %3d Bar %1.1f Beat (BeatsÅF   %0.1f)
 !x088CB740 Pink
 !x088CB754 Black
 
-!x088CB958 Sample lyrics
+^x088CB924 Sample lyrics
+^x088CB948 Sample lyrics
+$x088CB958 Sample lyrics
 !x088CCC1C Custom
 !x088CD8E0 Side   [%3.3f]
 !x088CD8F0 Depth  [%3.3f]
