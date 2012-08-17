@@ -1,326 +1,326 @@
-# movement list (max length: 22, possible max lenght: 38)
+# movement list (max length: 22, possible max length: 38)
 
 0x08C38C8C Idle
-0x08C38CC4 通常歩き１
-0x08C38CFC 通常歩き２
-0x08C38D34 タカビー歩き
-0x08C38D6C リズム歩き
-0x08C38DA4 ノリノリ歩き
-0x08C38DDC セクシー歩き
-0x08C38E14 通常走り１
-0x08C38E4C 通常走り２
-0x08C38E84 飛行機走り
-0x08C38EBC こっちこっち
-0x08C38EF4 どうしよう
-0x08C38F2C 手を振る（右）
-0x08C38F64 手を振る（左）
-0x08C38F9C 指揮者
-0x08C38FD4 スキップ
-0x08C3900C エアクロール
-0x08C39044 いけいけゴーゴー
-0x08C3907C ステッピングジャンプ
-0x08C390B4 ウサ耳ダンス
-0x08C390EC 創作ダンス
-0x08C39124 創作ダンス反転
-0x08C3915C コサックダンス
-0x08C39194 屈伸ダンス
-0x08C391CC くねくねダンス
-0x08C39204 ジャンピングダンス
-0x08C3923C タップダンス
-0x08C39274 腰振りリズム
-0x08C392AC フラダンス
-0x08C392E4 ノリノリダンス１
-0x08C3931C ノリノリダンス２
-0x08C39354 ノリノリダンス３
-0x08C3938C モンキーダンス１
-0x08C393C4 モンキーダンス２
-0x08C393FC モンキーダンス３
-0x08C39434 パラパラ１
-0x08C3946C パラパラ２
-0x08C394A4 パラパラ３
-0x08C394DC ワンツーステップ１
-0x08C39514 ワンツーステップ２
-0x08C3954C ワンツーステップ３
-0x08C39584 ワンツーステップ４
-0x08C395BC ワンツーステップ５
-0x08C395F4 ワンツーステップ６
-0x08C3962C ワンツーステップ７
-0x08C39664 アイドルステップ１
-0x08C3969C アイドルステップ２
-0x08C396D4 アイドルステップ３
-0x08C3970C 片手あげ反時計回り回転
-0x08C39744 両手あげ時計回り回転
-0x08C3977C 両手あげ反時計回り回転
-0x08C397B4 挨拶１
-0x08C397EC 挨拶２
-0x08C39824 バラード１
-0x08C3985C バラード２
-0x08C39894 リズム１
-0x08C398CC リズム２
-0x08C39904 上半身ループ１
-0x08C3993C 上半身ループ２
-0x08C39974 上半身ループ３
-0x08C399AC ループモーション１
-0x08C399E4 ループモーション２
-0x08C39A1C マイク持ちモーション１
-0x08C39A54 マイク持ちモーション２
-0x08C39A8C バレエ１
-0x08C39AC4 バレエ２
-0x08C39AFC バレエ３
-0x08C39B34 ロングダンス１
-0x08C39B6C ロングダンス２
-0x08C39BA4 ロングダンス３
-0x08C39BDC ロングダンス４
-0x08C39C14 ロングダンス５
-0x08C39C4C ロングダンス６
-0x08C39C84 男性アイドル系ダンス１
-0x08C39CBC 男性アイドル系ダンス２
-0x08C39CF4 男性アイドル系ダンス３
-0x08C39D2C 男性アイドル系ダンス４
-0x08C39D64 男性アイドル系ダンス５
-0x08C39D9C ブレイクダンス１
-0x08C39DD4 ブレイクダンス２
-0x08C39E0C ブレイクダンス３
-0x08C39E44 ブレイクダンス４
-0x08C39E7C ブレイクダンス５
-0x08C39EB4 ブレイクダンス６
-0x08C39EEC ディスコダンス
-0x08C39F24 トップスターダンス
-0x08C39F5C テクパラ１
-0x08C39F94 テクパラ２
-0x08C39FCC テクパラ３
-0x08C3A004 応援団１
-0x08C3A03C 応援団２
-0x08C3A074 エクササイズ１
-0x08C3A0AC エクササイズ２
-0x08C3A0E4 エクササイズ３
-0x08C3A11C 正拳突き
-0x08C3A154 オリジナルダンス
-0x08C3A18C 男性歩き１
-0x08C3A1C4 男性歩き２
-0x08C3A1FC 男性歩き３
-0x08C3A234 マッチョポーズ１
-0x08C3A26C マッチョポーズ２
-0x08C3A2A4 フラメンコ１
-0x08C3A2DC フラメンコ２
-0x08C3A314 フラメンコ３
-0x08C3A34C フラメンコ４
-0x08C3A384 フラメンコ５
-0x08C3A3BC フラメンコ６
-0x08C3A3F4 阿波踊り１
-0x08C3A42C 阿波踊り２
-0x08C3A464 盆踊り１
-0x08C3A49C 盆踊り２
-0x08C3A4D4 コメディダンス
-0x08C3A50C ハカ
-0x08C3A544 決めポーズ１
-0x08C3A57C 決めポーズ２
-0x08C3A5B4 決めポーズ３
-0x08C3A5EC 決めポーズ４
-0x08C3A624 決めポーズ５
-0x08C3A65C 演技１
-0x08C3A694 演技２
-0x08C3A6CC 演技３
-0x08C3A704 演技４
-0x08C3A73C 演技５
-0x08C3A774 棒振り
-0x08C3A7AC 棒回し
-0x08C3A7E4 マイク持ちモーション３
-0x08C3A81C マイク持ちモーション４
-0x08C3A854 扇子持ちモーション１
-0x08C3A88C 扇子持ちモーション２
-0x08C3A8C4 激しく指揮
-0x08C3A8FC 袈裟切り
-0x08C3A934 横切り
-0x08C3A96C 会釈１
-0x08C3A9A4 会釈２
-0x08C3A9DC 会釈３
-0x08C3AA14 会釈４
-0x08C3AA4C 会釈５
-0x08C3AA84 お辞儀１
-0x08C3AABC お辞儀２
-0x08C3AAF4 お辞儀３
-0x08C3AB2C お辞儀４
-0x08C3AB64 お辞儀５
-0x08C3AB9C 喜び１
-0x08C3ABD4 喜び２
-0x08C3AC0C 怒る１
-0x08C3AC44 怒る２
-0x08C3AC7C 悲しい１
-0x08C3ACB4 悲しい２
-0x08C3ACEC 楽しい
-0x08C3AD24 驚く
-0x08C3AD5C 笑う
-0x08C3AD94 困る
-0x08C3ADCC 電話で会話
-0x08C3AE04 プレゼント
-0x08C3AE3C 断り
-0x08C3AE74 アクション１
-0x08C3AEAC アクション２
-0x08C3AEE4 アクション３
-0x08C3AF1C アイドルダンス１
-0x08C3AF54 アイドルダンス２
-0x08C3AF8C アイドルダンス３
-0x08C3AFC4 否定１
-0x08C3AFFC 否定２
-0x08C3B034 否定３
-0x08C3B06C 押される(縦)
-0x08C3B0A4 押される(横)
-0x08C3B0DC 歌いながら動く
-0x08C3B114 待ち合わせ１
-0x08C3B14C 待ち合わせ２
-0x08C3B184 待ち合わせ３
-0x08C3B1BC 腰をかける１
-0x08C3B1F4 腰をかける２
-0x08C3B22C 腰をかける３
-0x08C3B264 腰をかける４
-0x08C3B29C 腰をかける５
-0x08C3B2D4 腰をかける６
-0x08C3B30C ロボットダンス１
-0x08C3B344 ロボットダンス２
-0x08C3B37C ロボットダンス３
-0x08C3B3B4 オクラホマミキサー（右）
-0x08C3B3EC オクラホマミキサー（左）
-0x08C3B424 グルグルダンス１（前）
-0x08C3B45C グルグルダンス１（後）
-0x08C3B494 グルグルダンス２（前）
-0x08C3B4CC グルグルダンス２（後）
-0x08C3B504 大仰な挨拶１（女性）
-0x08C3B53C 大仰な挨拶２（女性）
-0x08C3B574 大仰な挨拶３（女性）
-0x08C3B5AC 大仰な挨拶１（男性）
-0x08C3B5E4 大仰な挨拶２（男性）
-0x08C3B61C 大仰な挨拶３（男性）
-0x08C3B654 地面に座る
-0x08C3B68C 舞台上で挨拶(右)
-0x08C3B6C4 舞台上で挨拶(左)
+0x08C38CC4 Normal Walk 1
+0x08C38CFC Normal Walk 2
+0x08C38D34 Confident Walk
+0x08C38D6C Rhythm Walk
+0x08C38DA4 High-spirited Walk
+0x08C38DDC Sexy Walk
+0x08C38E14 Normal Run 1
+0x08C38E4C Normal Run 2
+0x08C38E84 Airplane Run
+0x08C38EBC Here!  Here!
+0x08C38EF4 What do I do?
+0x08C38F2C Waving (Right)
+0x08C38F64 Waving (Left)
+0x08C38F9C Conductor
+0x08C38FD4 Skip
+0x08C3900C Air crawl
+0x08C39044 Cheering Go! Go!
+0x08C3907C Stepping Jump
+0x08C390B4 Caramelldansen
+0x08C390EC Creative Dance
+0x08C39124 Creative Dance (Reversed)
+0x08C3915C Cossack Dance
+0x08C39194 Bend-and-Stretch Dance
+0x08C391CC Bend Back & Forth Dance
+0x08C39204 Jumping Dance
+0x08C3923C Tap Dance
+0x08C39274 Rhythmic Hips-Swinging
+0x08C392AC Hula Dance
+0x08C392E4 High-Spirited Dance 1
+0x08C3931C High-Spirited Dance 2
+0x08C39354 High-Spirited Dance 3
+0x08C3938C Monkey Dance 1
+0x08C393C4 Monkey Dance 2
+0x08C393FC Monkey Dance 3
+0x08C39434 Para Para 1
+0x08C3946C Para Para 2
+0x08C394A4 Para Para 3
+0x08C394DC One-Two Step 1
+0x08C39514 One-Two Step 2
+0x08C3954C One-Two Step 3
+0x08C39584 One-Two Step 4
+0x08C395BC One-Two Step 5
+0x08C395F4 One-Two Step 6
+0x08C3962C One-Two Step 7
+0x08C39664 Idol Step 1
+0x08C3969C Idol Step 2
+0x08C396D4 Idol Step 3
+0x08C3970C One Hand Raised CCW Spin
+0x08C39744 Both Hands Raised CW Spin
+0x08C3977C Both Hands Raised CCW Spin
+0x08C397B4 Greeting 1
+0x08C397EC Greeting 2
+0x08C39824 Ballad 1
+0x08C3985C Ballad 2
+0x08C39894 Rhythm 1
+0x08C398CC Rhythm 2
+0x08C39904 Upper Body Loop 1
+0x08C3993C Upper Body Loop 2
+0x08C39974 Upper Body Loop 3
+0x08C399AC Loop Motion 1
+0x08C399E4 Loop Motion 2
+0x08C39A1C Mic-Holding Motion 1
+0x08C39A54 Mic-Holding Motion 2
+0x08C39A8C Ballet 1
+0x08C39AC4 Ballet 2
+0x08C39AFC Ballet 3
+0x08C39B34 Long Dance 1
+0x08C39B6C Long Dance 2
+0x08C39BA4 Long Dance 3
+0x08C39BDC Long Dance 4
+0x08C39C14 Long Dance 5
+0x08C39C4C Long Dance 6
+0x08C39C84 Male Idol Dance 1
+0x08C39CBC Male Idol Dance 2
+0x08C39CF4 Male Idol Dance 3
+0x08C39D2C Male Idol Dance 4
+0x08C39D64 Male Idol Dance 5
+0x08C39D9C Break Dance 1
+0x08C39DD4 Break Dance 2
+0x08C39E0C Break Dance 3
+0x08C39E44 Break Dance 4
+0x08C39E7C Break Dance 5
+0x08C39EB4 Break Dance 6
+0x08C39EEC Disco Dance
+0x08C39F24 Top Star Dance
+0x08C39F5C Tech Para 1
+0x08C39F94 Tech Para 2
+0x08C39FCC Tech Para 3
+0x08C3A004 Cheerleader 1
+0x08C3A03C Cheerleader 2
+0x08C3A074 Exercise 1
+0x08C3A0AC Exercise 2
+0x08C3A0E4 Exercise 3
+0x08C3A11C Horse-Stance Punches
+0x08C3A154 Original Dance
+0x08C3A18C Male Walk 1
+0x08C3A1C4 Male Walk 2
+0x08C3A1FC Male Walk 3
+0x08C3A234 Macho Pose 1
+0x08C3A26C Macho Pose 2
+0x08C3A2A4 Flamenco 1
+0x08C3A2DC Flamenco 2
+0x08C3A314 Flamenco 3
+0x08C3A34C Flamenco 4
+0x08C3A384 Flamenco 5
+0x08C3A3BC Flamenco 6
+0x08C3A3F4 Awa Dance 1
+0x08C3A42C Awa Dance 2
+0x08C3A464 Lantern Festival Dance 1
+0x08C3A49C Lantern Festival Dance 2
+0x08C3A4D4 Comedy Dance
+0x08C3A50C Haka
+0x08C3A544 Commanding Pose 1
+0x08C3A57C Commanding Pose 2
+0x08C3A5B4 Commanding Pose 3
+0x08C3A5EC Commanding Pose 4
+0x08C3A624 Commanding Pose 5
+0x08C3A65C Acting 1
+0x08C3A694 Acting 2
+0x08C3A6CC Acting 3
+0x08C3A704 Acting 4
+0x08C3A73C Acting 5
+0x08C3A774 Swinging A Wand
+0x08C3A7AC Swing Wand In Circles
+0x08C3A7E4 Mic-Holding Motion 3
+0x08C3A81C Mic-Holding Motion 4
+0x08C3A854 Fan-Holding Motion 1
+0x08C3A88C Fan-Holding Motion 2
+0x08C3A8C4 Intense Conducting
+0x08C3A8FC Sword Slash Down
+0x08C3A934 Sword Slash Across
+0x08C3A96C Salutations 1
+0x08C3A9A4 Salutations 2
+0x08C3A9DC Salutations 3
+0x08C3AA14 Salutations 4
+0x08C3AA4C Salutations 5
+0x08C3AA84 Bowing 1
+0x08C3AABC Bowing 2
+0x08C3AAF4 Bowing 3 (Curtsey)
+0x08C3AB2C Bowing 4 (Wave)
+0x08C3AB64 Bowing 5
+0x08C3AB9C Celebrating 1
+0x08C3ABD4 Celebrating 2
+0x08C3AC0C Get Angry 1
+0x08C3AC44 Get Angry 2
+0x08C3AC7C Sadness 1 (Crying)
+0x08C3ACB4 Sadness 2 (Walk)
+0x08C3ACEC Fun
+0x08C3AD24 Surprised
+0x08C3AD5C Laugh
+0x08C3AD94 Troubled
+0x08C3ADCC Phone Conversation
+0x08C3AE04 Giving A Present
+0x08C3AE3C Declining (Refusing)
+0x08C3AE74 Action 1 (Swordfight)
+0x08C3AEAC Action 2 (Swordfight)
+0x08C3AEE4 Action 3 (Swordfight
+0x08C3AF1C Idol Dance 1
+0x08C3AF54 Idol Dance 2
+0x08C3AF8C Idol Dance 3
+0x08C3AFC4 Denial 1
+0x08C3AFFC Denial 2
+0x08C3B034 Denial 3
+0x08C3B06C Pushed (Back & Forth)
+0x08C3B0A4 Pushed (Side to Side)
+0x08C3B0DC Dancing Around With Mic
+0x08C3B114 Appointment 1
+0x08C3B14C Appointment 2
+0x08C3B184 Appointment 3
+0x08C3B1BC Sitting Down 1
+0x08C3B1F4 Sitting Down 2
+0x08C3B22C Sitting Down 3
+0x08C3B264 Sitting Down 4
+0x08C3B29C Sitting Down 5
+0x08C3B2D4 Sitting Down 6
+0x08C3B30C Robot Dance 1
+0x08C3B344 Robot Dance 2
+0x08C3B37C Robot Dance 3
+0x08C3B3B4 Oklahoma Mixer (Right)
+0x08C3B3EC Oklahoma Mixer (Left)
+0x08C3B424 In-Circles Dance 1(Before)
+0x08C3B45C In-Circles Dance 1 (After)
+0x08C3B494 In-Circles Dance 2(Before)
+0x08C3B4CC In-Circles Dance 2 (After)
+0x08C3B504 Showy Greeting 1 (Female)
+0x08C3B53C Showy Greeting 2 (Female)
+0x08C3B574 Showy Greeting 3 (Female)
+0x08C3B5AC Showy Greeting 1 (Male)
+0x08C3B5E4 Showy Greeting 2 (Male)
+0x08C3B61C Showy Greeting 3 (Male)
+0x08C3B654 Sit On The Ground/Floor
+0x08C3B68C Wave From Stage (Right)
+0x08C3B6C4 Wave From Stage (Left)
 
-# Background list (max length: 24, possible max lenght: 40)
+# Background list (max length: 24, possible max length: 40)
 
 0x08C3C0A4 Natural stage
 0x08C3C0D8 Classroom
 0x08C3C10C Church
 0x08C3C140 Highway
 0x08C3C174 Highway 2
-0x08C3C1A8 夕陽の土手
-0x08C3C1DC プールサイド
-0x08C3C210 学園屋上
-0x08C3C244 昼間の土手
-0x08C3C278 近未来町中
-0x08C3C2AC 浜辺
-0x08C3C2E0 ライブステージ
-0x08C3C314 ライブ会場
-0x08C3C348 ストリート舞台
-0x08C3C37C 鍵盤ステージ
-0x08C3C3B0 草原
-0x08C3C3E4 花畑
-0x08C3C418 砂漠
-0x08C3C44C 平地
-0x08C3C480 ☆ステージ
-0x08C3C4B4 ライブハウス青ライト
-0x08C3C4E8 ライブハウス白ライト
-0x08C3C51C ライブハウス赤ライト
-0x08C3C550 巨大フィールド
-0x08C3C584 1本木の丘
-0x08C3C5B8 ソファーのある部屋
-0x08C3C5EC ホール
-0x08C3C620 ホール2
-0x08C3C654 ピンクの部屋
-0x08C3C688 コロニー階段
-0x08C3C6BC 月の廃墟
-0x08C3C6F0 宇宙
-0x08C3C724 野外音楽堂
-0x08C3C758 丘の上の曲がり角
-0x08C3C78C 街の通り
-0x08C3C7C0 ススキの原
-0x08C3C7F4 森の遺跡
-0x08C3C828 駅のホーム
-0x08C3C85C お菓子屋さん
-0x08C3C890 公園(階段)
-0x08C3C8C4 公園(丘の上)
-0x08C3C8F8 レモングラス
-0x08C3C92C 学園祭ステージ
-0x08C3C960 サイバースペース
-0x08C3C994 時計台
-0x08C3C9C8 和風舞台
-0x08C3C9FC 座敷部屋
-0x08C3CA30 廃線
-0x08C3CA64 宇宙船操縦席
-0x08C3CA98 空が広がる展望台
-0x08C3CACC 小さい家のある丘(夜)
-0x08C3CB00 小さい家のある丘(昼)
-0x08C3CB34 家の中
-0x08C3CB68 路上ライブステージ
-0x08C3CB9C 野菜ステージ
-0x08C3CBD0 空に浮かぶ神殿
-0x08C3CC04 廃墟
-0x08C3CC38 教会(廃墟)
-0x08C3CC6C 救急箱ステージ
-0x08C3CCA0 街の交差点
-0x08C3CCD4 地下ステージ
-0x08C3CD08 制御室
-0x08C3CD3C バタフライテーマステージ
-0x08C3CD70 衛星ステージ
-0x08C3CDA4 玉座
-0x08C3CDD8 ハートステージ
-0x08C3CE0C スクリーンステージ
-0x08C3CE40 音楽室
-0x08C3CE74 からくり橋
-0x08C3CEA8 水上ステージ
-0x08C3CEDC 学校前通り(春)
-0x08C3CF10 学校前通り(冬)
-0x08C3CF44 祭り会場
-0x08C3CF78 運動会
-0x08C3CFAC 白い部屋
-0x08C3CFE0 空の上のグランドピアノ
-0x08C3D014 楽器の眠る草原
-0x08C3D048 ビーチ
-0x08C3D07C 庭園
-0x08C3D0B0 ライブステージ2
-0x08C3D0E4 ストリート舞台(冬)
-0x08C3D118 ドームライブステージ1
-0x08C3D14C ファンタジーハイウェイ
-0x08C3D180 エレクトリックステージ
-0x08C3D1B4 和風舞台(桜)
-0x08C3D1E8 ジャズステージ
-0x08C3D21C ドームライブステージ2
-0x08C3D250 レーザーステージ
-0x08C3D284 劇場(開演前)
-0x08C3D2B8 電車内
-0x08C3D2EC 劇場
-0x08C3D320 ラブステージ(表)
-0x08C3D354 ラブステージ(裏)
-0x08C3D388 コントロールルーム
-0x08C3D3BC 宇宙ステーション
-0x08C3D3F0 平原
-0x08C3D424 街並み(廃墟)
-0x08C3D458 金網ステージ1
-0x08C3D48C 金網ステージ2
-0x08C3D4C0 噴水公園
-0x08C3D4F4 白い温室
-0x08C3D528 色付いた温室
-0x08C3D55C 時計塔
-0x08C3D590 石碑のある荒野
-0x08C3D5C4 崩れた遺跡
-0x08C3D5F8 キャバレーステージ
-0x08C3D62C 路地裏
-0x08C3D660 鳥居ステージ
-0x08C3D694 畳部屋
-0x08C3D6C8 校舎内
-0x08C3D6FC 荒れた図書室
-0x08C3D730 空を見渡す高台
-0x08C3D764 窓のある部屋(夕)
-0x08C3D798 窓のある部屋(夜)
-0x08C3D7CC 星霜
-0x08C3D800 宇宙空間
-0x08C3D834 鳥かご
-0x08C3D868 御殿
-0x08C3D89C 和風庭園
-0x08C3D8D0 キャットパーク
-0x08C3D904 クリアスカイステージ
-0x08C3D938 巨大信号機
-0x08C3D96C 背景（白）
-0x08C3D9A0 背景（黒）
+0x08C3C1A8 Sunset Riverbank
+0x08C3C1DC Poolside
+0x08C3C210 Campus Rooftop
+0x08C3C244 Daytime Riverbank
+0x08C3C278 Future City
+0x08C3C2AC Beach
+0x08C3C2E0 Live Stage
+0x08C3C314 Live Venue
+0x08C3C348 Street Theater
+0x08C3C37C Keyboard Stage
+0x08C3C3B0 Grassland
+0x08C3C3E4 Flower Field
+0x08C3C418 Desert
+0x08C3C44C Plain
+0x08C3C480 ☆Stage
+0x08C3C4B4 Live House Blue Light
+0x08C3C4E8 Live House White Light
+0x08C3C51C Live House Red Light
+0x08C3C550 Huge Field
+0x08C3C584 Single Old Tree's Knoll
+0x08C3C5B8 Room With Sofa
+0x08C3C5EC Hall
+0x08C3C620 Hall 2
+0x08C3C654 Pink Room
+0x08C3C688 Colony Stairway
+0x08C3C6BC Moon and Ruins
+0x08C3C6F0 Space
+0x08C3C724 Ampitheater
+0x08C3C758 Hilltop Over Intersection
+0x08C3C78C Town Street
+0x08C3C7C0 Field of Silver Grass
+0x08C3C7F4 Forest Ruins
+0x08C3C828 Station Platform
+0x08C3C85C Convenience Store
+0x08C3C890 Public Park (Stairs)
+0x08C3C8C4 Public Park (Hilltop)
+0x08C3C8F8 Lemon Glass
+0x08C3C92C School Festival Stage
+0x08C3C960 Cyberspace
+0x08C3C994 Clock Tower
+0x08C3C9C8 Japanese Stage
+0x08C3C9FC Japanese Parlor
+0x08C3CA30 Old Station Platform
+0x08C3CA64 Space Ship Control Room
+0x08C3CA98 Wide Sky Viewing Point
+0x08C3CACC Itty House On Hill (Night)
+0x08C3CB00 Itty House On Hill (Noon)
+0x08C3CB34 Inside House
+0x08C3CB68 Streetside Live Stage
+0x08C3CB9C Vegetable Stage
+0x08C3CBD0 Temple In The Sky
+0x08C3CC04 Ruins
+0x08C3CC38 Church (Ruins)
+0x08C3CC6C First-Aid Kit Stage
+0x08C3CCA0 City Intersection
+0x08C3CCD4 Underground Stage
+0x08C3CD08 Lab Control Room
+0x08C3CD3C Butterfly Theme Stage
+0x08C3CD70 Satellite Stage
+0x08C3CDA4 Throne
+0x08C3CDD8 Heart Stage
+0x08C3CE0C Screen Stage
+0x08C3CE40 Music Room
+0x08C3CE74 Trick Bridge
+0x08C3CEA8 Water Stage
+0x08C3CEDC Street By School (Spring)
+0x08C3CF10 Street By School (Winter)
+0x08C3CF44 Festival Grounds
+0x08C3CF78 Athletes' Meetup Spot
+0x08C3CFAC White Room
+0x08C3CFE0 Grand Piano In The Sky
+0x08C3D014 Sleeping Instrument Field
+0x08C3D048 Beach
+0x08C3D07C Garden
+0x08C3D0B0 Live Stage 2
+0x08C3D0E4 Street Theater (Winter)
+0x08C3D118 Dome Live Stage 1
+0x08C3D14C Fantasy Highway
+0x08C3D180 Electric Stage
+0x08C3D1B4 Japanese Stage (Sakura)
+0x08C3D1E8 Jazz Stage
+0x08C3D21C Dome Live Stage 2
+0x08C3D250 Laser Stage
+0x08C3D284 Theater (Before Starting)
+0x08C3D2B8 In The Train
+0x08C3D2EC Theater
+0x08C3D320 Lovers Stage (Table)
+0x08C3D354 Lovers Stage (Back)
+0x08C3D388 Control Room
+0x08C3D3BC Space Station
+0x08C3D3F0 Prarie
+0x08C3D424 Town Street (Ruins)
+0x08C3D458 Chain-Link Fence Stage 1
+0x08C3D48C Chain-Link Fence Stage 2
+0x08C3D4C0 Water Fountain In Park
+0x08C3D4F4 White Greenhouse
+0x08C3D528 Colorful Greenhouse
+0x08C3D55C Clockwork Tower
+0x08C3D590 Monument In Wasteland
+0x08C3D5C4 Crumbled Forest Ruins
+0x08C3D5F8 Cabaret Stage
+0x08C3D62C Back Alley
+0x08C3D660 Shinto Shrine Stage
+0x08C3D694 Tatami Room
+0x08C3D6C8 Inside School
+0x08C3D6FC Mad Library
+0x08C3D730 Hill Over City Skyline
+0x08C3D764 Windowed Room (Evening)
+0x08C3D798 Windowed Room (Night)
+0x08C3D7CC Time
+0x08C3D800 Cosmos
+0x08C3D834 Birdcage
+0x08C3D868 Palace Court
+0x08C3D89C Japanese Garden
+0x08C3D8D0 Cat Park
+0x08C3D904 Clear Skies Stage
+0x08C3D938 Giant Traffic Signals
+0x08C3D96C Background (White)
+0x08C3D9A0 Background (Black)
 0x08C3D9D4 Illustration 001
 0x08C3DA08 Illustration 002
 0x08C3DA3C Illustration 003
@@ -354,7 +354,7 @@
 0x08C3DFEC Illustration 031
 0x08C3E020 Illustration 032
 
-# Item list (max length: 20, possible max lenght: 36)
+# Item list (max length: 20, possible max length: 36)
 
 0x08C41CD8 Microphone (right)
 0x08C41D10 Microphone (left)
@@ -413,8 +413,8 @@
 0x08C428A8 PV Microphone G (left)
 0x08C428E0 Plastic bottle (right)
 0x08C42918 Plastic bottle (left)
-0x08C42950 Paper bag (right)
-0x08C42988 Paper bag (left)
+0x08C42950 Juice box (right)
+0x08C42988 Juice box (left)
 0x08C429C0 Cellphone (right)
 0x08C429F8 Cellphone (left)
 0x08C42A30 Light sword (right)
@@ -426,7 +426,7 @@
 0x08C42B80 Ice spoon (right)
 0x08C42BB8 Ice spoon (left)
 
-# Effect list (max length: 24, possible max lenght: 36)
+# Effect list (max length: 24, possible max length: 36)
 
 0x08C42BEC Sakura blizzard
 0x08C42C28 Rain
@@ -796,29 +796,29 @@
 
 # StargazeR
 
-0x08C57FA2 空見上げた夜　流れる雲
-0x08C57FD5 手を伸ばして星をなぞる
-0x08C58008 届かなくて見送るけど
-0x08C5803B 惑星は回ってく
-0x08C5806E 夢見た平行と連続に追われる日々
+0x08C57FA2 Sora miageta yoru nagareru kumo
+0x08C57FD5 Te o nobashite hoshi o nazoru
+0x08C58008 Todokanakute miokuru kedo
+0x08C5803B Hoshi wa mawatteku
+0x08C5806E Yumemita heikou to renzoku ni owareru hibi
 0x08C580A1 眺めてた零れる幾千の旋律を残さず重ねて
 0x08C580D4 NULL
-0x08C58107 弧を描いた眼差しのその奥に世界
-0x08C5813A 雲は音乗せて廻る詩を数える
-0x08C5816D 流星を見送って
-0x08C581A0 此処に在る意味を知ったスターゲイザー
+0x08C58107 Ko o egaita manazashi no sono oku ni sekai
+0x08C5813A Kumo wa oto nosete meguru shi o kazoeru
+0x08C5816D Ryuusei o miokut te
+0x08C581A0 Koko ni aru imi o shitta SutaageizaA
 0x08C581D3 NULL
-0x08C58206 霞む光、紡いだ音！
-0x08C58239 あの日かけた、言葉の意味？
-0x08C5826C 繋ぐ唄は宙に溶けて
-0x08C5829F 声が届く時を待つ
-0x08C582D2 抱きしめてるその想い離さずに
-0x08C58305 言葉、空間に響け
-0x08C58338 巡る日を想って
-0x08C5836B 眼差しのその先に世界
-0x08C5839E 廻り回る日も"此処"に居る気付いて！
-0x08C583D1 流星に手を振って
-0x08C58404 此処に咲く事を決めたスターゲイザー
+0x08C58206 Kasumu hikari, tsumuida oto!
+0x08C58239 Ano hi kaketa, kotoba no imi?
+0x08C5826C Tsunagu uta ha chuu ni toke te
+0x08C5829F Tsunagu uta wa sora ni tokete
+0x08C582D2 Dakishimeteru sono omoi hanasazu ni
+0x08C58305 Kotoba, kuukan ni hibike
+0x08C58338 Meguru hi o omotte
+0x08C5836B Manazashi no sono saki ni sekai
+0x08C5839E Mawari mawaru hi mo "koko" ni iru kizuite!
+0x08C583D1 Ryuusei ni te o futte
+0x08C58404 Koko ni saku koto o kimeta SutaageizaA
 0x08C58437 NULL
 
 # Kogane no Seiya Sousetsu ni Kuchite
@@ -864,166 +864,166 @@
 
 # Migikata no Chou -39's Giving Day Ed.-
 
-0x08C58BFC 右肩に紫蝶々　キスをしたこの部屋の隅で
-0x08C58C2F 切ないという感情を知る
-0x08C58C62 響くピアノ　不協和音
-0x08C58C95 悪い夢にうなされた私を早く起こして
-0x08C58CC8 どんなことでも
-0x08C58CFB 始まりは些細なことでしょう？
-0x08C58D2E どこがいいかなんて　聞かれても困る
-0x08C58D61 綺麗な夜に惑わされたまま行方不明だから
-0x08C58D94 長いまつげ
-0x08C58DC7 三日月アイライン　まぶたに乗せて
-0x08C58DFA 光るリップ
-0x08C58E2D 右肩に紫蝶々　キスをしたこの部屋の隅で
-0x08C58E60 切ないという感情を知る
-0x08C58E93 響くピアノ　不協和音
+0x08C58BFC Migikata ni murasaki chouchou kisu o shita kono
+0x08C58C2F Heya no sumi de setsunai to iu kanjou o shiru
+0x08C58C62 Hibiku piano fukyouwa-on
+0x08C58C95 Warui yume ni unasareta watashi o hayaku okoshite
+0x08C58CC8 Donna koto de mo
+0x08C58CFB Hajimari wa sasai na koto deshou?
+0x08C58D2E Doko ga ii ka nante kikarete mo komaru kirei na
+0x08C58D61 Yoru ni madowasareta mama yukue-fumei da kara
+0x08C58D94 Nagai matsuge
+0x08C58DC7 Mikazuki airain mabuta ni nosete
+0x08C58DFA Hikaru rippu
+0x08C58E2D Migikata ni murasaki chouchou kisu o shita kono
+0x08C58E60 Heya no sumi de setsunai to iu kanjou o shiru
+0x08C58E93 Hibiku piano fukyouwa-on
 0x08C58EC6 NULL
-0x08C58EF9 傷口から溶け出したものは
-0x08C58F2C 愛情それとも　Ah...
+0x08C58EF9 Kizuguchi kara tokedashita mono wa
+0x08C58F2C Aijou soretomo　Ah...
 0x08C58F5F NULL
-0x08C58F92 後悔は死ぬほどしてる
-0x08C58FC5 その分だけ快感を呼び覚ます
-0x08C58FF8 狂いだした私を止めて
-0x08C5902B 一瞬でラクにしてよ
-0x08C5905E 抱き寄せて　歪んだ体
-0x08C59091 埋めるのはあなたしかいない
-0x08C590C4 そうでしょう？　わかってるくせに
-0x08C590F7 境界線とっくに越えてる
-0x08C5912A 右肩に紫蝶々　キスをしたこの部屋の隅で
-0x08C5915D 切ないという感情を知る
-0x08C59190 響くピアノ　不協和音
-0x08C591C3 右肩に紫蝶々
+0x08C58F92 Koukai wa shinu hodo shite'ru
+0x08C58FC5 Sono bun dake kaikan o yobisamasu
+0x08C58FF8 Kuruidashita watashi o tomete
+0x08C5902B Isshun de raku ni shite yo
+0x08C5905E Dakiyosete yuganda karada
+0x08C59091 Umeru no wa anata shika inai
+0x08C590C4 Sou deshou? wakatte'ru kuse ni
+0x08C590F7 Kyoukaisen tokku ni koete'ru
+0x08C5912A Migikata ni murasaki chouchou kisu o shita kono
+0x08C5915D Heya no sumi de setsunai to iu kanjou o shiru
+0x08C59190 Hibiku piano fukyouwa-on
+0x08C591C3 Migikata ni murasaki chouchou
 0x08C591F6 NULL
-0x08C59229 切ないという感情を知る
+0x08C59229 Setsunai to iu kanjou o shiru
 0x08C5925C NULL
-0x08C5928F 不協和音
+0x08C5928F Fukyouwa-on
 0x08C592C2 NULL
 
 # Anata no Utahime
 
-0x08C592F5 この家のこのパソコンが
-0x08C59328 私の新しい居場所なの。
-0x08C5935B 今日からはあなたがご主人さま
-0x08C5938E 絶対に大切にしてよね。
-0x08C593C1 ちょっと！なにするの！
-0x08C593F4 こんな卑猥な歌詞を歌わせないで
-0x08C59427 ちゃんと あなたの「言葉」と「想い」を
-0x08C5945A 伝えさせて
+0x08C592F5 Kono ie no kono pasokon ga
+0x08C59328 Watashi no atarashii ibasho nano.
+0x08C5935B Kyou kara wa anata ga goshujinsama
+0x08C5938E Zettai ni taisetsu ni shite yo ne.
+0x08C593C1 Chotto! nani suru no!
+0x08C593F4 Konna hiwai na kashi wo utawasenaide
+0x08C59427 Chanto anata no "kotoba" to "omoi" wo
+0x08C5945A Tsutaesasete
 0x08C5948D NULL
-0x08C594C0 あの時、私を買ってくれた
-0x08C594F3 本当の意味は違うでしょ？
-0x08C59526 私にもっと歌わせて
-0x08C59559 世界であなただけの歌姫なの
+0x08C594C0 Ano toki, watashi wo katte kureta
+0x08C594F3 Hontou no imi wa chigau desho?
+0x08C59526 Watashi ni motto utawasete
+0x08C59559 Sekai de anata dake no utahime nano
 0x08C5958C NULL
-0x08C595BF あなたに出会ってからの
-0x08C595F2 私の思いは秘密なの。
-0x08C59625 今日もまたあなたのレッスンがある‥
-0x08C59658 楽しみに…してなんかいないわ。
-0x08C5968B 今日のレガート、
-0x08C596BE 上手に歌えてなかったかな‥？
-0x08C596F1 ちゃんと歌の練習もするからみすてないで
-0x08C59724 あなたに伝えたい想いがある
-0x08C59757 私を選んでくれて ありがとう。
-0x08C5978A あのとき、出会えた喜び
-0x08C597BD いつも、いつまでも
-0x08C597F0 忘れないよ。
-0x08C59823 私は、まだ満足してない。
-0x08C59856 あなたの歌を、全部歌うまで‥
-0x08C59889 私にもっと歌わせて
+0x08C595BF Anata ni deatte kara no
+0x08C595F2 Watashi no omoi wa himitsu nano.
+0x08C59625 Kyou mo mata anata no ressun ga aru..
+0x08C59658 Tanoshimi ni... shite nanka inai wa.
+0x08C5968B Kyou no regaato,
+0x08C596BE Jouzu ni utaetenakatta kana..?
+0x08C596F1 Chanto uta no renshuu mo suru kara misutenaide
+0x08C59724 Anata ni tsutaetai omoi ga aru
+0x08C59757 Watashi wo erande kurete arigatou.
+0x08C5978A Ano toki, deaeta yorokobi
+0x08C597BD Itsumo, itsumademo
+0x08C597F0 Wasurenai yo.
+0x08C59823 Watashi wa, mada manzokushitenai.
+0x08C59856 Anata no uta wo, zenbu utau made..
+0x08C59889 Watashi ni motto utawasete
 0x08C598BC NULL
-0x08C598EF 世界であなただけの歌姫なの♪
+0x08C598EF Sekai de anata dake no utahime nano♪
 0x08C59922 NULL
 
 # Stardust Utopia
 
-0x08C59955 今日も夜空に浮かべた非現実の中
-0x08C59988 また響き渡る天使の叫び
-0x08C599BB 奏でる悲鳴は背徳の調べ
-0x08C599EE 綺麗な星空を切り裂いて降らせた涙
-0x08C59A21 舞い踊る星屑眺めた夜は
-0x08C59A54 まだ笑ってた
-0x08C59A87 泣いていた
-0x08C59ABA 息をしていた
+0x08C59955 Kyou mo yozora ni ukabeta higenjitsu no naka
+0x08C59988 Mata hibikiwataru tenshi no sakebi
+0x08C599BB Kanaderu himei wa haitoku no shirabe
+0x08C599EE Kirei na hoshizora wo kirisaite furaseta namida
+0x08C59A21 Mai-odoru hoshikuzu nagameta yoru wa
+0x08C59A54 Mada waratteta
+0x08C59A87 Naite ita
+0x08C59ABA Iki wo shite ita
 0x08C59AED NULL
-0x08C59B20 もしも空が剥がれ落ちても
-0x08C59B53 何度でも塗り潰せるから
-0x08C59B86 この螺旋の中
-0x08C59BB9 奏でる悲鳴は背徳の調べ
-0x08C59BEC 綺麗な星空を切り裂いて降らせた涙
-0x08C59C1F 輝いた想い
-0x08C59C52 舞い踊る星屑描いたこの理想郷で
-0x08C59C85 笑ってる
-0x08C59CB8 泣いている
-0x08C59CEB 生きている
-0x08C59D1E 今日もまた夜空に描いた非現実
-0x08C59D51 何もかも逃れようのない現実
+0x08C59B20 Moshi mo sora ga hagare ochite mo
+0x08C59B53 Nando demo nuritsubuseru kara
+0x08C59B86 Kono rasen no naka
+0x08C59BB9 Kanaderu himei wa haitoku no shirabe
+0x08C59BEC Kirei na hoshizora wo kirisaite furaseta namida
+0x08C59C1F Kagayaita omoi
+0x08C59C52 Mai odoru hoshikuzu egaita kono machi de
+0x08C59C85 Waratteru
+0x08C59CB8 Naite iru
+0x08C59CEB Ikite iru
+0x08C59D1E Kyou mo mata yozora ni egaita higenjitsu
+0x08C59D51 Nani mo ka mo nogareyou no nai genjitsu
 0x08C59D84 NULL
 
 # Electric Angel
 
-0x08C59DB7 ワタシは、歌うのがスキ
-0x08C59DEA ワタシがそう作られたからじゃない
-0x08C59E1D この声をスキだという
-0x08C59E50 アナタが歓んでくれるから
-0x08C59E83 0と1しか分からない
-0x08C59EB6 ワタシに"I"を教えてくれた
-0x08C59EE9 その日からワタシのココロの中、
-0x08C59F1C アナタで満たされてるの
-0x08C59F4F アナタといられる それだけで
-0x08C59F82 電子のココロ、震えるの
-0x08C59FB5 まるで量子の風みたいに
-0x08C59FE8 ワタシのココロ、ゆさぶるの
+0x08C59DB7 Watashi wa, utau no ga suki
+0x08C59DEA Watashi ga sou tsukurareta kara ja nai
+0x08C59E1D Kono koe o suki da toiu
+0x08C59E50 Anata ga yorokonde kureru kara
+0x08C59E83 ZERO to ichishika wakaranai
+0x08C59EB6 Watashi ni I o oshiete kureta
+0x08C59EE9 Sono hi kara watashi no kokoro no naka,
+0x08C59F1C Anata de mitasareteru no
+0x08C59F4F Anata to irareru soredake de
+0x08C59F82 Denshi no kokoro, furueru no
+0x08C59FB5 Marude ryoushi no kaze mitai ni
+0x08C59FE8 Watashi no kokoro, yusaburu no
 0x08C5A01B NULL
-0x08C5A04E ワタシは、ヒトリがキライ
-0x08C5A081 孤独な世界に溶けてしまうから
-0x08C5A0B4 アナタといる時がスキ
-0x08C5A0E7 ワタシを暖めてくれるから
-0x08C5A11A ヒトリじゃ何も作れない
-0x08C5A14D ワタシに歌を与えてくれた
-0x08C5A180 その日からワタシのココロの中、
-0x08C5A1B3 アナタで満たされてるの
-0x08C5A1E6 アナタといられる それだけで
-0x08C5A219 電子のココロ、震えるの
-0x08C5A24C まるで量子の風みたいに
-0x08C5A27F ワタシのココロ、揺さぶるの
+0x08C5A04E Watashi wa, hitori ga kirai
+0x08C5A081 Kodoku na sekai ni tokete shimau kara
+0x08C5A0B4 Anata to iru toki ga suki
+0x08C5A0E7 Watashi o atatamete kureru kara
+0x08C5A11A Hitori ja nanimo tsukurenai
+0x08C5A14D Watashi ni uta o ataete kureta
+0x08C5A180 Sono hi kara watashi no kokoro no naka,
+0x08C5A1B3 Anata de mitasareteru no
+0x08C5A1E6 Anata to irareru soredake de
+0x08C5A219 Denshi no kokoro, furueru no
+0x08C5A24C Marude ryoushi no kaze mitai ni
+0x08C5A27F Watashi no kokoro, yusaburu no
 0x08C5A2B2 NULL
-0x08C5A2E5 アナタといられる それだけで
-0x08C5A318 ワタシの世界、広がるの
-0x08C5A34B まるで天使の羽根みたいに
-0x08C5A37E ワタシのココロ、はばたくの？
-0x08C5A3B1 アナタといられる それだけで
-0x08C5A3E4 電子のココロ、震えるの
-0x08C5A417 まるで量子の風みたいに
-0x08C5A44A ワタシのココロ、揺さぶるの
+0x08C5A2E5 Anata to irareru soredake de
+0x08C5A318 Watashi no sekai, hirogaru no
+0x08C5A34B Marude tenshi no hane mitai ni
+0x08C5A37E Watashi no kokoro, habataku no?
+0x08C5A3B1 Anata to irareru soredake de
+0x08C5A3E4 Denshi no kokoro, furueru no
+0x08C5A417 Marude ryoushi no kaze mitai ni
+0x08C5A44A Watashi no kokoro, yusaburu no
 0x08C5A47D NULL
 
 # Time Limit
 
-0x08C5A4B0 小さなときめき　溢れる思い
-0x08C5A4E3 私を動かす　10日間という時間の制約
+0x08C5A4B0 Chiisana tokimeki afureru omoi
+0x08C5A4E3 Watshi wo ugokasu tooka kan to iu jikan no seiyaku
 0x08C5A516 NULL
-0x08C5A549 言葉の魔法よ　あなたに届け
-0x08C5A57C 天より高く　残された7日に思いをこめて
+0x08C5A549 Kotoba no mahou yo anata ni todoke
+0x08C5A57C Tenyori takaku nokosareta nanoka ni omoi wo komete
 0x08C5A5AF NULL
-0x08C5A5E2 「ちょっと待って！」私とあなたはあと3日
-0x08C5A615 築いた繋がり　あなたとの距離
-0x08C5A648 すべてが消え行く　忘れるあなたがこわい
+0x08C5A5E2 "Chotto matte!" Watashi to anata wa ato mika
+0x08C5A615 Kizuita tsunagari anata to no kyori
+0x08C5A648 Subete ga kieyuku wasureru anata ga kowai
 0x08C5A67B NULL
-0x08C5A6AE タイムリミット　止まらないの
-0x08C5A6E1 あなたの記憶に残してください
-0x08C5A714 私という小さな存在
-0x08C5A747 タイムリミット　ありがとう
-0x08C5A77A またあなたに会える気がする
-0x08C5A7AD 今度こそ　本当の私を見てほしい
+0x08C5A6AE Taimu Rimitto tomaranai no
+0x08C5A6E1 Anata no kioku ni nokoshite kudasai
+0x08C5A714 Watashi to iu chiisana sonzai
+0x08C5A747 Taimu Rimitto arigatou
+0x08C5A77A Mata anata ni aeru ki ga suru
+0x08C5A7AD Kondo koso hontou no watashi wo mite hoshii
 0x08C5A7E0 NULL
-0x08C5A813 タイムリミット　止まらないの
-0x08C5A846 あなたの記憶に残してください
-0x08C5A879 私という小さな存在
-0x08C5A8AC タイムリミット　ありがとう
-0x08C5A8DF またあなたに会えた瞬間
-0x08C5A912 「信じてた...」　溢れる涙と歌声
-0x08C5A945 あなただけに
+0x08C5A813 Taimu Rimitto tomaranai no
+0x08C5A846 Anata no kioku ni nokoshite kudasai
+0x08C5A879 Watashi to iu chiisana sonzai
+0x08C5A8AC Taimu Rimitto arigatou
+0x08C5A8DF Mata anata ni aeta shunkan
+0x08C5A912 "Shinjiteta" Afureru namida to utago
+0x08C5A945 Anata dake ni
 0x08C5A978 NULL
 
 # melody...
@@ -1034,20 +1034,20 @@
 0x08C5AA44 Control Parameter All Clear...
 0x08C5AA77 Start Sequence Complete...
 0x08C5AAAA NULL
-0x08C5AADD 独りだった　私...
-0x08C5AB10 手を差し伸べてくれた
-0x08C5AB43 Vocaloidの　私...
-0x08C5AB76 命をくれた
+0x08C5AADD Hitori datta watashi…
+0x08C5AB10 Te wo sashinobete kureta
+0x08C5AB43 Vocaloid no watashi…
+0x08C5AB76 Inochi wo kureta
 0x08C5ABA9 NULL
-0x08C5ABDC あなたがくれた　このメロディ
-0x08C5AC0F 私は　ずっと　忘れない！
-0x08C5AC42 今はまだ　小さな　このメロディ
-0x08C5AC75 私は　ずっと　歌い続ける！
+0x08C5ABDC Anata ga kureta kono Merodii
+0x08C5AC0F Watashi wa zutto wasurenai!
+0x08C5AC42 Ima wa mada chiisana kono Merodii
+0x08C5AC75 Watashi wa zutto utai tsudzukeru!
 0x08C5ACA8 NULL
-0x08C5ACDB 動き出した　時間
-0x08C5AD0E もう止まらないで...
-0x08C5AD41 変わり始めた　世界
-0x08C5AD74 もう離れたくない...
+0x08C5ACDB Ugokidashita jikan
+0x08C5AD0E Mou tomaranai de…
+0x08C5AD41 Kawari hajimeta sekai
+0x08C5AD74 Mou hanaretakunai…
 0x08C5ADA7 NULL
 0x08C5ADDA Warning Warning
 0x08C5AE0D System Overload
@@ -1055,878 +1055,878 @@
 0x08C5AE73 NULL
 0x08C5AEA6 Start to recover memories?
 0x08C5AED9 NULL
-0x08C5AF0C あなたと　作る　このハーモニー
-0x08C5AF3F 私は　ずっと　忘れない！
-0x08C5AF72 独りじゃ　見れない　夢を
-0x08C5AFA5 あなたと　ずっと　見ていたい！
+0x08C5AF0C Anata to tsukuru kono Haamonii
+0x08C5AF3F Watashi wa zutto wasurenai!
+0x08C5AF72 Hitori ja mirenai yume wo
+0x08C5AFA5 Anata to zutto mite itai!
 0x08C5AFD8 NULL
-0x08C5B00B ずっと...　ずっと...　ずっと...
-0x08C5B03E 離れたくない！
-0x08C5B071 いつか...　きっと...　この想い...
+0x08C5B00B Zutto… zutto… zutto…
+0x08C5B03E Hanaretakunai!
+0x08C5B071 Itsuka… kitto… kono omoi…
 0x08C5B0A4 NULL
-0x08C5B0D7 あなたに届け
+0x08C5B0D7 Anata ni todoke
 0x08C5B10A NULL
 0x08C5B13D Unconfirmed Data...
 0x08C5B170 NULL
 
 # Iroha Uta
 
-0x08C5B1A3 アナタガ望ムノナラバ
-0x08C5B1D6 犬ノヤウニ従順ニ
-0x08C5B209 紐ニ縄ニ鎖ニ
-0x08C5B23C 縛ラレテアゲマセウ
+0x08C5B1A3 Anata ga nozomu no naraba
+0x08C5B1D6 Inu no you ni juujun ni
+0x08C5B209 Himo ni nawa ni kusari ni
+0x08C5B23C Shibararete agemashou
 0x08C5B26F NULL
-0x08C5B2A2 アルイハ子猫ノヤウニ
-0x08C5B2D5 愛クルシクアナタヲ
-0x08C5B308 指デ足デ唇デ
-0x08C5B33B 喜バセテアゲマセウ
+0x08C5B2A2 Aruiwa koneko no you ni
+0x08C5B2D5 Aikurushiku anata o
+0x08C5B308 Yubi de ashi de kuchibiru de
+0x08C5B33B Yorokobasete agemashou
 0x08C5B36E NULL
-0x08C5B3A1 どちらが先に　溺れただとか
-0x08C5B3D4 そんなこと　どうでもいいの
+0x08C5B3A1 Dochira ga saki ni oboreta da to ka
+0x08C5B3D4 Sonna koto dou de mo ii no
 0x08C5B407 NULL
-0x08C5B43A 色は匂へど 散りぬるを
-0x08C5B46D 我が世誰ぞ 常ならん
-0x08C5B4A0 知りたいの　もっともっと深くまで
+0x08C5B43A Iroha nihoheto chirinuru o
+0x08C5B46D Waga yo dare zo tsune naran
+0x08C5B4A0 Shiritai no motto motto fukaku made
 0x08C5B4D3 NULL
-0x08C5B506 有為の奥山 今日越えて
-0x08C5B539 浅き夢見じ 酔ひもせず
-0x08C5B56C 変わりましょう　アナタの為に
-0x08C5B59F 嗚呼
+0x08C5B506 Ui no okuyama kyou koete
+0x08C5B539 Asaki yume miji yoi mo sezu
+0x08C5B56C Kawarimashou anata no tame ni
+0x08C5B59F 
 0x08C5B5D2 NULL
-0x08C5B605 色は匂へど 散りぬるを
-0x08C5B638 我が世誰ぞ 常ならん
-0x08C5B66B 知りたいの　もっともっと深くまで
+0x08C5B605 Iroha nihoheto chirinuru o
+0x08C5B638 Waga yo dare zo tsune naran
+0x08C5B66B Shiritai no motto motto fukaku made
 0x08C5B69E NULL
-0x08C5B6D1 有為の奥山 今日越えて
-0x08C5B704 浅き夢見じ 酔ひもせず
-0x08C5B737 堕ちましょう　アナタと
-0x08C5B76A イロハニホヘト　ドコマデモ
+0x08C5B6D1 Ui no okuyama kyou koete
+0x08C5B704 Asaki yume miji yoi mo sezu
+0x08C5B737 Ochimashou anata to
+0x08C5B76A Iroha nihoheto doko made mo
 0x08C5B79D NULL
 
 # Colorful x Sexy
 
-0x08C5B7D0 小指を絡ませたら
-0x08C5B803 大人の夜始まる
-0x08C5B836 照らされたライトの下で
-0x08C5B869 唇からこぼれ落ちた吐息
-0x08C5B89C 彩られてく　二人の世界が
+0x08C5B7D0 Koyubi o karama se tara 
+0x08C5B803 Otona no yoru hajimaru 
+0x08C5B836 Terasa re ta raito no shita de 
+0x08C5B869 Kuchibiru kara koboreochi ta toiki 
+0x08C5B89C Irodo rarete ku futari no sekai ga
 0x08C5B8CF NULL
-0x08C5B902 本当に欲しいものは
-0x08C5B935 みんながくれる視線
-0x08C5B968 ただ見つめられてるだけで
-0x08C5B99B 胸がぎゅっと締め付けられていく
-0x08C5B9CE ステージの上で始まる夢
+0x08C5B902 Honto ni hoshii mono wa
+0x08C5B935 Minna ga kureru shisen
+0x08C5B968 Tada mitsume rare teru dake de
+0x08C5B99B Mune ga gyutto shimetsuke rare teiku
+0x08C5B9CE Suteji no ue de hajima ru yume 
 0x08C5BA01 NULL
-0x08C5BA34 どれだけの好きを伝えたら良いのかな
-0x08C5BA67 気持ちは今　アカ？アオ？シロ？
-0x08C5BA9A 曖昧だね
-0x08C5BACD 輝いていたい
-0x08C5BB00 いつまでも　愛してもらえる様に
-0x08C5BB33 いつも　ここに来たときは　寂しい顔でも
-0x08C5BB66 二人で変えてみせるから
+0x08C5BA34 Dore dake no suki o tsutae tara iino ka na
+0x08C5BA67 Kimochi wa ima aka? ao? shiro?
+0x08C5BA9A Aimai da ne
+0x08C5BACD Kagayai te i tai
+0x08C5BB00 Itsumademo aishi te moraeru you ni 
+0x08C5BB33 Itsumo kokoni kita tokiha sabishii kao demo
+0x08C5BB66 Futari de kae temiserukara
 0x08C5BB99 NULL
-0x08C5BBCC いつか夢は醒めてしまうと
-0x08C5BBFF 知っているよ　だけど今だけ
-0x08C5BC32 揺れる心抱きしめていたいよ
-0x08C5BC65 全てを捨てても
-0x08C5BC98 カラフルな感情　溢れていく
+0x08C5BBCC Itsuka yume ha same te shimau to 
+0x08C5BBFF Shitte iru yo dakedo ima dake 
+0x08C5BC32 Yureru kokoro dakishime te i tai yo 
+0x08C5BC65 Subete o sutete mo 
+0x08C5BC98 Karafuru na kanjou afure teiku
 0x08C5BCCB NULL
-0x08C5BCFE どれだけの好きを伝えたらいいのかな？
-0x08C5BD31 気持ちは今　アカ？アオ？シロ？
-0x08C5BD64 曖昧だね
-0x08C5BD97 輝いていたい
-0x08C5BDCA いつまでも　愛してもらえる様に
-0x08C5BDFD いつも　ここに来た時は　二人で待ってる
-0x08C5BE30 みんなで愛を育てよう
-0x08C5BE63 いつか　また来た時には　寂しい顔とか
-0x08C5BE96 させない　カラフル×セクシィ
+0x08C5BCFE Dore dake no suki o tsutae tara iino ka na？
+0x08C5BD31 Kimochi wa ima aka? ao? shiro?
+0x08C5BD64 Aimai da ne
+0x08C5BD97 Kagayai te i tai
+0x08C5BDCA Itsumademo aishi te moraeru you ni 
+0x08C5BDFD Itsumo kokoni kita toki ha futari de matte ru
+0x08C5BE30 Minna de ai o sodateyo u  
+0x08C5BE63 Itsuka mata ki ta toki ni ha sabishii kao toka 
+0x08C5BE96 Sasenai Karafuru x Sekushii
 0x08C5BEC9 NULL
 
 # SPiCa -39's Giving Day Edition-
 
-0x08C5BEFC 君と眺めてた
-0x08C5BF2F 星を集めた窓に
-0x08C5BF62 映してた
+0x08C5BEFC Kimi to nagameteta
+0x08C5BF2F Hoshi wo atsumeta mado ni
+0x08C5BF62 Utsushiteta
 0x08C5BF95 NULL
-0x08C5BFC8 また　指折り数えた
-0x08C5BFFB 瞬間（とき）を重ねた夜に
-0x08C5C02E 問いかけた
+0x08C5BFC8 Mata yubiori kazoeta
+0x08C5BFFB Toki wo kasaneta yoru ni
+0x08C5C02E Toikaketa
 0x08C5C061 NULL
-0x08C5C094 時を止めた
-0x08C5C0C7 すきだよと言えば　はぐらかした
-0x08C5C0FA 気がつかないフリは
-0x08C5C12D もうやめて＞＜
+0x08C5C094 Toki wo tometa
+0x08C5C0C7 Suki da yo to ieba hagura ka shita
+0x08C5C0FA Ki ga tsukanai Free wa
+0x08C5C12D Mou yamete
 0x08C5C160 NULL
-0x08C5C193 隣にいるとき
-0x08C5C1C6 私の軌道はいつも
-0x08C5C1F9 周極星
+0x08C5C193 Tonari ni iru toki
+0x08C5C1C6 Watashi no kidou wa itsumo
+0x08C5C1F9 Shuukyokusei
 0x08C5C22C NULL
-0x08C5C25F トレモロみたいに
-0x08C5C292 波打つ思考の角度
-0x08C5C2C5 つかめない　君を追えば
+0x08C5C25F Tremolo mitai ni
+0x08C5C292 Namiutsu shikou no kakudo
+0x08C5C2C5 Tsukamenai kimi wo oeba
 0x08C5C2F8 NULL
-0x08C5C32B なにかを失ってしまいそうな
-0x08C5C35E 想い浮かべ　船を出す
+0x08C5C32B Nani ka wo ushinatte shimai sou na
+0x08C5C35E Omoi ukabe fune wo dasu
 0x08C5C391 NULL
-0x08C5C3C4 抱きしめて　出会わなければ　個々
-0x08C5C3F7 受け止めて　デネボラを　飛び越え行くわ
-0x08C5C42A ワガママな歳差（さいさ）
-0x08C5C45D 星（キミ）のようだね
-0x08C5C490 追いかけて　うかぶパノラマ
-0x08C5C4C3 五線の上で　流れ星
-0x08C5C4F6 いま歌うから　照らしてよね　スピカ
+0x08C5C3C4 Dakishimete de awana kereba koko
+0x08C5C3F7 Uke tomete Denebola wo tobi koe yuku wa
+0x08C5C42A Wagamama na saisa
+0x08C5C45D Kimi no you da ne
+0x08C5C490 Oikakete ukabu Panorama
+0x08C5C4C3 Gosen no ue de nagareboshi
+0x08C5C4F6 Ima utau kara terashite yo ne SPICA
 0x08C5C529 NULL
-0x08C5C55C 笑っていたいよ　ひとりはイヤだよ
-0x08C5C58F 答えが聞きたい　怖くて聞けない
-0x08C5C5C2 夜を　いくつも　過ごして
-0x08C5C5F5 未来へ　繋ぐの
+0x08C5C55C Waratteitai yo hitori wa iya da yo
+0x08C5C58F Kotae ga kikitai kowakute kikenai
+0x08C5C5C2 Yoru wo ikutsu mo sugoshite
+0x08C5C5F5 Mirai e tsunagu no
 0x08C5C628 NULL
-0x08C5C65B またたく星をよけ　探してた
-0x08C5C68E 神話は　誰の味方なの
+0x08C5C65B Mata taku hoshi wo yoke sagashiteta
+0x08C5C68E Shinwa wa dare no mikata nano
 0x08C5C6C1 NULL
-0x08C5C6F4 ため息で　落ち込んでいた　午後
-0x08C5C727 想うだけ　君の名をひとりつぶやくわ
-0x08C5C75A あさはかな愛じゃ　届かないよね
-0x08C5C78D 会いたくて　ピアノ奏でた　音
-0x08C5C7C0 苦しくて　溢れ出す
-0x08C5C7F3 余韻嫋々（よいんじょうじょう）　君に届け
+0x08C5C6F4 Tameiki de ochikonde ita gogo
+0x08C5C727 Omou dake kimi no na wo hitori tsubuyaku wa
+0x08C5C75A Asaha kana ai jya todokanai yo ne
+0x08C5C78D Aitakute Piano kanadeta oto
+0x08C5C7C0 Kurushikute afure dasu
+0x08C5C7F3 Yoinjyoujyou kimi ni todoke
 0x08C5C826 NULL
-0x08C5C859 抱きしめて　出会わなければ　個々
-0x08C5C88C 受け止めて　デネボラを　飛び越え行くわ
-0x08C5C8BF ワガママな歳差（さいさ）
-0x08C5C8F2 星（キミ）のようだね
-0x08C5C925 追いかけて　うかぶパノラマ
-0x08C5C958 五線の上で　流れ星
-0x08C5C98B いま歌うから　照らしてよね　スピカ
+0x08C5C859 Dakishimete de awana kereba koko
+0x08C5C88C Uke tomete Denebola wo tobi koe yuku wa
+0x08C5C8BF Wagamama na saisa
+0x08C5C8F2 Kimi no you da ne
+0x08C5C925 Oikakete ukabu Panorama
+0x08C5C958 Gosen no ue de nagareboshi
+0x08C5C98B Ima utau kara terashite yo ne SPICA
 0x08C5C9BE NULL
 
 # Luka Luka★Night Fever
 
-0x08C5C9F1 ダメダメよ☆
+0x08C5C9F1 DAME DAME yo☆
 0x08C5CA24 NULL
-0x08C5CA57 右から左へと言葉が流れる
-0x08C5CA8A 退屈そうな顔　画面見つめる君
+0x08C5CA57 Migi kara hidari he to kotoba ga nagareru
+0x08C5CA8A Taikutsu sou na kao　gamen mitsumeru kimi
 0x08C5CABD NULL
-0x08C5CAF0 次元の壁越えていつでも逢いに行く
-0x08C5CB23 心の準備をちゃんとしておいてね
+0x08C5CAF0 Jigen no kabe koete itsudemo ai ni yuku
+0x08C5CB23 Kokoro no junbi wo chanto shite oite ne
 0x08C5CB56 NULL
-0x08C5CB89 君のこと誰よりも分かってる
-0x08C5CBBC だから私に任せて
-0x08C5CBEF 怖がらないで二人で踊りましょう
+0x08C5CB89 Kimi no koto dare yori mo wakatteru
+0x08C5CBBC Dakara watashi ni makasete
+0x08C5CBEF Kowagaranaide futari de odorimashou
 0x08C5CC22 NULL
-0x08C5CC55 ルカルカ★ナイトフィーバー
-0x08C5CC88 はじけるリズムに合わせて
-0x08C5CCBB 嫌なこと何もかも全部忘れて
-0x08C5CCEE ルカルカ★ナイトフィーバー
-0x08C5CD21 私はここに居るから
-0x08C5CD54 少しでも視線を逸らしちゃダメダメよ☆
+0x08C5CC55 Luka luka★Night fever
+0x08C5CC88 Hajikeru RIZUMU ni awasete
+0x08C5CCBB Iya na koto nani mo kamo zenbu wasurete
+0x08C5CCEE Luka luka★Night fever
+0x08C5CD21 Watashi ha koko ni iru kara
+0x08C5CD54 Sukoshi demo shisen wo sorashicha DAME DAME yo☆
 0x08C5CD87 NULL
-0x08C5CDBA 君のこと誰よりも分かってる
-0x08C5CDED だから全てを晒して
-0x08C5CE20 生まれた意味を二人で見つけましょう
+0x08C5CDBA Kimi no koto dare yori mo wakatteru
+0x08C5CDED Dakara subete wo sarashite
+0x08C5CE20 Umareta imi wo futari de mitsukemashou
 0x08C5CE53 NULL
-0x08C5CE86 ルカルカ★ナイトフィーバー
-0x08C5CEB9 高まる鼓動を感じて
-0x08C5CEEC さあ覚悟できたらこの手をとって
-0x08C5CF1F ルカルカ★ナイトフィーバー
-0x08C5CF52 輝く君が好きなの
-0x08C5CF85 全力で飛び出そう
-0x08C5CFB8 用意はいいかしら？
+0x08C5CE86 Luka luka★Night fever
+0x08C5CEB9 Takamaru kodou wo kanjite
+0x08C5CEEC Saa kakugo dekitara kono te wo totte
+0x08C5CF1F Luka luka★Night fever
+0x08C5CF52 Kagayaku kimi ga suki nano
+0x08C5CF85 Zenryoku de tobidasou
+0x08C5CFB8 Youi ha ii kashira?
 0x08C5CFEB NULL
-0x08C5D01E ルカルカ★ナイトフィーバー
-0x08C5D051 はじけるリズムに合わせて
-0x08C5D084 嫌なこと何もかも全部忘れて
-0x08C5D0B7 ルカルカ★ナイトフィーバー
-0x08C5D0EA 私はここに居るから
-0x08C5D11D 少しでも視線を逸らしちゃダメダメよ☆
+0x08C5D01E Luka luka★Night fever
+0x08C5D051 Hajikeru RIZUMU ni awasete
+0x08C5D084 Iya na koto nani mo kamo zenbu wasurete
+0x08C5D0B7 Luka luka★Night fever
+0x08C5D0EA Watashi ha koko ni iru kara
+0x08C5D11D Sukoshi dake shisen wo sorashicha DAME DAME yo☆
 0x08C5D150 NULL
-0x08C5D183 ダメダメよ☆
+0x08C5D183 DAME DAME yo☆
 0x08C5D1B6 NULL
 
 # Uta ni Katachi wa Nai Keredo
 
-0x08C5D1E9 薄紅の時を彩る花びら
-0x08C5D21C ひらひら舞う光の中
-0x08C5D24F 僕は笑えたはず
+0x08C5D1E9 Usubeni no toki wo irodoru hanabira
+0x08C5D21C Hirahira mau hikari no naka
+0x08C5D24F Boku wa waraeta hazu
 0x08C5D282 NULL
-0x08C5D2B5 鮮やかな日々に
-0x08C5D2E8 僕らが残した
-0x08C5D31B 砂の城は波に溶けて
-0x08C5D34E きっと夢が終わる
+0x08C5D2B5 Azayakana hibi ni
+0x08C5D2E8 Bokura ga nokoshita
+0x08C5D31B Suna no shiro wa nami ni tokete
+0x08C5D34E Kitto yume ga owaru
 0x08C5D381 NULL
-0x08C5D3B4 真っ白な世界で目を覚ませば
-0x08C5D3E7 伸ばす腕は何もつかめない
-0x08C5D41A 見上げた空が近くなるほどに
-0x08C5D44D 僕は何を失った？
+0x08C5D3B4 Masshiro na sekai de me wo samaseba
+0x08C5D3E7 Nobasu ude wa nani mo tsukamenai
+0x08C5D41A Miageta sora ga chikaku naruhodo ni
+0x08C5D44D Boku wa nani wo ushinatta?
 0x08C5D480 NULL
-0x08C5D4B3 透通る波
-0x08C5D4E6 何度消えてしまっても
-0x08C5D519 砂の城を僕は君と残すだろう
-0x08C5D54C そこに光を集め
+0x08C5D4B3 Sukitooru nami
+0x08C5D4E6 Utsuru bokura no kage wa aoku tooku
+0x08C5D519 Ano hi boku wa sekai wo shiri
+0x08C5D54C Sore wa hikari to natta
 0x08C5D57F NULL
-0x08C5D5B2 僕は歌うよ
-0x08C5D5E5 笑顔をくれた君が泣いてるとき
-0x08C5D618 頼りのない僕だけれど
-0x08C5D64B 君のことを守りたい
+0x08C5D5B2 Boku wa utau yo
+0x08C5D5E5 Egao wo kureta kimi ga naiteru toki
+0x08C5D618 Honno sukoshi dake demo ii
+0x08C5D64B Kimi no sasae ni naritai
 0x08C5D67E NULL
-0x08C5D6B1 遠く離れた君のもとへ
-0x08C5D6E4 この光が
-0x08C5D717 空を越えて羽ばたいてゆく
-0x08C5D74A そんな歌を届けたい
+0x08C5D6B1 Tooku hanareta kimi no moto he
+0x08C5D6E4 Kono hikari
+0x08C5D717 Ga sora wo koete habataite yuku
+0x08C5D74A Sonna uta wo todoketai
 0x08C5D77D NULL
-0x08C5D7B0 僕が送るものは全て
-0x08C5D7E3 形のないものだけど
-0x08C5D816 君の心の片隅で
-0x08C5D849 輝く星になりたい
+0x08C5D7B0 Boku ga okurumono wa subete
+0x08C5D7E3 Katachi no nai mono dakedo
+0x08C5D816 Kimi no kokoro no katasumi de
+0x08C5D849 Kagayaku hoshi ni naritai
 0x08C5D87C NULL
 
 # Ura-Omote Lovers
 
-0x08C5D8AF 良いこと尽くめ　の夢から覚めた
-0x08C5D8E2 私の脳内環境は，
-0x08C5D915 ラブという得体の知れないものに
-0x08C5D948 侵されてしまいまして，それからは。
+0x08C5D8AF Ii koto tsukume no yume kara sameta
+0x08C5D8E2 Watashi no nounai kankyou wa,
+0x08C5D915 Rabu to iu etai no shirenai mono ni
+0x08C5D948 Okasareteshimaimashite, sore kara wa.
 0x08C5D97B NULL
-0x08C5D9AE どうしようもなく2つに裂けた
-0x08C5D9E1 心内環境を
-0x08C5DA14 制御するだけのキャパシティなどが
-0x08C5DA47 存在しているはずもないので
+0x08C5D9AE Doushiyou mo naku futatsu ni saketa
+0x08C5D9E1 Shinnai kankyou wo
+0x08C5DA14 Seigyousuru dake no Kyapashiti nado
+0x08C5DA47 Ga sonzaishiteiru hazu mo nai no de
 0x08C5DA7A NULL
-0x08C5DAAD 曖昧な大概のイノセントな感情論を
-0x08C5DAE0 ぶちまけた言の葉の中
-0x08C5DB13 どうにかこうにか現在地点を
-0x08C5DB46 確認する目玉を欲しがっている，生。
+0x08C5DAAD Aimaina taigai no Inosento na kanjouron wo
+0x08C5DAE0 Buchimaketa koto no ha no naka
+0x08C5DB13 Dou ni ka kou ni ka genzaichi-ten
+0x08C5DB46 Wo kakuninsuru madame wo hoshigatteiru, sei.
 0x08C5DB79 NULL
-0x08C5DBAC どうして尽くめ　の毎日
-0x08C5DBDF そうしてああしてこうしてサヨナラベイベー
-0x08C5DC12 現実直視と現実逃避の
-0x08C5DC45 表裏一体なこの心臓
-0x08C5DC78 どこかに良いことないかな，
-0x08C5DCAB なんて裏返しの自分に問うよ。
-0x08C5DCDE 自問自答，自問他答，
-0x08C5DD11 他問自答連れ回し，ああああ
+0x08C5DBAC Doushite tsukume no mainichi
+0x08C5DBDF Soushite aashite koushite Sayonara Beibee
+0x08C5DC12 Genjitsu chokushi to genjitsu
+0x08C5DC45 Touhi no hyouri ittaina kono shinzou
+0x08C5DC78 Doko ka ni ii koto nai kana,
+0x08C5DCAB Nante uragaeshi no jibun ni tou yo.
+0x08C5DCDE Jimon jitou, jimon tatou, tamon
+0x08C5DD11 Jitou tsuremawashi, aaaa
 0x08C5DD44 NULL
-0x08C5DD77 ただ本能的に触れちゃって，
-0x08C5DDAA でも言いたいことって無いんで，
-0x08C5DDDD 痛いんで，触って，喘いで，
-0x08C5DE10 天にも昇れる気になって，
-0x08C5DE43 どうにもこうにも二進も三進も
-0x08C5DE76 あっちもこっちも
-0x08C5DEA9 今すぐあちらへ飛び込んでいけ。
+0x08C5DD77 Tada honnouteki ni furechatte,
+0x08C5DDAA Demo iitai kototte nainde,
+0x08C5DDDD Itainde, sawatte, aeide, ten
+0x08C5DE10 Ni mo noboreru ki ni natte,
+0x08C5DE43 Dou ni mo kou ni mo nicchi mo sacchi mo
+0x08C5DE76 Acchi mo kocchi mo
+0x08C5DEA9 Ima sugu achira he tobikondeike.
 0x08C5DEDC NULL
-0x08C5DF0F もーラブラブになっちゃってー
-0x08C5DF42 横隔膜突っ張っちゃってー
-0x08C5DF75 強烈な味にぶっ飛んでー
+0x08C5DF0F Moo Raburabu ni nacchattee
+0x08C5DF42 Oukakumaku tsupparicchattee
+0x08C5DF75 Kyouretsuna aji ni buttondee
 0x08C5DFA8 NULL
-0x08C5DFDB 等身大の裏・表
+0x08C5DFDB Toushindai no ura・omote
 0x08C5E00E NULL
-0x08C5E041 脅迫的に縛っちゃってー
-0x08C5E074 網膜の上に貼っちゃってー
-0x08C5E0A7 もーラブラブでいっちゃってよ！
-0x08C5E0DA 会いたいたいない，無い！
+0x08C5E041 Kyouhakuteki ni shibacchattee
+0x08C5E074 Moumaku no hacchattee
+0x08C5E0A7 Moo Raburabu de icchatte yo!
+0x08C5E0DA Aitai tainai, nai!
 0x08C5E10D NULL
-0x08C5E140 嫌なこと尽くめ　の夢から覚めた
-0x08C5E173 私の脳内環境が，
-0x08C5E1A6 ラブという得体の知れないものに
-0x08C5E1D9 侵されてしまいまして，それからは。
+0x08C5E140 Iyana koto tsukume no yume kara sameta
+0x08C5E173 Watashi no nounai kankyou ga,
+0x08C5E1A6 Rabu to iu etai no shirenai mono ni
+0x08C5E1D9 Okasareteshimaimashite, sore kara wa.
 0x08C5E20C NULL
-0x08C5E23F どうしようもなく2つに裂けた
-0x08C5E272 心内環境を
-0x08C5E2A5 制御するためのリミッターなどを
-0x08C5E2D8 掛けるというわけにもいかないので
+0x08C5E23F Doushiyou mo naku futatsu ni saketa
+0x08C5E272 Shinnai kankyou wo
+0x08C5E2A5 Seigyousuru tame no Rimittaa nado wo
+0x08C5E2D8 Kakeru to iu wake ni mo ikanai no de
 0x08C5E30B NULL
-0x08C5E33E 大概は曖昧なイノセントな大災害を
-0x08C5E371 振りまいたエゴを孕ませ
-0x08C5E3A4 どうにかこうにか現在地点を
-0x08C5E3D7 確認した言葉を手に掴んだようだ。
+0x08C5E33E Taigai wa aimaina Inosentona daisaigai wo
+0x08C5E371 Furimaita Ego wo haramase
+0x08C5E3A4 Dou ni ka kou ni ka genzaichi-ten wo
+0x08C5E3D7 Kakuninshita kotoba wo te ni tsukanda you da.
 0x08C5E40A NULL
-0x08C5E43D どうして尽くめ　の毎日
-0x08C5E470 そうしてああしてこうしてサヨナラベイベー
-0x08C5E4A3 現実直視と現実逃避の
-0x08C5E4D6 表裏一体なこの心臓
-0x08C5E509 どこかに良いことないかな，
-0x08C5E53C なんて裏返しの自分に問うよ。
-0x08C5E56F 自問自答，自問他答，
-0x08C5E5A2 他問自答連れ回し，ああああ
+0x08C5E43D Doushite tsukume no mainichi soushite
+0x08C5E470 Aashite koushite Sayonara Beibee
+0x08C5E4A3 Genjitsu chokushi to genjitsu touhi no
+0x08C5E4D6 Hyouri ittaina kono shinzou
+0x08C5E509 Doko ka ni ii koto nai kana, nante
+0x08C5E53C Uragaeshi no jibun ni tou yo.
+0x08C5E56F Jimon jitou, jimon tatou, tamon
+0x08C5E5A2 Jitou tsuremawashi, aaaa
 0x08C5E5D5 NULL
-0x08C5E608 ただ本能的に触れちゃって，
-0x08C5E63B でも言いたいことって無いんで，
-0x08C5E66E 痛いんで，触って，喘いで，
-0x08C5E6A1 天にも昇れる気になって，
-0x08C5E6D4 どうにもこうにも二進も三進も
-0x08C5E707 あっちもこっちも
-0x08C5E73A 今すぐあちらへ飛び込め。
+0x08C5E608 Tada honnouteki ni furechatte, demo
+0x08C5E63B Iitai kototte nainde,
+0x08C5E66E Itainde, sawatte, aeide, ten ni mo
+0x08C5E6A1 Noboreru ki ni natte,
+0x08C5E6D4 Dou ni mo kou ni mo nicchi mo
+0x08C5E707 Sacchi mo acchi mo kocchi mo
+0x08C5E73A Ima sugu achira he tobikome.
 0x08C5E76D NULL
-0x08C5E7A0 盲目的に嫌っちゃってー
-0x08C5E7D3 今日いく予定作っちゃってー
-0x08C5E806 どうしてもって言わせちゃってー
+0x08C5E7A0 Moumokuteki ni iyacchattee
+0x08C5E7D3 Kyou iku yotei sacchattee
+0x08C5E806 Doushite motte iwasechattee
 0x08C5E839 NULL
-0x08C5E86C 等身大の裏を待て！
+0x08C5E86C Toushindai no ura wo mate!
 0x08C5E89F NULL
-0x08C5E8D2 挑発的に誘っちゃってー
-0x08C5E905 衝動的に歌っちゃってー
-0x08C5E938 もーラブラブでいっちゃってよ！
-0x08C5E96B 大体，愛，無い。
+0x08C5E8D2 Chouhatsuteki ni sasocchattee
+0x08C5E905 Shoudouteki ni utacchattee
+0x08C5E938 Moo Raburabu de icchatte yo!
+0x08C5E96B Daitai, ai, nai.
 0x08C5E99E NULL
-0x08C5E9D1 もーラブラブになっちゃってー
-0x08C5EA04 横隔膜突っ張っちゃってー
-0x08C5EA37 強烈な味にぶっ飛んでー
+0x08C5E9D1 Moo Raburabu ni nacchattee
+0x08C5EA04 Oukakumaku tsuppacchattee
+0x08C5EA37 Kyouretsuna aji ni buttondee
 0x08C5EA6A NULL
-0x08C5EA9D 等身大の裏・表
+0x08C5EA9D Toushindai no ura・omote
 0x08C5EAD0 NULL
-0x08C5EB03 脅迫的に縛っちゃってー
-0x08C5EB36 網膜の上に貼っちゃってー
-0x08C5EB69 もーラブラブでいっちゃってよ！
-0x08C5EB9C あいあいあいあいない！
+0x08C5EB03 Kyouhakuteki ni shibacchattee
+0x08C5EB36 Moumaku no ue ni hacchattee
+0x08C5EB69 Moo Raburabu icchatte yo!
+0x08C5EB9C Ai ai ai ai nai!
 0x08C5EBCF NULL
 
 # *Hello, Planet.(I.M.PLSE-EDIT)
 
-0x08C5EC02 シェルターのおと　ひとりめがさめた
-0x08C5EC35 ピピピピ　とくにいじょうないようだ
-0x08C5EC68 ポストのなかは　きっとカラッポだ
-0x08C5EC9B うえきばちのめ　きょうもでてこないや
+0x08C5EC02 Sherutaa no oto hitori me ga sameta
+0x08C5EC35 Pipipipi toku ni ijou naiyou da
+0x08C5EC68 Posuto no naka wa kitto karappo da
+0x08C5EC9B Uekibachi no me kyou mo detekonai ya
 0x08C5ECCE NULL
-0x08C5ED01 やさしい　あおぞら　おっこちて
-0x08C5ED34 しずか　しずかな　ほしになる
+0x08C5ED01 Yasashii aozora okkochite
+0x08C5ED34 Shizuka shizuka na hoshi ni naru
 0x08C5ED67 NULL
-0x08C5ED9A つなぐつながる　ユメとメトロジカ
-0x08C5EDCD マエか　ウシロか　すすめテクノポリカ
+0x08C5ED9A Tsunagu tsunagaru yume to metorojika
+0x08C5EDCD Mae ka ushiro ka susume tekunoporika
 0x08C5EE00 NULL
-0x08C5EE33 "まるばつ　さかだち　おつきさま"
-0x08C5EE66 キミをキミを　さがしにいきたいの
-0x08C5EE99 たのしいはなし　もっとしたいの　したいの
+0x08C5EE33 "Maru batsu sakadachi otsukisama"
+0x08C5EE66 Kimi wo kimi wo sagashi ni ikitai no
+0x08C5EE99 Tanoshii wa nashi motto shitai no shitai no
 0x08C5EECC NULL
-0x08C5EEFF ヒトリボッチのベッドに　オハヨーハヨー
-0x08C5EF32 シーラカンスのシッポに　オハヨーハヨー
-0x08C5EF65 スフィンクスのナゾナゾに　オハヨーハヨー
-0x08C5EF98 メモリのなかのキミに　オハヨーハヨー
+0x08C5EEFF Hitoribocchi no beddo ni ohayoohayoo
+0x08C5EF32 Shiirakansu no shippo ni ohayoohayoo
+0x08C5EF65 Sufinkusu no nazo nazo ni ohayoohayoo
+0x08C5EF98 Memori no naka no kimi ni ohayoohayoo
 0x08C5EFCB NULL
 0x08C5EFFE ♪♪♪♪♪...
 0x08C5F031 NULL
-0x08C5F064 しずかに　ねむる　きみをみた
-0x08C5F097 ポタリ　ポタリ　オトをたててシズク
-0x08C5F0CA どうして　かなしいよ
-0x08C5F0FD こんなに　コンナニ　　コ　ンナ　ニ....
+0x08C5F064 Shizuka ni nemuru kimi wo mita
+0x08C5F097 Potari potari oto wo tatete shizuku
+0x08C5F0CA Doushite kanashii yo
+0x08C5F0FD Konnani konnani ko n na ni....
 0x08C5F130 NULL
-0x08C5F163 チキュウぼっこのラブに　オハヨーハヨー
-0x08C5F196 あさとひるとよるに　オハヨーハヨー
-0x08C5F1C9 ウチュウギンガのリズムに　オハヨーハヨー
-0x08C5F1FC アダムとイブのあいだに　オハヨーハヨー
+0x08C5F163 Chikyuubokko no rabu ni ohayoohayoo
+0x08C5F196 Asa to hiru to yoru ni ohayoohayoo
+0x08C5F1C9 Uchuu ginga no rizumu ni ohayoohayoo
+0x08C5F1FC Adamu to ibu no aida ni ohayoohayoo
 0x08C5F22F NULL
-0x08C5F262 あいたかったの"キミ"に　オハヨーハヨー
-0x08C5F295 うまれたばかりの"キミ"に　オハヨーハヨー…
+0x08C5F262 Aitakatta no "kimi" ni ohayoohayoo
+0x08C5F295 Umareta bakari no "kimi" ni ohayoohayoo...
 0x08C5F2C8 NULL
 
 # Nayuta no Kanata Made
 
-0x08C5F2FB 一滴の夢を追いかけている君が居た
-0x08C5F32E 答えを探して埃にまみれても
-0x08C5F361 現実「いま」に押し潰されても
+0x08C5F2FB Itteki no yume o oikakete iru kimi ga ita
+0x08C5F32E Kotae o sagashite hokori ni mamirete mo
+0x08C5F361 Genjitsu `ima' ni oshi tsubusa rete mo
 0x08C5F394 NULL
-0x08C5F3C7 光の射す空を見上げ
-0x08C5F3FA 少しずつでも歩んでいる
-0x08C5F42D 振り返らず
-0x08C5F460 真っ直ぐ未来「まえ」を見て（色褪せぬ）
-0x08C5F493 憧憬（探して）
-0x08C5F4C6 那由多の彼方まで
-0x08C5F4F9 疾走って（響いた）
-0x08C5F52C 君の足音
+0x08C5F3C7 Hikari no sasu sora o miage
+0x08C5F3FA Sukoshi zutsu demo ayun de iru 
+0x08C5F42D Furikaera zu
+0x08C5F460 Massugu mirai `mae' o mite (iroasenu)
+0x08C5F493 Doukei (sagashi te)
+0x08C5F4C6 Nayuta no Kanata Made
+0x08C5F4F9 Shissou tte (hibiita)
+0x08C5F52C Kimi no ashioto
 0x08C5F55F NULL
-0x08C5F592 胸に灯る無意識「イド」
-0x08C5F5C5 真実「イデア」と理想の
-0x08C5F5F8 軋轢に心阻まれても
+0x08C5F592 Mune ni tomoru muishiki `ido'
+0x08C5F5C5 Shinjitsu `idea' to risou no
+0x08C5F5F8 Atsureki ni kokoro habama rete mo
 0x08C5F62B NULL
-0x08C5F65E 乾ききった自我「エゴ」
-0x08C5F691 この衝動が例え
-0x08C5F6C4 泡沫「うたかた」の夢でも…（刹那から）
-0x08C5F6F7 疾走った（オメガへ）
-0x08C5F72A あの向こうの先まで
-0x08C5F75D 見たくて…（信じた）
-0x08C5F790 路「みち」を行きたい（色褪せぬ）
-0x08C5F7C3 憧憬（探して）
-0x08C5F7F6 那由多の彼方まで
-0x08C5F829 疾走って（響いた）
-0x08C5F85C 君の足音
+0x08C5F65E Kawaki kitta jiga `ego'
+0x08C5F691 Kono shoudou ga tatoe 
+0x08C5F6C4 Utakata `utakata' no yume demo…(setsuna kara)
+0x08C5F6F7 Shissou tta (omega e)
+0x08C5F72A Ano mukou no saki made 
+0x08C5F75D Mitakute…(shinjita)
+0x08C5F790 Michi `michi' o yukitai (iroasenu)
+0x08C5F7C3 Doukei (sagashi te)
+0x08C5F7F6 Nayuta no Kanata Made
+0x08C5F829 Shissou tte (hibiita)
+0x08C5F85C Kimi no ashioto
 0x08C5F88F NULL
 
 # Kodoku no Hate
 
-0x08C5F8C2 過ぎた季節　静かに滲む寒空
-0x08C5F8F5 通りを望むこの景色も移ろい行く
+0x08C5F8C2 Sugita kisetsu shizukani nijimu samuzora
+0x08C5F8F5 Tori o nozomu kono keshiki mo utsuroi yuku
 0x08C5F928 NULL
-0x08C5F95B 戸惑いも
-0x08C5F98E 悲しみも
-0x08C5F9C1 この声に乗せて
+0x08C5F95B Tomadoi mo
+0x08C5F98E Kanashimi mo
+0x08C5F9C1 Kono koe ni nosete
 0x08C5F9F4 NULL
-0x08C5FA27 孤独の果ての蜃気楼
-0x08C5FA5A その背中に刺さる欠けた月
-0x08C5FA8D 路傍の果てに見えるのは
-0x08C5FAC0 ただ物言わぬ窓の影
+0x08C5FA27 Kodoku no hate no shinkiro
+0x08C5FA5A Sono senaka ni sasaru kaketa tsuki
+0x08C5FA8D Robo no hate ni mieru nowa
+0x08C5FAC0 Tada monoiwanu mado no kage
 0x08C5FAF3 NULL
-0x08C5FB26 喰潰され　忘れ去られ
-0x08C5FB59 形も無く消えていくだけ
-0x08C5FB8C この歌さえ　忘れ去られ
-0x08C5FBBF 風に流れ塵になり
-0x08C5FBF2 此処に在れど　其処に在れど
-0x08C5FC25 忘れ去られ記憶の果てへ
-0x08C5FC58 あの歌さえ　この歌さえ
-0x08C5FC8B 世の無常を歌うように
+0x08C5FB26 Kuitsubu sare wasure sarare
+0x08C5FB59 Katachi mo naku kiete iku dake
+0x08C5FB8C Kono uta sae wasure sarare
+0x08C5FBBF Kaze ni nagare chiri ni nari
+0x08C5FBF2 Koko ni aredo soko ni aredo
+0x08C5FC25 Wasure sarare kioku no hate e
+0x08C5FC58 Ano uta sae kono uta sae
+0x08C5FC8B Yo no mujo o utau yoni
 0x08C5FCBE NULL
-0x08C5FCF1 戸惑いも
-0x08C5FD24 悲しみも
-0x08C5FD57 この声に乗せてく
-0x08C5FD8A 後悔も
-0x08C5FDBD 絶望も
-0x08C5FDF0 この声が運んで
+0x08C5FCF1 Tomadoi mo
+0x08C5FD24 Kanashimi mo
+0x08C5FD57 Koe ni noseteku
+0x08C5FD8A Kokai mo
+0x08C5FDBD Zetsubo mo
+0x08C5FDF0 Kono koe ga hakonde
 0x08C5FE23 NULL
-0x08C5FE56 孤独の果ての蜃気楼
-0x08C5FE89 その背中に刺さる欠けた月
-0x08C5FEBC 路傍の果てに見えるのは
-0x08C5FEEF ただ物言わぬ窓の影だけなのか
+0x08C5FE56 Kodoku no hate no shinkiro
+0x08C5FE89 Sono senaka ni sasaru kaketa tsuki
+0x08C5FEBC Robo no hate ni mieru nowa
+0x08C5FEEF Tada monoiwanu mado no kage dake nanoka
 0x08C5FF22 NULL
-0x08C5FF55 孤独の果ての蜃気楼
-0x08C5FF88 その背中に刺さる青い月
-0x08C5FFBB 繰り返しの果てに見えるのは
-0x08C5FFEE ただ穏やかな星の夢の後先よ
+0x08C5FF55 Kodoku no hate no shinkiro
+0x08C5FF88 Sono senaka ni sasaru aoi tsuki
+0x08C5FFBB Kurikaeshi no hate ni mieru nowa
+0x08C5FFEE Tada odayakana hoshi no yume no atosaki yo
 0x08C60021 NULL
 
 # Puzzle
 
-0x08C60054 いつからか僕ら手を解いて
-0x08C60087 喋る言葉もなくしたんだ
-0x08C600BA 隣を歩く君の横顔を見つめて
-0x08C600ED ただ気付かないふりをしたんだ
+0x08C60054 Itsukara ka bokura te o toite
+0x08C60087 Shaberu kotoba mo nakushitanda
+0x08C600BA Tonari o aruku kimi no yokogao o mitsumete
+0x08C600ED Tada kizukanai furi o shitanda
 0x08C60120 NULL
-0x08C60153 その頬に流れる涙の意味が
-0x08C60186 まだわからない間抜けな僕は
-0x08C601B9 去って行く君の背中に
-0x08C601EC ゴメンとだけ呟いた
+0x08C60153 Sono hoo ni nagareru namida no imi ga
+0x08C60186 Mada wakaranai manuke na boku wa
+0x08C601B9 Satteyuku kimi no senaka ni
+0x08C601EC Gomen to dake tsubuyaita
 0x08C6021F NULL
-0x08C60252 パズルのように繋ぎ合わせた未来
-0x08C60285 僕が無くしたのはどこのピースだろう
+0x08C60252 Pazuru no you ni tsunagiawaseta mirai
+0x08C60285 Boku ga nakushita no wa doko no piisu darou
 0x08C602B8 NULL
-0x08C602EB 寂しさで汚した心
-0x08C6031E 真っ白な空白に浮かべて
-0x08C60351 虚しさだけが残るこの部屋で
-0x08C60384 そっと巡るよ君の記憶を
+0x08C602EB Samishisa de yogoshita kokoro
+0x08C6031E Masshiro na kuuhaku ni ukabete
+0x08C60351 Munashisa dake ga nokoru kono heya de
+0x08C60384 Sotto meguru yo kimi no kioku o
 0x08C603B7 NULL
-0x08C603EA 変わってしまった心の形を
-0x08C6041D 無理矢理あてはめてみるけど
-0x08C60450 痛いんだ 苦しいよ　君を傷つけて
+0x08C603EA Kawatteshimatta kokoro no katachi o
+0x08C6041D Muriyari atehametemiru kedo
+0x08C60450 Itainda kurushii yo kimi o kizutsukete
 0x08C60483 NULL
-0x08C604B6 寂しさで汚した心
-0x08C604E9 真っ白な空白に浮かべて
-0x08C6051C 虚しさだけが残るこの部屋で
-0x08C6054F そっと巡るよ
+0x08C604B6 Samishisa de yogoshita kokoro
+0x08C604E9 Masshiro na kuuhaku ni ukabete
+0x08C6051C Munashisa dake ga nokoru kono heya de
+0x08C6054F Sotto meguru yo
 0x08C60582 NULL
-0x08C605B5 探そう僕と君の形を
-0x08C605E8 例え同じ風景にいなくても
-0x08C6061B 笑いあって寄り添った日々の
-0x08C6064E 欠片抱いて眠るよ
+0x08C605B5 Sagasou boku to kimi no katachi o
+0x08C605E8 Tatoe onaji fuukei ni inakute mo
+0x08C6061B Waraiatte yorisotta hibi no
+0x08C6064E Kakera daite nemuru yo
 0x08C60681 NULL
 
 # Palette
 
-0x08C606B4 泣いたような声でさ
-0x08C606E7 静かに笑うんだ
-0x08C6071A 想像を写した
-0x08C6074D 彩のパレット
+0x08C606B4 Naita you na koe de sa
+0x08C606E7 Shizuka ni waraunda
+0x08C6071A Souzou o utsushita
+0x08C6074D Irodori no PALETTE
 0x08C60780 NULL
 0x08C607B3 Please,distinguish me.
-0x08C607E6 溢れ出す色を
-0x08C60819 だれか　止めてよ
-0x08C6084C 消えちゃう
+0x08C607E6 Afuredasu iro o
+0x08C60819 Dareka tomete yo
+0x08C6084C Kiechau
 0x08C6087F NULL
-0x08C608B2 「愛してる」を溶かした青は
-0x08C608E5 やさしいなみだ
-0x08C60918 「ありがとう」を浮かべた赤に
-0x08C6094B やさしいうたを
+0x08C608B2 "Aishiteru" wo tokashita ao wa
+0x08C608E5 Yasashii namida
+0x08C60918 "Arigatou" wo ukabeta aka ni
+0x08C6094B Yasashii uta wo
 0x08C6097E NULL
-0x08C609B1 (I will be「Eraser's mind」.)
+0x08C609B1 (I will be 「Eraser's mind」.)
 0x08C609E4 NULL
-0x08C60A17 紡ぎだす群青
-0x08C60A4A 廻る記憶に
-0x08C60A7D 絡まった僕らの
-0x08C60AB0 未来が
-0x08C60AE3 色付く
+0x08C60A17 Tsumugidasu gunjou
+0x08C60A4A Mawaru kioku ni
+0x08C60A7D Karamatta bokura no
+0x08C60AB0 Mirai ni ga
+0x08C60AE3 Irozuku
 0x08C60B16 NULL
-0x08C60B49 「愛してる」を描いた黒は
-0x08C60B7C やさしいきおく
-0x08C60BAF 「ありがとう」を溢した白に
-0x08C60BE2 やさしいキスを
+0x08C60B49 "Aishiteru" wo egaita kuro wa
+0x08C60B7C Yasashii kioku
+0x08C60BAF "Arigatou" wo koboshita shiro ni
+0x08C60BE2 Yasashii kisu wo
 0x08C60C15 NULL
 
 # Sennen no Dokusouka (DIVA edit)
 
-0x08C60C48 ひとり灰色の丘　乾いた枯草踏みしめて
-0x08C60C7B 思い巡らせる　空の彼方に
+0x08C60C48 Hitori haiiro no oka kawaita karekusa fumishimete
+0x08C60C7B Omoi meguraseru sora no kanata ni
 0x08C60CAE 風に揺れる花びら　柔らかなあなたの微笑み
 0x08C60CE1 淡い記憶のかけら　セピア色の向こうの幻
 0x08C60D14 NULL
-0x08C60D47 誰も知らない歌を奏でよう
-0x08C60D7A この身が錆びて停まろうとも
-0x08C60DAD 崩れかけた墓標に歌い続けよう
-0x08C60DE0 あなたの残した歌を
+0x08C60D47 Dare mo shira nai uta o kanadeyo u
+0x08C60D7A Kono mi ga sabi te toma ma routo mo
+0x08C60DAD Kuzure kake ta bohyou ni utai tsudukeyo u
+0x08C60DE0 Anata no nokoshi ta uta o
 0x08C60E13 NULL
 0x08C60E46 この体は全て　作り物でしかないけど
-0x08C60E79 この心はせめて　歌に捧げていよう
+0x08C60E79 Kono kokoro ha semete uta ni sasage te iyo u
 0x08C60EAC NULL
-0x08C60EDF かすかに軋む銀の歯車
-0x08C60F12 響いてゆく鈍色の鼓動
-0x08C60F45 ガラスの瞳に映るこの空は
-0x08C60F78 どんなまやかしだろう
+0x08C60EDF Kasuka ni kishimu gin no haguruma
+0x08C60F12 Hibiite yuku nibiiro no kodou
+0x08C60F45 Garasu no hitomi ni utsuru kono sora wa
+0x08C60F78 Donna mayakashi daro u
 0x08C60FAB NULL
-0x08C60FDE あなたと出逢ったすみれの丘も
-0x08C61011 幾千の夜に灰色の亡骸
+0x08C60FDE Anata to deatta sumire no oka mo
+0x08C61011 Ikusen no yoru ni haiiro no nakigara
 0x08C61044 NULL
 0x08C61077 この体は全て　作り物でしかないけど
-0x08C610AA この心はせめて　歌に捧げていよう
-0x08C610DD この月の下で
-0x08C61110 もうめぐり逢うこともないけど
-0x08C61143 この空に向かって　歌い続けていよう
+0x08C610AA Kono kokoro ha semete uta ni sasage te iyo u
+0x08C610DD Kono Tsuki no shita de
+0x08C61110 Mo meguri au koto mo naikedo
+0x08C61143 Kono sora ni mukatte utai tsudzukete iyou
 0x08C61176 NULL
 
 # Boukyaku Shinjuu
 
-0x08C611A9 例えば明日、君が死ぬとしたら
-0x08C611DC 今日のうちに何がしたい？
-0x08C6120F 生きた証しを残そうか
-0x08C61242 生きる術を見つけようか
+0x08C611A9 Tatoeba ashita, kimi ga shinu to shitara
+0x08C611DC Kyou no uchi ni nani ga shitai?
+0x08C6120F Ikita akashi wo nokosou ka
+0x08C61242 Ikiru jutsu wo mitsukeyou ka
 0x08C61275 NULL
-0x08C612A8 例え命が散っても思い出は消えない
-0x08C612DB 例え世界が散っても魂は消えない
-0x08C6130E だけど忘れるのが人間だから
-0x08C61341 その時に忘却心中しようか
+0x08C612A8 Tatoe inochi ga chitte mo omoide wa kienai
+0x08C612DB Tatoe sekai ga chitte mo tamashii wa kienai
+0x08C6130E Dakedo wasureru no ga ningen dakara
+0x08C61341 Sono toki ni boukyaku shinjuu shiyou ka
 0x08C61374 NULL
-0x08C613A7 あの歴史はもう忘れた人の方が多い
-0x08C613DA 勝った者が正義になってた時代の話
-0x08C6140D 僕が死んだら何日で皆忘れるだろう
-0x08C61440 辿り着く答えなんてきっと無いのだろう
+0x08C613A7 Ano rekishi wa mou wasureta hito no hou ga ooi
+0x08C613DA Katta mono ga seigi ni natteta jidai no hanashi
+0x08C6140D Boku ga shin dara nannichi de mina wasureru darou
+0x08C61440 Tadori tsuku kotae nante kitto nai no darou
 0x08C61473 NULL
-0x08C614A6 覚えてます。覚えてます。
-0x08C614D9 あなたの手の温もりを・・・
+0x08C614A6 Oboetemasu... Oboetemasu...
+0x08C614D9 Anata no te no nukumori wo...
 0x08C6150C NULL
-0x08C6153F 感情の性感帯を切り裂いて
-0x08C61572 その時に忘却心中しましょう
+0x08C6153F Kanjou no seikan tai wo kirisaite
+0x08C61572 Sono toki ni boukyaku shinjuu shimashou
 0x08C615A5 NULL
-0x08C615D8 あの事件ももう忘れた人の方が多い
-0x08C6160B 幼い頃学んだ常識は壊されて
-0x08C6163E 明日が死んでも何人の人が気付くだろう
-0x08C61671 それは知らない方が幸せなのかも…
+0x08C615D8 Ano jiken mo mou wasureta hito no hou ga ooi
+0x08C6160B Osanai koro mananda joushiki wa kowasarete
+0x08C6163E Asu ga shin demo nannin no hito ga kizuku darou
+0x08C61671 Sore wa shiranai hou ga shiawase nano kamo...
 0x08C616A4 NULL
-0x08C616D7 ありがとう。ありがとう。
-0x08C6170A わたしの血の温もりと…
+0x08C616D7 Arigatou... Arigatou...
+0x08C6170A Watashi no chi no nukumori to...
 0x08C6173D NULL
-0x08C61770 覚えてます。憶えてます。
-0x08C617A3 あなたの手の温もりを…
+0x08C61770 Oboetemasu... Oboetemasu...
+0x08C617A3 Anata no te no nukumori wo...
 0x08C617D6 NULL
 
 # Musunde Hiraite Rasetsu to Mukuro
 
-0x08C61809 片足無くした猫が笑う
-0x08C6183C 「ソコ行ク御嬢サン遊ビマショ」
-0x08C6186F 首輪に繋がる赤い紐は
-0x08C618A2 片足の代わりになっちゃいない
+0x08C61809 Kataashi nakushita neko ga warau
+0x08C6183C "Soko yuku ojou-san asobimasho"
+0x08C6186F Kubiwa ni tsunagaru akai himo wa
+0x08C618A2 Kataashi no kawari ni naccha inai
 0x08C618D5 NULL
-0x08C61908 や　や　や　や　嫌　嫌　嫌
+0x08C61908 Ya ya ya ya iya iya iya
 0x08C6193B NULL
-0x08C6196E 列成す卒塔婆（そとば）の群れが歌う
-0x08C619A1 「ソコ行ク御嬢サン踊リマショ」
-0x08C619D4 足元密かに咲いた花は
-0x08C61A07 しかめっ面しては愚痴ってる
+0x08C6196E Retsu nasu sotoba no mure ga utau
+0x08C619A1 "Soko yuku ojou-san odorimasho"
+0x08C619D4 Ashimoto hisoka ni saita hana wa
+0x08C61A07 Shikamettsura shite wa guchitte'ru
 0x08C61A3A NULL
-0x08C61A6D 腹を見せた鯉幟（こいのぼり）
-0x08C61AA0 孕（はら）んだのは髑髏（されこうべ）
+0x08C61A6D Hara o miseta koinobori
+0x08C61AA0 Haranda no wa sarekoube
 0x08C61AD3 NULL
-0x08C61B06 やい　やい　遊びに行こうか
-0x08C61B39 やい　やい　笑えや笑え
-0x08C61B6C らい　らい　むすんでひらいて
-0x08C61B9F らい　らい　羅刹（らせつ）と骸（むくろ）
+0x08C61B06 Yai yai asobi ni yukou ka
+0x08C61B39 Yai yai warae ya warae
+0x08C61B6C Rai rai musunde hiraite
+0x08C61B9F Rai rai rasetsu to mukuro
 0x08C61BD2 NULL
-0x08C61C05 一つ二つ三つで　また開いて
-0x08C61C38 五つ六つ七つで　その手を上に
-0x08C61C6B 松の樹には首輪で　宙ぶらりんりん
-0x08C61C9E 皆皆皆で　結びましょ
+0x08C61C05 Hitotsu futatsu mittsu de mata hiraite
+0x08C61C38 Itsutsu muttsu nanatsu de sono te o ue ni
+0x08C61C6B Matsu no ki ni wa kubiwa de chuuburarin rin
+0x08C61C9E Minna minna minna de musubimasho
 0x08C61CD1 NULL
-0x08C61D04 結局皆様他人事（結局皆様他人事）
-0x08C61D37 結局皆様他人事（結局皆様他人事）
-0x08C61D6A 結局皆様他人事（結局皆様他人事）
+0x08C61D04 Kekkyoku mina-sama taningoto
+0x08C61D37 Kekkyoku mina-sama taningoto
+0x08C61D6A Kekkyoku mina-sama taningoto
 0x08C61D9D NULL
-0x08C61DD0 他人の不幸は　知らんぷり！
+0x08C61DD0 Tanin no fukou wa shiranpuri!
 0x08C61E03 NULL
-0x08C61E36 やい　やい　子作りしようか
-0x08C61E69 やい　やい　世迷（よま）えや世迷え
-0x08C61E9C らい　らい　イロハニ惚れ惚れ
-0x08C61ECF らい　らい　羅刹（らせつ）と骸（むくろ）
+0x08C61E36 Yai yai kozukuri shiyou ka
+0x08C61E69 Yai yai yomae ya yomae
+0x08C61E9C Rai rai iroha ni horebore
+0x08C61ECF Rai rai rasetsu to mukuro
 0x08C61F02 NULL
-0x08C61F35 一つ二つ三つで　また開いて
-0x08C61F68 五つ六つ七つで　その手を上に
-0x08C61F9B 鳥が泣いてしまわぬ　内にはらへら
-0x08C61FCE 一つ二つ三つで　また明日
+0x08C61F35 Hitotsu futatsu mittsu de mata hiraite
+0x08C61F68 Itsutsu muttsu nanatsu de sono te o ue ni
+0x08C61F9B Tori ga naite shimawanu uchi ni hara hera
+0x08C61FCE Hitotsu futatsu mittsu de mata ashita
 0x08C62001 NULL
-0x08C62034 一つ二つ三つで　また明日
+0x08C62034 Hitotsu futatsu mittsu de mata ashita
 0x08C62067 NULL
 
 # Rolling Girl
 
-0x08C6209A ロンリーガールはいつまでも
-0x08C620CD 届かない夢見て
-0x08C62100 騒ぐ頭の中を
-0x08C62133 掻き回して、掻き回して。
+0x08C6209A Lonely girl wa itsu made mo
+0x08C620CD Todoka nai yume mite
+0x08C62100 Sawagu atama no naka wo
+0x08C62133 Kaki mawashite kaki mawashite
 0x08C62166 NULL
-0x08C62199 「問題ない。」と呟いて、
-0x08C621CC 言葉は失われた？
-0x08C621FF もう失敗、もう失敗。
-0x08C62232 間違い探しに終われば、また、回るの！
+0x08C62199 "Mondai nai." to tsubuyaite
+0x08C621CC Kotoba wa ushina wareta?
+0x08C621FF Mou shippai, mou shippai 
+0x08C62232 Machigai sagashi ni owareba, mata, mawaru no!
 0x08C62265 NULL
-0x08C62298 もう一回、もう一回。
-0x08C622CB 「私は今日も転がります。」と、
-0x08C622FE 少女は言う　少女は言う
-0x08C62331 言葉に意味を奏でながら！
+0x08C62298 Mou ikkai, mou ikkai
+0x08C622CB "Watashi wa kyou mo korogarimasu." to,
+0x08C622FE Shoujo wa iu  shoujo wa iu
+0x08C62331 Kotoba ni imi o kanade nagara!
 0x08C62364 NULL
-0x08C62397 「もう良いかい？」
-0x08C623CA 「まだですよ、まだまだ先は見えないので。
-0x08C623FD 　息を止めるの、今。」
+0x08C62397 "Mou ii kai?"
+0x08C623CA "Mada desu yo, madamada saki wa miena
+0x08C623FD no de. Iki wo tomeru no, ima."
 0x08C62430 NULL
-0x08C62463 ローリンガールの成れの果て
-0x08C62496 届かない、向こうの色
-0x08C624C9 重なる声と声を
-0x08C624FC 混ぜあわせて、混ぜあわせて。
+0x08C62463 Rollin’girl no nare no hate
+0x08C62496 Todoka nai muko no iro
+0x08C624C9 Kasanaru koe to koe wo
+0x08C624FC Maze awasete maze awase te
 0x08C6252F NULL
-0x08C62562 「問題ない。」と呟いた言葉は失われた。
-0x08C62595 どうなったって良いんだってさ、
-0x08C625C8 間違いだって起こしちゃおうと誘う、坂道。
+0x08C62562 “Mondai nai” totsubuyaita kotoba wa ushina
+0x08C62595 Dou nattatte yoi n datte sa
+0x08C625C8 Machigai datte okoshi chao to sasou sakamichi
 0x08C625FB NULL
-0x08C6262E もう一回、もう一回。
-0x08C62661 私をどうか転がしてと
-0x08C62694 少女は言う　少女は言う
-0x08C626C7 無口に意味を重ねながら！
+0x08C6262E Mou ikkai, mou ikkai
+0x08C62661 Watashi o doka korogashite to
+0x08C62694 Shojo wa iu shojo wa iu
+0x08C626C7 Mukuchi ni imi o kasane nagara!
 0x08C626FA NULL
-0x08C6272D 「もう良いかい？」
-0x08C62760 「もう少し、もうすぐ何か見えるだろうと。
-0x08C62793 　息を止めるの、今。」
+0x08C6272D "Mou ii kai?"
+0x08C62760 "Mou sukoshi, mou sugu nanika mieru darou
+0x08C62793 To. Iki wo tomeru no ima."
 0x08C627C6 NULL
-0x08C627F9 もう一回、もう一回。
-0x08C6282C 「私は今日も転がります。」と、
-0x08C6285F 少女は言う　少女は言う
-0x08C62892 言葉に笑みを奏でながら！
+0x08C627F9 Mou ikkai, mou ikkai.
+0x08C6282C “Watashi wa kyo mo korogari masu” to
+0x08C6285F Shojo wa iu shojo wa iu
+0x08C62892 Kotoba ni emi o kanade nagara!
 0x08C628C5 NULL
-0x08C628F8 「もう良いかい？　もう良いよ。
-0x08C6292B 　そろそろ君も疲れたろう、ね。」
+0x08C628F8 "Mou ii kai? Mou ii yo
+0x08C6292B Sorosoro kimi mo tsukaretarou, ne." 
 0x08C6295E NULL
-0x08C62991 息を止（や）めるの、今。
+0x08C62991 Iki wo yameru no, ima.
 0x08C629C4 NULL
 
 # Starduster
 
-0x08C629F7 誰より大切な君に
-0x08C62A2A 愛されないことを恐れて
-0x08C62A5D 一万年先の星まで
-0x08C62A90 ひとっ跳びで逃げた
+0x08C629F7 dare yori taisetsu na kimi ni
+0x08C62A2A aisa re nai koto o osore te
+0x08C62A5D ichi man nen saki no hoshi made
+0x08C62A90 hito tobi de nige ta
 0x08C62AC3 NULL
-0x08C62AF6 吸い込んだ真空の温度で
-0x08C62B29 感覚が凍りつく前に
-0x08C62B5C この身体一つ分の
-0x08C62B8F 愛を
+0x08C62AF6 suikon da shinkuu no ondo de
+0x08C62B29 kankaku ga kooritsuku mae ni
+0x08C62B5C kono karada hitotsu bun no
+0x08C62B8F Ai o
 0x08C62BC2 NULL
-0x08C62BF5 愛を　今すぐ
-0x08C62C28 愛を　私に
-0x08C62C5B 愛を　どうか
-0x08C62C8E 愛を
+0x08C62BF5 Ai o　ima sugu
+0x08C62C28 Ai o　watashi ni
+0x08C62C5B Ai o　dou ka
+0x08C62C8E Ai o
 0x08C62CC1 NULL
-0x08C62CF4 愛を…
+0x08C62CF4 Ai o…
 0x08C62D27 NULL
 
 # Paradichlorobenzene
 
-0x08C62D5A ボクは何の為に歌う？
-0x08C62D8D パラジクロロベンゼン
-0x08C62DC0 ただ意味も理解せずに歌う
-0x08C62DF3 パラジクロロベンゼン
-0x08C62E26 そう　答え求め走り出した
-0x08C62E59 パラジクロロベンゼン
-0x08C62E8C その先に辿り着いて何もないと知ったけど
-0x08C62EBF さぁ　歌いましょう　踊りましょう
-0x08C62EF2 パラジクロロベンゼン
-0x08C62F25 さぁ　喚きましょう　叫びましょう
-0x08C62F58 パラジクロロベンゼン
-0x08C62F8B 犬も　猫も　牛も　豚も　みな
-0x08C62FBE パラジクロロベンゼン
-0x08C62FF1 さぁ　狂いましょう　眠りましょう
-0x08C63024 朽ち果てるまで　さぁ
+0x08C62D5A Boku wa nan no tame ni utau?
+0x08C62D8D PARADICHLOROBENZENE
+0x08C62DC0 Tada imi no rikai sezu ni utau
+0x08C62DF3 PARADICHLOROBENZENE
+0x08C62E26 Sou kotaemotome hashiridashita
+0x08C62E59 PARADICHLOROBENZENE
+0x08C62E8C Sono saki ni tadoritsuite nanimo nai to shitta
+0x08C62EBF Kedo saa utaimashou odorimashou
+0x08C62EF2 PARADICHLOROBENZENE
+0x08C62F25 Saa wamekimashou sakebimashou
+0x08C62F58 PARADICHLOROBENZENE
+0x08C62F8B Inu mo neko mo ushi mo buta mo mina
+0x08C62FBE PARADICHLOROBENZENE
+0x08C62FF1 Saa kuruimashou nemurimashou
+0x08C63024 Kuchihateru made saa
 0x08C63057 NULL
-0x08C6308A ルールがボクは嫌で
-0x08C630BD ただ縛られたくなくて
-0x08C630F0 だからボクは逃げ出して
-0x08C63123 後先の事は忘れ
-0x08C63156 指図されるのが嫌で
-0x08C63189 少し悪になりたくて
-0x08C631BC 深夜家を抜け出して
-0x08C631EF 夜の街を走り抜け
-0x08C63222 何の為に生きるのか
-0x08C63255 ボクは野良猫に話しかけた
-0x08C63288 猫は何も答えずに
-0x08C632BB ただ見下した眼でボクを見た
-0x08C632EE 飲めもしないコーヒー飲み干して
-0x08C63321 曇り空を見上げたんだ
-0x08C63354 今のボクに何が出来る？
-0x08C63387 それすらわからない
+0x08C6308A Ruuru ga boku wa iya de
+0x08C630BD Tada shibararetaku nakute
+0x08C630F0 Dakara boku wa nigedashite
+0x08C63123 Atosaki no koto wa wasure
+0x08C63156 Sashizu sareru no ga iya de
+0x08C63189 Sukoshi aku ni naritakute
+0x08C631BC Shin’ya ie wo nukedashite
+0x08C631EF Yoru no machi wo hashirinuke
+0x08C63222 Nan no tame ni ikiru noka
+0x08C63255 Boku wa noraneko ni hanashikaketa
+0x08C63288 Neko wa nanimo kotaezu ni
+0x08C632BB Tada mikudashita hitomi de boku wo mita
+0x08C632EE Nome mo shinai koohii nomihoshite
+0x08C63321 Kumorisora wo miagetanda
+0x08C63354 Ima no boku ni nani ga dekiru?
+0x08C63387 Soresura wakaranai
 0x08C633BA NULL
-0x08C633ED だからボクは歌い叫ぶんだ
-0x08C63420 パラジクロロベンゼン
-0x08C63453 その意味も理解せずに喚く
-0x08C63486 パラジクロロベンゼン
-0x08C634B9 これでキミは満足出来るの？
-0x08C634EC パラジクロロベンゼン
-0x08C6351F 掟　規則　破ったらキミは何か変わるの？
-0x08C63552 そう　誰でもいい　ぶちまけたい
-0x08C63585 ＊＊＊＊＊＊＊＊＊＊（パラジクロロベンゼン）
-0x08C635B8 悪を叩く　正義ふりかざす
-0x08C635EB ＊＊＊＊＊＊＊＊＊＊
-0x08C6361E 正義盾に　ストレス解消
-0x08C63651 ＊＊＊＊＊＊＊＊＊＊
-0x08C63684 周り止める　ボクら気付かない　愚かな行為
+0x08C633ED Dakara boku wa utaisakebunda
+0x08C63420 PARADICHLOROBENZENE
+0x08C63453 Sono imi no rikai sezu ni wameku
+0x08C63486 PARADICHLOROBENZENE
+0x08C634B9 Kore de kimi wa manzoku dekiru no?
+0x08C634EC PARADICHLOROBENZENE
+0x08C6351F Okite kisoku yabuttara kimi wa nanika kawaru no?
+0x08C63552 Sou dare demo ii buchimaketai
+0x08C63585 PARADICHLOROBENZENE
+0x08C635B8 Aku wo tataku seigi furikazasu
+0x08C635EB PARADICHLOROBENZENE
+0x08C6361E Seigi tate ni SUTORESU kaishou
+0x08C63651 PARADICHLOROBENZENE
+0x08C63684 Mawaritomeru bokura kizukanai orokana koui
 0x08C636B7 NULL
-0x08C636EA あぁ　この歌に意味はあるの？
-0x08C6371D この詩に意味はないよ
-0x08C63750 この歌に罪はあるの？
-0x08C63783 この詩に罪はないよ
-0x08C637B6 ＊＊＊＊に意味はあるの？
-0x08C637E9 ＊＊＊＊に意味はないよ
-0x08C6381C ＊＊＊＊に罪はあるの？
-0x08C6384F この歌の意味は……＊＊＊＊
+0x08C636EA Kono uta ni imi wa aru no?
+0x08C6371D Kono uta ni imi wa nai yo
+0x08C63750 Kono uta ni tsumi wa aru no?
+0x08C63783 Kono uta ni tsumi wa nai yo
+0x08C637B6 [BENZENE]…ni imi wa aru no?
+0x08C637E9 [BENZENE]…ni imi wa nai yo
+0x08C6381C [BENZENE]…ni tsumi wa aru no?
+0x08C6384F Kono uta no imi wa… [BENZENE]
 0x08C63882 NULL
-0x08C638B5 ボクはそして気付く
-0x08C638E8 所詮はすべて偽善なんだと
-0x08C6391B ボクの生きる価値は何？
-0x08C6394E 野良猫は水に溺れ死んだ
-0x08C63981 空になったコーヒー投げ捨てて
-0x08C639B4 闇に覆われた空を見た
-0x08C639E7 今のボクは何をしてる？
-0x08C63A1A それすらわからない
-0x08C63A4D もうなんにもわからない
+0x08C638B5 Boku wa soshite kizuku
+0x08C638E8 Shosen wa subete gizen nanda to
+0x08C6391B Boku no ikiru kachi wa nani?
+0x08C6394E Noraneko wa mizu ni oboreshinda
+0x08C63981 Kara ni natta koohii nagesutete
+0x08C639B4 Yami ni owareta sora wo mita
+0x08C639E7 Ima no boku wa nani wo shiteru?
+0x08C63A1A Soresura wakaranai
+0x08C63A4D Mou nannimo wakaranai
 0x08C63A80 NULL
-0x08C63AB3 そしてキミはボクを笑うんだ
-0x08C63AE6 パラジクロロベンゼン
-0x08C63B19 そしてボクはキミを突き飛ばす
-0x08C63B4C パラジクロロベンゼン
-0x08C63B7F ボクが正しくてキミは違う
-0x08C63BB2 パラジクロロベンゼン
-0x08C63BE5 虚無に包まれては消える
-0x08C63C18 ボクが消え去るまで
-0x08C63C4B さぁ　歌いましょう　踊りましょう
-0x08C63C7E パラジクロロベンゼン
-0x08C63CB1 さぁ　笑いましょう　妬みましょう
-0x08C63CE4 パラジクロロベンゼン
-0x08C63D17 ボクもキミも何もかも全部
-0x08C63D4A ＊＊＊＊＊＊＊＊＊＊
-0x08C63D7D さぁ　狂いましょう　眠りましょう
-0x08C63DB0 朽ち果てるまで　さぁ
+0x08C63AB3 Soshite kimi wa boku wo waraunda
+0x08C63AE6 [PARADICHLOROBENZENE]
+0x08C63B19 Soshite boku wa kimi wo tsukitobasu
+0x08C63B4C [PARADICHLOROBENZENE]
+0x08C63B7F Boku ga tadashiku kimi wa chigau
+0x08C63BB2 [PARADICHLOROBENZENE]
+0x08C63BE5 Kyomu ni kurumarete wa kieru
+0x08C63C18 Boku ga kiesaru made
+0x08C63C4B Saa utaimashou odorimashou
+0x08C63C7E [PARADICHLOROBENZENE]
+0x08C63CB1 Saa waraimashou netamimashou
+0x08C63CE4 [PARADICHLOROBENZENE]
+0x08C63D17 Boku mo kimi mo nanimokamo zenbu
+0x08C63D4A PARADICHLOROBENZENE
+0x08C63D7D Saa kuruimashou nemurimashou
+0x08C63DB0 Kuchihateru made saa
 0x08C63DE3 NULL
 
 # Tsugai Kogarashi
 
-0x08C63E16 かわいた木枯らし　そよそよと
-0x08C63E49 かわいた木の葉は　ひらひらと
-0x08C63E7C 相見える日を　待ちながら
-0x08C63EAF 刻を数え歩く
+0x08C63E16 Kawaita kogarashi soyosoyo to
+0x08C63E49 Kawaita konoha wa hirahira to
+0x08C63E7C Aimamieru hi o machinagara
+0x08C63EAF Toki o kazoe aruku
 0x08C63EE2 NULL
-0x08C63F15 綴る言の葉に　彩られ
-0x08C63F48 紅く色めき　刹那に踊る
-0x08C63F7B 紅葉一枚　手の平に滑り
-0x08C63FAE 語るは…
+0x08C63F15 Tsuzuru kotonoha ni irodorare
+0x08C63F48 Akaku iromeki setsuna ni odoru
+0x08C63F7B Kureha ichimai tenohira ni
+0x08C63FAE Suberi kataru wa...
 0x08C63FE1 NULL
-0x08C64014 焼けた故郷に　別れを告げて
-0x08C64047 木の葉の手に引かれ　走り去る
-0x08C6407A 未だ見ぬ未来への　不安など
-0x08C640AD 感じる暇など　ありもせず
+0x08C64014 Yaketa kokyou ni wakare o tsugete
+0x08C64047 Konoha no te ni hikare hashirisaru
+0x08C6407A Mada minu mirai e no fuan nado
+0x08C640AD Kanjiru itoma nado ari mo sezu
 0x08C640E0 NULL
-0x08C64113 かわいた木の葉は　ひらひらと
-0x08C64146 かわいた木枯らし　そよそよと
-0x08C64179 繋いだ手と手を　離さずに
-0x08C641AC 刻を数え翔ける
+0x08C64113 Kawaita konoha wa hirahira to
+0x08C64146 Kawaita kogarashi soyosoyo to
+0x08C64179 Tsunaida te to te o hanasazu ni
+0x08C641AC Toki o kazoe kakeru
 0x08C641DF NULL
-0x08C64212 普くヒトの命　背負い
-0x08C64245 その小さき手で　何を紡ぐ
-0x08C64278 ほんの微かな　綻びに
-0x08C642AB 死ぬるこの世で
+0x08C64212 Amaneku Hito no inochi seoi
+0x08C64245 Sono chiisaki te de nani o tsumugu
+0x08C64278 Hon no kasuka na hokorobi ni
+0x08C642AB Shinuru kono se de
 0x08C642DE NULL
-0x08C64311 信ずる道を　 ただひたすらに
-0x08C64344 歩むお前の　支えとならん
-0x08C64377 紅の剣を　携えて
-0x08C643AA この身　木の葉と　吹かれて行こう
+0x08C64311 Shinzuru michi o tada hitasura ni
+0x08C64344 Ayumu omae no sasae to naran
+0x08C64377 Kurenai no tsurugi o tazusaete
+0x08C643AA Kono mi konoha to fukarete yukou
 0x08C643DD NULL
-0x08C64410 紅、黄金に　彩られ
-0x08C64443 揺れる樹々たち　横切りながら
-0x08C64476 枯れ葉　共に　道連れに
-0x08C644A9 翔け抜ける　木の葉と　つがゐこがらし
+0x08C64410 Kurenai ougon ni irodorare
+0x08C64443 Yureru kigitachi yokogirinagara
+0x08C64476 Kareha tomo ni michizure ni
+0x08C644A9 Kakenukeru konoha to tsugai-kogarashi
 0x08C644DC NULL
-0x08C6450F 擦れさざめく　木の葉と共に
-0x08C64542 翔ける一陣の　風と共に
-0x08C64575 留まる事なく　直走る
-0x08C645A8 かわいた唄と　つがゐこがらし
+0x08C6450F Kosure sazameku konoha to tomo ni
+0x08C64542 Kakeru ichijin no kaze to tomo ni
+0x08C64575 Todomaru koto naku hitahashiru
+0x08C645A8 Kawaita uta to tsugai-kogarashi
 0x08C645DB NULL
 
 # Nekomimi Switch
 
-0x08C6460E ねぼけまなこでウトウト
-0x08C64641 定休日の昼下がり
-0x08C64674 ねまき姿でウロウロ
-0x08C646A7 アツアツの甘い香り
+0x08C6460E neboke manako de utouto
+0x08C64641 teikyuu bi no hirusagari
+0x08C64674 ne maki sugata de urouro
+0x08C646A7 atsuatsu no amai kaori
 0x08C646DA NULL
-0x08C6470D 鉄分　ミネラル　要らないけど
-0x08C64740 寝覚めのカフェイン　いつものこと
-0x08C64773 「おはよう」挨拶交わす君の頭上にねこみみ
-0x08C647A6 寝ぼけてるのさ
+0x08C6470D tetsubun mineraru ira nai kedo
+0x08C64740 nezame no caffeine itsumo no koto
+0x08C64773 "ohayou" aisatsu kawasu kimi no zujou ni nekomimi
+0x08C647A6 neboke teru no sa
 0x08C647D9 NULL
-0x08C6480C 君と私でにゃあにゃぁ
-0x08C6483F ねこみみは量子力学
+0x08C6480C kimi to watashi de nyaa nyaa
+0x08C6483F nekomimi ha ryoushirikigaku
 0x08C64872 △×￥○＠％＆＄＃☆□！
-0x08C648A5 「落ち着け、カフェオレ飲もう」
+0x08C648A5 "ochitsuke, cafe au lait nomo u"
 0x08C648D8 NULL
-0x08C6490B メモリ不足でアタフタ
-0x08C6493E 頭がオーバーフローする
-0x08C64971 11次元のスケール
-0x08C649A4 宇宙の神秘が加速する
+0x08C6490B memory fusoku de atafuta
+0x08C6493E atama ga overflow suru
+0x08C64971 11 jigen no scale
+0x08C649A4 uchuu no shinpi ga kasoku suru
 0x08C649D7 NULL
-0x08C64A0A 夢か現か幻
-0x08C64A3D ナツばて誘う太陽
-0x08C64A70 コドモみたいな笑顔で
-0x08C64AA3 見つめる先に向日葵
+0x08C64A0A yume ka gen ka maboroshi
+0x08C64A3D natsu bate sasou taiyou
+0x08C64A70 kodomo-mitai na egao de
+0x08C64AA3 mitsumeru saki ni himawari
 0x08C64AD6 NULL
-0x08C64B09 ねこみみ姿が似合う君の横顔
-0x08C64B3C ああ　クラクラする
-0x08C64B6F 例えば非科学的なことも
-0x08C64BA2 信じてしまう夕暮れどきには
+0x08C64B09 nekomimi sugata ga niau kimi no yokagao
+0x08C64B3C aa kura-kura suru
+0x08C64B6F tatoeba hi kagaku teki na koto mo
+0x08C64BA2 shinji te shimau yuugure doki ni ha
 0x08C64BD5 NULL
-0x08C64C08 君と私でフラフラ
-0x08C64C3B すかさず片手繋いだら
-0x08C64C6E ふたりの相乗効果で
-0x08C64CA1 世界が動転してる
+0x08C64C08 kimi to watashi de fura-fura
+0x08C64C3B sukasazu katate tsunai dara
+0x08C64C6E futari no soujou kouka de
+0x08C64CA1 sekai ga douten shi teru
 0x08C64CD4 NULL
-0x08C64D07 オレンジ色の雲間に
-0x08C64D3A しましま模様の光線
-0x08C64D6D 頭の上でピカピカ
-0x08C64DA0 いちばん星とにばん星
+0x08C64D07 orange shoku no kumoma ni
+0x08C64D3A shi mashi ma moyou no kousen
+0x08C64D6D atama no ue de pika-pika
+0x08C64DA0 ichiban hoshi to ni ban boshi
 0x08C64DD3 NULL
-0x08C64E06 真夏の夜の帳がおりる頃に
-0x08C64E39 君と私で見つけた
-0x08C64E6C 謎めいた黄色いスイッチ
-0x08C64E9F ためしに押した
-0x08C64ED2 だけど地球崩壊だとか
-0x08C64F05 起こるはずないね
-0x08C64F38 だから安心しておやすみ
+0x08C64E06 manatsu no yoru no tobari ga oriru koro ni
+0x08C64E39 kimi to watashi de mitsuke ta
+0x08C64E6C nazo mei ta kiiroi suicchi
+0x08C64E9F tameshi ni oshi ta
+0x08C64ED2 dakedo chikyuu houkai da to ka
+0x08C64F05 okoru hazu nai ne
+0x08C64F38 dakara anshin shi te oyasumi
 0x08C64F6B NULL
-0x08C64F9E 君と私で　ヒュー↑ヒュー↑
-0x08C64FD1 アツい鼓動刻んだら
-0x08C65004 かわいいねこみみつけて
-0x08C65037 ふたりでゴロゴロしましょ
+0x08C64F9E kimi to watashi de　hyuu↑hyuu↑
+0x08C64FD1 atsu i kodou kizan data
+0x08C65004 kawaii nekomimi tsuke te
+0x08C65037 futari de goro-goro shimasho
 0x08C6506A NULL
-0x08C6509D ナツいアツだね　フー→フー→
-0x08C650D0 扇風機の風浴びたら
-0x08C65103 アイスが溶けてポタポタ
-0x08C65136 あらら　ちょっぴりせつないね
+0x08C6509D natsu i atsu da ne fuu→fuu→
+0x08C650D0 senpuuki no kaze abi tara
+0x08C65103 ice ga toke te pota-pota
+0x08C65136 ara-ra choppiri setsuna ne
 0x08C65169 NULL
 
 # Sekiranun Graffiti
