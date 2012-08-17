@@ -234,9 +234,9 @@
 !x088390D0 are available to purchase.
 !x08839CAC Not enough DIVA points.
 
-!x08839DD0 Do you want to buy?
+!x08839DD0 Do you want to buy this?
 !x08839DD8 ○:Yes　×:No
-!x08839EEC Exceeded the maximum number.
+!x08839EEC You'd have too many!
 !x0883A1B8 Quantity 0 / 0
 !x0883A274 Quantity %d / %d
 !x0883A2A0 Quantity - / -
@@ -253,8 +253,8 @@
 
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
-!x08845B78 unit while the Memory Stick	1 led is blinking.
-!x08845B8C PD extend patch 2012/01/05          -codestation
+!x08845B78 unit while the Memory Stick	1 LED is blinking.
+!x08845B8C PD extend patch 2012/08/16 -codestation/Nightsail
 
 ### EDIT MODE ### (max menu entry lenght: 25)
 
@@ -318,14 +318,14 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x0884CACC Hide
 !x0884D790 Hide
 !x0884DBCC Hide
-!x0884D36C する
-!x0885D214 する
-!x0884D384 しない
-!x0885D22C しない
-!x0884D398 Close
-!x08852B4C Movement
-!x088569C8 Movement
-!x08858EF4 Movement
+!x0884D36C Auto-Blink
+!x0885D214 Yes, Interpolation ON
+!x0884D384 Stay Open
+!x0885D22C No, Interpolation OFF
+!x0884D398 Stay Closed
+!x08852B4C Placement
+!x088569C8 Placement
+!x08858EF4 Placement
 !x08852B54 Direction
 !x088569D0 Direction
 !x08858EFC Direction
@@ -342,11 +342,11 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088819F4 Additional content check
 !x0887E32C Back to home
 
-!x0887E8D4 Finish the Edit mode
-!x0887E900 and return to home.
+!x0887E8D4 Exit the Edit mode
+!x0887E900 and return to home?
 !x0887E92C Are you sure?
 # CHECK THIS ONE
-!x0889F798 よろしいですか？
+!x0889F798 Are you sure?
 
 !x0887EB5C Convert Edit data from "Project Diva 2nd"
 !x0887EBC8 Data conversion
@@ -358,7 +358,7 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 
 !x0887EC54 By converting the Edit Data from
 !x0887EC68 "Hatsune Miku -Project Diva- 2nd",
-!x0887EC7C it will make it possible to edit the data
+!x0887EC7C it will make it possible to edit that data
 !x0887EC90 in "Hatsune Miku -Project Diva- Extend".
 !x0887ECA4 Would you like to convert Data from "2nd"?
 
@@ -366,7 +366,7 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 
 !x0887FDC4 By converting the Edit Data from
 !x0887FDD8 "Hatsune Miku -Project Diva-",
-!x0887FDEC it will make it possible to edit the data
+!x0887FDEC it will make it possible to edit that data
 !x0887FE00 in "Hatsune Miku -Project Diva- Extend".
 !x0887FE14 Would you like to convert Data from "1st"?
 
@@ -375,7 +375,7 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x0887F350 Converting Edit data.....
 !x08880678 Converting Edit data.....
 !x0887F514 Data could not be converted because the
-!x0887F518 space left of the Edit data was negative.
+!x0887F518 space left of the Edit data was negative. (*)
 !x0887F520 Please make sure the space left of the
 !x0887F528 Data is larger than 0 before converting.
 !x0887F6FC Completed converting Edit data.
@@ -390,13 +390,13 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x08881900 Backgr：%s
 !x0888197C Effect：%s
 
-!x08881AC8 Accessing Memory stick to
+!x08881AC8 Accessing Memory Stick	1 to
 !x08881ADC check for Additional data.
-!x08881AF0 Do not remove Memory Stick.
+!x08881AF0 Do not remove Memory Stick	1.
 
-!x08881ED4 List of missing data
-!x088823A8 The additional data needed to 
-!x088823B0 edit the Edit data is present.
+!x08881ED4 List of missing content
+!x088823A8 All additional content required
+!x088823B0 for this Edit data is present.
 !x0888250C Copying Edit data.
 !x08882520 Edit data copy completed.
 
@@ -404,24 +404,24 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 
 !x08882638 Edit data from "Hatsune Miku -Project
 !x0888264C DIVA- extend" can be duplicated.
-!x08882660 Do you want to duplicate edit data?
+!x08882660 Do you want to duplicate Edit data?
 
 !x08882BA8 The Edit data has been loaded.
 !x08882BBC Please select the destination.
 
-!x08882FB0 Play edit data with songs from the game.
-!x08882FBC Play edit data with MP3 songs.
-!x08882FC8 Play edit data with songs from additional content.
+!x08882FB0 Play Edit data with songs from the game.
+!x08882FBC Play Edit data with MP3 songs.
+!x08882FC8 Play Edit data with songs from additional content.
 
-!x08882FE4 View edit data with songs from the game.
-!x08882FF0 View edit data with MP3 songs.
-!x08882FFC View edit data with songs from additional content.
+!x08882FE4 View Edit data with songs from the game.
+!x08882FF0 View Edit data with MP3 songs.
+!x08882FFC View Edit data with songs from additional content.
 
-^x08882FA8 Create a Edit data with in-game music.
-^x08882FDC Create a Edit data with in-game music.
-$x08883008 Create a Edit data with in-game music.
-!x08883014 Create a Edit data with MP3 music.
-!x08883020 Create a Edit data with the additional content music.
+^x08882FA8 Create Edit data with in-game music.
+^x08882FDC Create Edit data with in-game music.
+$x08883008 Create Edit data with in-game music.
+!x08883014 Create Edit data with MP3 music.
+!x08883020 Create Edit data with the additional content music.
 
 !x08887834 Modify the BPM
 !x08887AD4 Modify the BPM
@@ -442,36 +442,36 @@ $x08883008 Create a Edit data with in-game music.
 !x08893804 Or by using "Measure BPM", the BPM can be
 !x08893818 measured by beating out the rythm.
 
-!x08893DBC Select the module A.
-!x08893E1C Select the module B.
+!x08893DBC Select module A
+!x08893E1C Select module B
 
 !x08896A08 Add motion
-!x08896C00 Set the motion to be used in the Edit.
-!x088976DC Choose up to 30 motions to use.
-!x088977B4 Choose up to 30 motions to use.
+!x08896C00 Set the motions to be used in the Edit
+!x088976DC Choose up to 30 motions to use
+!x088977B4 Choose up to 30 motions to use
 
 !x088995C0 Add item
-!x0889978C Configure which items to use in the Edit.
-!x08899894 Configure which items to use in the Edit.
+!x0889978C Configure which items to use in the Edit
+!x08899894 Configure which items to use in the Edit
 
 !x0889BAE4 Add background
-!x0889BC28 Set the background to be used in the Edit.
-!x0889BD28 Set the background to be used in the Edit.
-!x0889C42C Choose up to 20 backgrounds to use.
-!x0889CF78 Choose up to 20 backgrounds to use.
+!x0889BC28 Set the background to be used in the Edit
+!x0889BD28 Set the background to be used in the Edit
+!x0889C42C Choose up to 20 backgrounds to use
+!x0889CF78 Choose up to 20 backgrounds to use
 
 !x0889D8CC Add an effect
-!x0889D9F8 Set the effects to be used in the Edit.
-!x0889DAEC Set the effects to be used in the Edit.
+!x0889D9F8 Set the effects to be used in the Edit
+!x0889DAEC Set the effects to be used in the Edit
 
 !x0889E84C  [Preset %d]
 ^x0889F3B4 Unit
 ^x0889F3E8 Unit
 !x0889F414 Unit
-!x0889F784 選択された項目を削除します。
-!x0889FD8C インポートデータを
+!x0889F784 Delete selected (item?)
+!x0889FD8C The Import Data(*)1
 !x0889FDB4 Please import from
-!x0889FDC8 the "Options" menu.
+!x0889FDC8 the "Options" menu. (*)1
 
 !x088A0344 Targets will be automatically set for the whole
 !x088A0358 song. With a 2/4 time signature, a target is set
@@ -480,12 +480,12 @@ $x08883008 Create a Edit data with in-game music.
 !x088A0394 Existing targets will all be deleted. Proceed?
 !x088A03BC ※The result will appear once back to Edit TOP
 !x088A0638 Edit end validation
-!x088A06CC Move to home.
-!x088A06F8 Unsaved content will all be deleted.
-!x088A0AB4 Unsaved content will all be deleted.
+!x088A06CC Return to Home menu?
+!x088A06F8 Any unsaved changes will be lost.
+!x088A0AB4 Any unsaved changes will be lost.
 !x088A0724 Do you want to proceed?
 !x088A0AE0 Do you want to proceed?
-!x088A0A88 Move to mode selection.
+!x088A0A88 Move to mode selection
 
 ### EDIT MODE (3rd block) ###
 
@@ -662,26 +662,26 @@ $x08883008 Create a Edit data with in-game music.
 !x08864050 R.space:%5d
 !x0886408C P.space:%5d(%d)
 !x088640C8 P.space:%5d
-!x08864824 曲に合わせてターゲットを入力することができます。
-!x08865F70 曲に合わせてマーカーを入力することができます。
+!x08864824 Enter targets in real-time to the song's playback
+!x08865F70 Enter markers in real-time to the song's playback
 !x08866854 Select Module A
 !x08866868 Select Module B
-!x088668D4 Change the current song.
-!x08866AE0 Change the current song.
-!x088668E0 Change the module A to be used in the Edit.
-!x08866AEC Change the module A to be used in the Edit.
-!x088668EC Change the module B to be used in the Edit.
-!x08866AF8 Change the module B to be used in the Edit.
-!x088668F8 Change the motions to be used in the Edit.
-!x08866B04 Change the motions to be used in the Edit.
-!x08866904 Change the items to be used in the Edit.
-!x08866B10 Change the items to be used in the Edit.
-!x08866910 Change the background to be used in the Edit.
-!x08866B1C Change the background to be used in the Edit.
-!x0886691C Change the effects to be used in the Edit.
-!x08866B28 Change the effects to be used in the Edit.
-!x08866928 Change the button sounds that are used when playing.
-!x08866B34 Change the button sounds that are used when playing.
+!x088668D4 Change the current song
+!x08866AE0 Change the current song
+!x088668E0 Select module A to be used in the Edit
+!x08866AEC Select module A to be used in the Edit
+!x088668EC Select module B to be used in the Edit, if any
+!x08866AF8 Select module B to be used in the Edit, if any
+!x088668F8 Select the motions to be used in the Edit
+!x08866B04 Change the motions to be used in the Edit
+!x08866904 Select the items to be used in the Edit
+!x08866B10 Change the items to be used in the Edit
+!x08866910 Select the backgrounds to be used in the Edit
+!x08866B1C Select the backgrounds to be used in the Edit
+!x0886691C Select the effects to be used in the Edit
+!x08866B28 Select the effects to be used in the Edit
+!x08866928 Select the button sound used when playing
+!x08866B34 Select the button sound used when playing
 !x088680D0 Tempo %11d/4
 !x08868650 Tempo %11d/4
 !x088939D4 Tempo %11d/4
@@ -693,13 +693,13 @@ $x08883008 Create a Edit data with in-game music.
 !x088682B4 About BPM
 !x088682C8 Confirm
 
-!x088682F4 Set the tempo of the song.
-!x08868414 Set the tempo of the song.
-!x08868420 Set the number of beats in one Bar.
-!x0886842C Set the BPM measure manually.
-!x08868438 View a description about the BPM.
-!x08893A40 View a description about the BPM.
-!x08868444 Sets the current beat number and tempo in the song.
+!x088682F4 Set the tempo of the song
+!x08868414 Set the tempo of the song
+!x08868420 Set the number of beats in one Bar
+!x0886842C Set the BPM measure manually
+!x08868438 View an explanation about BPM
+!x08893A40 View an explanation about BPM
+!x08868444 Sets the current BPM and tempo in the song
 
 !x08868A34 Play the song with the □ button.
 !x08868A48 Press the △ button according to the
@@ -734,11 +734,11 @@ $x08883008 Create a Edit data with in-game music.
 !x0889CB74 None
 ^x0889CB38 None
 
-!x0886B5B0 Select up to 10 items to add.
-!x0889A068 Select up to 10 items to add.
-!x0889B11C Select up to 10 items to add.
-!x0886C904 Choose up to 10 effects to use.
-!x0889DFE8 Choose up to 10 effects to use.
+!x0886B5B0 Select up to 10 items to add
+!x0889A068 Select up to 10 items to add
+!x0889B11C Select up to 10 items to add
+!x0886C904 Select up to 10 effects to use
+!x0889DFE8 Select up to 10 effects to use
 !x0886D320 Sound：None
 !x0886D364 Confirm selection
 ^x0886D328 Confirm selection
@@ -749,34 +749,34 @@ $x08883008 Create a Edit data with in-game music.
 ^x08899604 Confirm selection
 !x0889BB58 Confirm selection
 !x0889D924 Confirm selection
-!x0886D3B8 Select the button sound to use when playing.
-!x0886D46C Select the button sound to use when playing.
-!x0886D89C Select the button sound to use when playing.
-!x0886D940 Select the button sound to use when playing.
+!x0886D3B8 Select the button sound used when playing
+!x0886D46C Select the button sound used when playing
+!x0886D89C Select the button sound used when playing
+!x0886D940 Select the button sound used when playing
 !x0886F00C Additional content
 !x0886F020 could not be loaded.
 !x0889FDA0 could not be loaded.
-!x0886F6DC Save, load and delete the Edit data.
-!x0886FA74 Save, load and delete the Edit data.
-!x0886F6E8 Add or change modules, items and backgrounds used in the Edit.
-!x0886FA80 Add or change modules, items and backgrounds used in the Edit.
-!x0886F6F4 Configure the height of the characters.
-!x0886FA8C Configure the height of the characters.
-!x0886F700 Configure an easy target arrangement.
-!x0886FA98 Configure an easy target arrangement.
-!x0886F70C 歌詞の入力されている拍に自動で口パクを設定することができます。
-!x0886FAA4 歌詞の入力されている拍に自動で口パクを設定することができます。
-!x0886F718 Use various commands to delete placed data.
-!x0886FAB0 Use various commands to delete placed data.
+!x0886F6DC Save, load and delete the Edit data
+!x0886FA74 Save, load and delete the Edit data
+!x0886F6E8 Add or change modules, items and backgrounds used in the Edit
+!x0886FA80 Add or change modules, items and backgrounds used in the Edit
+!x0886F6F4 Configure the height of the characters
+!x0886FA8C Configure the height of the characters
+!x0886F700 Configure an easy target arrangement
+!x0886FA98 Configure an easy target arrangement
+!x0886F70C Automatically lip-sync to the entered lyrics
+!x0886FAA4 Automatically lip-sync to the entered lyrics
+!x0886F718 Use various commands to delete placed data (*)1
+!x0886FAB0 Use various commands to delete placed data (*)2
 !x0886F728 Return to the Edit TOP.
 !x0886FABC Return to the Edit TOP.
-!x0886F734 Exit the edit mode and return to mode selection.
-!x0886FAC8 Exit the edit mode and return to mode selection.
-!x0886F740 Exit the Edit mode and return to home. 
-!x0886FAD4 Exit the Edit mode and return to home.
-!x0887E1B0 Exit the Edit mode and return to home.
-!x0886F754 Configure the start time of the played song.
-!x0886FAE8 Configure the start time of the played song.
+!x0886F734 Exit the edit mode and return to mode selection
+!x0886FAC8 Exit the edit mode and return to mode selection
+!x0886F740 Exit the Edit mode and return to home
+!x0886FAD4 Exit the Edit mode and return to home
+!x0887E1B0 Exit the Edit mode and return to home
+!x0886F754 Configure the start time of the played song
+!x0886FAE8 Configure the start time of the played song
 !x0886F788 Data
 !x08878D04 Data
 !x0886F7C8 Set the song start time
@@ -797,76 +797,76 @@ $x08883008 Create a Edit data with in-game music.
 !x08871BB0 Cancel
 !x08871C04 Cancel
 !x08872814 "Edit Mode" is not compatible with auto-save feature.
-!x0887281C 『システム』画面の『データ』からセーブを行ってください。
+!x0887281C Please save your game manually in the system menu.
 !x08873958 Edit mode
 
 # Edit mode: Edit TOP -> information messages
 
-!x08873B90 Change the BPM, beat count, etc
-!x08873BCC Change the display position, input, target, etc.
-!x08873C08 Edit the motion and facial expressions of the character.
-!x08873C44 Edit the stage-related cameras and background.
-!x08873C80 Change the position of the bar and set the song ending.
+!x08873B90 Set the BPM, tempo, and marker positions
+!x08873BCC Set targets' presence, type, location, speed and trajectory
+!x08873C08 Set character location, motions, expressions, items, etc
+!x08873C44 Set stage things like cameras, background, lyrics, and effects
+!x08873C80 Set the position of the end of the song on the timeline bar
 
-!x088741C4 選択された小節のデータを
-!x08874200 削除しますがよろしいですか？
-!x08874234 削除・初期化しますがよろしいですか？
-!x088745AC ターゲット：コピー中です。(TOPでは長押しをコピーできません)
-!x08874638 キャラ：コピー中です。(TOPでは配置・目線をコピーできません)
-!x088745FC ステージ：コピー中です。(TOPではカメラ・歌詞をコピーできません)
-!x08874674 Delete and copy data of the bars and beats.
-!x08875278 プレビューを確認することができます。
+!x088741C4 Delete these settings for the selected
+!x08874200 beat, and leave it empty again?
+!x08874234 Delete the initialization?(*)
+!x088745AC Target settings copied.  (Can't copy long presses in TOP)
+!x08874638 Character settings copied. (Can't copy eye settings in TOP)
+!x088745FC Stage settings copied. (Can't copy lyrics or camera in TOP)
+!x08874674 Copy, paste, and delete data for selected bars and beats
+!x08875278 Check the preview
 !x0887566C  Unit %3d
 !x08876144 Setting the song playback info.
 !x0887632C The song playback info has been set.
-!x08876334 The load of material data has started.
-!x088766B0 楽曲をロードできませんでした。
-!x088766B8 楽曲の途中再生情報設定に失敗しました。
-!x08876A1C 楽曲の途中再生情報設定に失敗しました。
-!x08876A14 記録メディアが入っていません。
-!x088776EC エディットデータに設定されている
-!x08877730 エディットデータに設定されている
-!x088777E0 エディットデータに設定されている
-!x08878278 エディットデータに設定されている
-!x088788DC エディットデータに設定されている
-!x08878AD8 エディットデータに設定されている
-!x08879E00 エディットデータに設定されている
-!x0887F624 エディットデータに設定されている
-!x088776F0 追加データを読み込めなかったので、
-!x0887827C 追加データを読み込めなかったので、
-!x08878ADC 追加データを読み込めなかったので、
-!x08879E04 追加データを読み込めなかったので、
-!x0887F628 追加データを読み込めなかったので、
-!x088776F4 置き換えを行いました。
-!x08878280 置き換えを行いました。
-!x08878AE0 置き換えを行いました。
-!x08879E08 置き換えを行いました。
-!x0887F62C 置き換えを行いました。
-!x088776F8 セーブすると現在の状態で
-!x08878AE4 セーブすると現在の状態で
-!x08879E0C セーブすると現在の状態で
-!x0887F630 セーブすると現在の状態で
-!x08877700 保存されますのでご注意ください。
-!x08878AEC 保存されますのでご注意ください。
-!x08879E14 保存されますのでご注意ください。
-!x0887F638 保存されますのでご注意ください。
-!x08877734 楽曲データを読み込めませんでした。
-!x088777E8 楽曲データを読み込めませんでした。
-!x08877740 エディットモード選択画面へ戻ります。
-!x08877814 エディットデータロード画面へ戻ります。
-!x08877864 システムメニューへ戻ります。
-!x08878284 不足している素材の確認は『モード選択』内、
-!x0887828C 『追加データ確認』から行ってください。
-!x088788E0 追加データを読み込めませんでした。
-!x088788E4 足りないデータについては『モード選択』の
-!x088788E8 『追加データ確認』で確認できます。
-!x088788F0 編集を開始するため、追加データの置き換えを
-!x088788B4 行いますがよろしいですか？
-!x08878C5C 作成したエディット内容をセーブします。
-!x08878C68 作成したエディットデータをロードします。
-!x08878C74 データを削除します。
-!x08878C80 楽曲のタイトルを入力することができます。
-!x08878C98 作成したエディットデータにタイトルをつけることができます。
+!x08876334 The load of material data will start.
+!x088766B0 Could not load the music.
+!x088766B8 Failed to set current position of music playback info.
+!x08876A1C Failed to set current position of music playback info.
+!x08876A14 Memory Stick	1 not found.
+!x088776EC This Edit data uses additional content.
+!x08877730 This Edit data uses additional content.
+!x088777E0 This Edit data uses additional content.
+!x08878278 This Edit data uses additional content.
+!x088788DC This Edit data uses additional content.
+!x08878AD8 This Edit data uses additional content.
+!x08879E00 This Edit data uses additional content.
+!x0887F624 This Edit data uses additional content.
+!x088776F0 Could not read additional content,
+!x0887827C Could not read additional content,
+!x08878ADC Could not read additional content,
+!x08879E04 Could not read additional content,
+!x0887F628 Could not read additional content,
+!x088776F4 so a substitution was made.
+!x08878280 so a substitution was made.
+!x08878AE0 so a substitution was made.
+!x08879E08 so a substitution was made.
+!x0887F62C so a substitution was made.
+!x088776F8 Please note that when you save this Edit
+!x08878AE4 Please note that when you save this Edit
+!x08879E0C Please note that when you save this Edit
+!x0887F630 Please note that when you save this Edit
+!x08877700 data, the substitutions will also be saved.
+!x08878AEC data, the substitutions will also be saved.
+!x08879E14 data, the substitutions will also be saved.
+!x0887F638 data, the substitutions will also be saved.
+!x08877734 Could not load the music data.
+!x088777E8 Could not load the music data.
+!x08877740 Return to Edit mode selection screen.
+!x08877814 Return to Edit mode data load screen.
+!x08877864 Return to system menu.
+!x08878284 Please use Verify Additional Data in Edit mode
+!x0887828C to determine what extra content is missng.
+!x088788E0 Could not load the additional content.
+!x088788E4 Please check your DLC files, and use
+!x088788E8 "Import additional content" to import them.
+!x088788F0 If you load this Edit data anyway, the missing
+!x088788B4 DLC data will be replaced.  Continue?
+!x08878C5C Save your edited creation.
+!x08878C68 Load edited creation.
+!x08878C74 Delete data.
+!x08878C80 Enter song title.
+!x08878C98 Add title to already created song data.
 !x08878D54 Save
 !x08878D80 Load
 !x08878DAC Delete Data
@@ -874,15 +874,15 @@ $x08883008 Create a Edit data with in-game music.
 !x08879100 Song name
 !x08878E04 Edit name
 !x088791A8 Edit name
-^x088791C0 ※エディット名は未入力です
-$x088791F8 ※エディット名は未入力です
-!x0887A74C Reflect the unique character size.
-!x0887A75C Do not reflect the unique character size.
-!x0887AB24 モジュールＡに対して口パクを設定します。
-!x0887AB30 モジュールＢに対して口パクを設定します。
-!x0887AB40 両方のモジュールに対して口パクを設定します。
-!x0887AB68 配置を実行するかの最終確認です。
-!x0887AB78 配置を実行しています。
+^x088791C0 (Untitled Edit data)
+$x088791F8 (Untitled Edit data)
+!x0887A74C Scale characters to their individual sizes
+!x0887A75C Do not scale characters to their individual sizes
+!x0887AB24 Set lip movements: module A
+!x0887AB30 Set lip movements: module B
+!x0887AB40 Set lip movements: both
+!x0887AB68 Please confirm: are you sure you want to do this?
+!x0887AB78 Doing what you asked, running the task....
 !x0887AC14 Module A
 !x0887C120 Module A
 !x0887D2A0 Module A
@@ -896,43 +896,43 @@ $x088791F8 ※エディット名は未入力です
 
 # Edit mode: System -> automatic lip input message
 
-!x0887AF2C 歌詞の入力された拍に、
-!x0887AF58 口パクが自動で入力されます。
-!x0887AF84 入力済みの拍には自動入力されません。
-!x0887AFB0 配置容量が足りない場合は
-!x0887AFDC 途中で入力が止まります。
-!x0887B008 自動口パク入力を実行しますか？
+!x0887AF2C Enter beats for the lyrics to auto-
+!x0887AF58 set lip sync.  Previously-set beats
+!x0887AF84 will not affect lip sync.  If you run
+!x0887AFB0 out of room, input will be cut off
+!x0887AFDC in the middle.  Do you want to start
+!x0887B008 the automatic lip-sync input? (*)
 
-!x0887B254 自動口パクを入力しています。
-!x0887B3B0 自動口パク入力が完了しました。
-!x0887B81C 配置されているデータを全て削除します。
-!x0887B828 配置されているターゲットを全て削除します。
-!x0887B834 『キャラ』から削除するデータを選択します。
-!x0887B840 『ステージ』から削除するデータを選択します。
-!x0887B84C 配置されているマーカーを全て削除します。
-!x0887B858 ステージのデータを全て削除します。
-!x0887B864 カメラのデータを削除します。
-!x0887B870 背景のデータを削除します。
-!x0887B87C エフェクトのデータを削除します。
-!x0887B888 歌詞のデータを削除します。
-!x0887B894 両方のキャラデータを削除します。
-!x0887B8A0 モジュールＡのキャラデータを削除します。
-!x0887B8AC モジュールＢのキャラデータを削除します。
+!x0887B254 Automatic lip-sync started.
+!x0887B3B0 Automatic lip-sync completed.
+!x0887B81C Delete all data
+!x0887B828 Remove placed targets
+!x0887B834 Select character data to delete
+!x0887B840 Select stage data to delete
+!x0887B84C Remove placed markers
+!x0887B858 Delete all stage data
+!x0887B864 Delete camera data
+!x0887B870 Delete background data
+!x0887B87C Delete effect data
+!x0887B888 Delete lyric data
+!x0887B894 Delete both characters' data
+!x0887B8A0 Delete character A's data
+!x0887B8AC Delete character B's data
 
-0x08C36F74 キャラのデータを全て削除します。
-0x08C36F78 キャラ配置のデータを削除します。
-0x08C36F7C モーションのデータを削除します。
-0x08C36F80 アイテムのデータを削除します。
-0x08C36F84 表情のデータを削除します。
-0x08C36F88 頬染めのデータを削除します。
-0x08C36F8C 口パクのデータを削除します。
-0x08C36F90 目線のデータを削除します。
-0x08C36F94 目パチのデータを削除します。
-0x08C36F98 モデル表示のデータを削除します。
-0x08C36F9C 影表示のデータを削除します。
+0x08C36F74 Delete all character data.
+0x08C36F78 Delete character positioning data
+0x08C36F7C Delete motion data
+0x08C36F80 Delete item data
+0x08C36F84 Delete face expression data
+0x08C36F88 Delete blush-mark data
+0x08C36F8C Delete lip data
+0x08C36F90 Delete eye data
+0x08C36F94 Delete eyes' looking-at data
+0x08C36F98 Delete model visibility data
+0x08C36F9C Delete shadow display data
 
-!x0887B91C 削除を実行するかの最終確認です。
-!x0887B928 削除を実行しています。
+!x0887B91C Delete: are you really sure?
+!x0887B928 Deletion in progress....
 !x0887B974 Delete command
 !x0887BDD4 Delete command
 !x0887D240 Delete command
@@ -950,42 +950,42 @@ $x088791F8 ※エディット名は未入力です
 !x0887BF94 Confirm
 !x0887C420 Confirm
 !x0887DF60 Confirm
-!x0887BED8 削除したデータは元に戻せません
-!x0887C4A0 削除したデータは元に戻せません
-!x0887BF04 削除を実行しますか？
-!x0887C040 削除を実行しますか？
-!x0887C4CC 削除を実行しますか？
-!x0887E020 削除を実行しますか？
-!x0887C014 削除したデータは元に戻せません。
-!x0887DFF4 削除したデータは元に戻せません。
-!x0887C228 コマンド選択
-!x0887D268 コマンド選択
-!x0887D2B4 コマンド選択
-!x0887D2FC コマンド選択
+!x0887BED8 Deletion can't be undone.
+!x0887C4A0 Deletion can't be undone.
+!x0887BF04 Are you sure you want to delete it?
+!x0887C040 Are you sure you want to delete it?
+!x0887C4CC Are you sure you want to delete it?
+!x0887E020 Are you sure you want to delete it?
+!x0887C014 Deletion can't be undone.
+!x0887DFF4 Deletion can't be undone.
+!x0887C228 Command selection
+!x0887D268 Command selection
+!x0887D2B4 Command selection
+!x0887D2FC Command selection
 !x0887C290 Camera
 !x0887C2BC Background
 !x0887C2E8 Effects
 !x0887C314 Lyrics
-!x0887C774 コマンドデータ削除中…
-!x0887D00C コマンドデータ削除が終了しました。
-!x0887D254 両方のモジュール
+!x0887C774 Deleting data…
+!x0887D00C Data deletion complete.
+!x0887D254 Both modules
 !x0887D378 Character placement
 !x0887D3A4 Motion
 !x0887D3D0 Item
 !x0887D3FC Expression
-!x0887D428 Dyed cheeks
+!x0887D428 Blush-marks
 !x0887D454 Lip synchronization
 !x0887D480 Looking at
 !x0887D4AC Eye blink
 !x0887D4D8 Model display
 !x0887D504 Shadow
-!x0887E168 Create a new Edit data.
-!x0887E174 Continue editing your Edit data.
+!x0887E168 Create a new Edit data
+!x0887E174 Continue editing a saved Edit data
 !x0887E180 Convert Edit data from "-Project DIVA- 2nd"
 !x0887E18C Convert Edit data from "-Project DIVA-"
-!x0887E198 Create copies of your Edit data.
-!x0887E1A4 Check for additional content missing in the Edit data.
-!x08881A34 Check for additional content missing in the Edit data.
+!x0887E198 Create copies of your Edit data
+!x0887E1A4 Check for additional content missing in the Edit data
+!x08881A34 Check for additional content missing in the Edit data
 
 # Edit mode: rhythm options
 
@@ -1009,37 +1009,37 @@ $x088791F8 ※エディット名は未入力です
 !x088B6970 Tempo %7d/4
 !x088B730C Tempo %7d/4
 !x088B9034 Tempo %7d/4
-!x088B6A04 Change the BPM and beat number.
-!x088B6B4C Change the BPM and beat number.
-!x088B6A10 Put landmarks in the specified position with the ○ button.
-!x088B6B58 Put landmarks in the specified position with the ○ button.
-!x088B6A1C Place landmarks according to the song and beat number.
-!x088B6B64 Place landmarks according to the song and beat number.
+!x088B6A04 Change the BPM and beat number
+!x088B6B4C Change the BPM and beat number
+!x088B6A10 Put landmarks in the specified position with the ○ button
+!x088B6B58 Put landmarks in the specified position with the ○ button
+!x088B6A1C Place markers according to the song and beat number
+!x088B6B64 Place markers according to the song and beat number
 !x088B6F58 Confirm
-!x088B70CC Change the tempo of the song.
-!x088B8A78 Change the tempo of the song.
-!x088B75B8 BPM settings are being changed...
-!x088B7634 BPM settings are being changed...
+!x088B70CC Change the tempo of the song
+!x088B8A78 Change the tempo of the song
+!x088B75B8 Changing BPM settings...
+!x088B7634 Changing BPM settings...
 !x088B7754 From the start
-!x088B7768 From halfway
-!x088B77C4 2小節目からリアルタイムでマーカーを入力することができます。
-!x088B7884 2小節目からリアルタイムでマーカーを入力することができます。
-!x088B7890 現在の小節からリアルタイムでマーカーを入力することができます。 
-!x088B7B30 ○ボタンで拍数の色を変更し、目印をつけることができます。
-!x088B8A84 Set the number of beats in one bar.
-!x088B8A90 現在の小節以降に、設定したBPM・拍数を反映させることができます。
-!x088B970C BPMを変更すると、表示限界数を超えた分のターゲットが
-!x088B9720 削除される場合がありますが、よろしいですか？
-!x088BA838 入力を行う小節以降のマーカーを消去し、
-!x088BA84C リアルタイム入力を開始します。
-!x088BA860 BPMが合っていないと、曲とマーカーが
-!x088BA874 ずれて表示されることがあります。
+!x088B7768 From this point
+!x088B77C4 Enter 2 markers in small steps, in real-time
+!x088B7884 Enter 2 markers in small steps, in real-time
+!x088B7890 Enter markers in real-time from current measure
+!x088B7B30 Press ○ to place markers and change their colors on the beats
+!x088B8A84 Set the number of beats in one bar
+!x088B8A90 Save these BPM settings at the current measure
+!x088B970C If you change the BMP, now-excess targets
+!x088B9720 may be deleted.  Are you sure you want to?
+!x088BA838 Erase previously-set markers
+!x088BA84C to begin real-time input?
+!x088BA860 If BPM is not correct, music and
+!x088BA874 markers may not be in sync.
 
 # Edit mode: face expressions
 
 0x08C312FC Sad
 0x08C31300 Happy
-0x08C31304 （＞＜）
+0x08C31304 (＞＜)
 0x08C31308 Surprised
 0x08C3130C Wink
 0x08C31310 Anger
@@ -1051,7 +1051,7 @@ $x088791F8 ※エディット名は未入力です
 0x08C31328 Clear face
 0x08C3132C Smile
 0x08C31330 Glance
-0x08C31334 よだれ顔
+0x08C31334 Drool?
 0x08C31338 Crisp
 0x08C3133C Vacant
 0x08C31340 Thinking
@@ -1059,28 +1059,28 @@ $x088791F8 ※エディット名は未入力です
 0x08C31348 Healthy
 0x08C3134C Motivated
 0x08C31350 Normal
-!x08823EE0 Normal
+!x08823EE0 Phew! (tiny open)
 0x08C31354 Closed eyes
 
 # Edit mode -> lips
 
-!x08823E80 あ
-!x08823E8C い
-!x08823E98 う・お
-!x08823EA4 笑い
-!x08823EB0 怒り
-!x08823EBC え
-!x08823EC8 にや
-!x08823ED4 ちゅ
-!x08823EE0 通常
+!x08823E80 Default (closed)
+!x08823E8C A
+!x08823E98 I
+!x08823EA4 U・O
+!x08823EB0 E
+!x08823EBC Laughter
+!x08823EC8 Anger
+!x08823ED4 Smirk
+!x08823EE0 Phew! (tiny open)
 
 # Edit mode: stage submenu
 
-0x08C43D08 設定を反映しますか？
-0x08C43D14 選択された項目を削除します。
-0x08C43D18 よろしいですか？
-0x08C43D24 よろしいですか？
-0x08C43D20 選択された項目を初期化します。
+0x08C43D08 Apply settings?
+0x08C43D14 Delete selection.
+0x08C43D18 Are you sure?
+0x08C43D24 Are you sure?
+0x08C43D20 Delete selection?
 0x08C43D2C Camera
 0x08C43D30 Background
 0x08C43D34 Effects
@@ -1094,39 +1094,39 @@ $x088791F8 ※エディット名は未入力です
 0x08C43D54 Preview
 0x08C43D58 Confirm
 0x08C43D70 Confirm
-0x08C43D5C Fixed presets
+0x08C43D5C Still presets
 0x08C43D60 Moving presets
 0x08C43D64 Lyric input
 0x08C43D68 Choose text color
 0x08C43D6C Display time
-0x08C43D74 Configure the camera.
-0x08C43D78 Configure the background.
-0x08C43D7C Configure the effects.
-0x08C43D80 Configure up to a maximum of 600 lyrics.
-0x08C43D88 Select the background to use.
-0x08C43D8C Select the effect and adjust the speed with the arrow keys.
-0x08C43D94 拍データのコピー、削除をすることができます。
-0x08C43D98 %s：コピー中です。○ボタンでペーストできます。
-0x08C43D9C カメラの設定をプリセットから選択することができます。
-0x08C43DA0 カメラの移動を設定することができます。
-0x08C43DA4 カメラの移動開始位置を設定することができます。
-0x08C43DA8 カメラの移動終了位置を設定することができます。
-0x08C43DAC カメラの移動時間を拍数単位で設定することができます。
-0x08C43DB0 カメラ移動の加速・減速を設定します
-0x08C43DB4 設定したカメラ移動をプレビューで確認することができます。
-0x08C43DB8 現在のカメラ設定を反映させることができます。
-0x08C43DC4 ○ボタンを押してカメラの移動開始位置を設定して下さい。
-0x08C43DC8 ○ボタンを押してカメラの移動終了位置を設定して下さい。
-0x08C43DCC 方向キー左右で、カメラの移動時間を設定して下さい。
-0x08C43DD0 方向キー左右で位置を確認し、上下で加速度を設定して下さい。
-0x08C43DDC 固定位置のプリセットを選択します。
-0x08C43DE0 移動するプリセットを選択します。
-0x08C43DE4 Type the lyrics.
-0x08C43DE8 Set the text color of the lyrics.
-0x08C43DEC 歌詞の表示時間を拍数単位で設定することができます。
-0x08C43DF0 現在の歌詞設定を反映させることができます。
-0x08C43DF8 歌詞の文字色を選択して下さい。
-0x08C43DFC 方向キー左右で、歌詞の表示時間を設定して下さい。
+0x08C43D74 Configure the camera
+0x08C43D78 Configure the background
+0x08C43D7C Configure the effects
+0x08C43D80 Configure up to a maximum of 600 lyrics
+0x08C43D88 Select the background to use
+0x08C43D8C Select the effect and adjust the speed with the arrow keys
+0x08C43D94 Copy, paste, and delete data for selected bars and beats
+0x08C43D98 %s： has been copied. Use ○ to paste.
+0x08C43D9C Choose from preset camera settings
+0x08C43DA0 Manually define the camera movement
+0x08C43DA4 Set camera's starting position, angle and zoom
+0x08C43DA8 Set camera's ending position, angle and zoom
+0x08C43DAC Set camera start/end timing by song measures
+0x08C43DB0 Adjust camera acceleration curve settings
+0x08C43DB4 Preview the current camera settings
+0x08C43DB8 Confirm current camera settings
+0x08C43DC4 Press ○ to set the camera movement's start
+0x08C43DC8 Press ○ to set the camera movement's end
+0x08C43DCC With left/right arrows, set camera travel time
+0x08C43DD0 Change position with left & right, speed with up & down
+0x08C43DDC Select a fixed-position camera preset
+0x08C43DE0 Select a moving camera preset
+0x08C43DE4 Enter the lyrics
+0x08C43DE8 Set the text color of the lyrics
+0x08C43DEC Set lyrics' display time by song beats/measures
+0x08C43DF0 Confirm current lyrics settings
+0x08C43DF8 Select a text color for the lyrics
+0x08C43DFC Use left/right arrows to set lyric display time
 !x088BC860 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088BC878 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats： %0.1f)
 !x088BC88C %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：  %0.1f)
@@ -1161,13 +1161,13 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088C0C08 None
 !x088CCDB4 None
 !x088C10C0 SPEED      [%3d%%]
-!x088C4250 平行移動
-!x088C65F8 平行移動
-!x088C736C 平行移動
-!x088C4258 回転移動
-!x088C6600 回転移動
-!x088C7388 回転移動
-!x088CA428 カメラ加速度【%4d%%】
+!x088C4250 Strafe
+!x088C65F8 Strafe
+!x088C736C Strafe
+!x088C4258 Rotate
+!x088C6600 Rotate
+!x088C7388 Rotate
+!x088CA428 Camera accel. 【%4d%%】
 
 # Edit mode -> lyrics -> colors
 
@@ -1213,67 +1213,67 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x088CFE14 Target presets
 !x088CEF60 Chance time
 !x088D1E0C Chance time
-!x088CEF68 Press the ○・×・□・△ button to place a target icon.
-!x088CF2AC Press the ○・×・□・△ button to place a target icon.
-!x088CEF74 Configure the direction and coordinates of the target icon.
-!x088CF2B8 Configure the direction and coordinates of the target icon.
-!x088CEF80 Place target icons according the the song.
-!x088CF2C4 Place target icons according the the song.
-!x088CEF8C Set a predefined target icon.
-!x088CF2D0 Set a predefined target icon.
-!x088CEF98 Configure the Chance Time.
-!x088CF2DC Configure the Chance Time.
+!x088CEF68 Press the ○・×・□・△ buttons to place target icons
+!x088CF2AC Press the ○・×・□・△ buttons to place target icons
+!x088CEF74 Configure the direction and location of the target icons
+!x088CF2B8 Configure the direction and location of the target icons
+!x088CEF80 Enter targets in real-time to the song's playback
+!x088CF2C4 Enter targets in real-time to the song's playback
+!x088CEF8C Use a predefined target location
+!x088CF2D0 Use a predefined target location
+!x088CEF98 Configure the Chance Time start and end times
+!x088CF2DC Configure the Chance Time start and end times
 !x088CFBB8 Remove the selected item
 !x088CFBCC Are you sure?
 !x088CFE5C None
 !x088CFE70 Preset %4d
-!x088CFF54 Select the target pattern to place in this bar.
-!x088D4654 Select the target pattern to place in this bar.
+!x088CFF54 Select the target pattern to place in this bar
+!x088D4654 Select the target pattern to place in this bar
 
 # Edit mode: target submenu -> target input
 
 !x088D08D0 Normal input
 !x088D08E4 Button + D-pad
-!x088D08F8 Press and hold
+!x088D08F8 Press-and-hold
 !x088D090C Cancel
 !x088D0920 Confirm
-^x088D0A44 Place the target icon directly.
-!x088D0AF4 Place the target icon directly.
-!x088D4B2C Place the target icon directly.
+^x088D0A44 Place the target icon directly
+!x088D0AF4 Place the target icon directly
+!x088D4B2C Place the target icon directly
 !x088D0E4C %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088D27C4 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088D1970 From the start
-!x088D1984 From halfway
-!x088D1A5C 2小節目からリアルタイムでターゲットを入力することができます。
-!x088D1B10 2小節目からリアルタイムでターゲットを入力することができます。
-!x088D1B1C 現在の小節からリアルタイムでターゲットを入力することができます。
-!x088D1F9C チャンスタイムの開始位置を設定することができます。
-!x088D9384 チャンスタイムの開始位置を設定することができます。
+!x088D1984 From this point
+!x088D1A5C Enter 2 markers in small steps, in real-time. (1)
+!x088D1B10 Enter 2 markers in small steps, in real-time. (2)
+!x088D1B1C Enter targets in real-time from the current position
+!x088D1F9C Set the starting position of Chance Time
+!x088D9384 Set the starting position of Chance Time
 !x088D433C Edit mode
-!x088D4B38 Place target icons need to be pressed together.
-!x088D4B44 Enter press-and-hold target icons (requires at least 1 beat free)
-!x088D4B50 Cancel the target input on this bar.
-!x088D4B64 Accept the targets entered in this subsection.
+!x088D4B38 Place arrow-type direction-and-button targets
+!x088D4B44 Enter press-and-hold targets (requires at least 1 beat free)
+!x088D4B50 Cancel the target input on this bar
+!x088D4B64 Accept the targets entered in this subsection
 
 # Edit mode: target submenu -> placement settings
 
 !x088D6DE0 Target placement
-!x088D6E30 Coords & direction
+!x088D6E30 Location & direction
 !x088D6E48 Set direction
 !x088D6E60 Placement presets
 !x088D7D00  [Custom]
 !x088D7D14  [Preset %d]
 
-!x088D9094 入力を行う小節以降のターゲットを消去し、
-!x088D90A8 リアルタイム入力を開始します。
-!x088D90BC BPMが合っていないと、曲とターゲットが
-!x088D90D0 ずれて表示されることがあります。
+!x088D9094 Erase previously-set targets
+!x088D90A8 to begin real-time input?
+!x088D90BC If BPM is not correct, music and
+!x088D90D0 targets may not be in sync.
 
-!x088D9390 チャンスタイムの終了位置を設定することができます。
+!x088D9390 Set ending position of Chance Time
 
 # Rhythm Game default message
 
-!x088E0F4C Set the default character.
+!x088E0F4C Set the default character
 !x088E0F58 This setting is automatically disabled
 !x088E0F64 when you play a rhythm game.
 
@@ -1343,28 +1343,28 @@ $x088BC890 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 
 # Installation data messages
 
-!x088E729C ※While Auto-saving, the
+!x088E729C ※While auto-saving, the
 !x088E72A8 Memory Stick	1 access
 !x088E72B4 indicator will flash.
-!x088E72C8 Please do not remove the Memory Stick	1
-!x088E72D8 or turn off the console.
+!x088E72C8 Please do not remove the Memory
+!x088E72D8 Stick	1 or turn off the console.
 
 !x088E738C Auto Save
 !x088E73B8 System Data has not been saved.
-!x088E73C4 Changed Auto-save setting to "off".
+!x088E73C4 Auto-Save was set back to OFF.
 
 !x088E73D0 Please create System Data by
 !x088E73E4 going to "Home" then "Save"
 !x088E73F4 before turning Auto-save on.
 
 !x088E77B8 Installation data
-!x088E7830 Data install not found in storage media.
-!x088E77BC Because the installation data wasn't found
-!x088E77C0 the game will only load from the "UMD".
-!x088E77C8 Installation data was set to OFF.
+!x088E7830 Installed data not found on Memory Stick	1.
+!x088E77BC Because the installed data wasn't found,
+!x088E77C0 the game will only load from the UMD.
+!x088E77C8 Installation Data was set back to OFF.
 
-^x088E7824 記録メディアが入っていません。
-$x088E78A4 記録メディアが入っていません。
+^x088E7824 Memory Stick	1 not found.
+$x088E78A4 Memory Stick	1 not found.
 !x088E7B28 Auto Save
 !x088E7B68 Installation data
 !x088E88FC Auto Save
@@ -1379,7 +1379,7 @@ $x088E78A4 記録メディアが入っていません。
 !x088F18D8 The import data
 !x088F18A8 could not be loaded.
 !x088F18E8 Import Options Screen
-!x088F18F4 行って下さい。
+!x088F18F4 please go. (*)
 !x088F1964 Additional data
 !x088F1CA4 Acquired title.
 
@@ -1401,13 +1401,13 @@ $x088E78A4 記録メディアが入っていません。
 !x0891F728 could not be loaded.
 
 !x0891F73C The current module has been
-!x0891F750 restored to the original one.
+!x0891F750 restored to its default.
 
 !x0891F7FC The additional content
 !x0891F810 could not be loaded.
 
-!x0891F824 The default layout of
-!x0891F838 the room has been restored.
+!x0891F824 The default layout of the
+!x0891F838 room has been restored.
 
 !x0891F8A0 The additional content
 !x0891F8B4 could not be loaded.
@@ -1445,10 +1445,10 @@ $x088E78A4 記録メディアが入っていません。
 !x089254E8 Remove all the deployed items.
 !x0892560C Return to the DIVA room.
 !x08925730 Please place some items first.
-!x08925818 Remove the items that are already
+!x08925818 Remove the items that have already
 !x0892582C been placed and put this item.
-!x0892587C You cannot place more items
-!x08925890 on this room.
+!x0892587C You cannot place more
+!x08925890 items in this room.
 
 !x0892597C Adittional data
 !x08925990 could not be loaded.
@@ -1466,7 +1466,7 @@ $x088E78A4 記録メディアが入っていません。
 !x08927600 Extra Items
 !x08928948 Import Data
 !x08928974 Import Options Screen
-!x08928988 行って下さい。
+!x08928988 please go. (*)
 
 # Present-giving messages
 
@@ -1492,12 +1492,12 @@ $x088E78A4 記録メディアが入っていません。
 !x0892B214 Sleep Timer
 !x0892B220 Navigation timer
 !x0892B22C Wake-up timer
-!x0892BC2C Return to home.
+!x0892BC2C Return to home
 !x0892BC5C Use the %s.
 !x0892BC70 Change the %s.
 !x0892BC80 Give a %s.
-!x0892BD08 Bonus for using DIVA room.
-!x0892BD1C Acquired 1000 POINT.
+!x0892BD08 Bonus for using DIVA room:
+!x0892BD1C Acquired 1000 POINTs.
 !x0892BD9C Set time: %02d:%02d.
 !x0892BDAC Clear %s.
 
@@ -1522,28 +1522,28 @@ $x088E78A4 記録メディアが入っていません。
 
 # DIVA room (playlist dialogs)
 
-!x08932694 Update playlist contents
-!x089326C0 and quit editing?
+!x08932694 Update this playlist's contents
+!x089326C0 and quit editing it?
 
-!x089326F4 Playlist will not be
-!x08932720 updated if you quit now.
-!x0893274C would you like to quit?
+!x089326F4 This playlist will not be updated
+!x08932720 if you quit now.  Quit without
+!x0893274C saving your changes?
 
-!x089327D4 Delete this
-!x08932828 playlist?
+!x089327D4 Delete this playlist:
+!x08932828 Are you sure?
 
-!x0893285C Music is not registered.
+!x0893285C This playlist will have no music.
 
-!x08932888 The playlist will be deleted at its
-!x089328B4 current state. Continue?
+!x08932888 Due to the removal of all songs, the
+!x089328B4 playlist will be deleted.  Continue?
 
-!x089328E8 Playlist hasn't been created.
+!x089328E8 No playlists have been created yet.
 !x08932914 Would you like to create a playlist?
-!x08932974 No playlists registered at the moment.
-!x08932A08 Max number of registrations has been reached. 
+!x08932974 There are currently no playlists saved.
+!x08932A08 Playlist is full: take items off to add more. (*)a
 
-!x08932A3C The max number of playlists
-!x08932A68 has been exceeded.
+!x08932A3C The maximum number of
+!x08932A68 playlists has been reached.
 
 !x08932A9C Additional content 
 !x08932AC8 could not be loaded.
@@ -1559,8 +1559,8 @@ $x088E78A4 記録メディアが入っていません。
 !x089371A4 Create Playlist
 !x089371B8 Delete Playlist
 !x089371CC Go back
-!x08937354 List of recorded PV
-!x08937C5C List of recorded PV
+!x08937354 List of recorded PVs
+!x08937C5C List of recorded PVs
 !x08937720 Edit playlist
 !x08937B78 Edit playlist
 !x08937D7C Module selection
@@ -1576,28 +1576,28 @@ $x088E78A4 記録メディアが入っていません。
 !x0893CD2C Extras
 !x0893D0E8 Return to the DIVA room.
 !x0893D504 Return to the DIVA room.
-!x0893D208 Update Playlist contents
+!x0893D208 Update playlist contents
 !x0893D234 and quit editing?
 !x0893D268 Playlist will not be
 !x0893D294 updated if you quit now.
 !x0893D2C0 would you like to quit?
 !x0893D330 Delete this
 !x0893D384 playlist?
-!x0893D3B8 PV is not registered.
-!x0893D3E4 The playlist will be deleted at its
-!x0893D410 current state. Continue?
-!x0893D444 Playlist hasn't been created.
+!x0893D3B8 This playlist will have no PVs.
+!x0893D3E4 Due to the removal of all PVs, the
+!x0893D410 playlist will be deleted.  Continue?
+!x0893D444 No playlists have been created yet.
 !x0893D470 Would you like to create a playlist?
-!x0893D4D0 No playlists registered at the moment.
-!x0893D564 Max number of registrations has been reached.
-!x0893D598 The max number of playlists
-!x0893D5C4 has been exceeded.
+!x0893D4D0 There are no playlists saved, at the moment.
+!x0893D564 Playlist is full: take items off to add more.(*)b
+!x0893D598 The maximum number of
+!x0893D5C4 playlists has been reached.
 !x0893D600 Additional content 
 !x0893D62C could not be loaded.
-!x0893D668 Import Data
-!x0893D694 could not be loaded.
-!x0893D6C0 オプション画面でインポートを
-!x0893D6EC 行って下さい。
+!x0893D668 Import Data (*)1
+!x0893D694 could not be loaded. (*)1
+!x0893D6C0 Import in the Options screen(*)1
+!x0893D6EC Please go.(*)1
 
 # DIVA room (date/clock and quantity texts)
 
@@ -1619,8 +1619,8 @@ $x088E78A4 記録メディアが入っていません。
 !x0894195C Navigation timer
 
 !x08940954 "Sleep timer function"
-!x08940968 The sleep timer will automatically enter in
-!x0894097C sleep mode after the specified time (in minutes).
+!x08940968 The sleep timer will automatically enter sleep
+!x0894097C mode after the specified time (in minutes).
 !x08940990 Is necessary to save the system data.
 
 ^x08940930 "Navigation timer function"
@@ -1649,75 +1649,75 @@ $x08940A80 Return to the DIVA room.
 
 # (PD2nd savedata detection)
 
-!x089522F0 You may import system data from
+!x089522F0 You may import system data (save files) from
 !x08952310 "-Project Diva- 2nd" to "-Project Diva- Extend".
 
 !x08952330 If you would like to import system data from the previous
 !x08952350 game, please copy the system data from "-Project Diva- 2nd"
-!x08952370 to the Removable media that you will create the
-!x08952390 system data for "-Project Diva- Extend".
+!x08952370 to the Memory Stick	1 that you will save your "-Project Diva-
+!x08952390 Extend" system data on.
 
 # PD2nd savedata import info
 
-!x08952638 ●獲得したDIVAポイントを現在のDIVAポイントに上乗せして
-!x0895264C 　引継ぐことができます。
-!x0895267C ●購入済みの「モジュール」を引継ぐことができます。
-!x0895269C ●購入済みの「ルーム」「ルームテーマ」「ルームアイテム」を
-!x089526D8 　※「ルームアイテム」は現在の所持数に最大9個まで上乗せします。
-!x089526F8 ●各キャラクターのルームレイアウトを引継ぐことができます。
-!x08952718 　※extendで「ルームアイテム」を配置している場合は引継げません。
-!x08952738 　※「ルームテーマ」は引継げません。
+!x08952638 ●Your total DIVA Points earned in -Project Diva 2nd-
+!x0895264C will carry over.
+!x0895267C ●Purchased and unlocked modules will carry over.
+!x0895269C ●Rooms, Room Themes, and Room Items purchased
+!x089526D8 ●Deployed Room Items will be added to your inventory
+!x089526F8  (up to 9 of each in total) instead of staying deployed.
+!x08952718 ●Characters' individual room layouts will carry over.
+!x08952738 ●Characters' set Room Themes do not carry over.
 
-!x08952948 ●以下のプレイレコードを引継ぐことができます。
-!x08952968 　累計DIVAポイント
-!x08952988 　総合プレゼント回数
-!x089529A8 　エクストラプレイ情報
-!x089529C8 　キャラクターへのプレゼント回数
-!x089529E8 　フレンド情報
-!x08952A08 　※現在のフレンドに追加します。最大50人まで。
+!x08952948 ●The following Play Records will carry over:
+!x08952968 　DIVA Point total
+!x08952988 　Gifts in inventory (*) needs verification
+!x089529A8 　Extra Play information
+!x089529C8 　Total Number of gifts given (*) needs verification
+!x089529E8 　Friend Information
+!x08952A08 　Current Friend Profiles (up to 50 of them)
 
-!x0895304C 前作データの引継ぎを中止しますか？
-!x0895359C 『初音ミク -Project DIVA- 2nd』のシステムデータを引継ぎました。
-!x089535BC 引継いだシステムデータの保存先を選んでください。
-!x089535DC ※システムデータを保存するまで、引継ぎは完了しません。
+!x0895304C Cancel importing old save data?
+!x0895359C "-Project DIVA- 2nd" system data has been imported.
+!x089535BC Please choose a location to save your imported
+!x089535DC system data.  The process will then begin.
 
-!x08953C04 本ゲームはゲームデータインストール機能に対応しています。
-!x08953C18 ゲームデータインストール機能をONに設定しますか？
-!x08953C2C ※設定は『オプション』画面で変更することができます。
+!x08953C04 This game is compatible with the Install Data feature.
+!x08953C18 Do you want to set Install Game Data function to ON?
+!x08953C2C This can be changed in the Options settings later.
 
-!x08953F54 インストールデータが見つかりませんでした。
-!x08953F68 ゲームデータインストール機能をOFFに設定しました。
-!x08953F90 ※ゲームデータインストールはタイトル画面で行うことができます。
-!x08953FA4 ※設定は『オプション』画面で変更することができます。
+!x08953F54 Install Data could not be found.
+!x08953F68 Game Data Install feature has been set to OFF.
+!x08953F90 Installing the game data can be done through
+!x08953FA4 the Options settings, in-game.
 
-!x08954950 システムデータを保存しないと、オートセーブ機能はONにできません。
-!x08954964 オートセーブ機能をOFFにしてゲームを進めますか？
+!x08954950 If you don't save the system data, auto-save won't work.
+!x08954964 Proceed with the game with auto-save turned OFF?
 
-!x08957DF4 記録メディアにゲームデータの一部を
-!x08957E0C インストールして、読み込み時間を短縮します。
-!x08957E24 インストールデータをセーブするには、
-!x08957E38 記録メディアに%dMB以上の空き容量が必要です。
-!x08957E64 ※既にインストールデータをセーブしている状態で、
-!x08957E80 ○ボタンを押すと、インストールデータを削除後、
-!x08957E98 インストールの確認が行われますのでご注意ください。
-!x089582D8 ゲームデータインストールが完了しました。
-!x089582F0 記録メディアからのロードを有効にするには
-!x08958308 オプション画面でインストールデータの設定をONにしてください。
+!x08957DF4 Part of the game's data can be installed to the
+!x08957E0C Memory Stick	1, reducing game loading times.
+!x08957E24 To install the game data, there must be at least
+!x08957E38 %dMB free on the Memory Stick	1.
+!x08957E64 If previously-installed game data is detected, it
+!x08957E80 will be deleted.  You can now delete some Memory
+!x08957E98 Stick	1 contents to make room, if you need to.
+!x089582D8 Game data installation complete.
+!x089582F0 To enable loading the game from the installed data, please
+!x08958308 turn ON the Install Data settings in the Options menu.
 
 # Music device selection
 
 !x0898E01C Song list
-!x0898E028 Storage media
-!x0898E3B0 The storage media is not inserted.
+!x0898E028 Memory Stick	1
+!x0898E3B0 Memory Stick	1 not found.
 !x0898E41C Song not found.
 !x0898E450 This song cannot be played.
-!x0898E47C この楽曲はエディットモードで使用できません。
+!x0898E47C This song can't be used in Edit mode.
 !x0898E9C0 Help items
 !x0898FFEC Extras
-!x08990150 ロードできませんでした。
-!x08990164 インポートデータを
-!x08990188 Please import from
-!x0899019C the "Options" menu.
+!x08990150 Could not be loaded.
+!x08990164 The import data (*)2
+!x08990188 Please import from (*)2
+!x0899019C the "Options" menu. (*)2
 !x089901B8 Adittional data
 !x08990318 No
 
@@ -1800,13 +1800,13 @@ $x08940A80 Return to the DIVA room.
 
 !x089A78F4 Send Edit data
 !x089A7920 Receive Edit data
-!x089A794C Exchange profile (send)
-!x089A7978 Exchange profile (receive)
+!x089A794C Send Profile
+!x089A7978 Receive Profile
 !x089A79A4 Back to home.
 
 !x089A8830 Profile exchanged.
-!x089A8860 フレンド情報を保存するには
-!x089A888C システムデータの保存が必要です。
+!x089A8860 To save Friend information
+!x089A888C System data save is required.
 !x089A88F0 Profile exchanged.
 
 # Savedata SFO info
@@ -1814,50 +1814,50 @@ $x08940A80 Return to the DIVA room.
 !x089C0E94 初音ミク -Project DIVA- extend
 !x089C1B14 初音ミク -Project DIVA- extend
 !x089C0F80 Total Time: %3d:%2d:%02d
-0x08D26F50 楽曲の再生に失敗しました。
-0x08D26F5C 楽曲の再生に失敗しました。
-0x08D26F64 楽曲の再生に失敗しました。
-0x08D26F70 楽曲の再生に失敗しました。
-0x08D26F54 記録メディアが入っていません。
-0x08D26F60 記録メディアが入っていません。
-0x08D26F58 メニューに戻ります。
-0x08D26F6C メニューに戻ります。
-0x08D26F68 記録メディアに楽曲データが入っていません。
-0x08D26F74 記録メディアに楽曲データが入っていません。
-0x08D26F78 楽曲をロードできなかったため
-0x08D26F7C 再生に失敗しました。
-0x08D26F80 システムメニューで
-0x08D26F84 楽曲を選択して下さい。
-!x089C1F10 メッセージを入力して下さい
-!x089C1F68 メッセージを入力して下さい
-!x089C21F4 メッセージを入力して下さい
-!x089C224C メッセージを入力して下さい
-0x08D26F98 初音ミク -Project DIVA- extendの
-0x08D26F9C ゲームデータです。
-0x08D26FA0 ゲームデータのインストールは中断されました。
+0x08D26F50 Failed to play the music.
+0x08D26F5C Failed to play the music.
+0x08D26F64 Failed to play the music.
+0x08D26F70 Failed to play the music.
+0x08D26F54 Memory Stick	1 not found.
+0x08D26F60 Memory Stick	1 not found.
+0x08D26F58 Return to the menu.
+0x08D26F6C Return to the menu.
+0x08D26F68 Music data not found on Memory Stick	1.
+0x08D26F74 Music data not found on Memory Stick	1.
+0x08D26F78 Could not load music,
+0x08D26F7C so failed to play.
+0x08D26F80 From system menu,
+0x08D26F84 please select a song.
+!x089C1F10 Please enter your message
+!x089C1F68 Please enter your message
+!x089C21F4 Please enter your message
+!x089C224C Please enter your message
+0x08D26F98 初音ミク -Project DIVA- extend's
+0x08D26F9C game data.
+0x08D26FA0 Game Data Install has been interrupted.
 !x089C27A4 初音ミク -Project DIVA- extend
 !x089C27E0 Installation Data
 0x08D26FAC System Data
 0x08D26FB0 Edit Data
 0x08D26FB4 Edit name: 
 0x08D26FB8 Song name: 
-0x08D26FC0 セーブに失敗しました。
-0x08D26FC8 セーブに失敗しました。
-0x08D26FDC セーブに失敗しました。
-0x08D26FE4 セーブに失敗しました。
-0x08D26FC4 記録メディアが入っていません。
-0x08D26FCC 記録メディアにシステムデータが存在しません。
-0x08D26FD0 記録メディアに異なるデータがあります。
-0x08D26FD4 この記録メディアに上書きしますか？
-0x08D26FD8 セーブを中止しますか？
-0x08D26FE0 記録メディアがロックされています。
-0x08D26FE8 記録メディアの空き容量が
-0x08D26FEC 不足しています。
-0x08D26FF0 セーブするには空き容量が
-0x08D26FF4 あと 
-0x08D26FF8 KB以上必要です。
-0x08D26FFC セーブを中止しました。
-0x08D27004 オートセーブの設定をOFFにしました。
+0x08D26FC0 Saving failed.
+0x08D26FC8 Saving failed.
+0x08D26FDC Saving failed.
+0x08D26FE4 Saving failed.
+0x08D26FC4 Memory Stick	1 not found. (*)1
+0x08D26FCC No system data found on Memory Stick	1.
+0x08D26FD0 There are different Memory Stick	1s. (*)
+0x08D26FD4 Do you want to overwrite this media record? (*)
+0x08D26FD8 Cancel the save?
+0x08D26FE0 Memory Stick	1 not found. (*)2
+0x08D26FE8 There is not enough space
+0x08D26FEC on the Memory Stick	1.
+0x08D26FF0 To save the space (*)
+0x08D26FF4 after (*)
+0x08D26FF8 KB or more is required.
+0x08D26FFC Save aborted.
+0x08D27004 Auto-save was set to OFF.
 !x089C2CF0 初音ミク -Project DIVA- extend
 !x089C3008 初音ミク -Project DIVA- extend
 !x089C2DB0 Total Time: %3d:%2d:%02d
@@ -2330,31 +2330,31 @@ $x08940A80 Return to the DIVA room.
 
 # DIVA room event titles
 
-0x08C30FCC 会スタート！
-0x08C30FD0 二人でダンスレッスン
-0x08C30FD4 探し物、見つからず…
-0x08C30FD8 探し物、見つかった！
-0x08C30FDC ブートキャンプ開始
-0x08C30FE0 起きてよ～
-0x08C30FE4 アイスをめぐる攻防！？1
-0x08C30FE8 アイスをめぐる攻防！？2
-0x08C30FEC 念願のコラボ
-0x08C30FF0 男の魅力を激写！
-0x08C30FF4 ミクとエアギター対決
-0x08C30FF8 4番、カイト！
-0x08C30FFC ピッチャー、カイト！
-0x08C31000 部屋の掃除をしよう
-0x08C31004 リンにダンスの指導中
+0x08C30FCC Get the party started!
+0x08C30FD0 Private dance lesson
+0x08C30FD4 Searching, didn't find...
+0x08C30FD8 Searching, and found!
+0x08C30FDC Starting boot camp
+0x08C30FE0 Going～
+0x08C30FE4 Ice cream fight！？1
+0x08C30FE8 Ice cream fight！？2
+0x08C30FEC Desired collaboration
+0x08C30FF0 Amazing glamor photo!
+0x08C30FF4 Miku air guitar showdown
+0x08C30FF8 #4, Kaito!
+0x08C30FFC Pitcher Kaito!
+0x08C31000 Room-cleaning attempt
+0x08C31004 Rin teaches dancing
 0x08C31008 女同士で飲みましょう
-0x08C3100C 美容の秘訣
+0x08C3100C Beauty secrets
 0x08C31010 歌道は一日にしてならず
 0x08C31014 頑張れ歌練習
 0x08C31018 美容と健康のために
-0x08C3101C メイコの掃除をお手伝い
+0x08C3101C Meiko's掃除をお手伝い
 0x08C31020 カイトとセッション1
 0x08C31024 たまには飲みたい時もある
 0x08C31028 カイトとスティック振り
-0x08C3102C ミクの掃除をお手伝い
+0x08C3102C Miku's 掃除をお手伝い
 0x08C31030 レンとあっち向いてホイ
 0x08C31034 リンとあっち向いてホイ
 0x08C31038 ルカとあっち向いてホイ
@@ -2363,9 +2363,9 @@ $x08940A80 Return to the DIVA room.
 0x08C31044 ネルとあっち向いてホイ
 0x08C31048 ハクとあっち向いてホイ
 0x08C3104C 咲音とあっち向いてホイ
-0x08C31050 Let's ロックンロール1
+0x08C31050 Let's Rock'N'Roll!
 0x08C31054 振り付けの練習1
-0x08C31058 ルカの美容体操を伝授1
+0x08C31058 Luka's 美容体操を伝授1
 0x08C3105C ルカとお茶を楽しむ
 0x08C31060 メイコとお茶を楽しむ
 0x08C31064 リンとスティック振り
@@ -2377,29 +2377,29 @@ $x08940A80 Return to the DIVA room.
 0x08C3107C ハクとエアギター対決
 0x08C31080 まったりおしゃべり
 0x08C31084 ゲームで対決
-0x08C31088 ミクの音楽教室1
+0x08C31088 Miku's Music School 2
 0x08C3108C お昼寝タイム
 0x08C31090 デュエット実現
 0x08C31094 カッコイイポーズを研究！
 0x08C31098 強烈目覚まし1
-0x08C3109C ルカの音楽講座
+0x08C3109C Luka's 音楽講座
 0x08C310A0 ポーズ、決まってますか？
-0x08C310A4 リン、レン、エアギター対決
+0x08C310A4 Rin、Len Air-Guitar Showdown
 0x08C310A8 男のエアギター対決！
-0x08C310AC ミクの音楽教室2
-0x08C310B0 ルカの美容体操を伝授2
+0x08C310AC Miku's Music School 2
+0x08C310B0 Luka's 美容体操を伝授 2
 0x08C310B4 仲良くお昼寝
 0x08C310B8 セクシーポーズ研究中1
-0x08C310BC リンの掃除をお手伝い
+0x08C310BC Rin's 掃除をお手伝い
 0x08C310C0 Let's ロックンロール2
 0x08C310C4 セクシーポーズ研究中2
 0x08C310C8 強烈目覚まし2
 0x08C310CC カイトとエアギター対決
 0x08C310D0 メイコとエアギター対決
 0x08C310D4 カイトとセッション2
-0x08C310D8 ポーズ…決め！
-0x08C310DC ポーズ…ダメ？
-0x08C310E0 ポーズ…うう～
+0x08C310D8 Pose… Determined!
+0x08C310DC Pose… No?
+0x08C310E0 Pose… Uuu～
 0x08C310E4 楽しくおしゃべり
 0x08C310E8 元気出して～
 0x08C310EC たまにはケンカも
@@ -2540,195 +2540,195 @@ $x08940A80 Return to the DIVA room.
 
 # Title conditions
 
-0x08C31604 Title given to players
-0x08C31608 just starting the game.
+0x08C31604 Title given to a player who
+0x08C31608 has just started the game.
 
-0x08C31610 Title given to players
-0x08C31614 who have cleared all
-0x08C31618 songs on EASY.
+0x08C31610 Title given to a player who
+0x08C31614 has cleared all songs on
+0x08C31618 EASY.
 
-0x08C3161C Title given to players
-0x08C31620 who have cleared all
-0x08C31624 songs on NORMAL.
+0x08C3161C itle given to a player who
+0x08C31620 has cleared all songs on 
+0x08C31624 NORMAL.
 
-0x08C31628 Title given to players
-0x08C3162C who have cleared all
-0x08C31630 songs on HARD.
+0x08C31628 Title given to a player who
+0x08C3162C has cleared all songs on
+0x08C31630 HARD.
 
-0x08C31634 Title given to players
-0x08C31638 who have cleared all
-0x08C3163C songs on EXTREME.
+0x08C31634 Title given to a player who
+0x08C31638 has cleared all songs on
+0x08C3163C EXTREME.
 
-0x08C31640 Title honoring players
-0x08C31644 who cleared all the EASY
+0x08C31640 Title given to a player who
+0x08C31644 has cleared all the EASY
 0x08C31648 songs with a PERFECT.
 
-0x08C3164C Title honoring players
-0x08C31650 who cleared all the NORMAL
+0x08C3164C Title given to a player who
+0x08C31650 has cleared all the NORMAL
 0x08C31654 songs with a PERFECT.
 
-0x08C31658 Title honoring players
-0x08C3165C who cleared all the HARD
+0x08C31658 Title given to a player who
+0x08C3165C has cleared all the HARD
 0x08C31660 songs with a PERFECT.
 
-0x08C31664 Title given when you
-0x08C31668 clear your first song
+0x08C31664 Title given to a player who
+0x08C31668 cleared their first song
 0x08C3166C with a PERFECT.
 
-0x08C31670 Title given when you
-0x08C31674 clear your first EASY
+0x08C31670 Title given to a player who
+0x08C31674 cleared their first EASY
 0x08C31678 song with a PERFECT.
 
-0x08C3167C Title given when you
-0x08C31680 clear your first NORMAL
+0x08C3167C Title given to a player who
+0x08C31680 clears their first NORMAL
 0x08C31684 song with a PERFECT.
 
-0x08C31688 Title given when you
-0x08C3168C clear your first HARD
+0x08C31688 Title given to a player who
+0x08C3168C clears their first HARD
 0x08C31690 song with a PERFECT.
 
-0x08C31694 Title given when you
-0x08C31698 clear your first EXTREME
+0x08C31694 Title given to a player who
+0x08C31698 clears their first EXTREME
 0x08C3169C song with a PERFECT.
 
-0x08C316A0 Title given to players who
+0x08C316A0 Title given to a player who
 0x08C316A4 clears 3 different EXTREME
 0x08C316A8 songs with a PERFECT.
 
-0x08C316AC Title given to players who
+0x08C316AC Title given to a player who
 0x08C316B0 clears 5 different EXTREME
 0x08C316B4 songs with a PERFECT.
 
-0x08C316B8 Title given to players who
+0x08C316B8 Title given to a player who
 0x08C316BC clears 10 different EXTREME
 0x08C316C0 songs with a PERFECT.
 
-0x08C316C4 Title given to players who
+0x08C316C4 Title given to a player who
 0x08C316C8 clears 20 different EXTREME
 0x08C316CC songs with a PERFECT.
 
-0x08C316D0 Title honoring players who
-0x08C316D4 have cleared all the EXTREME
+0x08C316D0 Title given to a player who
+0x08C316D4 has cleared all the EXTREME
 0x08C316D8 songs with a PERFECT.
 
-0x08C316DC Obtain a MISSxTAKE ranking
-0x08C316E0 for the first time.
-0x08C316E4  
+0x08C316DC Title given to a player who
+0x08C316E0 obtains a MISSxTAKE ranking
+0x08C316E4 for the first time.
 
-0x08C316E8 Obtain a MISSxTAKE ranking
-0x08C316EC 50 times.
-0x08C316F0  
+0x08C316E8 Title given to a player who
+0x08C316EC obtains a MISSxTAKE ranking
+0x08C316F0 50 times.
 
-0x08C316F4 Obtain a CHEAP ranking
-0x08C316F8 for the first time.
-0x08C316FC  
+0x08C316F4 Title given to a player who
+0x08C316F8 obtains a CHEAP ranking
+0x08C316FC for the first time.
 
-0x08C31700 Obtain a CHEAP ranking
-0x08C31704 50 times.
-0x08C31708  
+0x08C31700 Title given to a player who
+0x08C31704 obtains a CHEAP ranking
+0x08C31708 50 times.
 
-0x08C3170C Title given to the players
-0x08C31710 who have cleared 50 songs
+0x08C3170C Title given to a player who
+0x08C31710 has cleared 50 songs
 0x08C31714 using Miku.
 
-0x08C31718 Title given to the players
-0x08C3171C who have cleared 100 songs
+0x08C31718 Title given to a player who
+0x08C3171C has cleared 100 songs
 0x08C31720 using Miku.
 
-0x08C31724 Title given to the players
-0x08C31728 who have cleared 50 songs
+0x08C31724 Title given to a player who
+0x08C31728 has cleared 50 songs
 0x08C3172C using Rin.
 
-0x08C31730 Title given to the players
-0x08C31734 who have cleared 100 songs
+0x08C31730 Title given to a player who
+0x08C31734 has cleared 100 songs
 0x08C31738 using Rin.
 
-0x08C3173C Title given to the players
-0x08C31740 who have cleared 50 songs
+0x08C3173C Title given to a player who
+0x08C31740 has cleared 50 songs
 0x08C31744 using Len.
 
-0x08C31748 Title given to the players
-0x08C3174C who have cleared 100 songs
+0x08C31748 Title given to a player who
+0x08C3174C has cleared 100 songs
 0x08C31750 using Len.
 
-0x08C31754 Title given to the players
-0x08C31758 who have cleared 50 songs
+0x08C31754 Title given to a player who
+0x08C31758 has cleared 50 songs
 0x08C3175C using Luka.
 
-0x08C31760 Title given to the players
-0x08C31764 who have cleared 100 songs
+0x08C31760 Title given to a player who
+0x08C31764 has cleared 100 songs
 0x08C31768 using Luka.
 
-0x08C3176C Title given to the players
-0x08C31770 who have cleared 50 songs
+0x08C3176C Title given to a player who
+0x08C31770 has cleared 50 songs
 0x08C31774 using Kaito.
 
-0x08C31778 Title given to the players
-0x08C3177C who have cleared 100 songs
+0x08C31778 Title given to a player who
+0x08C3177C has cleared 100 songs
 0x08C31780 using Kaito.
 
-0x08C31784 Title given to the players
-0x08C31788 who have cleared 50 songs
+0x08C31784 Title given to a player who
+0x08C31788 has cleared 50 songs
 0x08C3178C using Meiko.
 
-0x08C31790 Title given to the players
-0x08C31794 who have cleared 100 songs
+0x08C31790 Title given to a player who
+0x08C31794 has cleared 100 songs
 0x08C31798 using Meiko.
 
-0x08C3179C Title given to the players
-0x08C317A0 who have cleared 50 songs
+0x08C3179C Title given to a player who
+0x08C317A0 has cleared 50 songs
 0x08C317A4 using Neru.
 
-0x08C317A8 Title given to the players
-0x08C317AC who have cleared 100 songs
+0x08C317A8 Title given to a player who
+0x08C317AC has cleared 100 songs
 0x08C317B0 using Neru.
 
-0x08C317B4 Title given to the players
-0x08C317B8 who have cleared 50 songs
+0x08C317B4 Title given to a player who
+0x08C317B8 has cleared 50 songs
 0x08C317BC using Haku.
 
-0x08C317C0 Title given to the players
-0x08C317C4 who have cleared 100 songs
+0x08C317C0 Title given to a player who
+0x08C317C4 has cleared 100 songs
 0x08C317C8 using Haku.
 
-0x08C317CC Title given to the players
-0x08C317D0 who have cleared 50 songs
+0x08C317CC Title given to a player who
+0x08C317D0 has cleared 50 songs
 0x08C317D4 using Sakine Meiko.
 
-0x08C317D8 Title given to the players
-0x08C317DC who have cleared 100 songs
+0x08C317D8 Title given to a player who
+0x08C317DC has cleared 100 songs
 0x08C317E0 using Sakine Meiko.
 
-0x08C317E4 Title given to the player
-0x08C317E8 who used all the characters
-0x08C317EC at least once.
+0x08C317E4 Title given to a player who
+0x08C317E8 has used each one of the
+0x08C317EC characters at least once.
 
-0x08C317F0 Title given to the player
-0x08C317F4 who used all the characters
-0x08C317F8 at least 10 times.
+0x08C317F0 Title given to a player who
+0x08C317F4 has used each one of the
+0x08C317F8 characters at least 10 times.
 
-0x08C317FC Play one song 100 times.
-0x08C31800  
+0x08C317FC Title given to a player who
+0x08C31800 plays one song 100 times.
 
-0x08C31808 Title given to the players
-0x08C3180C who have played beyond
+0x08C31808 Title given to a player who
+0x08C3180C has played more than
 0x08C31810 1000 songs.
 
-0x08C31814 Title given to the players
-0x08C31818 who have used more than 50
+0x08C31814 Title given to a player who
+0x08C31818 has used more than 50
 0x08C3181C help items.
 
-0x08C31820 Title given to the players
-0x08C31824 who have used more than 100
+0x08C31820 Title given to a player who
+0x08C31824 has used more than 100
 0x08C31828 help items.
 
-0x08C3182C Title given to the player
-0x08C31830 who have watched 50 PV.
+0x08C3182C Title given to a player who
+0x08C31830 has watched 50 PVs.
 
-0x08C31838 Title given to the player
-0x08C3183C who watched every PV.
+0x08C31838 Title given to a player who
+0x08C3183C has watched every PV.
 
-0x08C31844 Title given when get a
+0x08C31844 Title given when getting a
 0x08C31848 CLEAR RATING of 99％ in
 0x08C3184C a rhythm game.
 
@@ -2737,197 +2737,197 @@ $x08940A80 Return to the DIVA room.
 0x08C31858 away from a PERFECT.
 
 0x08C3185C Title given to the player who
-0x08C31860 unlocks the 50％ of the songs.
+0x08C31860 unlocks 50％ of the songs.
 
 0x08C31868 Title given to the player who
-0x08C3186C unlocks the 100％ of the songs.
+0x08C3186C unlocks 100％ of the songs.
 
-0x08C31874 Title given to the players
-0x08C31878 who collects more than 20％
-0x08C3187C of the modules.
+0x08C31874 Title given to a player who
+0x08C31878 collects more than 20％ of
+0x08C3187C the modules.
 
-0x08C31880 Title given to the players
-0x08C31884 who collects more than 50％
-0x08C31888 of the modules.
+0x08C31880 Title given to a player who
+0x08C31884 collects more than 50％ of
+0x08C31888 the modules.
 
-0x08C3188C Title given to the players
-0x08C31890 who collects more than 80％
-0x08C31894 of the modules.
+0x08C3188C Title given to a player who
+0x08C31890 collects more than 80％ of
+0x08C31894 the modules.
 
-0x08C31898 Title awarded to the player
-0x08C3189C who collects all the modules.
+0x08C31898 Title given to a player who
+0x08C3189C collected all of the modules.
 
-0x08C318A4 Title awarded to the player
-0x08C318A8 who collected all the modules
+0x08C318A4 Title given to a player who
+0x08C318A8 collected all of the modules
 0x08C318AC of Hatsune Miku.
 
-0x08C318B0 Title awarded to the player
-0x08C318B4 who collected all the modules
+0x08C318B0 Title given to a player who
+0x08C318B4 collected all of the modules
 0x08C318B8 of Kagamine Rin.
 
-0x08C318BC Title awarded to the player
-0x08C318C0 who collected all the modules
+0x08C318BC Title given to a player who
+0x08C318C0 collected all of the modules
 0x08C318C4 of Kagamine Len.
 
-0x08C318C8 Title awarded to the player
-0x08C318CC who collected all the modules
+0x08C318C8 Title given to a player who
+0x08C318CC collected all of the modules
 0x08C318D0 of Megurine Luka
 
-0x08C318D4 Title awarded to the player
-0x08C318D8 who collected all the modules
+0x08C318D4 Title given to a player who
+0x08C318D8 collected all of the modules
 0x08C318DC of Kaito.
 
-0x08C318E0 Title awarded to the player
-0x08C318E4 who collected all the modules
+0x08C318E0 Title given to a player who
+0x08C318E4 collected all of the modules
 0x08C318E8 of Meiko.
 
-0x08C318EC Title awarded to the player
-0x08C318F0 who collected all the modules
+0x08C318EC Title given to a player who
+0x08C318F0 collected all of the modules
 0x08C318F4 of Akita Neru.
 
-0x08C318F8 Title awarded to the player
-0x08C318FC who collected all the modules
+0x08C318F8 Title given to a player who
+0x08C318FC collected all of the modules
 0x08C31900 of Yowane Haku.
 
-0x08C31904 Title awarded to the player
-0x08C31908 who collected all the modules
+0x08C31904 Title given to a player who
+0x08C31908 collected all of the modules
 0x08C3190C of Sakine Meiko.
 
-0x08C31910 Title awarded to the player
-0x08C31914 who collected all the Sega
+0x08C31910 Title given to a player who
+0x08C31914 collected all the Sega
 0x08C31918 collaboration modules.
 
-0x08C3191C Title awarded to the player
-0x08C31920 who collected all the
-0x08C31924 swimwear modules.
+0x08C3191C Title given to a player who
+0x08C31920 collected all of the swimwear
+0x08C31924 modules.
 
-0x08C31928 Title given to the players
-0x08C3192C who collects more than 50％
-0x08C31930 of the room themes.
+0x08C31928 Title given to a player who
+0x08C3192C collects more than 50％ of
+0x08C31930 the room themes.
 
-0x08C31934 Title given to the players
-0x08C31938 who collected all the 
-0x08C3193C room themes.
+0x08C31934 Title given to a player who
+0x08C31938 collected all of the room
+0x08C3193C themes.
 
-0x08C31940 Title given to the players
-0x08C31944 who collects more than 20％
-0x08C31948 of the room items.
+0x08C31940 Title given to a player who
+0x08C31944 collects more than 20％ of
+0x08C31948 the room items.
 
-0x08C3194C Title given to the players
-0x08C31950 who collects more than 50％
-0x08C31954 of the room items.
+0x08C3194C Title given to a player who
+0x08C31950 collects more than 50％ of
+0x08C31954 the room items.
 
-0x08C31958 Title given to the players
-0x08C3195C who collects more than 80％
-0x08C31960 of the room items.
+0x08C31958 Title given to a player who
+0x08C3195C collects more than 80％ of
+0x08C31960 the room items.
 
-0x08C31964 Title given to the players
-0x08C31968 who collected all the
+0x08C31964 Title given to a player who
+0x08C31968 has collected all the
 0x08C3196C room items.
 
-0x08C31970 Title given to the players who
+0x08C31970 Title given to a player who
 0x08C31974 changed the room theme 10 times.
 
-0x08C3197C Title given to the players who
+0x08C3197C Title given to a player who
 0x08C31980 changed the room theme 50 times.
 
-0x08C31988 Title given to the players who
+0x08C31988 Title given to a player who
 0x08C3198C changed the room theme 100 times.
 
-0x08C31994 Title given to the players who
+0x08C31994 Title given to a player who
 0x08C31998 visited the DIVA room 100 times.
 
-0x08C319A0 Title given to the players who
-0x08C319A4 have completed all the DIVA
+0x08C319A0 Title given to a player who
+0x08C319A4 has completed all the DIVA
 0x08C319A8 room events.
 
-0x08C319AC Title given to the players
-0x08C319B0 who have surpassed the total
-0x08C319B4 of 100,000 DIVA points.
+0x08C319AC Title given to a player who
+0x08C319B0 has reached a total of over
+0x08C319B4 100,000 DIVA points.
 
-0x08C319B8 Title given to the players
-0x08C319BC who have surpassed the total
-0x08C319C0 of 500,000 DIVA points.
+0x08C319B8 Title given to a player who
+0x08C319BC has reached a total of over
+0x08C319C0 500,000 DIVA points.
 
-0x08C319C4 Title given to the players
-0x08C319C8 who have surpassed the total
-0x08C319CC of 1,000,000 DIVA points.
+0x08C319C4 Title given to a player who
+0x08C319C8 has reached a total of over
+0x08C319CC 1,000,000 DIVA points.
 
-0x08C319D0 Title given to the players
-0x08C319D4 who have surpassed the total
-0x08C319D8 of 5,000,000 DIVA points.
+0x08C319D0 Title given to a player who
+0x08C319D4 has reached a total of over
+0x08C319D8 5,000,000 DIVA points.
 
-0x08C319DC Title given to the players
-0x08C319E0 who have surpassed the total
-0x08C319E4 of 10,000,000 DIVA points.
+0x08C319DC Title given to a player who
+0x08C319E0 has reached a total of over
+0x08C319E4 10,000,000 DIVA points.
 
-0x08C319E8 Title given to the players
-0x08C319EC who have surpassed the total
-0x08C319F0 of 50,000,000 DIVA points.
+0x08C319E8 Title given to a player who
+0x08C319EC has reached a total of over
+0x08C319F0 50,000,000 DIVA points.
 
-0x08C319F4 Title given to the players
-0x08C319F8 who have reached the total
-0x08C319FC of 99,999,999 DIVA points.
+0x08C319F4 Title given to a player who
+0x08C319F8 has reached a total of
+0x08C319FC 99,999,999 DIVA points.
 
-0x08C31A00 Title given to the player
+0x08C31A00 Title given to a player
 0x08C31A04 that changes the mood of
-0x08C31A08 Hatsune Miku to become HAPPY.
+0x08C31A08 Hatsune Miku to HAPPY.
 
-0x08C31A0C Title given to the player
+0x08C31A0C Title given to a player
 0x08C31A10 that changes the mood of
-0x08C31A14 Kagamine Rin to become HAPPY.
+0x08C31A14 Kagamine Rin to HAPPY.
 
-0x08C31A18 Title given to the player
+0x08C31A18 Title given to a player
 0x08C31A1C that changes the mood of
-0x08C31A20 Kagamine Len to become HAPPY.
+0x08C31A20 Kagamine Len to HAPPY.
 
-0x08C31A24 Title given to the player
+0x08C31A24 Title given to a player
 0x08C31A28 that changes the mood of
-0x08C31A2C Megurine Luka to become HAPPY.
+0x08C31A2C Megurine Luka to HAPPY.
 
-0x08C31A30 Title given to the player
+0x08C31A30 Title given to a player
 0x08C31A34 that changes the mood of
-0x08C31A38 Kaito to become HAPPY.
+0x08C31A38 Kaito to HAPPY.
 
-0x08C31A3C Title given to the player
+0x08C31A3C Title given to a player
 0x08C31A40 that changes the mood of
-0x08C31A44 Meiko to become HAPPY.
+0x08C31A44 Meiko to HAPPY.
 
-0x08C31A48 Title given to the player
+0x08C31A48 Title given to a player
 0x08C31A4C that changes the mood of
-0x08C31A50 Akita Neru to become HAPPY.
+0x08C31A50 Akita Neru to HAPPY.
 
-0x08C31A54 Title given to the player
+0x08C31A54 Title given to a player
 0x08C31A58 that changes the mood of
-0x08C31A5C Yowane Haku to become HAPPY.
+0x08C31A5C Yowane Haku to HAPPY.
 
-0x08C31A60 Title given to the player
+0x08C31A60 Title given to a player
 0x08C31A64 that changes the mood of
-0x08C31A68 Sakine Meiko to become HAPPY.
+0x08C31A68 Sakine Meiko to HAPPY.
 
-0x08C31A6C Title given to the player
-0x08C31A70 that changes the mood of all
-0x08C31A74 the characters to become HAPPY.
+0x08C31A6C Title given to a player that
+0x08C31A70 changes the mood of all the
+0x08C31A74 characters to HAPPY.
 
-0x08C31A78 Title given to the player who
+0x08C31A78 Title given to a player who
 0x08C31A7C gives at least 50 presents
 0x08C31A80 to a character.
 
-0x08C31A84 Title given to the player who
+0x08C31A84 Title given to a player who
 0x08C31A88 gives at least 100 presents
 0x08C31A8C to a character.
 
-0x08C31A90 Title given to the player
-0x08C31A94 who have played 10 times
-0x08C31A98 the Play Edit.
+0x08C31A90 Title given to a player
+0x08C31A94 who has played an Edit
+0x08C31A98 game 10 times.
 
-0x08C31A9C Title given to the player
-0x08C31AA0 who have played 50 times
-0x08C31AA4 the Play Edit.
+0x08C31A9C Title given to a player
+0x08C31AA0 who has played an Edit
+0x08C31AA4 gane 50 times.
 
-0x08C31AA8 Title given to the player
-0x08C31AAC who have spent 100 hours
-0x08C31AB0 into Edit mode.
+0x08C31AA8 Title given to a player
+0x08C31AAC who has spent 100 hours
+0x08C31AB0 in Edit mode.
 
 0x08C31AB4 Obtain more than 24 hours
 0x08C31AB8 of Play Time.
@@ -2938,29 +2938,29 @@ $x08940A80 Return to the DIVA room.
 0x08C31ACC Obtain more than 100 hours
 0x08C31AD0 of Play Time.
 
-0x08C31AD8 Title given to the player who
-0x08C31ADC have collected more than 50％
+0x08C31AD8 Title given to a player who
+0x08C31ADC has collected more than 50％
 0x08C31AE0 of the Loading Illustrations.
 
-0x08C31AE4 Title given to the player who
+0x08C31AE4 Title given to a player who
 0x08C31AE8 have collected all of the
 0x08C31AEC Loading Illustrations.
 
-0x08C31AF0 Title given to the player who
+0x08C31AF0 Title given to a player who
 0x08C31AF4 have collected the 100% of the
 0x08C31AF8 Visual Library.
 
-0x08C31AFC Title given to the player who
-0x08C31B00 have 50 registered friends.
+0x08C31AFC Title given to a player who
+0x08C31B00 has 50 registered friends.
 
-0x08C31B08 Title given the the player who
-0x08C31B0C has imported his savedata from
+0x08C31B08 Title given the a player who has
+0x08C31B0C imported their save data from
 0x08C31B10 "Hatsune Miku -Project DIVA- 2nd"
 
-0x08C31B14 Title given to the players
-0x08C31B18 who watched the staff roll.
+0x08C31B14 Title given to a player who
+0x08C31B18 watched the staff roll.
 
-0x08C31B20 Title given to the player who
+0x08C31B20 Title given to a player who
 0x08C31B24 got all the previous titles.
 
 # Play records: DIVA room events descriptions
@@ -3604,25 +3604,25 @@ $x08940A80 Return to the DIVA room.
 0x08C34D70 Migikata no Chou
 0x08C35118 Migikata no Chou
 
-0x08C33D14 初音ミクでリズムゲームを
+0x08C33D14 A rhythm game with Hatsune Miku
 
-0x08C33D1C 20回プレイ
-0x08C33D28 20回プレイ
-0x08C33D34 20回プレイ
-0x08C33D40 20回プレイ
-0x08C33D4C 20回プレイ
-0x08C33D58 20回プレイ
-0x08C33D64 20回プレイ
-0x08C33D70 20回プレイ
+0x08C33D1C Played 20 times
+0x08C33D28 Played 20 times
+0x08C33D34 Played 20 times
+0x08C33D40 Played 20 times
+0x08C33D4C Played 20 times
+0x08C33D58 Played 20 times
+0x08C33D64 Played 20 times
+0x08C33D70 Played 20 times
 
-0x08C33D20 鏡音リンor鏡音レンで
-0x08C33D24 リズムゲームを
-0x08C33D2C 巡音ルカでリズムゲームを
-0x08C33D38 カイトでリズムゲームを
-0x08C33D44 メイコでリズムゲームを
-0x08C33D50 弱音ハクでリズムゲームを
-0x08C33D5C 亞北ネルでリズムゲームを
-0x08C33D68 咲音メイコでリズムゲームを
+0x08C33D20 A rhythm game with
+0x08C33D24 Kagamine Rin or Kagamine Len
+0x08C33D2C A rhythm game with Luka Megurine
+0x08C33D38 A rhythm game with Kaito
+0x08C33D44 A rhythm game with Meiko
+0x08C33D50 A rhythm game with Yowane Haku
+0x08C33D5C A rhythm game with Akita Neru
+0x08C33D68 A rhythm game with Sakine Meiko
 
 # Helper item descriptions [shop] (max lenght: 24)
 
@@ -3688,11 +3688,11 @@ $x08940A80 Return to the DIVA room.
 
 ### EDIT MODE ###
 
-0x08C36B58 変更した設定を反映しますか？
-0x08C36B64 選択された項目を削除します。
-0x08C36B68 よろしいですか？
-0x08C36B74 よろしいですか？
-0x08C36B70 選択された項目を初期化します。
+0x08C36B58 Apply settings?
+0x08C36B64 Delete the selected item. (*)pff
+0x08C36B68 Are you sure?
+0x08C36B74 Are you sure?
+0x08C36B70 Delete the selected item. (*)pff2
 
 # edit mode (character submenu)
 
@@ -3700,11 +3700,11 @@ $x08940A80 Return to the DIVA room.
 0x08C36B80 Motion
 0x08C36B84 Item
 0x08C36B88 Expression
-0x08C36B8C Dyed cheeks
+0x08C36B8C Blush-marks
 0x08C36B90 Lip synchronization
 0x08C36B94 Looking at
 0x08C36B98 Eye blinking
-0x08C36B9C Model display
+0x08C36B9C Model visibility
 0x08C36BA0 Shadow
 
 0x08C36BA4 Preset placement
@@ -3721,76 +3721,76 @@ $x08940A80 Return to the DIVA room.
 0x08C36BE4 Confirm
 0x08C36BC0 Fixed presets
 0x08C36BE8 Fixed presets
-0x08C36BC4 Movement preset
-0x08C36BEC Movement preset
+0x08C36BC4 Moving presets
+0x08C36BEC Moving presets
 0x08C36BC8 Motion selection
 0x08C36BD0 Motion interpolation
 0x08C36BD8 Looking At preset
 
 # character menu information
 
-0x08C36BF0 Configure the character placement.
-0x08C36BF4 Configure the character motion.
-0x08C36BF8 Set the items.
-0x08C36BFC Set the expression.
-0x08C36C00 Configure the visibility of dyed cheeks.
-0x08C36C04 Configure the shape of the mouth.
-0x08C36C08 Set the look of the eyes.
-0x08C36C0C Configure the eye blinking.
-0x08C36C10 Configure the model display.
-0x08C36C14 Configure the display of the shadow.
+0x08C36BF0 Configure the character placement
+0x08C36BF4 Configure the character motion
+0x08C36BF8 Set the items
+0x08C36BFC Set the expression
+0x08C36C00 Show/hide the cheeks' blush-marks
+0x08C36C04 Configure the shape of the mouth
+0x08C36C08 Set where the character is looking
+0x08C36C0C Configure the eyes' blinking
+0x08C36C10 Set model visibility
+0x08C36C14 Configure the display of the shadow
 
-0x08C36C20 Select an item for the character to have.
-0x08C36C24 キャラクターの表情を設定して下さい。
-0x08C36C28 頬染めの表示・非表示を設定して下さい。
-0x08C36C2C キャラクターの口の形状を設定して下さい。
-0x08C36C34 Set the eye blinking (some expressions aren't configurable)
-0x08C36C38 モデルの表示・非表示を設定して下さい。
-0x08C36C3C 影の表示・非表示を設定して下さい。
-0x08C36C40 拍データのコピー、削除をすることができます。
-0x08C36C44 %s：コピー中です。○ボタンでペーストできます。
+0x08C36C20 Select an item for the character to have
+0x08C36C24 Select character facial expression
+0x08C36C28 Show/hide the cheeks' blush-marks
+0x08C36C2C Set the character's mouth shape
+0x08C36C34 Set eye blinking (some expressions disallow this)
+0x08C36C38 Set the character model's visibility
+0x08C36C3C Set the visibility of the shadow
+0x08C36C40 Copy, paste, and delete data per beat
+0x08C36C44 %s has been copied.  Press ○ to paste.
 
 # edit mode (character submenu information)
 
-0x08C36C48 Select a character placement preset.
-0x08C36C4C Configure the character placement manually.
-0x08C36C50 Set the starting position of the character movement.
-0x08C36C54 Set the ending position of the character movement.
-0x08C36C58 Set time in beat numbers to move the character.
-0x08C36C5C View a preview of the character movements.
-0x08C36C60 Confirm the configured character movements.
+0x08C36C48 Select a character placement preset
+0x08C36C4C Configure the character placement manually
+0x08C36C50 Set the starting position of the character movement
+0x08C36C54 Set the ending position of the character movement
+0x08C36C58 Set time in beat numbers to move the character
+0x08C36C5C View a preview of the character movements
+0x08C36C60 Confirm the current character settings
 
-0x08C36C6C Move the character and press ○ to set the starting position.
-0x08C36C70 Move the character and press ○ to set the ending position.
-0x08C36C74 方向キー左右で、キャラの移動時間を設定して下さい。
-0x08C36C80 固定位置のプリセットを選択します。
-0x08C36CC0 固定位置のプリセットを選択します。
-0x08C36C84 移動するプリセットを選択します。
-0x08C36CCC 移動するプリセットを選択します。
+0x08C36C6C Move the character and press ○ to set the starting position
+0x08C36C70 Move the character and press ○ to set the ending position
+0x08C36C74 Using D-Pad right/left, set the character's travel time
+0x08C36C80 Select a stationary preset
+0x08C36CC0 Select a stationary preset
+0x08C36C84 Select a moving preset
+0x08C36CCC Select a moving preset
 
-0x08C36C88 使用するモーションと、再生速度を設定をすることができます。
-0x08C36C8C 設定されたモーションの再生開始位置を変更することができます。
-0x08C36C90 モーション補間の設定をすることができます。
-0x08C36C94 現在のモーション設定を反映させることができます。
+0x08C36C88 Select which motion to use, and its playback speed
+0x08C36C8C Change where in the motion its playback begins
+0x08C36C90 Set interpolation to this motion from the last one ON or OFF
+0x08C36C94 Confirm the current motion settings
 
-0x08C36C98 モーションを選択して、方向キー左右で再生速度を調整して下さい。
-0x08C36C9C モーションの再生開始位置を方向キーの左右で設定して下さい。
-0x08C36CA0 モーションの切替時に自動で補間するかを設定して下さい。
-0x08C36CA8 Select a preset for the character's eyes.
-0x08C36CAC 目線の移動時間を拍数単位で設定することができます。
-0x08C36CB0 設定した目線をプレビューで確認することができます。
-0x08C36CB4 現在の目線設定を反映させることができます。
-0x08C36CBC 方向キー左右で目線の移動時間を設定して下さい。
+0x08C36C98 Set motion and adjust playback speed with D-pad right & left
+0x08C36C9C Set start position of motion playback with D-pad right & left
+0x08C36CA0 Set interpolation to this motion from the last one ON or OFF
+0x08C36CA8 Set a preset for the character's eyes (where they're looking)
+0x08C36CAC Set time in beat numbers to for the eye movement
+0x08C36CB0 Preview your eye settings
+0x08C36CB4 Confirm the current eye settings
+0x08C36CBC Set eye movement timing with D-pad right & left
 
 # Song list
 
 0x08C38A08 Kocchi Muite Baby
 0x08C38A18 Yellow
 0x08C38A28 Colorful x Melody
-0x08C38A38 Hatsune Miku no Gekishou
-0x08C38A48 Roshin Yuukai
+0x08C38A38 Hatsune Miku no Gekishou (Singing Passion)
+0x08C38A48 Roshin Yuukai (Meltdown)
 0x08C38A58 Just Be Friends
-0x08C38A68 Hatsune Miku no Shoushitsu
+0x08C38A68 Hatsune Miku no Shoushitsu (Disappearance)
 0x08C38A78 StargazeR
 0x08C38A88 Kogane no Seiya Sousetsu ni Kuchite
 0x08C38A98 Migikata no Chou -39's Giving Day Ed.-
@@ -3827,173 +3827,173 @@ $x08940A80 Return to the DIVA room.
 
 # Button sounds
 
-0x08C3E054 なし
-0x08C3E05C ボタン音１
-0x08C3E064 ボタン音２
-0x08C3E06C ボタン音３
-0x08C3E074 ボタン音４
-0x08C3E07C ボタン音５
-0x08C3E084 ボタン音６
-0x08C3E08C ボタン音７
-0x08C3E094 ボタン音８
-0x08C3E09C ボタン音９
-0x08C3E0A4 ボタン音１０
-0x08C3E0AC ボタン音１１
-0x08C3E0B4 ハイハット１
-0x08C3E0BC ハイハット２
-0x08C3E0C4 ハイハット３
-0x08C3E0CC シンバル
-0x08C3E0D4 スネア１
-0x08C3E0DC スネア２
-0x08C3E0E4 タムタム１
-0x08C3E0EC タムタム２
-0x08C3E0F4 タムタム３
-0x08C3E0FC キックドラム１
-0x08C3E104 キックドラム２
-0x08C3E10C バスドラム
-0x08C3E114 大太鼓
-0x08C3E11C ウッドブロック１
-0x08C3E124 ウッドブロック２
-0x08C3E12C スティック
-0x08C3E134 タンバリン
-0x08C3E13C カウベル
-0x08C3E144 鈴１
-0x08C3E14C 鈴２
-0x08C3E154 クラップ
-0x08C3E15C ソナー１
-0x08C3E164 ソナー２
-0x08C3E16C あは（ミク）
-0x08C3E174 よぉ（ミク）
-0x08C3E17C ふー（ミク）
-0x08C3E184 いぇぃ（ミク）
-0x08C3E18C わん（リン）
-0x08C3E194 YO！（リン）
-0x08C3E19C YO！（レン）
-0x08C3E1A4 HEY！（レン）
+0x08C3E054 None
+0x08C3E05C Button Sound １
+0x08C3E064 Button Sound ２
+0x08C3E06C Button Sound ３
+0x08C3E074 Button Sound ４
+0x08C3E07C Button Sound ５
+0x08C3E084 Button Sound ６
+0x08C3E08C Button Sound ７
+0x08C3E094 Button Sound ８
+0x08C3E09C Button Sound ９
+0x08C3E0A4 Button Sound １０
+0x08C3E0AC Button Sound １１
+0x08C3E0B4 Hi-hat １
+0x08C3E0BC Hi-hat ２
+0x08C3E0C4 Hi-hat ３
+0x08C3E0CC Cymbal
+0x08C3E0D4 Snare １
+0x08C3E0DC Snare ２
+0x08C3E0E4 TomTom １
+0x08C3E0EC TomTom ２
+0x08C3E0F4 TomTom ３
+0x08C3E0FC Kick Drum １
+0x08C3E104 Kick Drum ２
+0x08C3E10C Bass Drum
+0x08C3E114 Big Drum
+0x08C3E11C Wood Block １
+0x08C3E124 Wood Block ２
+0x08C3E12C Stick
+0x08C3E134 Tambourine
+0x08C3E13C Cowbell
+0x08C3E144 Bell １
+0x08C3E14C Bell ２
+0x08C3E154 Clap
+0x08C3E15C Sonar １
+0x08C3E164 Sonar ２
+0x08C3E16C Awa! （Miku）
+0x08C3E174 Yoo! （Miku）
+0x08C3E17C Fu! （Miku）
+0x08C3E184 Iei! （Miku）
+0x08C3E18C Wan! （Rin）
+0x08C3E194 YO! （Rin）
+0x08C3E19C YO! （Len）
+0x08C3E1A4 HEY! （Len）
 
 # Edit mode: Camera -> camera presets (fixed)
 
-0x08C40728 【近】正面
-0x08C40780 【近】横顔左
-0x08C407D8 【近】横顔右
-0x08C40830 【近】ふかん左前
-0x08C40888 【近】ふかん右前
-0x08C408E0 【中】正面
-0x08C40938 【中】煽り左前
-0x08C40990 【中】煽り右前
-0x08C409E8 【中】煽り左後ろ
-0x08C40A40 【中】煽り右後ろ
-0x08C40A98 [Ａ]【近】正面
-0x08C40AF0 [Ａ]【近】横顔左
-0x08C40B48 [Ａ]【近】横顔右
-0x08C40BA0 [Ａ]【近】ふかん左前
-0x08C40BF8 [Ａ]【近】ふかん右前
-0x08C40C50 [Ａ]【中】正面
-0x08C40CA8 [Ａ]【中】煽り左前
-0x08C40D00 [Ａ]【中】煽り右前
-0x08C40D58 [Ａ]【中】煽り左後ろ
-0x08C40DB0 [Ａ]【中】煽り右後ろ
-0x08C40E08 [Ｂ]【近】正面
-0x08C40E60 [Ｂ]【近】横顔左
-0x08C40EB8 [Ｂ]【近】横顔右
-0x08C40F10 [Ｂ]【近】ふかん左前
-0x08C40F68 [Ｂ]【近】ふかん右前
-0x08C40FC0 [Ｂ]【中】正面
-0x08C41018 [Ｂ]【中】煽り左前
-0x08C41070 [Ｂ]【中】煽り右前
-0x08C410C8 [Ｂ]【中】煽り左後ろ
-0x08C41120 [Ｂ]【中】煽り右後ろ
+0x08C40728 [Near] Front
+0x08C40780 [Near] Left Side
+0x08C407D8 [Near] Right Side
+0x08C40830 [Near] Left-Front (Down)
+0x08C40888 [Near] Right-Front (Down)
+0x08C408E0 [Med.] Front
+0x08C40938 [Med.] Left-Front (Up)
+0x08C40990 [Med.] Right-Front (Up)
+0x08C409E8 [Med.] Left-Back (Up)
+0x08C40A40 [Med.] Right-Back (Up)
+0x08C40A98 [Ａ] [Near] Front
+0x08C40AF0 [Ａ] [Near] Left Side
+0x08C40B48 [Ａ] [Near] Right Side
+0x08C40BA0 [Ａ] [Near] Left-Front (Down)
+0x08C40BF8 [Ａ] [Near] Right-Front (Down)
+0x08C40C50 [Ａ] [Med.] Front
+0x08C40CA8 [Ａ] [Med.] Left-Front (Up)
+0x08C40D00 [Ａ] [Med.] Right-Front (Up)
+0x08C40D58 [Ａ] [Med.] Left-Back (Up)
+0x08C40DB0 [Ａ] [Med.] Right-Back (Up)
+0x08C40E08 [Ｂ] [Near] Front
+0x08C40E60 [Ｂ] [Near] Left Side
+0x08C40EB8 [Ｂ] [Near] Right Side
+0x08C40F10 [Ｂ] [Near] Left-Front (Down)
+0x08C40F68 [Ｂ] [Near] Right-Front (Down)
+0x08C40FC0 [Ｂ] [Med.] Front
+0x08C41018 [Ｂ] [Med.] Left-Front (Up)
+0x08C41070 [Ｂ] [Med.] Right-Front (Up)
+0x08C410C8 [Ｂ] [Med.] Left-Back (Up)
+0x08C41120 [Ｂ] [Med.] Right-Back (Up)
 
 # Edit mode: Camera -> camera presets (moving)
 
-0x08C41178 【近】左回り正面→右
-0x08C411D0 【近】右回り正面→左
-0x08C41228 【近】左外→右外
-0x08C41280 【近】右外→左外
-0x08C412D8 【中】正面足元→顔
-0x08C41330 【中】正面左上→右下
-0x08C41388 【中】正面右上→左下
-0x08C413E0 【遠】左空→右空
-0x08C41438 【遠】右空→左空
-0x08C41490 煽り左前→煽り右前
-0x08C414E8 煽り右前→煽り左前
-0x08C41540 [Ａ]【近】左回り正面→右
-0x08C41598 [Ａ]【近】右回り正面→左
-0x08C415F0 [Ａ]【近】左外→右外
-0x08C41648 [Ａ]【近】右外→左外
-0x08C416A0 [Ａ]【中】正面足元→顔
-0x08C416F8 [Ａ]【中】正面左上→右下
-0x08C41750 [Ａ]【中】正面右上→左下
-0x08C417A8 [Ａ]【遠】左空→右空
-0x08C41800 [Ａ]【遠】右空→左空
-0x08C41858 [Ａ]煽り左前→煽り右前
-0x08C418B0 [Ａ]煽り右前→煽り左前
-0x08C41908 [Ｂ]【近】左回り正面→右
-0x08C41960 [Ｂ]【近】右回り正面→左
-0x08C419B8 [Ｂ]【近】左外→右外
-0x08C41A10 [Ｂ]【近】右外→左外
-0x08C41A68 [Ｂ]【中】正面足元→顔
-0x08C41AC0 [Ｂ]【中】正面左上→右下
-0x08C41B18 [Ｂ]【中】正面右上→左下
-0x08C41B70 [Ｂ]【遠】左空→右空
-0x08C41BC8 [Ｂ]【遠】右空→左空
-0x08C41C20 [Ｂ]煽り左前→煽り右前
-0x08C41C78 [Ｂ]煽り右前→煽り左前
+0x08C41178 [Near] Turn L-Front→Right
+0x08C411D0 [Near] Turn R-Front→Left
+0x08C41228 [Near] Left Side→Right Side
+0x08C41280 [Near] Right Side→Left Side
+0x08C412D8 [Med.] Front Foot→Face
+0x08C41330 [Med.] Front L-High→R-Low
+0x08C41388 [Med.] Front R-High→L-Low
+0x08C413E0 [Far] Left Sky→Right Sky
+0x08C41438 [Far] Right Sky→Left Sky
+0x08C41490 L-Front (Up)→R-Front (Up)
+0x08C414E8 R-Front (Up)→L-Front (Up)
+0x08C41540 [Ａ] [Near] Turn L-Front→R
+0x08C41598 [Ａ] [Near] Turn R-Front→L
+0x08C415F0 [Ａ] [Near] L Side→R Side
+0x08C41648 [Ａ] [Near] R Side→L Side
+0x08C416A0 [Ａ] [Med.] Front Foot→Face
+0x08C416F8 [Ａ] [Med.] F L-High→R-Low
+0x08C41750 [Ａ] [Med.] F R-High→L-Low
+0x08C417A8 [Ａ] [Far] L Sky→R Sky
+0x08C41800 [Ａ] [Far] R Sky→L Sky
+0x08C41858 [Ａ] L-Front (Up)→R-F (Up)
+0x08C418B0 [Ａ] R-Front (Up)→L-F (Up)
+0x08C41908 [Ｂ] [Near] Turn L-F→Right
+0x08C41960 [Ｂ] [Near] Turn R-F→Left
+0x08C419B8 [Ｂ] [Near] L Side→R Side
+0x08C41A10 [Ｂ] [Near] R Side→L Side
+0x08C41A68 [Ｂ] [Med.] Front Foot→Face
+0x08C41AC0 [Ｂ] [Med.] F L High→R Low
+0x08C41B18 [Ｂ] [Med.] F R High→L Low
+0x08C41B70 [Ｂ] [Far] L Sky→R Sky
+0x08C41BC8 [Ｂ] [Far] R Sky→L Sky
+0x08C41C20 [Ｂ] L-Front (Up)→R-F (Up)
+0x08C41C78 [Ｂ] R-Front (Up)→L-F (Up)
 
 0x08C43458 Normal
 0x08C43468 Looking at camera
-0x08C43478 上
-0x08C43488 下
-0x08C43498 左
-0x08C43718 左
-0x08C434A8 右
-0x08C436F0 右
-0x08C434B8 右上
-0x08C434C8 右下
-0x08C434D8 左上
-0x08C434E8 左下
-0x08C434F8 上 →　下
-0x08C43508 下 →　上
-0x08C43518 左 →　右
-0x08C43528 右 →　左
-0x08C43538 左上 →　右下
-0x08C43548 右上 →　左下
-0x08C43558 右下 →　左上
-0x08C43568 左下 →　右上
-0x08C43578 中央 →　上
-0x08C43588 中央 →　下
-0x08C43598 中央 →　左
-0x08C435A8 中央 →　右
-0x08C435B8 中央 →　右上
-0x08C435C8 中央 →　右下
-0x08C435D8 中央 →　左上
-0x08C435E8 中央 →　左下
-0x08C435F8 上 →　中央
-0x08C43608 下 →　中央
-0x08C43618 左 →　中央
-0x08C43628 右 →　中央
-0x08C43638 右上 →　中央
-0x08C43648 右下 →　中央
-0x08C43658 左上 →　中央
-0x08C43668 左下 →　中央
-0x08C43678 中央
-0x08C436A0 奥
-0x08C436C8 手前
-0x08C43740 右手前
-0x08C43768 左手前
-0x08C43790 右奥
-0x08C437B8 左奥
-0x08C437E0 奥→手前
-0x08C43808 手前→奥
-0x08C43830 右→左
-0x08C43858 左→右
-0x08C43880 右手前→左奥
-0x08C438A8 左奥→右手前
-0x08C438D0 左手前→右奥
-0x08C438F8 右奥→左手前
-0x08C43920 後ろを向く
-0x08C43948 向かい合う（右）
-0x08C43970 向かい合う（左）
+0x08C43478 High
+0x08C43488 Low
+0x08C43498 Left
+0x08C43718 Left
+0x08C434A8 Right
+0x08C436F0 Right
+0x08C434B8 Right High
+0x08C434C8 Right Low
+0x08C434D8 Left High
+0x08C434E8 Left Low
+0x08C434F8 High →　Low
+0x08C43508 Low →　High
+0x08C43518 Left →　Right
+0x08C43528 Right →　Left
+0x08C43538 Left High →　Right Low
+0x08C43548 Right High →　Left Low
+0x08C43558 Right Low →　Left High
+0x08C43568 Left Low →　Right High
+0x08C43578 Center →　High
+0x08C43588 Center →　Low
+0x08C43598 Center →　Left
+0x08C435A8 Center →　Right
+0x08C435B8 Center →　Right High
+0x08C435C8 Center →　Right Low
+0x08C435D8 Center →　Left High
+0x08C435E8 Center →　Left Low
+0x08C435F8 High →　Center
+0x08C43608 Low →　Center
+0x08C43618 Left →　Center
+0x08C43628 Right →　Center
+0x08C43638 Right High →　Center
+0x08C43648 Right Low →　Center
+0x08C43658 Left High →　Center
+0x08C43668 Left Low →　Center
+0x08C43678 Center
+0x08C436A0 Back (Up-stage)
+0x08C436C8 Front (Down stage)
+0x08C43740 Right Front
+0x08C43768 Left Front
+0x08C43790 Right Back
+0x08C437B8 Left Back
+0x08C437E0 Back→Front
+0x08C43808 Front→Back
+0x08C43830 Right→Left
+0x08C43858 Left→Right
+0x08C43880 Right Front→Left Back
+0x08C438A8 Left Back→Right Front
+0x08C438D0 Left Front→Right Back
+0x08C438F8 Right Back→Left Front
+0x08C43920 Turn Around
+0x08C43948 Face each other (Right)
+0x08C43970 Face each other (Left)
 
 # Helper item descriptions [free play] (max lenght: 24)
 
@@ -4019,132 +4019,132 @@ $x08940A80 Return to the DIVA room.
 # Main menu descriptions (max lenght: 24)
 
 # (Rhythm Game)
-0x08C43EC8 Play the game.
+0x08C43EC8 Play the game
 0x08C43ECC  
 # (Character Select)
 0x08C43ED8 Change your character
-0x08C43EDC and modules.
+0x08C43EDC and modules
 # (DIVA Room)
 0x08C43EE8 Go to a room and spend
-0x08C43EEC time with your
-0x08C43EF0 characters.
+0x08C43EEC time visiting with your
+0x08C43EF0 characters
 # (Shop)
-0x08C43EF8 Purchase modules and
-0x08C43EFC various items.
+0x08C43EF8 Purchase modules, rooms
+0x08C43EFC and various items
 # (Play Record)
 0x08C43F08 Edit your profile
 0x08C43F0C and see your play
-0x08C43F10 records.
+0x08C43F10 records
 # (Edit)
-0x08C43F18 Create original PV
-0x08C43F1C and rhythm games.
+0x08C43F18 Create original PVs
+0x08C43F1C and rhythm games
 0x08C43F20  
 # (Ad Hoc)
 0x08C43F28 Exchange Edit Data
 0x08C43F2C and player profiles
-0x08C43F30 via Ad Hoc.
+0x08C43F30 via Ad Hoc
 0x08C43F34  
 # (Options)
 0x08C43F38 Adjust volume of BGM/SE
 0x08C43F3C and other settings like
-0x08C43F40 autosave.
+0x08C43F40 auto-save
 # (Save)
-0x08C43F48 Save, create and delete
-0x08C43F4C savedatas.
+0x08C43F48 Manage your save data
+0x08C43F4C and save your game
 0x08C43F50  
 # (Back to Title)
 0x08C43F58 Quit the game and go
-0x08C43F5C back to the title.
+0x08C43F5C back to the title screen
 
 # Main menu entering confirmation messages
 
 0x08C43F8C Go to the Shop.
 0x08C43F98 Go to Play Records.
 0x08C43FB0 Go to Ad Hoc.
-0x08C43FD4 Return to the title screen.
-0x08C43FD8 You will lose all the unsaved data
-0x08C43FDC Are you sure to return to title?
+0x08C43FD4 Return to the title screen?
+0x08C43FD8 You will lose any unsaved data.
+0x08C43FDC Really return to the title screen?
 
-0x08C43FE0 Go to see the
-0x08C43FE4 Miku's room.
+0x08C43FE0 Go to visit
+0x08C43FE4 Miku's room
 0x08C43FE8  
 
-0x08C43FF0 Go to see the
-0x08C43FF4 Rin's room.
+0x08C43FF0 Go to visit
+0x08C43FF4 Rin's room
 0x08C43FF8  
 
-0x08C44000 Go to see the
-0x08C44004 Len's room.
+0x08C44000 Go to visit
+0x08C44004 Len's room
 0x08C44008  
 
-0x08C44010 Go to see the
-0x08C44014 Luka's room.
+0x08C44010 Go to visit
+0x08C44014 Luka's room
 0x08C44018  
 
-0x08C44020 Go to see the
-0x08C44024 Kaito's room.
+0x08C44020 Go to visit
+0x08C44024 Kaito's room
 0x08C44028  
 
-0x08C44030 Go to see the
-0x08C44034 Meiko's room.
+0x08C44030 Go to visit
+0x08C44034 Meiko's room
 0x08C44038  
 
-0x08C44040 Go to see the
-0x08C44044 Neru's room.
+0x08C44040 Go to visit
+0x08C44044 Neru's room
 0x08C44048  
 
-0x08C44050 Go to see the
-0x08C44054 Haku's room.
+0x08C44050 Go to visit
+0x08C44054 Haku's room
 0x08C44058  
 
-0x08C44060 Go to see the
+0x08C44060 Go to visit
 0x08C44064 Sakine Meiko's
-0x08C44068 room.
+0x08C44068 room
 
-!x088E5228 インポートデータが読み込めないため
-!x088E5234 このままDIVAルームを見に行くと、
-!x088E5240 ルームのレイアウトが初期設定の状態に戻ります。
-!x088E525C ※追加データのインポートはオプション画面で行えます。
+!x088E5228 Imported data couldn't be read.  If you visit this
+!x088E5234 DIVA room, its layout and decor will be reset
+!x088E5240 to their default state.  
+!x088E525C ※ Use the Options menu to import additional data.
 
 # (Edit mode menu descriptions)
 
 0x08C44070 Edit and create new
-0x08C44074 Edit data files.
+0x08C44074 Edit data files
 0x08C44078  
 
-0x08C44080 Play Edit data
-0x08C44084 files.
+0x08C44080 Play rhythm games
+0x08C44084 from Edit data files
 0x08C44088  
 
-0x08C44090 Watch PV from
-0x08C44094 Edit data.
+0x08C44090 Watch PVs from
+0x08C44094 Edit data
 0x08C44098  
 
 # Options menu descriptions
 
 0x08C440A0 Change the volume of the
 0x08C440A4 MP3 songs and PV BGM
-0x08C440A8 in the game.
+0x08C440A8 in the game
 
 0x08C440B0 Change the volume of
-0x08C440B4 the system BGM.
+0x08C440B4 the system BGM
 
 0x08C440C0 Change the volume of the
-0x08C440C4 SE in the game.
+0x08C440C4 SE in the game
 
 0x08C440D0 Change the autosave
-0x08C440D4 settings.
+0x08C440D4 settings
 
 0x08C440E0 Enable the loading of
 0x08C440E4 the Installation
-0x08C440E8 data.
+0x08C440E8 data
 
 0x08C440F0 Import additional data
 0x08C440F4 that you have selected
-0x08C440F8 as extra content.
+0x08C440F8 as extra content
 
-0x08C44100 Import previous savedata
-0x08C44104 from Project Diva 2nd.
+0x08C44100 Import previous save data
+0x08C44104 from Project Diva 2nd
 
 # Free play misc strings
 
@@ -4154,12 +4154,12 @@ $x08940A80 Return to the DIVA room.
 0x08C541B8 could not be loaded.
 0x08C541C8 could not be loaded.
 0x08C541D8 could not be loaded.
-0x08C541BC Return to song selection.
-0x08C541DC Return to song selection.
-0x08C541CC Return to the PV gallery.
-!x088F5F5C 現時点まで作成したターゲットデータのみが反映されます。
-!x088F5F48 よろしいですか？
-!x088F5F88 現時点までに作成したマーカーのみが反映されます。
+0x08C541BC Returning to song selection.
+0x08C541DC Returning to song selection.
+0x08C541CC Returning to the PV gallery.
+!x088F5F5C Only the targets you've created so far will be saved.
+!x088F5F48 Are you sure you want to stop now? (*)
+!x088F5F88 Only the markers you've created so far will be saved.
 
 0x08C54230 Changes all the SAFE and
 0x08C54234 WORST into SAFE, but the
@@ -4203,7 +4203,7 @@ $x08940A80 Return to the DIVA room.
 
 # Screenshot messages
 
-!x089C4D14 Failed to capture
+!x089C4D14 Screenshot failed
 !x089C4EDC Retry
 !x089C4EF0 Delete data
 !x089C4F04 Screenshot end
