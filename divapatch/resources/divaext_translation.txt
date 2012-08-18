@@ -254,7 +254,7 @@
 !x08845B50 This game supports auto-save feature.
 !x08845B64 Do not remove the storage media or power off the
 !x08845B78 unit while the Memory Stick	1 LED is blinking.
-!x08845B8C PD extend patch 2012/08/16 -codestation/Nightsail
+!x08845B8C PD extend patch 2012/08/18   -codestation/Nightsail
 
 ### EDIT MODE ### (max menu entry lenght: 25)
 
@@ -468,10 +468,10 @@ $x08883008 Create Edit data with in-game music.
 ^x0889F3B4 Unit
 ^x0889F3E8 Unit
 !x0889F414 Unit
-!x0889F784 Delete selected (item?)
-!x0889FD8C The Import Data(*)1
-!x0889FDB4 Please import from
-!x0889FDC8 the "Options" menu. (*)1
+!x0889F784 Delete the selected item.
+!x0889FD8C The Import Data(*)
+!x0889FDB4 Please import it from
+!x0889FDC8 the "Options" menu.
 
 !x088A0344 Targets will be automatically set for the whole
 !x088A0358 song. With a 2/4 time signature, a target is set
@@ -766,8 +766,8 @@ $x08883008 Create Edit data with in-game music.
 !x0886FA98 Configure an easy target arrangement
 !x0886F70C Automatically lip-sync to the entered lyrics
 !x0886FAA4 Automatically lip-sync to the entered lyrics
-!x0886F718 Use various commands to delete placed data (*)1
-!x0886FAB0 Use various commands to delete placed data (*)2
+!x0886F718 Use various commands to delete placed data (*)
+!x0886FAB0 Use various commands to delete placed data (**)
 !x0886F728 Return to the Edit TOP.
 !x0886FABC Return to the Edit TOP.
 !x0886F734 Exit the edit mode and return to mode selection
@@ -1059,20 +1059,19 @@ $x088791F8 (Untitled Edit data)
 0x08C31348 Healthy
 0x08C3134C Motivated
 0x08C31350 Normal
-!x08823EE0 Phew! (tiny open)
 0x08C31354 Closed eyes
 
 # Edit mode -> lips
 
-!x08823E80 Default (closed)
-!x08823E8C A
-!x08823E98 I
-!x08823EA4 U・O
-!x08823EB0 E
-!x08823EBC Laughter
-!x08823EC8 Anger
-!x08823ED4 Smirk
-!x08823EE0 Phew! (tiny open)
+!x08823E80 A
+!x08823E8C I
+!x08823E98 U・O
+!x08823EA4 Laughter
+!x08823EB0 Anger
+!x08823EBC Surprise
+!x08823EC8 Smirk
+!x08823ED4 Phew! (tiny open)
+!x08823EE0 Normal
 
 # Edit mode: stage submenu
 
@@ -1378,10 +1377,10 @@ $x088E78A4 Memory Stick	1 not found.
 
 # Main menu messages
 
-!x088F18D8 The import data
+!x088F18D8 The DLC data
 !x088F18A8 could not be loaded.
-!x088F18E8 Import Options Screen
-!x088F18F4 please go. (*)
+!x088F18E8 Please import it from
+!x088F18F4 the "Options" menu.
 !x088F1964 Additional data
 !x088F1CA4 Acquired title.
 
@@ -1466,12 +1465,14 @@ $x088E78A4 Memory Stick	1 not found.
 !x089275D0 Extra Items
 !x089275F4 Room Items
 !x08927600 Extra Items
-!x08928948 Import Data
-!x08928974 Import Options Screen
-!x08928988 please go. (*)
+!x08928948 The DLC data
+!x08928974 Please import it from
+!x08928988 the "Options" menu.
 
 # Present-giving messages
 
+!x08933794 Present♪
+!x08934944 Present♪
 !x08934978 Item: %s
 !x089349AC will be given.
 !x08934A50 Present received!
@@ -1542,7 +1543,7 @@ $x088E78A4 Memory Stick	1 not found.
 !x089328E8 No playlists have been created yet.
 !x08932914 Would you like to create a playlist?
 !x08932974 There are currently no playlists saved.
-!x08932A08 Playlist is full: take items off to add more. (*)a
+!x08932A08 Playlist is full: take items off to add more.
 
 !x08932A3C The maximum number of
 !x08932A68 playlists has been reached.
@@ -1591,15 +1592,15 @@ $x088E78A4 Memory Stick	1 not found.
 !x0893D444 No playlists have been created yet.
 !x0893D470 Would you like to create a playlist?
 !x0893D4D0 There are no playlists saved, at the moment.
-!x0893D564 Playlist is full: take items off to add more.(*)b
+!x0893D564 Playlist is full: take items off to add more.
 !x0893D598 The maximum number of
 !x0893D5C4 playlists has been reached.
 !x0893D600 Additional content 
 !x0893D62C could not be loaded.
-!x0893D668 Import Data (*)1
-!x0893D694 could not be loaded. (*)1
-!x0893D6C0 Import in the Options screen(*)1
-!x0893D6EC Please go.(*)1
+!x0893D668 The DLC data
+!x0893D694 could not be loaded.
+!x0893D6C0 Please import it from
+!x0893D6EC the "Options" menu.
 
 # DIVA room (date/clock and quantity texts)
 
@@ -1649,6 +1650,31 @@ $x08940A80 Return to the DIVA room.
 
 #!x0891C0D4 .mp3
 
+# Savedata import messages
+
+!x089512A0 ●引継ぎ特典
+!x089512B4 　DIVAポイントが%d追加されます
+!x089512F0 　ルームアイテム「%s」が追加されます
+
+!x0895132C ○ボタンを押すと引継ぎを行います。
+!x0895134C 引継ぎを行わない場合は、×ボタンを押してください。
+!x08951384 ※引継ぎは後から、オプション画面で行うこともできます。
+
+!x08951B88 本ゲームはオートセーブに対応しています。
+!x08951B9C オートセーブ機能をONに設定しますか？
+
+!x08951BC4 ※設定は後から『オプション』画面で変更することができます。
+!x08953C40 ※設定は後から『オプション』画面で変更することができます。
+!x08951BD8 ※エディットモードはオートセーブに対応していません。
+
+!x08951C6C 記録メディアに%dKB以上の空き容量が必要です。
+!x08951CE0 オートセーブをONに設定して、“システムデータ”を作成します。
+!x08951D0C “システムデータ”を作成するためには、
+!x08951D40 ※オートセーブ中にはメモリースティック	1アクセスランプが
+
+!x08951D54 点滅しますので、その間は記録メディアを抜いたり、
+!x08951D68 本体の電源を切ったりしないでください。
+
 # (PD2nd savedata detection)
 
 !x089522F0 You may import system data (save files) from
@@ -1667,14 +1693,14 @@ $x08940A80 Return to the DIVA room.
 !x0895269C ●Rooms, Room Themes, and Room Items purchased
 !x089526D8 ●Deployed Room Items will be added to your inventory
 !x089526F8  (up to 9 of each in total) instead of staying deployed.
-!x08952718 ●Characters' individual room layouts will carry over.
-!x08952738 ●Characters' set Room Themes do not carry over.
+!x08952718 ●Character's individual room layouts will carry over.
+!x08952738 ●Character's set Room Themes do not carry over.
 
 !x08952948 ●The following Play Records will carry over:
 !x08952968 　DIVA Point total
-!x08952988 　Gifts in inventory (*) needs verification
+!x08952988 　Gifts in inventory
 !x089529A8 　Extra Play information
-!x089529C8 　Total Number of gifts given (*) needs verification
+!x089529C8 　Total Number of gifts given
 !x089529E8 　Friend Information
 !x08952A08 　Current Friend Profiles (up to 50 of them)
 
@@ -1717,9 +1743,9 @@ $x08940A80 Return to the DIVA room.
 !x0898E9C0 Help items
 !x0898FFEC Extras
 !x08990150 Could not be loaded.
-!x08990164 The import data (*)2
-!x08990188 Please import from (*)2
-!x0899019C the "Options" menu. (*)2
+!x08990164 The DLC data
+!x08990188 Please import it from
+!x0899019C the "Options" menu.
 !x089901B8 Adittional data
 !x08990318 No
 
@@ -1847,12 +1873,12 @@ $x08940A80 Return to the DIVA room.
 0x08D26FC8 Saving failed.
 0x08D26FDC Saving failed.
 0x08D26FE4 Saving failed.
-0x08D26FC4 Memory Stick	1 not found. (*)1
+0x08D26FC4 Memory Stick	1 not found. (*)
 0x08D26FCC No system data found on Memory Stick	1.
 0x08D26FD0 There are different Memory Stick	1s. (*)
 0x08D26FD4 Do you want to overwrite this media record? (*)
 0x08D26FD8 Cancel the save?
-0x08D26FE0 Memory Stick	1 not found. (*)2
+0x08D26FE0 Memory Stick	1 not found. (**)
 0x08D26FE8 There is not enough space
 0x08D26FEC on the Memory Stick	1.
 0x08D26FF0 To save the space (*)
@@ -3691,10 +3717,10 @@ $x08940A80 Return to the DIVA room.
 ### EDIT MODE ###
 
 0x08C36B58 Apply settings?
-0x08C36B64 Delete the selected item. (*)pff
+0x08C36B64 Delete the selected item. (*)
 0x08C36B68 Are you sure?
 0x08C36B74 Are you sure?
-0x08C36B70 Delete the selected item. (*)pff2
+0x08C36B70 Delete the selected item. (**)
 
 # edit mode (character submenu)
 
@@ -3789,10 +3815,10 @@ $x08940A80 Return to the DIVA room.
 0x08C38A08 Kocchi Muite Baby
 0x08C38A18 Yellow
 0x08C38A28 Colorful x Melody
-0x08C38A38 Hatsune Miku no Gekishou (Singing Passion)
-0x08C38A48 Roshin Yuukai (Meltdown)
+0x08C38A38 Hatsune Miku no Gekishou
+0x08C38A48 Roshin Yuukai
 0x08C38A58 Just Be Friends
-0x08C38A68 Hatsune Miku no Shoushitsu (Disappearance)
+0x08C38A68 Hatsune Miku no Shoushitsu
 0x08C38A78 StargazeR
 0x08C38A88 Kogane no Seiya Sousetsu ni Kuchite
 0x08C38A98 Migikata no Chou -39's Giving Day Ed.-
@@ -3885,26 +3911,26 @@ $x08940A80 Return to the DIVA room.
 0x08C40990 [Med.] Right-Front (Up)
 0x08C409E8 [Med.] Left-Back (Up)
 0x08C40A40 [Med.] Right-Back (Up)
-0x08C40A98 [Ａ] [Near] Front
-0x08C40AF0 [Ａ] [Near] Left Side
-0x08C40B48 [Ａ] [Near] Right Side
-0x08C40BA0 [Ａ] [Near] Left-Front (Down)
-0x08C40BF8 [Ａ] [Near] Right-Front (Down)
-0x08C40C50 [Ａ] [Med.] Front
-0x08C40CA8 [Ａ] [Med.] Left-Front (Up)
-0x08C40D00 [Ａ] [Med.] Right-Front (Up)
-0x08C40D58 [Ａ] [Med.] Left-Back (Up)
-0x08C40DB0 [Ａ] [Med.] Right-Back (Up)
-0x08C40E08 [Ｂ] [Near] Front
-0x08C40E60 [Ｂ] [Near] Left Side
-0x08C40EB8 [Ｂ] [Near] Right Side
-0x08C40F10 [Ｂ] [Near] Left-Front (Down)
-0x08C40F68 [Ｂ] [Near] Right-Front (Down)
-0x08C40FC0 [Ｂ] [Med.] Front
-0x08C41018 [Ｂ] [Med.] Left-Front (Up)
-0x08C41070 [Ｂ] [Med.] Right-Front (Up)
-0x08C410C8 [Ｂ] [Med.] Left-Back (Up)
-0x08C41120 [Ｂ] [Med.] Right-Back (Up)
+0x08C40A98 [A][Near] Front
+0x08C40AF0 [A][Near] Left Side
+0x08C40B48 [A][Near] Right Side
+0x08C40BA0 [A][Near] Left-Front (Down)
+0x08C40BF8 [A][Near] Right-Front (Down)
+0x08C40C50 [A][Med.] Front
+0x08C40CA8 [A][Med.] Left-Front (Up)
+0x08C40D00 [A][Med.] Right-Front (Up)
+0x08C40D58 [A][Med.] Left-Back (Up)
+0x08C40DB0 [A][Med.] Right-Back (Up)
+0x08C40E08 [B][Near] Front
+0x08C40E60 [B][Near] Left Side
+0x08C40EB8 [B][Near] Right Side
+0x08C40F10 [B][Near] Left-Front (Down)
+0x08C40F68 [B][Near] Right-Front (Down)
+0x08C40FC0 [B][Med.] Front
+0x08C41018 [B][Med.] Left-Front (Up)
+0x08C41070 [B][Med.] Right-Front (Up)
+0x08C410C8 [B][Med.] Left-Back (Up)
+0x08C41120 [B][Med.] Right-Back (Up)
 
 # Edit mode: Camera -> camera presets (moving)
 
@@ -4126,27 +4152,27 @@ $x08940A80 Return to the DIVA room.
 
 0x08C440A0 Change the volume of the
 0x08C440A4 MP3 songs and PV BGM
-0x08C440A8 in the game
+0x08C440A8 in-game.
 
 0x08C440B0 Change the volume of
-0x08C440B4 the system BGM
+0x08C440B4 the system BGM.
 
 0x08C440C0 Change the volume of the
-0x08C440C4 SE in the game
+0x08C440C4 SE in-game.
 
 0x08C440D0 Change the autosave
-0x08C440D4 settings
+0x08C440D4 settings.
 
 0x08C440E0 Enable the loading of
 0x08C440E4 the Installation
-0x08C440E8 data
+0x08C440E8 data.
 
 0x08C440F0 Import additional data
 0x08C440F4 that you have selected
-0x08C440F8 as extra content
+0x08C440F8 as extra content.
 
 0x08C44100 Import previous save data
-0x08C44104 from Project Diva 2nd
+0x08C44104 from Project Diva 2nd.
 
 # Free play misc strings
 
