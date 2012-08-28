@@ -13,12 +13,13 @@
 #             to patch the lower address
 #
 # EBOOT reversing and translation: codestation
+# EBOOT Translation: Nightsail
 # EBOOT reversing helper: Sonic DX
-# translation helpers: HeroKing, naki-the-curious, kienono, Loserbait, nipah, Nightsail
+# translation helpers: HeroKing, naki-the-curious, kienono, Loserbait, nipah, Suyo, Steven
 
 # Options: Data import
 
-!x0881562C Rhythm Game PV
+!x0881562C Rhythm Game PVs
 !x08815640 Modules
 !x08815654 Room Themes
 !x08815668 Room Items (floor)
@@ -32,17 +33,18 @@
 
 # Options: Data import menu descriptions
 
-!x0881590C Would you like to import the additional data
-!x08815920 inside the selected category as Extra content?
+!x0881590C Would you like to import the DLC in the
+!x08815920 selected category as Extra content?
 
-!x08815B10 Importing additional content completed.
-!x08815B24 Displaying the list of imported data.
-!x08815C68 List of Imported Data
-!x08815EB8 Could not read the additional content.
-!x08816044 Finish importing data and return to the Home screen?
+!x08815B10 The DLC import has completed.
+!x08815B24 Displaying the list of imported DLC.
 
-!x088162F0 Accessing Memory Stick	1 to
-!x08816304 check for additional content.
+!x08815C68 List of Imported DLC
+!x08815EB8 Could not read the DLC content.
+!x08816044 Finish importing DLC and return to the Home menu?
+
+!x088162F0 Accessing Memory Stick	1
+!x08816304 to check for your DLC.
 !x08816318 Do not remove the Memory Stick	1.
 
 # Vocaloids
@@ -84,8 +86,8 @@
 
 # Play records exit (confirm message)
 
-!x0882A4D4 Finish checking the records
-!x0882A4F8 and return to home?
+!x0882A4D4 Finish checking your play
+!x0882A4F8 records and return to Home?
 
 # Play Records
 
@@ -127,9 +129,9 @@
 
 # Profile info message
 
-!x0882EFE0 Check your profile
-!x0882EFF4 settings so you can
-!x0882F008 send it via Ad-Hoc.
+!x0882EFE0 Check what your profile will
+!x0882EFF4 look like when you send it
+!x0882F008 via Ad-Hoc to other players.
 
 # Profile menu right panel
 
@@ -167,34 +169,40 @@
 
 !x0883176C Thumbnail selection
 
-# Play records: Friends (uncomment after translate)
+# Play records: Friends
 
 #!x08831DB0 %02d：%s
 #!x088324C0 ---/---
 #!x08832520  %02d/%02d
 #!x0883253C ---/%02d
-#!x088329E4 フレンドプロフィール
-#!x088334BC フレンド総合プレイ情報
-#!x088340B8 フレンド保護
-#!x08834134 保護設定を解除しますか？
-#!x08834158 保護設定を解除すると、
-#!x0883417C リストの規定人数を超えた場合に
-#!x088341A0 自動でリストから削除されます。
-#!x088341F0 フレンドは１０人までしか
-#!x08834214 保護設定できません。
-#!x08834238 既に設定されているフレンドの
-#!x0883425C 保護設定を解除して下さい。
-#!x0883429C 「%02d:%s」の
-#!x088342E0 プロフィール情報を保護設定しますか？
-#!x08834304 保護設定することで、リストの規定人数を
-#!x08834328 超えた場合でも自動削除されなくなります。
-#!x08834648 フレンド削除
-#!x088346BC 保護設定されているため
-#!x088346E0 削除することができません。
-#!x08834704 削除する場合は保護設定を
-#!x08834728 解除してください
-#!x08834788 「%02d:%s」を
-#!x088347CC Remove from Friends List?
+!x088329E4 Friend Profile
+!x088334BC Friend General Play Info
+!x088340B8 Friend Profile Protection
+
+!x08834134 Remove the protection setting?  If an
+!x08834158 entry is not protected, adding more
+!x0883417C entries than the list can hold may 
+!x088341A0 automatically remove it from the list.
+
+!x088341F0 Friend only up to 10 people
+!x08834214 Protection can't be set.
+!x08834238 Please remove the protection settings
+!x0883425C from other friend profiles first.
+
+!x0883429C %02d:%s
+!x088342E0 Protect this profile? If protection is
+!x08834304 set, it won't be automatically deleted
+!x08834328 when the friends list gets too full.
+
+!x08834648 Remove Friend
+
+!x088346BC This profile is protected, therefore
+!x088346E0 it can't be deleted.  Please cancel
+!x08834704 its Protected status and try again,
+!x08834728 if you really want to remove it.
+
+!x08834788 %02d:%s
+!x088347CC Remove from Friends List?
 #!x088353E4 %02d/%02d
 #!x0883589C %02d/%02d
 
@@ -229,7 +237,7 @@
 
 # Shop messages
 
-!x08838D38 Exit the shop and return to home?
+!x08838D38 Exit the shop and return to Home?
 !x088390AC New items
 !x088390D0 are available to purchase.
 !x08839CAC Not enough DIVA points.
@@ -251,12 +259,12 @@
 
 # Autosave message (credits)
 
-!x08845B50 This game supports auto-save feature.
-!x08845B64 Do not remove the storage media or power off the
-!x08845B78 unit while the Memory Stick	1 LED is blinking.
-!x08845B8C PD extend patch 2012/08/18   -codestation/Nightsail
+!x08845B50 This game supports auto-saving during play.  Do not remove
+!x08845B64 the Memory Stick	1 or power off the unit while the access
+!x08845B78 indicator LED is blinking.
+!x08845B8C PD Extend patch 2012/08/27         -codestation/Nightsail
 
-### EDIT MODE ### (max menu entry lenght: 25)
+### EDIT MODE ### (max menu entry length: 25)
 
 !x08847268 Character
 !x0884A8F0 Character
@@ -319,10 +327,10 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x0884D790 Hide
 !x0884DBCC Hide
 !x0884D36C Auto-Blink
-!x0885D214 Yes, Interpolation ON
 !x0884D384 Stay Open
-!x0885D22C No, Interpolation OFF
 !x0884D398 Stay Closed
+!x0885D214 Yes, Interpolation ON
+!x0885D22C No, Interpolation OFF
 !x08852B4C Placement
 !x088569C8 Placement
 !x08858EF4 Placement
@@ -335,20 +343,18 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 
 !x0887E260 Mode selection
 !x0887E2B4 Start from scratch
-!x0887E2C8 Continue edit
+!x0887E2C8 Continue an Edit Data
 !x0887E2DC Convert PD 2nd data
 !x0887E2F0 Convert PD 1st data
-!x0887E318 Additional content check
-!x088819F4 Additional content check
-!x0887E32C Back to home
+!x0887E318 Verify DLC used
+!x088819F4 Verify DLC used
+!x0887E32C Back to Home
 
 !x0887E8D4 Exit the Edit mode
-!x0887E900 and return to home?
+!x0887E900 and return to Home?
 !x0887E92C Are you sure?
-# CHECK THIS ONE
-!x0889F798 Are you sure?
 
-!x0887EB5C Convert Edit data from "Project Diva 2nd"
+!x0887EB5C Convert Edit Data from "Project Diva 2nd"
 !x0887EBC8 Data conversion
 !x0887F268 Data conversion
 !x0887FD38 Data conversion
@@ -357,32 +363,32 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 # convert from PD 2nd
 
 !x0887EC54 By converting the Edit Data from
-!x0887EC68 "Hatsune Miku -Project Diva- 2nd",
-!x0887EC7C it will make it possible to edit that data
-!x0887EC90 in "Hatsune Miku -Project Diva- Extend".
+!x0887EC68 "Hatsune Miku -Project Diva- 2nd", it
+!x0887EC7C will make it possible to edit that data in
+!x0887EC90 "Hatsune Miku -Project Diva- Extend".
 !x0887ECA4 Would you like to convert Data from "2nd"?
 
 # convert from PD 1st
 
 !x0887FDC4 By converting the Edit Data from
-!x0887FDD8 "Hatsune Miku -Project Diva-",
-!x0887FDEC it will make it possible to edit that data
-!x0887FE00 in "Hatsune Miku -Project Diva- Extend".
+!x0887FDD8 "Hatsune Miku -Project Diva-", it will
+!x0887FDEC make it possible to edit that data in
+!x0887FE00 "Hatsune Miku -Project Diva- Extend".
 !x0887FE14 Would you like to convert Data from "1st"?
 
 # other
 
-!x0887F350 Converting Edit data.....
-!x08880678 Converting Edit data.....
-!x0887F514 Data could not be converted because the
-!x0887F518 space left of the Edit data was negative. (*)
-!x0887F520 Please make sure the space left of the
-!x0887F528 Data is larger than 0 before converting.
-!x0887F6FC Completed converting Edit data.
-!x08880824 Completed converting Edit data.
-!x0887F710 Would you like to save the Edit data?
-!x08880838 Would you like to save the Edit data?
-!x0887FCC8 Convert Edit data from "Project Diva"
+!x0887F350 Converting Edit Data.....
+!x08880678 Converting Edit Data.....
+!x0887F514 Data could not be converted because there
+!x0887F518 is too little space on the Memory Stick	1.
+!x0887F520 Please free more space on the Memory 
+!x0887F528 Stick	1 and try again.
+!x0887F6FC Completed converting Edit Data.
+!x08880824 Completed converting Edit Data.
+!x0887F710 Would you like to save the Edit Data?
+!x08880838 Would you like to save the Edit Data?
+!x0887FCC8 Convert Edit Data from "Project Diva"
 
 !x08881774 Module：%s
 !x08881808 Motion：%s
@@ -391,37 +397,37 @@ $x08847D14 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：   %0.1f)
 !x0888197C Effect：%s
 
 !x08881AC8 Accessing Memory Stick	1 to
-!x08881ADC check for Additional data.
+!x08881ADC check for DLC content.
 !x08881AF0 Do not remove Memory Stick	1.
 
-!x08881ED4 List of missing content
-!x088823A8 All additional content required
-!x088823B0 for this Edit data is present.
-!x0888250C Copying Edit data.
-!x08882520 Edit data copy completed.
+!x08881ED4 List of missing DLC items
+!x088823A8 All DLC items required for
+!x088823B0 this Edit Data is present.
+!x0888250C Copying Edit Data....
+!x08882520 Edit Data copy completed.
 
 # copy edit data message
 
-!x08882638 Edit data from "Hatsune Miku -Project
-!x0888264C DIVA- extend" can be duplicated.
-!x08882660 Do you want to duplicate Edit data?
+!x08882638 Edit Data from "Hatsune Miku -Project
+!x0888264C DIVA- Extend" can be duplicated.
+!x08882660 Do you want to duplicate Edit Data?
 
-!x08882BA8 The Edit data has been loaded.
+!x08882BA8 The Edit Data has been loaded.
 !x08882BBC Please select the destination.
 
-!x08882FB0 Play Edit data with songs from the game.
-!x08882FBC Play Edit data with MP3 songs.
-!x08882FC8 Play Edit data with songs from additional content.
+!x08882FB0 Play Edit Data with songs from the game
+!x08882FBC Play Edit Data with MP3 songs
+!x08882FC8 Play Edit Data with songs from DLC
 
-!x08882FE4 View Edit data with songs from the game.
-!x08882FF0 View Edit data with MP3 songs.
-!x08882FFC View Edit data with songs from additional content.
+!x08882FE4 View Edit Data with songs from the game
+!x08882FF0 View Edit Data with MP3 songs
+!x08882FFC View Edit Data with songs from DLC
 
-^x08882FA8 Create Edit data with in-game music.
-^x08882FDC Create Edit data with in-game music.
-$x08883008 Create Edit data with in-game music.
-!x08883014 Create Edit data with MP3 music.
-!x08883020 Create Edit data with the additional content music.
+^x08882FA8 Create Edit Data with in-game music.
+^x08882FDC Create Edit Data with in-game music.
+$x08883008 Create Edit Data with in-game music.
+!x08883014 Create Edit Data with MP3 music.
+!x08883020 Create Edit Data with DLC content music.
 
 !x08887834 Modify the BPM
 !x08887AD4 Modify the BPM
@@ -469,9 +475,13 @@ $x08883008 Create Edit data with in-game music.
 ^x0889F3E8 Unit
 !x0889F414 Unit
 !x0889F784 Delete the selected item.
-!x0889FD8C The Import Data(*)
-!x0889FDB4 Please import it from
-!x0889FDC8 the "Options" menu.
+!x0889F798 Are you sure?
+
+# Edit: look for DLC module before DLC import
+!x0889FD8C Your DLC could not be
+!x0889FDA0 loaded. Please try importing
+!x0889FDB4 your DLC from the Options
+!x0889FDC8 menu, then try again.
 
 !x088A0344 Targets will be automatically set for the whole
 !x088A0358 song. With a 2/4 time signature, a target is set
@@ -485,7 +495,7 @@ $x08883008 Create Edit data with in-game music.
 !x088A0AB4 Any unsaved changes will be lost.
 !x088A0724 Do you want to proceed?
 !x088A0AE0 Do you want to proceed?
-!x088A0A88 Move to mode selection
+!x088A0A88 Go to Mode selection?
 
 ### EDIT MODE (3rd block) ###
 
@@ -649,9 +659,9 @@ $x08883008 Create Edit data with in-game music.
 !x088B7B10 Rhythm
 0x08C36E54 Rhythm
 
-!x0887E304 Copy Edit data
-0x08C36E60 Copy Edit data
-0x08C36E68 Copy Edit data
+!x0887E304 Copy Edit Data
+0x08C36E60 Copy Edit Data
+0x08C36E68 Copy Edit Data
 
 0x08C36E6C Check duplicates
 
@@ -673,9 +683,9 @@ $x08883008 Create Edit data with in-game music.
 !x088668EC Select module B to be used in the Edit, if any
 !x08866AF8 Select module B to be used in the Edit, if any
 !x088668F8 Select the motions to be used in the Edit
-!x08866B04 Change the motions to be used in the Edit
+!x08866B04 Select the motions to be used in the Edit
 !x08866904 Select the items to be used in the Edit
-!x08866B10 Change the items to be used in the Edit
+!x08866B10 Select the items to be used in the Edit
 !x08866910 Select the backgrounds to be used in the Edit
 !x08866B1C Select the backgrounds to be used in the Edit
 !x0886691C Select the effects to be used in the Edit
@@ -734,9 +744,9 @@ $x08883008 Create Edit data with in-game music.
 !x0889CB74 None
 ^x0889CB38 None
 
-!x0886B5B0 Select up to 10 items to add
-!x0889A068 Select up to 10 items to add
-!x0889B11C Select up to 10 items to add
+!x0886B5B0 Select up to 10 items to use
+!x0889A068 Select up to 10 items to use
+!x0889B11C Select up to 10 items to use
 !x0886C904 Select up to 10 effects to use
 !x0889DFE8 Select up to 10 effects to use
 !x0886D320 Sound：None
@@ -753,11 +763,10 @@ $x08883008 Create Edit data with in-game music.
 !x0886D46C Select the button sound used when playing
 !x0886D89C Select the button sound used when playing
 !x0886D940 Select the button sound used when playing
-!x0886F00C Additional content
+!x0886F00C DLC content
 !x0886F020 could not be loaded.
-!x0889FDA0 could not be loaded.
-!x0886F6DC Save, load and delete the Edit data
-!x0886FA74 Save, load and delete the Edit data
+!x0886F6DC Save, load and delete the Edit Data
+!x0886FA74 Save, load and delete the Edit Data
 !x0886F6E8 Add or change modules, items and backgrounds used in the Edit
 !x0886FA80 Add or change modules, items and backgrounds used in the Edit
 !x0886F6F4 Configure the height of the characters
@@ -766,19 +775,19 @@ $x08883008 Create Edit data with in-game music.
 !x0886FA98 Configure an easy target arrangement
 !x0886F70C Automatically lip-sync to the entered lyrics
 !x0886FAA4 Automatically lip-sync to the entered lyrics
-!x0886F718 Use various commands to delete placed data (*)
-!x0886FAB0 Use various commands to delete placed data (**)
-!x0886F728 Return to the Edit TOP.
-!x0886FABC Return to the Edit TOP.
-!x0886F734 Exit the edit mode and return to mode selection
-!x0886FAC8 Exit the edit mode and return to mode selection
-!x0886F740 Exit the Edit mode and return to home
-!x0886FAD4 Exit the Edit mode and return to home
-!x0887E1B0 Exit the Edit mode and return to home
+!x0886F718 Delete configured target, character, stage, etc data
+!x0886FAB0 Delete configured target, character, stage, etc data
+!x0886F728 Return to the Edit TOP
+!x0886FABC Return to the Edit TOP
+!x0886F734 Exit the Edit mode and return to Mode selection
+!x0886FAC8 Exit the Edit mode and return to Mode selection
+!x0886F740 Exit the Edit mode and return to Home
+!x0886FAD4 Exit the Edit mode and return to Home
+!x0887E1B0 Exit the Edit mode and return to Home
 !x0886F754 Configure the start time of the played song
 !x0886FAE8 Configure the start time of the played song
-!x0886F788 Data
-!x08878D04 Data
+!x0886F788 Data management
+!x08878D04 Data management
 !x0886F7C8 Set the song start time
 !x0886F7DC Scale settings
 !x0887A820 Scale settings
@@ -796,7 +805,7 @@ $x08883008 Create Edit data with in-game music.
 !x08871D00 View from 1 bar ago
 !x08871BB0 Cancel
 !x08871C04 Cancel
-!x08872814 "Edit Mode" is not compatible with auto-save feature.
+!x08872814 Edit mode is not compatible with the auto-save feature.
 !x0887281C Please save your game manually in the system menu.
 !x08873958 Edit mode
 
@@ -808,9 +817,9 @@ $x08883008 Create Edit data with in-game music.
 !x08873C44 Set stage things like cameras, background, lyrics, and effects
 !x08873C80 Set the position of the end of the song on the timeline bar
 
-!x088741C4 Delete these settings for the selected
+!x088741C4 Delete these settings for this
 !x08874200 beat, and leave it empty again?
-!x08874234 Delete the initialization?(*)
+!x08874234 beat, and leave it empty again?
 !x088745AC Target settings copied.  (Can't copy long presses in TOP)
 !x08874638 Character settings copied. (Can't copy eye settings in TOP)
 !x088745FC Stage settings copied. (Can't copy lyrics or camera in TOP)
@@ -824,19 +833,19 @@ $x08883008 Create Edit data with in-game music.
 !x088766B8 Failed to set current position of music playback info.
 !x08876A1C Failed to set current position of music playback info.
 !x08876A14 Memory Stick	1 not found.
-!x088776EC This Edit data uses additional content.
-!x08877730 This Edit data uses additional content.
-!x088777E0 This Edit data uses additional content.
-!x08878278 This Edit data uses additional content.
-!x088788DC This Edit data uses additional content.
-!x08878AD8 This Edit data uses additional content.
-!x08879E00 This Edit data uses additional content.
-!x0887F624 This Edit data uses additional content.
-!x088776F0 Could not read additional content,
-!x0887827C Could not read additional content,
-!x08878ADC Could not read additional content,
-!x08879E04 Could not read additional content,
-!x0887F628 Could not read additional content,
+!x088776EC This Edit Data uses DLC items.
+!x08877730 This Edit Data uses DLC items.
+!x088777E0 This Edit Data uses DLC items.
+!x08878278 This Edit Data uses DLC items.
+!x088788DC This Edit Data uses DLC items.
+!x08878AD8 This Edit Data uses DLC items.
+!x08879E00 This Edit Data uses DLC items.
+!x0887F624 This Edit Data uses DLC items.
+!x088776F0 DLC used is not present, or not imported,
+!x0887827C DLC used is not present, or not imported,
+!x08878ADC DLC used is not present, or not imported,
+!x08879E04 DLC used is not present, or not imported,
+!x0887F628 DLC used is not present, or not imported,
 !x088776F4 so a substitution was made.
 !x08878280 so a substitution was made.
 !x08878AE0 so a substitution was made.
@@ -846,27 +855,27 @@ $x08883008 Create Edit data with in-game music.
 !x08878AE4 Please note that when you save this Edit
 !x08879E0C Please note that when you save this Edit
 !x0887F630 Please note that when you save this Edit
-!x08877700 data, the substitutions will also be saved.
-!x08878AEC data, the substitutions will also be saved.
-!x08879E14 data, the substitutions will also be saved.
-!x0887F638 data, the substitutions will also be saved.
+!x08877700 Data, all substitutions will also be saved.
+!x08878AEC Data, all substitutions will also be saved.
+!x08879E14 Data, all substitutions will also be saved.
+!x0887F638 Data, all substitutions will also be saved.
 !x08877734 Could not load the music data.
 !x088777E8 Could not load the music data.
 !x08877740 Return to Edit mode selection screen.
-!x08877814 Return to Edit mode data load screen.
+!x08877814 Return to Edit mode Data load screen.
 !x08877864 Return to system menu.
-!x08878284 Please use Verify Additional Data in Edit mode
-!x0887828C to determine what extra content is missng.
-!x088788E0 Could not load the additional content.
+!x08878284 Please use "Verify DLC used" in the Mode
+!x0887828C selection to determine what DLC is missing.
+!x088788E0 Could not load DLC.
 !x088788E4 Please check your DLC files, and use
-!x088788E8 "Import additional content" to import them.
-!x088788F0 If you load this Edit data anyway, the missing
-!x088788B4 DLC data will be replaced.  Continue?
-!x08878C5C Save your edited creation.
-!x08878C68 Load edited creation.
-!x08878C74 Delete data.
-!x08878C80 Enter song title.
-!x08878C98 Add title to already created song data.
+!x088788E8 "Import DLC items" to import them.
+!x088788F0 If you load this Edit Data anyway, the missing
+!x088788B4 DLC items will be replaced.  Continue?
+!x08878C5C Save your Edit Data
+!x08878C68 Load Edit Data
+!x08878C74 Delete saved game data and Edit Data
+!x08878C80 Specify the song title for the current Edit Data
+!x08878C98 Specify the name of the current Edit Data
 !x08878D54 Save
 !x08878D80 Load
 !x08878DAC Delete Data
@@ -874,8 +883,8 @@ $x08883008 Create Edit data with in-game music.
 !x08879100 Song name
 !x08878E04 Edit name
 !x088791A8 Edit name
-^x088791C0 (Untitled Edit data)
-$x088791F8 (Untitled Edit data)
+^x088791C0 (Untitled Edit Data)
+$x088791F8 (Untitled Edit Data)
 !x0887A74C Scale characters to their individual sizes
 !x0887A75C Do not scale characters to their individual sizes
 !x0887AB24 Set lip movements: module A
@@ -896,12 +905,12 @@ $x088791F8 (Untitled Edit data)
 
 # Edit mode: System -> automatic lip input message
 
-!x0887AF2C Enter beats for the lyrics to auto-
-!x0887AF58 set lip sync.  Previously-set beats
-!x0887AF84 will not affect lip sync.  If you run
-!x0887AFB0 out of room, input will be cut off
-!x0887AFDC in the middle.  Do you want to start
-!x0887B008 the automatic lip-sync input? (*)
+!x0887AF2C This will overwrite previous lip data
+!x0887AF58 to automatically sync lip movements
+!x0887AF84 by beat to the entered lyrics.  If you
+!x0887AFB0 run out of room, synchronization will
+!x0887AFDC end prematurely.  Do you want to
+!x0887B008 start the automatic lip-sync input?
 
 !x0887B254 Automatic lip-sync started.
 !x0887B3B0 Automatic lip-sync completed.
@@ -915,19 +924,19 @@ $x088791F8 (Untitled Edit data)
 !x0887B870 Delete background data
 !x0887B87C Delete effect data
 !x0887B888 Delete lyric data
-!x0887B894 Delete both characters' data
-!x0887B8A0 Delete character A's data
-!x0887B8AC Delete character B's data
+!x0887B894 Delete both characters' data (motions, items, expressions, etc)
+!x0887B8A0 Delete character A's data (motions, items, expressions, etc)
+!x0887B8AC Delete character B's data (motions, items, expressions, etc)
 
-0x08C36F74 Delete all character data.
+0x08C36F74 Delete all character data
 0x08C36F78 Delete character positioning data
 0x08C36F7C Delete motion data
 0x08C36F80 Delete item data
-0x08C36F84 Delete face expression data
+0x08C36F84 Delete facial expression data
 0x08C36F88 Delete blush-mark data
-0x08C36F8C Delete lip data
-0x08C36F90 Delete eye data
-0x08C36F94 Delete eyes' looking-at data
+0x08C36F8C Delete lip synchronization data
+0x08C36F90 Delete eyes' looking at data
+0x08C36F94 Delete eyes' blink setting data
 0x08C36F98 Delete model visibility data
 0x08C36F9C Delete shadow display data
 
@@ -952,12 +961,12 @@ $x088791F8 (Untitled Edit data)
 !x0887DF60 Confirm
 !x0887BED8 Deletion can't be undone.
 !x0887C4A0 Deletion can't be undone.
+!x0887C014 Deletion can't be undone.
+!x0887DFF4 Deletion can't be undone.
 !x0887BF04 Are you sure you want to delete it?
 !x0887C040 Are you sure you want to delete it?
 !x0887C4CC Are you sure you want to delete it?
 !x0887E020 Are you sure you want to delete it?
-!x0887C014 Deletion can't be undone.
-!x0887DFF4 Deletion can't be undone.
 !x0887C228 Command selection
 !x0887D268 Command selection
 !x0887D2B4 Command selection
@@ -966,7 +975,7 @@ $x088791F8 (Untitled Edit data)
 !x0887C2BC Background
 !x0887C2E8 Effects
 !x0887C314 Lyrics
-!x0887C774 Deleting data…
+!x0887C774 Deleting data...
 !x0887D00C Data deletion complete.
 !x0887D254 Both modules
 !x0887D378 Character placement
@@ -979,13 +988,13 @@ $x088791F8 (Untitled Edit data)
 !x0887D4AC Eye blink
 !x0887D4D8 Model display
 !x0887D504 Shadow
-!x0887E168 Create a new Edit data
-!x0887E174 Continue editing a saved Edit data
-!x0887E180 Convert Edit data from "-Project DIVA- 2nd"
-!x0887E18C Convert Edit data from "-Project DIVA-"
-!x0887E198 Create copies of your Edit data
-!x0887E1A4 Check for additional content missing in the Edit data
-!x08881A34 Check for additional content missing in the Edit data
+!x0887E168 Create new Edit Data
+!x0887E174 Continue editing saved Edit Data
+!x0887E180 Convert Edit Data from "-Project DIVA- 2nd"
+!x0887E18C Convert Edit Data from "-Project DIVA-"
+!x0887E198 Create copies of your Edit Data
+!x0887E1A4 Check if any DLC used in the Edit Data is missing
+!x08881A34 Check if any DLC used in the Edit Data is missing
 
 # Edit mode: rhythm options
 
@@ -1011,10 +1020,10 @@ $x088791F8 (Untitled Edit data)
 !x088B9034 Tempo %7d/4
 !x088B6A04 Change the BPM and beat number
 !x088B6B4C Change the BPM and beat number
-!x088B6A10 Put landmarks in the specified position with the ○ button
-!x088B6B58 Put landmarks in the specified position with the ○ button
-!x088B6A1C Place markers according to the song and beat number
-!x088B6B64 Place markers according to the song and beat number
+!x088B6A10 Place markers manually with the ○ button
+!x088B6B58 Place markers manually with the ○ button
+!x088B6A1C Place markers in real-time to the song's playback
+!x088B6B64 Place markers in real-time to the song's playback
 !x088B6F58 Confirm
 !x088B70CC Change the tempo of the song
 !x088B8A78 Change the tempo of the song
@@ -1028,12 +1037,18 @@ $x088791F8 (Untitled Edit data)
 !x088B7B30 Press ○ to place markers and change their colors on the beats
 !x088B8A84 Set the number of beats in one bar
 !x088B8A90 Save these BPM settings at the current measure
-!x088B970C If you change the BMP, now-excess targets
+
+!x088B970C If you change the BPM, now-excess targets
 !x088B9720 may be deleted.  Are you sure you want to?
+
 !x088BA838 Erase previously-set markers
-!x088BA84C to begin real-time input?
+!x088BA84C and begin real-time input?
 !x088BA860 If BPM is not correct, music and
 !x088BA874 markers may not be in sync.
+
+!x088F5F88 Only the markers you've created so far will be saved.
+!x088F5F5C Only the targets you've created so far will be saved.
+!x088F5F48 Are you sure you want to stop now?
 
 # Edit mode: face expressions
 
@@ -1051,11 +1066,12 @@ $x088791F8 (Untitled Edit data)
 0x08C31328 Clear face
 0x08C3132C Smile
 0x08C31330 Glance
-0x08C31334 Drool?
+# This doesn't seem to be in the list; commenting it out....
+# 0x08C31334 Drool?
 0x08C31338 Crisp
 0x08C3133C Vacant
 0x08C31340 Thinking
-0x08C31344 Painful
+0x08C31344 Pained
 0x08C31348 Healthy
 0x08C3134C Motivated
 0x08C31350 Normal
@@ -1063,15 +1079,15 @@ $x088791F8 (Untitled Edit data)
 
 # Edit mode -> lips
 
+!x08823EE0 Normal
 !x08823E80 A
 !x08823E8C I
 !x08823E98 U・O
+!x08823EBC E・Surprise
 !x08823EA4 Laughter
 !x08823EB0 Anger
-!x08823EBC Surprise
 !x08823EC8 Smirk
 !x08823ED4 Phew! (tiny open)
-!x08823EE0 Normal
 
 # Edit mode: stage submenu
 
@@ -1245,8 +1261,8 @@ $x088CB958 Sample lyrics
 !x088D27C4 %3d Bar %1.1f Beat ～ %3d Bar %1.1f Beat (Beats：%0.1f)
 !x088D1970 From the start
 !x088D1984 From this point
-!x088D1A5C Enter 2 markers in small steps, in real-time. (1)
-!x088D1B10 Enter 2 markers in small steps, in real-time. (2)
+!x088D1A5C Enter 2 markers in small steps, in real-time. (*)
+!x088D1B10 Enter 2 markers in small steps, in real-time. (**)
 !x088D1B1C Enter targets in real-time from the current position
 !x088D1F9C Set the starting position of Chance Time
 !x088D9384 Set the starting position of Chance Time
@@ -1266,7 +1282,7 @@ $x088CB958 Sample lyrics
 !x088D7D14  [Preset %d]
 
 !x088D9094 Erase previously-set targets
-!x088D90A8 to begin real-time input?
+!x088D90A8 and begin real-time input?
 !x088D90BC If BPM is not correct, music and
 !x088D90D0 targets may not be in sync.
 
@@ -1274,9 +1290,9 @@ $x088CB958 Sample lyrics
 
 # Rhythm Game default message
 
-!x088E0F4C Set the default character
-!x088E0F58 This setting is automatically disabled
-!x088E0F64 when you play a rhythm game.
+!x088E0F4C Use the song's default characters?
+!x088E0F58 This setting is automatically turned
+!x088E0F64 off after you play a rhythm game.
 
 # Free play confirm messages
 
@@ -1309,15 +1325,15 @@ $x088CB958 Sample lyrics
 
 # Room entering messages
 
-!x088E5428 Go to Miku's room.
-!x088E5434 Go to Rin's room.
-!x088E5440 Go to Len's room.
-!x088E544C Go to Luka's room.
-!x088E5458 Go to Kaito's room.
-!x088E5464 Go to Meiko's room.
-!x088E5470 Go to Neru's room.
-!x088E5480 Go to Haku's room.
-!x088E5490 Go to S. Meiko's room.
+!x088E5428 Go to Miku's room?
+!x088E5434 Go to Rin's room?
+!x088E5440 Go to Len's room?
+!x088E544C Go to Luka's room?
+!x088E5458 Go to Kaito's room?
+!x088E5464 Go to Meiko's room?
+!x088E5470 Go to Neru's room?
+!x088E5480 Go to Haku's room?
+!x088E5490 Go to S. Meiko's room?
 
 # Edit mode menu
 
@@ -1327,22 +1343,22 @@ $x088CB958 Sample lyrics
 
 # Edit mode menu confirm
 
-!x088E6060 Go to Edit Mode.
-!x088E6070 Go to Play Edit.
-!x088E6080 Go to Watch Edit.
+!x088E6060 Go to Edit mode?
+!x088E6070 Go to Play Edit?
+!x088E6080 Go to Watch Edit?
 
 # Options menu entries
 
 !x088E6620 Auto Save
 !x088E6668 Installation data
-!x088E69F4 Import additional content
+!x088E69F4 Import DLC items
 !x088E6A04 Import previous savedata
 
-!x088E6E88 Perform additional data import.
+!x088E6E88 Import DLC items?
 !x088E6E98 Import savedata from PD 2nd.
 !x088E7284 Auto-save has been turned on.
 
-# Installation data messages
+# Installation data and Auto-Save messages
 
 !x088E729C ※While auto-saving, the
 !x088E72A8 Memory Stick	1 access
@@ -1377,41 +1393,43 @@ $x088E78A4 Memory Stick	1 not found.
 
 # Main menu messages
 
-!x088F18D8 The DLC data
-!x088F18A8 could not be loaded.
-!x088F18E8 Please import it from
-!x088F18F4 the "Options" menu.
-!x088F1964 Additional data
-!x088F1CA4 Acquired title.
+# DLC modules/songs before importing
+!x088F18D8 Your DLC could not be
+!x088F18A8 loaded. Please try importing
+!x088F18E8 your DLC from the Options
+!x088F18F4 menu, then try again.
+
+!x088F1964 DLC
+!x088F1CA4 Title(s) aquired.
 
 # Unlock messages
 
-!x088FBF78 New song have been added to Free Play.
-!x088FBF7C PV has been added to the Music Gallery.
-!x088FBF80 HARD difficulty has been added.
-!x088FBF84 EXTREME difficulty has been added.
-!x088FBF88 New character has been added.
-!x088FBF8C Module has been added to the shop.
+!x088FBF78 New music was added to Free Play.
+!x088FBF7C PV was added to the Music Gallery.
+!x088FBF80 HARD difficulty was added.
+!x088FBF84 EXTREME difficulty was added.
+!x088FBF88 New character was added.
+!x088FBF8C Module was added to the shop.
 !x088FBF90 Room was added to the shop.
-!x088FBF94 Room theme has been added to the shop.
-!x088FBF98 Room item has been added to the shop.
+!x088FBF94 Room theme was added to the shop.
+!x088FBF98 Room item was added to the shop.
 
 # DLC load error messages
 
-!x0891F714 The additional content
-!x0891F728 could not be loaded.
+!x0891F714 The DLC could
+!x0891F728 not be loaded.
 
-!x0891F73C The current module has been
+!x0891F73C The current module was
 !x0891F750 restored to its default.
 
-!x0891F7FC The additional content
-!x0891F810 could not be loaded.
+!x0891F7FC The DLC could
+!x0891F810 not be loaded.
 
 !x0891F824 The default layout of the
-!x0891F838 room has been restored.
+!x0891F838 room was restored.
 
-!x0891F8A0 The additional content
-!x0891F8B4 could not be loaded.
+!x0891F8A0 The DLC could
+!x0891F8B4 not be loaded.
 
 # DIVA room
 
@@ -1447,13 +1465,12 @@ $x088E78A4 Memory Stick	1 not found.
 !x0892560C Return to the DIVA room.
 !x08925730 Please place some items first.
 !x08925818 Remove the items that have already
-!x0892582C been placed and put this item.
+!x0892582C been placed and put this item.(*)
 !x0892587C You cannot place more
 !x08925890 items in this room.
 
-!x0892597C Adittional data
-!x08925990 could not be loaded.
-!x08928960 could not be loaded.
+!x0892597C DLC(*)A
+!x08925990 could not be loaded. (*)B
 !x08926C44 Remove item (wall)
 !x08926C30 Remove item (shelf)
 !x08926C1C Remove item (floor)
@@ -1465,9 +1482,11 @@ $x088E78A4 Memory Stick	1 not found.
 !x089275D0 Extra Items
 !x089275F4 Room Items
 !x08927600 Extra Items
-!x08928948 The DLC data
-!x08928974 Please import it from
-!x08928988 the "Options" menu.
+
+!x08928948 Your DLC could not be
+!x08928960 loaded. Please try importing
+!x08928974 your DLC from the Options
+!x08928988 menu, then try again.
 
 # Present-giving messages
 
@@ -1476,12 +1495,12 @@ $x088E78A4 Memory Stick	1 not found.
 !x08934978 Item: %s
 !x089349AC will be given.
 !x08934A50 Present received!
-!x08934B4C This gift was placed
+!x08934B4C The gift was placed
 !x08934B60 in their room!
 !x08934BB8 Return to the DIVA room?
 
 !x08928858 Accessing Memory Stick	1 to
-!x0892886C check for additional content.
+!x0892886C check for DLC content.
 !x08928880 Do not remove the Memory Stick	1.
 
 # DIVA room (cont.)
@@ -1495,7 +1514,7 @@ $x088E78A4 Memory Stick	1 not found.
 !x0892B214 Sleep Timer
 !x0892B220 Navigation timer
 !x0892B22C Wake-up timer
-!x0892BC2C Return to home
+!x0892BC2C Return to Home?
 !x0892BC5C Use the %s.
 !x0892BC70 Change the %s.
 !x0892BC80 Give a %s.
@@ -1536,7 +1555,6 @@ $x088E78A4 Memory Stick	1 not found.
 !x08932828 Are you sure?
 
 !x0893285C This playlist will have no music.
-
 !x08932888 Due to the removal of all songs, the
 !x089328B4 playlist will be deleted.  Continue?
 
@@ -1548,7 +1566,7 @@ $x088E78A4 Memory Stick	1 not found.
 !x08932A3C The maximum number of
 !x08932A68 playlists has been reached.
 
-!x08932A9C Additional content 
+!x08932A9C DLC content 
 !x08932AC8 could not be loaded.
 
 # DIVA room (PV menu)
@@ -1591,16 +1609,17 @@ $x088E78A4 Memory Stick	1 not found.
 !x0893D410 playlist will be deleted.  Continue?
 !x0893D444 No playlists have been created yet.
 !x0893D470 Would you like to create a playlist?
-!x0893D4D0 There are no playlists saved, at the moment.
+!x0893D4D0 There are currently no playlists saved.
 !x0893D564 Playlist is full: take items off to add more.
 !x0893D598 The maximum number of
 !x0893D5C4 playlists has been reached.
-!x0893D600 Additional content 
+!x0893D600 DLC
 !x0893D62C could not be loaded.
-!x0893D668 The DLC data
-!x0893D694 could not be loaded.
-!x0893D6C0 Please import it from
-!x0893D6EC the "Options" menu.
+
+!x0893D668 Your DLC could not be
+!x0893D694 loaded. Please try importing
+!x0893D6C0 your DLC from the Options
+!x0893D6EC menu, then try again.
 
 # DIVA room (date/clock and quantity texts)
 
@@ -1631,11 +1650,11 @@ $x088E78A4 Memory Stick	1 not found.
 !x08940A24 An alarm function will sound after
 !x08940A38 the time specified (in minutes).
 
-^x089409D8 Return to the DIVA room.
-$x08940A5C Return to the DIVA room.
+^x089409D8 Return to the DIVA room?
+$x08940A5C Return to the DIVA room?
 
-^x089409E4 Return to the DIVA room.
-$x08940A80 Return to the DIVA room.
+^x089409E4 Return to the DIVA room?
+$x08940A80 Return to the DIVA room?
 
 !x0891A554 Wake-up timer
 !x0891B48C Wake-up timer
@@ -1650,34 +1669,9 @@ $x08940A80 Return to the DIVA room.
 
 #!x0891C0D4 .mp3
 
-# Savedata import messages
-
-!x089512A0 ●引継ぎ特典
-!x089512B4 　DIVAポイントが%d追加されます
-!x089512F0 　ルームアイテム「%s」が追加されます
-
-!x0895132C ○ボタンを押すと引継ぎを行います。
-!x0895134C 引継ぎを行わない場合は、×ボタンを押してください。
-!x08951384 ※引継ぎは後から、オプション画面で行うこともできます。
-
-!x08951B88 本ゲームはオートセーブに対応しています。
-!x08951B9C オートセーブ機能をONに設定しますか？
-
-!x08951BC4 ※設定は後から『オプション』画面で変更することができます。
-!x08953C40 ※設定は後から『オプション』画面で変更することができます。
-!x08951BD8 ※エディットモードはオートセーブに対応していません。
-
-!x08951C6C 記録メディアに%dKB以上の空き容量が必要です。
-!x08951CE0 オートセーブをONに設定して、“システムデータ”を作成します。
-!x08951D0C “システムデータ”を作成するためには、
-!x08951D40 ※オートセーブ中にはメモリースティック	1アクセスランプが
-
-!x08951D54 点滅しますので、その間は記録メディアを抜いたり、
-!x08951D68 本体の電源を切ったりしないでください。
-
 # (PD2nd savedata detection)
 
-!x089522F0 You may import system data (save files) from
+!x089522F0 You may import system data (save files) from 
 !x08952310 "-Project Diva- 2nd" to "-Project Diva- Extend".
 
 !x08952330 If you would like to import system data from the previous
@@ -1688,20 +1682,21 @@ $x08940A80 Return to the DIVA room.
 # PD2nd savedata import info
 
 !x08952638 ●Your total DIVA Points earned in -Project Diva 2nd-
-!x0895264C will carry over.
-!x0895267C ●Purchased and unlocked modules will carry over.
+!x0895264C 　will carry over.
+!x0895267C ●Purchased modules will carry over.
 !x0895269C ●Rooms, Room Themes, and Room Items purchased
+#!x0895264C 　will carry over
 !x089526D8 ●Deployed Room Items will be added to your inventory
-!x089526F8  (up to 9 of each in total) instead of staying deployed.
-!x08952718 ●Character's individual room layouts will carry over.
-!x08952738 ●Character's set Room Themes do not carry over.
+!x089526F8 　(up to 9 of each) instead of staying deployed. (no? recheck)
+!x08952718 ●Characters' individual room layouts will carry over.
+!x08952738 ●Characters' set Room Themes do not carry over. (recheck)
 
 !x08952948 ●The following Play Records will carry over:
 !x08952968 　DIVA Point total
 !x08952988 　Gifts in inventory
 !x089529A8 　Extra Play information
-!x089529C8 　Total Number of gifts given
-!x089529E8 　Friend Information
+!x089529C8 　Total Number of gifts given to each character
+!x089529E8 　Your player profile information
 !x08952A08 　Current Friend Profiles (up to 50 of them)
 
 !x0895304C Cancel importing old save data?
@@ -1709,17 +1704,42 @@ $x08940A80 Return to the DIVA room.
 !x089535BC Please choose a location to save your imported
 !x089535DC system data.  The process will then begin.
 
-!x08953C04 This game is compatible with the Install Data feature.
-!x08953C18 Do you want to set Install Game Data function to ON?
-!x08953C2C This can be changed in the Options settings later.
+!x089512A0 ●System data import benefits:
+!x089512B4 　%d bonus DIVA Points will be awarded.
+!x089512F0 　%s Room Item will be awarded.
 
-!x08953F54 Install Data could not be found.
-!x08953F68 Game Data Install feature has been set to OFF.
-!x08953F90 Installing the game data can be done through
-!x08953FA4 the Options settings, in-game.
+!x0895132C To import system data now, press ○. To skip importing
+!x0895134C your system data, press ×.  To import it later, you will
+!x08951384 need to start a new game from the title screen.
+
+# Savedata saving/auto-save messages
+
+!x08951B88 This game can use an auto-save function during
+!x08951B9C play.  Would you like to turn auto-save ON?
+!x08951BC4 This can be changed later in the Options menu.
+!x08951BD8 Please note, Edit mode doesn't support auto-save.
+
+!x08951CE0 To use the auto-save feature, system data must be saved.
+!x08951D0C To save your system data to the Memory Stick	1,
+!x08951C6C you will need at least %dKB of free space.
+!x08951D40 While auto-saving, the Memory Stick	1 access LED
+!x08951D54 will blink.  Do not remove the storage media or power
+!x08951D68 off the unit while the LED is on or blinking.
 
 !x08954950 If you don't save the system data, auto-save won't work.
-!x08954964 Proceed with the game with auto-save turned OFF?
+!x08954964 Do you want to play the game with auto-save turned OFF?
+
+# Game Data Install messages
+
+!x08953C04 If part of the game's data has been installed to
+!x08953C18 the Memory Stick	1, the game can load from it.
+!x08953C2C Turn ON the option to load from installed data?
+!x08953C40 This option can be set later in the Options menu.
+
+!x08953F54 -Project Diva- Extend Install Data wasn't found.  The option
+!x08953F68 to load from Installed Game Data will be set to OFF for now.
+!x08953F90 Installing the game's data to the Memory Stick	1 can
+!x08953FA4 be done from the game's title screen at a later time.
 
 !x08957DF4 Part of the game's data can be installed to the
 !x08957E0C Memory Stick	1, reducing game loading times.
@@ -1742,105 +1762,111 @@ $x08940A80 Return to the DIVA room.
 !x0898E47C This song can't be used in Edit mode.
 !x0898E9C0 Help items
 !x0898FFEC Extras
-!x08990150 Could not be loaded.
-!x08990164 The DLC data
-!x08990188 Please import it from
-!x0899019C the "Options" menu.
-!x089901B8 Adittional data
+
+# try using a DLC song before importing it
+!x08990164 Your DLC could not be
+!x08990150 loaded. Please try importing
+!x08990188 your DLC from the Options
+!x0899019C menu, then try again.
+
+!x089901B8 DLC
 !x08990318 No
-
-# Ad-hoc and others
-
-!x089A1074 ルーム%2d
-!x089A1128 ルーム%2d
-!x089A11D8 Edit%02d
-!x089A11FC Prof%02d
-!x089A12C4 データ送信中...
-!x089A137C データ受信中...
-!x089A15D4 ユーザーの入室を確認しました。
-!x089A1608 データを送信しますか？
-!x089A16C8 退室しますか？
-!x089A5888 退室しますか？
-!x089A6AF4 退室しますか？
-!x089A2B5C ホームに戻りますか？
-!x089A2CA4 通信を切断しました。
-!x089A3FF8 通信を切断しました。
-!x089A4140 通信を切断しました。
-!x089A4A6C 通信を切断しました。
-!x089A2CD4 アドホックモードメニューへ戻ります。
-!x089A2D58 アドホックモードメニューへ戻ります。
-!x089A40C0 アドホックモードメニューへ戻ります。
-!x089A4B68 アドホックモードメニューへ戻ります。
-!x089A3590 エディットデータをロードできませんでした
-!x089A3650 エディットデータの送信と一緒に
-!x089A3684 プロフィールの交換を行うことが
-!x089A36B8 できます。
-!x089A36EC ※フレンドが、50人を超えた場合
-!x089A3720 古いデータから上書きされます。
-!x089A3784 プロフィールの交換を行いますか？
-!x089A3918 ルームを検索中です…
-!x089A436C ルームを検索中です…
-!x089A3AB0 使用できるルームが見つかりませんでした
-!x089A3F74 既に他のユーザーが使用しています
-!x089A3FC8 ルーム接続に問題が発生しました
-!x089A4064 送信側ユーザーがすでに入室しています。
-!x089A4094 ルームに入室出来ないため、通信を切断し
-!x089A4B3C ルームに入室出来ないため、通信を切断し
-!x089A4504 入室できるルームが見つかりませんでした
-!x089A4538 ルームを再検索しますか？
-!x089A4A3C 正常に受信が完了したので
-!x089A4A98 送信側のユーザーが退室しました。
-!x089A4AB4 送信側のユーザーとの接続が切れたので退室します
-!x089A4B0C 受信側ユーザーがすでに入室しています。
-!x089A4CD0 エディットデータの保存
-!x089A4CE4 データの削除
-!x089A4CF8 メニューへ
-!x089A52C8 セーブができませんでした
-!x089A55A0 ルーム番号：%2d
-!x089A670C ルーム番号：%2d
-!x089A6FB8 ルーム番号：%2d
-!x089A55B0 他のユーザーの入室を待っています。
-!x089A6754 他のユーザーの入室を待っています。
-!x089A55D4 エディットデータ送信と一緒に
-!x089A6778 エディットデータ送信と一緒に
-!x089A55E4 プロフィール交換も行います。
-!x089A6788 プロフィール交換も行います。
-!x089A71C0 プロフィール交換も行います。
-!x089A5AEC 通信をチェックしています…
-!x089A5D0C 受信側のユーザーが退室しました。
-!x089A5ED4 データを送信しています…
-!x089A616C データの送信終了処理中です…
-!x089A6240 受信側のユーザーとの接続が切れました
-!x089A6404 データの送信が終了しました
-!x089A6430 ユーザーの退室を待っています…
-!x089A6BB0 送信側ユーザーへリクエストを送信しています。
-!x089A6DD8 このルーム%2d には入室できません
-!x089A6E20 他のユーザーが既に入室しています
-!x089A7134 送信ユーザー：%s さん
-!x089A7158 楽曲名：%s
-!x089A7170 エディット名：%s
-!x089A7188 データの送信を待っています…
-!x089A71A8 エディットデータ受信と一緒に
-!x089A71E0 プロフィールの送信を待っています…
-!x089A7638 データを受信しています…
 
 # Ad Hoc menu
 
-!x089A78F4 Send Edit data
-!x089A7920 Receive Edit data
+!x089A78F4 Send Edit Data
+!x089A7920 Receive Edit Data
 !x089A794C Send Profile
 !x089A7978 Receive Profile
-!x089A79A4 Back to home.
+!x089A79A4 Back to Home menu
 
 !x089A8830 Profile exchanged.
-!x089A8860 To save Friend information
-!x089A888C System data save is required.
+!x089A8860 To save Friend profiles, you
+!x089A888C must save your system data.
 !x089A88F0 Profile exchanged.
+
+# Ad-hoc and others
+
+# Send profile, Edit Data
+!x089A1074 Room%2d
+# Receive profile, Edit Data
+!x089A1128 Room%2d
+!x089A11D8 Edit%02d
+!x089A11FC Prof%02d
+!x089A12C4 Sending…
+!x089A137C Receiving…
+!x089A15D4 User entered the room.
+!x089A1608 Send your data?
+!x089A16C8 Do you want to leave?
+!x089A5888 Do you want to leave?
+!x089A6AF4 Do you want to leave?
+!x089A2B5C Exit Ad-Hoc and return to Home?
+!x089A2CA4 Communication ended.
+!x089A3FF8 Communication ended. 
+!x089A4140 Communication ended. 
+!x089A4A6C Communication ended. 
+!x089A2CD4 Returning to Ad-Hoc mode menu.
+!x089A2D58 Returning to Ad-Hoc mode menu.
+!x089A40C0 Returning to Ad-Hoc mode menu.
+!x089A4B68 Returning to Ad-Hoc mode menu.
+!x089A3590 Could not load the Edit Data.
+!x089A3650 You can send and receive
+!x089A3684 Edit Data and exchange user
+!x089A36B8 profiles. (*)
+!x089A36EC ※ If you have more than 50 friend
+!x089A3720 profiles, old ones may be overwritten.
+!x089A3784 Do you want to replace a profile?
+
+!x089A3918 Searching for rooms…
+!x089A436C Searching for rooms…
+!x089A3AB0 Could not find a room to join.(*)
+!x089A3F74 Detected rooms already in use.(*)
+!x089A3FC8 Problem connecting to room
+!x089A4064 Sending user is already present.
+!x089A4094 Room unavailable. Connection ended.
+!x089A4B3C Room unavailable. Connection ended.
+!x089A4504 Could not find a room to join.
+!x089A4538 Search for a room to join?
+!x089A4A3C Data received. Left the room.
+!x089A4A98 Sending user has left.
+!x089A4AB4 Disconnect from sender because(*)
+!x089A4B0C Receiving user is already present.
+!x089A4CD0 Save this Edit Data
+!x089A4CE4 Delete data
+!x089A4CF8 Go to Ad Hoc menu
+!x089A52C8 Save failed
+!x089A55A0 Room%2d
+!x089A670C Room%2d
+!x089A6FB8 Room%2d
+!x089A55B0 Waiting for a user to enter.
+!x089A6754 Waiting for a user to enter.
+!x089A55D4 You can send Edit Data
+!x089A6778 You can send Edit Data
+!x089A55E4 and exchange profiles.
+!x089A6788 and exchange profiles.
+!x089A71C0 and exchange profiles.
+!x089A5AEC Testing connection…
+!x089A5D0C Receiving user has left.
+!x089A5ED4 Sending data…
+!x089A616C Data transfer finishing…
+!x089A6240 Connection to receiver timed out
+!x089A6404 Data finished sending.
+!x089A6430 Waiting for user to exit…
+!x089A6BB0 Sent request to sending user.
+!x089A6DD8 Cannot enter room %2d
+!x089A6E20 Other users already there(*)
+!x089A7134 Sender：%s
+!x089A7158 Song name：%s
+!x089A7170 Edit name：%s
+!x089A7188 Waiting for Data to be sent…
+!x089A71A8 With Edit Data reception(*)
+!x089A71E0 Waiting for profile to be sent…
+!x089A7638 Receiving data…
 
 # Savedata SFO info
 
-!x089C0E94 初音ミク -Project DIVA- extend
-!x089C1B14 初音ミク -Project DIVA- extend
+!x089C0E94 初音ミク -Project DIVA- Extend
+!x089C1B14 初音ミク -Project DIVA- Extend
 !x089C0F80 Total Time: %3d:%2d:%02d
 0x08D26F50 Failed to play the music.
 0x08D26F5C Failed to play the music.
@@ -1853,17 +1879,17 @@ $x08940A80 Return to the DIVA room.
 0x08D26F68 Music data not found on Memory Stick	1.
 0x08D26F74 Music data not found on Memory Stick	1.
 0x08D26F78 Could not load music,
-0x08D26F7C so failed to play.
+0x08D26F7C so playback failed.
 0x08D26F80 From system menu,
 0x08D26F84 please select a song.
 !x089C1F10 Please enter your message
 !x089C1F68 Please enter your message
 !x089C21F4 Please enter your message
 !x089C224C Please enter your message
-0x08D26F98 初音ミク -Project DIVA- extend's
+0x08D26F98 初音ミク -Project DIVA- Extend's
 0x08D26F9C game data.
 0x08D26FA0 Game Data Install has been interrupted.
-!x089C27A4 初音ミク -Project DIVA- extend
+!x089C27A4 初音ミク -Project DIVA- Extend
 !x089C27E0 Installation Data
 0x08D26FAC System Data
 0x08D26FB0 Edit Data
@@ -1873,12 +1899,12 @@ $x08940A80 Return to the DIVA room.
 0x08D26FC8 Saving failed.
 0x08D26FDC Saving failed.
 0x08D26FE4 Saving failed.
-0x08D26FC4 Memory Stick	1 not found. (*)
+0x08D26FC4 Memory Stick	1 not found. (*)1
 0x08D26FCC No system data found on Memory Stick	1.
 0x08D26FD0 There are different Memory Stick	1s. (*)
 0x08D26FD4 Do you want to overwrite this media record? (*)
 0x08D26FD8 Cancel the save?
-0x08D26FE0 Memory Stick	1 not found. (**)
+0x08D26FE0 Memory Stick	1 not found. (*)2
 0x08D26FE8 There is not enough space
 0x08D26FEC on the Memory Stick	1.
 0x08D26FF0 To save the space (*)
@@ -1886,8 +1912,8 @@ $x08940A80 Return to the DIVA room.
 0x08D26FF8 KB or more is required.
 0x08D26FFC Save aborted.
 0x08D27004 Auto-save was set to OFF.
-!x089C2CF0 初音ミク -Project DIVA- extend
-!x089C3008 初音ミク -Project DIVA- extend
+!x089C2CF0 初音ミク -Project DIVA- Extend
+!x089C3008 初音ミク -Project DIVA- Extend
 !x089C2DB0 Total Time: %3d:%2d:%02d
 
 # DIVA room: Image gallery
@@ -1972,7 +1998,7 @@ $x08940A80 Return to the DIVA room.
 !x0881DD48 Please enter a nickname
 !x0881DD70 Name of your favorite song
 !x0881DD98 Please enter a comment
-!x0881DDC0 Type a note
+!x0881DDC0 (Memo goes here)
 
 # Module list
 
@@ -2364,94 +2390,94 @@ $x08940A80 Return to the DIVA room.
 0x08C30FD8 Searching, and found!
 0x08C30FDC Starting boot camp
 0x08C30FE0 Going～
-0x08C30FE4 Ice cream fight！？1
-0x08C30FE8 Ice cream fight！？2
+0x08C30FE4 Ice cream fight!? 1
+0x08C30FE8 Ice cream fight!? 2
 0x08C30FEC Desired collaboration
 0x08C30FF0 Amazing glamor photo!
-0x08C30FF4 Miku air guitar showdown
+0x08C30FF4 Miku Air-Guitar Battle
 0x08C30FF8 #4, Kaito!
 0x08C30FFC Pitcher Kaito!
 0x08C31000 Room-cleaning attempt
 0x08C31004 Rin teaches dancing
-0x08C31008 女同士で飲みましょう
+0x08C31008 Girls' drink(*)
 0x08C3100C Beauty secrets
-0x08C31010 歌道は一日にしてならず
-0x08C31014 頑張れ歌練習
-0x08C31018 美容と健康のために
-0x08C3101C Meiko's掃除をお手伝い
-0x08C31020 カイトとセッション1
-0x08C31024 たまには飲みたい時もある
-0x08C31028 カイトとスティック振り
-0x08C3102C Miku's 掃除をお手伝い
-0x08C31030 レンとあっち向いてホイ
-0x08C31034 リンとあっち向いてホイ
-0x08C31038 ルカとあっち向いてホイ
-0x08C3103C カイトとあっち向いてホイ
-0x08C31040 メイコとあっち向いてホイ
-0x08C31044 ネルとあっち向いてホイ
-0x08C31048 ハクとあっち向いてホイ
-0x08C3104C 咲音とあっち向いてホイ
-0x08C31050 Let's Rock'N'Roll!
-0x08C31054 振り付けの練習1
-0x08C31058 Luka's 美容体操を伝授1
-0x08C3105C ルカとお茶を楽しむ
-0x08C31060 メイコとお茶を楽しむ
-0x08C31064 リンとスティック振り
-0x08C31068 アイドルダンス伝授
-0x08C3106C エア野球、真剣勝負
-0x08C31070 ルカとエアギター対決
-0x08C31074 レンとエアギター対決
-0x08C31078 ネルとエアギター対決
-0x08C3107C ハクとエアギター対決
-0x08C31080 まったりおしゃべり
-0x08C31084 ゲームで対決
-0x08C31088 Miku's Music School 2
-0x08C3108C お昼寝タイム
-0x08C31090 デュエット実現
-0x08C31094 カッコイイポーズを研究！
-0x08C31098 強烈目覚まし1
-0x08C3109C Luka's 音楽講座
-0x08C310A0 ポーズ、決まってますか？
-0x08C310A4 Rin、Len Air-Guitar Showdown
-0x08C310A8 男のエアギター対決！
-0x08C310AC Miku's Music School 2
-0x08C310B0 Luka's 美容体操を伝授 2
-0x08C310B4 仲良くお昼寝
-0x08C310B8 セクシーポーズ研究中1
-0x08C310BC Rin's 掃除をお手伝い
-0x08C310C0 Let's ロックンロール2
-0x08C310C4 セクシーポーズ研究中2
-0x08C310C8 強烈目覚まし2
-0x08C310CC カイトとエアギター対決
-0x08C310D0 メイコとエアギター対決
-0x08C310D4 カイトとセッション2
-0x08C310D8 Pose… Determined!
-0x08C310DC Pose… No?
-0x08C310E0 Pose… Uuu～
-0x08C310E4 楽しくおしゃべり
-0x08C310E8 元気出して～
-0x08C310EC たまにはケンカも
-0x08C310F0 デュエット練習、いい感じ
-0x08C310F4 デュエット練習、何か違う
-0x08C310F8 メール着信、やったぁ！
-0x08C310FC メール着信、はぁ…
-0x08C31100 メール着信、ムキー！
-0x08C31104 合いの手講座1
-0x08C31108 合いの手講座2
-0x08C3110C 合いの手講座3
-0x08C31110 一気飲み対決！
-0x08C31114 一気飲み対決！？
-0x08C31118 一気飲み対決？
-0x08C3111C 正しい一気飲み講座1
-0x08C31120 正しい一気飲み講座2
-0x08C31124 楽しくメール
-0x08C31128 振り付けの練習2
-0x08C3112C 振り付けの練習3
-0x08C31130 振り付けの練習4
-0x08C31134 シンクロしてみよう1
-0x08C31138 シンクロしてみよう2
-0x08C3113C はい、チーズ！(リン)
-0x08C31140 はい、チーズ！(レン)
+0x08C31010 Poetry wasn't made in a day
+0x08C31014 Persistent singing practice
+0x08C31018 For health and beauty
+0x08C3101C Meiko's cleaning help
+0x08C31020 Kaito jam session 1
+0x08C31024 Sometimes you want a drink(*)
+0x08C31028 Kaito dancing with a stick(*)
+0x08C3102C Miku's cleaning help
+0x08C31030 Len とあっち向いてホイ
+0x08C31034 Rin とあっち向いてホイ
+0x08C31038 Luka とあっち向いてホイ
+0x08C3103C Kaito とあっち向いてホイ
+0x08C31040 Meiko とあっち向いてホイ
+0x08C31044 Neru とあっち向いてホイ
+0x08C31048 Haku とあっち向いてホイ
+0x08C3104C Sakine とあっち向いてホイ
+0x08C31050 Let's Rock'N'Roll! 1
+0x08C31054 Choreography Practice 1
+0x08C31058 Luka's Gymnastics Class 1
+0x08C3105C Luka and enjoy tea (*)
+0x08C31060 Meiko and enjoy tea (*)
+0x08C31064 Rin dancing with a stick (*)
+0x08C31068 Idol Dance instruction
+0x08C3106C Air Baseball、 Seriously!
+0x08C31070 Luka Air-Guitar Battle
+0x08C31074 Len Air-Guitar Battle
+0x08C31078 Neru Air-Guitar Battle
+0x08C3107C Haku Air-Guitar Battle
+0x08C31080 Idle Gossip/Relaxed Chat?
+0x08C31084 Game battle(*)
+0x08C31088 Miku's Music Class 1
+0x08C3108C Nap Time
+0x08C31090 Duet Achieved
+0x08C31094 Awesome Pose Study!
+0x08C31098 Way Outstanding 1(*)
+0x08C3109C Luka's Music Course
+0x08C310A0 Pose、 decided on? (*)
+0x08C310A4 Rin、Len Air-Guitar Battle
+0x08C310A8 Man's Air-Guitar Battle!
+0x08C310AC Miku's Music Class 2
+0x08C310B0 Luka's Gymnastics Class 2
+0x08C310B4 Napping With A Friend
+0x08C310B8 Sexy Pose Research 1
+0x08C310BC Rin's cleaning help
+0x08C310C0 Let's Rock'N'Roll! 2
+0x08C310C4 Sexy Pose Research 2
+0x08C310C8 Way Outstanding 2
+0x08C310CC Kaito Air-Guitar Battle
+0x08C310D0 Meiko Air-Guitar Battle
+0x08C310D4 Kaitoとセッション2
+0x08C310D8 Pose... Determined!
+0x08C310DC Pose... No?
+0x08C310E0 Pose... Uuu～
+0x08C310E4 Fun Conversation
+0x08C310E8 Genki Dashi te～
+0x08C310EC Sometimes even fight(*)
+0x08C310F0 Duet Practice, Felt Good
+0x08C310F4 Duet Practice, Disagreed
+0x08C310F8 Got mail、yattaa!
+0x08C310FC Got mail、haa...
+0x08C31100 Got mail、mukii!
+0x08C31104 Sideshow Course 1
+0x08C31108 Sideshow Course 2
+0x08C3110C Sideshow Course 3
+0x08C31110 Quick-Drinking Contest!
+0x08C31114 Quick-Drinking Contest!?
+0x08C31118 Quick-Drinking Contest?
+0x08C3111C How To Chug Course 1
+0x08C31120 How To Chug Course 2
+0x08C31124 Fun mail
+0x08C31128 Choreography Practice 2
+0x08C3112C Choreography Practice 3
+0x08C31130 Choreography Practice 4
+0x08C31134 Let's Synchronize 1
+0x08C31138 Let's Synchronize 2
+0x08C3113C Yes, Cheese! (Rin)
+0x08C31140 Yes, Cheese! (Len)
 
 # Titles
 
@@ -2536,7 +2562,7 @@ $x08940A80 Return to the DIVA room.
 0x08C3127C DIVA Lover
 0x08C31280 I Love DIVA!
 0x08C31284 DIVA Crazy
-0x08C31288 Now Playing……
+0x08C31288 Now Playing...
 0x08C3128C DIVA Syndrome
 0x08C31290 DIVA Freak
 0x08C31294 God's Zettai Ryouiki
@@ -2562,7 +2588,7 @@ $x08940A80 Return to the DIVA room.
 0x08C312E4 Galleria
 0x08C312E8 Sanctuary
 0x08C312EC Friend Getter
-0x08C312F0 みっくみくにされました
+0x08C312F0 MikkuMiku ni Saremashita 
 0x08C312F4 Clear congrats!
 0x08C312F8 Title Master
 
@@ -2575,7 +2601,7 @@ $x08940A80 Return to the DIVA room.
 0x08C31614 has cleared all songs on
 0x08C31618 EASY.
 
-0x08C3161C itle given to a player who
+0x08C3161C Title given to a player who
 0x08C31620 has cleared all songs on 
 0x08C31624 NORMAL.
 
@@ -3611,8 +3637,8 @@ $x08940A80 Return to the DIVA room.
 0x08C36764 HARD Clear
 0x08C36788 HARD Clear
 
-0x08C333F0 Awarded for importing
-0x08C333F4 the save from PD 2nd.
+0x08C333F0 Awarded for importing a
+0x08C333F4 saved game from PD 2nd.
 
 0x08C33420 *Hello, Planet.
 0x08C337A4 *Hello, Planet.
@@ -3632,7 +3658,6 @@ $x08940A80 Return to the DIVA room.
 0x08C34D70 Migikata no Chou
 0x08C35118 Migikata no Chou
 
-0x08C33D14 A rhythm game with Hatsune Miku
 
 0x08C33D1C Played 20 times
 0x08C33D28 Played 20 times
@@ -3643,6 +3668,7 @@ $x08940A80 Return to the DIVA room.
 0x08C33D64 Played 20 times
 0x08C33D70 Played 20 times
 
+0x08C33D14 A rhythm game with Hatsune Miku
 0x08C33D20 A rhythm game with
 0x08C33D24 Kagamine Rin or Kagamine Len
 0x08C33D2C A rhythm game with Luka Megurine
@@ -3652,7 +3678,7 @@ $x08940A80 Return to the DIVA room.
 0x08C33D5C A rhythm game with Akita Neru
 0x08C33D68 A rhythm game with Sakine Meiko
 
-# Helper item descriptions [shop] (max lenght: 24)
+# Helper item descriptions [shop] (max length: 24)
 
 0x08C33E10 Changes all the SAFE and
 0x08C33E14 WORST into SAFE, but the
@@ -3717,10 +3743,10 @@ $x08940A80 Return to the DIVA room.
 ### EDIT MODE ###
 
 0x08C36B58 Apply settings?
-0x08C36B64 Delete the selected item. (*)
+0x08C36B64 Delete the selection?
 0x08C36B68 Are you sure?
 0x08C36B74 Are you sure?
-0x08C36B70 Delete the selected item. (**)
+0x08C36B70 Delete the selection?
 
 # edit mode (character submenu)
 
@@ -3731,7 +3757,7 @@ $x08940A80 Return to the DIVA room.
 0x08C36B8C Blush-marks
 0x08C36B90 Lip synchronization
 0x08C36B94 Looking at
-0x08C36B98 Eye blinking
+0x08C36B98 Eye blink
 0x08C36B9C Model visibility
 0x08C36BA0 Shadow
 
@@ -3758,23 +3784,23 @@ $x08940A80 Return to the DIVA room.
 # character menu information
 
 0x08C36BF0 Configure the character placement
-0x08C36BF4 Configure the character motion
-0x08C36BF8 Set the items
-0x08C36BFC Set the expression
-0x08C36C00 Show/hide the cheeks' blush-marks
-0x08C36C04 Configure the shape of the mouth
-0x08C36C08 Set where the character is looking
+0x08C36BF4 Configure the character motions
+0x08C36BF8 Configure the items used
+0x08C36BFC Configure the facial expressions
+0x08C36C00 Configure the cheeks' blush-marks
+0x08C36C04 Configure the characters' mouth shape
+0x08C36C08 Configure where the character is looking
 0x08C36C0C Configure the eyes' blinking
-0x08C36C10 Set model visibility
-0x08C36C14 Configure the display of the shadow
+0x08C36C10 Configure character visibility
+0x08C36C14 Configure shadow visibility
 
 0x08C36C20 Select an item for the character to have
-0x08C36C24 Select character facial expression
-0x08C36C28 Show/hide the cheeks' blush-marks
+0x08C36C24 Select character facial expressions
+0x08C36C28 Configure the cheeks' blush-marks
 0x08C36C2C Set the character's mouth shape
 0x08C36C34 Set eye blinking (some expressions disallow this)
-0x08C36C38 Set the character model's visibility
-0x08C36C3C Set the visibility of the shadow
+0x08C36C38 Set the character's visibility
+0x08C36C3C Set the shadow's visibility
 0x08C36C40 Copy, paste, and delete data per beat
 0x08C36C44 %s has been copied.  Press ○ to paste.
 
@@ -3945,26 +3971,26 @@ $x08940A80 Return to the DIVA room.
 0x08C41438 [Far] Right Sky→Left Sky
 0x08C41490 L-Front (Up)→R-Front (Up)
 0x08C414E8 R-Front (Up)→L-Front (Up)
-0x08C41540 [Ａ] [Near] Turn L-Front→R
-0x08C41598 [Ａ] [Near] Turn R-Front→L
-0x08C415F0 [Ａ] [Near] L Side→R Side
-0x08C41648 [Ａ] [Near] R Side→L Side
-0x08C416A0 [Ａ] [Med.] Front Foot→Face
-0x08C416F8 [Ａ] [Med.] F L-High→R-Low
-0x08C41750 [Ａ] [Med.] F R-High→L-Low
-0x08C417A8 [Ａ] [Far] L Sky→R Sky
-0x08C41800 [Ａ] [Far] R Sky→L Sky
+0x08C41540 [Ａ][Near] Turn L-Front→R
+0x08C41598 [Ａ][Near] Turn R-Front→L
+0x08C415F0 [Ａ][Near] L Side→R Side
+0x08C41648 [Ａ][Near] R Side→L Side
+0x08C416A0 [Ａ][Med.] Front Foot→Face
+0x08C416F8 [Ａ][Med.] F L-High→R-Low
+0x08C41750 [Ａ][Med.] F R-High→L-Low
+0x08C417A8 [Ａ][Far] L Sky→R Sky
+0x08C41800 [Ａ][Far] R Sky→L Sky
 0x08C41858 [Ａ] L-Front (Up)→R-F (Up)
 0x08C418B0 [Ａ] R-Front (Up)→L-F (Up)
-0x08C41908 [Ｂ] [Near] Turn L-F→Right
-0x08C41960 [Ｂ] [Near] Turn R-F→Left
-0x08C419B8 [Ｂ] [Near] L Side→R Side
-0x08C41A10 [Ｂ] [Near] R Side→L Side
-0x08C41A68 [Ｂ] [Med.] Front Foot→Face
-0x08C41AC0 [Ｂ] [Med.] F L High→R Low
-0x08C41B18 [Ｂ] [Med.] F R High→L Low
-0x08C41B70 [Ｂ] [Far] L Sky→R Sky
-0x08C41BC8 [Ｂ] [Far] R Sky→L Sky
+0x08C41908 [Ｂ][Near] Turn L-F→Right
+0x08C41960 [Ｂ][Near] Turn R-F→Left
+0x08C419B8 [Ｂ][Near] L Side→R Side
+0x08C41A10 [Ｂ][Near] R Side→L Side
+0x08C41A68 [Ｂ][Med.] Front Foot→Face
+0x08C41AC0 [Ｂ][Med.] F L High→R Low
+0x08C41B18 [Ｂ][Med.] F R High→L Low
+0x08C41B70 [Ｂ][Far] L Sky→R Sky
+0x08C41BC8 [Ｂ][Far] R Sky→L Sky
 0x08C41C20 [Ｂ] L-Front (Up)→R-F (Up)
 0x08C41C78 [Ｂ] R-Front (Up)→L-F (Up)
 
@@ -4023,7 +4049,7 @@ $x08940A80 Return to the DIVA room.
 0x08C43948 Face each other (Right)
 0x08C43970 Face each other (Left)
 
-# Helper item descriptions [free play] (max lenght: 24)
+# Helper item descriptions [free play] (max length: 24)
 
 0x08C43E24 Changes all the SAFE and
 0x08C43E28 WORST into SAFE, but the
@@ -4044,7 +4070,7 @@ $x08940A80 Return to the DIVA room.
 0x08C43E68 not recover or increase.
 0x08C43E6C Multiplies gained DP x4.
 
-# Main menu descriptions (max lenght: 24)
+# Main menu descriptions (max length: 24)
 
 # (Rhythm Game)
 0x08C43EC8 Play the game
@@ -4086,12 +4112,12 @@ $x08940A80 Return to the DIVA room.
 
 # Main menu entering confirmation messages
 
-0x08C43F8C Go to the Shop.
-0x08C43F98 Go to Play Records.
-0x08C43FB0 Go to Ad Hoc.
+0x08C43F8C Go to the Shop?
+0x08C43F98 Go to Play Records?
+0x08C43FB0 Go to Ad Hoc?
 0x08C43FD4 Return to the title screen?
 0x08C43FD8 You will lose any unsaved data.
-0x08C43FDC Really return to the title screen?
+0x08C43FDC Are you sure you want to?
 
 0x08C43FE0 Go to visit
 0x08C43FE4 Miku's room
@@ -4129,65 +4155,62 @@ $x08940A80 Return to the DIVA room.
 0x08C44064 Sakine Meiko's
 0x08C44068 room
 
-!x088E5228 Imported data couldn't be read.  If you visit this
+!x088E5228 Imported DLC couldn't be read.  If you visit this
 !x088E5234 DIVA room, its layout and decor will be reset
 !x088E5240 to their default state.  
-!x088E525C ※ Use the Options menu to import additional data.
+!x088E525C ※ You can use the Options menu to import DLC.
 
 # (Edit mode menu descriptions)
 
 0x08C44070 Edit and create new
-0x08C44074 Edit data files
+0x08C44074 Edit Data
 0x08C44078  
 
 0x08C44080 Play rhythm games
-0x08C44084 from Edit data files
+0x08C44084 from Edit Data
 0x08C44088  
 
 0x08C44090 Watch PVs from
-0x08C44094 Edit data
+0x08C44094 Edit Data
 0x08C44098  
 
 # Options menu descriptions
 
 0x08C440A0 Change the volume of the
 0x08C440A4 MP3 songs and PV BGM
-0x08C440A8 in-game.
+0x08C440A8 in-game
 
 0x08C440B0 Change the volume of
-0x08C440B4 the system BGM.
+0x08C440B4 the system BGM
 
 0x08C440C0 Change the volume of the
-0x08C440C4 SE in-game.
+0x08C440C4 sound effects in-game
 
-0x08C440D0 Change the autosave
-0x08C440D4 settings.
+0x08C440D0 Change the auto-save
+0x08C440D4 settings
 
 0x08C440E0 Enable the loading of
-0x08C440E4 the Installation
-0x08C440E8 data.
+0x08C440E4 installed game data from
+0x08C440E8 the Memory Stick	1
 
-0x08C440F0 Import additional data
-0x08C440F4 that you have selected
-0x08C440F8 as extra content.
+0x08C440F0 Import select DLC
+0x08C440F4 as Extra content
+0x08C440F8
 
 0x08C44100 Import previous save data
-0x08C44104 from Project Diva 2nd.
+0x08C44104 from Project Diva 2nd
 
 # Free play misc strings
 
-0x08C541B4 Additional content
-0x08C541C4 Additional content
-0x08C541D4 Additional content
+0x08C541B4 DLC(*)
+0x08C541C4 DLC(*)
+0x08C541D4 DLC(*)
 0x08C541B8 could not be loaded.
 0x08C541C8 could not be loaded.
 0x08C541D8 could not be loaded.
 0x08C541BC Returning to song selection.
 0x08C541DC Returning to song selection.
 0x08C541CC Returning to the PV gallery.
-!x088F5F5C Only the targets you've created so far will be saved.
-!x088F5F48 Are you sure you want to stop now? (*)
-!x088F5F88 Only the markers you've created so far will be saved.
 
 0x08C54230 Changes all the SAFE and
 0x08C54234 WORST into SAFE, but the
