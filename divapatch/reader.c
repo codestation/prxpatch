@@ -61,7 +61,7 @@ static SceUID open_file(const char *file) {
     SceIoStat stat;
     char path[256];
 
-	strcpy(path, filepath);
+    strcpy(path, filepath);
     strrchr(path, '/')[1] = 0;
     strcat(path, file);
     kprintf("trying to open %s\n", path);
